@@ -78,26 +78,6 @@ export const VOWELS_STEP1_DATA = [
       { traditional: "葉子", zhuyin: "ㄧㄝˋ ㄗ˙", pinyin: "yèzi", meaning: "葉っぱ" },
       { traditional: "姐姐", zhuyin: "ㄐㄧㄝˇ ㄐㄧㄝ˙", pinyin: "jiějie", meaning: "お姉さん" }
     ]
-  },
-  {
-    id: "vowel-ai",
-    symbol: "ㄞ",
-    pinyin: "ai",
-    ipa: "[aɪ]",
-    katakana: "アイ",
-    typeTag: "二重母音 (複韻母)",
-    title: "二重母音「ㄞ」",
-    originKanji: "亥 (hài / ハイ)",
-    originDesc: "漢字「亥」の上の部分の形に由来。漢字の発音に含まれる二重母音「ㄞ (ai)」をとっています。",
-    tipTitle: "「ㄚ(a)」から「ㄧ(i)」へ滑らかに移る二重母音！",
-    tipDesc: "【単母音との違い】最初の4つと異なり、発音の途中で口の形が「ア」から「イ」へ素早く変化する二重母音（複韻母）です。「ア」を大きく強めに発音します。",
-    color: "from-pink-500 to-rose-600",
-    themeHex: "#E11D48",
-    examples: [
-      { traditional: "愛", zhuyin: "ㄞˋ", pinyin: "ài", meaning: "愛する / 愛" },
-      { traditional: "白色", zhuyin: "ㄅㄞˊ ㄙㄜˋ", pinyin: "báisè", meaning: "白色" },
-      { traditional: "青菜", zhuyin: "ㄑㄧㄥ ㄘㄞˋ", pinyin: "qīngcài", meaning: "青菜 / 野菜" }
-    ]
   }
 ];
 
@@ -106,35 +86,35 @@ export const VOWELS_QUIZ_QUESTIONS = [
     id: 1,
     type: "audio",
     targetSymbol: "ㄚ",
-    prompt: "再生された音声に当てはまる注音符号を選んでください",
-    options: ["ㄚ", "ㄛ", "ㄜ", "ㄞ"]
+    prompt: "再生された音声に当てはまる単母音を選んでください",
+    options: ["ㄚ", "ㄛ", "ㄜ", "ㄝ"]
   },
   {
     id: 2,
     type: "pinyin",
     targetSymbol: "ㄛ",
-    prompt: "ピンイン表記「o」に対応する注音符号はどれ？",
+    prompt: "ピンイン表記「o」に対応する単母音はどれ？",
     options: ["ㄜ", "ㄛ", "ㄝ", "ㄚ"]
   },
   {
     id: 3,
     type: "tip",
     targetSymbol: "ㄜ",
-    prompt: "ピンインだと「e」と書かれるが、「え」の口のまま喉奥で曖昧に声を出す単母音はどれ？",
-    options: ["ㄝ", "ㄞ", "ㄜ", "ㄛ"]
+    prompt: "「え」の口のまま喉奥で曖昧に「オ/ア/ウ」と声を出す単母音はどれ？",
+    options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
   },
   {
     id: 4,
     type: "example",
-    targetSymbol: "ㄞ",
-    prompt: "「ア」から「イ」へ口の形が変化する二重母音（複韻母）の符号はどれ？",
-    options: ["ㄚ", "ㄞ", "ㄝ", "ㄛ"]
+    targetSymbol: "ㄝ",
+    prompt: "「爺爺 (yéye)」のピンインieに含まれる明るい「エー」の音を表す単母音は？",
+    options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
   },
   {
     id: 5,
     type: "audio",
-    targetSymbol: "ㄝ",
-    prompt: "「爺爺 (yéye)」のピンインieに含まれる明るい「エー」の音を表す符号は？",
-    options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
+    targetSymbol: "ㄛ",
+    prompt: "「波浪 (bōlàng)」の「波」に使われている丸口の単母音を選んでください",
+    options: ["ㄚ", "ㄛ", "ㄜ", "ㄝ"]
   }
 ];

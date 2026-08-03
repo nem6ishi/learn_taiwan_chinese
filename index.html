@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>注音ナビ | 台湾中国語（繁体字）学習</title>
-  <meta name="description" content="台湾で使われている注音符号（ㄅㄆㄇㄈ）を基礎からステップバイステップで学べるシンプルな学習アプリ。">
+  <meta name="description" content="台湾で使われている注音符号（ㄅㄆㄇㄈ）を音素系統別にステップバイステップで学べるシンプルな学習アプリ。">
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
@@ -17,23 +17,23 @@
         <span>注音ナビ</span>
       </a>
       <a href="zhuyin-vowels-1.html" class="btn btn-primary">
-        母音からスタート →
+        ステップ1（単母音）を開始 →
       </a>
     </div>
   </nav>
 
-  <!-- ヒーローセクション (シンプル) -->
+  <!-- ヒーローセクション -->
   <header class="hero">
     <div class="container">
       <h1 class="hero-title">
         注音符号（ㄅㄆㄇㄈ）から始める<br>台湾華語
       </h1>
       <p class="hero-subtitle">
-        台湾現地で使われている正しい発音と繁体字を、まずは基本の母音5文字からシンプルに学べます。
+        台湾現地で使われている正しい発音と繁体字を、音素の成り立ち（単母音・二重母音・子音）に沿ってシンプルにマスター。
       </p>
       <div>
         <a href="zhuyin-vowels-1.html" class="btn btn-primary" style="padding: 12px 28px; font-size: 1.05rem;">
-          🔊 母音ステップ1（ㄚ ㄛ ㄜ ㄝ ㄞ）を学ぶ
+          🔊 STEP 01：基本の単母音（ㄚ ㄛ ㄜ ㄝ）を学ぶ
         </a>
       </div>
     </div>
@@ -42,28 +42,28 @@
   <!-- お試し発音セクション -->
   <section class="try-section">
     <div class="container">
-      <h2 class="section-heading">基本の母音5つを発音テスト</h2>
+      <h2 class="section-heading">基本の単母音4つを発音テスト</h2>
       <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
         カードをタップすると台湾標準語の音声が再生されます
       </p>
-      <div class="vowel-demo-grid" id="vowel-demo-grid">
+      <div class="vowel-demo-grid" id="vowel-demo-grid" style="grid-template-columns: repeat(4, 1fr);">
         <!-- JSで動的生成 -->
       </div>
     </div>
   </section>
 
-  <!-- 学習ステップ -->
+  <!-- 系統別学習ロードマップ -->
   <section class="roadmap-section">
     <div class="container">
-      <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">学習ステップ</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">系統別学習ロードマップ</h2>
 
-      <!-- ステップ1 -->
+      <!-- ステップ1 (単母音) -->
       <div class="step-card">
         <div>
-          <span class="step-badge">STEP 01</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">基本の母音5文字</h3>
+          <span class="step-badge">STEP 01 ・ 今すぐ学べる！</span>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">基本の単母音（4文字）</h3>
           <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            最も基礎的な注音母音：ㄚ (a), ㄛ (o), ㄜ (e), ㄝ (eh), ㄞ (ai)
+            口の形が変わらない純粋な単母音：ㄚ (a), ㄛ (o), ㄜ (e), ㄝ (eh)
           </p>
         </div>
         <a href="zhuyin-vowels-1.html" class="btn btn-outline" style="white-space: nowrap;">
@@ -71,25 +71,49 @@
         </a>
       </div>
 
-      <!-- ステップ2 -->
+      <!-- ステップ2 (二重母音) -->
       <div class="step-card" style="opacity: 0.6;">
         <div>
-          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 02</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">その他の母音・介音</h3>
+          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 02 ・ 準備中</span>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">二重母音 / 複韻母（4文字）</h3>
           <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            複合母音（ㄢ, ㄤ 等）と介音（ㄧ, ㄨ, ㄩ）
+            発音の途中で口の形が変化する複合母音：ㄞ (ai), ㄟ (ei), ㄠ (ao), ㄡ (ou)
           </p>
         </div>
         <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
       </div>
 
-      <!-- ステップ3 -->
+      <!-- ステップ3 (鼻音・そり舌) -->
       <div class="step-card" style="opacity: 0.6;">
         <div>
-          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 03</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">子音（聲母）</h3>
+          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 03 ・ 準備中</span>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">鼻音 ＆ そり舌母音（5文字）</h3>
           <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            ㄅ (b), ㄆ (p), ㄇ (m), ㄈ (f) などの子音音素
+            鼻に抜ける音（an, en, ang, eng）と巻舌音（er）：ㄢ, ㄣ, ㄤ, ㄥ, ㄦ
+          </p>
+        </div>
+        <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
+      </div>
+
+      <!-- ステップ4 (介音) -->
+      <div class="step-card" style="opacity: 0.6;">
+        <div>
+          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 04 ・ 準備中</span>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">介音 / 介母（3文字）</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+            音を結びつける超主要母音：ㄧ (i), ㄨ (u), ㄩ (ü)
+          </p>
+        </div>
+        <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
+      </div>
+
+      <!-- ステップ5〜8 (子音) -->
+      <div class="step-card" style="opacity: 0.6;">
+        <div>
+          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 05〜08 ・ 準備中</span>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">子音（聲母 21文字）</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+            唇音（ㄅㄆㄇㄈ）、舌尖音・舌根音（ㄉㄊㄋㄌㄍㄎㄏ）、舌面音（ㄐㄑㄒㄗㄘㄙ）、捲舌音（ㄓㄔㄕㄖ）
           </p>
         </div>
         <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
