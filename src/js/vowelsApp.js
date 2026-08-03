@@ -26,6 +26,7 @@ function renderVowelList() {
           </div>
           <div>
             <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 2px;">
+              <span style="background: var(--color-primary-light); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; margin-right: 4px;">${item.typeTag}</span>
               ${item.title} (${item.katakana})
             </div>
             <h2 style="font-size: 1.4rem; font-weight: 900;">
