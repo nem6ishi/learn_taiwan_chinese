@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderVowelList();
   setupQuizListeners();
 
-  // 音声エンジンの事前準備
+  // 音声ボイスの事前読み込み
   if ('speechSynthesis' in window) {
     window.speechSynthesis.getVoices();
     if (speechSynthesis.onvoiceschanged !== undefined) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 4文字（ㄚ ㄛ ㄜ ㄝ）を一気にかんたん一覧レンダリング
+// 4文字（ㄚ ㄛ ㄜ ㄝ）を一括表示
 function renderVowelList() {
   const container = document.getElementById('vowel-list-container');
   if (!container) return;
@@ -44,7 +44,7 @@ function renderVowelList() {
         </div>
         
         <button class="btn btn-primary play-symbol-sound" data-symbol="${item.symbol}">
-          🔊 発音を聴く
+          🔊 「${item.symbol}」を発音
         </button>
       </div>
 
@@ -97,19 +97,22 @@ function renderVowelList() {
     </div>
   `).join('');
 
+  // 1. 各注音符号の「発音を聴く」ボタンの点検・確実なイベントバインド
   container.querySelectorAll('.play-symbol-sound').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.onclick = (e) => {
       e.stopPropagation();
       const symbol = btn.getAttribute('data-symbol');
       playZhuyinSound(symbol);
-    });
+    };
   });
 
+  // 2. 単語カードタップの点検・確実なイベントバインド
   container.querySelectorAll('.play-word-sound').forEach(card => {
-    card.addEventListener('click', () => {
+    card.onclick = (e) => {
+      e.stopPropagation();
       const word = card.getAttribute('data-word');
       playZhuyinSound(word);
-    });
+    };
   });
 }
 
@@ -118,15 +121,11 @@ function setupQuizListeners() {
   const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
   const closeQuizBtn = document.getElementById('close-quiz-btn');
 
-  if (startTopBtn) {
-    startTopBtn.addEventListener('click', () => startQuiz());
-  }
-  if (startBottomBtn) {
-    startBottomBtn.addEventListener('click', () => startQuiz());
-  }
+  if (startTopBtn) startTopBtn.onclick = () => startQuiz();
+  if (startBottomBtn) startBottomBtn.onclick = () => startQuiz();
 
   if (closeQuizBtn) {
-    closeQuizBtn.addEventListener('click', () => {
+    closeQuizBtn.onclick = () => {
       const quizSection = document.getElementById('quiz-section');
       const listContainer = document.getElementById('vowel-list-container');
       const quizCta = document.getElementById('quiz-cta-section');
@@ -134,7 +133,7 @@ function setupQuizListeners() {
       if (quizSection) quizSection.classList.remove('active');
       if (listContainer) listContainer.style.display = 'flex';
       if (quizCta) quizCta.style.display = 'block';
-    });
+    };
   }
 }
 
@@ -154,12 +153,11 @@ function startQuiz() {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // 第1問のレンダリング
     renderQuizQuestion(true);
   }
 }
 
-function renderQuizQuestion(isUserClick = false) {
+function renderQuizQuestion(isUserAction = false) {
   if (currentQuizIndex >= VOWELS_QUIZ_QUESTIONS.length) {
     showQuizResult();
     return;
@@ -176,7 +174,7 @@ function renderQuizQuestion(isUserClick = false) {
   if (promptEl) promptEl.innerText = q.prompt;
   if (feedbackMsg) feedbackMsg.innerText = '';
 
-  // 音声を聴くボタン
+  // 3. クイズ問題の「🔊 音声を聴く（再再生）」ボタンの点検・バインド
   if (audioTrigger) {
     audioTrigger.style.display = 'block';
     audioTrigger.innerHTML = `
@@ -194,25 +192,25 @@ function renderQuizQuestion(isUserClick = false) {
     }
   }
 
-  // ユーザーのクリック直後であれば第1音声を即時再生
-  if (isUserClick || q.type === 'audio') {
+  // ユーザーアクション由来であれば音声を再生
+  if (isUserAction || q.type === 'audio') {
     setTimeout(() => {
       playZhuyinSound(q.targetSymbol);
-    }, 100);
+    }, 120);
   }
 
-  // 4択ボタンの作成
+  // 4. 4択選択肢の点検・バインド
   optionsGrid.innerHTML = q.options.map(opt => `
     <button class="quiz-btn" data-val="${opt}">${opt}</button>
   `).join('');
 
   optionsGrid.querySelectorAll('.quiz-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.onclick = (e) => {
       e.preventDefault();
       const selected = btn.getAttribute('data-val');
       const isCorrect = selected === q.targetSymbol;
 
-      // タップした注音の音を再生
+      // 選択した注音の音を正しく再生
       playZhuyinSound(selected);
 
       if (isCorrect) {
@@ -228,12 +226,11 @@ function renderQuizQuestion(isUserClick = false) {
 
       optionsGrid.querySelectorAll('.quiz-btn').forEach(b => b.disabled = true);
 
-      // 次の問題へ
       setTimeout(() => {
         currentQuizIndex++;
-        renderQuizQuestion(true); // ユーザー操作からの流れとして再生許可
-      }, 1300);
-    });
+        renderQuizQuestion(true);
+      }, 1200);
+    };
   });
 }
 
