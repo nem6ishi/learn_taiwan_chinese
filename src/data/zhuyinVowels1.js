@@ -13,7 +13,7 @@ export const VOWELS_STEP1_DATA = [
     examples: [
       { traditional: "爸爸", zhuyin: "ㄅㄚˋ ㄅㄚ˙", pinyin: "bàba", meaning: "お父さん / パパ" },
       { traditional: "鴨子", zhuyin: "ㄧㄚ ㄗ˙", pinyin: "yāzi", meaning: "アヒル" },
-      { traditional: "阿姨", zhuyin: "ㄚ ㄧˊ", pinyin: "āyí", meaning: "おばさん / 阿姨" }
+      { traditional: "阿姨", zhuyin: "ㄚ ㄧˊ", pinyin: "āyí", meaning: "おばさん" }
     ]
   },
   {
@@ -28,9 +28,9 @@ export const VOWELS_STEP1_DATA = [
     color: "from-teal-500 to-emerald-500",
     themeHex: "#008078",
     examples: [
-      { traditional: "襪子", zhuyin: "ㄨㄚˋ ㄗ˙", pinyin: "wàzi", meaning: "靴下" },
-      { traditional: "波浪", zhuyin: "ㄅㄛ ㄌㄤˋ", pinyin: "bōlàng", meaning: "波 / 波浪" },
-      { traditional: "婆婆", zhuyin: "ㄆㄛˊ ㄆㄛ˙", pinyin: "pópo", meaning: "おばあさん" }
+      { traditional: "波浪", zhuyin: "ㄅㄛ ㄌㄤˋ", pinyin: "bōlàng", meaning: "波" },
+      { traditional: "婆婆", zhuyin: "ㄆㄛˊ ㄆㄛ˙", pinyin: "pópo", meaning: "おばあさん" },
+      { traditional: "菠菜", zhuyin: "ㄅㄛ ㄘㄞˋ", pinyin: "bōcài", meaning: "ホウレン草" }
     ]
   },
   {
@@ -41,7 +41,7 @@ export const VOWELS_STEP1_DATA = [
     katakana: "アー（エの口）",
     title: "扁唇音「ㄜ」",
     tipTitle: "「え」の口のまま、喉の奥で「お/あ」と声を出す！",
-    tipDesc: "日本語にはない独特の音です。口を横に少し引いて「え」の形を作ったまま、力を抜いて喉の奥から「オ」または「ア」に近い曖昧な声を「ウー/オー」と出します。",
+    tipDesc: "日本語にはない独特の音です。口を横に少し引いて「え」の形を作ったまま、力を抜いて喉の奥から曖昧な声を「ウー/オー」と出します。",
     color: "from-indigo-500 to-purple-500",
     themeHex: "#6366F1",
     examples: [
@@ -80,8 +80,8 @@ export const VOWELS_STEP1_DATA = [
     themeHex: "#E11D48",
     examples: [
       { traditional: "愛", zhuyin: "ㄞˋ", pinyin: "ài", meaning: "愛する / 愛" },
-      { traditional: "白色的", zhuyin: "ㄅㄞˊ ㄙㄜˋ ㄉㄜ˙", pinyin: "báisè de", meaning: "白い" },
-      { traditional: "菜", zhuyin: "ㄘㄞˋ", pinyin: "cài", meaning: "料理 / 野菜" }
+      { traditional: "白色", zhuyin: "ㄅㄞˊ ㄙㄜˋ", pinyin: "báisè", meaning: "白色" },
+      { traditional: "青菜", zhuyin: "ㄑㄧㄥ ㄘㄞˋ", pinyin: "qīngcài", meaning: "青菜 / 野菜" }
     ]
   }
 ];
@@ -119,7 +119,7 @@ export const VOWELS_QUIZ_QUESTIONS = [
     id: 5,
     type: "audio",
     targetSymbol: "ㄝ",
-    prompt: "「爺爺 (yéye)」の後半に出てくる明るい「エー」の音覚える符号は？",
+    prompt: "「爺爺 (yéye)」に出てくる「エー」の音を表す符号は？",
     options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
   }
 ];
