@@ -7,9 +7,17 @@ let quizScore = 0;
 document.addEventListener('DOMContentLoaded', () => {
   renderVowelList();
   setupQuizListeners();
+
+  // 音声エンジンの事前準備
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+  }
 });
 
-// 5文字を一気に一括レンダリング (推敲されたスマートレイアウト)
+// 4文字（ㄚ ㄛ ㄜ ㄝ）を一気にかんたん一覧レンダリング
 function renderVowelList() {
   const container = document.getElementById('vowel-list-container');
   if (!container) return;
@@ -40,7 +48,7 @@ function renderVowelList() {
         </button>
       </div>
 
-      <!-- 成り立ち ＆ 発音のコツ 2カラムグリッド -->
+      <!-- 成り立ち ＆ 発音のコツ -->
       <div class="info-blocks-grid">
         <div class="info-block">
           <div class="info-block-title">
@@ -62,7 +70,7 @@ function renderVowelList() {
         </div>
       </div>
 
-      <!-- 単語の例 (スマート行リスト) -->
+      <!-- 単語の例 -->
       <div>
         <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--color-text-muted);">
           📚 身近な単語例 (タップで発音)
@@ -73,8 +81,8 @@ function renderVowelList() {
               <div class="example-left">
                 <span class="example-trad">${ex.traditional}</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">${ex.zhuyin}</span>
-                  <span class="example-pinyin">${ex.pinyin}</span>
+                  <span class="example-zhuyin">注音: ${ex.zhuyin}</span>
+                  <span class="example-pinyin">ピンイン: ${ex.pinyin}</span>
                 </div>
               </div>
               <div class="example-right">
@@ -89,15 +97,14 @@ function renderVowelList() {
     </div>
   `).join('');
 
-  // 発音ボタンのイベント
   container.querySelectorAll('.play-symbol-sound').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const symbol = btn.getAttribute('data-symbol');
       playZhuyinSound(symbol);
     });
   });
 
-  // 単語タップイベント
   container.querySelectorAll('.play-word-sound').forEach(card => {
     card.addEventListener('click', () => {
       const word = card.getAttribute('data-word');
@@ -106,14 +113,17 @@ function renderVowelList() {
   });
 }
 
-// クイズイベントリスナー設定
 function setupQuizListeners() {
   const startTopBtn = document.getElementById('start-quiz-top-btn');
   const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
   const closeQuizBtn = document.getElementById('close-quiz-btn');
 
-  if (startTopBtn) startTopBtn.addEventListener('click', startQuiz);
-  if (startBottomBtn) startBottomBtn.addEventListener('click', startQuiz);
+  if (startTopBtn) {
+    startTopBtn.addEventListener('click', () => startQuiz());
+  }
+  if (startBottomBtn) {
+    startBottomBtn.addEventListener('click', () => startQuiz());
+  }
 
   if (closeQuizBtn) {
     closeQuizBtn.addEventListener('click', () => {
@@ -141,13 +151,15 @@ function startQuiz() {
     listContainer.style.display = 'none';
     if (quizCta) quizCta.style.display = 'none';
     quizSection.classList.add('active');
-    renderQuizQuestion();
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 第1問のレンダリング
+    renderQuizQuestion(true);
   }
 }
 
-function renderQuizQuestion() {
+function renderQuizQuestion(isUserClick = false) {
   if (currentQuizIndex >= VOWELS_QUIZ_QUESTIONS.length) {
     showQuizResult();
     return;
@@ -164,27 +176,43 @@ function renderQuizQuestion() {
   if (promptEl) promptEl.innerText = q.prompt;
   if (feedbackMsg) feedbackMsg.innerText = '';
 
-  if (q.type === 'audio') {
+  // 音声を聴くボタン
+  if (audioTrigger) {
     audioTrigger.style.display = 'block';
-    playZhuyinSound(q.targetSymbol);
-  } else {
-    audioTrigger.style.display = 'none';
+    audioTrigger.innerHTML = `
+      <button class="btn btn-primary" id="quiz-audio-play-btn" style="padding: 14px 28px; font-size: 1.1rem;">
+        🔊 音声を聴く（再再生）
+      </button>
+    `;
+
+    const playBtn = document.getElementById('quiz-audio-play-btn');
+    if (playBtn) {
+      playBtn.onclick = (e) => {
+        e.preventDefault();
+        playZhuyinSound(q.targetSymbol);
+      };
+    }
   }
 
-  const audioPlayBtn = document.getElementById('quiz-audio-play-btn');
-  if (audioPlayBtn) {
-    audioPlayBtn.onclick = () => playZhuyinSound(q.targetSymbol);
+  // ユーザーのクリック直後であれば第1音声を即時再生
+  if (isUserClick || q.type === 'audio') {
+    setTimeout(() => {
+      playZhuyinSound(q.targetSymbol);
+    }, 100);
   }
 
+  // 4択ボタンの作成
   optionsGrid.innerHTML = q.options.map(opt => `
     <button class="quiz-btn" data-val="${opt}">${opt}</button>
   `).join('');
 
   optionsGrid.querySelectorAll('.quiz-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const selected = btn.getAttribute('data-val');
       const isCorrect = selected === q.targetSymbol;
 
+      // タップした注音の音を再生
       playZhuyinSound(selected);
 
       if (isCorrect) {
@@ -200,10 +228,11 @@ function renderQuizQuestion() {
 
       optionsGrid.querySelectorAll('.quiz-btn').forEach(b => b.disabled = true);
 
+      // 次の問題へ
       setTimeout(() => {
         currentQuizIndex++;
-        renderQuizQuestion();
-      }, 1200);
+        renderQuizQuestion(true); // ユーザー操作からの流れとして再生許可
+      }, 1300);
     });
   });
 }
@@ -215,17 +244,17 @@ function showQuizResult() {
   quizSection.innerHTML = `
     <div style="padding: 24px 0; text-align: center;">
       <h2 style="font-size: 1.75rem; font-weight: 900; margin-bottom: 8px;">
-        クイズ結果
+        🏆 クイズ結果
       </h2>
-      <p style="font-size: 1.2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px;">
+      <p style="font-size: 1.25rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px;">
         正解数: ${quizScore} / ${VOWELS_QUIZ_QUESTIONS.length} 問
       </p>
       <div style="display: flex; gap: 12px; justify-content: center;">
         <button class="btn btn-outline" id="retry-quiz-btn">
-          もう一度挑戦
+          🔄 もう一度挑戦
         </button>
         <a href="index.html" class="btn btn-primary">
-          トップに戻る
+          🏠 トップに戻る
         </a>
       </div>
     </div>
