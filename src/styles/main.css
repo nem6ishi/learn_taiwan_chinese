@@ -281,11 +281,24 @@ body {
   background: var(--color-primary-light);
 }
 
+.example-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
 .example-trad {
   font-size: 1.5rem;
   font-weight: 900;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 1.2;
+}
+
+.example-meaning {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .example-zhuyin {

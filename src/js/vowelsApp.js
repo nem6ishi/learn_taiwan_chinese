@@ -34,7 +34,7 @@ function renderVowelList() {
         </div>
       </div>
 
-      <!-- 漢字の由来 (新機能) -->
+      <!-- 漢字の由来 -->
       <div style="background: #F1F5F9; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 16px;">
         <div style="font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px;">
           🈁 漢字の成り立ち・由来：<strong>${item.originKanji}</strong>
@@ -53,16 +53,18 @@ function renderVowelList() {
         </p>
       </div>
 
-      <!-- 単語の例 -->
+      <!-- 単語の例 (漢字の右に意味を配置) -->
       <div>
         <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">単語の例 (タップで発音)</h4>
         <div class="examples-grid">
           ${item.examples.map(ex => `
             <div class="example-card play-word-sound" data-word="${ex.traditional}">
-              <div class="example-trad">${ex.traditional}</div>
+              <div class="example-header">
+                <span class="example-trad">${ex.traditional}</span>
+                <span class="example-meaning">${ex.meaning}</span>
+              </div>
               <div class="example-zhuyin">注音: ${ex.zhuyin}</div>
               <div class="example-pinyin">ピンイン: ${ex.pinyin}</div>
-              <div class="example-meaning">意味: ${ex.meaning}</div>
             </div>
           `).join('')}
         </div>
