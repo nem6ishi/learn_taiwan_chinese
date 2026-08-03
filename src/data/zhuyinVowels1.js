@@ -45,9 +45,9 @@ export const VOWELS_STEP1_DATA = [
     katakana: "アー（エの口）",
     title: "扁唇音「ㄜ」",
     originKanji: "ㄛの変形文字",
-    originDesc: "同系統の丸口音「ㄛ」の形をアレンジして作られた文字。「エ」の口で曖昧に声を出す独特の音です。",
-    tipTitle: "「え」の口のまま、喉の奥で「お/あ」と声を出す！",
-    tipDesc: "日本語にはない独特の音です。口を横に少し引いて「え」の形を作ったまま、力を抜いて喉の奥から曖昧な声を「ウー/オー」と出します。",
+    originDesc: "「ㄛ」の形をアレンジして作られた文字。ピンイン表記は「e」。",
+    tipTitle: "「え」の口のまま、喉の奥で曖昧に声を出す！",
+    tipDesc: "ピンインでは「e」と書かれますが、日本語の「え」ではなく喉の奥から「オ/ア/ウ」に近い曖昧な声を出す音です。",
     color: "from-indigo-500 to-purple-500",
     themeHex: "#6366F1",
     examples: [
@@ -59,14 +59,14 @@ export const VOWELS_STEP1_DATA = [
   {
     id: "vowel-eh",
     symbol: "ㄝ",
-    pinyin: "ê / ie / üe",
+    pinyin: "ê / (ie, üeのe)",
     ipa: "[ɛ]",
     katakana: "エー",
     title: "前元音「ㄝ」",
     originKanji: "也 (yě / イェ)",
-    originDesc: "漢字「也」の古字・草書体の形から。漢字の「也 (yě)」に含まれる母音「ㄝ」に由来します。",
-    tipTitle: "日本語の「え」に近く、口を横に開いて「エー」！",
-    tipDesc: "口を横に自然に開き、舌の先を下歯の裏につけてハッキリ「エー」と発音します。単独で使われることは少なく、「ㄧ (i)」や「ㄩ (ü)」と組み合わせて使われます。",
+    originDesc: "漢字「也」に由来。ピンインでは「ie (ㄧㄝ)」や「üe (ㄩㄝ)」の「e」と同じ音です。",
+    tipTitle: "日本語の「え」に近い明るい音！",
+    tipDesc: "ピンインだとどちらも「e」と書かれますが、「ㄝ」は日本語の「え」に近いハッキリした「エー」の音です。「ㄧ (i)」とセットで「ㄧㄝ (ie)」としてよく使われます。",
     color: "from-sky-500 to-blue-600",
     themeHex: "#0284C7",
     examples: [
@@ -115,7 +115,7 @@ export const VOWELS_QUIZ_QUESTIONS = [
     id: 3,
     type: "tip",
     targetSymbol: "ㄜ",
-    prompt: "「『え』の口の形のまま喉奥で声を出す」曖昧な音の符号はどれ？",
+    prompt: "ピンインだと「e」と書かれるが、「え」の口のまま喉奥で曖昧に声を出す音はどれ？",
     options: ["ㄝ", "ㄞ", "ㄜ", "ㄛ"]
   },
   {
@@ -129,7 +129,7 @@ export const VOWELS_QUIZ_QUESTIONS = [
     id: 5,
     type: "audio",
     targetSymbol: "ㄝ",
-    prompt: "「爺爺 (yéye)」に出てくる「エー」の音を表す符号は？",
+    prompt: "「爺爺 (yéye)」のピンインieに含まれる明るい「エー」の音を表す符号は？",
     options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
   }
 ];
