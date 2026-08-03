@@ -29,75 +29,70 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Web Speech API 発音再生 (堅牢化＆フォールバック付き)
+// 現在再生中のAudioオブジェクトを保持
+let currentAudio = null;
+
+/**
+ * 台湾華語（zh-TW）高音質ストリーミング再生エンジン
+ * Google Translate TTS + Web Speech API ハイブリッド方式
+ */
 export function playZhuyinSound(text) {
   if (!text) return;
 
-  if ('speechSynthesis' in window) {
-    try {
-      // 停止状態の解除
-      window.speechSynthesis.resume();
-      window.speechSynthesis.cancel(); // 蓄積キューをクリア
+  // 再生中の音があれば停止
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+  }
 
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'zh-TW'; // 台湾華語
-      utterance.rate = 0.8;    // 聞き取りやすいスピード
-      utterance.pitch = 1.0;
-      utterance.volume = 1.0;
+  // 1. Google Translate TTS URL の構築 (標準台湾華語: zh-TW)
+  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=zh-TW&client=tw-ob`;
 
-      // 台湾ボイスの優先割り当て
-      const voices = window.speechSynthesis.getVoices();
-      const twVoice = voices.find(v => 
-        v.lang === 'zh-TW' || 
-        v.lang === 'zh_TW' || 
-        v.lang.toLowerCase().includes('tw') ||
-        (v.lang.startsWith('zh') && v.name.includes('Taiwan'))
-      );
+  try {
+    const audio = new Audio(ttsUrl);
+    currentAudio = audio;
 
-      if (twVoice) {
-        utterance.voice = twVoice;
-      }
-
-      // エラー発生時のフォールバック音
-      utterance.onerror = (e) => {
-        console.warn('SpeechSynthesis error, playing fallback tone:', e);
-        playFallbackBeep();
-      };
-
-      // 少し遅延を入れて安定再生
-      setTimeout(() => {
-        window.speechSynthesis.speak(utterance);
-      }, 50);
-
-    } catch (err) {
-      console.error('SpeechSynthesis exception:', err);
-      playFallbackBeep();
+    // 再生成功
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(err => {
+        console.warn('Google TTS streaming failed, falling back to Web Speech API:', err);
+        fallbackWebSpeech(text);
+      });
     }
-  } else {
-    playFallbackBeep();
+
+    // エラー時のフォールバック
+    audio.onerror = () => {
+      console.warn('Audio element error, falling back to Web Speech API');
+      fallbackWebSpeech(text);
+    };
+
+  } catch (err) {
+    console.error('Audio creation error, falling back to Web Speech API:', err);
+    fallbackWebSpeech(text);
   }
 }
 
-// フォールバック用 Web Audio API トーン音
-function playFallbackBeep() {
-  try {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!AudioCtx) return;
-    const ctx = new AudioCtx();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
+// フォールバック用 Web Speech API (ブラウザ標準)
+function fallbackWebSpeech(text) {
+  if ('speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
 
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(440, ctx.currentTime); // A4ノート
-    gain.gain.setValueAtTime(0.1, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.3);
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.8;
 
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+      const voices = window.speechSynthesis.getVoices();
+      const twVoice = voices.find(v => v.lang.includes('TW') || v.lang.includes('tw'));
+      if (twVoice) utterance.voice = twVoice;
 
-    osc.start();
-    osc.stop(ctx.currentTime + 0.3);
-  } catch (e) {
-    console.error('AudioContext error:', e);
+      setTimeout(() => {
+        window.speechSynthesis.speak(utterance);
+      }, 50);
+    } catch (e) {
+      console.error('Fallback Web Speech API failed:', e);
+    }
   }
 }
