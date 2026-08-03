@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注音ナビ | 台湾中国語（繁体字）を注音符号（ㄅㄆㄇㄈ）からマスター</title>
+  <meta name="description" content="台湾で使われている注音符号（ボポモフォ/Bopomofo ㄅㄆㄇㄈ）を基礎から楽しく学べるWebアプリ。美しい繁体字と標準的な台湾発音をステップバイステップで習得しよう。">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar" id="app-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        <span class="logo-icon">ㄅ</span>
+        <span>注音ナビ</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link" id="link-features">なぜ注音？</a></li>
+        <li><a href="#try-vowels" class="nav-link" id="link-try">お試し体験</a></li>
+        <li><a href="#roadmap" class="nav-link" id="link-roadmap">学習マップ</a></li>
+      </ul>
+      <a href="zhuyin-vowels-1.html" class="btn btn-accent" id="nav-cta-btn">
+        <span>母音からスタート</span>
+        <span>→</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ヒーローセクション -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge" id="hero-badge">
+          ✨ 台湾現地で使われている正しい発音
+        </div>
+        <h1 class="hero-title" id="main-heading">
+          台湾の言葉を、<br>
+          <span>注音符号 (ㄅㄆㄇㄈ)</span> から<br>
+          楽しくマスター。
+        </h1>
+        <p class="hero-description">
+          ピンインだけでは再現できない台湾華語の美しいアクセントと発音。まずは基本の母音5文字から、ゲーム感覚で学び始めましょう。
+        </p>
+        <div class="hero-actions">
+          <a href="zhuyin-vowels-1.html" class="btn btn-accent btn-lg" id="hero-primary-cta">
+            🔊 母音ステップ1（ㄚ ㄛ ㄜ ㄝ ㄞ）を学ぶ
+          </a>
+          <a href="#try-vowels" class="btn btn-secondary btn-lg" id="hero-secondary-cta">
+            👉 LP上で発音を試す
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="/assets/hero_bg.jpg" alt="台湾学習イラスト" class="hero-image" id="hero-img">
+      </div>
+    </div>
+  </header>
+
+  <!-- ミニ試聴お試しセクション -->
+  <section class="try-section" id="try-vowels">
+    <div class="container">
+      <div class="section-title-area">
+        <span class="section-badge">INTERACTIVE DEMO</span>
+        <h2 class="section-title" id="try-heading">タップして音を聴いてみよう</h2>
+        <p class="section-subtitle">今回学ぶ「基本の母音5つ」です。カードを押すと台湾華語の標準音声が再生されます。</p>
+      </div>
+
+      <div class="vowel-demo-grid" id="vowel-demo-grid">
+        <!-- JSで対話型カードをレンダリング -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 特長セクション -->
+  <section class="features-section" id="features" style="padding: 80px 0;">
+    <div class="container">
+      <div class="section-title-area">
+        <span class="section-badge">WHY ZHUYIN?</span>
+        <h2 class="section-title">なぜ「注音符号」から学ぶのか？</h2>
+        <p class="section-subtitle">台湾現地で誰もが小学生から使う伝統的な音素記号のメリット</p>
+      </div>
+
+      <div class="roadmap-cards" style="margin-top: 0;">
+        <div class="roadmap-card">
+          <span class="step-num">メリット 1</span>
+          <h3>ローマ字の癖から脱却</h3>
+          <p>アルファベットピンインだと日本語や英語の読み癖がつきやすいですが、注音記号ならまっさらな状態で正しい発音口形を身につけられます。</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="step-num">メリット 2</span>
+          <h3>台湾現地でのキーボード入力</h3>
+          <p>台湾のスマートフォンやPCでの繁体字入力は注音入力（ボポモフォ）が標準。覚えると現地の人とスムーズにチャットできます。</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="step-num">メリット 3</span>
+          <h3>繁体字と相性抜群</h3>
+          <p>漢字の横に小さく添えられる注音ルビ（注音標音）で、繁体字絵本や現地の看板もスムーズに読めるようになります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ステップ学習ロードマップ -->
+  <section class="roadmap-section" id="roadmap">
+    <div class="container">
+      <div class="section-title-area">
+        <span class="section-badge">LEARNING ROADMAP</span>
+        <h2 class="section-title">ステップバイステップ学習マップ</h2>
+        <p class="section-subtitle">少しずつ着実に注音符号37文字をマスターできる設計です。</p>
+      </div>
+
+      <div class="roadmap-cards">
+        <!-- ステップ1（今回実装） -->
+        <div class="roadmap-card active">
+          <span class="step-num">STEP 01 ・ 今すぐ学べる！</span>
+          <h3>基本の母音（5文字）</h3>
+          <p>最も頻出する基本母音。ハッキリした発音のコツと身近な単語例でマスターします。</p>
+          <div class="tag-list">
+            <span class="tag">ㄚ (a)</span>
+            <span class="tag">ㄛ (o)</span>
+            <span class="tag">ㄜ (e)</span>
+            <span class="tag">ㄝ (eh)</span>
+            <span class="tag">ㄞ (ai)</span>
+          </div>
+          <a href="zhuyin-vowels-1.html" class="btn btn-primary" style="width: 100%;" id="step1-btn">
+            このステップを始める →
+          </a>
+        </div>
+
+        <!-- ステップ2 -->
+        <div class="roadmap-card" style="opacity: 0.7;">
+          <span class="step-num" style="background: #E2E8F0; color: #64748B;">STEP 02 ・ 準備中</span>
+          <h3>複合母音＆鼻音</h3>
+          <p>「ai」「an」「ang」など、さらに表現が広がる母音グループ。</p>
+          <div class="tag-list">
+            <span class="tag">ㄟ</span> <span class="tag">ㄠ</span> <span class="tag">ㄡ</span> <span class="tag">ㄢ</span> <span class="tag">ㄣ</span> <span class="tag">ㄤ</span> <span class="tag">ㄥ</span> <span class="tag">ㄦ</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; cursor: not-allowed;" disabled>Coming Soon</button>
+        </div>
+
+        <!-- ステップ3 -->
+        <div class="roadmap-card" style="opacity: 0.7;">
+          <span class="step-num" style="background: #E2E8F0; color: #64748B;">STEP 03 ・ 準備中</span>
+          <h3>子音（聲母）グループ</h3>
+          <p>「ㄅ (b)」「ㄆ (p)」「ㄇ (m)」「ㄈ (f)」から始まる子音の世界へ。</p>
+          <div class="tag-list">
+            <span class="tag">ㄅ</span> <span class="tag">ㄆ</span> <span class="tag">ㄇ</span> <span class="tag">ㄈ</span> <span class="tag">ㄉ</span> <span class="tag">ㄊ</span> <span class="tag">ㄋ</span> <span class="tag">ㄌ</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; cursor: not-allowed;" disabled>Coming Soon</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="index.html" class="footer-logo">ㄅ 注音ナビ</a>
+        <p style="color: #94A3B8;">台湾華語・繁体字学習ポータル</p>
+      </div>
+      <p class="footer-copy">© 2026 注音ナビ (Zhuyin Navi) - 台湾中国語学習プラットフォーム</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
