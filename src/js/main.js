@@ -30,19 +30,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 現在再生中のAudioオブジェクト
+// 再生中のオーディオ
 let currentAudio = null;
+
+// 注音記号単体を Google TTS / Web Speech API が正しく高音質発音するためのマッピング辞書
+const ZHUYIN_SPEECH_MAP = {
+  'ㄚ': '啊',   // a
+  'ㄛ': '喔',   // o
+  'ㄜ': '鵝',   // e (または ㄜ)
+  'ㄝ': '也',   // eh
+  'ㄞ': '愛',   // ai
+  'ㄟ': '欸',   // ei
+  'ㄠ': '襖',   // ao
+  'ㄡ': '歐',   // ou
+  'ㄅ': '包',   // b
+  'ㄆ': '撲',   // p
+  'ㄇ': '摸',   // m
+  'ㄈ': '佛'    // f
+};
 
 /**
  * 台湾華語（zh-TW）音声再生メイン処理
- * 1. Google Translate TTS (ストリーミング)
- * 2. Web Speech API (ブラウザ標準)
- * 3. Web Audio API (トーン音)
  */
 export function playZhuyinSound(text) {
   if (!text) return;
 
-  // 再生中の既存オーディオをクリア
+  // 再生中の既存オーディオを停止・リセット
   if (currentAudio) {
     try {
       currentAudio.pause();
@@ -53,8 +66,11 @@ export function playZhuyinSound(text) {
     currentAudio = null;
   }
 
+  // 注音記号単体の場合は、TTSが確実に発音できる漢字テキストに変換
+  const speechText = ZHUYIN_SPEECH_MAP[text] || text;
+
   // 1. Google Translate TTS ストリーミング試行
-  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=zh-TW&client=tw-ob`;
+  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
 
   try {
     const audio = new Audio(ttsUrl);
@@ -66,37 +82,38 @@ export function playZhuyinSound(text) {
       if (!fallbackTriggered) {
         fallbackTriggered = true;
         currentAudio = null;
-        fallbackWebSpeech(text);
+        fallbackWebSpeech(text, speechText);
       }
     };
 
     audio.onerror = () => {
-      console.warn(`[Audio Engine] Streaming error for "${text}", switching to fallback.`);
+      console.warn(`[Audio Engine] TTS error for "${text}" (${speechText}), switching to fallback.`);
       doFallback();
     };
 
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise.catch((err) => {
-        console.warn(`[Audio Engine] Autoplay/Network error for "${text}":`, err);
+        console.warn(`[Audio Engine] Playback blocked/error for "${text}":`, err);
         doFallback();
       });
     }
 
   } catch (err) {
-    console.warn(`[Audio Engine] Audio object creation error for "${text}":`, err);
-    fallbackWebSpeech(text);
+    console.warn(`[Audio Engine] Exception for "${text}":`, err);
+    fallbackWebSpeech(text, speechText);
   }
 }
 
 // フォールバック1: Web Speech API
-function fallbackWebSpeech(text) {
+function fallbackWebSpeech(originalText, speechText) {
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.resume();
       window.speechSynthesis.cancel();
 
-      const utterance = new SpeechSynthesisUtterance(text);
+      // 原文または発音テキストで発話
+      const utterance = new SpeechSynthesisUtterance(speechText || originalText);
       utterance.lang = 'zh-TW';
       utterance.rate = 0.8;
 
@@ -131,7 +148,7 @@ function playFallbackBeep() {
     const gain = ctx.createGain();
 
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5音
+    osc.frequency.setValueAtTime(523.25, ctx.currentTime);
     gain.gain.setValueAtTime(0.1, ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.25);
 
