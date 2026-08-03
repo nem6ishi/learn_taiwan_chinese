@@ -6,7 +6,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        vowels1: resolve(__dirname, 'zhuyin-vowels-1.html')
+        vowels1: resolve(__dirname, 'zhuyin-vowels-1.html'),
+        vowels2: resolve(__dirname, 'zhuyin-vowels-2.html')
       }
     }
   }

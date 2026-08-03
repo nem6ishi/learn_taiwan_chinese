@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>母音ステップ1（ㄚ ㄛ ㄜ ㄝ ㄞ）| 注音ナビ</title>
-  <meta name="description" content="台湾華語の基本母音「ㄚ ㄛ ㄜ ㄝ ㄞ」を一覧で一気にマスター。">
+  <title>STEP 02: 二重母音（ㄞ ㄟ ㄠ ㄡ）| 注音ナビ</title>
+  <meta name="description" content="台湾華語の二重母音・複韻母「ㄞ ㄟ ㄠ ㄡ」の音と形・単語例をマスター。">
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
@@ -16,9 +16,14 @@
         <span class="logo-badge">ㄅ</span>
         <span>注音ナビ</span>
       </a>
-      <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
-        ← トップへ戻る
-      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="zhuyin-vowels-1.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          ← STEP 01 へ
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          トップへ
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -26,33 +31,28 @@
   <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
       <div>
-        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">STEP 01: SINGLE VOWELS</span>
-        <h1 style="font-size: 1.75rem; font-weight: 900;">基本の単母音 4文字（ㄚ ㄛ ㄜ ㄝ）</h1>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">STEP 02: COMPOUND VOWELS</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">二重母音 4文字（ㄞ ㄟ ㄠ ㄡ）</h1>
       </div>
       <button class="btn btn-primary" id="start-quiz-top-btn">
         🏆 確認クイズを受ける (全5問)
       </button>
     </div>
 
-    <!-- 5文字を一気に並べるリストコンテナ -->
+    <!-- 4文字を一気に並べるリストコンテナ -->
     <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
-      <!-- JSで全5文字カードを一括レンダリング -->
+      <!-- JSで全4文字カードを一括レンダリング -->
     </div>
 
     <!-- クイズ受講エリア (最下部) -->
     <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
-      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">基本の単母音4文字を一通りチェックしましたか？</h3>
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">二重母音4文字を一通りチェックしましたか？</h3>
       <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
         音声を聴いて注音符号を当てる「確認クイズ」で定着度を確かめましょう。
       </p>
-      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
-        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
-          🏆 確認クイズを始める
-        </button>
-        <a href="zhuyin-vowels-2.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
-          次のステップ (STEP 02: 二重母音) へ進む →
-        </a>
-      </div>
+      <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 28px; font-size: 1.05rem;">
+        🏆 確認クイズを始める
+      </button>
     </div>
 
     <!-- クイズモーダル/セクション -->
@@ -71,7 +71,7 @@
 
         <div style="margin: 20px 0;" id="quiz-audio-trigger-area">
           <button class="btn btn-outline" id="quiz-audio-play-btn">
-            🔊 音声を聴く
+            🔊 音声を聴く（再再生）
           </button>
         </div>
 
@@ -91,6 +91,6 @@
     </div>
   </footer>
 
-  <script type="module" src="/src/js/vowelsApp.js"></script>
+  <script type="module" src="/src/js/vowelsApp2.js"></script>
 </body>
 </html>

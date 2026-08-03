@@ -37,7 +37,7 @@ let currentAudio = null;
 const ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
-  'ㄜ': '鵝',   // e (または ㄜ)
+  'ㄜ': '鵝',   // e
   'ㄝ': '也',   // eh
   'ㄞ': '愛',   // ai
   'ㄟ': '欸',   // ei
