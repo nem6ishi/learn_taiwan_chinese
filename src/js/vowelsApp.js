@@ -9,70 +9,86 @@ document.addEventListener('DOMContentLoaded', () => {
   setupQuizListeners();
 });
 
-// 5文字を一気に一括レンダリング
+// 5文字を一気に一括レンダリング (推敲されたスマートレイアウト)
 function renderVowelList() {
   const container = document.getElementById('vowel-list-container');
   if (!container) return;
 
   container.innerHTML = VOWELS_STEP1_DATA.map(item => `
     <div class="detail-card">
+      
+      <!-- ヘッダーエリア -->
       <div class="detail-header">
-        <div class="detail-symbol-box">
-          <span class="symbol">${item.symbol}</span>
-          <span style="font-size: 0.85rem; font-weight: 700;">${item.pinyin}</span>
-        </div>
-        <div>
-          <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 4px;">
-            ${item.title} (${item.katakana})
+        <div class="detail-header-left">
+          <div class="detail-symbol-box">
+            <span class="symbol">${item.symbol}</span>
+            <span style="font-size: 0.8rem; font-weight: 700;">${item.pinyin}</span>
           </div>
-          <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 12px;">
-            注音符号 「${item.symbol}」
-          </h2>
-          <button class="btn btn-primary play-symbol-sound" data-symbol="${item.symbol}">
-            🔊 「${item.symbol}」の発音を聴く
-          </button>
+          <div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 2px;">
+              ${item.title} (${item.katakana})
+            </div>
+            <h2 style="font-size: 1.4rem; font-weight: 900;">
+              注音符号 「${item.symbol}」
+            </h2>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary play-symbol-sound" data-symbol="${item.symbol}">
+          🔊 発音を聴く
+        </button>
+      </div>
+
+      <!-- 成り立ち ＆ 発音のコツ 2カラムグリッド -->
+      <div class="info-blocks-grid">
+        <div class="info-block">
+          <div class="info-block-title">
+            🈁 漢字の成り立ち: <strong>${item.originKanji}</strong>
+          </div>
+          <div class="info-block-content">
+            ${item.originDesc}
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-title">
+            💡 発音のコツ
+          </div>
+          <div class="info-block-content">
+            <strong>${item.tipTitle}</strong><br>
+            ${item.tipDesc}
+          </div>
         </div>
       </div>
 
-      <!-- 漢字の由来 -->
-      <div style="background: #F1F5F9; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 16px;">
-        <div style="font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px;">
-          🈁 漢字の成り立ち・由来：<strong>${item.originKanji}</strong>
-        </div>
-        <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
-          ${item.originDesc}
-        </p>
-      </div>
-
-      <!-- 発音のコツ -->
-      <div class="tip-box">
-        <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 4px;">💡 発音のコツ</div>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
-          <strong>${item.tipTitle}</strong><br>
-          ${item.tipDesc}
-        </p>
-      </div>
-
-      <!-- 単語の例 (漢字の右に意味を配置) -->
+      <!-- 単語の例 (スマート行リスト) -->
       <div>
-        <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">単語の例 (タップで発音)</h4>
-        <div class="examples-grid">
+        <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--color-text-muted);">
+          📚 身近な単語例 (タップで発音)
+        </h4>
+        <div class="example-list">
           ${item.examples.map(ex => `
-            <div class="example-card play-word-sound" data-word="${ex.traditional}">
-              <div class="example-header">
+            <div class="example-row play-word-sound" data-word="${ex.traditional}">
+              <div class="example-left">
                 <span class="example-trad">${ex.traditional}</span>
-                <span class="example-meaning">${ex.meaning}</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">${ex.zhuyin}</span>
+                  <span class="example-pinyin">${ex.pinyin}</span>
+                </div>
               </div>
-              <div class="example-zhuyin">注音: ${ex.zhuyin}</div>
-              <div class="example-pinyin">ピンイン: ${ex.pinyin}</div>
+              <div class="example-right">
+                <span class="example-meaning">${ex.meaning}</span>
+                <span class="audio-icon-tag">🔊</span>
+              </div>
             </div>
           `).join('')}
         </div>
       </div>
+
     </div>
   `).join('');
 
-  // 各符号の発音ボタンイベント
+  // 発音ボタンのイベント
   container.querySelectorAll('.play-symbol-sound').forEach(btn => {
     btn.addEventListener('click', () => {
       const symbol = btn.getAttribute('data-symbol');

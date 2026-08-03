@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+TC:wght@500;700;900&display=swap');
 
 :root {
-  --color-primary: #0F766E;        /* 静かなティール */
+  --color-primary: #0F766E;        /* ティールグリーン */
   --color-primary-hover: #0D9488;
   --color-primary-light: #F0FDFA;
   --color-bg: #FFFFFF;             /* 白 */
@@ -11,6 +11,7 @@
   --color-text-muted: #64748B;    /* ミュートグレー */
   --radius-lg: 12px;
   --radius-md: 8px;
+  --radius-sm: 6px;
 }
 
 * {
@@ -28,7 +29,7 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -38,6 +39,9 @@ body {
   border-bottom: 1px solid var(--color-border);
   padding: 16px 0;
   background: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .nav-container {
@@ -102,7 +106,7 @@ body {
 
 /* HERO (シンプル) */
 .hero {
-  padding: 60px 0 40px;
+  padding: 50px 0 32px;
   text-align: center;
 }
 
@@ -114,24 +118,24 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  max-width: 600px;
-  margin: 0 auto 32px;
+  max-width: 580px;
+  margin: 0 auto 28px;
 }
 
 /* お試しセクション */
 .try-section {
-  padding: 40px 0;
+  padding: 36px 0;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background: var(--color-bg-subtle);
 }
 
 .section-heading {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
@@ -151,7 +155,7 @@ body {
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 20px 12px;
+  padding: 16px 10px;
   text-align: center;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -163,7 +167,7 @@ body {
 }
 
 .demo-symbol {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 900;
   font-family: 'Noto Sans TC', sans-serif;
   color: var(--color-primary);
@@ -171,7 +175,7 @@ body {
 }
 
 .demo-pinyin {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-text-muted);
   margin-top: 4px;
@@ -179,15 +183,15 @@ body {
 
 /* ステップカード */
 .roadmap-section {
-  padding: 60px 0;
+  padding: 48px 0;
 }
 
 .step-card {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 24px;
   background: white;
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -209,29 +213,37 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-/* 詳細エリア */
+/* 詳細カード (洗練された推敲レイアウト) */
 .detail-card {
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 28px;
 }
 
 .detail-header {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding-bottom: 24px;
+  justify-content: space-between;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--color-border);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.detail-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .detail-symbol-box {
-  width: 90px;
-  height: 90px;
+  width: 76px;
+  height: 76px;
   border-radius: var(--radius-md);
   background: var(--color-primary-light);
   border: 1px solid var(--color-primary);
@@ -240,83 +252,123 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .detail-symbol-box .symbol {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 900;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 1;
 }
 
-.tip-box {
-  background: var(--color-bg-subtle);
-  border-left: 3px solid var(--color-primary);
-  padding: 16px 20px;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-bottom: 28px;
+/* 2カラム情報グリッド（由来 ＆ 発音のコツ） */
+.info-blocks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-/* 単語例リスト：縦並び (フレキシブル/縦列) */
-.examples-grid {
+@media (max-width: 680px) {
+  .info-blocks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-block {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.info-block-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-block-content {
+  font-size: 0.9rem;
+  color: #334155;
+  line-height: 1.55;
+}
+
+/* スマート単語リスト (行形式) */
+.example-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
-.example-card {
+.example-row {
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 16px 20px;
-  cursor: pointer;
+  padding: 14px 18px;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
-.example-card:hover {
+.example-row:hover {
   border-color: var(--color-primary);
   background: var(--color-primary-light);
 }
 
-.example-header {
+.example-left {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 2px;
+  align-items: center;
+  gap: 16px;
 }
 
 .example-trad {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 900;
   font-family: 'Noto Sans TC', sans-serif;
-  line-height: 1.2;
+  min-width: 60px;
 }
 
-.example-meaning {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-primary);
+.example-phonetics {
+  display: flex;
+  flex-direction: column;
 }
 
 .example-zhuyin {
   color: var(--color-primary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
 .example-pinyin {
   color: var(--color-text-muted);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.example-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .example-meaning {
-  font-size: 0.875rem;
-  color: #334155;
-  margin-top: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  text-align: right;
+}
+
+.audio-icon-tag {
+  color: var(--color-primary);
+  font-size: 1.1rem;
 }
 
 /* クイズ */
