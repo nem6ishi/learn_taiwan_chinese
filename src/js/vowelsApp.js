@@ -34,6 +34,16 @@ function renderVowelList() {
         </div>
       </div>
 
+      <!-- 漢字の由来 (新機能) -->
+      <div style="background: #F1F5F9; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 16px;">
+        <div style="font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px;">
+          🈁 漢字の成り立ち・由来：<strong>${item.originKanji}</strong>
+        </div>
+        <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
+          ${item.originDesc}
+        </p>
+      </div>
+
       <!-- 発音のコツ -->
       <div class="tip-box">
         <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 4px;">💡 発音のコツ</div>
@@ -43,7 +53,7 @@ function renderVowelList() {
         </p>
       </div>
 
-      <!-- 単語の例 (要素を縦並びに配置) -->
+      <!-- 単語の例 -->
       <div>
         <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">単語の例 (タップで発音)</h4>
         <div class="examples-grid">
