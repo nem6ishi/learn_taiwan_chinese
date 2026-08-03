@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>母音ステップ1（ㄚ ㄛ ㄜ ㄝ ㄞ）| 注音ナビ</title>
-  <meta name="description" content="台湾華語の基本母音「ㄚ ㄛ ㄜ ㄝ ㄞ」をシンプルにマスター。">
+  <meta name="description" content="台湾華語の基本母音「ㄚ ㄛ ㄜ ㄝ ㄞ」を一覧で一気にマスター。">
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
@@ -22,45 +22,41 @@
     </div>
   </nav>
 
-  <!-- 学習メインエリア -->
-  <main class="container" style="padding-top: 32px; padding-bottom: 40px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
       <div>
         <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">STEP 01</span>
-        <h1 style="font-size: 1.75rem; font-weight: 900;">基本の母音 5文字</h1>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">基本の母音 5文字一覧</h1>
       </div>
-      <button class="btn btn-primary" id="start-quiz-btn">
-        確認クイズ (全5問)
+      <button class="btn btn-primary" id="start-quiz-top-btn">
+        🏆 確認クイズを受ける (全5問)
       </button>
     </div>
 
-    <!-- シンプルなプログレスバー -->
-    <div style="background: #E2E8F0; height: 6px; border-radius: 4px; overflow: hidden; margin: 16px 0 24px;">
-      <div id="progress-fill" style="background: var(--color-primary); height: 100%; width: 20%; transition: width 0.3s ease;"></div>
+    <!-- 5文字を一気に並べるリストコンテナ -->
+    <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
+      <!-- JSで全5文字カードを一括レンダリング -->
     </div>
 
-    <!-- サイドバー & メインコンテンツ -->
-    <div class="vowel-app-grid" id="main-learning-view">
-      
-      <!-- サイドバー -->
-      <aside class="vowel-sidebar" id="vowel-sidebar">
-        <!-- JSで生成 -->
-      </aside>
-
-      <!-- 詳細表示エリア -->
-      <section class="detail-card" id="detail-card-area">
-        <!-- JSで生成 -->
-      </section>
-
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">全5文字を一通りチェックしましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        音声を聴いて注音符号を当てる「確認クイズ」で定着度を確かめましょう。
+      </p>
+      <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 28px; font-size: 1.05rem;">
+        🏆 5分間クイズを始める
+      </button>
     </div>
 
-    <!-- クイズセクション -->
+    <!-- クイズモーダル/セクション -->
     <section class="quiz-section" id="quiz-section">
       <div style="max-width: 500px; margin: 0 auto; text-align: center;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
           <span style="font-weight: 700; color: var(--color-primary);" id="quiz-progress-text">第 1 / 5 問</span>
           <button class="btn btn-outline" id="close-quiz-btn" style="padding: 4px 10px; font-size: 0.8rem;">
-            学習に戻る
+            ✖ 学習に戻る
           </button>
         </div>
 
