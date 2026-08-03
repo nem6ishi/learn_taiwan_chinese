@@ -1,15 +1,20 @@
 import { VOWELS_STEP1_DATA } from '../data/zhuyinVowels1.js';
+import { VOWELS_STEP2_DATA } from '../data/zhuyinVowels2.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const demoGrid = document.getElementById('vowel-demo-grid');
   
   if (demoGrid) {
-    demoGrid.innerHTML = VOWELS_STEP1_DATA.map(item => `
+    // STEP 01 (単母音4文字) + STEP 02 (二重母音4文字) の計8文字をお試しデモに配置
+    const demoData = [...VOWELS_STEP1_DATA, ...VOWELS_STEP2_DATA];
+
+    demoGrid.innerHTML = demoData.map(item => `
       <div class="demo-card" data-symbol="${item.symbol}">
+        <span class="step-badge" style="font-size: 0.65rem; padding: 1px 4px; margin-bottom: 2px;">${item.typeTag.split(' ')[0]}</span>
         <div class="demo-symbol">${item.symbol}</div>
         <div class="demo-pinyin">${item.pinyin}</div>
-        <div style="font-size: 0.85rem; color: #64748B; margin-top: 4px;">${item.katakana}</div>
-        <div class="demo-audio-icon">
+        <div style="font-size: 0.8rem; color: #64748B; margin-top: 2px;">${item.katakana}</div>
+        <div class="demo-audio-icon" style="margin-top: 4px;">
           🔊
         </div>
       </div>
@@ -112,7 +117,6 @@ function fallbackWebSpeech(originalText, speechText) {
       window.speechSynthesis.resume();
       window.speechSynthesis.cancel();
 
-      // 原文または発音テキストで発話
       const utterance = new SpeechSynthesisUtterance(speechText || originalText);
       utterance.lang = 'zh-TW';
       utterance.rate = 0.8;

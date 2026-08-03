@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>注音ナビ | 台湾中国語（繁体字）学習</title>
-  <meta name="description" content="台湾で使われている注音符号（ㄅㄆㄇㄈ）を音素系統別にステップバイステップで学べるシンプルな学習アプリ。">
+  <title>注音ナビ | 台湾中国語（繁体字）ポータル</title>
+  <meta name="description" content="台湾で使われている注音符号（ㄅㄆㄇㄈ）を音素系統別にステップバイステップで学べるシンプルな学習ポータル。">
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
@@ -16,38 +16,46 @@
         <span class="logo-badge">ㄅ</span>
         <span>注音ナビ</span>
       </a>
-      <a href="zhuyin-vowels-1.html" class="btn btn-primary">
-        ステップ1（単母音）を開始 →
-      </a>
+      <div style="display: flex; gap: 10px;">
+        <a href="zhuyin-vowels-1.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 6px 12px;">
+          STEP 01: 単母音
+        </a>
+        <a href="zhuyin-vowels-2.html" class="btn btn-primary" style="font-size: 0.85rem; padding: 6px 12px;">
+          STEP 02: 二重母音 →
+        </a>
+      </div>
     </div>
   </nav>
 
-  <!-- ヒーローセクション -->
+  <!-- ヒーローセクション (洗練されたファーストビュー) -->
   <header class="hero">
     <div class="container">
       <h1 class="hero-title">
         注音符号（ㄅㄆㄇㄈ）から始める<br>台湾華語
       </h1>
       <p class="hero-subtitle">
-        台湾現地で使われている正しい発音と繁体字を、音素の成り立ち（単母音・二重母音・子音）に沿ってシンプルにマスター。
+        台湾現地で使われている正しい発音と繁体字を、音素の成り立ち（単母音・二重母音・子音）に沿ってシンプル＆ステップバイステップでマスター。
       </p>
-      <div>
-        <a href="zhuyin-vowels-1.html" class="btn btn-primary" style="padding: 12px 28px; font-size: 1.05rem;">
-          🔊 STEP 01：基本の単母音（ㄚ ㄛ ㄜ ㄝ）を学ぶ
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="zhuyin-vowels-1.html" class="btn btn-primary" style="padding: 12px 24px; font-size: 1rem;">
+          🔊 STEP 01：単母音（ㄚ ㄛ ㄜ ㄝ）
+        </a>
+        <a href="zhuyin-vowels-2.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          🔊 STEP 02：二重母音（ㄞ ㄟ ㄠ ㄡ）
         </a>
       </div>
     </div>
   </header>
 
-  <!-- お試し発音セクション -->
+  <!-- お試し発音セクション (単母音4 + 二重母音4 の計8文字パレット) -->
   <section class="try-section">
     <div class="container">
-      <h2 class="section-heading">基本の単母音4つを発音テスト</h2>
+      <h2 class="section-heading">注音符号（母音8文字）を発音テスト</h2>
       <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-        カードをタップすると台湾標準語の音声が再生されます
+        カードをタップすると標準台湾華語（Google TTS）の音声が再生されます
       </p>
-      <div class="vowel-demo-grid" id="vowel-demo-grid" style="grid-template-columns: repeat(4, 1fr);">
-        <!-- JSで動的生成 -->
+      <div class="vowel-demo-grid" id="vowel-demo-grid">
+        <!-- JSで8文字分を動的生成 -->
       </div>
     </div>
   </section>
@@ -109,7 +117,7 @@
         <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
       </div>
 
-      <!-- ステップ5〜8 (子音) -->
+      <!-- ステップ5〜08 (子音) -->
       <div class="step-card" style="opacity: 0.6;">
         <div>
           <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 05〜08 ・ 準備中</span>
