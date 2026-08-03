@@ -43,18 +43,16 @@ function renderVowelList() {
         </p>
       </div>
 
-      <!-- 単語の例 (注音 + ピンイン) -->
+      <!-- 単語の例 (要素を縦並びに配置) -->
       <div>
         <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">単語の例 (タップで発音)</h4>
         <div class="examples-grid">
           ${item.examples.map(ex => `
             <div class="example-card play-word-sound" data-word="${ex.traditional}">
               <div class="example-trad">${ex.traditional}</div>
-              <div class="example-zhuyin">
-                <span>${ex.zhuyin}</span>
-                <span class="example-pinyin">/ ${ex.pinyin}</span>
-              </div>
-              <div style="font-size: 0.8rem; color: #64748B; margin-top: 2px;">${ex.meaning}</div>
+              <div class="example-zhuyin">注音: ${ex.zhuyin}</div>
+              <div class="example-pinyin">ピンイン: ${ex.pinyin}</div>
+              <div class="example-meaning">意味: ${ex.meaning}</div>
             </div>
           `).join('')}
         </div>

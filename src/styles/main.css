@@ -4,9 +4,9 @@
   --color-primary: #0F766E;        /* 静かなティール */
   --color-primary-hover: #0D9488;
   --color-primary-light: #F0FDFA;
-  --color-bg: #FFFFFF;             /* 清潔感のある白 */
+  --color-bg: #FFFFFF;             /* 白 */
   --color-bg-subtle: #F8FAFC;      /* 薄いグレー */
-  --color-border: #E2E8F0;        /* シンプルな境界線 */
+  --color-border: #E2E8F0;        /* 境界線 */
   --color-text-main: #0F172A;      /* ダークグレー */
   --color-text-muted: #64748B;    /* ミュートグレー */
   --radius-lg: 12px;
@@ -120,7 +120,7 @@ body {
   margin: 0 auto 32px;
 }
 
-/* お試しセクション (ミニマルカード) */
+/* お試しセクション */
 .try-section {
   padding: 40px 0;
   border-top: 1px solid var(--color-border);
@@ -177,7 +177,7 @@ body {
   margin-top: 4px;
 }
 
-/* ステップカード (ミニマル) */
+/* ステップカード */
 .roadmap-section {
   padding: 60px 0;
 }
@@ -210,55 +210,6 @@ body {
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 8px;
-}
-
-/* 母音学習ページ (zhuyin-vowels-1.html) スタイル */
-.vowel-app-grid {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 24px;
-  margin-top: 24px;
-}
-
-@media (max-width: 768px) {
-  .vowel-app-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.vowel-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-  background: white;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.sidebar-item:hover {
-  background: var(--color-bg-subtle);
-}
-
-.sidebar-item.active {
-  border-color: var(--color-primary);
-  background: var(--color-primary-light);
-  font-weight: 700;
-}
-
-.sidebar-symbol {
-  font-size: 1.5rem;
-  font-weight: 900;
-  font-family: 'Noto Sans TC', sans-serif;
-  color: var(--color-primary);
 }
 
 /* 詳細エリア */
@@ -306,9 +257,10 @@ body {
   margin-bottom: 28px;
 }
 
+/* 単語例リスト：縦並び (フレキシブル/縦列) */
 .examples-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -316,8 +268,11 @@ body {
   background: white;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 14px;
+  padding: 16px 20px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   transition: all 0.15s ease;
 }
 
@@ -327,25 +282,28 @@ body {
 }
 
 .example-trad {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 900;
   font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.2;
 }
 
 .example-zhuyin {
   color: var(--color-primary);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-wrap: wrap;
 }
 
 .example-pinyin {
   color: var(--color-text-muted);
-  font-weight: 500;
-  font-size: 0.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.example-meaning {
+  font-size: 0.875rem;
+  color: #334155;
+  margin-top: 2px;
 }
 
 /* クイズ */
