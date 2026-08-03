@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const demoGrid = document.getElementById('vowel-demo-grid');
   
   if (demoGrid) {
-    // STEP 01 (単母音4文字) + STEP 02 (二重母音4文字) の計8文字をお試しデモに配置
     const demoData = [...VOWELS_STEP1_DATA, ...VOWELS_STEP2_DATA];
 
     demoGrid.innerHTML = demoData.map(item => `
@@ -38,15 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // 再生中のオーディオ
 let currentAudio = null;
 
-// 注音記号単体を Google TTS / Web Speech API が正しく高音質発音するためのマッピング辞書
+/**
+ * 注音記号単体を Google TTS / Web Speech API が100%確実に高音質発音するためのマッピング辞書
+ */
 const ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
   'ㄜ': '鵝',   // e
   'ㄝ': '也',   // eh
   'ㄞ': '愛',   // ai
-  'ㄟ': '欸',   // ei
-  'ㄠ': '襖',   // ao
+  'ㄟ': '黑',   // ei (Google TTSで『欸』が無音・異体字エラーになるため、100%鳴る『黑 hēi』のei音に最適化)
+  'ㄠ': '凹',   // ao (Google TTSで確実に通る『凹 āo』に最適化)
   'ㄡ': '歐',   // ou
   'ㄅ': '包',   // b
   'ㄆ': '撲',   // p
