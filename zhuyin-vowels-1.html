@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>母音ステップ1（ㄚ ㄛ ㄜ ㄝ ㄞ） | 注音ナビ</title>
-  <meta name="description" content="台湾華語の基本母音5文字「ㄚ ㄛ ㄜ ㄝ ㄞ」の発音・口の形・単語例をマスターしよう。">
+  <title>母音ステップ1（ㄚ ㄛ ㄜ ㄝ ㄞ）| 注音ナビ</title>
+  <meta name="description" content="台湾華語の基本母音「ㄚ ㄛ ㄜ ㄝ ㄞ」をシンプルにマスター。">
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
@@ -13,86 +13,80 @@
   <nav class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
-        <span class="logo-icon">ㄅ</span>
+        <span class="logo-badge">ㄅ</span>
         <span>注音ナビ</span>
       </a>
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <span style="font-weight: 700; color: var(--primary-teal); font-size: 0.95rem;">
-          母音ステップ 1/3
-        </span>
-        <a href="index.html" class="btn btn-secondary btn-sm" style="padding: 8px 16px; font-size: 0.85rem;">
-          ← トップへ戻る
-        </a>
-      </div>
+      <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+        ← トップへ戻る
+      </a>
     </div>
   </nav>
 
   <!-- 学習メインエリア -->
-  <main class="container learning-header">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+  <main class="container" style="padding-top: 32px; padding-bottom: 40px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
       <div>
-        <span class="section-badge">STEP 01: BASIC VOWELS</span>
-        <h1 style="font-size: 2rem; font-weight: 900;" id="page-title">基本の母音 5文字をマスター</h1>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">STEP 01</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">基本の母音 5文字</h1>
       </div>
-      <button class="btn btn-accent" id="start-quiz-btn">
-        🏆 確認クイズを受ける (全5問)
+      <button class="btn btn-primary" id="start-quiz-btn">
+        確認クイズ (全5問)
       </button>
     </div>
 
-    <!-- プログレスバー -->
-    <div class="progress-bar-container">
-      <div class="progress-bar-fill" id="progress-fill"></div>
+    <!-- シンプルなプログレスバー -->
+    <div style="background: #E2E8F0; height: 6px; border-radius: 4px; overflow: hidden; margin: 16px 0 24px;">
+      <div id="progress-fill" style="background: var(--color-primary); height: 100%; width: 20%; transition: width 0.3s ease;"></div>
     </div>
 
-    <!-- サイドバー & メインコンテンツの2カラム構成 -->
+    <!-- サイドバー & メインコンテンツ -->
     <div class="vowel-app-grid" id="main-learning-view">
       
-      <!-- 5文字切り替えサイドバー -->
+      <!-- サイドバー -->
       <aside class="vowel-sidebar" id="vowel-sidebar">
-        <!-- JSで動的生成 -->
+        <!-- JSで生成 -->
       </aside>
 
-      <!-- カード詳細表示エリア -->
+      <!-- 詳細表示エリア -->
       <section class="detail-card" id="detail-card-area">
-        <!-- JSで選択中の符号の詳細情報をレンダリング -->
+        <!-- JSで生成 -->
       </section>
 
     </div>
 
-    <!-- クイズセクション（デフォルト非表示） -->
+    <!-- クイズセクション -->
     <section class="quiz-section" id="quiz-section">
-      <div class="quiz-card">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-          <span style="font-weight: 800; color: var(--accent-orange);" id="quiz-progress-text">第 1 / 5 問</span>
-          <button class="btn btn-secondary btn-sm" id="close-quiz-btn" style="padding: 4px 12px; font-size: 0.8rem;">
-            ✖ 学習に戻る
+      <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <span style="font-weight: 700; color: var(--color-primary);" id="quiz-progress-text">第 1 / 5 問</span>
+          <button class="btn btn-outline" id="close-quiz-btn" style="padding: 4px 10px; font-size: 0.8rem;">
+            学習に戻る
           </button>
         </div>
 
-        <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 16px;" id="quiz-question-prompt">
-          問題がここに表示されます
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;" id="quiz-question-prompt">
+          問題
         </h3>
 
-        <div style="margin: 24px 0;" id="quiz-audio-trigger-area">
-          <button class="btn btn-primary" id="quiz-audio-play-btn" style="padding: 16px 32px; font-size: 1.2rem;">
-            🔊 発音をもう一度聴く
+        <div style="margin: 20px 0;" id="quiz-audio-trigger-area">
+          <button class="btn btn-outline" id="quiz-audio-play-btn">
+            🔊 音声を聴く
           </button>
         </div>
 
-        <!-- 選択肢4つ -->
         <div class="quiz-options" id="quiz-options-grid">
-          <!-- JSでレンダリング -->
+          <!-- JSで生成 -->
         </div>
 
-        <div id="quiz-feedback-msg" style="margin-top: 24px; font-weight: 700; font-size: 1.2rem; min-height: 36px;"></div>
+        <div id="quiz-feedback-msg" style="margin-top: 20px; font-weight: 700; font-size: 1.1rem; min-height: 30px;"></div>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer" style="margin-top: 60px;">
+  <footer class="footer">
     <div class="container">
-      <p class="footer-copy">© 2026 注音ナビ (Zhuyin Navi) - 台湾中国語学習プラットフォーム</p>
+      <p>© 2026 注音ナビ - 台湾中国語学習</p>
     </div>
   </footer>
 

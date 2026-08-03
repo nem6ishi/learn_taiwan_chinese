@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSidebar();
   renderDetailCard(currentIndex);
 
-  // クイズ開始ボタン
   const startQuizBtn = document.getElementById('start-quiz-btn');
   const closeQuizBtn = document.getElementById('close-quiz-btn');
   const quizSection = document.getElementById('quiz-section');
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// サイドバーレンダリング
 function renderSidebar() {
   const sidebar = document.getElementById('vowel-sidebar');
   if (!sidebar) return;
@@ -39,15 +37,13 @@ function renderSidebar() {
       <div style="display: flex; align-items: center; gap: 12px;">
         <span class="sidebar-symbol">${item.symbol}</span>
         <div>
-          <div style="font-weight: 700; font-size: 0.9rem;">${item.title}</div>
-          <div style="font-size: 0.8rem; color: #64748B;">${item.katakana}</div>
+          <div style="font-weight: 700; font-size: 0.95rem;">${item.symbol} (${item.katakana})</div>
+          <div style="font-size: 0.8rem; color: #64748B;">pinyin: ${item.pinyin}</div>
         </div>
       </div>
-      <span class="sidebar-pinyin">${item.pinyin}</span>
     </div>
   `).join('');
 
-  // イベント登録
   sidebar.querySelectorAll('.sidebar-item').forEach(el => {
     el.addEventListener('click', () => {
       const idx = parseInt(el.getAttribute('data-index'), 10);
@@ -68,7 +64,6 @@ function updateActiveSidebarItem() {
     }
   });
 
-  // プログレスバー更新 (1〜5文字の進捗)
   const fill = document.getElementById('progress-fill');
   if (fill) {
     const pct = ((currentIndex + 1) / VOWELS_STEP1_DATA.length) * 100;
@@ -76,7 +71,6 @@ function updateActiveSidebarItem() {
   }
 }
 
-// 詳細カードレンダリング
 function renderDetailCard(index) {
   const cardArea = document.getElementById('detail-card-area');
   if (!cardArea) return;
@@ -85,72 +79,64 @@ function renderDetailCard(index) {
 
   cardArea.innerHTML = `
     <div class="detail-header">
-      <div class="detail-symbol-box" style="background: linear-gradient(135deg, ${data.themeHex}, #1E293B);">
+      <div class="detail-symbol-box">
         <span class="symbol">${data.symbol}</span>
-        <span class="pinyin">${data.pinyin}</span>
+        <span style="font-size: 0.85rem; font-weight: 700;">${data.pinyin}</span>
       </div>
       <div>
-        <div style="font-size: 0.9rem; font-weight: 800; color: ${data.themeHex}; margin-bottom: 4px;">
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 4px;">
           ${data.title} (${data.katakana})
         </div>
-        <h2 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 12px;">
+        <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 12px;">
           注音符号 「${data.symbol}」
         </h2>
-        <button class="play-sound-btn" id="card-play-sound">
-          🔊 標準発音を聴く
+        <button class="btn btn-primary" id="card-play-sound">
+          🔊 発音を再生
         </button>
       </div>
     </div>
 
-    <!-- コツ解説 -->
-    <div class="tip-box" style="border-left-color: ${data.themeHex};">
-      <h4>💡 発音のコツ・ポイント</h4>
-      <p style="color: #334155; font-size: 1rem; line-height: 1.6;">
+    <!-- ポイント -->
+    <div class="tip-box">
+      <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 4px;">💡 発音のコツ</div>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
         <strong>${data.tipTitle}</strong><br>
         ${data.tipDesc}
       </p>
     </div>
 
-    <!-- 代表単語例 -->
-    <div class="examples-area">
-      <h4>📚 「${data.symbol}」を使った身近な単語</h4>
+    <!-- 単語例 -->
+    <div>
+      <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">単語の例</h4>
       <div class="examples-grid">
         ${data.examples.map(ex => `
           <div class="example-card" data-word="${ex.traditional}">
             <div class="example-trad">${ex.traditional}</div>
-            <div class="example-zhuyin">${ex.zhuyin} (${ex.pinyin})</div>
-            <div class="example-meaning">${ex.meaning}</div>
-            <div style="margin-top: 8px; font-size: 0.8rem; color: ${data.themeHex}; font-weight: 700;">
-              🔊 タップで発音
-            </div>
+            <div class="example-zhuyin">${ex.zhuyin}</div>
+            <div style="font-size: 0.8rem; color: #64748B;">${ex.meaning}</div>
           </div>
         `).join('')}
       </div>
     </div>
 
-    <!-- 前へ / 次へ ナビゲーション -->
-    <div style="display: flex; justify-content: space-between; margin-top: 40px; border-top: 1px solid #E2E8F0; padding-top: 24px;">
-      <button class="btn btn-secondary" id="prev-vowel-btn" ${index === 0 ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : ''}>
+    <!-- ナビゲーション -->
+    <div style="display: flex; justify-content: space-between; margin-top: 32px; border-top: 1px solid var(--color-border); padding-top: 20px;">
+      <button class="btn btn-outline" id="prev-vowel-btn" ${index === 0 ? 'disabled style="opacity:0.4; cursor:not-allowed;"' : ''}>
         ← 前の文字
       </button>
-      <button class="btn btn-primary" id="next-vowel-btn" style="background: ${data.themeHex}; border: none;">
-        ${index === VOWELS_STEP1_DATA.length - 1 ? '🎉 全5文字マスター！' : '次の文字 →'}
+      <button class="btn btn-primary" id="next-vowel-btn">
+        ${index === VOWELS_STEP1_DATA.length - 1 ? 'クイズに進む' : '次の文字 →'}
       </button>
     </div>
   `;
 
-  // 発音ボタンのイベント
   const playBtn = document.getElementById('card-play-sound');
   if (playBtn) {
-    playBtn.addEventListener('click', () => {
-      playZhuyinSound(data.symbol);
-    });
+    playBtn.addEventListener('click', () => playZhuyinSound(data.symbol));
   }
 
-  // 自動で音声を1回再生
   playZhuyinSound(data.symbol);
 
-  // 単語タップ時の音声再生
   cardArea.querySelectorAll('.example-card').forEach(card => {
     card.addEventListener('click', () => {
       const word = card.getAttribute('data-word');
@@ -158,7 +144,6 @@ function renderDetailCard(index) {
     });
   });
 
-  // 前へ / 次へ ボタン
   const prevBtn = document.getElementById('prev-vowel-btn');
   const nextBtn = document.getElementById('next-vowel-btn');
 
@@ -177,14 +162,12 @@ function renderDetailCard(index) {
         updateActiveSidebarItem();
         renderDetailCard(currentIndex);
       } else {
-        // クイズモード起動
         startQuiz();
       }
     });
   }
 }
 
-// クイズモードロジック
 function startQuiz() {
   currentQuizIndex = 0;
   quizScore = 0;
@@ -228,7 +211,6 @@ function renderQuizQuestion() {
     audioPlayBtn.onclick = () => playZhuyinSound(q.targetSymbol);
   }
 
-  // 選択肢表示
   optionsGrid.innerHTML = q.options.map(opt => `
     <button class="quiz-btn" data-val="${opt}">${opt}</button>
   `).join('');
@@ -238,28 +220,25 @@ function renderQuizQuestion() {
       const selected = btn.getAttribute('data-val');
       const isCorrect = selected === q.targetSymbol;
 
-      // 音声再生
       playZhuyinSound(selected);
 
       if (isCorrect) {
         btn.classList.add('correct');
-        feedbackMsg.innerText = '⭕️ 正解です！素晴らしい！';
-        feedbackMsg.style.color = '#059669';
+        feedbackMsg.innerText = '⭕️ 正解です';
+        feedbackMsg.style.color = '#047857';
         quizScore++;
       } else {
         btn.classList.add('incorrect');
-        feedbackMsg.innerText = `❌ 残念！正解は「${q.targetSymbol}」です`;
-        feedbackMsg.style.color = '#DC2626';
+        feedbackMsg.innerText = `❌ 不正解（正解: ${q.targetSymbol}）`;
+        feedbackMsg.style.color = '#B91C1C';
       }
 
-      // 選択不可にする
       optionsGrid.querySelectorAll('.quiz-btn').forEach(b => b.disabled = true);
 
-      // 次の問題へ
       setTimeout(() => {
         currentQuizIndex++;
         renderQuizQuestion();
-      }, 1500);
+      }, 1200);
     });
   });
 }
@@ -269,23 +248,19 @@ function showQuizResult() {
   if (!quizSection) return;
 
   quizSection.innerHTML = `
-    <div class="quiz-card" style="padding: 40px 20px;">
-      <div style="font-size: 4rem; margin-bottom: 16px;">🏆</div>
-      <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 12px;">
-        クイズ終了！
+    <div style="padding: 24px 0;">
+      <h2 style="font-size: 1.75rem; font-weight: 900; margin-bottom: 8px;">
+        クイズ結果
       </h2>
-      <p style="font-size: 1.3rem; color: var(--primary-teal); font-weight: 800; margin-bottom: 24px;">
-        スコア: ${quizScore} / ${VOWELS_QUIZ_QUESTIONS.length} 問正解
+      <p style="font-size: 1.2rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px;">
+        正解数: ${quizScore} / ${VOWELS_QUIZ_QUESTIONS.length} 問
       </p>
-      <p style="color: #64748B; margin-bottom: 32px;">
-        基本の母音5文字（ㄚ ㄛ ㄜ ㄝ ㄞ）の音と形をバッチリ理解できました！
-      </p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <button class="btn btn-secondary" id="retry-quiz-btn">
-          🔄 もう一度挑戦する
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button class="btn btn-outline" id="retry-quiz-btn">
+          もう一度挑戦
         </button>
         <a href="index.html" class="btn btn-primary">
-          🏠 ホーム（LP）に戻る
+          トップに戻る
         </a>
       </div>
     </div>
