@@ -37,9 +37,267 @@
       </button>
     </div>
 
-    <!-- コンテンツ表示コンテナ -->
+    <!-- コンテンツ表示コンテナ (静的HTML＋JSハイブリッド) -->
     <div id="grammar-list-container" style="display: flex; flex-direction: column; gap: 24px;">
-      <!-- JSで文法＆フレーズカードを生成 -->
+      
+      <!-- カード 1: 文法① -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            基本文法①: 「〜は〜です」（A 是 B）
+          </h2>
+          <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
+            基本公式: 主語 (A) + 是 (shì) + 名詞 (B)
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            「是」は日本語の「〜です / 〜である」にあたる最も基本的な動詞です。否定する場合は「不是 (bú shì / 〜ではありません)」になります。
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
+          </h4>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="我是日本人">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我是日本人</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄨㄛˇ ㄕˋ ㄖˋ ㄅㄣˇ ㄖㄣˊ</span>
+                  <span class="example-pinyin">ピンイン: wǒ shì rìběnrén</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">私は日本人です</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="他是台灣人">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">他是台灣人</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄊㄚ ㄕˋ ㄊㄞˊ ㄨㄢ ㄖㄣˊ</span>
+                  <span class="example-pinyin">ピンイン: tā shì táiwānrén</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">彼（彼女）は台湾人です</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="我不是學生">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我不是學生</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄨㄛˇ ㄅㄨˋ ㄕˋ ㄒㄩㄝˊ ㄕㄥ</span>
+                  <span class="example-pinyin">ピンイン: wǒ bú shì xuéshēng</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">私は学生ではありません</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 2: 文法② -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            基本文法②: 「私の名前は〜です / 〜と申します」
+          </h2>
+          <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
+            基本公式: 我叫 + 名前 / 我姓 + 苗字
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            フルネームや名前を言うときは「叫 (jiào)」、苗字（姓）を言うときは「姓 (xìng)」を使います。
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
+          </h4>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="你好！我叫田中">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">你好！我叫田中</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄋㄧˇ ㄏㄠˇ ！ ㄨㄛˇ ㄐㄧㄠˋ ㄊㄧㄢˊ ㄓㄨㄥ</span>
+                  <span class="example-pinyin">ピンイン: nǐ hǎo ! wǒ jiào tiánzhōng</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">こんにちは！私は田中と申します</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="請問你姓什麼？">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">請問你姓什麼？</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄑㄧㄥˇ ㄨㄣˋ ㄋㄧˇ ㄒㄧㄥˋ ㄕㄣˊ ㄇㄛ˙ ？</span>
+                  <span class="example-pinyin">ピンイン: qǐng wèn nǐ xìng shénme ?</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">お名前（お苗字）は何とおっしゃいますか？</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 3: 旅行・日常会話 -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            ✈️ 台湾旅行・日常で毎日使う必須フレーズ
+          </h2>
+          <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
+            基本公式: 日常の挨拶 ＆ 感謝・お詫び表現
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            台湾の街中やお店、ホテルで毎日使う基本中の基本挨拶フレーズです。
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
+          </h4>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="你好">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">你好</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄋㄧˇ ㄏㄠˇ</span>
+                  <span class="example-pinyin">ピンイン: nǐ hǎo</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">こんにちは（最も基本の挨拶）</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="謝謝">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">謝謝</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄒㄧㄝˋ ㄒㄧㄝ˙</span>
+                  <span class="example-pinyin">ピンイン: xièxie</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">ありがとうございます</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="不客氣">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">不客氣</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ</span>
+                  <span class="example-pinyin">ピンイン: bú kèqì</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">どういたしまして</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="對不起">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">對不起</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">注音: ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ</span>
+                  <span class="example-pinyin">ピンイン: duìbuqǐ</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">ごめんなさい / すみません</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave">
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                    <div class="voice-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- クイズ受講エリア (最下部) -->
