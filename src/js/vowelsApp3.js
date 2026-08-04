@@ -167,6 +167,8 @@
     if (promptEl) promptEl.innerText = q.prompt;
     if (feedbackMsg) feedbackMsg.innerText = '';
 
+    const speechText = q.speechTarget || q.targetSymbol;
+
     if (audioTrigger) {
       audioTrigger.style.display = 'block';
       audioTrigger.innerHTML = `
@@ -179,14 +181,14 @@
       if (playBtn) {
         playBtn.onclick = (e) => {
           e.preventDefault();
-          if (window.playZhuyinSound) window.playZhuyinSound(q.targetSymbol);
+          if (window.playZhuyinSound) window.playZhuyinSound(speechText);
         };
       }
     }
 
     if (isUserAction || q.type === 'audio') {
       setTimeout(() => {
-        if (window.playZhuyinSound) window.playZhuyinSound(q.targetSymbol);
+        if (window.playZhuyinSound) window.playZhuyinSound(speechText);
       }, 120);
     }
 

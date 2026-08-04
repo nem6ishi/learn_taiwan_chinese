@@ -1,4 +1,4 @@
-// 台湾華語学習サイト 共通データ構造 (1-1, 1-2, 1-3 対応)
+// 台湾華語学習サイト 共通データ構造 (1-1, 1-2, 1-3 対応 ＋ 多彩な確認クイズ完全版)
 window.ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
@@ -288,6 +288,7 @@ window.VOWELS_STEP3_DATA = [
   }
 ];
 
+// 1-1 確認クイズ
 window.VOWELS_QUIZ_QUESTIONS_1 = [
   {
     id: 1,
@@ -298,24 +299,27 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
   },
   {
     id: 2,
-    type: "pinyin",
-    targetSymbol: "ㄛ",
-    prompt: "ピンイン表記「o」に対応する単母音はどれ？",
-    options: ["ㄜ", "ㄛ", "ㄝ", "ㄚ"]
+    type: "zhuyin-to-word",
+    targetSymbol: "爸爸",
+    speechTarget: "爸爸",
+    prompt: "注音符号「ㄅㄚˋ ㄅㄚ˙」に対応する単語はどれ？",
+    options: ["爸爸", "鴨子", "阿姨", "波浪"]
   },
   {
     id: 3,
-    type: "tip",
-    targetSymbol: "ㄜ",
-    prompt: "ピンインだと「e」と書かれるが、「え」の口のまま喉奥で曖昧に「オ/ア/ウ」と声を出す単母音はどれ？",
-    options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
+    type: "word-to-zhuyin",
+    targetSymbol: "ㄚ ㄧˊ",
+    speechTarget: "阿姨",
+    prompt: "単語「阿姨 (āyí / おばさん)」の正しい注音表記はどれ？",
+    options: ["ㄚ ㄧˊ", "ㄅㄚˋ ㄅㄚ˙", "ㄧㄚ ㄗ˙", "ㄅㄛ ㄌㄤˋ"]
   },
   {
     id: 4,
-    type: "example",
-    targetSymbol: "ㄝ",
-    prompt: "「爺爺 (yéye)」のピンインieに含まれる明るい「エー」の音を表す単母音は？",
-    options: ["ㄝ", "ㄜ", "ㄚ", "ㄛ"]
+    type: "fill-in-blank",
+    targetSymbol: "ㄛ",
+    speechTarget: "菠菜",
+    prompt: "単語「菠菜 (bōcài)」の注音「 ㄅ___ ㄘㄞˋ 」の空欄に入る単母音はどれ？",
+    options: ["ㄛ", "ㄚ", "ㄜ", "ㄝ"]
   },
   {
     id: 5,
@@ -326,6 +330,7 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
   }
 ];
 
+// 1-2 確認クイズ
 window.VOWELS_QUIZ_QUESTIONS_2 = [
   {
     id: 1,
@@ -336,24 +341,27 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
   },
   {
     id: 2,
-    type: "pinyin",
-    targetSymbol: "ㄠ",
-    prompt: "ピンイン表記「ao」に対応する二重母音はどれ？",
-    options: ["ㄡ", "ㄠ", "ㄟ", "ㄞ"]
+    type: "zhuyin-to-word",
+    targetSymbol: "飛機",
+    speechTarget: "飛機",
+    prompt: "注音符号「ㄈㄟ ㄐㄧ」に対応する単語はどれ？",
+    options: ["飛機", "杯子", "黑色", "青菜"]
   },
   {
     id: 3,
-    type: "example",
-    targetSymbol: "ㄟ",
-    prompt: "「飛機 (fēijī / 飛行機)」の「飛」に使われている二重母音はどれ？",
-    options: ["ㄟ", "ㄞ", "ㄠ", "ㄡ"]
+    type: "word-to-zhuyin",
+    targetSymbol: "ㄅㄞˊ ㄙㄜˋ",
+    speechTarget: "白色",
+    prompt: "単語「白色 (báisè / 白色)」の正しい注音表記はどれ？",
+    options: ["ㄅㄞˊ ㄙㄜˋ", "ㄈㄟ ㄐㄧ", "ㄏㄟ ㄙㄜˋ", "ㄍㄠ ㄒㄧㄥˋ"]
   },
   {
     id: 4,
-    type: "example",
-    targetSymbol: "ㄡ",
-    prompt: "「狗 (gǒu / イヌ)」に使われている二重母音はどれ？",
-    options: ["ㄠ", "ㄡ", "ㄞ", "ㄟ"]
+    type: "fill-in-blank",
+    targetSymbol: "ㄟ",
+    speechTarget: "黑色",
+    prompt: "単語「黑色 (hēisè)」の注音「 ㄏ___ ㄙㄜˋ 」の空欄に入る二重母音はどれ？",
+    options: ["ㄟ", "ㄞ", "ㄠ", "ㄡ"]
   },
   {
     id: 5,
@@ -364,6 +372,7 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
   }
 ];
 
+// 1-3 確認クイズ
 window.VOWELS_QUIZ_QUESTIONS_3 = [
   {
     id: 1,
@@ -374,24 +383,27 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
   },
   {
     id: 2,
-    type: "pinyin",
-    targetSymbol: "ㄦ",
-    prompt: "舌先を奥に巻き上げて発音する巻舌音「er」に対応する注音符号はどれ？",
-    options: ["ㄣ", "ㄦ", "ㄥ", "ㄢ"]
+    type: "zhuyin-to-word",
+    targetSymbol: "臺灣",
+    speechTarget: "臺灣",
+    prompt: "注音符号「ㄊㄞˊ ㄨㄢ」に対応する単語はどれ？",
+    options: ["臺灣", "飯店", "身體", "棒球"]
   },
   {
     id: 3,
-    type: "example",
-    targetSymbol: "ㄢ",
-    prompt: "「臺灣 (Táiwān / 台湾)」の「灣」に使われている注音符号はどれ？",
-    options: ["ㄢ", "ㄤ", "ㄣ", "ㄥ"]
+    type: "word-to-zhuyin",
+    targetSymbol: "ㄕㄣ ㄊㄧˇ",
+    speechTarget: "身體",
+    prompt: "単語「身體 (shēntǐ / 体)」の正しい注音表記はどれ？",
+    options: ["ㄕㄣ ㄊㄧˇ", "ㄊㄞˊ ㄨㄢ", "ㄅㄤˋ ㄑㄧㄡˊ", "ㄈㄥ"]
   },
   {
     id: 4,
-    type: "example",
-    targetSymbol: "ㄤ",
-    prompt: "「棒球 (bàngqiú / 野球)」の「棒」に使われている後鼻音（口を開けたまま喉奥を鳴らす音）はどれ？",
-    options: ["ㄢ", "ㄤ", "ㄣ", "ㄦ"]
+    type: "fill-in-blank",
+    targetSymbol: "ㄥ",
+    speechTarget: "公園",
+    prompt: "単語「公園 (gōngyuán)」の注音「 ㄍㄨ___ ㄩㄢˊ 」の空欄に入る後鼻音はどれ？",
+    options: ["ㄥ", "ㄢ", "ㄣ", "ㄤ"]
   },
   {
     id: 5,
