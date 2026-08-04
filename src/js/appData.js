@@ -58,7 +58,7 @@ window.VOWELS_STEP1_DATA = [
     themeHex: "#2563EB",
     examples: [
       { traditional: "婆婆", zhuyin: "ㄆㄛˊ ㄆㄛ˙", pinyin: "pópo", meaning: "おばあさん" },
-      { traditional: "爬", zhuyin: "ㄆㄚˊ", pinyin: "pá", meaning: "登る / 爬う" }
+      { traditional: "爬", zhuyin: "ㄆㄚˊ", pinyin: "pá", meaning: "登る / 這う（はう）" }
     ]
   },
   {
