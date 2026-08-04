@@ -176,13 +176,14 @@ window.VOWELS_STEP1_DATA = [
     title: "前元音「ㄝ」",
     originKanji: "也 (yě)",
     originDesc: "漢字「也」に由来。日本語の「え」に近い明るい音です。",
-    tipTitle: "日本語の「え」に近い明るい音！",
-    tipDesc: "口を少し横に引き、明るくハッキリと「エー」と発音する単母音です。",
+    tipTitle: "日本語の「え」に近い音！（※「ㄧㄝ (ie)」の形でよく登場！）",
+    tipDesc: "単体ではあまり使われず、日常会話では「ㄧ(i)」とセットになった「ㄧㄝ (ie / イェ)」の形でよく登場します（例：爺爺, 葉子）。",
     color: "from-sky-500 to-indigo-600",
     themeHex: "#4F46E5",
     examples: [
       { traditional: "咩", zhuyin: "ㄇㄝ", pinyin: "miē", meaning: "羊の鳴き声 (メー)" },
-      { traditional: "也", zhuyin: "ㄧㄝˇ", pinyin: "yě", meaning: "〜もまた (漢字「也」)" }
+      { traditional: "爺爺", zhuyin: "ㄧㄝˊ ㄧㄝ˙", pinyin: "yéye", meaning: "おじいちゃん (※ㄧ+ㄝの形)" },
+      { traditional: "葉子", zhuyin: "ㄧㄝˋ ㄗ˙", pinyin: "yèzi", meaning: "葉っぱ (※ㄧ+ㄝの形)" }
     ]
   }
 ];
