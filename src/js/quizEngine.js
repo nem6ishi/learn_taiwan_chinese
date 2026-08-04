@@ -83,9 +83,25 @@
       }
     }
 
+    shuffleArray(arr) {
+      const array = [...arr];
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     startQuiz(questions, options = {}) {
       this.init(options);
-      this.questions = questions || [];
+
+      // 問題と選択肢をシャッフル
+      const rawQuestions = questions || [];
+      this.questions = this.shuffleArray(rawQuestions).map(q => ({
+        ...q,
+        options: this.shuffleArray(q.options || [])
+      }));
+
       this.currentIndex = 0;
       this.score = 0;
       this.streak = 0;

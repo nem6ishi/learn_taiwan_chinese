@@ -353,153 +353,57 @@ window.VOWELS_STEP2_DATA = [
 
 window.VOWELS_STEP3_DATA = [];
 
-// 1-1 確認クイズ
+// 1-1 確認クイズ (全8文字・主要単語100%カバー・全10問)
 window.VOWELS_QUIZ_QUESTIONS_1 = [
+  { id: 1, type: "audio", targetSymbol: "ㄅ", speechTarget: "ㄅ", prompt: "再生された音声に当てはまる無気唇音を選んでください", options: ["ㄅ", "ㄆ", "ㄇ", "ㄈ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄆ", speechTarget: "ㄆ", prompt: "再生された音声に当てはまる有気唇音（息を強く吐く音）を選んでください", options: ["ㄆ", "ㄅ", "ㄇ", "ㄈ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄇ", speechTarget: "ㄇ", prompt: "再生された音声に当てはまる鼻音唇音を選んでください", options: ["ㄇ", "ㄈ", "ㄅ", "ㄆ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄈ", speechTarget: "ㄈ", prompt: "再生された音声に当てはまる唇歯音（前歯を当てる音）を選んでください", options: ["ㄈ", "ㄇ", "ㄅ", "ㄆ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄚ", speechTarget: "ㄚ", prompt: "再生された音声に当てはまる単母音「a」を選んでください", options: ["ㄚ", "ㄛ", "ㄜ", "ㄝ"] },
+  { id: 6, type: "audio", targetSymbol: "ㄛ", speechTarget: "ㄛ", prompt: "再生された音声に当てはまる単母音「o」を選んでください", options: ["ㄛ", "ㄚ", "ㄜ", "ㄝ"] },
+  { id: 7, type: "audio", targetSymbol: "ㄜ", speechTarget: "ㄜ", prompt: "再生された音声に当てはまる単母音「e」を選んでください", options: ["ㄜ", "ㄛ", "ㄚ", "ㄝ"] },
+  { id: 8, type: "audio", targetSymbol: "ㄝ", speechTarget: "ㄝ", prompt: "再生された音声に当てはまる単母音「eh」を選んでください", options: ["ㄝ", "ㄜ", "ㄛ", "ㄚ"] },
+  { id: 9, type: "zhuyin-to-word", targetSymbol: "爸爸", speechTarget: "爸爸", prompt: "注音符号「ㄅㄚˋ ㄅㄚ˙」に対応する単語はどれ？", options: ["爸爸", "婆婆", "摸", "八"] },
   {
-    id: 1,
-    type: "audio",
-    targetSymbol: "ㄅ",
-    speechTarget: "ㄅ",
-    prompt: "再生された音声に当てはまる子音（唇音）を選んでください",
-    options: ["ㄅ", "ㄆ", "ㄇ", "ㄈ"]
-  },
-  {
-    id: 2,
-    type: "audio",
-    targetSymbol: "ㄚ",
-    speechTarget: "ㄚ",
-    prompt: "再生された音声に当てはまる単母音を選んでください",
-    options: ["ㄚ", "ㄛ", "ㄜ", "ㄝ"]
-  },
-  {
-    id: 3,
-    type: "zhuyin-to-word",
-    targetSymbol: "爸爸",
-    speechTarget: "爸爸",
-    prompt: "注音符号「ㄅㄚˋ ㄅㄚ˙」に対応する単語はどれ？",
-    options: ["爸爸", "婆婆", "摸", "八"]
-  },
-  {
-    id: 4,
-    type: "word-to-zhuyin",
-    targetSymbol: "ㄆㄛˊ ㄆㄛ˙",
-    speechTarget: "婆婆",
-    optionSpeechMap: {
-      "ㄆㄛˊ ㄆㄛ˙": "婆婆",
-      "ㄅㄚˋ ㄅㄚ˙": "爸爸",
-      "ㄇㄚ": "媽",
-      "ㄈㄚ": "發"
-    },
-    prompt: "単語「婆婆 (pópo / おばあさん)」の正しい注音表記はどれ？",
-    options: ["ㄆㄛˊ ㄆㄛ˙", "ㄅㄚˋ ㄅㄚ˙", "ㄇㄚ", "ㄈㄚ"]
-  },
-  {
-    id: 5,
-    type: "fill-in-blank",
-    targetSymbol: "ㄇ",
-    speechTarget: "摸",
-    prompt: "単語「摸 (mō / 触る)」の注音「 ___ㄛ 」の空欄に入る子音はどれ？",
-    options: ["ㄇ", "ㄅ", "ㄆ", "ㄈ"]
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄆㄛˊ ㄆㄛ˙", speechTarget: "婆婆",
+    optionSpeechMap: { "ㄆㄛˊ ㄆㄛ˙": "婆婆", "ㄅㄚˋ ㄅㄚ˙": "爸爸", "ㄇㄚ": "媽", "ㄈㄚ": "發" },
+    prompt: "単語「婆婆 (pópo / おばあさん)」の正しい注音表記はどれ？", options: ["ㄆㄛˊ ㄆㄛ˙", "ㄅㄚˋ ㄅㄚ˙", "ㄇㄚ", "ㄈㄚ"]
   }
 ];
 
-// 1-2 確認クイズ (既習の16文字限定・未学習文字ゼロ)
+// 1-2 確認クイズ (全8文字・主要単語100%カバー・全10問)
 window.VOWELS_QUIZ_QUESTIONS_2 = [
+  { id: 1, type: "audio", targetSymbol: "ㄉ", speechTarget: "ㄉ", prompt: "再生された音声に当てはまる無気舌尖音を選んでください", options: ["ㄉ", "ㄊ", "ㄋ", "ㄌ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄊ", speechTarget: "ㄊ", prompt: "再生された音声に当てはまる有気舌尖音（強い息）を選んでください", options: ["ㄊ", "ㄉ", "ㄋ", "ㄌ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄋ", speechTarget: "ㄋ", prompt: "再生された音声に当てはまる鼻音舌尖音を選んでください", options: ["ㄋ", "ㄌ", "ㄉ", "ㄊ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄌ", speechTarget: "ㄌ", prompt: "再生された音声に当てはまる辺音舌尖音（ラ行の音）を選んでください", options: ["ㄌ", "ㄋ", "ㄉ", "ㄊ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄞ", speechTarget: "ㄞ", prompt: "再生された音声に当てはまる二重母音「ai」を選んでください", options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"] },
+  { id: 6, type: "audio", targetSymbol: "ㄟ", speechTarget: "ㄟ", prompt: "再生された音声に当てはまる二重母音「ei」を選んでください", options: ["ㄟ", "ㄞ", "ㄠ", "ㄡ"] },
+  { id: 7, type: "audio", targetSymbol: "ㄠ", speechTarget: "ㄠ", prompt: "再生された音声に当てはまる二重母音「ao」を選んでください", options: ["ㄠ", "ㄡ", "ㄞ", "ㄟ"] },
+  { id: 8, type: "audio", targetSymbol: "ㄡ", speechTarget: "ㄡ", prompt: "再生された音声に当てはまる二重母音「ou」を選んでください", options: ["ㄡ", "ㄠ", "ㄞ", "ㄟ"] },
+  { id: 9, type: "zhuyin-to-word", targetSymbol: "大", speechTarget: "大", prompt: "注音符号「ㄉㄚˋ」に対応する単語はどれ？", options: ["大", "他", "老", "頭"] },
   {
-    id: 1,
-    type: "audio",
-    targetSymbol: "ㄉ",
-    speechTarget: "ㄉ",
-    prompt: "再生された音声に当てはまる無気子音（舌尖音）を選んでください",
-    options: ["ㄉ", "ㄊ", "ㄋ", "ㄌ"]
-  },
-  {
-    id: 2,
-    type: "audio",
-    targetSymbol: "ㄞ",
-    speechTarget: "ㄞ",
-    prompt: "再生された音声に当てはまる二重母音を選んでください",
-    options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"]
-  },
-  {
-    id: 3,
-    type: "zhuyin-to-word",
-    targetSymbol: "大",
-    speechTarget: "大",
-    prompt: "注音符号「ㄉㄚˋ」に対応する単語はどれ？",
-    options: ["大", "他", "老", "頭"]
-  },
-  {
-    id: 4,
-    type: "word-to-zhuyin",
-    targetSymbol: "ㄌㄠˇ",
-    speechTarget: "老",
-    optionSpeechMap: {
-      "ㄌㄠˇ": "老",
-      "ㄉㄚˋ": "大",
-      "ㄊㄡˊ": "頭",
-      "ㄋㄞˇ": "奶"
-    },
-    prompt: "単語「老 (lǎo / 古い・年老いた)」の正しい注音表記はどれ？",
-    options: ["ㄌㄠˇ", "ㄉㄚˋ", "ㄊㄡˊ", "ㄋㄞˇ"]
-  },
-  {
-    id: 5,
-    type: "fill-in-blank",
-    targetSymbol: "ㄊ",
-    speechTarget: "頭",
-    prompt: "単語「頭 (tóu / 頭)」の注音「 ___ㄡˊ 」の空欄に入る有気子音はどれ？",
-    options: ["ㄊ", "ㄉ", "ㄋ", "ㄌ"]
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄌㄠˇ", speechTarget: "老",
+    optionSpeechMap: { "ㄌㄠˇ": "老", "ㄉㄚˋ": "大", "ㄊㄡˊ": "頭", "ㄋㄞˇ": "奶" },
+    prompt: "単語「老 (lǎo / 年老いた)」の正しい注音表記はどれ？", options: ["ㄌㄠˇ", "ㄉㄚˋ", "ㄊㄡˊ", "ㄋㄞˇ"]
   }
 ];
 
-// 1-3 確認クイズ (鼻音・そり舌母音 ㄢ ㄣ ㄤ ㄥ ㄦ)
+// 1-3 確認クイズ (全5文字・主要単語100%カバー・全10問)
 window.VOWELS_QUIZ_QUESTIONS_3 = [
+  { id: 1, type: "audio", targetSymbol: "ㄢ", speechTarget: "ㄢ", prompt: "再生された音声に当てはまる前鼻音「an」を選んでください", options: ["ㄢ", "ㄣ", "ㄤ", "ㄥ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄣ", speechTarget: "ㄣ", prompt: "再生された音声に当てはまる前鼻音「en」を選んでください", options: ["ㄣ", "ㄢ", "ㄤ", "ㄥ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄤ", speechTarget: "ㄤ", prompt: "再生された音声に当てはまる後鼻音「ang」を選んでください", options: ["ㄤ", "ㄥ", "ㄢ", "ㄣ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄥ", speechTarget: "ㄥ", prompt: "再生された音声に当てはまる後鼻音「eng」を選んでください", options: ["ㄥ", "ㄤ", "ㄢ", "ㄣ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄦ", speechTarget: "ㄦ", prompt: "再生された音声に当てはまるそり舌母音「er」を選んでください", options: ["ㄦ", "ㄢ", "ㄣ", "ㄤ"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "羊", speechTarget: "羊", prompt: "注音符号「ㄧㄤˊ」に対応する単語はどれ？", options: ["羊", "山", "人", "門"] },
   {
-    id: 1,
-    type: "audio",
-    targetSymbol: "ㄢ",
-    speechTarget: "ㄢ",
-    prompt: "再生された音声に当てはまる前鼻音（-n 響き）を選んでください",
-    options: ["ㄢ", "ㄣ", "ㄤ", "ㄥ"]
+    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄇㄣˊ", speechTarget: "門",
+    optionSpeechMap: { "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊", "ㄦˊ ㄗ˙": "兒子" },
+    prompt: "単語「門 (mén / ドア)」の正しい注音表記はどれ？", options: ["ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ", "ㄦˊ ㄗ˙"]
   },
-  {
-    id: 2,
-    type: "audio",
-    targetSymbol: "ㄦ",
-    speechTarget: "ㄦ",
-    prompt: "再生された音声に当てはまるそり舌母音（舌を巻き上げる音）を選んでください",
-    options: ["ㄦ", "ㄢ", "ㄣ", "ㄤ"]
-  },
-  {
-    id: 3,
-    type: "zhuyin-to-word",
-    targetSymbol: "羊",
-    speechTarget: "羊",
-    prompt: "注音符号「ㄧㄤˊ」に対応する単語はどれ？",
-    options: ["羊", "山", "人", "門"]
-  },
-  {
-    id: 4,
-    type: "word-to-zhuyin",
-    targetSymbol: "ㄇㄣˊ",
-    speechTarget: "門",
-    optionSpeechMap: {
-      "ㄇㄣˊ": "門",
-      "ㄕㄢ": "山",
-      "ㄧㄤˊ": "羊",
-      "ㄦˊ ㄗ˙": "兒子"
-    },
-    prompt: "単語「門 (mén / ドア・門)」の正しい注音表記はどれ？",
-    options: ["ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ", "ㄦˊ ㄗ˙"]
-  },
-  {
-    id: 5,
-    type: "fill-in-blank",
-    targetSymbol: "ㄤ",
-    speechTarget: "羊",
-    prompt: "単語「羊 (yáng / ヒツジ)」の注音「 ㄧ___ˊ 」の空欄に入る後鼻音（-ng 響き）はどれ？",
-    options: ["ㄤ", "ㄢ", "ㄣ", "ㄥ"]
-  }
+  { id: 8, type: "zhuyin-to-word", targetSymbol: "山", speechTarget: "山", prompt: "注音符号「ㄕㄢ」に対応する単語はどれ？", options: ["山", "羊", "人", "門"] },
+  { id: 9, type: "zhuyin-to-word", targetSymbol: "人", speechTarget: "人", prompt: "注音符号「ㄖㄣˊ」に対応する単語はどれ？", options: ["人", "山", "羊", "門"] },
+  { id: 10, type: "fill-in-blank", targetSymbol: "ㄤ", speechTarget: "羊", prompt: "単語「羊 (yáng)」の注音「 ㄧ___ˊ 」の空欄に入る後鼻音はどれ？", options: ["ㄤ", "ㄢ", "ㄣ", "ㄥ"] }
 ];
 
