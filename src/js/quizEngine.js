@@ -109,7 +109,7 @@
       this.history = [];
 
       const quizSection = document.getElementById(this.containerId);
-      const listContainer = document.getElementById('vowel-list-container');
+      const listContainer = document.getElementById('vowel-list-container') || document.getElementById('grammar-list-container');
       const quizCta = document.getElementById('quiz-cta-section');
 
       if (quizSection) {
@@ -433,7 +433,7 @@
 
     closeQuiz() {
       const quizSection = document.getElementById(this.containerId);
-      const listContainer = document.getElementById('vowel-list-container');
+      const listContainer = document.getElementById('vowel-list-container') || document.getElementById('grammar-list-container');
       const quizCta = document.getElementById('quiz-cta-section');
 
       if (quizSection) quizSection.classList.remove('active');

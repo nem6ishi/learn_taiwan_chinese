@@ -19,7 +19,7 @@
   }
 
   function renderGrammarList() {
-    const container = document.getElementById('grammar-list-container');
+    const container = document.getElementById('grammar-list-container') || document.getElementById('vowel-list-container');
     const dataList = window.GRAMMAR_STEP2_1_DATA;
     if (!container || !dataList) return;
 
