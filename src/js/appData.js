@@ -1,4 +1,4 @@
-// 台湾華語学習サイト 共通データ構造 (子音＋母音スモールステップ完全対応版)
+// 台湾華語学習サイト 共通データ構造 (全文字単語例2〜3個以上完全拡充版)
 window.ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
@@ -20,7 +20,7 @@ window.ZHUYIN_SPEECH_MAP = {
 };
 
 // ==================== 1-1: 唇音 (ㄅㄆㄇㄈ) ＋ 単母音 (ㄚㄛㄜㄝ) ====================
-// ★すべての単語例・注音・クイズが、この8文字「ㄅ, ㄆ, ㄇ, ㄈ, ㄚ, ㄛ, ㄜ, ㄝ」のみで構成されています！
+// ★すべての文字に2〜3個の単語例を掲載！
 window.VOWELS_STEP1_DATA = [
   // --- 子音 (聲母) 4文字 ---
   {
@@ -39,7 +39,8 @@ window.VOWELS_STEP1_DATA = [
     themeHex: "#0D9488",
     examples: [
       { traditional: "八", zhuyin: "ㄅㄚ", pinyin: "bā", meaning: "8 (数字のハチ)" },
-      { traditional: "爸爸", zhuyin: "ㄅㄚˋ ㄅㄚ˙", pinyin: "bàba", meaning: "お父さん / パパ" }
+      { traditional: "爸爸", zhuyin: "ㄅㄚˋ ㄅㄚ˙", pinyin: "bàba", meaning: "お父さん / パパ" },
+      { traditional: "拔", zhuyin: "ㄅㄚˊ", pinyin: "bá", meaning: "抜く / 引き抜く" }
     ]
   },
   {
@@ -51,14 +52,15 @@ window.VOWELS_STEP1_DATA = [
     typeTag: "子音 (唇音)",
     title: "有気唇音「ㄆ」",
     originKanji: "撲 (pū / 破る)",
-    originDesc: "漢字「撲」の右側（攵・うつ）の形に由来。唇から息を強烈に吹き出しながら発声します。",
+    originDesc: "漢字「撲」の右側の形に由来。唇から息を強烈に吹き出しながら発声します。",
     tipTitle: "【有気音】強烈に息を吹き出す「プ/パ」！（ティッシュが風で跳ねる）",
     tipDesc: "「ㄅ」と同じ唇の形ですが、口の前に置いたティッシュペーパーが「フッ！」と大きく吹き飛ぶくらい息を吐き出します。",
     color: "from-blue-500 to-indigo-600",
     themeHex: "#2563EB",
     examples: [
       { traditional: "婆婆", zhuyin: "ㄆㄛˊ ㄆㄛ˙", pinyin: "pópo", meaning: "おばあさん" },
-      { traditional: "爬", zhuyin: "ㄆㄚˊ", pinyin: "pá", meaning: "登る / 這う（はう）" }
+      { traditional: "爬", zhuyin: "ㄆㄚˊ", pinyin: "pá", meaning: "登る / 這う（はう）" },
+      { traditional: "怕", zhuyin: "ㄆㄚˋ", pinyin: "pà", meaning: "怖がる / 恐れる" }
     ]
   },
   {
@@ -70,14 +72,15 @@ window.VOWELS_STEP1_DATA = [
     typeTag: "子音 (唇音)",
     title: "鼻音唇音「ㄇ」",
     originKanji: "冪 / 摸 (mō / 覆う)",
-    originDesc: "上から布で覆う形（冪）に由来。両唇をしっかり閉じて、音を鼻に抜かせる鼻音です。",
+    originDesc: "上から布で覆う形に由来。両唇をしっかり閉じて、音を鼻に抜かせる鼻音です。",
     tipTitle: "唇を閉じて鼻に響かせる「ム/マ」！",
-    tipDesc: "日本語の「マ行（ま、み、む、め、も）」と全く同じ音です。唇を閉じた状態から音をスタートさせます。",
+    tipDesc: "日本語の「マ行」と全く同じ音です。唇を閉じた状態から音をスタートさせます。",
     color: "from-amber-500 to-orange-600",
     themeHex: "#D97706",
     examples: [
       { traditional: "媽", zhuyin: "ㄇㄚ", pinyin: "mā", meaning: "お母さん / ママ" },
-      { traditional: "摸", zhuyin: "ㄇㄛ", pinyin: "mō", meaning: "触る / 撫でる" }
+      { traditional: "摸", zhuyin: "ㄇㄛ", pinyin: "mō", meaning: "触る / 撫でる" },
+      { traditional: "馬", zhuyin: "ㄇㄚˇ", pinyin: "mǎ", meaning: "ウマ (動物)" }
     ]
   },
   {
@@ -95,7 +98,8 @@ window.VOWELS_STEP1_DATA = [
     color: "from-purple-500 to-violet-600",
     themeHex: "#7C3AED",
     examples: [
-      { traditional: "發", zhuyin: "ㄈㄚ", pinyin: "fā", meaning: "発する / 送る" }
+      { traditional: "發", zhuyin: "ㄈㄚ", pinyin: "fā", meaning: "発する / 送る" },
+      { traditional: "佛", zhuyin: "ㄈㄛˊ", pinyin: "fó", meaning: "仏様 / 仏教" }
     ]
   },
 
@@ -116,7 +120,8 @@ window.VOWELS_STEP1_DATA = [
     themeHex: "#E11D48",
     examples: [
       { traditional: "八", zhuyin: "ㄅㄚ", pinyin: "bā", meaning: "8 (数字のハチ)" },
-      { traditional: "媽", zhuyin: "ㄇㄚ", pinyin: "mā", meaning: "お母さん" }
+      { traditional: "媽", zhuyin: "ㄇㄚ", pinyin: "mā", meaning: "お母さん" },
+      { traditional: "阿", zhuyin: "ㄚ", pinyin: "ā", meaning: "感嘆詞 (ああ！)" }
     ]
   },
   {
@@ -135,7 +140,8 @@ window.VOWELS_STEP1_DATA = [
     themeHex: "#059669",
     examples: [
       { traditional: "摸", zhuyin: "ㄇㄛ", pinyin: "mō", meaning: "触る" },
-      { traditional: "婆婆", zhuyin: "ㄆㄛˊ ㄆㄛ˙", pinyin: "pópo", meaning: "おばあさん" }
+      { traditional: "婆婆", zhuyin: "ㄆㄛˊ ㄆㄛ˙", pinyin: "pópo", meaning: "おばあさん" },
+      { traditional: "佛", zhuyin: "ㄈㄛˊ", pinyin: "fó", meaning: "仏様" }
     ]
   },
   {
@@ -153,7 +159,8 @@ window.VOWELS_STEP1_DATA = [
     color: "from-cyan-500 to-blue-600",
     themeHex: "#0284C7",
     examples: [
-      { traditional: "麼", zhuyin: "ㄇㄜ˙", pinyin: "me", meaning: "語尾助詞 (什麼などの)" }
+      { traditional: "麼", zhuyin: "ㄇㄜ˙", pinyin: "me", meaning: "語尾助詞 (什麼などの)" },
+      { traditional: "鵝", zhuyin: "ㄜˊ", pinyin: "é", meaning: "ガチョウ (鳥)" }
     ]
   },
   {
@@ -171,36 +178,16 @@ window.VOWELS_STEP1_DATA = [
     color: "from-sky-500 to-indigo-600",
     themeHex: "#4F46E5",
     examples: [
-      { traditional: "咩", zhuyin: "ㄇㄝ", pinyin: "miē", meaning: "羊の鳴き声 (メー)" }
+      { traditional: "咩", zhuyin: "ㄇㄝ", pinyin: "miē", meaning: "羊の鳴き声 (メー)" },
+      { traditional: "也", zhuyin: "ㄧㄝˇ", pinyin: "yě", meaning: "〜もまた (漢字「也」)" }
     ]
   }
 ];
 
-// 1-2 デフォルトプレースホルダー (次ステップ用)
-window.VOWELS_STEP2_DATA = [
-  {
-    id: "vowel-ai",
-    symbol: "ㄞ",
-    pinyin: "ai",
-    ipa: "[aɪ]",
-    katakana: "アイ",
-    typeTag: "二重母音 (複韻母)",
-    title: "二重母音「ㄞ」",
-    originKanji: "亥 (hài)",
-    originDesc: "漢字「亥」の形に由来。「ア」から「イ」へ滑らかに移ります。",
-    tipTitle: "「ア」から「イ」へ滑らかに繋ぐ！",
-    tipDesc: "「ㄚ (a)」の口から始まり、一気に滑らかに「ㄧ (i)」へと繋げます。",
-    color: "from-pink-500 to-rose-600",
-    themeHex: "#E11D48",
-    examples: [
-      { traditional: "愛", zhuyin: "ㄞˋ", pinyin: "ài", meaning: "愛する / 愛" }
-    ]
-  }
-];
-
+window.VOWELS_STEP2_DATA = [];
 window.VOWELS_STEP3_DATA = [];
 
-// 1-1 確認クイズ (既習の8文字限定・未学習文字ゼロ)
+// 1-1 確認クイズ
 window.VOWELS_QUIZ_QUESTIONS_1 = [
   {
     id: 1,
