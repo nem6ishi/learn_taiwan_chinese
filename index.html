@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>注音ナビ | 台湾中国語（繁体字）ポータル</title>
-  <meta name="description" content="台湾で使われている注音符号（ㄅㄆㄇㄈ）を1-1, 1-2の番号順に学べるステップバイステップ学習ポータル。">
+  <title>注音ナビ | 台湾中国語（繁体字）総合学習ポータル</title>
+  <meta name="description" content="注音符号（ㄅㄆㄇㄈ）から基本会話・旅行実践・基礎文法・TOCFL検定対策まで体系的に学べる台湾華語ポータル。">
   <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
@@ -16,13 +16,12 @@
         <span class="logo-badge">ㄅ</span>
         <span>注音ナビ</span>
       </a>
-      <div style="display: flex; gap: 10px;">
-        <a href="zhuyin-vowels-1.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 6px 12px;">
-          1-1: 単母音
-        </a>
-        <a href="zhuyin-vowels-2.html" class="btn btn-primary" style="font-size: 0.85rem; padding: 6px 12px;">
-          1-2: 二重母音 →
-        </a>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="#section-zhuyin" class="btn btn-outline" style="font-size: 0.8rem; padding: 4px 10px;">1. 注音符号</a>
+        <a href="#section-phrases" class="btn btn-outline" style="font-size: 0.8rem; padding: 4px 10px;">2. 基本挨拶</a>
+        <a href="#section-travel" class="btn btn-outline" style="font-size: 0.8rem; padding: 4px 10px;">3. 旅行実践</a>
+        <a href="#section-grammar" class="btn btn-outline" style="font-size: 0.8rem; padding: 4px 10px;">4. 基礎文法</a>
+        <a href="#section-tocfl" class="btn btn-outline" style="font-size: 0.8rem; padding: 4px 10px;">5. TOCFL検定</a>
       </div>
     </div>
   </nav>
@@ -30,13 +29,16 @@
   <!-- ヒーローセクション -->
   <header class="hero">
     <div class="container">
+      <span class="step-badge" style="background: var(--color-primary-light); color: var(--color-primary); font-size: 0.85rem; padding: 4px 12px; margin-bottom: 12px; display: inline-block;">
+        台湾華語 総合学習ポータル
+      </span>
       <h1 class="hero-title">
-        1. 注音符号（ㄅㄆㄇㄈ）から始める<br>台湾華語
+        注音符号（ㄅㄆㄇㄈ）から広がる<br>台湾華語の世界
       </h1>
       <p class="hero-subtitle">
-        台湾現地で使われている正しい発音と繁体字を、体系的なナンバリング順（1-1 〜 1-9）に沿ってシンプル＆着実にマスター。
+        発音の基礎から、日常の挨拶・旅行での注文・文法・TOCFL検定対策まで、5つのステップで着実にマスター。
       </p>
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
         <a href="zhuyin-vowels-1.html" class="btn btn-primary" style="padding: 12px 24px; font-size: 1rem;">
           🔊 1-1：単母音（ㄚ ㄛ ㄜ ㄝ）
         </a>
@@ -50,9 +52,9 @@
   <!-- お試し発音セクション -->
   <section class="try-section">
     <div class="container">
-      <h2 class="section-heading">1. 注音符号（母音8文字）を発音テスト</h2>
+      <h2 class="section-heading">注音符号（母音8文字）発音テスト</h2>
       <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-        カードをタップすると標準台湾華語の音声が再生されます
+        カードをタップすると標準台湾華語（Google TTS）の音声が再生されます
       </p>
       <div class="vowel-demo-grid" id="vowel-demo-grid">
         <!-- JSで8文字分を動的生成 -->
@@ -60,81 +62,262 @@
     </div>
   </section>
 
-  <!-- 系統別学習ロードマップ -->
-  <section class="roadmap-section">
-    <div class="container">
-      <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">1. 注音符号 学習ロードマップ</h2>
+  <!-- 全5大カテゴリー・学習ロードマップ -->
+  <main class="container" style="padding-bottom: 60px;">
 
-      <!-- 1-1 (単母音) -->
-      <div class="step-card">
-        <div>
-          <span class="step-badge">STEP 1-1 ・ 今すぐ学べる！</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">基本の単母音（4文字）</h3>
-          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            口の形が変わらない純粋な単母音：ㄚ (a), ㄛ (o), ㄜ (e), ㄝ (eh)
-          </p>
-        </div>
-        <a href="zhuyin-vowels-1.html" class="btn btn-outline" style="white-space: nowrap;">
-          1-1 を開始する →
-        </a>
+    <!-- ==================== 大項目 1 ==================== -->
+    <section id="section-zhuyin" style="margin-bottom: 48px;">
+      <div style="border-bottom: 2px solid var(--color-primary); padding-bottom: 8px; margin-bottom: 20px;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">CATEGORY 01</span>
+        <h2 style="font-size: 1.6rem; font-weight: 900;">1. 注音符号（ㄅㄆㄇㄈ / Bopomofo）完全マスター</h2>
       </div>
 
-      <!-- 1-2 (二重母音) -->
-      <div class="step-card">
-        <div>
-          <span class="step-badge">STEP 1-2 ・ 今すぐ学べる！</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">二重母音 / 複韻母（4文字）</h3>
-          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            発音の途中で口の形が変化する複合母音：ㄞ (ai), ㄟ (ei), ㄠ (ao), ㄡ (ou)
-          </p>
+      <div class="roadmap-grid" style="display: flex; flex-direction: column; gap: 16px;">
+        <!-- 1-1 -->
+        <div class="step-card">
+          <div>
+            <span class="step-badge">STEP 1-1 ・ 今すぐ学べる！</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">基本の単母音（4文字）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              口の形が変わらない純粋な単母音：ㄚ (a), ㄛ (o), ㄜ (e), ㄝ (eh)
+            </p>
+          </div>
+          <a href="zhuyin-vowels-1.html" class="btn btn-outline" style="white-space: nowrap;">
+            1-1 を学ぶ →
+          </a>
         </div>
-        <a href="zhuyin-vowels-2.html" class="btn btn-outline" style="white-space: nowrap;">
-          1-2 を開始する →
-        </a>
+
+        <!-- 1-2 -->
+        <div class="step-card">
+          <div>
+            <span class="step-badge">STEP 1-2 ・ 今すぐ学べる！</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">二重母音 / 複韻母（4文字）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              発音の途中で口の形が変化する複合母音：ㄞ (ai), ㄟ (ei), ㄠ (ao), ㄡ (ou)
+            </p>
+          </div>
+          <a href="zhuyin-vowels-2.html" class="btn btn-outline" style="white-space: nowrap;">
+            1-2 を学ぶ →
+          </a>
+        </div>
+
+        <!-- 1-3 -->
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-3 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">鼻音 ＆ そり舌母音（5文字）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              鼻に抜ける音（an, en, ang, eng）と巻舌音（er）：ㄢ, ㄣ, ㄤ, ㄥ, ㄦ
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <!-- 1-4 -->
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-4 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">介音 / 介母（3文字）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              音を結びつける超主要母音：ㄧ (i), ㄨ (u), ㄩ (ü)
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <!-- 1-5〜1-8 -->
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-5〜1-8 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">子音（聲母 21文字）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              唇音（ㄅㄆㄇㄈ）/ 舌尖・舌根（ㄉㄊㄋㄌㄍㄎㄏ）/ 舌面（ㄐㄑㄒㄗㄘㄙ）/ 捲舌（ㄓㄔㄕㄖ）
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <!-- 1-9 -->
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-9 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">台湾華語の5つの声調マスター</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              一聲〜五聲（輕聲）のピッチ変化と音の結合練習
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 大項目 2 ==================== -->
+    <section id="section-phrases" style="margin-bottom: 48px;">
+      <div style="border-bottom: 2px solid #0D9488; padding-bottom: 8px; margin-bottom: 20px;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #0D9488;">CATEGORY 02</span>
+        <h2 style="font-size: 1.6rem; font-weight: 900;">2. 台湾の超基本挨拶 ＆ 応答表現</h2>
       </div>
 
-      <!-- 1-3 (鼻音・そり舌) -->
-      <div class="step-card" style="opacity: 0.6;">
-        <div>
-          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-3 ・ 準備中</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">鼻音 ＆ そり舌母音（5文字）</h3>
-          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            鼻に抜ける音（an, en, ang, eng）と巻舌音（er）：ㄢ, ㄣ, ㄤ, ㄥ, ㄦ
-          </p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 2-1 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">挨拶・感謝・謝罪</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              你好, 謝謝, 不客氣, 對不起, 不好意思
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
         </div>
-        <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 2-2 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">台湾人のリアルな相槌・返事</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              對, 好, 沒問題, 真的嗎, 是喔
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 2-3 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">意思表示（肯定・否定）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              要 / 不要（要る・要らない）, 有 / 沒有（ある・ない）
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 大項目 3 ==================== -->
+    <section id="section-travel" style="margin-bottom: 48px;">
+      <div style="border-bottom: 2px solid #D97706; padding-bottom: 8px; margin-bottom: 20px;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #D97706;">CATEGORY 03</span>
+        <h2 style="font-size: 1.6rem; font-weight: 900;">3. 台湾旅行・夜市・カフェ実践フレーズ</h2>
       </div>
 
-      <!-- 1-4 (介音) -->
-      <div class="step-card" style="opacity: 0.6;">
-        <div>
-          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-4 ・ 準備中</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">介音 / 介母（3文字）</h3>
-          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            音を結びつける超主要母音：ㄧ (i), ㄨ (u), ㄩ (ü)
-          </p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 3-1 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">注文・グルメ指定</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              我要這個, 內用 / 外帶, 甜度・冰塊（甘さ・氷の調整）
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
         </div>
-        <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 3-2 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">買い物・お会計</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              多少錢？, 結帳, 刷卡 / 現金
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 3-3 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">移動・道案内</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              請問... 在哪裡？, 謝謝司機
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 大項目 4 ==================== -->
+    <section id="section-grammar" style="margin-bottom: 48px;">
+      <div style="border-bottom: 2px solid #7C3AED; padding-bottom: 8px; margin-bottom: 20px;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #7C3AED;">CATEGORY 04</span>
+        <h2 style="font-size: 1.6rem; font-weight: 900;">4. 台湾華語の基礎文法 ＆ 常用繁体字</h2>
       </div>
 
-      <!-- 1-5〜1-8 (子音) -->
-      <div class="step-card" style="opacity: 0.6;">
-        <div>
-          <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 1-5〜1-8 ・ 準備中</span>
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">子音（聲母 21文字）</h3>
-          <p style="color: var(--color-text-muted); font-size: 0.9rem;">
-            1-5 唇音 (ㄅㄆㄇㄈ) / 1-6 舌尖音・舌根音 (ㄉㄊㄋㄌㄍㄎㄏ) / 1-7 舌面音 (ㄐㄑㄒㄗㄘㄙ) / 1-8 捲舌音 (ㄓㄔㄕㄖ)
-          </p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 4-1 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">基本語順（S + V + O）</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              日本語との語順の違い、時間の置き場所
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
         </div>
-        <button class="btn btn-outline" disabled style="cursor: not-allowed;">準備中</button>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 4-2 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">疑問文の作り方</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              嗎, 什麼, 哪裡, 誰
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 4-3 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">台湾語尾ニュアンス</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              啦 (la), 喔 (o), 吧 (ba), 耶 (ye)
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ==================== 大項目 5 ==================== -->
+    <section id="section-tocfl">
+      <div style="border-bottom: 2px solid #E11D48; padding-bottom: 8px; margin-bottom: 20px;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #E11D48;">CATEGORY 05</span>
+        <h2 style="font-size: 1.6rem; font-weight: 900;">5. 台湾華語能力試験（TOCFL Band A）対策</h2>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 5-1 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">TOCFL 準備級（Band A1）必須単語 100選</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              検定合格に必要な最重要単語と注音・ピンイン
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+
+        <div class="step-card" style="opacity: 0.6;">
+          <div>
+            <span class="step-badge" style="background: #E2E8F0; color: #64748B;">STEP 5-2 ・ 準備中</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;">総合実戦リスニング ＆ 注音テスト</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem;">
+              本番形式の音声リスニングと注音選択テスト
+            </p>
+          </div>
+          <button class="btn btn-outline" disabled style="cursor: not-allowed;">順次公開</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- フッター -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 注音ナビ - 台湾中国語学習</p>
+      <p>© 2026 注音ナビ - 台湾中国語学習ポータル</p>
     </div>
   </footer>
 
