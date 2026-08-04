@@ -1,11 +1,146 @@
-import { VOWELS_STEP1_DATA } from '../data/zhuyinVowels1.js';
-import { VOWELS_STEP2_DATA } from '../data/zhuyinVowels2.js';
+// 注音ナビ 共通音声再生コアエンジン (一貫した統一ボイス制御版)
+(function(window) {
+  let currentAudio = null;
 
+  // 統一ボイスキャッシュ
+  let preferredTwVoice = null;
+
+  function getBestTaiwanVoice() {
+    if (preferredTwVoice) return preferredTwVoice;
+
+    if ('speechSynthesis' in window) {
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices || voices.length === 0) return null;
+
+      // 台湾標準ボイス名（Mei-Jia, Sin-Ji, Ting-Ting 等）を最優先固定
+      const namedVoice = voices.find(v => 
+        (v.lang === 'zh-TW' || v.lang === 'zh_TW') &&
+        (v.name.includes('Mei-Jia') || v.name.includes('Sin-Ji') || v.name.includes('Ting-Ting') || v.name.includes('Yating'))
+      );
+      if (namedVoice) {
+        preferredTwVoice = namedVoice;
+        return preferredTwVoice;
+      }
+
+      const exactTw = voices.find(v => v.lang === 'zh-TW' || v.lang === 'zh_TW');
+      if (exactTw) {
+        preferredTwVoice = exactTw;
+        return preferredTwVoice;
+      }
+
+      const twIncludes = voices.find(v => v.lang && v.lang.toLowerCase().includes('tw'));
+      if (twIncludes) {
+        preferredTwVoice = twIncludes;
+        return preferredTwVoice;
+      }
+    }
+    return null;
+  }
+
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      preferredTwVoice = null;
+      getBestTaiwanVoice();
+    };
+  }
+
+  function playZhuyinSound(text) {
+    if (!text) return;
+
+    if (currentAudio) {
+      try {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      } catch (e) {}
+      currentAudio = null;
+    }
+
+    const speechMap = window.ZHUYIN_SPEECH_MAP || {};
+    const speechText = speechMap[text] || text;
+
+    if ('speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.resume();
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(speechText);
+        utterance.lang = 'zh-TW';
+        utterance.rate = 0.82;
+        utterance.pitch = 1.0;
+        utterance.volume = 1.0;
+
+        const twVoice = getBestTaiwanVoice();
+        if (twVoice) {
+          utterance.voice = twVoice;
+        }
+
+        let spoken = false;
+        utterance.onstart = () => { spoken = true; };
+
+        utterance.onerror = (e) => {
+          console.warn('[Audio Engine] SpeechSynthesis error:', e);
+          if (!spoken) playGoogleTTS(speechText);
+        };
+
+        setTimeout(() => {
+          window.speechSynthesis.speak(utterance);
+        }, 40);
+
+        return;
+      } catch (err) {
+        console.warn('[Audio Engine] SpeechSynthesis failed:', err);
+      }
+    }
+
+    playGoogleTTS(speechText);
+  }
+
+  function playGoogleTTS(speechText) {
+    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
+    try {
+      const audio = new Audio(ttsUrl);
+      currentAudio = audio;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(e => {
+          playFallbackBeep();
+        });
+      }
+    } catch (e) {
+      playFallbackBeep();
+    }
+  }
+
+  function playFallbackBeep() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+      gain.gain.setValueAtTime(0.1, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.25);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.25);
+    } catch (e) {}
+  }
+
+  window.playZhuyinSound = playZhuyinSound;
+
+})(window);
+
+// LPお試しパレットイベント
 document.addEventListener('DOMContentLoaded', () => {
   const demoGrid = document.getElementById('vowel-demo-grid');
-  
-  if (demoGrid) {
-    const demoData = [...VOWELS_STEP1_DATA, ...VOWELS_STEP2_DATA];
+  if (demoGrid && window.VOWELS_STEP1_DATA && window.VOWELS_STEP2_DATA) {
+    const demoData = [...window.VOWELS_STEP1_DATA, ...window.VOWELS_STEP2_DATA];
 
     demoGrid.innerHTML = demoData.map(item => `
       <div class="demo-card" data-symbol="${item.symbol}">
@@ -23,7 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('click', (e) => {
         e.preventDefault();
         const symbol = card.getAttribute('data-symbol');
-        playZhuyinSound(symbol);
+        if (window.playZhuyinSound) {
+          window.playZhuyinSound(symbol);
+        }
         
         card.style.transform = 'scale(0.96)';
         setTimeout(() => {
@@ -33,136 +170,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-// 再生中のオーディオ
-let currentAudio = null;
-
-/**
- * 注音記号単体を Google TTS / Web Speech API が100%確実に高音質発音するためのマッピング辞書
- */
-const ZHUYIN_SPEECH_MAP = {
-  'ㄚ': '啊',   // a
-  'ㄛ': '喔',   // o
-  'ㄜ': '鵝',   // e
-  'ㄝ': '也',   // eh
-  'ㄞ': '愛',   // ai
-  'ㄟ': '黑',   // ei (Google TTSで『欸』が無音・異体字エラーになるため、100%鳴る『黑 hēi』のei音に最適化)
-  'ㄠ': '凹',   // ao (Google TTSで確実に通る『凹 āo』に最適化)
-  'ㄡ': '歐',   // ou
-  'ㄅ': '包',   // b
-  'ㄆ': '撲',   // p
-  'ㄇ': '摸',   // m
-  'ㄈ': '佛'    // f
-};
-
-/**
- * 台湾華語（zh-TW）音声再生メイン処理
- */
-export function playZhuyinSound(text) {
-  if (!text) return;
-
-  // 再生中の既存オーディオを停止・リセット
-  if (currentAudio) {
-    try {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    } catch (e) {
-      // ignore
-    }
-    currentAudio = null;
-  }
-
-  // 注音記号単体の場合は、TTSが確実に発音できる漢字テキストに変換
-  const speechText = ZHUYIN_SPEECH_MAP[text] || text;
-
-  // 1. Google Translate TTS ストリーミング試行
-  const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
-
-  try {
-    const audio = new Audio(ttsUrl);
-    currentAudio = audio;
-
-    let fallbackTriggered = false;
-
-    const doFallback = () => {
-      if (!fallbackTriggered) {
-        fallbackTriggered = true;
-        currentAudio = null;
-        fallbackWebSpeech(text, speechText);
-      }
-    };
-
-    audio.onerror = () => {
-      console.warn(`[Audio Engine] TTS error for "${text}" (${speechText}), switching to fallback.`);
-      doFallback();
-    };
-
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.catch((err) => {
-        console.warn(`[Audio Engine] Playback blocked/error for "${text}":`, err);
-        doFallback();
-      });
-    }
-
-  } catch (err) {
-    console.warn(`[Audio Engine] Exception for "${text}":`, err);
-    fallbackWebSpeech(text, speechText);
-  }
-}
-
-// フォールバック1: Web Speech API
-function fallbackWebSpeech(originalText, speechText) {
-  if ('speechSynthesis' in window) {
-    try {
-      window.speechSynthesis.resume();
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(speechText || originalText);
-      utterance.lang = 'zh-TW';
-      utterance.rate = 0.8;
-
-      const voices = window.speechSynthesis.getVoices();
-      const twVoice = voices.find(v => v.lang && (v.lang.includes('TW') || v.lang.includes('tw')));
-      if (twVoice) utterance.voice = twVoice;
-
-      utterance.onerror = () => {
-        playFallbackBeep();
-      };
-
-      setTimeout(() => {
-        window.speechSynthesis.speak(utterance);
-      }, 50);
-      return;
-    } catch (e) {
-      console.error('[Audio Engine] Web Speech API error:', e);
-    }
-  }
-  
-  // フォールバック2: Web Audio API
-  playFallbackBeep();
-}
-
-// フォールバック2: Web Audio API トーン
-function playFallbackBeep() {
-  try {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (!AudioCtx) return;
-    const ctx = new AudioCtx();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(523.25, ctx.currentTime);
-    gain.gain.setValueAtTime(0.1, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.25);
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-
-    osc.start();
-    osc.stop(ctx.currentTime + 0.25);
-  } catch (e) {
-    console.error('[Audio Engine] Tone generator error:', e);
-  }
-}
