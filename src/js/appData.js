@@ -1,4 +1,4 @@
-// 注音ナビ 共通データ構造 (完全静的スタンドアロン対応)
+// 台湾華語学習サイト 共通データ構造 (1-1, 1-2, 1-3 対応)
 window.ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
@@ -8,6 +8,11 @@ window.ZHUYIN_SPEECH_MAP = {
   'ㄟ': '黑',   // ei
   'ㄠ': '凹',   // ao
   'ㄡ': '歐',   // ou
+  'ㄢ': '安',   // an
+  'ㄣ': '恩',   // en
+  'ㄤ': '昂',   // ang
+  'ㄥ': '鞥',   // eng
+  'ㄦ': '二',   // er
   'ㄅ': '包',   // b
   'ㄆ': '撲',   // p
   'ㄇ': '摸',   // m
@@ -180,6 +185,109 @@ window.VOWELS_STEP2_DATA = [
   }
 ];
 
+window.VOWELS_STEP3_DATA = [
+  {
+    id: "vowel-an",
+    symbol: "ㄢ",
+    pinyin: "an",
+    ipa: "[an]",
+    katakana: "アン（前鼻音）",
+    typeTag: "鼻音・附聲韻",
+    title: "前鼻音「ㄢ」",
+    originKanji: "屳 (xiān / 仙人)",
+    originDesc: "漢字「屳」の形に由来。「ア」を発音したあと、舌先を上の前歯の裏に押し当てて「ン」と抜く音です。",
+    tipTitle: "「ア」＋ 舌先を前歯の裏につける「ン」！",
+    tipDesc: "日本語の「案内（あんない）」の「あん」と同じ口の動きです。舌先を上の前歯の裏にペタッとつけて音を止めます。",
+    color: "from-teal-500 to-cyan-600",
+    themeHex: "#0891B2",
+    examples: [
+      { traditional: "臺灣", zhuyin: "ㄊㄞˊ ㄨㄢ", pinyin: "Táiwān", meaning: "台湾" },
+      { traditional: "飯店", zhuyin: "ㄈㄢˋ ㄉㄧㄢˋ", pinyin: "fàndiàn", meaning: "ホテル / レストラン" },
+      { traditional: "巴士", zhuyin: "ㄅㄚ ㄕˋ", pinyin: "bāshì", meaning: "バス" }
+    ]
+  },
+  {
+    id: "vowel-en",
+    symbol: "ㄣ",
+    pinyin: "en",
+    ipa: "[ən]",
+    katakana: "エン / アン（前鼻音）",
+    typeTag: "鼻音・附聲韻",
+    title: "前鼻音「ㄣ」",
+    originKanji: "隱の古字原形",
+    originDesc: "漢字「隱」の古字・原形に由来。曖昧な「エ/ア」から始まって、舌先を前歯の裏につける音です。",
+    tipTitle: "曖昧な口から前歯の裏へ「ン」！",
+    tipDesc: "口を大きく開けず、力を抜いた曖昧な「エ/ア」の音からスタートし、最後は「ㄢ」と同じく舌先を前歯の裏につけます。",
+    color: "from-blue-500 to-indigo-600",
+    themeHex: "#2563EB",
+    examples: [
+      { traditional: "身體", zhuyin: "ㄕㄣ ㄊㄧˇ", pinyin: "shēntǐ", meaning: "身体 / 体" },
+      { traditional: "朋友", zhuyin: "ㄆㄥˊ ㄧㄡˇ", pinyin: "péngyǒu", meaning: "友達" },
+      { traditional: "門", zhuyin: "ㄇㄣˊ", pinyin: "mén", meaning: "ドア / 門" }
+    ]
+  },
+  {
+    id: "vowel-ang",
+    symbol: "ㄤ",
+    pinyin: "ang",
+    ipa: "[ɑŋ]",
+    katakana: "アング（後鼻音）",
+    typeTag: "鼻音・附聲韻",
+    title: "後鼻音「ㄤ」",
+    originKanji: "尢 (wāng / オウ)",
+    originDesc: "漢字「尢」の形に由来。「ア」の口を広く開けたまま、喉の奥をすぼめて響かせる音です。",
+    tipTitle: "口を開けたまま喉の奥で響かせる「アング」！",
+    tipDesc: "日本語の「案外（あんがい）」の「あん」に近い音です。舌先を前歯につけず、口を大きく開けたまま喉の奥を閉じて鼻に抜きます。",
+    color: "from-orange-500 to-amber-600",
+    themeHex: "#D97706",
+    examples: [
+      { traditional: "棒球", zhuyin: "ㄅㄤˋ ㄑㄧㄡˊ", pinyin: "bàngqiú", meaning: "野球" },
+      { traditional: "珍珠", zhuyin: "ㄓㄣ ㄓㄨ", pinyin: "zhēnzhū", meaning: "タピオカ / 真珠" },
+      { traditional: "幫忙", zhuyin: "ㄅㄤ ㄇㄤˊ", pinyin: "bāngmáng", meaning: "手伝う" }
+    ]
+  },
+  {
+    id: "vowel-eng",
+    symbol: "ㄥ",
+    pinyin: "eng",
+    ipa: "[ɤŋ]",
+    katakana: "エング（後鼻音）",
+    typeTag: "鼻音・附聲韻",
+    title: "後鼻音「ㄥ」",
+    originKanji: "肱 (gōng / コウ)",
+    originDesc: "漢字「肱」の原字に由来。喉の奥で響かせる「エング/オング」の音です。",
+    tipTitle: "「ㄜ(e)」の口から喉の奥を閉じて鼻へ抜く！",
+    tipDesc: "「ㄜ (e)」の曖昧な口から喉の奥をキュッと閉じて響かせます。日本語の「りんご」の「ん」のような喉奥の響きです。",
+    color: "from-violet-500 to-purple-600",
+    themeHex: "#7C3AED",
+    examples: [
+      { traditional: "風", zhuyin: "ㄈㄥ", pinyin: "fēng", meaning: "風" },
+      { traditional: "公園", zhuyin: "ㄍㄨㄥ ㄩㄢˊ", pinyin: "gōngyuán", meaning: "公園" },
+      { traditional: "眼睛", zhuyin: "ㄧㄢˇ ㄐㄧㄥ", pinyin: "yǎnjīng", meaning: "目" }
+    ]
+  },
+  {
+    id: "vowel-er",
+    symbol: "ㄦ",
+    pinyin: "er",
+    ipa: "[aɚ]",
+    katakana: "アール（巻舌音）",
+    typeTag: "捲舌韻母",
+    title: "巻舌母音「ㄦ」",
+    originKanji: "兒 (ér / 児)",
+    originDesc: "漢字「兒」の草書体に由来。舌先を口の天井に向けて持ち上げ・奥へ巻きながら発音します。",
+    tipTitle: "「ア」を出しながら舌先を奥へキュッと巻く！",
+    tipDesc: "英語の「R」の音に近いです。「ア」と声を出し始めると同時に、舌先を上あごにつけないように奥へ巻き上げます。",
+    color: "from-rose-500 to-red-600",
+    themeHex: "#E11D48",
+    examples: [
+      { traditional: "二", zhuyin: "ㄦˋ", pinyin: "èr", meaning: "2 (数字のニ)" },
+      { traditional: "耳朵", zhuyin: "ㄦˇ ㄉㄨㄛ˙", pinyin: "ěrduo", meaning: "耳" },
+      { traditional: "兒子", zhuyin: "ㄦˊ ㄗ˙", pinyin: "érzi", meaning: "息子" }
+    ]
+  }
+];
+
 window.VOWELS_QUIZ_QUESTIONS_1 = [
   {
     id: 1,
@@ -253,5 +361,43 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
     targetSymbol: "ㄠ",
     prompt: "「貓 (māo / ネコ)」に使われている「アオ」の二重母音を選んでください",
     options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"]
+  }
+];
+
+window.VOWELS_QUIZ_QUESTIONS_3 = [
+  {
+    id: 1,
+    type: "audio",
+    targetSymbol: "ㄢ",
+    prompt: "再生された音声に当てはまる前鼻音（舌先を前歯の裏につける音）を選んでください",
+    options: ["ㄢ", "ㄤ", "ㄣ", "ㄥ"]
+  },
+  {
+    id: 2,
+    type: "pinyin",
+    targetSymbol: "ㄦ",
+    prompt: "舌先を奥に巻き上げて発音する巻舌音「er」に対応する注音符号はどれ？",
+    options: ["ㄣ", "ㄦ", "ㄥ", "ㄢ"]
+  },
+  {
+    id: 3,
+    type: "example",
+    targetSymbol: "ㄢ",
+    prompt: "「臺灣 (Táiwān / 台湾)」の「灣」に使われている注音符号はどれ？",
+    options: ["ㄢ", "ㄤ", "ㄣ", "ㄥ"]
+  },
+  {
+    id: 4,
+    type: "example",
+    targetSymbol: "ㄤ",
+    prompt: "「棒球 (bàngqiú / 野球)」の「棒」に使われている後鼻音（口を開けたまま喉奥を鳴らす音）はどれ？",
+    options: ["ㄢ", "ㄤ", "ㄣ", "ㄦ"]
+  },
+  {
+    id: 5,
+    type: "audio",
+    targetSymbol: "ㄦ",
+    prompt: "数字の2を表す「二 (èr)」に使われている巻舌音を選んでください",
+    options: ["ㄢ", "ㄣ", "ㄤ", "ㄦ"]
   }
 ];
