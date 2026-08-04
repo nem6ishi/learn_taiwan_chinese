@@ -1,89 +1,121 @@
-// 注音ナビ 共通音声再生コアエンジン (Google Translate TTS 女性ボイス優先版)
+// 注音ナビ 共通音声再生コアエンジン (完全安定化・堅牢版)
 (function(window) {
   let currentAudio = null;
+  let playTimeout = null;
 
-  function playZhuyinSound(text) {
-    if (!text) return;
+  function clearActiveAudio() {
+    if (playTimeout) {
+      clearTimeout(playTimeout);
+      playTimeout = null;
+    }
 
     if (currentAudio) {
       try {
+        currentAudio.onended = null;
+        currentAudio.onerror = null;
         currentAudio.pause();
-        currentAudio.currentTime = 0;
+        currentAudio.src = '';
       } catch (e) {}
       currentAudio = null;
     }
 
+    if ('speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch (e) {}
+    }
+  }
+
+  function playZhuyinSound(text) {
+    if (!text) return;
+
+    clearActiveAudio();
+
     const speechMap = window.ZHUYIN_SPEECH_MAP || {};
     const speechText = speechMap[text] || text;
 
+    playTimeout = setTimeout(() => {
+      executePlayGoogleTTS(text, speechText);
+    }, 20);
+  }
+
+  function executePlayGoogleTTS(originalText, speechText) {
     const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
 
     try {
-      const audio = new Audio(ttsUrl);
+      const audio = new Audio();
       currentAudio = audio;
 
       let fallbackTriggered = false;
 
-      const doFallback = () => {
+      const triggerFallback = () => {
         if (!fallbackTriggered) {
           fallbackTriggered = true;
-          currentAudio = null;
-          fallbackWebSpeechFemale(text, speechText);
+          clearActiveAudio();
+          fallbackWebSpeechFemale(originalText, speechText);
         }
       };
 
       audio.onerror = (e) => {
-        console.warn(`[Audio Engine] Google TTS error for "${text}", switching fallback.`, e);
-        doFallback();
+        console.warn(`[Audio Engine] Google TTS error for "${originalText}" (${speechText}):`, e);
+        triggerFallback();
       };
+
+      audio.onended = () => {
+        if (currentAudio === audio) {
+          currentAudio = null;
+        }
+      };
+
+      audio.src = ttsUrl;
 
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise.catch((err) => {
-          console.warn(`[Audio Engine] Google TTS play blocked for "${text}":`, err);
-          doFallback();
+          console.warn(`[Audio Engine] Play catch error for "${originalText}":`, err);
+          triggerFallback();
         });
       }
 
     } catch (err) {
-      console.warn(`[Audio Engine] Audio creation failed for "${text}":`, err);
-      fallbackWebSpeechFemale(text, speechText);
+      console.warn(`[Audio Engine] Audio init exception for "${originalText}":`, err);
+      fallbackWebSpeechFemale(originalText, speechText);
     }
   }
 
   function fallbackWebSpeechFemale(originalText, speechText) {
-    if ('speechSynthesis' in window) {
-      try {
-        window.speechSynthesis.resume();
-        window.speechSynthesis.cancel();
-
-        const utterance = new SpeechSynthesisUtterance(speechText || originalText);
-        utterance.lang = 'zh-TW';
-        utterance.rate = 0.82;
-        utterance.pitch = 1.05;
-
-        const voices = window.speechSynthesis.getVoices();
-        const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'female', '美佳', '婷婷'];
-        const femaleVoice = voices.find(v => {
-          const nameLower = (v.name || '').toLowerCase();
-          const langLower = (v.lang || '').toLowerCase();
-          return (langLower.includes('tw') || langLower.includes('zh-tw')) &&
-                 femaleKeywords.some(kw => nameLower.includes(kw));
-        });
-
-        if (femaleVoice) {
-          utterance.voice = femaleVoice;
-        }
-
-        setTimeout(() => {
-          window.speechSynthesis.speak(utterance);
-        }, 40);
-        return;
-      } catch (e) {
-        console.error('[Audio Engine] Web Speech API error:', e);
-      }
+    if (!('speechSynthesis' in window)) {
+      playFallbackBeep();
+      return;
     }
-    playFallbackBeep();
+
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(speechText || originalText);
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.82;
+      utterance.pitch = 1.05;
+
+      const voices = window.speechSynthesis.getVoices();
+      const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'female', '美佳', '婷婷'];
+      const femaleVoice = voices.find(v => {
+        const nameLower = (v.name || '').toLowerCase();
+        const langLower = (v.lang || '').toLowerCase();
+        return (langLower.includes('tw') || langLower.includes('zh-tw')) &&
+               femaleKeywords.some(kw => nameLower.includes(kw));
+      });
+
+      if (femaleVoice) {
+        utterance.voice = femaleVoice;
+      }
+
+      window.speechSynthesis.speak(utterance);
+    } catch (e) {
+      console.error('[Audio Engine] Web Speech API error:', e);
+      playFallbackBeep();
+    }
   }
 
   function playFallbackBeep() {
@@ -96,14 +128,14 @@
 
       osc.type = 'sine';
       osc.frequency.setValueAtTime(523.25, ctx.currentTime);
-      gain.gain.setValueAtTime(0.1, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.25);
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.2);
 
       osc.connect(gain);
       gain.connect(ctx.destination);
 
       osc.start();
-      osc.stop(ctx.currentTime + 0.25);
+      osc.stop(ctx.currentTime + 0.2);
     } catch (e) {}
   }
 
