@@ -1,4 +1,4 @@
-// STEP 1-1 単母音 学習＆クイズ制御
+// STEP 1-1 単母音 学習＆クイズ制御 (完全音素同調版)
 (function() {
   let currentQuizIndex = 0;
   let quizScore = 0;
@@ -202,7 +202,8 @@
         const selected = btn.getAttribute('data-val');
         const isCorrect = selected === q.targetSymbol;
 
-        if (window.playZhuyinSound) window.playZhuyinSound(selected);
+        const optionSpeech = (q.optionSpeechMap && q.optionSpeechMap[selected]) || selected;
+        if (window.playZhuyinSound) window.playZhuyinSound(optionSpeech);
 
         if (isCorrect) {
           btn.classList.add('correct');

@@ -1,4 +1,4 @@
-// 台湾華語学習サイト 共通データ構造 (全単語徹底検証・完全修正版)
+// 台湾華語学習サイト 共通データ構造 (クイズ音声定義 完全適正化版)
 window.ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
@@ -294,6 +294,7 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
     id: 1,
     type: "audio",
     targetSymbol: "ㄚ",
+    speechTarget: "ㄚ",
     prompt: "再生された音声に当てはまる単母音を選んでください",
     options: ["ㄚ", "ㄛ", "ㄜ", "ㄝ"]
   },
@@ -310,6 +311,12 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
     type: "word-to-zhuyin",
     targetSymbol: "ㄚ ㄧˊ",
     speechTarget: "阿姨",
+    optionSpeechMap: {
+      "ㄚ ㄧˊ": "阿姨",
+      "ㄅㄚˋ ㄅㄚ˙": "爸爸",
+      "ㄧㄚ ㄗ˙": "鴨子",
+      "ㄅㄛ ㄌㄤˋ": "波浪"
+    },
     prompt: "単語「阿姨 (āyí / おばさん)」の正しい注音表記はどれ？",
     options: ["ㄚ ㄧˊ", "ㄅㄚˋ ㄅㄚ˙", "ㄧㄚ ㄗ˙", "ㄅㄛ ㄌㄤˋ"]
   },
@@ -325,6 +332,7 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
     id: 5,
     type: "audio",
     targetSymbol: "ㄛ",
+    speechTarget: "ㄛ",
     prompt: "「波浪 (bōlàng)」の「波」に使われている丸口の単母音を選んでください",
     options: ["ㄚ", "ㄛ", "ㄜ", "ㄝ"]
   }
@@ -336,6 +344,7 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
     id: 1,
     type: "audio",
     targetSymbol: "ㄞ",
+    speechTarget: "ㄞ",
     prompt: "再生された音声に当てはまる二重母音を選んでください",
     options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"]
   },
@@ -352,6 +361,12 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
     type: "word-to-zhuyin",
     targetSymbol: "ㄅㄞˊ ㄙㄜˋ",
     speechTarget: "白色",
+    optionSpeechMap: {
+      "ㄅㄞˊ ㄙㄜˋ": "白色",
+      "ㄈㄟ ㄐㄧ": "飛機",
+      "ㄏㄟ ㄙㄜˋ": "黑色",
+      "ㄍㄠ ㄒㄧㄥˋ": "高興"
+    },
     prompt: "単語「白色 (báisè / 白色)」の正しい注音表記はどれ？",
     options: ["ㄅㄞˊ ㄙㄜˋ", "ㄈㄟ ㄐㄧ", "ㄏㄟ ㄙㄜˋ", "ㄍㄠ ㄒㄧㄥˋ"]
   },
@@ -367,6 +382,7 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
     id: 5,
     type: "audio",
     targetSymbol: "ㄠ",
+    speechTarget: "ㄠ",
     prompt: "「貓 (māo / ネコ)」に使われている「アオ」の二重母音を選んでください",
     options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"]
   }
@@ -378,6 +394,7 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
     id: 1,
     type: "audio",
     targetSymbol: "ㄢ",
+    speechTarget: "ㄢ",
     prompt: "再生された音声に当てはまる前鼻音（舌先を前歯の裏につける音）を選んでください",
     options: ["ㄢ", "ㄤ", "ㄣ", "ㄥ"]
   },
@@ -394,6 +411,12 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
     type: "word-to-zhuyin",
     targetSymbol: "ㄕㄣ ㄊㄧˇ",
     speechTarget: "身體",
+    optionSpeechMap: {
+      "ㄕㄣ ㄊㄧˇ": "身體",
+      "ㄊㄞˊ ㄨㄢ": "臺灣",
+      "ㄅㄤˋ ㄑㄧㄡˊ": "棒球",
+      "ㄈㄥ": "風"
+    },
     prompt: "単語「身體 (shēntǐ / 体)」の正しい注音表記はどれ？",
     options: ["ㄕㄣ ㄊㄧˇ", "ㄊㄞˊ ㄨㄢ", "ㄅㄤˋ ㄑㄧㄡˊ", "ㄈㄥ"]
   },
@@ -409,6 +432,7 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
     id: 5,
     type: "audio",
     targetSymbol: "ㄦ",
+    speechTarget: "ㄦ",
     prompt: "数字の2を表す「二 (èr)」に使われている巻舌音を選んでください",
     options: ["ㄢ", "ㄣ", "ㄤ", "ㄦ"]
   }
