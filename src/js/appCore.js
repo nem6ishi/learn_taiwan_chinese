@@ -1,69 +1,14 @@
-// 注音ナビ 共通音声再生コアエンジン (明瞭な女性ボイス固定版)
+// 注音ナビ 共通音声再生コアエンジン (Google Translate TTS 女性ボイス優先版)
 (function(window) {
   let currentAudio = null;
-  let preferredFemaleVoice = null;
 
   /**
-   * 台湾華語（zh-TW）の「女性ボイス (Female Voice)」のみを厳格フィルタリングして固定
+   * 台湾華語（zh-TW）高音質ストリーミング再生（Google Translate TTS 優先）
    */
-  function getTaiwanFemaleVoice() {
-    if (preferredFemaleVoice) return preferredFemaleVoice;
-
-    if ('speechSynthesis' in window) {
-      const voices = window.speechSynthesis.getVoices();
-      if (!voices || voices.length === 0) return null;
-
-      // 1. 代表的な台湾女性ボイス名の検索 (Mei-Jia, Ting-Ting, Sin-Ji, Yating, Hsiao-Chen 等)
-      const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'hsiao-chen', 'female', '美佳', '婷婷', '欣怡'];
-      
-      const namedFemale = voices.find(v => {
-        const nameLower = v.name.toLowerCase();
-        const langLower = (v.lang || '').toLowerCase();
-        const isTw = langLower.includes('tw') || langLower.includes('zh-tw');
-        const isFemale = femaleKeywords.some(kw => nameLower.includes(kw));
-        return isTw && isFemale;
-      });
-
-      if (namedFemale) {
-        preferredFemaleVoice = namedFemale;
-        return preferredFemaleVoice;
-      }
-
-      // 2. zh-TW ボイスの中から男性名（Danny, Kang-Kang, Male等）を除外した女性ボイス
-      const maleKeywords = ['danny', 'kang-kang', 'male', '男'];
-      const nonMaleTw = voices.find(v => {
-        const nameLower = v.name.toLowerCase();
-        const langLower = (v.lang || '').toLowerCase();
-        const isTw = langLower.includes('tw') || langLower.includes('zh-tw');
-        const isMale = maleKeywords.some(kw => nameLower.includes(kw));
-        return isTw && !isMale;
-      });
-
-      if (nonMaleTw) {
-        preferredFemaleVoice = nonMaleTw;
-        return preferredFemaleVoice;
-      }
-
-      // 3. 汎用 zh-TW ボイス
-      const twVoice = voices.find(v => (v.lang || '').toLowerCase().includes('tw'));
-      if (twVoice) {
-        preferredFemaleVoice = twVoice;
-        return preferredFemaleVoice;
-      }
-    }
-    return null;
-  }
-
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.onvoiceschanged = () => {
-      preferredFemaleVoice = null;
-      getTaiwanFemaleVoice();
-    };
-  }
-
   function playZhuyinSound(text) {
     if (!text) return;
 
+    // 再生中の音があれば即座にリセット・停止
     if (currentAudio) {
       try {
         currentAudio.pause();
@@ -75,57 +20,76 @@
     const speechMap = window.ZHUYIN_SPEECH_MAP || {};
     const speechText = speechMap[text] || text;
 
+    // Google Translate TTS の台湾女性ボイスストリーミングURL
+    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
+
+    try {
+      const audio = new Audio(ttsUrl);
+      currentAudio = audio;
+
+      let fallbackTriggered = false;
+
+      const doFallback = () => {
+        if (!fallbackTriggered) {
+          fallbackTriggered = true;
+          currentAudio = null;
+          fallbackWebSpeechFemale(text, speechText);
+        }
+      };
+
+      audio.onerror = (e) => {
+        console.warn(`[Audio Engine] Google TTS error for "${text}", switching fallback.`, e);
+        doFallback();
+      };
+
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn(`[Audio Engine] Google TTS play blocked for "${text}":`, err);
+          doFallback();
+        });
+      }
+
+    } catch (err) {
+      console.warn(`[Audio Engine] Audio creation failed for "${text}":`, err);
+      fallbackWebSpeechFemale(text, speechText);
+    }
+  }
+
+  // バックアップ用 Web Speech API (女性ボイス優先)
+  function fallbackWebSpeechFemale(originalText, speechText) {
     if ('speechSynthesis' in window) {
       try {
         window.speechSynthesis.resume();
         window.speechSynthesis.cancel();
 
-        const utterance = new SpeechSynthesisUtterance(speechText);
+        const utterance = new SpeechSynthesisUtterance(speechText || originalText);
         utterance.lang = 'zh-TW';
-        utterance.rate = 0.82; // 明瞭で聞き取りやすいスピード
-        utterance.pitch = 1.05; // 明るく自然な女性トーン
-        utterance.volume = 1.0;
+        utterance.rate = 0.82;
+        utterance.pitch = 1.05;
 
-        const femaleVoice = getTaiwanFemaleVoice();
+        const voices = window.speechSynthesis.getVoices();
+        const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'female', '美佳', '婷婷'];
+        const femaleVoice = voices.find(v => {
+          const nameLower = (v.name || '').toLowerCase();
+          const langLower = (v.lang || '').toLowerCase();
+          return (langLower.includes('tw') || langLower.includes('zh-tw')) &&
+                 femaleKeywords.some(kw => nameLower.includes(kw));
+        });
+
         if (femaleVoice) {
           utterance.voice = femaleVoice;
         }
 
-        let spoken = false;
-        utterance.onstart = () => { spoken = true; };
-
-        utterance.onerror = (e) => {
-          console.warn('[Audio Engine] SpeechSynthesis error:', e);
-          if (!spoken) playGoogleTTS(speechText);
-        };
-
         setTimeout(() => {
           window.speechSynthesis.speak(utterance);
         }, 40);
-
         return;
-      } catch (err) {
-        console.warn('[Audio Engine] SpeechSynthesis failed:', err);
+      } catch (e) {
+        console.error('[Audio Engine] Web Speech API error:', e);
       }
     }
-
-    playGoogleTTS(speechText);
-  }
-
-  function playGoogleTTS(speechText) {
-    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
-    try {
-      const audio = new Audio(ttsUrl);
-      currentAudio = audio;
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(e => {
-          playFallbackBeep();
-        });
-      }
-    } catch (e) {
-      playFallbackBeep();
-    }
+    playFallbackBeep();
   }
 
   function playFallbackBeep() {
