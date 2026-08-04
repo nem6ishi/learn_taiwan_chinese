@@ -1,4 +1,4 @@
-// 台湾華語学習サイト 共通データ構造 (1-1, 1-2, 1-3 対応 ＋ 多彩な確認クイズ完全版)
+// 台湾華語学習サイト 共通データ構造 (全単語徹底検証・完全修正版)
 window.ZHUYIN_SPEECH_MAP = {
   'ㄚ': '啊',   // a
   'ㄛ': '喔',   // o
@@ -222,8 +222,8 @@ window.VOWELS_STEP3_DATA = [
     themeHex: "#2563EB",
     examples: [
       { traditional: "身體", zhuyin: "ㄕㄣ ㄊㄧˇ", pinyin: "shēntǐ", meaning: "身体 / 体" },
-      { traditional: "朋友", zhuyin: "ㄆㄥˊ ㄧㄡˇ", pinyin: "péngyǒu", meaning: "友達" },
-      { traditional: "門", zhuyin: "ㄇㄣˊ", pinyin: "mén", meaning: "ドア / 門" }
+      { traditional: "門", zhuyin: "ㄇㄣˊ", pinyin: "mén", meaning: "ドア / 門" },
+      { traditional: "人", zhuyin: "ㄖㄣˊ", pinyin: "rén", meaning: "人" }
     ]
   },
   {
@@ -242,8 +242,8 @@ window.VOWELS_STEP3_DATA = [
     themeHex: "#D97706",
     examples: [
       { traditional: "棒球", zhuyin: "ㄅㄤˋ ㄑㄧㄡˊ", pinyin: "bàngqiú", meaning: "野球" },
-      { traditional: "珍珠", zhuyin: "ㄓㄣ ㄓㄨ", pinyin: "zhēnzhū", meaning: "タピオカ / 真珠" },
-      { traditional: "幫忙", zhuyin: "ㄅㄤ ㄇㄤˊ", pinyin: "bāngmáng", meaning: "手伝う" }
+      { traditional: "幫忙", zhuyin: "ㄅㄤ ㄇㄤˊ", pinyin: "bāngmáng", meaning: "手伝う" },
+      { traditional: "太陽", zhuyin: "ㄊㄞˋ ㄧㄤˊ", pinyin: "tàiyáng", meaning: "太陽" }
     ]
   },
   {
