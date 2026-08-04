@@ -1,4 +1,4 @@
-// STEP 1-2 二重母音 学習＆クイズ制御 (完全音素同調版)
+// STEP 1-2 学習＆クイズ制御 (子音・母音視覚分離・完全版)
 (function() {
   let currentQuizIndex = 0;
   let quizScore = 0;
@@ -20,13 +20,16 @@
     const dataList = window.VOWELS_STEP2_DATA;
     if (!container || !dataList) return;
 
-    container.innerHTML = dataList.map(item => `
+    const consonants = dataList.filter(item => item.typeTag.includes('子音'));
+    const vowels = dataList.filter(item => item.typeTag.includes('母音'));
+
+    const renderCard = (item) => `
       <div class="detail-card">
         
         <div class="detail-header">
           <div class="detail-header-left">
-            <div class="detail-symbol-box">
-              <span class="symbol">${item.symbol}</span>
+            <div class="detail-symbol-box" style="border-color: ${item.themeHex};">
+              <span class="symbol" style="color: ${item.themeHex};">${item.symbol}</span>
               <span style="font-size: 0.8rem; font-weight: 700;">${item.pinyin}</span>
             </div>
             <div>
@@ -90,7 +93,37 @@
         </div>
 
       </div>
-    `).join('');
+    `;
+
+    container.innerHTML = `
+      <!-- グループ①: 子音 -->
+      <div style="margin-top: 8px; margin-bottom: 12px; background: #EFF6FF; border-left: 5px solid #2563EB; border-radius: 8px; padding: 16px 20px;">
+        <span style="font-size: 0.75rem; font-weight: 800; color: #2563EB; letter-spacing: 0.05em; text-transform: uppercase;">PART 1</span>
+        <h3 style="font-size: 1.25rem; font-weight: 900; color: #1E3A8A; margin-top: 2px;">
+          🗣️ 【子音 / 聲母】 4文字（ㄉ ㄊ ㄋ ㄌ）
+        </h3>
+        <p style="font-size: 0.88rem; color: #3B82F6; margin: 4px 0 0 0;">
+          舌先を上の前歯の裏につけて発音する音です。
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 36px;">
+        ${consonants.map(renderCard).join('')}
+      </div>
+
+      <!-- グループ②: 母音 -->
+      <div style="margin-top: 16px; margin-bottom: 12px; background: #FFF1F2; border-left: 5px solid #E11D48; border-radius: 8px; padding: 16px 20px;">
+        <span style="font-size: 0.75rem; font-weight: 800; color: #E11D48; letter-spacing: 0.05em; text-transform: uppercase;">PART 2</span>
+        <h3 style="font-size: 1.25rem; font-weight: 900; color: #881337; margin-top: 2px;">
+          🎵 【二重母音 / 複韻母】 4文字（ㄞ ㄟ ㄠ ㄡ）
+        </h3>
+        <p style="font-size: 0.88rem; color: #F43F5E; margin: 4px 0 0 0;">
+          音を滑らかにすべらせて変化させる二重母音です。
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        ${vowels.map(renderCard).join('')}
+      </div>
+    `;
 
     container.querySelectorAll('.play-symbol-sound').forEach(btn => {
       btn.onclick = (e) => {
