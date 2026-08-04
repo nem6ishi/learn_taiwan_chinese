@@ -1,4 +1,4 @@
-// STEP 1-1 学習＆クイズ制御 (子音・母音視覚分離・完全版)
+// STEP 1-1 学習＆クイズ制御 (カラー統一・Notionミニマル完全版)
 (function() {
   let currentQuizIndex = 0;
   let quizScore = 0;
@@ -28,9 +28,9 @@
         
         <div class="detail-header">
           <div class="detail-header-left">
-            <div class="detail-symbol-box" style="border-color: ${item.themeHex};">
-              <span class="symbol" style="color: ${item.themeHex};">${item.symbol}</span>
-              <span style="font-size: 0.8rem; font-weight: 700;">${item.pinyin}</span>
+            <div class="detail-symbol-box">
+              <span class="symbol">${item.symbol}</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted);">${item.pinyin}</span>
             </div>
             <div>
               <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 2px;">
@@ -97,30 +97,30 @@
 
     container.innerHTML = `
       <!-- グループ①: 子音 -->
-      <div style="margin-top: 8px; margin-bottom: 12px; background: #EFF6FF; border-left: 5px solid #2563EB; border-radius: 8px; padding: 16px 20px;">
-        <span style="font-size: 0.75rem; font-weight: 800; color: #2563EB; letter-spacing: 0.05em; text-transform: uppercase;">PART 1</span>
-        <h3 style="font-size: 1.25rem; font-weight: 900; color: #1E3A8A; margin-top: 2px;">
+      <div style="margin-top: 8px; margin-bottom: 12px; background: var(--color-bg-subtle); border-left: 4px solid var(--color-primary); border-radius: var(--radius-sm); padding: 16px 20px;">
+        <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase;">PART 1</span>
+        <h3 style="font-size: 1.25rem; font-weight: 900; color: var(--color-text-main); margin-top: 2px;">
           🗣️ 【子音 / 聲母】 4文字（ㄅ ㄆ ㄇ ㄈ）
         </h3>
-        <p style="font-size: 0.88rem; color: #3B82F6; margin: 4px 0 0 0;">
+        <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 4px 0 0 0;">
           音の頭を作る音。唇や息の使い方がポイントです。
         </p>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 36px;">
+      <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px;">
         ${consonants.map(renderCard).join('')}
       </div>
 
       <!-- グループ②: 母音 -->
-      <div style="margin-top: 16px; margin-bottom: 12px; background: #FFF1F2; border-left: 5px solid #E11D48; border-radius: 8px; padding: 16px 20px;">
-        <span style="font-size: 0.75rem; font-weight: 800; color: #E11D48; letter-spacing: 0.05em; text-transform: uppercase;">PART 2</span>
-        <h3 style="font-size: 1.25rem; font-weight: 900; color: #881337; margin-top: 2px;">
+      <div style="margin-top: 16px; margin-bottom: 12px; background: var(--color-bg-subtle); border-left: 4px solid var(--color-text-main); border-radius: var(--radius-sm); padding: 16px 20px;">
+        <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-text-muted); letter-spacing: 0.05em; text-transform: uppercase;">PART 2</span>
+        <h3 style="font-size: 1.25rem; font-weight: 900; color: var(--color-text-main); margin-top: 2px;">
           🎵 【母音 / 韻母】 4文字（ㄚ ㄛ ㄜ ㄝ）
         </h3>
-        <p style="font-size: 0.88rem; color: #F43F5E; margin: 4px 0 0 0;">
+        <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 4px 0 0 0;">
           音の響き（本体）を作る音。口の縦の開き方と丸みがポイントです。
         </p>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
         ${vowels.map(renderCard).join('')}
       </div>
     `;
