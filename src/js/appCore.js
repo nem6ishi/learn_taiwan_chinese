@@ -1,16 +1,21 @@
-// 注音ナビ 共通音声再生コアエンジン (完全安定化・堅牢版)
+// 注音ナビ 共通音声再生コアエンジン (完全安定化 ＆ 音波イコライザー連動版)
 (function(window) {
   let currentAudio = null;
   let playTimeout = null;
+  let activeElement = null;
 
-  /**
-   * 音声インスタンスとタイマーの完全クリア処理
-   */
   function clearActiveAudio() {
     if (playTimeout) {
       clearTimeout(playTimeout);
       playTimeout = null;
     }
+
+    if (activeElement) {
+      activeElement.classList.remove('is-playing');
+      activeElement = null;
+    }
+
+    document.querySelectorAll('.is-playing').forEach(el => el.classList.remove('is-playing'));
 
     if (currentAudio) {
       try {
@@ -29,19 +34,19 @@
     }
   }
 
-  /**
-   * 台湾華語（zh-TW）音声再生メイン処理 (連打・競合対策済み)
-   */
-  function playZhuyinSound(text) {
+  function playZhuyinSound(text, triggerEl = null) {
     if (!text) return;
 
-    // 前回の再生を確実に停止
     clearActiveAudio();
+
+    if (triggerEl) {
+      activeElement = triggerEl;
+      activeElement.classList.add('is-playing');
+    }
 
     const speechMap = window.ZHUYIN_SPEECH_MAP || {};
     const speechText = speechMap[text] || text;
 
-    // デバウンスを僅かに入れて連打によるリクエスト競合を防止
     playTimeout = setTimeout(() => {
       executePlayGoogleTTS(text, speechText);
     }, 20);
@@ -59,7 +64,6 @@
       const triggerFallback = () => {
         if (!fallbackTriggered) {
           fallbackTriggered = true;
-          clearActiveAudio();
           fallbackWebSpeechFemale(originalText, speechText);
         }
       };
@@ -70,9 +74,7 @@
       };
 
       audio.onended = () => {
-        if (currentAudio === audio) {
-          currentAudio = null;
-        }
+        clearActiveAudio();
       };
 
       audio.src = ttsUrl;
@@ -91,10 +93,10 @@
     }
   }
 
-  // バックアップ用 Web Speech API (台湾女性声優先)
   function fallbackWebSpeechFemale(originalText, speechText) {
     if (!('speechSynthesis' in window)) {
       playFallbackBeep();
+      clearActiveAudio();
       return;
     }
 
@@ -106,6 +108,9 @@
       utterance.lang = 'zh-TW';
       utterance.rate = 0.82;
       utterance.pitch = 1.05;
+
+      utterance.onend = () => clearActiveAudio();
+      utterance.onerror = () => clearActiveAudio();
 
       const voices = window.speechSynthesis.getVoices();
       const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'female', '美佳', '婷婷'];
@@ -124,6 +129,7 @@
     } catch (e) {
       console.error('[Audio Engine] Web Speech API error:', e);
       playFallbackBeep();
+      clearActiveAudio();
     }
   }
 

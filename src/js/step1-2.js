@@ -1,4 +1,4 @@
-// STEP 1-2 学習＆クイズ制御 (カラー統一・Notionミニマル完全版)
+// STEP 1-2 学習＆クイズ制御 (ボイスウェーブ・モダンUI完全版)
 (function() {
   let currentQuizIndex = 0;
   let quizScore = 0;
@@ -33,18 +33,23 @@
               <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted);">${item.pinyin}</span>
             </div>
             <div>
-              <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 2px;">
-                <span style="background: var(--color-primary-light); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; margin-right: 4px;">${item.typeTag}</span>
-                ${item.title} (${item.katakana})
+              <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 4px;">
+                <span class="pill-badge active">${item.typeTag}</span>
+                <span style="margin-left: 6px; font-weight: 700; color: var(--color-text-muted);">${item.katakana}</span>
               </div>
-              <h2 style="font-size: 1.4rem; font-weight: 900;">
-                注音符号 「${item.symbol}」
+              <h2 style="font-size: 1.35rem; font-weight: 900; letter-spacing: -0.01em;">
+                ${item.title}
               </h2>
             </div>
           </div>
           
           <button class="btn btn-primary play-symbol-sound" data-symbol="${item.symbol}">
-            🔊 「${item.symbol}」を発音
+            <span>🔊 発音を聞く</span>
+            <div class="voice-wave">
+              <div class="voice-bar"></div>
+              <div class="voice-bar"></div>
+              <div class="voice-bar"></div>
+            </div>
           </button>
         </div>
 
@@ -70,8 +75,8 @@
         </div>
 
         <div>
-          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--color-text-muted);">
-            📚 身近な単語例 (タップで発音)
+          <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            📚 身近な単語例 (タップで再生)
           </h4>
           <div class="example-list">
             ${item.examples.map(ex => `
@@ -85,7 +90,14 @@
                 </div>
                 <div class="example-right">
                   <span class="example-meaning">${ex.meaning}</span>
-                  <span class="audio-icon-tag">🔊</span>
+                  <div class="audio-icon-tag">
+                    <span>🔊</span>
+                    <div class="voice-wave">
+                      <div class="voice-bar"></div>
+                      <div class="voice-bar"></div>
+                      <div class="voice-bar"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             `).join('')}
@@ -98,7 +110,7 @@
     container.innerHTML = `
       <!-- グループ①: 子音 -->
       <div style="margin-top: 8px; margin-bottom: 12px; background: var(--color-bg-subtle); border-left: 4px solid var(--color-primary); border-radius: var(--radius-sm); padding: 16px 20px;">
-        <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase;">PART 1</span>
+        <span class="pill-badge active" style="margin-bottom: 4px;">PART 1</span>
         <h3 style="font-size: 1.25rem; font-weight: 900; color: var(--color-text-main); margin-top: 2px;">
           🗣️ 【子音 / 聲母】 4文字（ㄉ ㄊ ㄋ ㄌ）
         </h3>
@@ -112,7 +124,7 @@
 
       <!-- グループ②: 母音 -->
       <div style="margin-top: 16px; margin-bottom: 12px; background: var(--color-bg-subtle); border-left: 4px solid var(--color-text-main); border-radius: var(--radius-sm); padding: 16px 20px;">
-        <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-text-muted); letter-spacing: 0.05em; text-transform: uppercase;">PART 2</span>
+        <span class="pill-badge" style="margin-bottom: 4px;">PART 2</span>
         <h3 style="font-size: 1.25rem; font-weight: 900; color: var(--color-text-main); margin-top: 2px;">
           🎵 【二重母音 / 複韻母】 4文字（ㄞ ㄟ ㄠ ㄡ）
         </h3>
@@ -129,7 +141,7 @@
       btn.onclick = (e) => {
         e.stopPropagation();
         const symbol = btn.getAttribute('data-symbol');
-        if (window.playZhuyinSound) window.playZhuyinSound(symbol);
+        if (window.playZhuyinSound) window.playZhuyinSound(symbol, btn);
       };
     });
 
@@ -137,7 +149,7 @@
       card.onclick = (e) => {
         e.stopPropagation();
         const word = card.getAttribute('data-word');
-        if (window.playZhuyinSound) window.playZhuyinSound(word);
+        if (window.playZhuyinSound) window.playZhuyinSound(word, card);
       };
     });
   }
@@ -214,7 +226,7 @@
       if (playBtn) {
         playBtn.onclick = (e) => {
           e.preventDefault();
-          if (window.playZhuyinSound) window.playZhuyinSound(speechText);
+          if (window.playZhuyinSound) window.playZhuyinSound(speechText, playBtn);
         };
       }
     }
@@ -236,7 +248,7 @@
         const isCorrect = selected === q.targetSymbol;
 
         const optionSpeech = (q.optionSpeechMap && q.optionSpeechMap[selected]) || selected;
-        if (window.playZhuyinSound) window.playZhuyinSound(optionSpeech);
+        if (window.playZhuyinSound) window.playZhuyinSound(optionSpeech, btn);
 
         if (isCorrect) {
           btn.classList.add('correct');
