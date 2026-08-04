@@ -1,37 +1,48 @@
-// 注音ナビ 共通音声再生コアエンジン (一貫した統一ボイス制御版)
+// 注音ナビ 共通音声再生コアエンジン (女性ボイス厳格固定版)
 (function(window) {
   let currentAudio = null;
+  let preferredFemaleVoice = null;
 
-  // 統一ボイスキャッシュ
-  let preferredTwVoice = null;
-
-  function getBestTaiwanVoice() {
-    if (preferredTwVoice) return preferredTwVoice;
+  function getTaiwanFemaleVoice() {
+    if (preferredFemaleVoice) return preferredFemaleVoice;
 
     if ('speechSynthesis' in window) {
       const voices = window.speechSynthesis.getVoices();
       if (!voices || voices.length === 0) return null;
 
-      // 台湾標準ボイス名（Mei-Jia, Sin-Ji, Ting-Ting 等）を最優先固定
-      const namedVoice = voices.find(v => 
-        (v.lang === 'zh-TW' || v.lang === 'zh_TW') &&
-        (v.name.includes('Mei-Jia') || v.name.includes('Sin-Ji') || v.name.includes('Ting-Ting') || v.name.includes('Yating'))
-      );
-      if (namedVoice) {
-        preferredTwVoice = namedVoice;
-        return preferredTwVoice;
+      const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'hsiao-chen', 'female', '美佳', '婷婷', '欣怡'];
+      
+      const namedFemale = voices.find(v => {
+        const nameLower = v.name.toLowerCase();
+        const langLower = (v.lang || '').toLowerCase();
+        const isTw = langLower.includes('tw') || langLower.includes('zh-tw');
+        const isFemale = femaleKeywords.some(kw => nameLower.includes(kw));
+        return isTw && isFemale;
+      });
+
+      if (namedFemale) {
+        preferredFemaleVoice = namedFemale;
+        return preferredFemaleVoice;
       }
 
-      const exactTw = voices.find(v => v.lang === 'zh-TW' || v.lang === 'zh_TW');
-      if (exactTw) {
-        preferredTwVoice = exactTw;
-        return preferredTwVoice;
+      const maleKeywords = ['danny', 'kang-kang', 'male', '男'];
+      const nonMaleTw = voices.find(v => {
+        const nameLower = v.name.toLowerCase();
+        const langLower = (v.lang || '').toLowerCase();
+        const isTw = langLower.includes('tw') || langLower.includes('zh-tw');
+        const isMale = maleKeywords.some(kw => nameLower.includes(kw));
+        return isTw && !isMale;
+      });
+
+      if (nonMaleTw) {
+        preferredFemaleVoice = nonMaleTw;
+        return preferredFemaleVoice;
       }
 
-      const twIncludes = voices.find(v => v.lang && v.lang.toLowerCase().includes('tw'));
-      if (twIncludes) {
-        preferredTwVoice = twIncludes;
-        return preferredTwVoice;
+      const twVoice = voices.find(v => (v.lang || '').toLowerCase().includes('tw'));
+      if (twVoice) {
+        preferredFemaleVoice = twVoice;
+        return preferredFemaleVoice;
       }
     }
     return null;
@@ -39,8 +50,8 @@
 
   if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = () => {
-      preferredTwVoice = null;
-      getBestTaiwanVoice();
+      preferredFemaleVoice = null;
+      getTaiwanFemaleVoice();
     };
   }
 
@@ -66,12 +77,12 @@
         const utterance = new SpeechSynthesisUtterance(speechText);
         utterance.lang = 'zh-TW';
         utterance.rate = 0.82;
-        utterance.pitch = 1.0;
+        utterance.pitch = 1.05; // 明るく自然な女性トーン
         utterance.volume = 1.0;
 
-        const twVoice = getBestTaiwanVoice();
-        if (twVoice) {
-          utterance.voice = twVoice;
+        const femaleVoice = getTaiwanFemaleVoice();
+        if (femaleVoice) {
+          utterance.voice = femaleVoice;
         }
 
         let spoken = false;
