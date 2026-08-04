@@ -203,7 +203,7 @@ window.VOWELS_STEP3_DATA = [
     examples: [
       { traditional: "臺灣", zhuyin: "ㄊㄞˊ ㄨㄢ", pinyin: "Táiwān", meaning: "台湾" },
       { traditional: "飯店", zhuyin: "ㄈㄢˋ ㄉㄧㄢˋ", pinyin: "fàndiàn", meaning: "ホテル / レストラン" },
-      { traditional: "巴士", zhuyin: "ㄅㄚ ㄕˋ", pinyin: "bāshì", meaning: "バス" }
+      { traditional: "早餐", zhuyin: "ㄗㄠˇ ㄘㄢ", pinyin: "zǎocān", meaning: "朝ごはん" }
     ]
   },
   {
