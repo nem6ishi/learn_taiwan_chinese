@@ -453,4 +453,53 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
   }
 ];
 
-window.VOWELS_QUIZ_QUESTIONS_3 = [];
+// 1-3 確認クイズ (鼻音・そり舌母音 ㄢ ㄣ ㄤ ㄥ ㄦ)
+window.VOWELS_QUIZ_QUESTIONS_3 = [
+  {
+    id: 1,
+    type: "audio",
+    targetSymbol: "ㄢ",
+    speechTarget: "ㄢ",
+    prompt: "再生された音声に当てはまる前鼻音（-n 響き）を選んでください",
+    options: ["ㄢ", "ㄣ", "ㄤ", "ㄥ"]
+  },
+  {
+    id: 2,
+    type: "audio",
+    targetSymbol: "ㄦ",
+    speechTarget: "ㄦ",
+    prompt: "再生された音声に当てはまるそり舌母音（舌を巻き上げる音）を選んでください",
+    options: ["ㄦ", "ㄢ", "ㄣ", "ㄤ"]
+  },
+  {
+    id: 3,
+    type: "zhuyin-to-word",
+    targetSymbol: "羊",
+    speechTarget: "羊",
+    prompt: "注音符号「ㄧㄤˊ」に対応する単語はどれ？",
+    options: ["羊", "山", "人", "門"]
+  },
+  {
+    id: 4,
+    type: "word-to-zhuyin",
+    targetSymbol: "ㄇㄣˊ",
+    speechTarget: "門",
+    optionSpeechMap: {
+      "ㄇㄣˊ": "門",
+      "ㄕㄢ": "山",
+      "ㄧㄤˊ": "羊",
+      "ㄦˊ ㄗ˙": "兒子"
+    },
+    prompt: "単語「門 (mén / ドア・門)」の正しい注音表記はどれ？",
+    options: ["ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ", "ㄦˊ ㄗ˙"]
+  },
+  {
+    id: 5,
+    type: "fill-in-blank",
+    targetSymbol: "ㄤ",
+    speechTarget: "羊",
+    prompt: "単語「羊 (yáng / ヒツジ)」の注音「 ㄧ___ˊ 」の空欄に入る後鼻音（-ng 響き）はどれ？",
+    options: ["ㄤ", "ㄢ", "ㄣ", "ㄥ"]
+  }
+];
+
