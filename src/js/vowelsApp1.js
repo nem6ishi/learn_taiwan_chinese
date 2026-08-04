@@ -1,4 +1,4 @@
-// STEP 02 二重母音 学習＆クイズ制御 (完全静的スタンドアロン対応)
+// STEP 01 単母音 学習＆クイズ制御 (完全静的スタンドアロン対応)
 (function() {
   let currentQuizIndex = 0;
   let quizScore = 0;
@@ -17,7 +17,7 @@
 
   function renderVowelList() {
     const container = document.getElementById('vowel-list-container');
-    const dataList = window.VOWELS_STEP2_DATA;
+    const dataList = window.VOWELS_STEP1_DATA;
     if (!container || !dataList) return;
 
     container.innerHTML = dataList.map(item => `
@@ -150,7 +150,7 @@
   }
 
   function renderQuizQuestion(isUserAction = false) {
-    const questions = window.VOWELS_QUIZ_QUESTIONS_2;
+    const questions = window.VOWELS_QUIZ_QUESTIONS_1;
     if (!questions || currentQuizIndex >= questions.length) {
       showQuizResult();
       return;
@@ -225,7 +225,7 @@
 
   function showQuizResult() {
     const quizSection = document.getElementById('quiz-section');
-    const questions = window.VOWELS_QUIZ_QUESTIONS_2;
+    const questions = window.VOWELS_QUIZ_QUESTIONS_1;
     if (!quizSection || !questions) return;
 
     quizSection.innerHTML = `

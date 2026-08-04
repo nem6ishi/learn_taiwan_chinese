@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>注音ナビ | 台湾中国語（繁体字）ポータル</title>
   <meta name="description" content="台湾で使われている注音符号（ㄅㄆㄇㄈ）を音素系統別にステップバイステップで学べるシンプルな学習ポータル。">
-  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
     </div>
   </nav>
 
-  <!-- ヒーローセクション (洗練されたファーストビュー) -->
+  <!-- ヒーローセクション -->
   <header class="hero">
     <div class="container">
       <h1 class="hero-title">
@@ -47,7 +47,7 @@
     </div>
   </header>
 
-  <!-- お試し発音セクション (単母音4 + 二重母音4 の計8文字パレット) -->
+  <!-- お試し発音セクション -->
   <section class="try-section">
     <div class="container">
       <h2 class="section-heading">注音符号（母音8文字）を発音テスト</h2>
@@ -138,6 +138,9 @@
     </div>
   </footer>
 
-  <script type="module" src="/src/js/main.js"></script>
+  <!-- 完全静的スクリプト読み込み (サーバー不要) -->
+  <script src="src/js/appData.js"></script>
+  <script src="src/js/appCore.js"></script>
+  <script src="src/js/indexPage.js"></script>
 </body>
 </html>
