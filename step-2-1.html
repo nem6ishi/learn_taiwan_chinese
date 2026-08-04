@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP 2-1: 挨拶・自己紹介 ＆ 基本文法「是」 | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾旅行や日常で最初に使う挨拶（你好, 謝謝, 不客氣, 對不起）と、「我是日本人」などの基本文法「是」をマスター。">
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+        ← トップ一覧へ戻る
+      </a>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">実践台湾華語 STEP 2-1</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">2-1 挨拶・自己紹介 ＆ 基本文法「是 (shì / 〜です)」</h1>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
+          ★台湾旅行や街中で毎日使う挨拶と、最も基本的な文法「A 是 B」をマスター！
+        </p>
+      </div>
+      <button class="btn btn-primary" id="start-quiz-top-btn">
+        🏆 確認クイズを受ける (全10問)
+      </button>
+    </div>
+
+    <!-- コンテンツ表示コンテナ -->
+    <div id="grammar-list-container" style="display: flex; flex-direction: column; gap: 24px;">
+      <!-- JSで文法＆フレーズカードを生成 -->
+    </div>
+
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">2-1 の文法とフレーズを一通り学習しましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        習ったフレーズと文法だけで解ける100%全網羅クイズで定着度をテストしましょう！
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
+          🏆 確認クイズを始める
+        </button>
+        <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          トップ一覧へ戻る →
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <!-- QuizEngineで動的生成 -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+    </div>
+  </footer>
+
+  <script src="src/js/appData.js"></script>
+  <script src="src/js/appCore.js"></script>
+  <script src="src/js/quizEngine.js"></script>
+  <script src="src/js/step2-1.js"></script>
+</body>
+</html>

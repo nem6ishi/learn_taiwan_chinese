@@ -404,6 +404,63 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
   },
   { id: 8, type: "zhuyin-to-word", targetSymbol: "山", speechTarget: "山", prompt: "注音符号「ㄕㄢ」に対応する単語はどれ？", options: ["山", "羊", "人", "門"] },
   { id: 9, type: "zhuyin-to-word", targetSymbol: "人", speechTarget: "人", prompt: "注音符号「ㄖㄣˊ」に対応する単語はどれ？", options: ["人", "山", "羊", "門"] },
-  { id: 10, type: "fill-in-blank", targetSymbol: "ㄤ", speechTarget: "羊", prompt: "単語「羊 (yáng)」の注音「 ㄧ___ˊ 」の空欄に入る後鼻音はどれ？", options: ["ㄤ", "ㄢ", "ㄣ", "ㄥ"] }
+// ==================== STEP 2-1: 挨拶・自己紹介 ＆ 基本文法「是 (shì / 〜です)」 ====================
+window.GRAMMAR_STEP2_1_DATA = [
+  {
+    id: "g2-1-1",
+    grammarTitle: "基本文法①: 「〜は〜です」（A 是 B）",
+    grammarFormula: "主語 (A) + 是 (shì) + 名詞 (B)",
+    explanation: "「是」は日本語の「〜です / 〜である」にあたる最も基本的な動詞です。否定する場合は「不是 (bú shì / 〜ではありません)」になります。",
+    examples: [
+      { traditional: "我是日本人", zhuyin: "ㄨㄛˇ ㄕˋ ㄖˋ ㄅㄣˇ ㄖㄣˊ", pinyin: "wǒ shì rìběnrén", meaning: "私は日本人です" },
+      { traditional: "他是台灣人", zhuyin: "ㄊㄚ ㄕˋ ㄊㄞˊ ㄨㄢ ㄖㄣˊ", pinyin: "tā shì táiwānrén", meaning: "彼（彼女）は台湾人です" },
+      { traditional: "我不是學生", zhuyin: "ㄨㄛˇ ㄅㄨˋ ㄕˋ ㄒㄩㄝˊ ㄕㄥ", pinyin: "wǒ bú shì xuéshēng", meaning: "私は学生ではありません" }
+    ]
+  },
+  {
+    id: "g2-1-2",
+    grammarTitle: "基本文法②: 「私の名前は〜です / 〜と申します」",
+    grammarFormula: "我叫 + 名前 / 我姓 + 苗字",
+    explanation: "フルネームや名前を言うときは「叫 (jiào)」、苗字（姓）を言うときは「姓 (xìng)」を使います。",
+    examples: [
+      { traditional: "你好！我叫田中", zhuyin: "ㄋㄧˇ ㄏㄠˇ ！ ㄨㄛˇ ㄐㄧㄠˋ ㄊㄧㄢˊ ㄓㄨㄥ", pinyin: "nǐ hǎo ! wǒ jiào tiánzhōng", meaning: "こんにちは！私は田中と申します" },
+      { traditional: "請問你姓什麼？", zhuyin: "ㄑㄧㄥˇ ㄨㄣˋ ㄋㄧˇ ㄒㄧㄥˋ ㄕㄣˊ ㄇㄛ˙ ？", pinyin: "qǐng wèn nǐ xìng shénme ?", meaning: "お名前（お苗字）は何とおっしゃいますか？" }
+    ]
+  },
+  {
+    id: "g2-1-3",
+    grammarTitle: "✈️ 台湾旅行・日常で毎日使う必須フレーズ",
+    grammarFormula: "日常の挨拶 ＆ 感謝・お詫び表現",
+    explanation: "台湾の街中やお店、ホテルで毎日使う基本中の基本挨拶フレーズです。",
+    examples: [
+      { traditional: "你好", zhuyin: "ㄋㄧˇ ㄏㄠˇ", pinyin: "nǐ hǎo", meaning: "こんにちは（最も基本の挨拶）" },
+      { traditional: "謝謝", zhuyin: "ㄒㄧㄝˋ ㄒㄧㄝ˙", pinyin: "xièxie", meaning: "ありがとうございます" },
+      { traditional: "不客氣", zhuyin: "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", pinyin: "bú kèqì", meaning: "どういたしまして" },
+      { traditional: "對不起", zhuyin: "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", pinyin: "duìbuqǐ", meaning: "ごめんなさい / すみません" }
+    ]
+  }
 ];
+
+// STEP 2-1 確認クイズ (全文法・全フレーズ100%全網羅・全10問)
+window.GRAMMAR_QUIZ_QUESTIONS_2_1 = [
+  { id: 1, type: "audio", targetSymbol: "你好", speechTarget: "你好", prompt: "再生された音声に当てはまる日常挨拶を選んでください", options: ["你好", "謝謝", "對不起", "不客氣"] },
+  { id: 2, type: "audio", targetSymbol: "謝謝", speechTarget: "謝謝", prompt: "再生された音声に当てはまる「ありがとう」の表現を選んでください", options: ["謝謝", "你好", "不客氣", "對不起"] },
+  { id: 3, type: "audio", targetSymbol: "不客氣", speechTarget: "不客氣", prompt: "再生された音声に当てはまる「どういたしまして」の表現を選んでください", options: ["不客氣", "謝謝", "對不起", "你好"] },
+  { id: 4, type: "audio", targetSymbol: "對不起", speechTarget: "對不起", prompt: "再生された音声に当てはまる「ごめんなさい」の表現を選んでください", options: ["對不起", "不客氣", "謝謝", "你好"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "我是日本人", speechTarget: "我是日本人", prompt: "注音「ㄨㄛˇ ㄕˋ ㄖˋ ㄅㄣˇ ㄖㄣˊ」に対応する日本語訳はどれ？", options: ["私は日本人です", "彼は台湾人です", "私は学生ではありません", "こんにちは"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "他是台灣人", speechTarget: "他是台灣人", prompt: "注音「ㄊㄚ ㄕˋ ㄊㄞˊ ㄨㄢ ㄖㄣˊ」に対応するフレーズはどれ？", options: ["彼は台湾人です", "私は日本人です", "私は学生です", "ありがとう"] },
+  { id: 7, type: "fill-in-blank", targetSymbol: "是", speechTarget: "我是日本人", prompt: "「私は日本人です（我 ___ 日本人）」の空欄に入る動詞はどれ？", options: ["是", "不", "叫", "姓"] },
+  { id: 8, type: "fill-in-blank", targetSymbol: "叫", speechTarget: "我叫田中", prompt: "「私の名前は〜です（我 ___ 田中）」の空欄に入る言葉はどれ？", options: ["叫", "是", "姓", "不"] },
+  {
+    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", speechTarget: "不客氣",
+    optionSpeechMap: { "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ": "不客氣", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ": "對不起" },
+    prompt: "「不客氣 (bú kèqì / どういたしまして)」の正しい注音表記はどれ？", options: ["ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ", "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ"]
+  },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", speechTarget: "對不起",
+    optionSpeechMap: { "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ": "對不起", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ": "不客氣", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄋㄧˇ ㄏㄠˇ": "你好" },
+    prompt: "「對不起 (duìbuqǐ / すみません)」の正しい注音表記はどれ？", options: ["ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ"]
+  }
+];
+
 
