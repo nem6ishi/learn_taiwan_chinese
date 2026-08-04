@@ -3,7 +3,7 @@
   let currentQuizIndex = 0;
   let quizScore = 0;
 
-  document.addEventListener('DOMContentLoaded', () => {
+  const init = () => {
     renderVowelList();
     setupQuizListeners();
 
@@ -13,7 +13,13 @@
         speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
       }
     }
-  });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
   function renderVowelList() {
     const container = document.getElementById('vowel-list-container');
