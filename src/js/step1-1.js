@@ -85,8 +85,8 @@
               <div class="example-left">
                 <span class="example-trad">${ex.traditional}</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">注音: ${ex.zhuyin}</span>
-                  <span class="example-pinyin">ピンイン: ${ex.pinyin}</span>
+                  <span class="example-zhuyin">${ex.zhuyin}</span>
+                  <span class="example-pinyin">${ex.pinyin}</span>
                 </div>
               </div>
               <div class="example-right">
