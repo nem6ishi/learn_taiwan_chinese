@@ -67,9 +67,222 @@
       </div>
     </div>
 
-    <!-- 8文字を一気に並べるリストコンテナ -->
+    <!-- 8文字を一気に並べるリストコンテナ (Pure Static HTML) -->
     <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
-      <!-- JSで全8文字カードを一括レンダリング -->
+      
+      <!-- ㄅ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 子音 (無気音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄅ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">b (ボ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄅ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          【無気音】息を出さずに口の中に溜めて「ボ」。口の前のティッシュが動かない静かな音。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="八">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">八</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">注音: ㄅㄚ</span>
+                <span class="example-pinyin">ピンイン: bā</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">数字の「8」</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="爸爸">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">爸爸</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">注音: ㄅㄚˋ ㄅㄚ˙</span>
+                <span class="example-pinyin">ピンイン: bàba</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">お父さん</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄆ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 子音 (有気音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄆ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">p (ポ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄆ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          【有気音】口に溜めた息を破裂させるように強く「ポーッ！」。ティッシュが大きく揺れます。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="婆婆">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">婆婆</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">注音: ㄆㄛˊ ㄆㄛ˙</span>
+                <span class="example-pinyin">ピンイン: pópo</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">おばあさん / 義理の母</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄇ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 子音 (鼻音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄇ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">m (モ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄇ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          唇を閉じて鼻から音を響かせて「モー」。日本語のマ行と同じ要領です。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="媽媽">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">媽媽</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">注音: ㄇㄚ ㄇㄚ˙</span>
+                <span class="example-pinyin">ピンイン: māma</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">お母さん</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄈ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 子音 (擦音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄈ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">f (フォ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄈ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          上の前歯で下唇を軽く噛み、隙間から息を擦り出させて「フォ」。
+        </p>
+      </div>
+
+      <!-- ㄚ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 単母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄚ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">a (アー)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄚ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          口を大きく開けて、喉の奥から伸びやかに「アー」。
+        </p>
+      </div>
+
+      <!-- ㄛ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 単母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄛ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">o (オー)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄛ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          唇を丸くすぼめて「オー」。
+        </p>
+      </div>
+
+      <!-- ㄜ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 単母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄜ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">e (エ/オ曖昧音)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄜ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          口を「エ」の形にしたまま、喉の奥から「オ」と発声する独特な曖昧音。
+        </p>
+      </div>
+
+      <!-- ㄝ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-1 単母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄝ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ê (エー)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄝ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          日本語の「エ」に近いクリアな音。
+        </p>
+      </div>
+
     </div>
 
     <!-- クイズ受講エリア (最下部) -->
