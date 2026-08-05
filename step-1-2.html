@@ -72,9 +72,393 @@
       </div>
     </div>
 
-    <!-- 8文字を一気に並べるリストコンテナ -->
+    <!-- 8文字を一気に並べるリストコンテナ (Pure Static HTML) -->
     <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
-      <!-- JSで全8文字カードを一括レンダリング -->
+      
+      <!-- ㄉ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 子音 (無気音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄉ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">d (ド)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄉ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          【無気音】舌先を歯の裏から離すとき息を出さずに「ド」。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="大">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">大</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄉㄚˋ</span>
+                <span class="example-pinyin">dà</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">大きい</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="帶">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">帶</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄉㄞˋ</span>
+                <span class="example-pinyin">dài</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">持っていく / 連れて行く</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄊ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 子音 (有気音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄊ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">t (ト)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄊ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          【有気音】舌先を離す瞬間に強い息を炸裂させて「トーッ！」。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="他">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">他</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄊㄚ</span>
+                <span class="example-pinyin">tā</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">彼 / あの人</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="頭">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">頭</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄊㄡˊ</span>
+                <span class="example-pinyin">tóu</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">あたま（頭）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄋ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 子音 (鼻音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄋ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">n (ヌ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄋ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          舌先を上歯茎につけて鼻に息を抜いて「ヌー」。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="奶">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">奶</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄋㄞˇ</span>
+                <span class="example-pinyin">nǎi</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ミルク（鮮奶茶の奶）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="你">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">你</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄋㄧˇ</span>
+                <span class="example-pinyin">nǐ</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">あなた（你好の你）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄌ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 子音 (邊音)</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄌ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">l (ル)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄌ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          舌先を弾いて息を左右に逃がして「ルー」。日本語のラ行と同じ感覚です。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="老">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">老</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄌㄠˇ</span>
+                <span class="example-pinyin">lǎo</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">年老いた / 馴染みの（老店）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="來">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">來</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄌㄞˊ</span>
+                <span class="example-pinyin">lái</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">来る / 〜を1つちょうだい</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄞ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 二重母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄞ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ai (アイ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄞ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          「ア」から始まりスムーズに「イ」へ滑らかにつなげる二重母音。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="愛">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">愛</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄞˋ</span>
+                <span class="example-pinyin">ài</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">愛する / 〜するのが好き</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="帶">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">帶</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄉㄞˋ</span>
+                <span class="example-pinyin">dài</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">持っていく</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄟ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 二重母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄟ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ei (エイ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄟ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          「エ」から「イ」へ自然につなげる。日本語の「英語(えいご)」のエイに近い音。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="黑">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">黑</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄏㄟ</span>
+                <span class="example-pinyin">hēi</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">黒い</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="給">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">給</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄍㄟˇ</span>
+                <span class="example-pinyin">gěi</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">あげる / 〜に</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄠ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 二重母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄠ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ao (アオ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄠ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          「ア」から始まり口を丸めて「オ/ウ」へ着地するダイナミックな二重母音。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="凹">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">凹</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄠ</span>
+                <span class="example-pinyin">āo</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">凹む（へこむ）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="老">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">老</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄌㄠˇ</span>
+                <span class="example-pinyin">lǎo</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">年老いた</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄡ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-2 二重母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄡ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ou (オウ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄡ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          「オ」から「ウ」へすぼめる。日本語の伸ばす「オウ」の感覚です。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="歐">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">歐</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄡ</span>
+                <span class="example-pinyin">ōu</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ヨーロッパ（歐洲）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="頭">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">頭</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄊㄡˊ</span>
+                <span class="example-pinyin">tóu</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">あたま（頭）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- クイズ受講エリア (最下部) -->
