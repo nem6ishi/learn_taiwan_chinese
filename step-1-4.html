@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP 1-4: 介音 3文字 (ㄧ ㄨ ㄩ) | 台湾華語学習サイト</title>
+  <meta name="description" content="子音と母音を滑らかにつなぐ3大介音「ㄧ (i), ㄨ (u), ㄩ (ü)」をマスター。一, 衣服, 五, 屋子, 雨, 魚 などの日常単語を学びます。">
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="step-1-3.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          ← 1-3 へ
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">注音符号 1-4: MEDIAL VOWELS</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">1-4 介音 3文字（ㄧ ㄨ ㄩ）</h1>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
+          ★子音と母音を繋ぐ架け橋！単独でも「一, 衣服, 五, 雨, 魚」など超頻出の超重要3文字です。
+        </p>
+      </div>
+      <button class="btn btn-primary" id="start-quiz-top-btn">
+        🏆 確認クイズを受ける (全10問)
+      </button>
+    </div>
+
+    <!-- 介音（かいおん）の特別解説ボックス -->
+    <div style="background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); border: 1px solid #BFDBFE; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 32px;">
+      <h3 style="font-size: 1.15rem; font-weight: 900; color: #1E40AF; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+        💡 介音（かいおん）ってなに？
+      </h3>
+      <p style="color: #1E3A8A; font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px;">
+        「ㄧ (i)」「ㄨ (u)」「ㄩ (ü)」の3文字は、単独で母音（イ・ウ・ユー）になるだけでなく、<strong>子音と他の母音の間に挟まって音を滑らかにつなぐ「クッション」の役割</strong>をします！
+      </p>
+      <div style="background: #FFFFFF; border: 1px solid #93C5FD; border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; color: #334155;">
+        🇹🇼 <strong>台湾華語コラム</strong>: ピンインでは「yī (一)」「wǔ (五)」「yǔ (雨)」と頭に y や w が付きますが、注音符号では「ㄧ」「ㄨ」「ㄩ」そのものが単独文字としてスッキリ使われます！
+      </div>
+    </div>
+
+    <!-- 3文字を一気に並べるリストコンテナ (Pure Static HTML) -->
+    <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
+      
+      <!-- ㄧ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 介音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄧ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">i / y (イー)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄧ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          数字の「一」と同じ形。口を横にキーッと強く引き伸ばして「イー」。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="一">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">一</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄧ</span>
+                <span class="example-pinyin">yī</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">数字の「1」</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="衣服">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">衣服</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄧ ㄈㄨˊ</span>
+                <span class="example-pinyin">yīfú</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ふく（衣服）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄨ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 介音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄨ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">u / w (ウー)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄨ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          唇をタコのように前にキュッと突き出し、小さな円を作って「ウー」。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="五">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">五</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄨˇ</span>
+                <span class="example-pinyin">wǔ</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">数字の「5」</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="屋子">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">屋子</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄨ ㄗ˙</span>
+                <span class="example-pinyin">wūzi</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">へや / 家（屋子）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄩ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 介音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄩ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ü / yu (ユー/ユィ)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄩ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+          舌の位置は「イ」のまま、唇だけ口笛の形に丸めて発声する「ユー」。
+        </p>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list">
+          <div class="example-row play-word-sound" data-word="雨">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">雨</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄩˇ</span>
+                <span class="example-pinyin">yǔ</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">あめ（雨）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="魚">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">魚</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄩˊ</span>
+                <span class="example-pinyin">yú</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">さかな（魚）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">1-4 介音3文字を一通りチェックしましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        音声を聴いて注音符号を当てる「確認クイズ」で定着度を確かめましょう。
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
+          🏆 確認クイズを始める (全10問)
+        </button>
+        <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          🏠 トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <span style="font-weight: 700; color: var(--color-primary);" id="quiz-progress-text">第 1 / 10 問</span>
+          <button class="btn btn-outline" id="close-quiz-btn" style="padding: 4px 10px; font-size: 0.8rem;">
+            ✖ 学習に戻る
+          </button>
+        </div>
+
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;" id="quiz-question-prompt">
+          問題
+        </h3>
+
+        <div style="margin: 20px 0;" id="quiz-audio-trigger-area">
+          <button class="btn btn-outline" id="quiz-audio-play-btn">
+            🔊 音声を聴く（再再生）
+          </button>
+        </div>
+
+        <div class="quiz-options" id="quiz-options-grid">
+          <!-- JSで生成 -->
+        </div>
+
+        <div id="quiz-feedback-msg" style="margin-top: 20px; font-weight: 700; font-size: 1.1rem; min-height: 30px;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+    </div>
+  </footer>
+
+  <script src="src/js/appData.js"></script>
+  <script src="src/js/appCore.js"></script>
+  <script src="src/js/quizEngine.js"></script>
+  <script src="src/js/step1-4.js"></script>
+</body>
+</html>

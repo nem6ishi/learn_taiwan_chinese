@@ -351,7 +351,164 @@ window.VOWELS_STEP2_DATA = [
   }
 ];
 
-window.VOWELS_STEP3_DATA = [];
+window.VOWELS_STEP3_DATA = [
+  {
+    id: "vowel-an",
+    symbol: "ㄢ",
+    pinyin: "an",
+    ipa: "[an]",
+    katakana: "アン",
+    typeTag: "前鼻音 (鼻音韻母)",
+    title: "前鼻音「ㄢ」",
+    originKanji: "冉 (rǎn)",
+    originDesc: "「案」のアン。舌先を上の前歯の裏につけて「ん」を響かせます。",
+    tipTitle: "舌先を前歯の裏につけてスッキリ「アン」！",
+    tipDesc: "日本語の「案内(あんない)」の「ん」と同じ舌の位置で息を止めます。",
+    color: "from-amber-500 to-orange-600",
+    themeHex: "#D97706",
+    examples: [
+      { traditional: "山", zhuyin: "ㄕㄢ", pinyin: "shān", meaning: "やま (山)" },
+      { traditional: "台灣", zhuyin: "ㄊㄞˊ ㄨㄢ", pinyin: "táiwān", meaning: "台湾" }
+    ]
+  },
+  {
+    id: "vowel-en",
+    symbol: "ㄣ",
+    pinyin: "en",
+    ipa: "[ən]",
+    katakana: "エン / ウン",
+    typeTag: "前鼻音 (鼻音韻母)",
+    title: "前鼻音「ㄣ」",
+    originKanji: "隱の変形",
+    originDesc: "口に力を入れず、曖昧な「エ/オ」から前歯の裏に舌をつけて「ん」。",
+    tipTitle: "口の力を抜いて曖昧に「エン」！",
+    tipDesc: "日本語の「因縁(いんえん)」の「ん」に近い感覚です。",
+    color: "from-emerald-500 to-green-600",
+    themeHex: "#059669",
+    examples: [
+      { traditional: "人", zhuyin: "ㄖㄣˊ", pinyin: "rén", meaning: "ひと (人)" },
+      { traditional: "門", zhuyin: "ㄇㄣˊ", pinyin: "mén", meaning: "ドア / 門" }
+    ]
+  },
+  {
+    id: "vowel-ang",
+    symbol: "ㄤ",
+    pinyin: "ang",
+    ipa: "[ɑŋ]",
+    katakana: "アン (後鼻音)",
+    typeTag: "後鼻音 (鼻音韻母)",
+    title: "後鼻音「ㄤ」",
+    originKanji: "尪 (wāng)",
+    originDesc: "口を大きく開けたまま、舌の奥を喉につけて鼻へ響かせる深い「アン」。",
+    tipTitle: "口を大きく開けたまま喉奥で「アン」！",
+    tipDesc: "日本語の「案外(あんがい)」の「ん」のように舌先は浮かせたままです。",
+    color: "from-blue-500 to-cyan-600",
+    themeHex: "#2563EB",
+    examples: [
+      { traditional: "羊", zhuyin: "ㄧㄤˊ", pinyin: "yáng", meaning: "ヒツジ (羊)" },
+      { traditional: "幫", zhuyin: "ㄅㄤ", pinyin: "bāng", meaning: "手伝う / 助ける" }
+    ]
+  },
+  {
+    id: "vowel-eng",
+    symbol: "ㄥ",
+    pinyin: "eng",
+    ipa: "[ɤŋ]",
+    katakana: "エン (後鼻音)",
+    typeTag: "後鼻音 (鼻音韻母)",
+    title: "後鼻音「ㄥ」",
+    originKanji: "肱 (gōng)",
+    originDesc: "曖昧な「エ/オ」から口を開けたまま喉奥を引いて鼻へ抜く音。",
+    tipTitle: "喉奥を引いて響かせる「エン」！",
+    tipDesc: "「風(fēng)」などの語尾で使われる深い鼻音です。",
+    color: "from-indigo-500 to-purple-600",
+    themeHex: "#4F46E5",
+    examples: [
+      { traditional: "風", zhuyin: "ㄈㄥ", pinyin: "fēng", meaning: "かぜ (風)" },
+      { traditional: "朋", zhuyin: "ㄆㄥˊ", pinyin: "péng", meaning: "ともだち (朋友の朋)" }
+    ]
+  },
+  {
+    id: "vowel-er",
+    symbol: "ㄦ",
+    pinyin: "er",
+    ipa: "[ɑɚ]",
+    katakana: "アル (そり舌)",
+    typeTag: "卷舌韻母 (そり舌)",
+    title: "そり舌母音「ㄦ」",
+    originKanji: "兒 (ér)",
+    originDesc: "漢字「兒」に由来。舌先を上顎に向けて巻き上げながら発声します。",
+    tipTitle: "舌をくるっと上顎へ巻き上げて「アル」！",
+    tipDesc: "英語の「R」に近く、舌先をどこにも付けずに引きます。",
+    color: "from-rose-500 to-pink-600",
+    themeHex: "#E11D48",
+    examples: [
+      { traditional: "兒子", zhuyin: "ㄦˊ ㄗ˙", pinyin: "érzi", meaning: "むすこ (息子)" },
+      { traditional: "耳", zhuyin: "ㄦˇ", pinyin: "ěr", meaning: "みみ (耳)" }
+    ]
+  }
+];
+
+// 1-4: 介音 (ㄧ ㄨ ㄩ)
+window.VOWELS_STEP4_DATA = [
+  {
+    id: "vowel-i",
+    symbol: "ㄧ",
+    pinyin: "i / y",
+    ipa: "[i]",
+    katakana: "イー",
+    typeTag: "介音 (結合韻母)",
+    title: "介音「ㄧ」",
+    originKanji: "一 (yī)",
+    originDesc: "数字の「一」の横棒から。口を横に一文字に引っ張って「イー」。単独では「yi」と表記。",
+    tipTitle: "口を横にキーッと引き伸ばして「イー」！",
+    tipDesc: "日本語の「イ」よりも強く左右に口角を引っ張るのがポイントです。",
+    color: "from-sky-500 to-blue-600",
+    themeHex: "#0284C7",
+    examples: [
+      { traditional: "一", zhuyin: "ㄧ", pinyin: "yī", meaning: "数字の「1」" },
+      { traditional: "衣服", zhuyin: "ㄧ ㄈㄨˊ", pinyin: "yīfú", meaning: "ふく (衣服)" }
+    ]
+  },
+  {
+    id: "vowel-u",
+    symbol: "ㄨ",
+    pinyin: "u / w",
+    ipa: "[u]",
+    katakana: "ウー",
+    typeTag: "介音 (結合韻母)",
+    title: "介音「ㄨ」",
+    originKanji: "五の古代文字",
+    originDesc: "「五」の原字に由来。唇を前にキュッと突き出して丸く「ウー」。単独では「wu」と表記。",
+    tipTitle: "タコのように唇を前に突き出して「ウー」！",
+    tipDesc: "日本語のフラットな「ウ」と違い、丸く小さな穴を作って前に突き出します。",
+    color: "from-amber-500 to-orange-600",
+    themeHex: "#D97706",
+    examples: [
+      { traditional: "五", zhuyin: "ㄨˇ", pinyin: "wǔ", meaning: "数字の「5」" },
+      { traditional: "屋子", zhuyin: "ㄨ ㄗ˙", pinyin: "wūzi", meaning: "へや / いえ (屋子)" }
+    ]
+  },
+  {
+    id: "vowel-yu",
+    symbol: "ㄩ",
+    pinyin: "ü / yu",
+    ipa: "[y]",
+    katakana: "ユー (ユィ)",
+    typeTag: "介音 (結合韻母)",
+    title: "介音「ㄩ」",
+    originKanji: "凵 (kǎn / うけばこ)",
+    originDesc: "器の形に由来。「イ」と言いながら唇だけを「ウ」の丸さにする音。単独では「yu」と表記。",
+    tipTitle: "「イ」の舌で口だけ口笛の口「ユー」！",
+    tipDesc: "舌の位置は「イ」のまま、唇だけを丸く絞って「ユィ/ユー」と発声します。",
+    color: "from-emerald-500 to-teal-600",
+    themeHex: "#059669",
+    examples: [
+      { traditional: "雨", zhuyin: "ㄩˇ", pinyin: "yǔ", meaning: "あめ (雨)" },
+      { traditional: "魚", zhuyin: "ㄩˊ", pinyin: "yú", meaning: "さかな (魚)" }
+    ]
+  }
+];
 
 // 1-1 確認クイズ (全8文字・主要単語100%カバー・全10問)
 window.VOWELS_QUIZ_QUESTIONS_1 = [
@@ -404,6 +561,35 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
   },
   { id: 8, type: "zhuyin-to-word", targetSymbol: "山", speechTarget: "山", prompt: "注音符号「ㄕㄢ」に対応する単語はどれ？", options: ["山", "羊", "人", "門"] },
   { id: 9, type: "zhuyin-to-word", targetSymbol: "人", speechTarget: "人", prompt: "注音符号「ㄖㄣˊ」に対応する単語はどれ？", options: ["人", "山", "羊", "門"] },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄦˊ ㄗ˙", speechTarget: "兒子",
+    optionSpeechMap: { "ㄦˊ ㄗ˙": "兒子", "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊" },
+    prompt: "単語「兒子 (érzi / 息子)」の正しい注音表記はどれ？", options: ["ㄦˊ ㄗ˙", "ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ"]
+  }
+];
+
+// 1-4 確認クイズ (全3文字・主要単語100%カバー・全10問)
+window.VOWELS_QUIZ_QUESTIONS_4 = [
+  { id: 1, type: "audio", targetSymbol: "ㄧ", speechTarget: "ㄧ", prompt: "再生された音声に当てはまる介音「i (yī)」を選んでください", options: ["ㄧ", "ㄨ", "ㄩ", "ㄚ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄨ", speechTarget: "ㄨ", prompt: "再生された音声に当てはまる介音「u (wū)」を選んでください", options: ["ㄨ", "ㄧ", "ㄩ", "ㄛ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄩ", speechTarget: "ㄩ", prompt: "再生された音声に当てはまる介音「ü (yú)」を選んでください", options: ["ㄩ", "ㄧ", "ㄨ", "ㄝ"] },
+  { id: 4, type: "audio", targetSymbol: "一", speechTarget: "一", prompt: "再生された音声に当てはまる数字の「1」を選んでください", options: ["一", "五", "雨", "魚"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "衣服", speechTarget: "衣服", prompt: "注音符号「ㄧ ㄈㄨˊ」に対応する単語はどれ？", options: ["衣服", "屋子", "雨", "魚"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "五", speechTarget: "五", prompt: "注音符号「ㄨˇ」に対応する数字はどれ？", options: ["五", "一", "八", "大"] },
+  {
+    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄨ ㄗ˙", speechTarget: "屋子",
+    optionSpeechMap: { "ㄨ ㄗ˙": "屋子", "ㄧ ㄈㄨˊ": "衣服", "ㄩˇ": "雨", "ㄩˊ": "魚" },
+    prompt: "単語「屋子 (wūzi / 部屋)」の正しい注音表記はどれ？", options: ["ㄨ ㄗ˙", "ㄧ ㄈㄨˊ", "ㄩˇ", "ㄩˊ"]
+  },
+  { id: 8, type: "zhuyin-to-word", targetSymbol: "雨", speechTarget: "雨", prompt: "注音符号「ㄩˇ」に対応する自然の現象はどれ？", options: ["雨", "風", "山", "魚"] },
+  {
+    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄩˊ", speechTarget: "魚",
+    optionSpeechMap: { "ㄩˊ": "魚", "ㄩˇ": "雨", "ㄨˇ": "五", "ㄧ": "一" },
+    prompt: "単語「魚 (yú / さかな)」の正しい注音表記はどれ？", options: ["ㄩˊ", "ㄩˇ", "ㄨˇ", "ㄧ"]
+  },
+  { id: 10, type: "audio", targetSymbol: "介音", speechTarget: "一", prompt: "子音と母音をつなぐ3大介音は「ㄧ, ㄨ, ___」。最後の1つは？", options: ["ㄩ", "ㄚ", "ㄛ", "ㄢ"] },
+];
+
 // ==================== STEP 2-1: 挨拶・自己紹介 ＆ 基本文法「是 (shì / 〜です)」 ====================
 window.GRAMMAR_STEP2_1_DATA = [
   {
