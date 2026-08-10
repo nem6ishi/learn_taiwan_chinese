@@ -3,6 +3,13 @@
   const init = () => {
     bindAudioEvents();
     setupQuizListeners();
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.getVoices();
+      if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+      }
+    }
   };
 
   if (document.readyState === 'loading') {
@@ -26,22 +33,22 @@
   }
 
   function setupQuizListeners() {
-    if (!window.TaiwanChineseQuizEngine || !window.VOWELS_QUIZ_QUESTIONS_5) return;
+    const startTopBtn = document.getElementById('start-quiz-top-btn');
+    const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
 
-    window.TaiwanChineseQuizEngine.init({
-      stepTitle: "STEP 1-5: 舌根音・歯茎音・そり舌音 確認クイズ",
-      nextStepUrl: "step-2-1.html",
-      containerId: "quiz-section"
-    });
-
-    const startQuiz = () => {
-      window.TaiwanChineseQuizEngine.start(window.VOWELS_QUIZ_QUESTIONS_5);
+    const runQuiz = () => {
+      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_5) {
+        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_5, {
+          stepTitle: "1-5 確認クイズ (子音コンプリート)",
+          nextStepUrl: "step-2-1.html",
+          containerId: "quiz-section"
+        });
+      } else {
+        console.warn("QuizEngine or VOWELS_QUIZ_QUESTIONS_5 not found.");
+      }
     };
 
-    const topBtn = document.getElementById('start-quiz-top-btn');
-    const bottomBtn = document.getElementById('start-quiz-bottom-btn');
-
-    if (topBtn) topBtn.onclick = startQuiz;
-    if (bottomBtn) bottomBtn.onclick = startQuiz;
+    if (startTopBtn) startTopBtn.onclick = runQuiz;
+    if (startBottomBtn) startBottomBtn.onclick = runQuiz;
   }
 })();
