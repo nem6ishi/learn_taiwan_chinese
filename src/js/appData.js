@@ -510,6 +510,200 @@ window.VOWELS_STEP4_DATA = [
   }
 ];
 
+// 1-5: 舌根音（ㄍㄎㄏ）＋ 歯茎音（ㄗㄘㄙ）＋ そり舌音（ㄓㄔㄕㄖ）
+window.VOWELS_STEP5_DATA = [
+  {
+    id: "vowel-g",
+    symbol: "ㄍ",
+    pinyin: "g",
+    ipa: "[k]",
+    katakana: "ガ / ゴ",
+    typeTag: "舌根音 (無気音)",
+    title: "舌根音「ㄍ」",
+    originKanji: "巛 (川の形)",
+    originDesc: "「川」の形に由来。舌の奥を喉につけてから息を出さずに離します。",
+    tipTitle: "【無気音】喉奥から息を出さずに「ガ」！",
+    tipDesc: "日本語の「カ行」に近いですが、息を吹き出さない静かな音です。",
+    color: "from-blue-500 to-indigo-600",
+    themeHex: "#2563EB",
+    examples: [
+      { traditional: "哥", zhuyin: "ㄍㄜ", pinyin: "gē", meaning: "お兄さん (哥哥)" },
+      { traditional: "高", zhuyin: "ㄍㄠ", pinyin: "gāo", meaning: "たかい (高)" }
+    ]
+  },
+  {
+    id: "vowel-k",
+    symbol: "ㄎ",
+    pinyin: "k",
+    ipa: "[kʰ]",
+    katakana: "カ / コ",
+    typeTag: "舌根音 (有気音)",
+    title: "舌根音「ㄎ」",
+    originKanji: "考 (kǎo)",
+    originDesc: "漢字「考」の上部に由来。喉の奥から強く息を吹き出します。",
+    tipTitle: "【有気音】喉奥から息を強く破裂させて「カーッ！」",
+    tipDesc: "ティッシュが大きく揺れるほど、喉から勢いよく呼吸を吐き出します。",
+    color: "from-amber-500 to-yellow-600",
+    themeHex: "#D97706",
+    examples: [
+      { traditional: "客", zhuyin: "ㄎㄜˋ", pinyin: "kè", meaning: "きゃく (客人)" },
+      { traditional: "開", zhuyin: "ㄎㄞ", pinyin: "kāi", meaning: "あける (開門)" }
+    ]
+  },
+  {
+    id: "vowel-h",
+    symbol: "ㄏ",
+    pinyin: "h",
+    ipa: "[x]",
+    katakana: "ハ / ホ",
+    typeTag: "舌根音 (擦音)",
+    title: "舌根音「ㄏ」",
+    originKanji: "厂 (崖の形)",
+    originDesc: "崖の形に由来。喉の奥を軽く狭めて息をこすり出します。",
+    tipTitle: "寒い日に手へ「ハァ〜」と息を吹きかける音！",
+    tipDesc: "日本語の「ハ行」よりも喉の奥から息を擦り出させて「ハー」。",
+    color: "from-emerald-500 to-green-600",
+    themeHex: "#059669",
+    examples: [
+      { traditional: "好", zhuyin: "ㄏㄠˇ", pinyin: "hǎo", meaning: "よい / すき (好)" },
+      { traditional: "喝", zhuyin: "ㄏㄜ", pinyin: "hē", meaning: "のむ (喝水)" }
+    ]
+  },
+  {
+    id: "vowel-z",
+    symbol: "ㄗ",
+    pinyin: "z",
+    ipa: "[ts]",
+    katakana: "ズ / ヅ",
+    typeTag: "平舌音 (無気音)",
+    title: "平舌音「ㄗ」",
+    originKanji: "節 (jié)",
+    originDesc: "漢字「節」の古代文字に由来。舌先を上の前歯の裏につけて息をためます。",
+    tipTitle: "【無気音】舌先を前歯裏につけて息を出さずに「ズ」！",
+    tipDesc: "「正座」の「座(ざ/づ)」のように舌先をリラックスさせて発音します。",
+    color: "from-purple-500 to-pink-600",
+    themeHex: "#9333EA",
+    examples: [
+      { traditional: "早", zhuyin: "ㄗㄠˇ", pinyin: "zǎo", meaning: "おはよう (早安)" },
+      { traditional: "子", zhuyin: "ㄗ˙", pinyin: "zi", meaning: "こども / 語尾 (屋子)" }
+    ]
+  },
+  {
+    id: "vowel-c",
+    symbol: "ㄘ",
+    pinyin: "c",
+    ipa: "[tsʰ]",
+    katakana: "ツ",
+    typeTag: "平舌音 (有気音)",
+    title: "平舌音「ㄘ」",
+    originKanji: "七 (qī)",
+    originDesc: "数字「七」の古文字に由来。舌先から息を強く弾け出させます。",
+    tipTitle: "【有気音】舌先から強烈に息を弾き出させて「ツッ！」",
+    tipDesc: "日本語の「ツ」に鋭い強い息を乗せて発音します。",
+    color: "from-rose-500 to-red-600",
+    themeHex: "#E11D48",
+    examples: [
+      { traditional: "菜", zhuyin: "ㄘㄞˋ", pinyin: "cài", meaning: "りょうり / やさい (菜)" },
+      { traditional: "茶", zhuyin: "ㄘㄚˊ", pinyin: "chá", meaning: "おちゃ (珍珠奶茶)" }
+    ]
+  },
+  {
+    id: "vowel-s",
+    symbol: "ㄙ",
+    pinyin: "s",
+    ipa: "[s]",
+    katakana: "ス / サ",
+    typeTag: "平舌音 (擦音)",
+    title: "平舌音「ㄙ」",
+    originKanji: "私 (sī)",
+    originDesc: "「私」の原字に由来。歯の隙間から息をすべらせて「スー」。",
+    tipTitle: "前歯の隙間から息を滑らせて「スー」！",
+    tipDesc: "日本語の「サ行/ス」と同じ要領で静かに息を擦り出します。",
+    color: "from-teal-500 to-cyan-600",
+    themeHex: "#0D9488",
+    examples: [
+      { traditional: "三", zhuyin: "ㄙㄢ", pinyin: "sān", meaning: "数字の「3」" },
+      { traditional: "四", zhuyin: "ㄙˋ", pinyin: "sì", meaning: "数字の「4」" }
+    ]
+  },
+  {
+    id: "vowel-zh",
+    symbol: "ㄓ",
+    pinyin: "zh",
+    ipa: "[tʂ]",
+    katakana: "ヂ / ヂュ",
+    typeTag: "翹舌音 (そり舌・無気音)",
+    title: "そり舌音「ㄓ」",
+    originKanji: "之 (zhī)",
+    originDesc: "漢字「之」の古文字に由来。舌先を軽く上顎へ丸めます。",
+    tipTitle: "【台湾マイルド】舌を上顎へ軽く丸めて息を出さずに「ヂ」！",
+    tipDesc: "台湾華語では大陸ほど強く巻かず、舌を軽く引いて自然に発音するのがコツです。",
+    color: "from-orange-500 to-amber-600",
+    themeHex: "#EA580C",
+    examples: [
+      { traditional: "知道", zhuyin: "ㄓ ㄉㄠˋ", pinyin: "zhīdào", meaning: "しっている (知道)" },
+      { traditional: "中", zhuyin: "ㄓㄨㄥ", pinyin: "zhōng", meaning: "なか (台灣)" }
+    ]
+  },
+  {
+    id: "vowel-ch",
+    symbol: "ㄔ",
+    pinyin: "ch",
+    ipa: "[tʂʰ]",
+    katakana: "チ / チュ",
+    typeTag: "翹舌音 (そり舌・有気音)",
+    title: "そり舌音「ㄔ」",
+    originKanji: "彳 (行の左半分)",
+    originDesc: "「行」の左側の形に由来。丸めた舌先から強い息を出します。",
+    tipTitle: "【有気音】丸めた舌先から息を噴出させて「チッ！」",
+    tipDesc: "食べる「吃 (chī)」などで毎日使う非常に重要な音です。",
+    color: "from-red-500 to-rose-600",
+    themeHex: "#DC2626",
+    examples: [
+      { traditional: "吃", zhuyin: "ㄔ", pinyin: "chī", meaning: "たべる (吃飯)" },
+      { traditional: "車", zhuyin: "ㄔㄜ", pinyin: "chē", meaning: "くるま (計程車)" }
+    ]
+  },
+  {
+    id: "vowel-sh",
+    symbol: "ㄕ",
+    pinyin: "sh",
+    ipa: "[ʂ]",
+    katakana: "シ / シュ",
+    typeTag: "翹舌音 (そり舌・擦音)",
+    title: "そり舌音「ㄕ」",
+    originKanji: "尸 (しかばね)",
+    originDesc: "漢字「尸」の形に由来。丸めた舌と上顎の隙間から息をすべらせます。",
+    tipTitle: "丸めた舌の隙間から「シー」！",
+    tipDesc: "「是 (shì / 〜です)」や「山 (shān)」で毎日使う超重要音。",
+    color: "from-sky-500 to-indigo-600",
+    themeHex: "#0284C7",
+    examples: [
+      { traditional: "是", zhuyin: "ㄕˋ", pinyin: "shì", meaning: "〜です (我是)" },
+      { traditional: "山", zhuyin: "ㄕㄢ", pinyin: "shān", meaning: "やま (山)" }
+    ]
+  },
+  {
+    id: "vowel-r",
+    symbol: "ㄖ",
+    pinyin: "r",
+    ipa: "[ʐ]",
+    katakana: "リ / ル",
+    typeTag: "翹舌音 (そり舌・濁音)",
+    title: "そり舌音「ㄖ」",
+    originKanji: "日 (rì)",
+    originDesc: "漢字「日」の象形に由来。丸めた舌を震わせながら声を響かせます。",
+    tipTitle: "英語のRのように舌を引いて声を響かせる「リー」！",
+    tipDesc: "「人 (rén)」や「日 (rì)」などで使う独特な滑らかさを持つ音です。",
+    color: "from-yellow-500 to-amber-600",
+    themeHex: "#EAB308",
+    examples: [
+      { traditional: "日", zhuyin: "ㄖˋ", pinyin: "rì", meaning: "ひ / にち (日本人)" },
+      { traditional: "人", zhuyin: "ㄖㄣˊ", pinyin: "rén", meaning: "ひと (台灣人)" }
+    ]
+  }
+];
+
 // 1-1 確認クイズ (全8文字・主要単語100%カバー・全10問)
 window.VOWELS_QUIZ_QUESTIONS_1 = [
   { id: 1, type: "audio", targetSymbol: "ㄅ", speechTarget: "ㄅ", prompt: "再生された音声に当てはまる無気唇音を選んでください", options: ["ㄅ", "ㄆ", "ㄇ", "ㄈ"] },
@@ -646,6 +840,29 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_1 = [
     id: 10, type: "word-to-zhuyin", targetSymbol: "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", speechTarget: "對不起",
     optionSpeechMap: { "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ": "對不起", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ": "不客氣", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄋㄧˇ ㄏㄠˇ": "你好" },
     prompt: "「對不起 (duìbuqǐ / すみません)」の正しい注音表記はどれ？", options: ["ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ"]
+  }
+];
+
+// 1-5 確認クイズ (全10文字 ㄍㄎㄏ ㄗㄘㄙ ㄓㄔㄕㄖ＋主要単語・全12問)
+window.VOWELS_QUIZ_QUESTIONS_5 = [
+  { id: 1, type: "audio", targetSymbol: "ㄍ", speechTarget: "ㄍ", prompt: "再生された音声に当てはまる舌根音（無気音）を選んでください", options: ["ㄍ", "ㄎ", "ㄏ", "ㄐ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄎ", speechTarget: "ㄎ", prompt: "再生された音声に当てはまる舌根音（有気音）を選んでください", options: ["ㄎ", "ㄍ", "ㄏ", "ㄑ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄏ", speechTarget: "ㄏ", prompt: "再生された音声「ハー」に当てはまる文字を選んでください", options: ["ㄏ", "ㄈ", "ㄙ", "ㄒ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄗ", speechTarget: "ㄗ", prompt: "再生された音声（平舌音・無気音）に当てはまる文字を選んでください", options: ["ㄗ", "ㄘ", "ㄙ", "ㄓ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄘ", speechTarget: "ㄘ", prompt: "再生された音声「ツッ（有気音）」に当てはまる文字を選んでください", options: ["ㄘ", "ㄗ", "ㄙ", "ㄔ"] },
+  { id: 6, type: "audio", targetSymbol: "ㄙ", speechTarget: "ㄙ", prompt: "再生された音声「スー（擦音）」に当てはまる文字を選んでください", options: ["ㄙ", "ㄗ", "ㄘ", "ㄕ"] },
+  { id: 7, type: "audio", targetSymbol: "ㄓ", speechTarget: "ㄓ", prompt: "再生された音声（そり舌音・無気音）を選んでください", options: ["ㄓ", "ㄔ", "ㄕ", "ㄗ"] },
+  { id: 8, type: "audio", targetSymbol: "ㄔ", speechTarget: "ㄔ", prompt: "再生された音声「チッ（そり舌・有気音）」を選んでください", options: ["ㄔ", "ㄓ", "ㄕ", "ㄘ"] },
+  { id: 9, type: "audio", targetSymbol: "ㄕ", speechTarget: "ㄕ", prompt: "再生された音声「シー（そり舌・擦音）」を選んでください", options: ["ㄕ", "ㄓ", "ㄔ", "ㄙ"] },
+  { id: 10, type: "audio", targetSymbol: "ㄖ", speechTarget: "ㄖ", prompt: "再生された音声「リー（そり舌・濁音）」を選んでください", options: ["ㄖ", "ㄌ", "ㄕ", "ㄗ"] },
+  {
+    id: 11, type: "zhuyin-to-word", targetSymbol: "吃", speechTarget: "吃",
+    prompt: "「食べる」を意味する台湾華語の単語「吃 (chī)」の注音はどれ？", options: ["ㄔ", "ㄗ", "ㄘ", "ㄕ"]
+  },
+  {
+    id: 12, type: "word-to-zhuyin", targetSymbol: "ㄏㄠˇ", speechTarget: "好",
+    optionSpeechMap: { "ㄏㄠˇ": "好", "ㄍㄠ": "高", "ㄎㄞ": "開", "ㄗㄠˇ": "早" },
+    prompt: "「良い・好き」を意味する「好 (hǎo)」の正しい注音表記はどれ？", options: ["ㄏㄠˇ", "ㄍㄠ", "ㄎㄞ", "ㄗㄠˇ"]
   }
 ];
 
