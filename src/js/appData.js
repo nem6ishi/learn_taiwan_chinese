@@ -33,7 +33,10 @@ window.ZHUYIN_SPEECH_MAP = {
   'ㄓ': '知',   // zh
   'ㄔ': '吃',   // ch
   'ㄕ': '是',   // sh
-  'ㄖ': '日'    // r
+  'ㄖ': '日',   // r
+  'ㄐ': '家',   // j
+  'ㄑ': '七',   // q
+  'ㄒ': '西'    // x
 };
 
 // ==================== 1-1: 唇音 (ㄅㄆㄇㄈ) ＋ 単母音 (ㄚㄛㄜㄝ) ====================
@@ -717,6 +720,67 @@ window.VOWELS_STEP5_DATA = [
   }
 ];
 
+// 1-6: 舌面音（ㄐㄑㄒ）＋ 台湾超頻出日常フレーズ (注音符号全37文字コンプリート!)
+window.VOWELS_STEP6_DATA = [
+  {
+    id: "vowel-j",
+    symbol: "ㄐ",
+    pinyin: "j",
+    ipa: "[tɕ]",
+    katakana: "ジ / ヂュ",
+    typeTag: "舌面音 (無気音)",
+    title: "舌面音「ㄐ」",
+    originKanji: "糾 (jiū / たばねる)",
+    originDesc: "漢字「糾」の原字の形に由来。舌面を硬口蓋に密着させて息を出さずに離します。",
+    tipTitle: "【無気音】舌を上顎につけて息を出さずに「ジ/ヂュ」！",
+    tipDesc: "「家 (jiā)」や名前をたずねる「叫 (jiào)」で使う基本子音です。",
+    color: "from-cyan-500 to-blue-600",
+    themeHex: "#0891B2",
+    examples: [
+      { traditional: "家", zhuyin: "ㄐㄧㄚ", pinyin: "jiā", meaning: "いえ / マイホーム (我家)" },
+      { traditional: "叫", zhuyin: "ㄐㄧㄠˋ", pinyin: "jiào", meaning: "〜という名前である (我叫〜)" }
+    ]
+  },
+  {
+    id: "vowel-q",
+    symbol: "ㄑ",
+    pinyin: "q",
+    ipa: "[tɕʰ]",
+    katakana: "チ / チュ",
+    typeTag: "舌面音 (有気音)",
+    title: "舌面音「ㄑ」",
+    originKanji: "七 (qī) の草書体",
+    originDesc: "数字の「七」の草書体に由来。密着させた舌面から一気に息を爆発させます。",
+    tipTitle: "【有気音】舌面から強烈に息を弾き出させて「チッ！」",
+    tipDesc: "「去 (qù / 行く)」や丁寧な「請 (qǐng / 〜してください)」の超重要音です。",
+    color: "from-teal-500 to-emerald-600",
+    themeHex: "#0D9488",
+    examples: [
+      { traditional: "去", zhuyin: "ㄑㄩˋ", pinyin: "qù", meaning: "いく (要去夜市)" },
+      { traditional: "請", zhuyin: "ㄑㄧㄥˇ", pinyin: "qǐng", meaning: "〜してください / どうぞ (請進)" }
+    ]
+  },
+  {
+    id: "vowel-x",
+    symbol: "ㄒ",
+    pinyin: "x",
+    ipa: "[ɕ]",
+    katakana: "シ / シュ",
+    typeTag: "舌面音 (擦音)",
+    title: "舌面音「ㄒ」",
+    originKanji: "丅 (下)",
+    originDesc: "漢字「下」の古字の形に由来。舌面と上顎の狭い隙間から息を滑らせます。",
+    tipTitle: "舌面と上顎の隙間から「シー」！",
+    tipDesc: "台湾で最も大切な魔法の言葉「謝謝 (xièxie / ありがとう)」の必須子音！",
+    color: "from-indigo-500 to-purple-600",
+    themeHex: "#4F46E5",
+    examples: [
+      { traditional: "謝謝", zhuyin: "ㄒㄧㄝˋ ㄒㄧㄝ˙", pinyin: "xièxie", meaning: "ありがとう" },
+      { traditional: "想", zhuyin: "ㄒㄧㄤˇ", pinyin: "xiǎng", meaning: "〜したい / おもう (我想吃)" }
+    ]
+  }
+];
+
 // 1-1 確認クイズ (全8文字・主要単語100%カバー・全10問)
 window.VOWELS_QUIZ_QUESTIONS_1 = [
   { id: 1, type: "audio", targetSymbol: "ㄅ", speechTarget: "ㄅ", prompt: "再生された音声に当てはまる無気唇音を選んでください", options: ["ㄅ", "ㄆ", "ㄇ", "ㄈ"] },
@@ -877,6 +941,37 @@ window.VOWELS_QUIZ_QUESTIONS_5 = [
     optionSpeechMap: { "ㄏㄠˇ": "好", "ㄍㄠ": "高", "ㄎㄞ": "開", "ㄗㄠˇ": "早" },
     prompt: "「良い・好き」を意味する「好 (hǎo)」の正しい注音表記はどれ？", options: ["ㄏㄠˇ", "ㄍㄠ", "ㄎㄞ", "ㄗㄠˇ"]
   }
+];
+
+// 1-6 確認クイズ (全3文字 ㄐㄑㄒ ＋ 台湾超頻出フレーズ全10問)
+window.VOWELS_QUIZ_QUESTIONS_6 = [
+  { id: 1, type: "audio", targetSymbol: "ㄐ", speechTarget: "ㄐ", prompt: "再生された音声に当てはまる舌面音（無気音）を選んでください", options: ["ㄐ", "ㄑ", "ㄒ", "ㄍ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄑ", speechTarget: "ㄑ", prompt: "再生された音声「チッ（有気音）」を選んでください", options: ["ㄑ", "ㄐ", "ㄒ", "ㄎ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄒ", speechTarget: "ㄒ", prompt: "再生された音声「シー（擦音）」を選んでください", options: ["ㄒ", "ㄐ", "ㄑ", "ㄏ"] },
+  {
+    id: 4, type: "zhuyin-to-word", targetSymbol: "謝謝", speechTarget: "謝謝",
+    prompt: "台湾で1日何十回も使う感謝の言葉「謝謝 (xièxie)」の正しい注音表記はどれ？", options: ["ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄧㄥˇ", "ㄑㄩˋ", "ㄐㄧㄚ"]
+  },
+  {
+    id: 5, type: "zhuyin-to-word", targetSymbol: "請", speechTarget: "請",
+    prompt: "「〜してください / どうぞ」を意味する丁寧な単語「請 (qǐng)」の注音表記はどれ？", options: ["ㄑㄧㄥˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄩˋ", "ㄐㄧㄠˋ"]
+  },
+  {
+    id: 6, type: "zhuyin-to-word", targetSymbol: "去", speechTarget: "去",
+    prompt: "「行く（要去〜）」を意味する単語「去 (qù)」の注音表記はどれ？", options: ["ㄑㄩˋ", "ㄑㄧㄥˇ", "ㄒㄧㄤˇ", "ㄐㄧㄚ"]
+  },
+  {
+    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄒㄧㄤˇ", speechTarget: "想",
+    optionSpeechMap: { "ㄒㄧㄤˇ": "想", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄑㄧㄥˇ": "請", "ㄑㄩˋ": "去" },
+    prompt: "「〜したい / 思う」を意味する「想 (xiǎng)」の注音表記はどれ？", options: ["ㄒㄧㄤˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄧㄥˇ", "ㄑㄩˋ"]
+  },
+  {
+    id: 8, type: "word-to-zhuyin", targetSymbol: "ㄐㄧㄚ", speechTarget: "家",
+    optionSpeechMap: { "ㄐㄧㄚ": "家", "ㄐㄧㄠˋ": "叫", "ㄑㄩˋ": "去", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝" },
+    prompt: "「家・マイホーム」を意味する「家 (jiā)」の正しい注音表記はどれ？", options: ["ㄐㄧㄚ", "ㄐㄧㄠˋ", "ㄑㄩˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙"]
+  },
+  { id: 9, type: "fill-in-blank", targetSymbol: "叫", speechTarget: "我叫田中", prompt: "「私は〜という名前です（我 ___ 田中）」の空欄に入る単語の注音はどれ？", options: ["ㄐㄧㄠˋ", "ㄐㄧㄚ", "ㄑㄩˋ", "ㄒㄧㄤˇ"] },
+  { id: 10, type: "audio", targetSymbol: "ㄑ", speechTarget: "七", prompt: "再生された数字の「7 (qī / 七)」に含まれる子音を選んでください", options: ["ㄑ", "ㄐ", "ㄒ", "ㄘ"] }
 ];
 
 

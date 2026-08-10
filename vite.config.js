@@ -11,6 +11,7 @@ export default defineConfig({
         step1_3: resolve(__dirname, 'step-1-3.html'),
         step1_4: resolve(__dirname, 'step-1-4.html'),
         step1_5: resolve(__dirname, 'step-1-5.html'),
+        step1_6: resolve(__dirname, 'step-1-6.html'),
         step2_1: resolve(__dirname, 'step-2-1.html')
       }
     }
