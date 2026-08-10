@@ -1,4 +1,4 @@
-// src/js/step1-6.js - STEP 1-6 専用ロジック (音声バインド ＆ クイズ起動)
+// src/js/step1-7.js - STEP 1-7 専用ロジック (音声バインド ＆ トロフィー総合まとめクイズ起動)
 (function() {
   const init = () => {
     bindAudioEvents();
@@ -37,14 +37,14 @@
     const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
 
     const runQuiz = () => {
-      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_6) {
-        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_6, {
-          stepTitle: "1-6 確認クイズ (注音全37文字コンプリート!)",
-          nextStepUrl: "step-1-7.html",
+      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_7) {
+        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_7, {
+          stepTitle: "1-7 注音符号全37文字 ＆ 5大声調 総合まとめトロフィークイズ",
+          nextStepUrl: "step-2-1.html",
           containerId: "quiz-section"
         });
       } else {
-        console.warn("QuizEngine or VOWELS_QUIZ_QUESTIONS_6 not found.");
+        console.warn("QuizEngine or VOWELS_QUIZ_QUESTIONS_7 not found.");
       }
     };
 
