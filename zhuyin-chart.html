@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注音符号（ボポモフォ）全37文字一覧表 ＆ 声調チャート | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾華語の注音符号（ボポモフォ）全37文字（子音21・母音16）と5つの声調が一覧でわかるインタラクティブチャート。全文字タップで台湾華語女性ボイス即時再生。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    /* チャート専用グリッドスタイル */
+    .chart-section-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--color-text-main);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .chart-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 14px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      position: relative;
+    }
+    .chart-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.08);
+      border-color: var(--color-primary);
+    }
+    .chart-symbol {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      font-family: monospace;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .chart-pinyin {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #475569;
+    }
+    .chart-katakana {
+      font-size: 0.78rem;
+      color: #64748B;
+      margin-top: 2px;
+    }
+    .chart-kanji {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #0F172A;
+      background: #F1F5F9;
+      border-radius: 4px;
+      padding: 2px 6px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+    .audio-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+    .tone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .tone-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tone-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px -4px rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="zhuyin-chart.html" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音符号一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    
+    <!-- ページタイトルヘッダー -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">ZHUYIN ALL 37 SYMBOLS CHART</span>
+        <h1 style="font-size: 1.85rem; font-weight: 900;">📋 注音符号（ボポモフォ）全37文字 ＆ 声調一覧表</h1>
+        <p style="color: var(--color-text-muted); font-size: 0.92rem; margin-top: 4px;">
+          ★タップするとクリアな台湾女性ボイスで発声！子音・母音・声調をいつでも確認・復習できます。
+        </p>
+      </div>
+      <a href="index.html#atlas-curriculum" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.9rem;">
+        📚 カリキュラムへ戻る
+      </a>
+    </div>
+
+    <!-- 💡 音声再生ガイダンス -->
+    <div style="background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); border: 1px solid #93C5FD; border-radius: var(--radius-lg); padding: 18px 24px; margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.8rem;">🗣️</span>
+        <div>
+          <h4 style="font-size: 0.95rem; font-weight: 800; color: #1E40AF; margin: 0;">セルをタップして発音をチェック！</h4>
+          <p style="font-size: 0.85rem; color: #1E3A8A; margin: 2px 0 0 0;">カードを押すと単体音声（標準台湾華語）が綺麗に再生されます。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 子音（聲母 / Consonants）21文字 ==================== -->
+    <h2 class="chart-section-title">
+      <span>🗣️ 子音（聲母 / Consonants）: 全21文字</span>
+    </h2>
+
+    <!-- 唇音 ㄅㄆㄇㄈ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">1. 唇音 (唇を使う音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄅ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄅ</div>
+        <div class="chart-pinyin">b (ボ)</div>
+        <div class="chart-katakana">無気音</div>
+        <div class="chart-kanji">八 (bā)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄆ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄆ</div>
+        <div class="chart-pinyin">p (ポ)</div>
+        <div class="chart-katakana">有気音</div>
+        <div class="chart-kanji">婆 (pó)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄇ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄇ</div>
+        <div class="chart-pinyin">m (モ)</div>
+        <div class="chart-katakana">鼻音</div>
+        <div class="chart-kanji">媽 (mā)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄈ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄈ</div>
+        <div class="chart-pinyin">f (フォ)</div>
+        <div class="chart-katakana">擦音</div>
+        <div class="chart-kanji">發 (fā)</div>
+      </div>
+    </div>
+
+    <!-- 舌尖音 ㄉㄊㄋㄌ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">2. 舌尖音 (舌先を使う音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄉ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄉ</div>
+        <div class="chart-pinyin">d (ド)</div>
+        <div class="chart-katakana">無気音</div>
+        <div class="chart-kanji">大 (dà)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄊ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄊ</div>
+        <div class="chart-pinyin">t (ト)</div>
+        <div class="chart-katakana">有気音</div>
+        <div class="chart-kanji">他 (tā)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄋ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄋ</div>
+        <div class="chart-pinyin">n (ヌ)</div>
+        <div class="chart-katakana">鼻音</div>
+        <div class="chart-kanji">奶 (nǎi)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄌ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄌ</div>
+        <div class="chart-pinyin">l (ル)</div>
+        <div class="chart-katakana">邊音</div>
+        <div class="chart-kanji">老 (lǎo)</div>
+      </div>
+    </div>
+
+    <!-- 舌根音 ㄍㄎㄏ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">3. 舌根音 (喉奥を使う音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄍ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄍ</div>
+        <div class="chart-pinyin">g (ガ)</div>
+        <div class="chart-katakana">無気音</div>
+        <div class="chart-kanji">哥 (gē)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄎ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄎ</div>
+        <div class="chart-pinyin">k (カ)</div>
+        <div class="chart-katakana">有気音</div>
+        <div class="chart-kanji">客 (kè)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄏ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄏ</div>
+        <div class="chart-pinyin">h (ハ)</div>
+        <div class="chart-katakana">擦音</div>
+        <div class="chart-kanji">好 (hǎo)</div>
+      </div>
+    </div>
+
+    <!-- 舌面音 ㄐㄑㄒ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">4. 舌面音 (舌の表面を当てる音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄐ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄐ</div>
+        <div class="chart-pinyin">j (ジ)</div>
+        <div class="chart-katakana">無気音</div>
+        <div class="chart-kanji">家 (jiā)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄑ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄑ</div>
+        <div class="chart-pinyin">q (チ)</div>
+        <div class="chart-katakana">有気音</div>
+        <div class="chart-kanji">去 (qù)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄒ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄒ</div>
+        <div class="chart-pinyin">x (シ)</div>
+        <div class="chart-katakana">擦音</div>
+        <div class="chart-kanji">謝 (xiè)</div>
+      </div>
+    </div>
+
+    <!-- 平舌音 ㄗㄘㄙ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">5. 平舌音 (歯茎を使う音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄗ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄗ</div>
+        <div class="chart-pinyin">z (ズ)</div>
+        <div class="chart-katakana">無気音</div>
+        <div class="chart-kanji">早 (zǎo)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄘ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄘ</div>
+        <div class="chart-pinyin">c (ツ)</div>
+        <div class="chart-katakana">有気音</div>
+        <div class="chart-kanji">菜 (cài)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄙ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄙ</div>
+        <div class="chart-pinyin">s (ス)</div>
+        <div class="chart-katakana">擦音</div>
+        <div class="chart-kanji">三 (sān)</div>
+      </div>
+    </div>
+
+    <!-- 翹舌音 ㄓㄔㄕㄖ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">6. 翹舌音 (そり舌音・台湾マイルド発音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄓ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄓ</div>
+        <div class="chart-pinyin">zh (ヂ)</div>
+        <div class="chart-katakana">無気そり舌</div>
+        <div class="chart-kanji">知 (zhī)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄔ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄔ</div>
+        <div class="chart-pinyin">ch (チ)</div>
+        <div class="chart-katakana">有気そり舌</div>
+        <div class="chart-kanji">吃 (chī)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄕ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄕ</div>
+        <div class="chart-pinyin">sh (シ)</div>
+        <div class="chart-katakana">擦音そり舌</div>
+        <div class="chart-kanji">是 (shì)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄖ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄖ</div>
+        <div class="chart-pinyin">r (リ)</div>
+        <div class="chart-katakana">濁音そり舌</div>
+        <div class="chart-kanji">日 (rì)</div>
+      </div>
+    </div>
+
+    <!-- ==================== 母音（韻母 / Vowels）16文字 ==================== -->
+    <h2 class="chart-section-title" style="margin-top: 16px;">
+      <span>🎵 母音（韻母 / Vowels）: 全16文字</span>
+    </h2>
+
+    <!-- 単母音 ㄚㄛㄜㄝ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">1. 単母音 (シンプルな母音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄚ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄚ</div>
+        <div class="chart-pinyin">a (アー)</div>
+        <div class="chart-katakana">単母音</div>
+        <div class="chart-kanji">八 (bā)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄛ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄛ</div>
+        <div class="chart-pinyin">o (オー)</div>
+        <div class="chart-katakana">単母音</div>
+        <div class="chart-kanji">喔 (o)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄜ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄜ</div>
+        <div class="chart-pinyin">e (エ/オ)</div>
+        <div class="chart-katakana">曖昧音</div>
+        <div class="chart-kanji">鵝 (é)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄝ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄝ</div>
+        <div class="chart-pinyin">ê (エー)</div>
+        <div class="chart-katakana">単母音</div>
+        <div class="chart-kanji">也 (yě)</div>
+      </div>
+    </div>
+
+    <!-- 二重母音 ㄞㄟㄠㄡ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">2. 二重母音 (2つの音をつなげる母音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄞ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄞ</div>
+        <div class="chart-pinyin">ai (アイ)</div>
+        <div class="chart-katakana">二重母音</div>
+        <div class="chart-kanji">愛 (ài)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄟ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄟ</div>
+        <div class="chart-pinyin">ei (エイ)</div>
+        <div class="chart-katakana">二重母音</div>
+        <div class="chart-kanji">黑 (hēi)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄠ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄠ</div>
+        <div class="chart-pinyin">ao (アオ)</div>
+        <div class="chart-katakana">二重母音</div>
+        <div class="chart-kanji">凹 (āo)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄡ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄡ</div>
+        <div class="chart-pinyin">ou (オウ)</div>
+        <div class="chart-katakana">二重母音</div>
+        <div class="chart-kanji">歐 (ōu)</div>
+      </div>
+    </div>
+
+    <!-- 鼻音・そり舌 ㄢㄣㄤㄥㄦ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">3. 鼻音・そり舌母音 (んの音 ＆ 巻舌)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄢ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄢ</div>
+        <div class="chart-pinyin">an (アン)</div>
+        <div class="chart-katakana">前鼻音</div>
+        <div class="chart-kanji">安 (ān)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄣ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄣ</div>
+        <div class="chart-pinyin">en (エン)</div>
+        <div class="chart-katakana">前鼻音</div>
+        <div class="chart-kanji">恩 (ēn)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄤ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄤ</div>
+        <div class="chart-pinyin">ang (アン)</div>
+        <div class="chart-katakana">後鼻音</div>
+        <div class="chart-kanji">昂 (áng)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄥ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄥ</div>
+        <div class="chart-pinyin">eng (エン)</div>
+        <div class="chart-katakana">後鼻音</div>
+        <div class="chart-kanji">風 (fēng)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄦ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄦ</div>
+        <div class="chart-pinyin">er (アル)</div>
+        <div class="chart-katakana">そり舌</div>
+        <div class="chart-kanji">二 (èr)</div>
+      </div>
+    </div>
+
+    <!-- 介音 ㄧㄨㄩ -->
+    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted); margin-bottom: 8px;">4. 介音 (クッションとして繋ぐ3大母音)</div>
+    <div class="chart-grid">
+      <div class="chart-card play-symbol-sound" data-symbol="ㄧ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄧ</div>
+        <div class="chart-pinyin">i / y (イー)</div>
+        <div class="chart-katakana">介音</div>
+        <div class="chart-kanji">一 (yī)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄨ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄨ</div>
+        <div class="chart-pinyin">u / w (ウー)</div>
+        <div class="chart-katakana">介音</div>
+        <div class="chart-kanji">五 (wǔ)</div>
+      </div>
+      <div class="chart-card play-symbol-sound" data-symbol="ㄩ">
+        <span class="audio-badge">🔊</span>
+        <div class="chart-symbol">ㄩ</div>
+        <div class="chart-pinyin">ü / yu (ユー)</div>
+        <div class="chart-katakana">介音</div>
+        <div class="chart-kanji">雨 (yǔ)</div>
+      </div>
+    </div>
+
+    <!-- ==================== 5つの声調（四声＋軽声） ==================== -->
+    <h2 class="chart-section-title" style="margin-top: 16px;">
+      <span>🎵 5つの声調（トーン）一覧</span>
+    </h2>
+
+    <div class="tone-grid">
+      <div class="tone-card play-word-sound" data-word="媽">
+        <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary);">第一声 (平調)</div>
+        <div style="font-size: 1.5rem; font-weight: 900; margin: 4px 0;">ㄇㄚ <span style="font-size: 0.85rem; color: #64748B;">(記号なし)</span></div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">高く平らにキープ (mā)</div>
+      </div>
+
+      <div class="tone-card play-word-sound" data-word="麻">
+        <div style="font-size: 0.85rem; font-weight: 800; color: #2563EB;">第二声 (升調)</div>
+        <div style="font-size: 1.5rem; font-weight: 900; margin: 4px 0;">ㄇㄚˊ <span style="font-size: 0.85rem; color: #2563EB;">(右上: ˊ)</span></div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">「えっ！？」と急上昇 (má)</div>
+      </div>
+
+      <div class="tone-card play-word-sound" data-word="馬">
+        <div style="font-size: 0.85rem; font-weight: 800; color: #D97706;">第三声 (轉調/低音)</div>
+        <div style="font-size: 1.5rem; font-weight: 900; margin: 4px 0;">ㄇㄚˇ <span style="font-size: 0.85rem; color: #D97706;">(右上: ˇ)</span></div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">低くボソッと抑える (mǎ)</div>
+      </div>
+
+      <div class="tone-card play-word-sound" data-word="罵">
+        <div style="font-size: 0.85rem; font-weight: 800; color: #DC2626;">第四声 (降調)</div>
+        <div style="font-size: 1.5rem; font-weight: 900; margin: 4px 0;">ㄇㄚˋ <span style="font-size: 0.85rem; color: #DC2626;">(右上: ˋ)</span></div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">上から急降下 (mà)</div>
+      </div>
+
+      <div class="tone-card play-word-sound" data-word="嗎">
+        <div style="font-size: 0.85rem; font-weight: 800; color: #059669;">軽声 (輕聲)</div>
+        <div style="font-size: 1.5rem; font-weight: 900; margin: 4px 0;">ㄇㄚ˙ <span style="font-size: 0.85rem; color: #059669;">(頭の上: ˙)</span></div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted);">跳ねるように軽く短く (ma)</div>
+      </div>
+    </div>
+
+    <!-- トップへ戻るボトムナビ -->
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="index.html" class="btn btn-primary" style="padding: 12px 32px; font-size: 1rem;">
+        🏠 トップ一覧へ戻って学習を開始する
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>© 2026 台湾華語学習サイト | Pure Static HTML & Modern Vanilla JS</p>
+    </div>
+  </footer>
+
+  <!-- スクリプトの読み込み -->
+  <script src="src/js/appData.js"></script>
+  <script src="src/js/appCore.js"></script>
+  <script src="src/js/zhuyin-chart.js"></script>
+</body>
+</html>
