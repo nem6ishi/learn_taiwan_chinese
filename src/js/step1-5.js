@@ -1,21 +1,33 @@
-// src/js/step1-5.js - STEP 1-5 専用ロジック (イベントバインド ＆ クイズ起動)
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("STEP 1-5 (子音コンプリート: ㄍㄎㄏ / ㄗㄘㄙ / ㄓㄔㄕㄖ) 初期化中...");
+// src/js/step1-5.js - STEP 1-5 専用ロジック (音声バインド ＆ クイズ起動)
+(function() {
+  const init = () => {
+    bindAudioEvents();
+    setupQuizListeners();
+  };
 
-  // 静的カード内の音声タップイベントのバインド
-  const soundElements = document.querySelectorAll('.play-word-sound');
-  soundElements.forEach(el => {
-    el.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const word = el.getAttribute('data-word');
-      if (word && window.TaiwanChineseApp) {
-        window.TaiwanChineseApp.speak(word);
-      }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function bindAudioEvents() {
+    const container = document.getElementById('vowel-list-container') || document;
+    
+    container.querySelectorAll('.play-word-sound, .play-symbol-sound').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const symbol = btn.getAttribute('data-word') || btn.getAttribute('data-symbol');
+        if (symbol && window.playZhuyinSound) {
+          window.playZhuyinSound(symbol, btn);
+        }
+      };
     });
-  });
+  }
 
-  // クイズエンジンの初期化
-  if (window.TaiwanChineseQuizEngine && window.VOWELS_QUIZ_QUESTIONS_5) {
+  function setupQuizListeners() {
+    if (!window.TaiwanChineseQuizEngine || !window.VOWELS_QUIZ_QUESTIONS_5) return;
+
     window.TaiwanChineseQuizEngine.init({
       stepTitle: "STEP 1-5: 舌根音・歯茎音・そり舌音 確認クイズ",
       nextStepUrl: "step-2-1.html",
@@ -29,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const topBtn = document.getElementById('start-quiz-top-btn');
     const bottomBtn = document.getElementById('start-quiz-bottom-btn');
 
-    if (topBtn) topBtn.addEventListener('click', startQuiz);
-    if (bottomBtn) bottomBtn.addEventListener('click', startQuiz);
+    if (topBtn) topBtn.onclick = startQuiz;
+    if (bottomBtn) bottomBtn.onclick = startQuiz;
   }
-});
+})();
