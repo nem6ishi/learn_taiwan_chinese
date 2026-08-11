@@ -49,17 +49,25 @@
     <!-- 結合音解説カード -->
     <div class="detail-card" style="margin-bottom: 24px;">
       <h2 style="font-size: 1.3rem; font-weight: 900; color: var(--color-primary); margin-bottom: 12px;">
-        🔗 結合音（結合韻母）のシンプルな仕組み
+        🔗 結合音（結合韻母）のシンプルな仕組み ＆ 足し算ルール
       </h2>
-      <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 16px;">
-        台湾華語の母音は、介音（<strong>ㄧ [i]</strong>, <strong>ㄨ [u]</strong>, <strong>ㄩ [ü]</strong>）が他の母音の頭にくっつくことで、単母音同士がなめらかにつながる「結合音」を作ります。
-      </p>
+      
+      <!-- ハイライトボックス -->
+      <div style="background: #EFF6FF; border-left: 4px solid #2563EB; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px;">
+        <h4 style="font-size: 0.95rem; font-weight: 800; color: #1E40AF; margin-bottom: 6px;">
+          💡 ピンインとの大きな違い：「省略ゼロのすなおな足し算」！
+        </h4>
+        <p style="font-size: 0.88rem; color: #1E3A8A; line-height: 1.6; margin: 0;">
+          ピンインでは <em>iou ➔ iu</em> や <em>uei ➔ ui</em> のように「真ん中の文字が隠れるトラップ」がありますが、<strong>注音符号には文字の省略が一切ありません！</strong><br>
+          介音（<strong>ㄧ [i]</strong>, <strong>ㄨ [u]</strong>, <strong>ㄩ [ü]</strong>）の後に続く母音をそのまま「足し算」して滑らかにつなげて発音すれば、100%正確に読めます。
+        </p>
+      </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
         
         <!-- ㄧ 系 -->
         <div style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 12px; padding: 16px;">
-          <h3 style="font-size: 1.05rem; font-weight: 800; color: #2563EB; margin-bottom: 8px;">
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #2563EB; margin-bottom: 12px; border-bottom: 2px solid #DBEAFE; padding-bottom: 6px;">
             1. ㄧ (i) 系の結合音
           </h3>
           <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
@@ -83,12 +91,32 @@
               </div>
               <div class="example-right"><span class="example-meaning">〜がほしい / 〜する</span><div class="audio-icon-tag"><span>🔊</span></div></div>
             </div>
+            <div class="example-row play-word-sound" data-word="頁">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">頁</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄧㄝˋ</span>
+                  <span class="example-pinyin">yè</span>
+                </div>
+              </div>
+              <div class="example-right"><span class="example-meaning">〜ページ (第一頁)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+            </div>
+            <div class="example-row play-word-sound" data-word="羊">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">羊</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄧㄤˊ</span>
+                  <span class="example-pinyin">yáng</span>
+                </div>
+              </div>
+              <div class="example-right"><span class="example-meaning">ひつじ / やぎ</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+            </div>
           </div>
         </div>
 
         <!-- ㄨ 系 -->
         <div style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 12px; padding: 16px;">
-          <h3 style="font-size: 1.05rem; font-weight: 800; color: #D97706; margin-bottom: 8px;">
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #D97706; margin-bottom: 12px; border-bottom: 2px solid #FEF3C7; padding-bottom: 6px;">
             2. ㄨ (u) 系の結合音
           </h3>
           <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
@@ -96,7 +124,7 @@
               <div class="example-left">
                 <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛ</span>
+                  <span class="example-zhuyin">ㄨㄛˇ</span>
                   <span class="example-pinyin">wǒ</span>
                 </div>
               </div>
@@ -106,18 +134,38 @@
               <div class="example-left">
                 <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">碗</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄢ</span>
+                  <span class="example-zhuyin">ㄨㄢˇ</span>
                   <span class="example-pinyin">wǎn</span>
                 </div>
               </div>
               <div class="example-right"><span class="example-meaning">おわん / 〜どん</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+            </div>
+            <div class="example-row play-word-sound" data-word="位">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">位</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄨㄟˋ</span>
+                  <span class="example-pinyin">wèi</span>
+                </div>
+              </div>
+              <div class="example-right"><span class="example-meaning">〜さま / 〜席 (兩位)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+            </div>
+            <div class="example-row play-word-sound" data-word="文">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">文</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄨㄣˊ</span>
+                  <span class="example-pinyin">wén</span>
+                </div>
+              </div>
+              <div class="example-right"><span class="example-meaning">ことば / ぶん (中文)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
             </div>
           </div>
         </div>
 
         <!-- ㄩ 系 -->
         <div style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 12px; padding: 16px;">
-          <h3 style="font-size: 1.05rem; font-weight: 800; color: #059669; margin-bottom: 8px;">
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #059669; margin-bottom: 12px; border-bottom: 2px solid #D1FAE5; padding-bottom: 6px;">
             3. ㄩ (ü) 系の結合音
           </h3>
           <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
@@ -125,7 +173,7 @@
               <div class="example-left">
                 <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">月</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄩㄝ</span>
+                  <span class="example-zhuyin">ㄩㄝˋ</span>
                   <span class="example-pinyin">yuè</span>
                 </div>
               </div>
@@ -135,11 +183,31 @@
               <div class="example-left">
                 <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">元</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄩㄢ</span>
+                  <span class="example-zhuyin">ㄩㄢˊ</span>
                   <span class="example-pinyin">yuán</span>
                 </div>
               </div>
               <div class="example-right"><span class="example-meaning">台湾ドル (塊/元)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+            </div>
+            <div class="example-row play-word-sound" data-word="雲">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">雲</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄩㄣˊ</span>
+                  <span class="example-pinyin">yún</span>
+                </div>
+              </div>
+              <div class="example-right"><span class="example-meaning">くも (幸雲 / 雲南)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+            </div>
+            <div class="example-row play-word-sound" data-word="用">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">用</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄩㄥˋ</span>
+                  <span class="example-pinyin">yòng</span>
+                </div>
+              </div>
+              <div class="example-right"><span class="example-meaning">つかう / つかう目的</span><div class="audio-icon-tag"><span>🔊</span></div></div>
             </div>
           </div>
         </div>
