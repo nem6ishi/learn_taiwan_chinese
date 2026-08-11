@@ -209,4 +209,27 @@
 
   window.playZhuyinSound = playZhuyinSound;
 
+  // 全ページ共通: .play-word-sound ＆ .play-symbol-sound 自動クリック検出
+  if (typeof document !== 'undefined') {
+    document.addEventListener('click', function(e) {
+      const wordTarget = e.target.closest('.play-word-sound');
+      if (wordTarget) {
+        const word = wordTarget.getAttribute('data-word');
+        if (word) {
+          playZhuyinSound(word, wordTarget);
+        }
+        return;
+      }
+
+      const symbolTarget = e.target.closest('.play-symbol-sound');
+      if (symbolTarget) {
+        const symbol = symbolTarget.getAttribute('data-symbol');
+        if (symbol) {
+          playZhuyinSound(symbol, symbolTarget);
+        }
+        return;
+      }
+    });
+  }
+
 })(window);
