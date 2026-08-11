@@ -393,82 +393,103 @@
           文字の表記（注音符号記号）は元のままでも、<strong>実際に口から発声するときだけメロディが自動的に変化する重要な「変調ルール」</strong>があります！
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px;">
           
           <!-- 法則1: 3声 + 3声 -->
           <div style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 10px; padding: 14px;">
             <h3 style="font-size: 1rem; font-weight: 800; color: #0284C7; margin-bottom: 6px;">
               1. 第3声 ＋ 第3声 ➔ 【第2声】 ＋ 第3声
             </h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 10px;">
-              3声（ボソッと低い音）が2つ連続すると、息が詰まるため<strong>前の3声が「2声（語尾が急上昇する音）」に上がります。</strong>
+            <p style="font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 12px;">
+              3声（低く抑える音）が2つ連続すると、息が詰まるため<strong>前の3声が「2声（語尾が急上昇する音）」に上がります。</strong>
             </p>
-            <div class="example-list" style="display: flex; flex-direction: column; gap: 6px;">
-              <div class="example-row play-word-sound" data-word="你好" style="padding: 6px 10px;">
-                <div class="example-left">
-                  <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">你好</span>
-                  <div class="example-phonetics"><span class="example-zhuyin">ㄋㄧˇ ㄏㄠˇ ➔ <strong>ㄋㄧˊ ㄏㄠˇ</strong></span></div>
+            <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="example-row play-word-sound" data-word="你好" style="padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 6px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="example-trad" style="font-size: 1.2rem; font-weight: 900;">你好</span>
+                  <div class="audio-icon-tag" style="background: #EFF6FF; color: #2563EB; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">🔊 聴く</div>
                 </div>
-                <div class="example-right"><span class="example-meaning">こんにちは (2声+3声)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #475569; white-space: nowrap; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; border: 1px solid #E2E8F0;">
+                  <span>ㄋㄧˇ ㄏㄠˇ</span> <span style="color:#2563EB; font-weight:900; margin: 0 4px;">➔</span> <span style="color:#1D4ED8; font-weight:900; background:#DBEAFE; padding:1px 6px; border-radius:4px;">ㄋㄧˊ ㄏㄠˇ</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted);">こんにちは (2声+3声に変化)</div>
               </div>
-              <div class="example-row play-word-sound" data-word="我有" style="padding: 6px 10px;">
-                <div class="example-left">
-                  <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">我有</span>
-                  <div class="example-phonetics"><span class="example-zhuyin">ㄨㄛˇ ㄧㄡˇ ➔ <strong>ㄨㄛˊ ㄧㄡˇ</strong></span></div>
+
+              <div class="example-row play-word-sound" data-word="我有" style="padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 6px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="example-trad" style="font-size: 1.2rem; font-weight: 900;">我有</span>
+                  <div class="audio-icon-tag" style="background: #EFF6FF; color: #2563EB; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">🔊 聴く</div>
                 </div>
-                <div class="example-right"><span class="example-meaning">私は〜を持っている</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #475569; white-space: nowrap; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; border: 1px solid #E2E8F0;">
+                  <span>ㄨㄛˇ ㄧㄡˇ</span> <span style="color:#2563EB; font-weight:900; margin: 0 4px;">➔</span> <span style="color:#1D4ED8; font-weight:900; background:#DBEAFE; padding:1px 6px; border-radius:4px;">ㄨㄛˊ ㄧㄡˇ</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted);">私は〜を持っている (2声+3声に変化)</div>
               </div>
             </div>
           </div>
 
-          <!-- 法則2: 一 (yī) の変調 -->
+          <!-- 法則2: 一 の変調 -->
           <div style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 10px; padding: 14px;">
             <h3 style="font-size: 1rem; font-weight: 800; color: #0284C7; margin-bottom: 6px;">
-              2. 「一 (yī)」の変調
+              2. 「一」の変調
             </h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 10px;">
-              単体では1声ですが、<strong>4声の前では「2声」</strong>に上がり、<strong>1・2・3声の前では「4声」</strong>に下がります。
+            <p style="font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 12px;">
+              単体では1声ですが、<strong>4声の前では「2声」</strong>、<strong>1・2・3声の前では「4声」</strong>に変化します。
             </p>
-            <div class="example-list" style="display: flex; flex-direction: column; gap: 6px;">
-              <div class="example-row play-word-sound" data-word="一次" style="padding: 6px 10px;">
-                <div class="example-left">
-                  <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">一次</span>
-                  <div class="example-phonetics"><span class="example-zhuyin">ㄧ ㄘˋ ➔ <strong>ㄧˊ ㄘˋ</strong></span></div>
+            <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="example-row play-word-sound" data-word="一次" style="padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 6px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="example-trad" style="font-size: 1.2rem; font-weight: 900;">一次</span>
+                  <div class="audio-icon-tag" style="background: #EFF6FF; color: #2563EB; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">🔊 聴く</div>
                 </div>
-                <div class="example-right"><span class="example-meaning">1回 (4声の前➔2声)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #475569; white-space: nowrap; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; border: 1px solid #E2E8F0;">
+                  <span>ㄧ ㄘˋ</span> <span style="color:#2563EB; font-weight:900; margin: 0 4px;">➔</span> <span style="color:#1D4ED8; font-weight:900; background:#DBEAFE; padding:1px 6px; border-radius:4px;">ㄧˊ ㄘˋ</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted);">1回 (4声の前➔2声に変化)</div>
               </div>
-              <div class="example-row play-word-sound" data-word="一起" style="padding: 6px 10px;">
-                <div class="example-left">
-                  <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">一起</span>
-                  <div class="example-phonetics"><span class="example-zhuyin">ㄧ ㄑㄧˇ ➔ <strong>ㄧˋ ㄑㄧˇ</strong></span></div>
+
+              <div class="example-row play-word-sound" data-word="一起" style="padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 6px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="example-trad" style="font-size: 1.2rem; font-weight: 900;">一起</span>
+                  <div class="audio-icon-tag" style="background: #EFF6FF; color: #2563EB; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">🔊 聴く</div>
                 </div>
-                <div class="example-right"><span class="example-meaning">一緒に (3声の前➔4声)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #475569; white-space: nowrap; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; border: 1px solid #E2E8F0;">
+                  <span>ㄧ ㄑㄧˇ</span> <span style="color:#2563EB; font-weight:900; margin: 0 4px;">➔</span> <span style="color:#1D4ED8; font-weight:900; background:#DBEAFE; padding:1px 6px; border-radius:4px;">ㄧˋ ㄑㄧˇ</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted);">一緒に (3声の前➔4声に変化)</div>
               </div>
             </div>
           </div>
 
-          <!-- 法則3: 不 (bù) の変調 -->
+          <!-- 法則3: 不 の変調 -->
           <div style="background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 10px; padding: 14px;">
             <h3 style="font-size: 1rem; font-weight: 800; color: #0284C7; margin-bottom: 6px;">
-              3. 「不 (bù)」の変調
+              3. 「不」の変調
             </h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 10px;">
-              否定の「不」は通常4声ですが、<strong>後ろに4声が続く時だけ「2声」</strong>に上がります。
+            <p style="font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 12px;">
+              否定の「不」は通常4声ですが、<strong>後ろに4声が続く時だけ「2声」</strong>に変化します。
             </p>
-            <div class="example-list" style="display: flex; flex-direction: column; gap: 6px;">
-              <div class="example-row play-word-sound" data-word="不是" style="padding: 6px 10px;">
-                <div class="example-left">
-                  <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">不是</span>
-                  <div class="example-phonetics"><span class="example-zhuyin">ㄅㄨˋ ㄕˋ ➔ <strong>ㄅㄨˊ ㄕˋ</strong></span></div>
+            <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="example-row play-word-sound" data-word="不是" style="padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 6px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="example-trad" style="font-size: 1.2rem; font-weight: 900;">不是</span>
+                  <div class="audio-icon-tag" style="background: #EFF6FF; color: #2563EB; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">🔊 聴く</div>
                 </div>
-                <div class="example-right"><span class="example-meaning">〜ではない (4声の前➔2声)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #475569; white-space: nowrap; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; border: 1px solid #E2E8F0;">
+                  <span>ㄅㄨˋ ㄕˋ</span> <span style="color:#2563EB; font-weight:900; margin: 0 4px;">➔</span> <span style="color:#1D4ED8; font-weight:900; background:#DBEAFE; padding:1px 6px; border-radius:4px;">ㄅㄨˊ ㄕˋ</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted);">〜ではない (4声の前➔2声に変化)</div>
               </div>
-              <div class="example-row play-word-sound" data-word="不要" style="padding: 6px 10px;">
-                <div class="example-left">
-                  <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">不要</span>
-                  <div class="example-phonetics"><span class="example-zhuyin">ㄅㄨˋ ㄧㄠˋ ➔ <strong>ㄅㄨˊ ㄧㄠˋ</strong></span></div>
+
+              <div class="example-row play-word-sound" data-word="不要" style="padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 6px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="example-trad" style="font-size: 1.2rem; font-weight: 900;">不要</span>
+                  <div class="audio-icon-tag" style="background: #EFF6FF; color: #2563EB; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">🔊 聴く</div>
                 </div>
-                <div class="example-right"><span class="example-meaning">いらない (4声の前➔2声)</span><div class="audio-icon-tag"><span>🔊</span></div></div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #475569; white-space: nowrap; background: #F8FAFC; padding: 4px 8px; border-radius: 6px; border: 1px solid #E2E8F0;">
+                  <span>ㄅㄨˋ ㄧㄠˋ</span> <span style="color:#2563EB; font-weight:900; margin: 0 4px;">➔</span> <span style="color:#1D4ED8; font-weight:900; background:#DBEAFE; padding:1px 6px; border-radius:4px;">ㄅㄨˊ ㄧㄠˋ</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted);">いらない (4声の前➔2声に変化)</div>
               </div>
             </div>
           </div>
