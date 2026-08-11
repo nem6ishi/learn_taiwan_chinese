@@ -56,105 +56,102 @@
   }
 
   function executePlayAudio(originalText, speechText) {
-    // 1. Web Speech API (speechSynthesis) を最優先で即時再生 (Mac Chrome / iOS Safari 完全対応)
-    if ('speechSynthesis' in window) {
-      try {
-        window.speechSynthesis.resume();
-        window.speechSynthesis.cancel();
-
-        const utterance = new SpeechSynthesisUtterance(speechText || originalText);
-        utterance.lang = 'zh-TW';
-        utterance.rate = 0.85;
-        utterance.pitch = 1.05;
-
-        utterance.onend = () => clearActiveAudio();
-        utterance.onerror = (err) => {
-          console.warn(`[Audio Engine] Web Speech error for "${originalText}":`, err);
-          fallbackGoogleTTS(originalText, speechText);
-        };
-
-        const voices = window.speechSynthesis.getVoices();
-        if (voices && voices.length > 0) {
-          // まず中国語・台湾華語 (zh/zh-TW) のボイスのみに厳格フィルタリング
-          const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
-          
-          const priorityVoiceNames = [
-            'meijia',
-            'google 國語（臺灣）',
-            'google 國語',
-            'shelley',
-            'sandy',
-            'flo',
-            'ting-ting',
-            'yating'
-          ];
-          
-          // 1. zhVoices の中から優先女性ボイス名を検索
-          let targetVoice = zhVoices.find(v => {
-            const nameLower = (v.name || '').toLowerCase();
-            return priorityVoiceNames.some(p => nameLower.includes(p));
-          });
-
-          // 2. 見つからなければ zh-TW のボイス
-          if (!targetVoice) {
-            targetVoice = zhVoices.find(v => {
-              const langLower = (v.lang || '').toLowerCase();
-              return langLower.includes('tw') || langLower.includes('zh-tw');
-            });
-          }
-
-          // 3. 見つからなければ zh 全般のボイス
-          if (!targetVoice) {
-            targetVoice = zhVoices[0];
-          }
-
-          if (targetVoice) {
-            utterance.voice = targetVoice;
-          }
-        }
-
-        window.speechSynthesis.speak(utterance);
-        return; // Web Speech API での再生が開始成功
-      } catch (e) {
-        console.warn('[Audio Engine] Web Speech API exception, falling back to Google TTS:', e);
-      }
-    }
-
-    // 2. Web Speech API 非対応時または失敗時に Google TTS へフォールバック
-    fallbackGoogleTTS(originalText, speechText);
+    // 1. Google TTS (高音質台湾女性ボイス) を最優先で試行
+    playGoogleTTSPrimary(originalText, speechText);
   }
 
-  function fallbackGoogleTTS(originalText, speechText) {
-    const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(speechText)}&tl=zh-TW&client=tw-ob`;
+  function playGoogleTTSPrimary(originalText, speechText) {
+    // client=tw-ob および client=gtx の両エンドポイントを準備 (gtx は Chrome CORS に強い)
+    const encodedText = encodeURIComponent(speechText);
+    const primaryUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=tw-ob`;
+    const fallbackUrl = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=zh-TW&q=${encodedText}`;
 
     try {
       const audio = new Audio();
       audio.referrerPolicy = 'no-referrer';
       currentAudio = audio;
 
-      audio.onerror = (e) => {
-        console.warn(`[Audio Engine] Google TTS error for "${originalText}":`, e);
+      let hasTriedFallbackUrl = false;
+
+      const attemptFallbackEngine = () => {
+        if (!hasTriedFallbackUrl) {
+          hasTriedFallbackUrl = true;
+          // gtx エンドポイントで再試行
+          audio.src = fallbackUrl;
+          const p = audio.play();
+          if (p !== undefined) {
+            p.catch(() => fallbackWebSpeechFemale(originalText, speechText));
+          }
+        } else {
+          // Google TTS が両方ダメだった場合のみ Web Speech API へ
+          fallbackWebSpeechFemale(originalText, speechText);
+        }
+      };
+
+      audio.onerror = () => attemptFallbackEngine();
+      audio.onended = () => clearActiveAudio();
+
+      audio.src = primaryUrl;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => attemptFallbackEngine());
+      }
+
+    } catch (err) {
+      fallbackWebSpeechFemale(originalText, speechText);
+    }
+  }
+
+  function fallbackWebSpeechFemale(originalText, speechText) {
+    if (!('speechSynthesis' in window)) {
+      playFallbackBeep();
+      clearActiveAudio();
+      return;
+    }
+
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(speechText || originalText);
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.85;
+      utterance.pitch = 1.05;
+
+      utterance.onend = () => clearActiveAudio();
+      utterance.onerror = () => {
         playFallbackBeep();
         clearActiveAudio();
       };
 
-      audio.onended = () => {
-        clearActiveAudio();
-      };
-
-      audio.src = ttsUrl;
-
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((err) => {
-          console.warn(`[Audio Engine] Google TTS play catch for "${originalText}":`, err);
-          playFallbackBeep();
-          clearActiveAudio();
+      const voices = window.speechSynthesis.getVoices();
+      if (voices && voices.length > 0) {
+        const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
+        const priorityVoiceNames = ['meijia', 'google 國語（臺灣）', 'google 國語', 'shelley', 'sandy', 'flo', 'ting-ting'];
+        
+        let targetVoice = zhVoices.find(v => {
+          const nameLower = (v.name || '').toLowerCase();
+          return priorityVoiceNames.some(p => nameLower.includes(p));
         });
+
+        if (!targetVoice) {
+          targetVoice = zhVoices.find(v => {
+            const langLower = (v.lang || '').toLowerCase();
+            return langLower.includes('tw') || langLower.includes('zh-tw');
+          });
+        }
+
+        if (!targetVoice) {
+          targetVoice = zhVoices[0];
+        }
+
+        if (targetVoice) {
+          utterance.voice = targetVoice;
+        }
       }
 
-    } catch (err) {
-      console.warn(`[Audio Engine] Google TTS exception for "${originalText}":`, err);
+      window.speechSynthesis.speak(utterance);
+    } catch (e) {
       playFallbackBeep();
       clearActiveAudio();
     }
