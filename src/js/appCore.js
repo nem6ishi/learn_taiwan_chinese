@@ -75,7 +75,9 @@
 
         const voices = window.speechSynthesis.getVoices();
         if (voices && voices.length > 0) {
-          // Mac Chrome 等で実際に存在する台湾女性ボイス名を厳密指定
+          // まず中国語・台湾華語 (zh/zh-TW) のボイスのみに厳格フィルタリング
+          const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
+          
           const priorityVoiceNames = [
             'meijia',
             'google 國語（臺灣）',
@@ -87,15 +89,15 @@
             'yating'
           ];
           
-          // 1. 台湾女性ボイス名リストに最も合致するボイスを検索
-          let targetVoice = voices.find(v => {
+          // 1. zhVoices の中から優先女性ボイス名を検索
+          let targetVoice = zhVoices.find(v => {
             const nameLower = (v.name || '').toLowerCase();
             return priorityVoiceNames.some(p => nameLower.includes(p));
           });
 
           // 2. 見つからなければ zh-TW のボイス
           if (!targetVoice) {
-            targetVoice = voices.find(v => {
+            targetVoice = zhVoices.find(v => {
               const langLower = (v.lang || '').toLowerCase();
               return langLower.includes('tw') || langLower.includes('zh-tw');
             });
@@ -103,7 +105,7 @@
 
           // 3. 見つからなければ zh 全般のボイス
           if (!targetVoice) {
-            targetVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('zh'));
+            targetVoice = zhVoices[0];
           }
 
           if (targetVoice) {

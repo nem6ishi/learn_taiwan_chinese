@@ -142,13 +142,15 @@
           u.rate = 0.85;
 
           const voices = window.speechSynthesis.getVoices();
+          const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
           const priorityVoiceNames = ['meijia', 'google 國語（臺灣）', 'google 國語', 'shelley', 'sandy', 'flo', 'ting-ting'];
-          let target = voices.find(v => priorityVoiceNames.some(p => (v.name || '').toLowerCase().includes(p)));
+          
+          let target = zhVoices.find(v => priorityVoiceNames.some(p => (v.name || '').toLowerCase().includes(p)));
           if (!target) {
-            target = voices.find(v => (v.lang || '').toLowerCase().includes('tw') || (v.lang || '').toLowerCase().includes('zh-tw'));
+            target = zhVoices.find(v => (v.lang || '').toLowerCase().includes('tw') || (v.lang || '').toLowerCase().includes('zh-tw'));
           }
           if (!target) {
-            target = voices.find(v => (v.lang || '').toLowerCase().includes('zh'));
+            target = zhVoices[0];
           }
 
           if (target) {
