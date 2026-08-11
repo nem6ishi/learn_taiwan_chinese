@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEP 1-7: 5つの声調（四声＋軽声）＆ 結合音 ＆ 注音総合まとめ | 台湾華語学習サイト</title>
-  <meta name="description" content="台湾華語の5大トーン（第一声〜第四声、軽声）と結合音（足し算表記）をマスター！全37文字の総合まとめクイズで注音トロフィーを獲得。">
+  <title>STEP 1-7: 結合音の足し算表記 ＆ 注音総合まとめ | 台湾華語学習サイト</title>
+  <meta name="description" content="注音符号の結合音（足し算表記）ルールをマスター！全37文字の総合まとめクイズで注音トロフィーを獲得。">
   <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
@@ -35,10 +35,10 @@
     
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
       <div>
-        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">注音符号 1-7: TONES & MASTER COMPLETION</span>
-        <h1 style="font-size: 1.75rem; font-weight: 900;">1-7 5つの声調（四声＋軽声）＆ 結合音 ＆ 注音総合まとめ</h1>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">注音符号 1-7: COMBINING SOUNDS & MASTER COMPLETION</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">1-7 結合音の足し算表記 ＆ 注音総合まとめ</h1>
         <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
-          ★台湾華語の5大トーンと文字の組み合わせルールをマスター！全37文字のトロフィーを獲得しよう！
+          ★介音と母音の「足し算（結合音）」ルールをマスター！全37文字のトロフィーを獲得しよう！
         </p>
       </div>
       <button class="btn btn-primary" id="start-quiz-top-btn">
@@ -46,41 +46,41 @@
       </button>
     </div>
 
-    <!-- 💡 台湾華語コラム（第三声＝低いままの「半三声」が台湾ネイティブ流） -->
-    <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%); border: 1px solid #FCD34D; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 32px;">
-      <h3 style="font-size: 1.1rem; font-weight: 900; color: #92400E; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-        🇹🇼 💡 台湾華語コラム: 台湾人の「第三声 (ˇ)」は低いまま伸ばさない！
+    <!-- 💡 ガイダンスボックス: 結合音の足し算ルール -->
+    <div style="background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); border: 1px solid #BFDBFE; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 32px;">
+      <h3 style="font-size: 1.15rem; font-weight: 900; color: #1E40AF; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+        💡 結合音（足し算表記）の仕組み
       </h3>
-      <p style="color: #78350F; font-size: 0.92rem; line-height: 1.6; margin: 0;">
-        教科書では「低く下げてから高く持ち上げる」と習いますが、<strong>台湾現地の日常会話では、ただ単にボソッと低く声を抑え込むだけ（半三声）</strong>で発音するのがナチュラルなリアル台湾華語です！声を上げる必要はありません。
+      <p style="color: #1E3A8A; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+        台湾華語では、介音（ㄧ, ㄨ, ㄩ）と母音を素早く滑らかにつなげて発音する<strong>「結合音」</strong>があります。記号を縦に足し算して書くルールをチェックしましょう！
       </p>
     </div>
 
-    <!-- 5つの声調カードコンテナ (Pure Static HTML) -->
+    <!-- 結合音の主要例カードコンテナ -->
     <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
       
-      <!-- 第一声 -->
+      <!-- ㄧ ＋ ㄚ ＝ ㄧㄚ (ya) -->
       <div class="detail-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
           <div>
-            <span class="pill-badge active" style="margin-bottom: 6px;">声調 1</span>
+            <span class="pill-badge active" style="margin-bottom: 6px;">結合音 1</span>
             <div style="display: flex; align-items: baseline; gap: 12px;">
-              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">第一声 (平調)</h2>
-              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">記号なし (55)</span>
+              <h2 style="font-size: 2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄧ ＋ ㄚ ➔ ㄧㄚ</h2>
+              <span style="font-size: 1rem; font-weight: 700; color: var(--color-text-muted);">ya (ヤー)</span>
             </div>
           </div>
-          <button class="btn btn-outline play-word-sound" data-word="媽" style="padding: 8px 16px; font-size: 0.9rem;">
-            🔊 発音を聴く (媽)
+          <button class="btn btn-outline play-word-sound" data-word="鴨" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く (鴨)
           </button>
         </div>
 
         <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
           <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
             <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
-              🈁 記号のルール: <strong>無表記（記号なし）</strong>
+              🈁 組み合わさる音
             </div>
             <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              注音符号では第一声は何も記号を書かず、文字そのままで表します。
+              介音「ㄧ (i)」の口の形からそのまま母音「ㄚ (a)」へ滑らかにつなげて「ヤー」。
             </div>
           </div>
           <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
@@ -88,51 +88,51 @@
               💡 発音のコツ
             </div>
             <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              高い声をブレずにまっすぐ「マー」。ドレミファソの「ソ」の高さ。
+              日本語の「ヤ」と同じ自然な発音です。
             </div>
           </div>
         </div>
 
-        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 単語例</h4>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 代表的な単語例</h4>
         <div class="example-list">
-          <div class="example-row play-word-sound" data-word="媽">
+          <div class="example-row play-word-sound" data-word="鴨">
             <div class="example-left">
-              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">媽</span>
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">鴨</span>
               <div class="example-phonetics">
-                <span class="example-zhuyin">ㄇㄚ</span>
-                <span class="example-pinyin">mā</span>
+                <span class="example-zhuyin">ㄧㄚ</span>
+                <span class="example-pinyin">yā</span>
               </div>
             </div>
             <div class="example-right">
-              <span class="example-meaning">お母さん (媽媽)</span>
+              <span class="example-meaning">アヒル（鴨肉）</span>
               <div class="audio-icon-tag"><span>🔊</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 第二声 -->
+      <!-- ㄨ ＋ ㄛ ＝ ㄨㄛ (wo) -->
       <div class="detail-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
           <div>
-            <span class="pill-badge active" style="margin-bottom: 6px;">声調 2</span>
+            <span class="pill-badge active" style="margin-bottom: 6px;">結合音 2</span>
             <div style="display: flex; align-items: baseline; gap: 12px;">
-              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">第二声 (升調)</h2>
-              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">記号: ˊ (35)</span>
+              <h2 style="font-size: 2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄨ ＋ ㄛ ➔ ㄨㄛ</h2>
+              <span style="font-size: 1rem; font-weight: 700; color: var(--color-text-muted);">wo (ウォー)</span>
             </div>
           </div>
-          <button class="btn btn-outline play-word-sound" data-word="麻" style="padding: 8px 16px; font-size: 0.9rem;">
-            🔊 発音を聴く (麻)
+          <button class="btn btn-outline play-word-sound" data-word="我" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く (我)
           </button>
         </div>
 
         <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
           <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
             <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
-              🈁 記号のルール: <strong>文字の右上に「ˊ」</strong>
+              🈁 組み合わさる音
             </div>
             <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              注音文字の右上（または右横）に右上がりのスラッシュ「ˊ」を書きます。
+              介音「ㄨ (u)」の丸い口から母音「ㄛ (o)」へつなげて「ウォー」。
             </div>
           </div>
           <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
@@ -140,179 +140,23 @@
               💡 発音のコツ
             </div>
             <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              「えっ！？」と聞き返す時のように、下から上へキュッと声を急上昇させます。
+              超頻出単語「我 (wǒ / 私)」の発音です。
             </div>
           </div>
         </div>
 
-        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 単語例</h4>
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 代表的な単語例</h4>
         <div class="example-list">
-          <div class="example-row play-word-sound" data-word="麻">
+          <div class="example-row play-word-sound" data-word="我">
             <div class="example-left">
-              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">麻</span>
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我</span>
               <div class="example-phonetics">
-                <span class="example-zhuyin">ㄇㄚˊ</span>
-                <span class="example-pinyin">má</span>
+                <span class="example-zhuyin">ㄨㄛˇ</span>
+                <span class="example-pinyin">wǒ</span>
               </div>
             </div>
             <div class="example-right">
-              <span class="example-meaning">あさ (麻) / しびれる</span>
-              <div class="audio-icon-tag"><span>🔊</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 第三声 -->
-      <div class="detail-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-          <div>
-            <span class="pill-badge active" style="margin-bottom: 6px;">声調 3</span>
-            <div style="display: flex; align-items: baseline; gap: 12px;">
-              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">第三声 (轉調 / 低音)</h2>
-              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">記号: ˇ (214)</span>
-            </div>
-          </div>
-          <button class="btn btn-outline play-word-sound" data-word="馬" style="padding: 8px 16px; font-size: 0.9rem;">
-            🔊 発音を聴く (馬)
-          </button>
-        </div>
-
-        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
-          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
-            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
-              🈁 記号のルール: <strong>文字の右上に「ˇ」</strong>
-            </div>
-            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              注音文字の右上（または右横）にチェックマーク「ˇ」を書きます。
-            </div>
-          </div>
-          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
-            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
-              💡 発音のコツ
-            </div>
-            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              声を底の深くまで低く抑える音。ボソッと低い声で「マー」。
-            </div>
-          </div>
-        </div>
-
-        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 単語例</h4>
-        <div class="example-list">
-          <div class="example-row play-word-sound" data-word="馬">
-            <div class="example-left">
-              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">馬</span>
-              <div class="example-phonetics">
-                <span class="example-zhuyin">ㄇㄚˇ</span>
-                <span class="example-pinyin">mǎ</span>
-              </div>
-            </div>
-            <div class="example-right">
-              <span class="example-meaning">うま (馬)</span>
-              <div class="audio-icon-tag"><span>🔊</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 第四声 -->
-      <div class="detail-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-          <div>
-            <span class="pill-badge active" style="margin-bottom: 6px;">声調 4</span>
-            <div style="display: flex; align-items: baseline; gap: 12px;">
-              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">第四声 (降調)</h2>
-              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">記号: ˋ (51)</span>
-            </div>
-          </div>
-          <button class="btn btn-outline play-word-sound" data-word="罵" style="padding: 8px 16px; font-size: 0.9rem;">
-            🔊 発音を聴く (罵)
-          </button>
-        </div>
-
-        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
-          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
-            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
-              🈁 記号のルール: <strong>文字の右上に「ˋ」</strong>
-            </div>
-            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              注音文字の右上（または右横）に右下がりのスラッシュ「ˋ」を書きます。
-            </div>
-          </div>
-          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
-            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
-              💡 発音のコツ
-            </div>
-            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              カラスが「カーッ！」と叫ぶように、高い位置から一気に声を叩き落とします。
-            </div>
-          </div>
-        </div>
-
-        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 単語例</h4>
-        <div class="example-list">
-          <div class="example-row play-word-sound" data-word="罵">
-            <div class="example-left">
-              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">罵</span>
-              <div class="example-phonetics">
-                <span class="example-zhuyin">ㄇㄚˋ</span>
-                <span class="example-pinyin">mà</span>
-              </div>
-            </div>
-            <div class="example-right">
-              <span class="example-meaning">しかる / ののしる</span>
-              <div class="audio-icon-tag"><span>🔊</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 軽声 -->
-      <div class="detail-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-          <div>
-            <span class="pill-badge active" style="margin-bottom: 6px;">声調 5</span>
-            <div style="display: flex; align-items: baseline; gap: 12px;">
-              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">軽声 (輕聲)</h2>
-              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">記号: ˙ (頭の上)</span>
-            </div>
-          </div>
-          <button class="btn btn-outline play-word-sound" data-word="嗎" style="padding: 8px 16px; font-size: 0.9rem;">
-            🔊 発音を聴く (嗎)
-          </button>
-        </div>
-
-        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
-          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
-            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
-              🈁 記号のルール: <strong>文字の頭の上に黒丸「˙」</strong>
-            </div>
-            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              四声と異なり、**注音文字の頭の上（てっぺん）**に小さな黒丸「˙」を添えます。
-            </div>
-          </div>
-          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
-            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
-              💡 発音のコツ
-            </div>
-            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              跳ねるように短く軽く「マ」。前の音の余韻に添えて添え木のように発音。
-            </div>
-          </div>
-        </div>
-
-        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 単語例</h4>
-        <div class="example-list">
-          <div class="example-row play-word-sound" data-word="嗎">
-            <div class="example-left">
-              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">嗎</span>
-              <div class="example-phonetics">
-                <span class="example-zhuyin">ㄇㄚ˙</span>
-                <span class="example-pinyin">ma</span>
-              </div>
-            </div>
-            <div class="example-right">
-              <span class="example-meaning">〜ですか？ (疑問詞)</span>
+              <span class="example-meaning">わたし（私）</span>
               <div class="audio-icon-tag"><span>🔊</span></div>
             </div>
           </div>
@@ -368,8 +212,8 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-container">
-      <p>© 2026 台湾華語学習サイト | Pure Static HTML & Modern Vanilla JS</p>
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
     </div>
   </footer>
 
