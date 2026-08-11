@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CATEGORY 3 単語・フレーズ一覧 | 台湾旅行・グルメ注文 | 台湾華語学習サイト</title>
+  <meta name="description" content="CATEGORY 3（台湾旅行・グルメ注文 ＆ 移動）の単語・フレーズ一覧。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    .word-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .word-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .word-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .word-main {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .word-trad {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--color-text-main);
+    }
+    .word-phonetics {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .word-zhuyin {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      padding: 2px 10px;
+      border-radius: 4px;
+    }
+    .word-meaning {
+      font-size: 0.88rem;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .word-mainland-tag {
+      font-size: 0.78rem;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+    .word-section-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--color-text-main);
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-border);
+      margin-top: 36px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音符号一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          ← トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    
+    <!-- ページヘッダー -->
+    <div style="background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 28px 24px; margin-bottom: 28px;">
+      <span style="background: var(--color-primary-light); color: var(--color-primary); font-size: 0.82rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 8px;">
+        📖 CATEGORY 3 単語・フレーズまとめ
+      </span>
+      <h1 style="font-size: 1.75rem; font-weight: 900; margin-bottom: 8px;">
+        台湾旅行・グルメ注文 ＆ 移動 単語一覧
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.5; margin: 0;">
+        夜市・食堂・ドリンクスタンド・移動で使える実践語彙です。<br>
+        カードをタップするとリアルな台湾華語の音声（Google 國語 / Meijia）が再生されます。
+      </p>
+    </div>
+
+    <h2 class="word-section-title">
+      <span>🧋 ドリンクカスタム ＆ 飲食店必須語彙</span>
+    </h2>
+    <div class="word-grid">
+      <div class="word-card play-word-sound" data-word="內用">
+        <div class="word-main">
+          <span class="word-trad">內用</span>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄋㄟˋ ㄩㄥˋ</span>
+          </div>
+          <span class="word-meaning">イートイン (店内飲食)</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <div class="word-card play-word-sound" data-word="外帶">
+        <div class="word-main">
+          <span class="word-trad">外帶</span>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄨㄞˋ ㄉㄞˋ</span>
+          </div>
+          <span class="word-meaning">テイクアウト (持ち帰り)</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <div class="word-card play-word-sound" data-word="半糖">
+        <div class="word-main">
+          <span class="word-trad">半糖</span>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄅㄢˋ ㄊㄤˊ</span>
+          </div>
+          <span class="word-meaning">甘さ50% (ハーフ)</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <div class="word-card play-word-sound" data-word="微糖">
+        <div class="word-main">
+          <span class="word-trad">微糖</span>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄨㄟ ㄊㄤˊ</span>
+          </div>
+          <span class="word-meaning">甘さ30% (ひかえめ)</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <div class="word-card play-word-sound" data-word="去冰">
+        <div class="word-main">
+          <span class="word-trad">去冰</span>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄑㄩˋ ㄅㄧㄥ</span>
+          </div>
+          <span class="word-meaning">氷なし</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <div class="word-card play-word-sound" data-word="捷運">
+        <div class="word-main">
+          <span class="word-trad">捷運</span>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄐㄧㄝˊ ㄩㄣˋ</span>
+          </div>
+          <span class="word-meaning">MRT / 地下鉄</span>
+          <span class="word-mainland-tag">🇨🇳 大陸: 地鐵</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+    </div>
+
+    <!-- 戻るナビゲーション -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 48px;">
+      <a href="index.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">
+        トップ一覧へ戻る
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+</body>
+</html>
