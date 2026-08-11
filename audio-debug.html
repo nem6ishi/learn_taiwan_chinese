@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔧 音声再生デバッグ＆ブラウザ診断ツール | 台湾華語学習サイト</title>
-  <meta name="description" content="ブラウザやOSの音声再生環境（Google TTS, Web Speech API, Autoplay政策）をリアルタイムで診断・ログ可視化するデバッグツール。">
+  <title>🔧 音声再生デバッグ＆ブラウザ環境診断ツール | 台湾華語学習サイト</title>
+  <meta name="description" content="ブラウザやOSの音声再生環境（Google 國語, Meijia, Web Speech API）をリアルタイムで診断・ログ可視化するデバッグツール。">
   <link rel="stylesheet" href="src/styles/main.css">
   <style>
     .debug-card {
@@ -21,9 +21,9 @@
       font-size: 0.85rem;
       padding: 16px;
       border-radius: var(--radius-md);
-      height: 280px;
+      height: 320px;
       overflow-y: auto;
-      line-height: 1.5;
+      line-height: 1.6;
       border: 1px solid #1E293B;
       margin-top: 12px;
     }
@@ -31,7 +31,7 @@
       margin-bottom: 4px;
       word-break: break-all;
     }
-    .log-success { color: #4ADE80; }
+    .log-success { color: #4ADE80; font-weight: bold; }
     .log-warn { color: #FACC15; }
     .log-error { color: #F87171; }
     .log-info { color: #38BDF8; }
@@ -72,10 +72,10 @@
     
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
       <div>
-        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">SYSTEM AUDIO DIAGNOSTICS</span>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">AUDIO ENGINE DIAGNOSTICS</span>
         <h1 style="font-size: 1.75rem; font-weight: 900;">🔧 音声再生デバッグ ＆ ブラウザ環境診断</h1>
         <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
-          ボタンを押すと「なぜ音声が再生されないか/どのエンジンで再生されたか」の詳細ログをリアルタイム表示します。
+          サイトの音声エンジンが「どの音声ボイス（例: Google 國語 / Meijia）」を選択して発声したかをリアルタイムログ表示します。
         </p>
       </div>
       <button class="btn btn-outline" id="clear-logs-btn" style="padding: 8px 16px; font-size: 0.85rem;">
@@ -83,15 +83,25 @@
       </button>
     </div>
 
-    <!-- 1. ブラウザ環境ステータス -->
+    <!-- 1. ブラウザ環境 ＆ 最優先ボイス判定 -->
     <div class="debug-card">
       <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">📱 現在のブラウザ・動作環境判定</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.88rem;">
-        <div><strong>OS / UserAgent:</strong> <span id="env-ua" style="color: var(--color-text-muted);">取得中...</span></div>
-        <div><strong>プロトコル:</strong> <span id="env-protocol" style="color: var(--color-text-muted);">取得中...</span></div>
-        <div><strong>Web Speech API:</strong> <span id="env-webspeech" class="status-badge">判定中</span></div>
-        <div><strong>検出された台湾・中国語ボイス数:</strong> <span id="env-voices-count" style="font-weight: 800; color: var(--color-primary);">0 個</span></div>
+        <div><strong>OS / UserAgent:</strong> <br><span id="env-ua" style="color: var(--color-text-muted); font-size: 0.8rem;">取得中...</span></div>
+        <div><strong>プロトコル:</strong> <br><span id="env-protocol" style="color: var(--color-text-muted);">取得中...</span></div>
+        <div><strong>Web Speech API:</strong> <br><span id="env-webspeech" class="status-badge">判定中</span></div>
+        <div><strong>検出された台湾・中国語ボイス数:</strong> <br><span id="env-voices-count" style="font-weight: 800; color: var(--color-primary);">0 個</span></div>
       </div>
+      
+      <div style="margin-top: 16px; padding: 12px; background: var(--color-bg); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+        <div style="font-size: 0.9rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
+          🎯 サイト音声エンジンが最優先選択するボイス:
+        </div>
+        <div id="top-selected-voice" style="font-size: 1.05rem; font-weight: 900; color: var(--color-text-main);">
+          検索中...
+        </div>
+      </div>
+
       <div style="margin-top: 12px; font-size: 0.82rem; color: var(--color-text-muted);" id="voice-list-detail">
         <!-- 検出ボイス名一覧 -->
       </div>
@@ -99,23 +109,23 @@
 
     <!-- 2. 音声テストアクションボタン群 -->
     <div class="debug-card">
-      <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">🧪 診断テストアクション</h3>
+      <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">🧪 サイトメインエンジン動作テスト</h3>
       <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 16px;">
-        以下の各ボタンを押して、ブラウザがどの段階でブロックされているかをログで確認してください。
+        ボタンを押すと、実際の学習カードと同じ音声エンジン（`playZhuyinSound`）が起動し発声ログが出力されます。
       </p>
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <button class="btn btn-primary" id="test-google-tts-btn">
-          🔊 1. Google TTS 直接テスト (你好)
-        </button>
-        <button class="btn btn-outline" id="test-webspeech-btn">
-          🗣️ 2. Web Speech API 単体テスト (謝謝)
+        <button class="btn btn-primary" id="test-main-engine-btn">
+          🔊 1. メインエンジン発声テスト (我是日本人)
         </button>
         <button class="btn btn-outline" id="test-zhuyin-map-btn">
-          🈁 3. 注音単体 (ㄅ ➔ 包) マッピングテスト
+          🈁 2. 注音単体 (ㄅ ➔ 包) テスト
         </button>
-        <button class="btn btn-outline" id="test-long-phrase-btn">
-          ✈️ 4. 会話フレーズ (我是日本人) テスト
+        <button class="btn btn-outline" id="test-webspeech-btn">
+          🗣️ 3. Web Speech API 単体テスト (謝謝)
+        </button>
+        <button class="btn btn-outline" id="test-google-tts-btn">
+          🌐 4. [参考] Google TTS 外部URL直接テスト
         </button>
       </div>
     </div>
@@ -135,7 +145,7 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <p>© 2026 台湾華語学習サイト | Audio Debug Diagnostics</p>
+      <p>© 2026 台湾華語学習サイト | Audio Engine Diagnostics</p>
     </div>
   </footer>
 

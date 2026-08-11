@@ -1,4 +1,4 @@
-// src/js/audio-debug.js - 音声デバッグ＆診断詳細ログ出力スクリプト
+// src/js/audio-debug.js - 音声デバッグ＆リアルタイムログ出力スクリプト
 (function() {
   const terminal = document.getElementById('log-terminal');
 
@@ -26,7 +26,6 @@
     }
   };
 
-  // 即時アタッチ ＆ DOMContentLoaded ＆ load 三重アタッチ
   init();
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -38,6 +37,7 @@
     const protoEl = document.getElementById('env-protocol');
     const speechEl = document.getElementById('env-webspeech');
     const voicesCountEl = document.getElementById('env-voices-count');
+    const topVoiceEl = document.getElementById('top-selected-voice');
     const voiceDetailEl = document.getElementById('voice-list-detail');
 
     if (uaEl) uaEl.textContent = navigator.userAgent;
@@ -52,18 +52,41 @@
     if (hasSpeech) {
       const updateVoices = () => {
         const voices = window.speechSynthesis.getVoices();
-        const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().includes('zh'));
+        const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
         
         if (voicesCountEl) voicesCountEl.textContent = `${zhVoices.length} 個 (全体 ${voices.length} 個)`;
 
+        // 1. 最優先ボイスのマッチング判定
+        let targetVoice = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
+        if (!targetVoice) {
+          const priorityVoiceNames = ['meijia', 'shelley', 'sandy', 'flo', 'ting-ting'];
+          targetVoice = zhVoices.find(v => {
+            const nameLower = (v.name || '').toLowerCase();
+            return priorityVoiceNames.some(p => nameLower.includes(p));
+          });
+        }
+        if (!targetVoice) {
+          targetVoice = zhVoices.find(v => (v.lang || '').toLowerCase().includes('tw') || (v.lang || '').toLowerCase().includes('zh-tw'));
+        }
+        if (!targetVoice && zhVoices.length > 0) {
+          targetVoice = zhVoices[0];
+        }
+
+        if (topVoiceEl) {
+          if (targetVoice) {
+            topVoiceEl.innerHTML = `🔊 <span style="color: #166534;">${targetVoice.name}</span> <span style="font-size: 0.85rem; color: var(--color-text-muted);">(${targetVoice.lang})</span>`;
+            log(`[ENGINE INFO] サイト最優先ボイス決定: ${targetVoice.name} (${targetVoice.lang})`, 'success');
+          } else {
+            topVoiceEl.textContent = '中国語ボイス未検出 (自動割り当て)';
+          }
+        }
+
         if (voiceDetailEl) {
           if (zhVoices.length > 0) {
-            voiceDetailEl.innerHTML = '<strong>検出された中国語・台湾ボイス:</strong><br>' +
-              zhVoices.map(v => `• ${v.name} (${v.lang}) ${v.default ? '[デフォルト]' : ''}`).join('<br>');
-            log(`[VOICES] 中国語ボイスを ${zhVoices.length} 個検出しました。`, 'success');
+            voiceDetailEl.innerHTML = '<strong>検出された中国語・台湾ボイス一覧:</strong><br>' +
+              zhVoices.map(v => `• ${v.name} (${v.lang}) ${v.default ? '[OSデフォルト]' : ''}`).join('<br>');
           } else {
-            voiceDetailEl.innerHTML = '<span style="color: #F87171;">⚠️ 中国語/台湾華語ボイスが検出されませんでした（OSの音声ライブラリ未登録の可能性）。</span>';
-            log(`[VOICES WARNING] ブラウザに中国語(zh/zh-TW)ボイスが見つかりません。`, 'warn');
+            voiceDetailEl.innerHTML = '<span style="color: #F87171;">⚠️ 中国語/台湾華語ボイスが検出されませんでした。</span>';
           }
         }
       };
@@ -83,65 +106,45 @@
       };
     }
 
-    // 1. Google TTS 直接テスト (マルチエンドポイント試行)
-    const googleBtn = document.getElementById('test-google-tts-btn');
-    if (googleBtn) {
-      googleBtn.onclick = () => {
-        log('--- 【テスト1: Google TTS マルチエンドポイント再生】開始 ---', 'info');
-        const text = '你好';
-        const encodedText = encodeURIComponent(text);
-
-        const endpoints = [
-          { name: 'Google TTS (tw-ob)', url: `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=tw-ob` },
-          { name: 'Google TTS (gtx)', url: `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=gtx` },
-          { name: 'Google API (gtx)', url: `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=zh-TW&q=${encodedText}` },
-          { name: 'Youdao TTS (Taiwan)', url: `https://dict.youdao.com/dictvoice?audio=${encodedText}&type=2` }
-        ];
-
-        let index = 0;
-
-        const tryEndpoint = () => {
-          if (index >= endpoints.length) {
-            log('❌ [TTS FAIL] 全ての Google TTS エンドポイント試行に失敗しました。', 'error');
-            return;
-          }
-
-          const ep = endpoints[index++];
-          log(`[TTS TRYING ${index}/${endpoints.length}] ${ep.name}...`, 'info');
-
-          const audio = new Audio();
-          audio.referrerPolicy = 'no-referrer';
-
-          audio.onended = () => {
-            log(`✅ [TTS SUCCESS] ${ep.name} の音声再生が成功しました！`, 'success');
-          };
-
-          audio.onerror = () => {
-            log(`⚠️ [TTS REJECTED] ${ep.name} がブロックされました。次のURLを試します...`, 'warn');
-            tryEndpoint();
-          };
-
-          audio.src = ep.url;
-          const p = audio.play();
-          if (p !== undefined) {
-            p.then(() => {
-              log(`✅ [TTS PLAY] ${ep.name} の再生が開始されました！`, 'success');
-            }).catch(err => {
-              log(`⚠️ [TTS PLAY REJECTED] ${ep.name} play() が拒否されました: ${err.message}`, 'warn');
-              tryEndpoint();
-            });
-          }
-        };
-
-        tryEndpoint();
+    // 1. サイトメインエンジン動作テスト (我是日本人)
+    const mainBtn = document.getElementById('test-main-engine-btn');
+    if (mainBtn) {
+      mainBtn.onclick = () => {
+        log('--- 【テスト1: メイン音声エンジン動作テスト】開始 ---', 'info');
+        const text = '我是日本人';
+        log(`[ENGINE REQ] フレーズ: "${text}" の再生を開始します...`, 'info');
+        if (window.playZhuyinSound) {
+          window.playZhuyinSound(text, mainBtn);
+          log('✅ [ENGINE SUCCESS] playZhuyinSound() を正常実行しました。音が流れているかご確認ください。', 'success');
+        } else {
+          log('❌ [ENGINE ERROR] window.playZhuyinSound がロードされていません。', 'error');
+        }
       };
     }
 
-    // 2. Web Speech API 単体テスト
+    // 2. 注音単体 (ㄅ ➔ 包) テスト
+    const zhuyinBtn = document.getElementById('test-zhuyin-map-btn');
+    if (zhuyinBtn) {
+      zhuyinBtn.onclick = () => {
+        log('--- 【テスト2: 注音単体 (ㄅ ➔ 包) テスト】開始 ---', 'info');
+        const symbol = 'ㄅ';
+        const speechMap = window.ZHUYIN_SPEECH_MAP || {};
+        const speechText = speechMap[symbol] || symbol;
+        log(`[ZHUYIN MAP] Symbol: "${symbol}" ➔ 発音置換漢字: "${speechText}"`, 'info');
+        if (window.playZhuyinSound) {
+          window.playZhuyinSound(symbol, zhuyinBtn);
+          log('✅ [ENGINE SUCCESS] 注音単体音声を正常実行しました。', 'success');
+        } else {
+          log('❌ [ENGINE ERROR] window.playZhuyinSound が定義されていません。', 'error');
+        }
+      };
+    }
+
+    // 3. Web Speech API 単体テスト (謝謝)
     const webSpeechBtn = document.getElementById('test-webspeech-btn');
     if (webSpeechBtn) {
       webSpeechBtn.onclick = () => {
-        log('--- 【テスト2: Web Speech API 単体発音】開始 ---', 'info');
+        log('--- 【テスト3: Web Speech API 単体発声】開始 ---', 'info');
         if (!('speechSynthesis' in window)) {
           log('❌ [WEBSPEECH ERROR] ブラウザが Web Speech API をサポートしていません。', 'error');
           return;
@@ -158,61 +161,47 @@
 
           const voices = window.speechSynthesis.getVoices();
           const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
-          const priorityVoiceNames = ['meijia', 'google 國語（臺灣）', 'google 國語', 'shelley', 'sandy', 'flo', 'ting-ting'];
-          
-          let target = zhVoices.find(v => priorityVoiceNames.some(p => (v.name || '').toLowerCase().includes(p)));
-          if (!target) {
-            target = zhVoices.find(v => (v.lang || '').toLowerCase().includes('tw') || (v.lang || '').toLowerCase().includes('zh-tw'));
-          }
-          if (!target) {
-            target = zhVoices[0];
-          }
+          let target = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
+          if (!target && zhVoices.length > 0) target = zhVoices[0];
 
           if (target) {
             u.voice = target;
-            log(`[WEBSPEECH] 選択されたボイス: ${target.name} (${target.lang})`, 'success');
-          } else {
-            log(`[WEBSPEECH] 特定ボイス未指定 (lang='zh-TW' で自動割り当て)`, 'warn');
+            log(`[WEBSPEECH SUCCESS] 発声ボイス: ${target.name} (${target.lang})`, 'success');
           }
 
-          u.onstart = () => log('[WEBSPEECH EVENT] Web Speech API 発声開始 (onstart)', 'info');
-          u.onend = () => log('✅ [WEBSPEECH SUCCESS] Web Speech API 発声が正常完了しました！', 'success');
+          u.onstart = () => log('[WEBSPEECH EVENT] 音声発声開始 (onstart)', 'info');
+          u.onend = () => log('✅ [WEBSPEECH SUCCESS] 音声発声が正常完了しました！', 'success');
           u.onerror = (err) => log(`❌ [WEBSPEECH ERROR] 発話エラー: ${err.error}`, 'error');
 
           window.speechSynthesis.speak(u);
-          log('[WEBSPEECH] speechSynthesis.speak() コマンドを送信しました。', 'info');
         } catch (err) {
           log(`❌ [WEBSPEECH EXCEPTION] 例外が発生しました: ${err.message}`, 'error');
         }
       };
     }
 
-    // 3. 注音単体 (ㄅ ➔ 包) マッピングテスト
-    const zhuyinBtn = document.getElementById('test-zhuyin-map-btn');
-    if (zhuyinBtn) {
-      zhuyinBtn.onclick = () => {
-        log('--- 【テスト3: 注音単体 (ㄅ ➔ 包) 音声再生】開始 ---', 'info');
-        const symbol = 'ㄅ';
-        if (window.playZhuyinSound) {
-          log(`[ZHUYIN MAP] Symbol: "${symbol}" ➔ 置換文字: "${(window.ZHUYIN_SPEECH_MAP || {})[symbol] || symbol}"`, 'info');
-          window.playZhuyinSound(symbol, zhuyinBtn);
-        } else {
-          log('❌ [ENGINE ERROR] window.playZhuyinSound が定義されていません。', 'error');
-        }
-      };
-    }
+    // 4. Google TTS 外部URL直接テスト (参考)
+    const googleBtn = document.getElementById('test-google-tts-btn');
+    if (googleBtn) {
+      googleBtn.onclick = () => {
+        log('--- 【テスト4: [参考] Google TTS 外部URL直接テスト】開始 ---', 'info');
+        log('⚠️ [NOTE] Google TTS の外部直リンクURLは、ChromeのCORS/403制限でブロックされる仕様です。', 'warn');
+        const text = '你好';
+        const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=zh-TW&client=tw-ob`;
+        
+        const audio = new Audio();
+        audio.referrerPolicy = 'no-referrer';
+        audio.onerror = () => {
+          log('❌ [EXPECTED BLOCK] 予想通り Chrome の CORS/403 セキュリティによって外部URL直アクセスが拒否されました。', 'error');
+        };
+        audio.onended = () => log('✅ [TTS SUCCESS] 音声再生完了', 'success');
 
-    // 4. 会話フレーズ (我是日本人) テスト
-    const phraseBtn = document.getElementById('test-long-phrase-btn');
-    if (phraseBtn) {
-      phraseBtn.onclick = () => {
-        log('--- 【テスト4: 会話フレーズ (我是日本人) 再生】開始 ---', 'info');
-        const phrase = '我是日本人';
-        if (window.playZhuyinSound) {
-          log(`[PHRASE TEST] フレーズ: "${phrase}"`, 'info');
-          window.playZhuyinSound(phrase, phraseBtn);
-        } else {
-          log('❌ [ENGINE ERROR] window.playZhuyinSound が定義されていません。', 'error');
+        audio.src = url;
+        const p = audio.play();
+        if (p !== undefined) {
+          p.catch(err => {
+            log(`❌ [EXPECTED BLOCK] audio.play() 拒否: ${err.message}`, 'error');
+          });
         }
       };
     }
