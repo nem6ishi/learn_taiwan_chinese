@@ -1101,12 +1101,18 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_1 = [
   }
 ];
 
-// ==================== STEP 3-1: 飲食店・夜市での注文会話確認クイズ (全6問) ====================
+// ==================== STEP 3-1: 飲食店・夜市での注文会話確認クイズ (全8問) ====================
 window.VOWELS_QUIZ_QUESTIONS_3_1 = [
   { id: 1, type: "audio", targetSymbol: "內用", speechTarget: "內用", prompt: "再生された台湾の食堂で毎日聞く「店内飲食」の表現はどれ？", options: ["內用", "外帶", "買單", "謝謝"] },
   { id: 2, type: "audio", targetSymbol: "外帶", speechTarget: "外帶", prompt: "再生された「テイクアウト / お持ち帰り」の表現はどれ？", options: ["外帶", "內用", "點餐", "買單"] },
   { id: 3, type: "zhuyin-to-word", targetSymbol: "イートインでお願いします", speechTarget: "內用，謝謝", prompt: "注音「ㄋㄟˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙」に対応する日本語の意味はどれ？", options: ["イートインでお願いします", "テイクアウトでお願いします", "お会計をお願いします", "ごちそうさまでした"] },
-  { id: 4, type: "zhuyin-to-word", targetSymbol: "微糖・氷なし", speechTarget: "微糖去冰", prompt: "ドリンクスタンドの注音「ㄨㄟ ㄊㄤˊ ㄑㄩˋ ㄅㄧㄥ」に対応する注文内容はどれ？", options: ["微糖・氷なし", "全糖・氷あり", "無糖・多氷", "半糖・少氷"] },
-  { id: 5, type: "fill-in-blank", targetSymbol: "一份", speechTarget: "我要一份小籠包", prompt: "「小籠包を1人前ください（我要 ___ 小籠包）」の空欄に入る量詞はどれ？", options: ["一份", "一杯", "一個", "一本"] },
-  { id: 6, type: "fill-in-blank", targetSymbol: "一共", speechTarget: "一共180塊", prompt: "「合計180元です（___ 180塊）」の空欄に入る合計を意味する単語はどれ？", options: ["一共", "買單", "謝謝", "不用"] }
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "半糖・氷少なめ", speechTarget: "半糖少冰", prompt: "ドリンクの注文「ㄅㄢˋ ㄊㄤˊ ㄕㄠˇ ㄅㄧㄥ」に対応するカスタム内容はどれ？", options: ["半糖・氷少なめ", "微糖・氷なし", "全糖・多氷", "無糖・常温"] },
+  { id: 5, type: "fill-in-blank", targetSymbol: "袋子", speechTarget: "要不要袋子", prompt: "「レジ袋は要りますか？ (要不要 ___ ？)」の空欄に入る単語はどれ？", options: ["袋子", "杯子", "筷子", "盒子"] },
+  { id: 6, type: "fill-in-blank", targetSymbol: "推薦", speechTarget: "請問有推薦的嗎", prompt: "「おすすめはありますか？ (請問有 ___ ％ 嗎？)」の空欄に入る単語はどれ？", options: ["推薦", "點餐", "買單", "內用"] },
+  { id: 7, type: "zhuyin-to-word", targetSymbol: "大杯", speechTarget: "大杯", prompt: "ドリンクスタンドの注音「ㄉㄚˋ ㄅㄟ」に対応するサイズ指定はどれ？", options: ["大杯", "中杯", "小杯", "特大"] },
+  {
+    id: 8, type: "word-to-zhuyin", targetSymbol: "ㄧˊ ㄍㄨㄥˋ", speechTarget: "一共",
+    optionSpeechMap: { "ㄧˊ ㄍㄨㄥˋ": "一共", "ㄇㄞˇ ㄉㄢ": "買單", "ㄋㄟˋ ㄩㄥˋ": "內用", "ㄨㄞˋ ㄉㄞˋ": "外帶" },
+    prompt: "「一共 (合計で)」の正しい注音表記はどれ？", options: ["ㄧˊ ㄍㄨㄥˋ", "ㄇㄞˇ ㄉㄢ", "ㄋㄟˋ ㄩㄥˋ", "ㄨㄞˋ ㄉㄞˋ"]
+  }
 ];
