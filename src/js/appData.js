@@ -991,16 +991,16 @@ window.VOWELS_QUIZ_QUESTIONS_1_9 = [
   { id: 4, type: "audio", targetSymbol: "罵 (ㄇㄚˋ)", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˇ)"] },
   { id: 5, type: "audio", targetSymbol: "嗎 (ㄇㄚ˙)", speechTarget: "嗎", prompt: "再生された跳ねるように短く添える「軽声 (輕聲)」の単語を選んでください", options: ["嗎 (ㄇㄚ˙)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
   {
-    id: 6, type: "zhuyin-to-word", targetSymbol: "鴨 (yā)", speechTarget: "鴨",
-    prompt: "介音『ㄧ』＋ 母音『ㄚ』の結合音「ㄧㄚ (ya)」で読める単語はどれ？", options: ["鴨 (yā)", "我 (wǒ)", "月 (yuè)", "魚 (yú)"]
+    id: 6, type: "zhuyin-to-word", targetSymbol: "頁 (yè)", speechTarget: "頁",
+    prompt: "介音『ㄧ』＋ 母音『ㄝ』の結合音「ㄧㄝˋ (ye)」で読める『ページ』を意味する単語はどれ？", options: ["頁 (yè)", "我 (wǒ)", "月 (yuè)", "雲 (yún)"]
   },
   {
-    id: 7, type: "zhuyin-to-word", targetSymbol: "我 (wǒ)", speechTarget: "我",
-    prompt: "介音『ㄨ』＋ 母音『ㄛ』の結合音「ㄨㄛ (wo)」で読める私を意味する単語はどれ？", options: ["我 (wǒ)", "鴨 (yā)", "月 (yuè)", "雨 (yǔ)"]
+    id: 7, type: "zhuyin-to-word", targetSymbol: "位 (wèi)", speechTarget: "位",
+    prompt: "介音『ㄨ』＋ 母音『ㄟ』の結合音「ㄨㄟˋ (wei)」で読める『〜席/〜名』を意味する単語はどれ？", options: ["位 (wèi)", "頁 (yè)", "月 (yuè)", "雨 (yǔ)"]
   },
   {
     id: 8, type: "zhuyin-to-word", targetSymbol: "月 (yuè)", speechTarget: "月",
-    prompt: "介音『ㄩ』＋ 母音『ㄝ』の結合音「ㄩㄝ (yue)」で読めるつきを意味する単語はどれ？", options: ["月 (yuè)", "我 (wǒ)", "鴨 (yā)", "魚 (yú)"]
+    prompt: "介音『ㄩ』＋ 母音『ㄝ』の結合音「ㄩㄝˋ (yue)」で読める『つき』を意味する単語はどれ？", options: ["月 (yuè)", "位 (wèi)", "頁 (yè)", "魚 (yú)"]
   },
   {
     id: 9, type: "word-to-zhuyin", targetSymbol: "ㄒㄧㄝˋ ㄒㄧㄝ˙", speechTarget: "謝謝",
@@ -1009,18 +1009,18 @@ window.VOWELS_QUIZ_QUESTIONS_1_9 = [
   },
   {
     id: 10, type: "word-to-zhuyin", targetSymbol: "ㄋㄧˇ ㄏㄠˇ", speechTarget: "你好",
-    optionSpeechMap: { "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄗㄠˇ ㄢ": "早安", "再見": "ㄗㄞˋ ㄐㄧㄢˋ" },
-    prompt: "「こんにちは」を意味する「你好 (nǐhǎo)」の正確な注音表記はどれ？", options: ["ㄋㄧˇ ㄏㄠˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄗㄠˇ ㄢ", "再見"]
+    optionSpeechMap: { "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄗㄠˇ ㄢ": "早安", "ㄗㄞˋ ㄐㄧㄢˋ": "再見" },
+    prompt: "「こんにちは」を意味する「你好 (nǐhǎo)」の正確な注音表記はどれ？", options: ["ㄋㄧˇ ㄏㄠˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄗㄠˇ ㄢ", "ㄗㄞˋ ㄐㄧㄢˋ"]
   },
   {
     id: 11, type: "word-to-zhuyin", targetSymbol: "ㄊㄞˊ ㄨㄢ", speechTarget: "台灣",
-    optionSpeechMap: { "ㄊㄞˊ ㄨㄢ": "台灣", "ㄖˋ ㄅㄣˇ": "日本", "台北": "ㄊㄞˊ ㄅㄟˇ", "高雄": "ㄍㄠ ㄒㄧㄨㄥ" },
-    prompt: "「台湾 (táiwān)」の正確な注音表記はどれ？", options: ["ㄊㄞˊ ㄨㄢ", "ㄖˋ ㄅㄣˇ", "台北", "高雄"]
+    optionSpeechMap: { "ㄊㄞˊ ㄨㄢ": "台灣", "ㄖˋ ㄅㄣˇ": "日本", "ㄊㄞˊ ㄅㄟˇ": "台北", "ㄍㄠ ㄒㄧㄨㄥˊ": "高雄" },
+    prompt: "「台湾 (táiwān)」の正確な注音表記はどれ？", options: ["ㄊㄞˊ ㄨㄢ", "ㄖˋ ㄅㄣˇ", "ㄊㄞˊ ㄅㄟˇ", "ㄍㄠ ㄒㄧㄨㄥˊ"]
   },
   {
     id: 12, type: "word-to-zhuyin", targetSymbol: "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", speechTarget: "珍珠奶茶",
-    optionSpeechMap: { "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ": "珍珠奶茶", "牛肉麵": "ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ", "小籠包": "ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ", "滷肉飯": "ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ" },
-    prompt: "台湾名物「タピオカミルクティー (珍珠奶茶)」の注音表記はどれ？", options: ["ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", "牛肉麵", "小籠包", "滷肉飯"]
+    optionSpeechMap: { "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ": "珍珠奶茶", "ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ": "牛肉麵", "ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ": "小籠包", "ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ": "滷肉飯" },
+    prompt: "台湾名物「タピオカミルクティー (珍珠奶茶)」の注音表記はどれ？", options: ["ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", "ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ", "ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ", "ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ"]
   },
   { id: 13, type: "fill-in-blank", targetSymbol: "37文字", speechTarget: "三十七", prompt: "台湾の注音符号（ボポモフォ）の基本文字は子音21＋母音16を合わせて『全何文字』？", options: ["37文字", "26文字", "46文字", "50文字"] },
   { id: 14, type: "fill-in-blank", targetSymbol: "文字の頭の上", speechTarget: "嗎", prompt: "注音符号で「軽声 (輕聲: ˙)」の黒丸記号を添える正しい位置はどこ？", options: ["文字の頭の上", "文字の右下", "文字の左側", "文字の下"] },
