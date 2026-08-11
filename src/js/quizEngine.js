@@ -1,4 +1,4 @@
-// QuizEngine.js - リッチな確認クイズ共通エンジン (Notion風 & ゲーミフィケーション対応)
+// QuizEngine.js - リッチな確認クイズ共通エンジン (やり直し ＆ 前の問題へ戻る対応版)
 (function() {
   class QuizEngine {
     constructor() {
@@ -12,12 +12,21 @@
       this.stepTitle = "確認クイズ";
       this.nextStepUrl = "";
       this.containerId = "quiz-section";
+      this.autoNextTimer = null;
     }
 
     init(options = {}) {
       if (options.stepTitle) this.stepTitle = options.stepTitle;
       if (options.nextStepUrl) this.nextStepUrl = options.nextStepUrl;
       if (options.containerId) this.containerId = options.containerId;
+      this.clearAutoNextTimer();
+    }
+
+    clearAutoNextTimer() {
+      if (this.autoNextTimer) {
+        clearTimeout(this.autoNextTimer);
+        this.autoNextTimer = null;
+      }
     }
 
     // Web Audio APIによる効果音生成 (外部ファイル不要)
@@ -133,7 +142,49 @@
       }
     }
 
+    prevQuestion() {
+      this.clearAutoNextTimer();
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+        this.renderQuestion(true);
+      }
+    }
+
+    nextQuestion() {
+      this.clearAutoNextTimer();
+      this.currentIndex++;
+      this.renderQuestion(true);
+    }
+
+    retryCurrentQuestion() {
+      this.clearAutoNextTimer();
+      // 選択肢のインタラクティブ状態をリセット
+      const optionsGrid = document.getElementById('quiz-options-grid');
+      if (optionsGrid) {
+        optionsGrid.querySelectorAll('.quiz-btn').forEach(b => {
+          b.disabled = false;
+          b.classList.remove('correct', 'incorrect');
+        });
+      }
+
+      // 解説カードをクリア
+      const expCard = document.getElementById('quiz-exp-card');
+      if (expCard) {
+        expCard.className = 'quiz-explanation-card';
+        expCard.innerHTML = '';
+      }
+
+      // 音声を再再生
+      const q = this.questions[this.currentIndex];
+      if (q) {
+        const speechText = q.speechTarget || q.targetSymbol;
+        if (window.playZhuyinSound) window.playZhuyinSound(speechText);
+      }
+    }
+
     renderQuestion(isUserAction = false) {
+      this.clearAutoNextTimer();
+
       const quizSection = document.getElementById(this.containerId);
       if (!quizSection) return;
 
@@ -150,13 +201,20 @@
         ? `<span class="quiz-streak-tag">🔥 ${this.streak} 連続正解中!</span>`
         : `<span></span>`;
 
+      const prevBtnHtml = this.currentIndex > 0
+        ? `<button class="btn btn-outline" id="quiz-prev-btn" style="padding: 4px 10px; font-size: 0.8rem;">⬅️ 前の問題</button>`
+        : `<span></span>`;
+
       quizSection.innerHTML = `
         <div style="max-width: 600px; margin: 0 auto;">
           <!-- 上部ナビゲーション＆プログレス -->
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span style="font-weight: 800; font-size: 0.9rem; color: var(--color-primary);">
-              第 ${this.currentIndex + 1} / ${this.questions.length} 問
-            </span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-weight: 800; font-size: 0.9rem; color: var(--color-primary);">
+                第 ${this.currentIndex + 1} / ${this.questions.length} 問
+              </span>
+              ${prevBtnHtml}
+            </div>
             <button class="btn btn-outline" id="close-quiz-btn" style="padding: 4px 12px; font-size: 0.8rem;">
               ✖ 学習に戻る
             </button>
@@ -205,6 +263,7 @@
 
       // イベントリスナー設定
       document.getElementById('close-quiz-btn')?.addEventListener('click', () => this.closeQuiz());
+      document.getElementById('quiz-prev-btn')?.addEventListener('click', () => this.prevQuestion());
 
       const playBtn = document.getElementById('quiz-audio-play-btn');
       const waveBox = document.getElementById('quiz-wave-box');
@@ -244,20 +303,23 @@
     }
 
     handleAnswer(selected, btnEl, q) {
+      this.clearAutoNextTimer();
+
       const isCorrect = selected === q.targetSymbol;
       const optionSpeech = (q.optionSpeechMap && q.optionSpeechMap[selected]) || selected;
 
       // 選択された選択肢の音声再生
       if (window.playZhuyinSound) window.playZhuyinSound(optionSpeech, btnEl);
 
-      // 記録
-      this.history.push({
-        question: q,
-        selected: selected,
-        isCorrect: isCorrect
-      });
+      // 履歴追加（同じ問題の複数回回答の場合は最新状態を更新）
+      const existingHistoryIndex = this.history.findIndex(h => h.question === q);
+      if (existingHistoryIndex >= 0) {
+        this.history[existingHistoryIndex] = { question: q, selected, isCorrect };
+      } else {
+        this.history.push({ question: q, selected, isCorrect });
+      }
 
-      // 全ボタンを無効化
+      // 全ボタンを一時的に無効化
       const optionsGrid = document.getElementById('quiz-options-grid');
       optionsGrid.querySelectorAll('.quiz-btn').forEach(b => {
         b.disabled = true;
@@ -278,15 +340,30 @@
         if (expCard) {
           expCard.className = 'quiz-explanation-card correct-exp';
           expCard.innerHTML = `
-            <div style="font-weight: 800; display: flex; align-items: center; gap: 6px; font-size: 1.05rem;">
-              <span>⭕️ 大正解！</span>
-              ${this.streak >= 2 ? `<span style="font-size: 0.85rem; background: #10B981; color: #FFF; padding: 2px 8px; border-radius: 99px;">${this.streak} 連続正解!</span>` : ''}
-            </div>
-            <div style="margin-top: 4px; font-size: 0.9rem;">
-              正解: <strong>${q.targetSymbol}</strong>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <div style="font-weight: 800; display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #047857;">
+                  <span>⭕️ 大正解！</span>
+                  ${this.streak >= 2 ? `<span style="font-size: 0.85rem; background: #10B981; color: #FFF; padding: 2px 8px; border-radius: 99px;">${this.streak} 連続正解!</span>` : ''}
+                </div>
+                <div style="margin-top: 4px; font-size: 0.9rem; color: #065F46;">
+                  正解: <strong>${q.targetSymbol}</strong>
+                </div>
+              </div>
+              <button class="btn btn-primary" id="quiz-next-auto-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+                次へ進む ➔
+              </button>
             </div>
           `;
+
+          document.getElementById('quiz-next-auto-btn')?.addEventListener('click', () => this.nextQuestion());
         }
+
+        // 正解時は1.4秒後に自然に次へ進む
+        this.autoNextTimer = setTimeout(() => {
+          this.nextQuestion();
+        }, 1400);
+
       } else {
         btnEl.classList.add('incorrect');
         this.streak = 0;
@@ -295,25 +372,36 @@
         if (expCard) {
           expCard.className = 'quiz-explanation-card incorrect-exp';
           expCard.innerHTML = `
-            <div style="font-weight: 800; font-size: 1.05rem;">
-              ❌ 残念！
+            <div style="margin-bottom: 12px;">
+              <div style="font-weight: 800; font-size: 1.05rem; color: #991B1B;">
+                ❌ 残念！もう一度確認してみましょう
+              </div>
+              <div style="margin-top: 4px; font-size: 0.9rem; color: #7F1D1D;">
+                あなたの回答: <span style="text-decoration: line-through;">${selected}</span> <br>
+                正しい正解: <strong style="color: #047857; font-size: 1.1rem;">${q.targetSymbol}</strong>
+              </div>
             </div>
-            <div style="margin-top: 4px; font-size: 0.9rem;">
-              あなたの回答: <span style="text-decoration: line-through;">${selected}</span> <br>
-              正しい正解: <strong style="color: #047857; font-size: 1.1rem;">${q.targetSymbol}</strong>
+
+            <!-- アクションボタン: やり直し ＆ 次へ進む -->
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px;">
+              <button class="btn btn-outline" id="quiz-retry-current-btn" style="padding: 8px 16px; font-size: 0.88rem; border-color: var(--color-primary); color: var(--color-primary); background: #FFF;">
+                🔄 もう一度解く（やり直す）
+              </button>
+              <button class="btn btn-primary" id="quiz-next-manual-btn" style="padding: 8px 16px; font-size: 0.88rem;">
+                理解したので次へ進む ➔
+              </button>
             </div>
           `;
+
+          document.getElementById('quiz-retry-current-btn')?.addEventListener('click', () => this.retryCurrentQuestion());
+          document.getElementById('quiz-next-manual-btn')?.addEventListener('click', () => this.nextQuestion());
         }
       }
-
-      // 次の問題へスムーズに移行
-      setTimeout(() => {
-        this.currentIndex++;
-        this.renderQuestion(true);
-      }, 1600);
     }
 
     showResults() {
+      this.clearAutoNextTimer();
+
       const quizSection = document.getElementById(this.containerId);
       if (!quizSection) return;
 
@@ -432,6 +520,8 @@
     }
 
     closeQuiz() {
+      this.clearAutoNextTimer();
+
       const quizSection = document.getElementById(this.containerId);
       const listContainer = document.getElementById('vowel-list-container') || document.getElementById('grammar-list-container');
       const quizCta = document.getElementById('quiz-cta-section');
