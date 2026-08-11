@@ -27,7 +27,7 @@
         <a href="step-1-7.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
           ← 1-7 へ
         </a>
-        <a href="index.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
           トップ一覧へ戻る
         </a>
       </div>
@@ -98,7 +98,7 @@
         </div>
 
         <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 代表的な単語例</h4>
-        <div class="example-list">
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
           <div class="example-row play-word-sound" data-word="鴨">
             <div class="example-left">
               <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">鴨</span>
@@ -109,6 +109,19 @@
             </div>
             <div class="example-right">
               <span class="example-meaning">アヒル（鴨肉）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="牙">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">牙</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄧㄚˊ</span>
+                <span class="example-pinyin">yá</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">は (歯/刷牙)</span>
               <div class="audio-icon-tag"><span>🔊</span></div>
             </div>
           </div>
@@ -150,7 +163,7 @@
         </div>
 
         <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ 代表的な単語例</h4>
-        <div class="example-list">
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
           <div class="example-row play-word-sound" data-word="我">
             <div class="example-left">
               <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我</span>
@@ -161,6 +174,19 @@
             </div>
             <div class="example-right">
               <span class="example-meaning">わたし（私）</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="國">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">國</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄍㄨㄛˊ</span>
+                <span class="example-pinyin">guó</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">くに (台灣/國家)</span>
               <div class="audio-icon-tag"><span>🔊</span></div>
             </div>
           </div>
@@ -189,7 +215,6 @@
     </div>
 
     <!-- クイズモーダル/セクション -->
-    <!-- クイズモーダル/セクション -->
     <section class="quiz-section" id="quiz-section">
       <!-- QuizEngineで動的生成 -->
     </section>
@@ -203,7 +228,6 @@
     </div>
   </footer>
 
-  <!-- スクリプトの読み込み -->
   <script type="module" src="src/js/appData.js"></script>
   <script type="module" src="src/js/appCore.js"></script>
   <script type="module" src="src/js/quizEngine.js"></script>

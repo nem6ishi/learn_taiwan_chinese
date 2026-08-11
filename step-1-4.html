@@ -50,6 +50,26 @@
       </button>
     </div>
 
+    <!-- 前鼻音 vs 後鼻音 解説ボックス -->
+    <div class="callout-taiwan">
+      <h3 class="callout-taiwan-title">
+        💡 鼻音の発音のコツ：「前鼻音 (ㄢㄣ)」と「後鼻音 (ㄤㄥ)」の違い
+      </h3>
+      <p class="callout-taiwan-text">
+        台湾華語の鼻音には、舌先を歯ぐきにつける「前鼻音（-n）」と、口を開けたまま喉奥で響かせる「後鼻音（-ng）」の2種類があります。
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px;">
+        <div style="background: #FFFFFF; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px;">
+          <div style="font-weight: 800; color: #D97706; font-size: 0.9rem; margin-bottom: 4px;">1. 前鼻音: ㄢ (an), ㄣ (en)</div>
+          <div style="font-size: 0.85rem; color: #78350F;">舌先を上の前歯の裏につけて息を止めます（日本語の「案内」「因縁」の「ん」）。</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px;">
+          <div style="font-weight: 800; color: #D97706; font-size: 0.9rem; margin-bottom: 4px;">2. 後鼻音: ㄤ (ang), ㄥ (eng)</div>
+          <div style="font-size: 0.85rem; color: #78350F;">口を開けたまま舌奥をひっこめて喉奥で響かせます（日本語の「案外」「リンゴ」の「ん」）。</div>
+        </div>
+      </div>
+    </div>
+
     <!-- 5文字コンテナ -->
     <div id="vowel-list-container" style="display: flex; flex-direction: column; gap: 24px;">
       
@@ -71,10 +91,10 @@
         <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
           <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
             <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
-              🈁 漢字の成り立ち: <strong>ㄢ (宀の変形)</strong>
+              🈁 漢字の成り立ち: <strong>冉 (rǎn / 安の宀)</strong>
             </div>
             <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              漢字「安 (ān)」の「宀」の部分に由来。
+              「案」のアン。舌先を上の前歯の裏につけて「ん」を響かせます。
             </div>
           </div>
           <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
@@ -82,13 +102,13 @@
               💡 発音のコツ
             </div>
             <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
-              舌先を上の歯ぐきにしっかり密着させて「アン」。
+              舌先を前歯の裏につけてスッキリ「アン」！日本語の「案内(あんない)」の「ん」と同じ感覚です。
             </div>
           </div>
         </div>
 
         <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
-        <div class="example-list">
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
           <div class="example-row play-word-sound" data-word="山">
             <div class="example-left">
               <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">山</span>
@@ -99,6 +119,279 @@
             </div>
             <div class="example-right">
               <span class="example-meaning">やま (山)</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="台灣">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">台灣</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄊㄞˊ ㄨㄢ</span>
+                <span class="example-pinyin">táiwān</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">台湾</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄣ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 前鼻音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄣ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">en (エン/ウン)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄣ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+
+        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
+              🈁 漢字の成り立ち: <strong>隱の変形</strong>
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              口に力を入れず、曖昧な「エ/オ」から前歯の裏に舌をつけて「ん」。
+            </div>
+          </div>
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
+              💡 発音のコツ
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              口の力を抜いて曖昧に「エン」！日本語の「因縁(いんえん)」の「ん」に近い感覚です。
+            </div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="example-row play-word-sound" data-word="人">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">人</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄖㄣˊ</span>
+                <span class="example-pinyin">rén</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ひと (人)</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="門">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">門</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄇㄣˊ</span>
+                <span class="example-pinyin">mén</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ドア / 門</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄤ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 後鼻音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄤ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">ang (アン/後鼻音)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄤ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+
+        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
+              🈁 漢字の成り立ち: <strong>尪 (wāng)</strong>
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              口を大きく開けたまま、舌の奥を喉につけて鼻へ響かせる深い「アン」。
+            </div>
+          </div>
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
+              💡 発音のコツ
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              口を大きく開けたまま喉奥で「アン」！日本語の「案外(あんがい)」の「ん」のように舌先は浮かせたままです。
+            </div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="example-row play-word-sound" data-word="羊">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">羊</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄧㄤˊ</span>
+                <span class="example-pinyin">yáng</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ヒツジ (羊)</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="幫">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">幫</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄅㄤ</span>
+                <span class="example-pinyin">bāng</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">手伝う / 助ける</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄥ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 後鼻音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄥ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">eng (エン/後鼻音)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄥ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+
+        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
+              🈁 漢字の成り立ち: <strong>肱 (gōng)</strong>
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              曖昧な「エ/オ」から口を開けたまま喉奥を引いて鼻へ抜く音。
+            </div>
+          </div>
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
+              💡 発音のコツ
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              喉奥を引いて響かせる「エン」！「風(fēng)」などの語尾で使われる深い鼻音です。
+            </div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="example-row play-word-sound" data-word="風">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">風</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄈㄥ</span>
+                <span class="example-pinyin">fēng</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">かぜ (風)</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="朋">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">朋</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄆㄥˊ</span>
+                <span class="example-pinyin">péng</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">ともだち (朋友の朋)</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㄦ -->
+      <div class="detail-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <span class="pill-badge active" style="margin-bottom: 6px;">1-4 そり舌母音</span>
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--color-primary); font-family: monospace;">ㄦ</h2>
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted);">er (アル)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline play-word-sound" data-word="ㄦ" style="padding: 8px 16px; font-size: 0.9rem;">
+            🔊 発音を聴く
+          </button>
+        </div>
+
+        <div class="info-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
+              🈁 漢字の成り立ち: <strong>兒 (ér)</strong>
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              漢字「兒」に由来。舌先を上顎に向けて巻き上げながら発声します。
+            </div>
+          </div>
+          <div class="info-block" style="background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 14px;">
+            <div class="info-block-title" style="font-size: 0.85rem; font-weight: 800; color: #D97706; margin-bottom: 4px;">
+              💡 発音のコツ
+            </div>
+            <div class="info-block-content" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+              舌をくるっと上顎へ巻き上げて「アル」！英語の「R」に近く、舌先をどこにも付けずに引きます。
+            </div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">🗣️ この文字を使った単語</h4>
+        <div class="example-list" style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="example-row play-word-sound" data-word="兒子">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">兒子</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄦˊ ㄗ˙</span>
+                <span class="example-pinyin">érzi</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">むすこ (息子)</span>
+              <div class="audio-icon-tag"><span>🔊</span></div>
+            </div>
+          </div>
+          <div class="example-row play-word-sound" data-word="耳">
+            <div class="example-left">
+              <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">耳</span>
+              <div class="example-phonetics">
+                <span class="example-zhuyin">ㄦˇ</span>
+                <span class="example-pinyin">ěr</span>
+              </div>
+            </div>
+            <div class="example-right">
+              <span class="example-meaning">みみ (耳)</span>
               <div class="audio-icon-tag"><span>🔊</span></div>
             </div>
           </div>
@@ -123,7 +416,6 @@
       </div>
     </div>
 
-    <!-- クイズモーダル/セクション -->
     <!-- クイズモーダル/セクション -->
     <section class="quiz-section" id="quiz-section">
       <!-- QuizEngineで動的生成 -->
