@@ -136,13 +136,20 @@
       const voices = window.speechSynthesis.getVoices();
       if (voices && voices.length > 0) {
         const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
-        const priorityVoiceNames = ['meijia', 'google 國語（臺灣）', 'google 國語', 'shelley', 'sandy', 'flo', 'ting-ting'];
         
-        let targetVoice = zhVoices.find(v => {
-          const nameLower = (v.name || '').toLowerCase();
-          return priorityVoiceNames.some(p => nameLower.includes(p));
-        });
+        // 1. Google 公式の最高品質台湾ボイス「Google 國語（臺灣）」を最優先マッチ
+        let targetVoice = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
 
+        // 2. なければ Meijia / Shelley 等の台湾女性ボイス
+        if (!targetVoice) {
+          const priorityVoiceNames = ['meijia', 'shelley', 'sandy', 'flo', 'ting-ting'];
+          targetVoice = zhVoices.find(v => {
+            const nameLower = (v.name || '').toLowerCase();
+            return priorityVoiceNames.some(p => nameLower.includes(p));
+          });
+        }
+
+        // 3. なければ zh-TW ボイス
         if (!targetVoice) {
           targetVoice = zhVoices.find(v => {
             const langLower = (v.lang || '').toLowerCase();
