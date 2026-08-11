@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STEP 3-1: 飲食店・夜市での注文会話 | 台湾華語学習サイト</title>
-  <meta name="description" content="台湾華語 STEP 3-1: 台湾の夜市・食堂・ドリンクスタンドでそのまま使える注文会話フレーズ（內用・外帶・袋子・微糖去冰）。">
+  <meta name="description" content="台湾華語 STEP 3-1: 台湾の夜市・食堂・ドリンクスタンドでそのまま使える注文会話フレーズ（內用・外帶・袋子・微糖去冰・言い換え表現）。">
   <link rel="stylesheet" href="src/styles/main.css">
   <style>
     /* 会話チャット吹出しスタイル */
     .chat-container {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
       margin-top: 16px;
     }
     .chat-bubble-row {
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      max-width: 88%;
+      max-width: 90%;
     }
     .chat-bubble-row.clerk {
       align-self: flex-start;
@@ -50,39 +50,37 @@
       border: 2px solid #FDE68A;
     }
     
-    /* 吹き出しカード自体をタップ可能な音声再生ボタン化 */
-    .chat-bubble {
+    /* 吹き出しカード本体 */
+    .chat-bubble-card {
       background: var(--color-bg-subtle);
       border: 1.5px solid var(--color-border);
       border-radius: 16px;
       padding: 14px 18px;
-      position: relative;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .chat-bubble:hover {
-      border-color: var(--color-primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
-      background: #FFFFFF;
-    }
-    .chat-bubble:active {
-      transform: translateY(0);
-      background: #EFF6FF;
-    }
-    .chat-bubble-row.clerk .chat-bubble {
+    .chat-bubble-row.clerk .chat-bubble-card {
       border-top-left-radius: 4px;
     }
-    .chat-bubble-row.user .chat-bubble {
+    .chat-bubble-row.user .chat-bubble-card {
       border-top-right-radius: 4px;
       background: #FFFBEB;
       border-color: #FCD34D;
     }
-    .chat-bubble-row.user .chat-bubble:hover {
-      border-color: #F59E0B;
+
+    /* メインセリフのタップ発声ボックス */
+    .main-speech-box {
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 4px 6px;
+      transition: all 0.2s ease-in-out;
+      user-select: none;
+    }
+    .main-speech-box:hover {
       background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .audio-tap-hint {
@@ -95,7 +93,6 @@
       background: #EFF6FF;
       padding: 2px 8px;
       border-radius: 12px;
-      margin-left: 8px;
     }
     .user .audio-tap-hint {
       color: #D97706;
@@ -123,8 +120,67 @@
     .chat-meaning {
       font-size: 0.88rem;
       color: var(--color-text-muted);
-      margin-top: 6px;
+      margin-top: 4px;
       line-height: 1.4;
+    }
+
+    /* 💡 別の言い方・言い換えバリエーションボックス */
+    .alt-expression-box {
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--color-border);
+    }
+    .user .alt-expression-box {
+      border-top-color: #FDE68A;
+    }
+    .alt-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #2563EB;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .user .alt-badge {
+      color: #D97706;
+    }
+    .alt-speech-card {
+      background: #FFFFFF;
+      border: 1px solid #DBEAFE;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user .alt-speech-card {
+      background: #FFFFFF;
+      border-color: #FDE68A;
+    }
+    .alt-speech-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+      transform: translateY(-1px);
+    }
+    .alt-trad {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
+    .alt-zhuyin {
+      font-size: 0.82rem;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .user .alt-zhuyin {
+      color: #B45309;
+    }
+    .alt-meaning {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
     }
   </style>
 </head>
@@ -159,7 +215,7 @@
         <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">CATEGORY 3: TRAVEL & FOOD ORDERING</span>
         <h1 style="font-size: 1.75rem; font-weight: 900;">3-1 飲食店・夜市での注文会話（內用 / 外帶 / 點餐）</h1>
         <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
-          ★吹き出し全体をタップすると音声が流れます！台湾の夜市・食堂・ドリンクスタンドでそのまま使おう。
+          ★各セリフや「💡 別の言い方」をタップすると音声が発声されます！現場で使える表現を増やそう。
         </p>
       </div>
       <button class="btn btn-primary" id="start-quiz-top-btn">
@@ -174,7 +230,7 @@
       </h3>
       <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
         台湾のお店や夜市の屋台に入ると、店員さんが開口一番に<strong>「內用外帶？ (ㄋㄟˋ ㄩㄥˋ ㄨㄞˋ ㄉㄞˋ？)」</strong>と聞いてきます。<br>
-        店内飲食なら「<strong>內用 (ㄋㄟˋ ㄩㄥˋ)</strong>」、お持ち帰りなら「<strong>外帶 (ㄨㄞˋ ㄉㄞˋ)</strong>」と答えましょう。またレジ袋（<strong>袋子 ㄉㄞˋ ㄗ˙</strong>）は有料（1〜2元）のことが多いので「不用 (要りません)」の返しもマスター！
+        店内飲食なら「<strong>內用 (ㄋㄟˋ ㄩㄥˋ)</strong>」、お持ち帰りなら「<strong>外帶 (ㄨㄞˋ ㄉㄞˋ)</strong>」と答えましょう。また「在這邊吃 (ここで食べます)」や「帶走 (持ち帰ります)」もネイティブが毎日使う別の言い方です！
       </p>
     </div>
 
@@ -184,7 +240,7 @@
         <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary);">
           💬 Scene 1: 夜市・屋台で小籠包を注文する（レジ袋・お会計）
         </h2>
-        <span style="font-size: 0.8rem; background: #DBEAFE; color: #1E40AF; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 吹き出しをタップで音声発声</span>
+        <span style="font-size: 0.8rem; background: #DBEAFE; color: #1E40AF; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 セリフをタップで音声再生</span>
       </div>
 
       <div class="chat-container">
@@ -192,91 +248,153 @@
         <!-- 店員 1 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="內用外帶">
-            <div class="chat-trad">
-              <span>內用外帶？</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="內用外帶">
+              <div class="chat-trad">
+                <span>內用外帶？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄋㄟˋ ㄩㄥˋ ㄨㄞˋ ㄉㄞˋ ？</div>
+              <div class="chat-meaning">イートインですか？テイクアウトですか？</div>
             </div>
-            <div class="chat-zhuyin">ㄋㄟˋ ㄩㄥˋ ㄨㄞˋ ㄉㄞˋ ？</div>
-            <div class="chat-meaning">イートインですか？テイクアウトですか？</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 店員さんの別の言い方</span>
+              <div class="alt-speech-card play-word-sound" data-word="要帶走嗎">
+                <div>
+                  <div><span class="alt-trad">要帶走嗎？</span> <span class="alt-zhuyin">ㄧㄠˋ ㄉㄞˋ ㄗㄡˇ ㄇㄚ˙</span></div>
+                  <div class="alt-meaning">お持ち帰りにしますか？</div>
+                </div>
+                <span style="font-size:0.75rem; color:var(--color-primary); font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 自分 1 -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="內用謝謝">
-            <div class="chat-trad">
-              <span>內用，謝謝。</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="內用謝謝">
+              <div class="chat-trad">
+                <span>內用，謝謝。</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄋㄟˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
+              <div class="chat-meaning">イートインでお願いします。</div>
             </div>
-            <div class="chat-zhuyin">ㄋㄟˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
-            <div class="chat-meaning">イートインでお願いします。</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 自分の別の言い方</span>
+              <div class="alt-speech-card play-word-sound" data-word="在這邊吃">
+                <div>
+                  <div><span class="alt-trad">在這邊吃。</span> <span class="alt-zhuyin">ㄗㄞˋ ㄓㄜˋ ㄅㄧㄢ ㄔ</span></div>
+                  <div class="alt-meaning">ここで食べます（店内です）。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 店員 2 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="要什麼">
-            <div class="chat-trad">
-              <span>好，要什麼？</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="要什麼">
+              <div class="chat-trad">
+                <span>好，要什麼？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄏㄠˇ ， ㄧㄠˋ ㄕㄣˊ ㄇㄛ˙ ？</div>
+              <div class="chat-meaning">はい、ご注文は何にしますか？</div>
             </div>
-            <div class="chat-zhuyin">ㄏㄠˇ ， ㄧㄠˋ ㄕㄣˊ ㄇㄛ˙ ？</div>
-            <div class="chat-meaning">はい、ご注文は何にしますか？</div>
           </div>
         </div>
 
         <!-- 自分 2 -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="我要一份小籠包還有一杯珍珠奶茶">
-            <div class="chat-trad">
-              <span>我要一份小籠包，還有一杯珍珠奶茶。</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="我要一份小籠包還有一杯珍珠奶茶">
+              <div class="chat-trad">
+                <span>我要一份小籠包，還有一杯珍珠奶茶。</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ ， ㄏㄞˊ ㄧㄡˇ ㄧˋ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ</div>
+              <div class="chat-meaning">小籠包を1人前と、タピオカミルクティーを1杯ください。</div>
             </div>
-            <div class="chat-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ ， ㄏㄞˊ ㄧㄡˇ ㄧˋ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ</div>
-            <div class="chat-meaning">小籠包を1人前と、タピオカミルクティーを1杯ください。</div>
           </div>
         </div>
 
         <!-- 店員 3 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="要不要袋子">
-            <div class="chat-trad">
-              <span>要不要袋子？</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="要不要袋子">
+              <div class="chat-trad">
+                <span>要不要袋子？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄧㄠˋ ㄅㄨˋ ㄧㄠˋ ㄉㄞˋ ㄗ˙ ？</div>
+              <div class="chat-meaning">袋（レジ袋）は要りますか？</div>
             </div>
-            <div class="chat-zhuyin">ㄧㄠˋ ㄅㄨˋ ㄧㄠˋ ㄉㄞˋ ㄗ˙ ？</div>
-            <div class="chat-meaning">袋（レジ袋）は要りますか？</div>
           </div>
         </div>
 
         <!-- 自分 3 -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="不用謝謝">
-            <div class="chat-trad">
-              <span>不用，謝謝！</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="不用謝謝">
+              <div class="chat-trad">
+                <span>不用，謝謝！</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄅㄨˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
+              <div class="chat-meaning">要りません、ありがとう！</div>
             </div>
-            <div class="chat-zhuyin">ㄅㄨˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
-            <div class="chat-meaning">要りません、ありがとう！</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 自分の別の言い方</span>
+              <div class="alt-speech-card play-word-sound" data-word="不用我用拿的">
+                <div>
+                  <div><span class="alt-trad">不用，我用拿的。</span> <span class="alt-zhuyin">ㄅㄨˋ ㄩㄥˋ ， ㄨㄛˇ ㄩㄥˋ ㄋㄚˊ ㄉㄜ˙</span></div>
+                  <div class="alt-meaning">要りません、手持ちで持って帰ります。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 店員 4 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="一共180塊">
-            <div class="chat-trad">
-              <span>好的，一共180塊。</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="一共180塊">
+              <div class="chat-trad">
+                <span>好的，一共180塊。</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄏㄠˇ ㄉㄜ˙ ， ㄧˊ ㄍㄨㄥˋ ㄧˋ ㄅㄞˇ ㄅㄚ ㄕˊ ㄎㄨㄞˋ</div>
+              <div class="chat-meaning">承知いたしました。合計180元（台湾ドル）になります。</div>
             </div>
-            <div class="chat-zhuyin">ㄏㄠˇ ㄉㄜ˙ ， ㄧˊ ㄍㄨㄥˋ ㄧˋ ㄅㄞˇ ㄅㄚ ㄕˊ ㄎㄨㄞˋ</div>
-            <div class="chat-meaning">承知いたしました。合計180元（台湾ドル）になります。</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 店員さんの別の言い方</span>
+              <div class="alt-speech-card play-word-sound" data-word="總共180">
+                <div>
+                  <div><span class="alt-trad">總共 180。</span> <span class="alt-zhuyin">ㄗㄨㄥˇ ㄍㄨㄥˋ ㄧˋ ㄅㄞˇ ㄅㄚ</span></div>
+                  <div class="alt-meaning">あわせて180元です。</div>
+                </div>
+                <span style="font-size:0.75rem; color:var(--color-primary); font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -289,7 +407,7 @@
         <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary);">
           🧋 Scene 2: 台湾ドリンクスタンドでのサイズ＆カスタム会話
         </h2>
-        <span style="font-size: 0.8rem; background: #FEF3C7; color: #B45309; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 吹き出しをタップで音声発声</span>
+        <span style="font-size: 0.8rem; background: #FEF3C7; color: #B45309; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 セリフをタップで音声再生</span>
       </div>
 
       <div class="chat-container">
@@ -297,52 +415,84 @@
         <!-- 店員 1 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="要大杯還是中杯">
-            <div class="chat-trad">
-              <span>要大杯還是中杯？</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="要大杯還是中杯">
+              <div class="chat-trad">
+                <span>要大杯還是中杯？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄧㄠˋ ㄉㄚˋ ㄅㄟ ㄏㄞˊ ㄕˋ ㄓㄨㄥ ㄅㄟ ？</div>
+              <div class="chat-meaning">Lサイズにしますか？Mサイズにしますか？</div>
             </div>
-            <div class="chat-zhuyin">ㄧㄠˋ ㄉㄚˋ ㄅㄟ ㄏㄞˊ ㄕˋ ㄓㄨㄥ ㄅㄟ ？</div>
-            <div class="chat-meaning">Lサイズにしますか？Mサイズにしますか？</div>
           </div>
         </div>
 
         <!-- 自分 1 -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="大杯謝謝">
-            <div class="chat-trad">
-              <span>大杯，謝謝。</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="大杯謝謝">
+              <div class="chat-trad">
+                <span>大杯，謝謝。</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄉㄚˋ ㄅㄟ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
+              <div class="chat-meaning">Lサイズでお願いします。</div>
             </div>
-            <div class="chat-zhuyin">ㄉㄚˋ ㄅㄟ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
-            <div class="chat-meaning">Lサイズでお願いします。</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 別のサイズ表現</span>
+              <div class="alt-speech-card play-word-sound" data-word="中杯">
+                <div>
+                  <div><span class="alt-trad">中杯。</span> <span class="alt-zhuyin">ㄓㄨㄥ ㄅㄟ</span></div>
+                  <div class="alt-meaning">Mサイズでお願いします。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 店員 2 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="甜度冰塊">
-            <div class="chat-trad">
-              <span>甜度冰塊？</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="甜度冰塊">
+              <div class="chat-trad">
+                <span>甜度冰塊？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄊㄧㄢˊ ㄉㄨˋ ㄅㄧㄥ ㄎㄨㄞˋ ？</div>
+              <div class="chat-meaning">甘さと氷の量はどうしますか？</div>
             </div>
-            <div class="chat-zhuyin">ㄊㄧㄢˊ ㄉㄨˋ ㄅㄧㄥ ㄎㄨㄞˋ ？</div>
-            <div class="chat-meaning">甘さと氷の量はどうしますか？</div>
           </div>
         </div>
 
         <!-- 自分 2 -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="半糖少冰">
-            <div class="chat-trad">
-              <span>半糖少冰，謝謝！</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="半糖少冰">
+              <div class="chat-trad">
+                <span>半糖少冰，謝謝！</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄅㄢˋ ㄊㄤˊ ㄕㄠˇ ㄅㄧㄥ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
+              <div class="chat-meaning">甘さ半分（50%）、氷少なめでお願いします！</div>
             </div>
-            <div class="chat-zhuyin">ㄅㄢˋ ㄊㄤˊ ㄕㄠˇ ㄅㄧㄥ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
-            <div class="chat-meaning">甘さ半分（50%）、氷少なめでお願いします！</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 別のカスタム指定例</span>
+              <div class="alt-speech-card play-word-sound" data-word="微糖去冰">
+                <div>
+                  <div><span class="alt-trad">微糖去冰。</span> <span class="alt-zhuyin">ㄨㄟ ㄊㄤˊ ㄑㄩˋ ㄅㄧㄥ</span></div>
+                  <div class="alt-meaning">甘さ控えめ（30%）、氷なしで。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -353,9 +503,9 @@
     <div class="detail-card" style="margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid var(--color-border); padding-bottom: 8px;">
         <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary);">
-          🍜 Scene 3: ローカル食堂で注文票（點菜單）を書いて渡す
+          🍜 Scene 3: ローカル食堂で注文票（點菜單）を書く ＆ お会計
         </h2>
-        <span style="font-size: 0.8rem; background: #D1FAE5; color: #047857; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 吹き出しをタップで音声発声</span>
+        <span style="font-size: 0.8rem; background: #D1FAE5; color: #047857; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 セリフをタップで音声再生</span>
       </div>
 
       <div class="chat-container">
@@ -363,52 +513,84 @@
         <!-- 店員 1 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="先找位置坐劃單完交給我就好了">
-            <div class="chat-trad">
-              <span>先找位置坐，劃單完交給我就好了。</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="先找位置坐劃單完交給我就好了">
+              <div class="chat-trad">
+                <span>先找位置坐，劃單完交給我就好了。</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄒㄧㄢ ㄓㄠˇ ㄨㄟˋ ㄓˋ ㄗㄨㄛˋ ， ㄏㄨㄚˋ ㄉㄢ ㄨㄢˊ ㄐㄧㄠ ㄍㄟˇ ㄨㄛˇ ㄐㄧㄡˋ ㄏㄠˇ ㄌㄜ˙</div>
+              <div class="chat-meaning">先に席に座って、注文表（伝票）を記入したら私に渡してね。</div>
             </div>
-            <div class="chat-zhuyin">ㄒㄧㄢ ㄓㄠˇ ㄨㄟˋ ㄓˋ ㄗㄨㄛˋ ， ㄏㄨㄚˋ ㄉㄢ ㄨㄢˊ ㄐㄧㄠ ㄍㄟˇ ㄨㄛˇ ㄐㄧㄡˋ ㄏㄠˇ ㄌㄜ˙</div>
-            <div class="chat-meaning">先に席に座って、注文表（伝票）を記入したら私に渡してね。</div>
           </div>
         </div>
 
         <!-- 自分 1 -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="好的請問有推薦的嗎">
-            <div class="chat-trad">
-              <span>好的！請問有推薦的嗎？</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="好的請問有推薦的嗎">
+              <div class="chat-trad">
+                <span>好的！請問有推薦的嗎？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄏㄠˇ ㄉㄜ˙ ！ ㄑㄧㄥˇ ㄨㄣˋ ㄧㄡˇ ㄊㄨㄟ ㄐㄧㄢˋ ㄉㄜ˙ ㄇㄚ˙ ？</div>
+              <div class="chat-meaning">わかりました！ちなみに、おすすめのメニューはありますか？</div>
             </div>
-            <div class="chat-zhuyin">ㄏㄠˇ ㄉㄜ˙ ！ ㄑㄧㄥˇ ㄨㄣˋ ㄧㄡˇ ㄊㄨㄟ ㄐㄧㄢˋ ㄉㄜ˙ ㄇㄚ˙ ？</div>
-            <div class="chat-meaning">わかりました！ちなみに、おすすめのメニューはありますか？</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 自分の別の聞き方</span>
+              <div class="alt-speech-card play-word-sound" data-word="招牌是什麼">
+                <div>
+                  <div><span class="alt-trad">招牌是什麼？</span> <span class="alt-zhuyin">ㄓㄠ ㄆㄞˊ ㄕˋ ㄕㄣˊ ㄇㄛ˙</span></div>
+                  <div class="alt-meaning">看板メニュー（人気料理）は何ですか？</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- 店員 2 -->
         <div class="chat-bubble-row clerk">
           <div class="avatar-badge avatar-clerk">店員</div>
-          <div class="chat-bubble play-word-sound" data-word="我們家牛肉麵最有名">
-            <div class="chat-trad">
-              <span>我們家牛肉麵最有名！</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="我們家牛肉麵最有名">
+              <div class="chat-trad">
+                <span>我們家牛肉麵最有名！</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄨㄛˇ ㄇㄣ˙ ㄐㄧㄚ ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ ㄗㄨㄟˋ ㄧㄡˇ ㄇㄧㄥˊ ！</div>
+              <div class="chat-meaning">うちのお店は牛肉麺（ぎゅうにくめん）が一番有名だよ！</div>
             </div>
-            <div class="chat-zhuyin">ㄨㄛˇ ㄇㄣ˙ ㄐㄧㄚ ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ ㄗㄨㄟˋ ㄧㄡˇ ㄇㄧㄥˊ ！</div>
-            <div class="chat-meaning">うちのお店は牛肉麺（ぎゅうにくめん）が一番有名だよ！</div>
           </div>
         </div>
 
-        <!-- 自分 2 -->
+        <!-- 自分 2 (お会計) -->
         <div class="chat-bubble-row user">
           <div class="avatar-badge avatar-user">私</div>
-          <div class="chat-bubble play-word-sound" data-word="太棒了那我要素一碗牛肉麵">
-            <div class="chat-trad">
-              <span>太棒了！那我要一碗牛肉麵。</span>
-              <span class="audio-tap-hint">🔊 タップで聴く</span>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="老闆買單">
+              <div class="chat-trad">
+                <span>老闆，買單！</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-zhuyin">ㄌㄠˇ ㄅㄢˇ ， ㄇㄞˇ ㄉㄢ ！</div>
+              <div class="chat-meaning">マスター、お会計をお願いします！</div>
             </div>
-            <div class="chat-zhuyin">ㄊㄞˋ ㄅㄤˋ ㄌㄜ˙ ！ ㄋㄚˋ ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄨㄢˇ ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ</div>
-            <div class="chat-meaning">最高ですね！じゃあ牛肉麺を1杯ください。</div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 別の会計フレーズ</span>
+              <div class="alt-speech-card play-word-sound" data-word="我要結帳">
+                <div>
+                  <div><span class="alt-trad">我要結帳。</span> <span class="alt-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄐㄧㄝˊ ㄓㄤˋ</span></div>
+                  <div class="alt-meaning">お会計をお願いします。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -438,36 +620,36 @@
           <div class="example-right"><span class="example-meaning">テイクアウト (持ち帰り)</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="袋子" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
+        <div class="example-row play-word-sound" data-word="帶走" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
           <div class="example-left">
-            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">袋子</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄉㄞˋ ㄗ˙</span></div>
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">帶走</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄉㄞˋ ㄗㄡˇ</span></div>
           </div>
-          <div class="example-right"><span class="example-meaning">レジ袋 / 袋</span></div>
+          <div class="example-right"><span class="example-meaning">持ち帰る (外帶と同義)</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="半糖少冰" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
+        <div class="example-row play-word-sound" data-word="買單" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
           <div class="example-left">
-            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">半糖少冰</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄅㄢˋ ㄊㄤˊ ㄕㄠˇ ㄅㄧㄥ</span></div>
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">買單</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄇㄞˇ ㄉㄢ</span></div>
           </div>
-          <div class="example-right"><span class="example-meaning">甘さ50% / 氷少なめ</span></div>
+          <div class="example-right"><span class="example-meaning">お会計</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="推薦" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
+        <div class="example-row play-word-sound" data-word="結帳" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
           <div class="example-left">
-            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">推薦</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄊㄨㄟ ㄐㄧㄢˋ</span></div>
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">結帳</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄐㄧㄝˊ ㄓㄤˋ</span></div>
           </div>
-          <div class="example-right"><span class="example-meaning">おすすめ</span></div>
+          <div class="example-right"><span class="example-meaning">精算する・お会計</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="一共" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
+        <div class="example-row play-word-sound" data-word="招牌" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px; cursor: pointer;">
           <div class="example-left">
-            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">一共</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄧˊ ㄍㄨㄥˋ</span></div>
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">招牌</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄓㄠ ㄆㄞˊ</span></div>
           </div>
-          <div class="example-right"><span class="example-meaning">合計で</span></div>
+          <div class="example-right"><span class="example-meaning">看板商品・人気メニュー</span></div>
         </div>
 
       </div>
@@ -477,7 +659,7 @@
     <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
       <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">3-1 の注文会話をチェックしましたか？</h3>
       <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-        習った会話フレーズの「確認クイズ」で定着度を確かめましょう。
+        習った会話フレーズと別の言い方の「確認クイズ」で定着度を確かめましょう。
       </p>
       <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
         <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
