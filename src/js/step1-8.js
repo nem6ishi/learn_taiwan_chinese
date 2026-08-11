@@ -1,4 +1,4 @@
-// STEP 1-6 学習＆クイズ制御
+// STEP 1-8 学習＆クイズ制御
 (function() {
   const init = () => {
     bindEvents();
@@ -41,10 +41,10 @@
     const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
 
     const runQuiz = () => {
-      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_5) {
-        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_5, {
-          stepTitle: "1-6 舌根音・歯茎音・そり舌音確認クイズ",
-          nextStepUrl: "step-1-7.html",
+      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_8) {
+        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_8, {
+          stepTitle: "1-8 総合トロフィーまとめクイズ",
+          nextStepUrl: "step-2-1.html",
           containerId: "quiz-section"
         });
       }

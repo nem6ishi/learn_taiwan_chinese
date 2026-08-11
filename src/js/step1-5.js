@@ -1,7 +1,7 @@
-// src/js/step1-5.js - STEP 1-5 専用ロジック (音声バインド ＆ クイズ起動)
+// STEP 1-5 学習＆クイズ制御
 (function() {
   const init = () => {
-    bindAudioEvents();
+    bindEvents();
     setupQuizListeners();
 
     if ('speechSynthesis' in window) {
@@ -18,16 +18,20 @@
     init();
   }
 
-  function bindAudioEvents() {
-    const container = document.getElementById('vowel-list-container') || document;
-    
-    container.querySelectorAll('.play-word-sound, .play-symbol-sound').forEach(btn => {
+  function bindEvents() {
+    document.querySelectorAll('.play-symbol-sound').forEach(btn => {
       btn.onclick = (e) => {
         e.stopPropagation();
-        const symbol = btn.getAttribute('data-word') || btn.getAttribute('data-symbol');
-        if (symbol && window.playZhuyinSound) {
-          window.playZhuyinSound(symbol, btn);
-        }
+        const symbol = btn.getAttribute('data-symbol');
+        if (window.playZhuyinSound) window.playZhuyinSound(symbol, btn);
+      };
+    });
+
+    document.querySelectorAll('.play-word-sound').forEach(card => {
+      card.onclick = (e) => {
+        e.stopPropagation();
+        const word = card.getAttribute('data-word');
+        if (window.playZhuyinSound) window.playZhuyinSound(word, card);
       };
     });
   }
@@ -37,14 +41,12 @@
     const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
 
     const runQuiz = () => {
-      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_5) {
-        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_5, {
-          stepTitle: "1-5 確認クイズ (子音コンプリート)",
-          nextStepUrl: "step-2-1.html",
+      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_4) {
+        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_4, {
+          stepTitle: "1-5 介音3文字確認クイズ",
+          nextStepUrl: "step-1-6.html",
           containerId: "quiz-section"
         });
-      } else {
-        console.warn("QuizEngine or VOWELS_QUIZ_QUESTIONS_5 not found.");
       }
     };
 

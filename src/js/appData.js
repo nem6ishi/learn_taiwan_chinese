@@ -840,7 +840,16 @@ window.TONES_STEP7_DATA = [
   }
 ];
 
-// 1-1 確認クイズ (全8文字・主要単語100%カバー・全10問)
+// 声調確認クイズ (全5問)
+window.VOWELS_QUIZ_QUESTIONS_TONES = [
+  { id: 1, type: "audio", targetSymbol: "媽", speechTarget: "媽", prompt: "再生された音声「第一声 (平調)」の単語を選んでください", options: ["媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
+  { id: 2, type: "audio", targetSymbol: "麻", speechTarget: "麻", prompt: "再生された「えっ！？」と急上昇する「第二声 (升調)」の単語を選んでください", options: ["麻 (ㄇㄚˊ)", "媽 (ㄇㄚ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
+  { id: 3, type: "audio", targetSymbol: "馬", speechTarget: "馬", prompt: "再生された声を低く抑える「第三声 (轉調)」の単語を選んでください", options: ["馬 (ㄇㄚˇ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
+  { id: 4, type: "audio", targetSymbol: "罵", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)"] },
+  { id: 5, type: "audio", targetSymbol: "嗎", speechTarget: "嗎", prompt: "再生された跳ねるように短く添える「軽声 (輕聲)」の単語を選んでください", options: ["嗎 (ㄇㄚ˙)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] }
+];
+
+// 1-2 (旧1-1) 確認クイズ (全8文字・全10問)
 window.VOWELS_QUIZ_QUESTIONS_1 = [
   { id: 1, type: "audio", targetSymbol: "ㄅ", speechTarget: "ㄅ", prompt: "再生された音声に当てはまる無気唇音を選んでください", options: ["ㄅ", "ㄆ", "ㄇ", "ㄈ"] },
   { id: 2, type: "audio", targetSymbol: "ㄆ", speechTarget: "ㄆ", prompt: "再生された音声に当てはまる有気唇音（息を強く吐く音）を選んでください", options: ["ㄆ", "ㄅ", "ㄇ", "ㄈ"] },
@@ -858,66 +867,43 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
   }
 ];
 
-// 1-2 確認クイズ (全8文字・主要単語100%カバー・全10問)
+// 1-3 (旧1-2) 確認クイズ (全8文字・全10問)
 window.VOWELS_QUIZ_QUESTIONS_2 = [
-  { id: 1, type: "audio", targetSymbol: "ㄉ", speechTarget: "ㄉ", prompt: "再生された音声に当てはまる無気舌尖音を選んでください", options: ["ㄉ", "ㄊ", "ㄋ", "ㄌ"] },
-  { id: 2, type: "audio", targetSymbol: "ㄊ", speechTarget: "ㄊ", prompt: "再生された音声に当てはまる有気舌尖音（強い息）を選んでください", options: ["ㄊ", "ㄉ", "ㄋ", "ㄌ"] },
-  { id: 3, type: "audio", targetSymbol: "ㄋ", speechTarget: "ㄋ", prompt: "再生された音声に当てはまる鼻音舌尖音を選んでください", options: ["ㄋ", "ㄌ", "ㄉ", "ㄊ"] },
-  { id: 4, type: "audio", targetSymbol: "ㄌ", speechTarget: "ㄌ", prompt: "再生された音声に当てはまる辺音舌尖音（ラ行の音）を選んでください", options: ["ㄌ", "ㄋ", "ㄉ", "ㄊ"] },
-  { id: 5, type: "audio", targetSymbol: "ㄞ", speechTarget: "ㄞ", prompt: "再生された音声に当てはまる二重母音「ai」を選んでください", options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"] },
-  { id: 6, type: "audio", targetSymbol: "ㄟ", speechTarget: "ㄟ", prompt: "再生された音声に当てはまる二重母音「ei」を選んでください", options: ["ㄟ", "ㄞ", "ㄠ", "ㄡ"] },
-  { id: 7, type: "audio", targetSymbol: "ㄠ", speechTarget: "ㄠ", prompt: "再生された音声に当てはまる二重母音「ao」を選んでください", options: ["ㄠ", "ㄡ", "ㄞ", "ㄟ"] },
-  { id: 8, type: "audio", targetSymbol: "ㄡ", speechTarget: "ㄡ", prompt: "再生された音声に当てはまる二重母音「ou」を選んでください", options: ["ㄡ", "ㄠ", "ㄞ", "ㄟ"] },
-  { id: 9, type: "zhuyin-to-word", targetSymbol: "大", speechTarget: "大", prompt: "注音符号「ㄉㄚˋ」に対応する単語はどれ？", options: ["大", "他", "老", "頭"] },
-  {
-    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄌㄠˇ", speechTarget: "老",
-    optionSpeechMap: { "ㄌㄠˇ": "老", "ㄉㄚˋ": "大", "ㄊㄡˊ": "頭", "ㄋㄞˇ": "奶" },
-    prompt: "単語「老 (lǎo / 年老いた)」の正しい注音表記はどれ？", options: ["ㄌㄠˇ", "ㄉㄚˋ", "ㄊㄡˊ", "ㄋㄞˇ"]
-  }
+  { id: 1, type: "audio", targetSymbol: "ㄉ", speechTarget: "ㄉ", prompt: "再生された音声「d (ド)」を選んでください", options: ["ㄉ", "ㄊ", "ㄋ", "ㄌ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄊ", speechTarget: "ㄊ", prompt: "再生された音声「t (ト)」を選んでください", options: ["ㄊ", "ㄉ", "ㄋ", "ㄌ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄋ", speechTarget: "ㄋ", prompt: "再生された音声「n (ノ)」を選んでください", options: ["ㄋ", "ㄌ", "ㄉ", "ㄊ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄌ", speechTarget: "ㄌ", prompt: "再生された音声「l (ロ)」を選んでください", options: ["ㄌ", "ㄋ", "ㄉ", "ㄊ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄞ", speechTarget: "ㄞ", prompt: "再生された二重母音「ai (アイ)」を選んでください", options: ["ㄞ", "ㄟ", "ㄠ", "ㄡ"] },
+  { id: 6, type: "audio", targetSymbol: "ㄟ", speechTarget: "ㄟ", prompt: "再生された二重母音「ei (エイ)」を選んでください", options: ["ㄟ", "ㄞ", "ㄠ", "ㄡ"] },
+  { id: 7, type: "audio", targetSymbol: "ㄠ", speechTarget: "ㄠ", prompt: "再生された二重母音「ao (アオ)」を選んでください", options: ["ㄠ", "ㄡ", "ㄞ", "ㄟ"] },
+  { id: 8, type: "audio", targetSymbol: "ㄡ", speechTarget: "ㄡ", prompt: "再生された二重母音「ou (オウ)」を選んでください", options: ["ㄡ", "ㄠ", "ㄞ", "ㄟ"] },
+  { id: 9, type: "zhuyin-to-word", targetSymbol: "大", speechTarget: "大", prompt: "注音「ㄉㄚˋ」に対応する単語はどれ？", options: ["大", "他", "奶", "老"] },
+  { id: 10, type: "zhuyin-to-word", targetSymbol: "老", speechTarget: "老", prompt: "注音「ㄌㄠˇ」に対応する単語はどれ？", options: ["老", "大", "他", "奶"] }
 ];
 
-// 1-3 確認クイズ (全5文字・主要単語100%カバー・全10問)
+// 1-4 (旧1-3) 確認クイズ (全5文字・全10問)
 window.VOWELS_QUIZ_QUESTIONS_3 = [
-  { id: 1, type: "audio", targetSymbol: "ㄢ", speechTarget: "ㄢ", prompt: "再生された音声に当てはまる前鼻音「an」を選んでください", options: ["ㄢ", "ㄣ", "ㄤ", "ㄥ"] },
-  { id: 2, type: "audio", targetSymbol: "ㄣ", speechTarget: "ㄣ", prompt: "再生された音声に当てはまる前鼻音「en」を選んでください", options: ["ㄣ", "ㄢ", "ㄤ", "ㄥ"] },
-  { id: 3, type: "audio", targetSymbol: "ㄤ", speechTarget: "ㄤ", prompt: "再生された音声に当てはまる後鼻音「ang」を選んでください", options: ["ㄤ", "ㄥ", "ㄢ", "ㄣ"] },
-  { id: 4, type: "audio", targetSymbol: "ㄥ", speechTarget: "ㄥ", prompt: "再生された音声に当てはまる後鼻音「eng」を選んでください", options: ["ㄥ", "ㄤ", "ㄢ", "ㄣ"] },
-  { id: 5, type: "audio", targetSymbol: "ㄦ", speechTarget: "ㄦ", prompt: "再生された音声に当てはまるそり舌母音「er」を選んでください", options: ["ㄦ", "ㄢ", "ㄣ", "ㄤ"] },
-  { id: 6, type: "zhuyin-to-word", targetSymbol: "羊", speechTarget: "羊", prompt: "注音符号「ㄧㄤˊ」に対応する単語はどれ？", options: ["羊", "山", "人", "門"] },
-  {
-    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄇㄣˊ", speechTarget: "門",
-    optionSpeechMap: { "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊", "ㄦˊ ㄗ˙": "兒子" },
-    prompt: "単語「門 (mén / ドア)」の正しい注音表記はどれ？", options: ["ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ", "ㄦˊ ㄗ˙"]
-  },
-  { id: 8, type: "zhuyin-to-word", targetSymbol: "山", speechTarget: "山", prompt: "注音符号「ㄕㄢ」に対応する単語はどれ？", options: ["山", "羊", "人", "門"] },
-  { id: 9, type: "zhuyin-to-word", targetSymbol: "人", speechTarget: "人", prompt: "注音符号「ㄖㄣˊ」に対応する単語はどれ？", options: ["人", "山", "羊", "門"] },
-  {
-    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄦˊ ㄗ˙", speechTarget: "兒子",
-    optionSpeechMap: { "ㄦˊ ㄗ˙": "兒子", "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊" },
-    prompt: "単語「兒子 (érzi / 息子)」の正しい注音表記はどれ？", options: ["ㄦˊ ㄗ˙", "ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ"]
-  }
+  { id: 1, type: "audio", targetSymbol: "ㄢ", speechTarget: "ㄢ", prompt: "再生された前鼻音「an (アン)」を選んでください", options: ["ㄢ", "ㄣ", "ㄤ", "ㄥ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄣ", speechTarget: "ㄣ", prompt: "再生された前鼻音「en (エン)」を選んでください", options: ["ㄣ", "ㄢ", "ㄤ", "ㄥ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄤ", speechTarget: "ㄤ", prompt: "再生された後鼻音「ang (アン鼻音)」を選んでください", options: ["ㄤ", "ㄥ", "ㄢ", "ㄣ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄥ", speechTarget: "ㄥ", prompt: "再生された後鼻音「eng (エン鼻音)」を選んでください", options: ["ㄥ", "ㄤ", "ㄢ", "ㄣ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄦ", speechTarget: "ㄦ", prompt: "再生されたそり舌母音「er (アル)」を選んでください", options: ["ㄦ", "ㄢ", "ㄣ", "ㄤ"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "羊", speechTarget: "羊", prompt: "注音「ㄧㄤˊ」に対応する単語はどれ？", options: ["羊", "山", "人", "門"] },
+  { id: 7, type: "word-to-zhuyin", targetSymbol: "ㄇㄣˊ", speechTarget: "門", optionSpeechMap: { "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊", "ㄦˊ ㄗ˙": "兒子" }, prompt: "単語「門 (mén / ドア)」の注音表記はどれ？", options: ["ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ", "ㄦˊ ㄗ˙"] },
+  { id: 8, type: "zhuyin-to-word", targetSymbol: "山", speechTarget: "山", prompt: "注音「ㄕㄢ」に対応する単語はどれ？", options: ["山", "羊", "人", "門"] },
+  { id: 9, type: "zhuyin-to-word", targetSymbol: "人", speechTarget: "人", prompt: "注音「ㄖㄣˊ」に対応する単語はどれ？", options: ["人", "山", "羊", "門"] },
+  { id: 10, type: "word-to-zhuyin", targetSymbol: "ㄦˊ ㄗ˙", speechTarget: "兒子", optionSpeechMap: { "ㄦˊ ㄗ˙": "兒子", "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊" }, prompt: "単語「兒子 (érzi / 息子)」の注音表記はどれ？", options: ["ㄦˊ ㄗ˙", "ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ"] }
 ];
 
-// 1-4 確認クイズ (全3文字・主要単語100%カバー・全10問)
-window.VOWELS_QUIZ_QUESTIONS_4 = [
-  { id: 1, type: "audio", targetSymbol: "ㄧ", speechTarget: "ㄧ", prompt: "再生された音声に当てはまる介音「i (yī)」を選んでください", options: ["ㄧ", "ㄨ", "ㄩ", "ㄚ"] },
-  { id: 2, type: "audio", targetSymbol: "ㄨ", speechTarget: "ㄨ", prompt: "再生された音声に当てはまる介音「u (wū)」を選んでください", options: ["ㄨ", "ㄧ", "ㄩ", "ㄛ"] },
-  { id: 3, type: "audio", targetSymbol: "ㄩ", speechTarget: "ㄩ", prompt: "再生された音声に当てはまる介音「ü (yú)」を選んでください", options: ["ㄩ", "ㄧ", "ㄨ", "ㄝ"] },
-  { id: 4, type: "audio", targetSymbol: "一", speechTarget: "一", prompt: "再生された音声に当てはまる数字の「1」を選んでください", options: ["一", "五", "雨", "魚"] },
-  { id: 5, type: "zhuyin-to-word", targetSymbol: "衣服", speechTarget: "衣服", prompt: "注音符号「ㄧ ㄈㄨˊ」に対応する単語はどれ？", options: ["衣服", "屋子", "雨", "魚"] },
-  { id: 6, type: "zhuyin-to-word", targetSymbol: "五", speechTarget: "五", prompt: "注音符号「ㄨˇ」に対応する数字はどれ？", options: ["五", "一", "八", "大"] },
-  {
-    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄨ ㄗ˙", speechTarget: "屋子",
-    optionSpeechMap: { "ㄨ ㄗ˙": "屋子", "ㄧ ㄈㄨˊ": "衣服", "ㄩˇ": "雨", "ㄩˊ": "魚" },
-    prompt: "単語「屋子 (wūzi / 部屋)」の正しい注音表記はどれ？", options: ["ㄨ ㄗ˙", "ㄧ ㄈㄨˊ", "ㄩˇ", "ㄩˊ"]
-  },
-  { id: 8, type: "zhuyin-to-word", targetSymbol: "雨", speechTarget: "雨", prompt: "注音符号「ㄩˇ」に対応する自然の現象はどれ？", options: ["雨", "風", "山", "魚"] },
-  {
-    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄩˊ", speechTarget: "魚",
-    optionSpeechMap: { "ㄩˊ": "魚", "ㄩˇ": "雨", "ㄨˇ": "五", "ㄧ": "一" },
-    prompt: "単語「魚 (yú / さかな)」の正しい注音表記はどれ？", options: ["ㄩˊ", "ㄩˇ", "ㄨˇ", "ㄧ"]
-  },
-  { id: 10, type: "audio", targetSymbol: "介音", speechTarget: "一", prompt: "子音と母音をつなぐ3大介音は「ㄧ, ㄨ, ___」。最後の1つは？", options: ["ㄩ", "ㄚ", "ㄛ", "ㄢ"] },
+// 1-8 総合トロフィーまとめクイズ (全15問)
+window.VOWELS_QUIZ_QUESTIONS_8 = [
+  { id: 1, type: "audio", targetSymbol: "媽", speechTarget: "媽", prompt: "再生された音声の「声調 (トーン)」を選んでください", options: ["第一声 (平調)", "第二声 (升調)", "第三声 (轉調)", "第四声 (降調)"] },
+  { id: 2, type: "audio", targetSymbol: "麻", speechTarget: "麻", prompt: "再生された「えっ！？」と急上昇する「第二声 (升調)」の単語を選んでください", options: ["麻 (ㄇㄚˊ)", "媽 (ㄇㄚ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
+  { id: 3, type: "audio", targetSymbol: "馬", speechTarget: "馬", prompt: "再生された声を低く抑える「第三声 (轉調)」の単語を選んでください", options: ["馬 (ㄇㄚˇ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
+  { id: 4, type: "audio", targetSymbol: "罵", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)"] },
+  { id: 5, type: "audio", targetSymbol: "嗎", speechTarget: "嗎", prompt: "再生された跳ねるように短く添える「軽声 (輕聲)」の単語を選んでください", options: ["嗎 (ㄇㄚ˙)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "鴨", speechTarget: "鴨", prompt: "介音『ㄧ』＋ 母音『ㄚ』の結合音「ㄧㄚ (ya)」で読める単語はどれ？", options: ["鴨 (yā)", "我 (wǒ)", "月 (yuè)", "魚 (yú)"] },
+  { id: 7, type: "zhuyin-to-word", targetSymbol: "我", speechTarget: "我", prompt: "介音『ㄨ』＋ 母音『ㄛ』の結合音「ㄨㄛ (wo)」で読める私を意味する単語はどれ？", options: ["我 (wǒ)", "鴨 (yā)", "月 (yuè)", "雨 (yǔ)"] }
 ];
 
 // ==================== STEP 2-1: 挨拶・自己紹介 ＆ 基本文法「是 (〜です)」 ====================

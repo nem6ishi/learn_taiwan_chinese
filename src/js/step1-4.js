@@ -1,7 +1,7 @@
-// STEP 1-4 介音 (ㄧ ㄨ ㄩ) 学習＆クイズ制御 (Pure Static First 互換)
+// STEP 1-4 学習＆クイズ制御
 (function() {
   const init = () => {
-    bindAudioEvents();
+    bindEvents();
     setupQuizListeners();
 
     if ('speechSynthesis' in window) {
@@ -18,19 +18,16 @@
     init();
   }
 
-  function bindAudioEvents() {
-    const container = document.getElementById('vowel-list-container');
-    if (!container) return;
-
-    container.querySelectorAll('.play-symbol-sound').forEach(btn => {
+  function bindEvents() {
+    document.querySelectorAll('.play-symbol-sound').forEach(btn => {
       btn.onclick = (e) => {
         e.stopPropagation();
-        const symbol = btn.getAttribute('data-symbol') || btn.getAttribute('data-word');
+        const symbol = btn.getAttribute('data-symbol');
         if (window.playZhuyinSound) window.playZhuyinSound(symbol, btn);
       };
     });
 
-    container.querySelectorAll('.play-word-sound').forEach(card => {
+    document.querySelectorAll('.play-word-sound').forEach(card => {
       card.onclick = (e) => {
         e.stopPropagation();
         const word = card.getAttribute('data-word');
@@ -44,10 +41,11 @@
     const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
 
     const runQuiz = () => {
-      if (window.QuizEngine && window.VOWELS_QUIZ_QUESTIONS_4) {
-        window.QuizEngine.startQuiz(window.VOWELS_QUIZ_QUESTIONS_4, {
-          stepTitle: "1-4 確認クイズ",
-          nextStepUrl: "index.html",
+      if (window.QuizEngine && (window.VOWELS_QUIZ_QUESTIONS_3 || window.VOWELS_QUIZ_QUESTIONS_2)) {
+        const questions = window.VOWELS_QUIZ_QUESTIONS_3 || window.VOWELS_QUIZ_QUESTIONS_2;
+        window.QuizEngine.startQuiz(questions, {
+          stepTitle: "1-4 そり舌母音＆鼻音確認クイズ",
+          nextStepUrl: "step-1-5.html",
           containerId: "quiz-section"
         });
       }
