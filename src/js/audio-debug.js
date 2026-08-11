@@ -83,42 +83,57 @@
       };
     }
 
-    // 1. Google TTS 直接テスト
+    // 1. Google TTS 直接テスト (マルチエンドポイント試行)
     const googleBtn = document.getElementById('test-google-tts-btn');
     if (googleBtn) {
       googleBtn.onclick = () => {
-        log('--- 【テスト1: Google TTS 直接再生】開始 ---', 'info');
+        log('--- 【テスト1: Google TTS マルチエンドポイント再生】開始 ---', 'info');
         const text = '你好';
-        const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=zh-TW&client=tw-ob`;
-        
-        log(`[TTS REQ] URL: ${url}`, 'info');
-        log(`[TTS REQ] referrerpolicy: no-referrer 設定済み`, 'info');
+        const encodedText = encodeURIComponent(text);
 
-        const audio = new Audio();
-        audio.referrerPolicy = 'no-referrer';
+        const endpoints = [
+          { name: 'Google TTS (tw-ob)', url: `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=tw-ob` },
+          { name: 'Google TTS (gtx)', url: `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=gtx` },
+          { name: 'Google API (gtx)', url: `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=zh-TW&q=${encodedText}` },
+          { name: 'Youdao TTS (Taiwan)', url: `https://dict.youdao.com/dictvoice?audio=${encodedText}&type=2` }
+        ];
 
-        audio.onloadstart = () => log('[TTS EVENT] 音声データの読み込みを開始しました...', 'info');
-        audio.oncanplay = () => log('[TTS EVENT] 音声データの再生準備完了 (canplay)', 'info');
+        let index = 0;
 
-        audio.onended = () => {
-          log('✅ [TTS SUCCESS] Google TTS 音声の再生が正常に完了しました！', 'success');
+        const tryEndpoint = () => {
+          if (index >= endpoints.length) {
+            log('❌ [TTS FAIL] 全ての Google TTS エンドポイント試行に失敗しました。', 'error');
+            return;
+          }
+
+          const ep = endpoints[index++];
+          log(`[TTS TRYING ${index}/${endpoints.length}] ${ep.name}...`, 'info');
+
+          const audio = new Audio();
+          audio.referrerPolicy = 'no-referrer';
+
+          audio.onended = () => {
+            log(`✅ [TTS SUCCESS] ${ep.name} の音声再生が成功しました！`, 'success');
+          };
+
+          audio.onerror = () => {
+            log(`⚠️ [TTS REJECTED] ${ep.name} がブロックされました。次のURLを試します...`, 'warn');
+            tryEndpoint();
+          };
+
+          audio.src = ep.url;
+          const p = audio.play();
+          if (p !== undefined) {
+            p.then(() => {
+              log(`✅ [TTS PLAY] ${ep.name} の再生が開始されました！`, 'success');
+            }).catch(err => {
+              log(`⚠️ [TTS PLAY REJECTED] ${ep.name} play() が拒否されました: ${err.message}`, 'warn');
+              tryEndpoint();
+            });
+          }
         };
 
-        audio.onerror = (e) => {
-          log(`❌ [TTS ERROR] Google TTS の読み込みに失敗しました (audio.onerror)。`, 'error');
-          log(`[TTS CAUSE] 原因の可能性: ① GitHub Pages/Chrome CORSブロック (403/Forbidden)、② ネットワーク未接続、③ ブラウザ制限`, 'warn');
-        };
-
-        audio.src = url;
-        const p = audio.play();
-        if (p !== undefined) {
-          p.then(() => {
-            log('[TTS PLAY] audio.play() プロミス成功（再生開始）', 'success');
-          }).catch(err => {
-            log(`❌ [TTS PLAY ERROR] audio.play() が拒否されました: ${err.name} - ${err.message}`, 'error');
-            log(`[PLAY CAUSE] 原因の可能性: Chromeの自動再生 (Autoplay) 政策によるブロック`, 'warn');
-          });
-        }
+        tryEndpoint();
       };
     }
 

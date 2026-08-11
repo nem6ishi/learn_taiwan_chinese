@@ -61,45 +61,54 @@
   }
 
   function playGoogleTTSPrimary(originalText, speechText) {
-    // client=tw-ob および client=gtx の両エンドポイントを準備 (gtx は Chrome CORS に強い)
     const encodedText = encodeURIComponent(speechText);
-    const primaryUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=tw-ob`;
-    const fallbackUrl = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=zh-TW&q=${encodedText}`;
+    
+    // 最高品質 Google TTS 音声のマルチエンドポイントURLリスト
+    const ttsUrls = [
+      `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=tw-ob`,
+      `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=gtx`,
+      `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=zh-TW&q=${encodedText}`,
+      `https://dict.youdao.com/dictvoice?audio=${encodedText}&type=2`
+    ];
 
-    try {
-      const audio = new Audio();
-      audio.referrerPolicy = 'no-referrer';
-      currentAudio = audio;
+    let urlIndex = 0;
 
-      let hasTriedFallbackUrl = false;
-
-      const attemptFallbackEngine = () => {
-        if (!hasTriedFallbackUrl) {
-          hasTriedFallbackUrl = true;
-          // gtx エンドポイントで再試行
-          audio.src = fallbackUrl;
-          const p = audio.play();
-          if (p !== undefined) {
-            p.catch(() => fallbackWebSpeechFemale(originalText, speechText));
-          }
-        } else {
-          // Google TTS が両方ダメだった場合のみ Web Speech API へ
-          fallbackWebSpeechFemale(originalText, speechText);
-        }
-      };
-
-      audio.onerror = () => attemptFallbackEngine();
-      audio.onended = () => clearActiveAudio();
-
-      audio.src = primaryUrl;
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => attemptFallbackEngine());
+    const tryNextTTSUrl = () => {
+      if (urlIndex >= ttsUrls.length) {
+        // 全ての TTS URL が失敗した場合のみ Web Speech API へフォールバック
+        fallbackWebSpeechFemale(originalText, speechText);
+        return;
       }
 
-    } catch (err) {
-      fallbackWebSpeechFemale(originalText, speechText);
-    }
+      const currentUrl = ttsUrls[urlIndex++];
+      try {
+        const audio = new Audio();
+        audio.referrerPolicy = 'no-referrer';
+        currentAudio = audio;
+
+        let hasErrorOccurred = false;
+
+        const handleError = () => {
+          if (!hasErrorOccurred) {
+            hasErrorOccurred = true;
+            tryNextTTSUrl();
+          }
+        };
+
+        audio.onerror = handleError;
+        audio.onended = () => clearActiveAudio();
+
+        audio.src = currentUrl;
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => handleError());
+        }
+      } catch (err) {
+        tryNextTTSUrl();
+      }
+    };
+
+    tryNextTTSUrl();
   }
 
   function fallbackWebSpeechFemale(originalText, speechText) {
