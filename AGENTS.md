@@ -71,6 +71,10 @@
     - クイズ問題を新たに作成・更新する際は、必ず正解キー `targetSymbol` が選択肢配列 `options` の中に **`options.includes(targetSymbol)` として100%完全一致**（文字表記・ルビ・言語キーの完全な同一性）で含まれていることを自動スクリプト等で必ず検証・保証すること。
     - 音声再生用のテキスト（`speechTarget`）と表示・判定用の選択肢キー（`targetSymbol`）を明確に分離し、ユーザーが正解の選択肢を選択した際に判定ミスや誤答扱いになる事故を永久に防止すること。
 
+19. **Viteビルドにおける HTML `<script>` タグの `data-*` 属性付与禁止 ＆ DOM要素経由パラメータ渡しルール（再発防止策）**:
+    - HTML ページから JavaScript へパラメータ（クイズキー、タイトル、遷移先URL等）を渡す際、`<script>` タグ自体に `data-*` 属性を付与してはならない（理由: Vite ビルド時に `<script>` タグの属性が自動削除・改変され、本番環境で動かなくなるため）。
+    - 必ず `<div id="step-config" style="display:none" data-quiz-key="..." data-step-title="..." ...></div>` のような非表示 DOM 要素を配置し、JavaScript 側は `document.getElementById('step-config')` 経由で属性値を取得・初期化する設計を徹底すること。
+
 
 
 
