@@ -56,59 +56,72 @@
   }
 
   function executePlayAudio(originalText, speechText) {
-    // 1. Google TTS (高音質台湾女性ボイス) を最優先で試行
-    playGoogleTTSPrimary(originalText, speechText);
+    // 外部通信ブロックを回避し、Mac Chrome / iOS Safari 等の組み込み Google 國語（臺灣） / Meijia ボイスで高音質発声
+    playWebSpeechFemale(originalText, speechText);
   }
 
-  function playGoogleTTSPrimary(originalText, speechText) {
-    const encodedText = encodeURIComponent(speechText);
-    
-    // 最高品質 Google TTS 音声のマルチエンドポイントURLリスト
-    const ttsUrls = [
-      `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=tw-ob`,
-      `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=zh-TW&client=gtx`,
-      `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=zh-TW&q=${encodedText}`,
-      `https://dict.youdao.com/dictvoice?audio=${encodedText}&type=2`
-    ];
+  function playWebSpeechFemale(originalText, speechText) {
+    if (!('speechSynthesis' in window)) {
+      playFallbackBeep();
+      clearActiveAudio();
+      return;
+    }
 
-    let urlIndex = 0;
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
 
-    const tryNextTTSUrl = () => {
-      if (urlIndex >= ttsUrls.length) {
-        // 全ての TTS URL が失敗した場合のみ Web Speech API へフォールバック
-        fallbackWebSpeechFemale(originalText, speechText);
-        return;
-      }
+      const utterance = new SpeechSynthesisUtterance(speechText || originalText);
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.85;
+      utterance.pitch = 1.05;
 
-      const currentUrl = ttsUrls[urlIndex++];
-      try {
-        const audio = new Audio();
-        audio.referrerPolicy = 'no-referrer';
-        currentAudio = audio;
+      utterance.onend = () => clearActiveAudio();
+      utterance.onerror = (err) => {
+        console.warn(`[Audio Engine] Speech error for "${originalText}":`, err);
+        playFallbackBeep();
+        clearActiveAudio();
+      };
 
-        let hasErrorOccurred = false;
+      const voices = window.speechSynthesis.getVoices();
+      if (voices && voices.length > 0) {
+        const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
+        
+        // 1. Google 公式の最高品質台湾ボイス「Google 國語（臺灣）」を最優先マッチ
+        let targetVoice = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
 
-        const handleError = () => {
-          if (!hasErrorOccurred) {
-            hasErrorOccurred = true;
-            tryNextTTSUrl();
-          }
-        };
-
-        audio.onerror = handleError;
-        audio.onended = () => clearActiveAudio();
-
-        audio.src = currentUrl;
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => handleError());
+        // 2. なければ Meijia / Shelley 等の台湾女性ボイス
+        if (!targetVoice) {
+          const priorityVoiceNames = ['meijia', 'shelley', 'sandy', 'flo', 'ting-ting'];
+          targetVoice = zhVoices.find(v => {
+            const nameLower = (v.name || '').toLowerCase();
+            return priorityVoiceNames.some(p => nameLower.includes(p));
+          });
         }
-      } catch (err) {
-        tryNextTTSUrl();
-      }
-    };
 
-    tryNextTTSUrl();
+        // 3. なければ zh-TW ボイス
+        if (!targetVoice) {
+          targetVoice = zhVoices.find(v => {
+            const langLower = (v.lang || '').toLowerCase();
+            return langLower.includes('tw') || langLower.includes('zh-tw');
+          });
+        }
+
+        if (!targetVoice) {
+          targetVoice = zhVoices[0];
+        }
+
+        if (targetVoice) {
+          utterance.voice = targetVoice;
+        }
+      }
+
+      window.speechSynthesis.speak(utterance);
+    } catch (e) {
+      console.error('[Audio Engine] Web Speech API error:', e);
+      playFallbackBeep();
+      clearActiveAudio();
+    }
   }
 
   function fallbackWebSpeechFemale(originalText, speechText) {
