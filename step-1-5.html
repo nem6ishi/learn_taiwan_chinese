@@ -119,31 +119,9 @@
     </div>
 
     <!-- クイズモーダル/セクション -->
+    <!-- クイズモーダル/セクション -->
     <section class="quiz-section" id="quiz-section">
-      <div style="max-width: 500px; margin: 0 auto; text-align: center;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <span style="font-weight: 700; color: var(--color-primary);" id="quiz-progress-text">第 1 / 10 問</span>
-          <button class="btn btn-outline" id="close-quiz-btn" style="padding: 4px 10px; font-size: 0.8rem;">
-            ✖ 学習に戻る
-          </button>
-        </div>
-
-        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;" id="quiz-question-prompt">
-          問題
-        </h3>
-
-        <div style="margin: 20px 0;" id="quiz-audio-trigger-area">
-          <button class="btn btn-outline" id="quiz-audio-play-btn">
-            🔊 音声を聴く（再再生）
-          </button>
-        </div>
-
-        <div class="quiz-options" id="quiz-options-grid">
-          <!-- JSで生成 -->
-        </div>
-
-        <div id="quiz-feedback-msg" style="margin-top: 20px; font-weight: 700; font-size: 1.1rem; min-height: 30px;"></div>
-      </div>
+      <!-- QuizEngineで動的生成 -->
     </section>
 
   </main>
@@ -158,6 +136,9 @@
   <script type="module" src="src/js/appData.js"></script>
   <script type="module" src="src/js/appCore.js"></script>
   <script type="module" src="src/js/quizEngine.js"></script>
-  <script type="module" src="src/js/step1-5.js"></script>
+  <script type="module" src="src/js/stepLoader.js"
+    data-quiz-key="VOWELS_QUIZ_QUESTIONS_4"
+    data-step-title="1-5 介音3文字確認クイズ"
+    data-next-step="step-1-6.html"></script>
 </body>
 </html>

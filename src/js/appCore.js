@@ -130,68 +130,6 @@
     }
   }
 
-  function fallbackWebSpeechFemale(originalText, speechText) {
-    if (!('speechSynthesis' in window)) {
-      playFallbackBeep();
-      clearActiveAudio();
-      return;
-    }
-
-    try {
-      window.speechSynthesis.resume();
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(speechText || originalText);
-      utterance.lang = 'zh-TW';
-      utterance.rate = 0.85;
-      utterance.pitch = 1.05;
-
-      utterance.onend = () => clearActiveAudio();
-      utterance.onerror = () => {
-        playFallbackBeep();
-        clearActiveAudio();
-      };
-
-      const voices = window.speechSynthesis.getVoices();
-      if (voices && voices.length > 0) {
-        const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
-        
-        // 1. Google 公式の最高品質台湾ボイス「Google 國語（臺灣）」を最優先マッチ
-        let targetVoice = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
-
-        // 2. なければ Meijia / Shelley 等の台湾女性ボイス
-        if (!targetVoice) {
-          const priorityVoiceNames = ['meijia', 'shelley', 'sandy', 'flo', 'ting-ting'];
-          targetVoice = zhVoices.find(v => {
-            const nameLower = (v.name || '').toLowerCase();
-            return priorityVoiceNames.some(p => nameLower.includes(p));
-          });
-        }
-
-        // 3. なければ zh-TW ボイス
-        if (!targetVoice) {
-          targetVoice = zhVoices.find(v => {
-            const langLower = (v.lang || '').toLowerCase();
-            return langLower.includes('tw') || langLower.includes('zh-tw');
-          });
-        }
-
-        if (!targetVoice) {
-          targetVoice = zhVoices[0];
-        }
-
-        if (targetVoice) {
-          utterance.voice = targetVoice;
-        }
-      }
-
-      window.speechSynthesis.speak(utterance);
-    } catch (e) {
-      playFallbackBeep();
-      clearActiveAudio();
-    }
-  }
-
   function playFallbackBeep() {
     try {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;

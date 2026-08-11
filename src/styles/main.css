@@ -766,3 +766,181 @@ body {
   border-radius: 12px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
+
+/* ==================== 単語カード一覧コンポーネント ==================== */
+.word-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.word-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.word-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.word-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.word-trad {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+}
+.word-phonetics {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.word-zhuyin {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.word-pinyin {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+.word-meaning {
+  font-size: 0.88rem;
+  color: #475569;
+  margin-top: 2px;
+}
+.word-section-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-border);
+  margin-top: 36px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==================== 注音符号チャートコンポーネント ==================== */
+.chart-section-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.chart-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+}
+.chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.08);
+  border-color: var(--color-primary);
+}
+.chart-symbol {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  font-family: monospace;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.chart-pinyin {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+.chart-katakana {
+  font-size: 0.78rem;
+  color: #64748B;
+  margin-top: 2px;
+}
+.chart-kanji {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0F172A;
+  background: #F1F5F9;
+  border-radius: 4px;
+  padding: 2px 6px;
+  display: inline-block;
+  margin-top: 6px;
+}
+.audio-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+.tone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.tone-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tone-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(0,0,0,0.06);
+}
+
+/* ==================== コラム・ハイライトカード ==================== */
+.callout-taiwan {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%);
+  border: 1px solid #FCD34D;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.callout-taiwan-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #92400E;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-taiwan-text {
+  color: #78350F;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
