@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP 3-1: 飲食店・夜市での注文会話 | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾華語 STEP 3-1: 台湾の夜市・食堂・ドリンクスタンドでそのまま使える注文会話フレーズ（內用・外帶・微糖去冰）。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    /* 会話チャット吹出しスタイル */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .chat-bubble-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      max-width: 85%;
+    }
+    .chat-bubble-row.clerk {
+      align-self: flex-start;
+    }
+    .chat-bubble-row.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .avatar-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .avatar-clerk {
+      background: #E0F2FE;
+      color: #0369A1;
+      border: 1px solid #BAE6FD;
+    }
+    .avatar-user {
+      background: #FEF3C7;
+      color: #B45309;
+      border: 1px solid #FDE68A;
+    }
+    .chat-bubble {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 12px 16px;
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .chat-bubble-row.clerk .chat-bubble {
+      border-top-left-radius: 4px;
+      background: #F8FAFC;
+    }
+    .chat-bubble-row.user .chat-bubble {
+      border-top-right-radius: 4px;
+      background: #FFFBEB;
+      border-color: #FDE68A;
+    }
+    .chat-trad {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--color-text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chat-zhuyin {
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .chat-meaning {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="step-config" style="display:none"
+    data-quiz-key="VOWELS_QUIZ_QUESTIONS_3_1"
+    data-step-title="3-1 飲食店・夜市での注文会話クイズ"
+    data-next-step="step-3-2.html"></div>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音符号一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">CATEGORY 3: TRAVEL & FOOD ORDERING</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">3-1 飲食店・夜市での注文会話（內用 / 外帶 / 點餐）</h1>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
+          ★台湾の食堂・夜市・ドリンクスタンドでそのまま使える対話フレーズを会話形式で体験しよう！
+        </p>
+      </div>
+      <button class="btn btn-primary" id="start-quiz-top-btn">
+        🏆 会話確認クイズを受ける (全6問)
+      </button>
+    </div>
+
+    <!-- 台湾コラム -->
+    <div class="detail-card" style="background: #F8FAFC; border-left: 4px solid var(--color-primary); margin-bottom: 24px;">
+      <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-primary); margin-bottom: 6px;">
+        🇹🇼 💡 台湾華語コラム: お店に入ったらまず聞かれる魔法の合言葉
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+        台湾のお店や夜市の屋台に入ると、店員さんが開口一番に<strong>「內用外帶？ (nèi yòng wài dài?)」</strong>と聞いてきます。<br>
+        店内飲食なら「<strong>內用 (nèiyòng)</strong>」、お持ち帰りなら「<strong>外帶 (wàidài)</strong>」と答えるのが台湾の鉄則マナーです！
+      </p>
+    </div>
+
+    <!-- 会話セクション 1: 夜市・食堂での注文 -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid var(--color-border); padding-bottom: 8px;">
+        <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary);">
+          💬 Scene 1: 夜市・屋台で小籠包と珍奶を注文する
+        </h2>
+        <span style="font-size: 0.8rem; background: var(--color-bg-subtle); padding: 4px 8px; border-radius: 4px; color: var(--color-text-muted);">ロールプレイ会話</span>
+      </div>
+
+      <div class="chat-container">
+        
+        <!-- 店員 1 -->
+        <div class="chat-bubble-row clerk">
+          <div class="avatar-badge avatar-clerk">店員</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>內用外帶？</span>
+              <button class="btn btn-outline play-word-sound" data-word="內用外帶" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄋㄟˋ ㄩㄥˋ ㄨㄞˋ ㄉㄞˋ ？</div>
+            <div class="chat-meaning">イートインですか？テイクアウトですか？</div>
+          </div>
+        </div>
+
+        <!-- 自分 1 -->
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>內用，謝謝。</span>
+              <button class="btn btn-outline play-word-sound" data-word="內用謝謝" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄋㄟˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
+            <div class="chat-meaning">イートインでお願いします。</div>
+          </div>
+        </div>
+
+        <!-- 店員 2 -->
+        <div class="chat-bubble-row clerk">
+          <div class="avatar-badge avatar-clerk">店員</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>好，要什麼？</span>
+              <button class="btn btn-outline play-word-sound" data-word="要什麼" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄏㄠˇ ， ㄧㄠˋ ㄕㄣˊ ㄇㄛ˙ ？</div>
+            <div class="chat-meaning">はい、ご注文は何にしますか？</div>
+          </div>
+        </div>
+
+        <!-- 自分 2 -->
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>我要一份小籠包，還有一杯珍珠奶茶。</span>
+              <button class="btn btn-outline play-word-sound" data-word="我要一份小籠包還有一杯珍珠奶茶" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ ， ㄏㄞˊ ㄧㄡˇ ㄧˋ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ</div>
+            <div class="chat-meaning">小籠包を1人前と、タピオカミルクティーを1杯ください。</div>
+          </div>
+        </div>
+
+        <!-- 店員 3 -->
+        <div class="chat-bubble-row clerk">
+          <div class="avatar-badge avatar-clerk">店員</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>好的，一共180塊。</span>
+              <button class="btn btn-outline play-word-sound" data-word="一共180塊" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄏㄠˇ ㄉㄜ˙ ， ㄧˊ ㄍㄨㄥˋ ㄧˋ ㄅㄞˇ ㄅㄚ ㄕˊ ㄎㄨㄞˋ</div>
+            <div class="chat-meaning">承知いたしました。合計180元（台湾ドル）になります。</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 会話セクション 2: ドリンクスタンドでの甘さ・氷のカスタマイズ -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid var(--color-border); padding-bottom: 8px;">
+        <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary);">
+          🧋 Scene 2: 台湾ドリンクスタンドでのカスタマイズ会話
+        </h2>
+        <span style="font-size: 0.8rem; background: var(--color-bg-subtle); padding: 4px 8px; border-radius: 4px; color: var(--color-text-muted);">台湾名物会話</span>
+      </div>
+
+      <div class="chat-container">
+        
+        <!-- 店員 1 -->
+        <div class="chat-bubble-row clerk">
+          <div class="avatar-badge avatar-clerk">店員</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>甜度冰塊？</span>
+              <button class="btn btn-outline play-word-sound" data-word="甜度冰塊" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄊㄧㄢˊ ㄉㄨˋ ㄅㄧㄥ ㄎㄨㄞˋ ？</div>
+            <div class="chat-meaning">甘さと氷の量はどうしますか？</div>
+          </div>
+        </div>
+
+        <!-- 自分 1 -->
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble">
+            <div class="chat-trad">
+              <span>微糖去冰，謝謝！</span>
+              <button class="btn btn-outline play-word-sound" data-word="微糖去冰" style="padding: 2px 8px; font-size: 0.75rem;">🔊 聴く</button>
+            </div>
+            <div class="chat-zhuyin">ㄨㄟ ㄊㄤˊ ㄑㄩˋ ㄅㄧㄥ ， ㄒㄧㄝˋ ㄒㄧㄝ˙</div>
+            <div class="chat-meaning">甘さ控えめ（30%）、氷なしでお願いします！</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- キーフレーズカード一覧 -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary); margin-bottom: 12px;">
+        🔑 3-1 で覚える単語・重要フレーズカード
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+        
+        <div class="example-row play-word-sound" data-word="內用" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">內用</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄋㄟˋ ㄩㄥˋ</span></div>
+          </div>
+          <div class="example-right"><span class="example-meaning">イートイン (店内飲食)</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="外帶" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">外帶</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄨㄞˋ ㄉㄞˋ</span></div>
+          </div>
+          <div class="example-right"><span class="example-meaning">テイクアウト (持ち帰り)</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="微糖去冰" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">微糖去冰</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄨㄟ ㄊㄤˊ ㄑㄩˋ ㄅㄧㄥ</span></div>
+          </div>
+          <div class="example-right"><span class="example-meaning">甘さ30% / 氷なし</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="一共" style="background: var(--color-bg-subtle); border-radius: 8px; padding: 10px;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;">一共</span>
+            <div class="example-phonetics"><span class="example-zhuyin">ㄧˊ ㄍㄨㄥˋ</span></div>
+          </div>
+          <div class="example-right"><span class="example-meaning">合計で</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">3-1 の注文会話をチェックしましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        習った会話フレーズの「確認クイズ」で定着度を確かめましょう。
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
+          🏆 確認クイズを始める (全6問)
+        </button>
+        <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          トップ一覧へ戻る →
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <!-- QuizEngineで動的生成 -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+      <span class="version-badge">v1.1.0</span>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+  <script type="module" src="src/js/quizEngine.js"></script>
+  <script type="module" src="src/js/stepLoader.js"></script>
+</body>
+</html>

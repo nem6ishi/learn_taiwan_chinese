@@ -1100,3 +1100,13 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_1 = [
     prompt: "「對不起 (すみません)」の正しい注音表記はどれ？", options: ["ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ"]
   }
 ];
+
+// ==================== STEP 3-1: 飲食店・夜市での注文会話確認クイズ (全6問) ====================
+window.VOWELS_QUIZ_QUESTIONS_3_1 = [
+  { id: 1, type: "audio", targetSymbol: "內用", speechTarget: "內用", prompt: "再生された台湾の食堂で毎日聞く「店内飲食」の表現はどれ？", options: ["內用", "外帶", "買單", "謝謝"] },
+  { id: 2, type: "audio", targetSymbol: "外帶", speechTarget: "外帶", prompt: "再生された「テイクアウト / お持ち帰り」の表現はどれ？", options: ["外帶", "內用", "點餐", "買單"] },
+  { id: 3, type: "zhuyin-to-word", targetSymbol: "イートインでお願いします", speechTarget: "內用，謝謝", prompt: "注音「ㄋㄟˋ ㄩㄥˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙」に対応する日本語の意味はどれ？", options: ["イートインでお願いします", "テイクアウトでお願いします", "お会計をお願いします", "ごちそうさまでした"] },
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "微糖・氷なし", speechTarget: "微糖去冰", prompt: "ドリンクスタンドの注音「ㄨㄟ ㄊㄤˊ ㄑㄩˋ ㄅㄧㄥ」に対応する注文内容はどれ？", options: ["微糖・氷なし", "全糖・氷あり", "無糖・多氷", "半糖・少氷"] },
+  { id: 5, type: "fill-in-blank", targetSymbol: "一份", speechTarget: "我要一份小籠包", prompt: "「小籠包を1人前ください（我要 ___ 小籠包）」の空欄に入る量詞はどれ？", options: ["一份", "一杯", "一個", "一本"] },
+  { id: 6, type: "fill-in-blank", targetSymbol: "一共", speechTarget: "一共180塊", prompt: "「合計180元です（___ 180塊）」の空欄に入る合計を意味する単語はどれ？", options: ["一共", "買單", "謝謝", "不用"] }
+];
