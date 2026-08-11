@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔧 音声再生デバッグ＆ブラウザ診断ツール | 台湾華語学習サイト</title>
+  <meta name="description" content="ブラウザやOSの音声再生環境（Google TTS, Web Speech API, Autoplay政策）をリアルタイムで診断・ログ可視化するデバッグツール。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    .debug-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .log-terminal {
+      background: #0F172A;
+      color: #38BDF8;
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      height: 280px;
+      overflow-y: auto;
+      line-height: 1.5;
+      border: 1px solid #1E293B;
+      margin-top: 12px;
+    }
+    .log-line {
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+    .log-success { color: #4ADE80; }
+    .log-warn { color: #FACC15; }
+    .log-error { color: #F87171; }
+    .log-info { color: #38BDF8; }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .status-ok { background: #DCFCE7; color: #166534; }
+    .status-ng { background: #FEE2E2; color: #991B1B; }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音符号一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          ← トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">SYSTEM AUDIO DIAGNOSTICS</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">🔧 音声再生デバッグ ＆ ブラウザ環境診断</h1>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
+          ボタンを押すと「なぜ音声が再生されないか/どのエンジンで再生されたか」の詳細ログをリアルタイム表示します。
+        </p>
+      </div>
+      <button class="btn btn-outline" id="clear-logs-btn" style="padding: 8px 16px; font-size: 0.85rem;">
+        🧹 ログを消去
+      </button>
+    </div>
+
+    <!-- 1. ブラウザ環境ステータス -->
+    <div class="debug-card">
+      <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">📱 現在のブラウザ・動作環境判定</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.88rem;">
+        <div><strong>OS / UserAgent:</strong> <span id="env-ua" style="color: var(--color-text-muted);">取得中...</span></div>
+        <div><strong>プロトコル:</strong> <span id="env-protocol" style="color: var(--color-text-muted);">取得中...</span></div>
+        <div><strong>Web Speech API:</strong> <span id="env-webspeech" class="status-badge">判定中</span></div>
+        <div><strong>検出された台湾・中国語ボイス数:</strong> <span id="env-voices-count" style="font-weight: 800; color: var(--color-primary);">0 個</span></div>
+      </div>
+      <div style="margin-top: 12px; font-size: 0.82rem; color: var(--color-text-muted);" id="voice-list-detail">
+        <!-- 検出ボイス名一覧 -->
+      </div>
+    </div>
+
+    <!-- 2. 音声テストアクションボタン群 -->
+    <div class="debug-card">
+      <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">🧪 診断テストアクション</h3>
+      <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 16px;">
+        以下の各ボタンを押して、ブラウザがどの段階でブロックされているかをログで確認してください。
+      </p>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="test-google-tts-btn">
+          🔊 1. Google TTS 直接テスト (你好)
+        </button>
+        <button class="btn btn-outline" id="test-webspeech-btn">
+          🗣️ 2. Web Speech API 単体テスト (謝謝)
+        </button>
+        <button class="btn btn-outline" id="test-zhuyin-map-btn">
+          🈁 3. 注音単体 (ㄅ ➔ 包) マッピングテスト
+        </button>
+        <button class="btn btn-outline" id="test-long-phrase-btn">
+          ✈️ 4. 会話フレーズ (我是日本人) テスト
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. リアルタイムログターミナル -->
+    <div class="debug-card" style="background: #0F172A; border-color: #1E293B;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="font-size: 1rem; font-weight: 800; color: #F8FAFC; margin: 0;">📟 音声診断 リアルタイム Console Terminal</h3>
+        <span style="font-size: 0.75rem; color: #94A3B8;">LIVE DIAGNOSTICS</span>
+      </div>
+      <div class="log-terminal" id="log-terminal">
+        <div class="log-line log-info">[SYSTEM] 音声デバッグツールが起動しました。上のテストボタンを押してください。</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>© 2026 台湾華語学習サイト | Audio Debug Diagnostics</p>
+    </div>
+  </footer>
+
+  <!-- スクリプトの読み込み -->
+  <script src="src/js/appData.js"></script>
+  <script src="src/js/appCore.js"></script>
+  <script src="src/js/audio-debug.js"></script>
+</body>
+</html>

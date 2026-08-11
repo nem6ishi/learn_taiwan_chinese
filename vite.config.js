@@ -15,7 +15,8 @@ export default defineConfig({
         step1_6: resolve(__dirname, 'step-1-6.html'),
         step1_7: resolve(__dirname, 'step-1-7.html'),
         step2_1: resolve(__dirname, 'step-2-1.html'),
-        zhuyin_chart: resolve(__dirname, 'zhuyin-chart.html')
+        zhuyin_chart: resolve(__dirname, 'zhuyin-chart.html'),
+        audio_debug: resolve(__dirname, 'audio-debug.html')
       }
     }
   }
