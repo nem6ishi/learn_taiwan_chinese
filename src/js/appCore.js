@@ -44,12 +44,19 @@
       activeElement.classList.add('is-playing');
     }
 
+    // ブラウザの Web Speech API のユーザー操作権限 (User Gesture) をタップ直後に解放・準備
+    if ('speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.resume();
+      } catch (e) {}
+    }
+
     const speechMap = window.ZHUYIN_SPEECH_MAP || {};
     const speechText = speechMap[text] || text;
 
     playTimeout = setTimeout(() => {
       executePlayGoogleTTS(text, speechText);
-    }, 20);
+    }, 10);
   }
 
   function executePlayGoogleTTS(originalText, speechText) {
@@ -57,6 +64,8 @@
 
     try {
       const audio = new Audio();
+      // ★ GitHub Pages (HTTPS) で Referer ヘッダーによる Google TTS 403/CORS ブロックを回避
+      audio.referrerPolicy = 'no-referrer';
       currentAudio = audio;
 
       let fallbackTriggered = false;
