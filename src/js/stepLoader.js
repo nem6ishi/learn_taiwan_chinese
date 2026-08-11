@@ -1,22 +1,15 @@
-// 汎用ステップローダー: data-* 属性からクイズ設定を読み取り初期化
+// 汎用ステップローダー: #step-config 要素からクイズ設定を読み取り初期化
 // step1-1.js 〜 step2-1.js の9ファイルを統合
 (function() {
-  // type="module" では document.currentScript が null になるため、
-  // data-quiz-key を持つ最後の script タグを検索
-  const scriptTag = document.currentScript 
-    || document.querySelector('script[data-quiz-key]:last-of-type')
-    || (() => {
-      const all = document.querySelectorAll('script[data-quiz-key]');
-      return all.length > 0 ? all[all.length - 1] : null;
-    })();
-  if (!scriptTag) return;
-
-  const quizKey = scriptTag.getAttribute('data-quiz-key');
-  const fallbackQuizKey = scriptTag.getAttribute('data-quiz-fallback');
-  const stepTitle = scriptTag.getAttribute('data-step-title');
-  const nextStep = scriptTag.getAttribute('data-next-step');
-
   const init = () => {
+    const configEl = document.getElementById('step-config');
+    if (!configEl) return;
+
+    const quizKey = configEl.getAttribute('data-quiz-key');
+    const fallbackQuizKey = configEl.getAttribute('data-quiz-fallback');
+    const stepTitle = configEl.getAttribute('data-step-title');
+    const nextStep = configEl.getAttribute('data-next-step');
+
     // Voice preload
     if ('speechSynthesis' in window) {
       window.speechSynthesis.getVoices();
@@ -24,10 +17,8 @@
         speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
       }
     }
-    setupQuizListeners();
-  };
 
-  function setupQuizListeners() {
+    // Quiz button setup
     const startTopBtn = document.getElementById('start-quiz-top-btn');
     const startBottomBtn = document.getElementById('start-quiz-bottom-btn');
 
@@ -44,7 +35,7 @@
 
     if (startTopBtn) startTopBtn.onclick = runQuiz;
     if (startBottomBtn) startBottomBtn.onclick = runQuiz;
-  }
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
