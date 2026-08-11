@@ -41,6 +41,12 @@
   function playZhuyinSound(text, triggerEl = null) {
     if (!text) return;
 
+    if ('speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.resume();
+      } catch (e) {}
+    }
+
     clearActiveAudio();
 
     if (triggerEl) {
