@@ -840,17 +840,19 @@ window.TONES_STEP7_DATA = [
   }
 ];
 
-// 声調確認クイズ (全5問)
-window.VOWELS_QUIZ_QUESTIONS_TONES = [
+// ==================== クイズデータ（ステップ1-1〜1-8 ＆ 2-1 統一ナンバリング） ====================
+
+// STEP 1-1 確認クイズ: 5つの声調 (全5問)
+window.VOWELS_QUIZ_QUESTIONS_1_1 = [
   { id: 1, type: "audio", targetSymbol: "媽 (ㄇㄚ)", speechTarget: "媽", prompt: "再生された音声「第一声 (平調)」の単語を選んでください", options: ["媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
   { id: 2, type: "audio", targetSymbol: "麻 (ㄇㄚˊ)", speechTarget: "麻", prompt: "再生された「えっ！？」と急上昇する「第二声 (升調)」の単語を選んでください", options: ["麻 (ㄇㄚˊ)", "媽 (ㄇㄚ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
   { id: 3, type: "audio", targetSymbol: "馬 (ㄇㄚˇ)", speechTarget: "馬", prompt: "再生された声を低く抑える「第三声 (轉調)」の単語を選んでください", options: ["馬 (ㄇㄚˇ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
-  { id: 4, type: "audio", targetSymbol: "罵 (ㄇㄚˋ)", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)"] },
+  { id: 4, type: "audio", targetSymbol: "罵 (ㄇㄚˋ)", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˇ)"] },
   { id: 5, type: "audio", targetSymbol: "嗎 (ㄇㄚ˙)", speechTarget: "嗎", prompt: "再生された跳ねるように短く添える「軽声 (輕聲)」の単語を選んでください", options: ["嗎 (ㄇㄚ˙)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] }
 ];
 
-// 1-2 (旧1-1) 確認クイズ (全8文字・全10問)
-window.VOWELS_QUIZ_QUESTIONS_1 = [
+// STEP 1-2 確認クイズ: 唇音＋単母音 (全8文字・全10問)
+window.VOWELS_QUIZ_QUESTIONS_1_2 = [
   { id: 1, type: "audio", targetSymbol: "ㄅ", speechTarget: "ㄅ", prompt: "再生された音声に当てはまる無気唇音を選んでください", options: ["ㄅ", "ㄆ", "ㄇ", "ㄈ"] },
   { id: 2, type: "audio", targetSymbol: "ㄆ", speechTarget: "ㄆ", prompt: "再生された音声に当てはまる有気唇音（息を強く吐く音）を選んでください", options: ["ㄆ", "ㄅ", "ㄇ", "ㄈ"] },
   { id: 3, type: "audio", targetSymbol: "ㄇ", speechTarget: "ㄇ", prompt: "再生された音声に当てはまる鼻音唇音を選んでください", options: ["ㄇ", "ㄈ", "ㄅ", "ㄆ"] },
@@ -867,8 +869,8 @@ window.VOWELS_QUIZ_QUESTIONS_1 = [
   }
 ];
 
-// 1-3 (旧1-2) 確認クイズ (全8文字・全10問)
-window.VOWELS_QUIZ_QUESTIONS_2 = [
+// STEP 1-3 確認クイズ: 舌尖音＋二重母音 (全8文字・全10問)
+window.VOWELS_QUIZ_QUESTIONS_1_3 = [
   { id: 1, type: "audio", targetSymbol: "ㄉ", speechTarget: "ㄉ", prompt: "再生された音声「d (ド)」を選んでください", options: ["ㄉ", "ㄊ", "ㄋ", "ㄌ"] },
   { id: 2, type: "audio", targetSymbol: "ㄊ", speechTarget: "ㄊ", prompt: "再生された音声「t (ト)」を選んでください", options: ["ㄊ", "ㄉ", "ㄋ", "ㄌ"] },
   { id: 3, type: "audio", targetSymbol: "ㄋ", speechTarget: "ㄋ", prompt: "再生された音声「n (ノ)」を選んでください", options: ["ㄋ", "ㄌ", "ㄉ", "ㄊ"] },
@@ -881,8 +883,8 @@ window.VOWELS_QUIZ_QUESTIONS_2 = [
   { id: 10, type: "zhuyin-to-word", targetSymbol: "老", speechTarget: "老", prompt: "注音「ㄌㄠˇ」に対応する単語はどれ？", options: ["老", "大", "他", "奶"] }
 ];
 
-// 1-4 (旧1-3) 確認クイズ (全5文字・全10問)
-window.VOWELS_QUIZ_QUESTIONS_3 = [
+// STEP 1-4 確認クイズ: そり舌母音＆鼻音 (全5文字・全10問)
+window.VOWELS_QUIZ_QUESTIONS_1_4 = [
   { id: 1, type: "audio", targetSymbol: "ㄢ", speechTarget: "ㄢ", prompt: "再生された前鼻音「an (アン)」を選んでください", options: ["ㄢ", "ㄣ", "ㄤ", "ㄥ"] },
   { id: 2, type: "audio", targetSymbol: "ㄣ", speechTarget: "ㄣ", prompt: "再生された前鼻音「en (エン)」を選んでください", options: ["ㄣ", "ㄢ", "ㄤ", "ㄥ"] },
   { id: 3, type: "audio", targetSymbol: "ㄤ", speechTarget: "ㄤ", prompt: "再生された後鼻音「ang (アン鼻音)」を選んでください", options: ["ㄤ", "ㄥ", "ㄢ", "ㄣ"] },
@@ -895,16 +897,137 @@ window.VOWELS_QUIZ_QUESTIONS_3 = [
   { id: 10, type: "word-to-zhuyin", targetSymbol: "ㄦˊ ㄗ˙", speechTarget: "兒子", optionSpeechMap: { "ㄦˊ ㄗ˙": "兒子", "ㄇㄣˊ": "門", "ㄕㄢ": "山", "ㄧㄤˊ": "羊" }, prompt: "単語「兒子 (érzi / 息子)」の注音表記はどれ？", options: ["ㄦˊ ㄗ˙", "ㄇㄣˊ", "ㄕㄢ", "ㄧㄤˊ"] }
 ];
 
-// 1-8 結合音クイズ (全7問)
-window.VOWELS_QUIZ_QUESTIONS_8 = [
+// STEP 1-5 確認クイズ: 介音3文字 (ㄧ ㄨ ㄩ) (全8問)
+window.VOWELS_QUIZ_QUESTIONS_1_5 = [
+  { id: 1, type: "audio", targetSymbol: "ㄧ", speechTarget: "ㄧ", prompt: "再生された介音「i (イー / 左右に引く音)」を選んでください", options: ["ㄧ", "ㄨ", "ㄩ", "ㄚ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄨ", speechTarget: "ㄨ", prompt: "再生された介音「u (ウー / 唇を丸く突き出す音)」を選んでください", options: ["ㄨ", "ㄧ", "ㄩ", "ㄛ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄩ", speechTarget: "ㄩ", prompt: "再生された介音「ü (ユー/ユィ / イの舌で丸い口)」を選んでください", options: ["ㄩ", "ㄧ", "ㄨ", "ㄩㄝ"] },
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "一", speechTarget: "一", prompt: "注音「ㄧ」に対応する数字の単語はどれ？", options: ["一", "五", "雨", "魚"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "五", speechTarget: "五", prompt: "注音「ㄨˇ」に対応する数字の単語はどれ？", options: ["五", "一", "屋子", "雨"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "雨", speechTarget: "雨", prompt: "注音「ㄩˇ」に対応する単語はどれ？", options: ["雨", "魚", "五", "一"] },
+  {
+    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄧ ㄈㄨˊ", speechTarget: "衣服",
+    optionSpeechMap: { "ㄧ ㄈㄨˊ": "衣服", "ㄨ ㄗ˙": "屋子", "ㄩˊ": "魚", "ㄨˇ": "五" },
+    prompt: "単語「衣服 (yīfú / ふく)」の正しい注音表記はどれ？", options: ["ㄧ ㄈㄨˊ", "ㄨ ㄗ˙", "ㄩˊ", "ㄨˇ"]
+  },
+  {
+    id: 8, type: "word-to-zhuyin", targetSymbol: "ㄩˊ", speechTarget: "魚",
+    optionSpeechMap: { "ㄩˊ": "魚", "ㄩˇ": "雨", "ㄨˇ": "五", "ㄧ": "一" },
+    prompt: "単語「魚 (yú / さかな)」の正しい注音表記はどれ？", options: ["ㄩˊ", "ㄩˇ", "ㄨˇ", "ㄧ"]
+  }
+];
+
+// STEP 1-6 確認クイズ: 舌根・歯茎・そり舌 (全10文字 ㄍㄎㄏ ㄗㄘㄙ ㄓㄔㄕㄖ ＋ 主要単語・全12問)
+window.VOWELS_QUIZ_QUESTIONS_1_6 = [
+  { id: 1, type: "audio", targetSymbol: "ㄍ", speechTarget: "ㄍ", prompt: "再生された音声に当てはまる舌根音（無気音）を選んでください", options: ["ㄍ", "ㄎ", "ㄏ", "ㄐ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄎ", speechTarget: "ㄎ", prompt: "再生された音声に当てはまる舌根音（有気音）を選んでください", options: ["ㄎ", "ㄍ", "ㄏ", "ㄑ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄏ", speechTarget: "ㄏ", prompt: "再生された音声「ハー」に当てはまる文字を選んでください", options: ["ㄏ", "ㄈ", "ㄙ", "ㄒ"] },
+  { id: 4, type: "audio", targetSymbol: "ㄗ", speechTarget: "ㄗ", prompt: "再生された音声（平舌音・無気音）に当てはまる文字を選んでください", options: ["ㄗ", "ㄘ", "ㄙ", "ㄓ"] },
+  { id: 5, type: "audio", targetSymbol: "ㄘ", speechTarget: "ㄘ", prompt: "再生された音声「ツッ（有気音）」に当てはまる文字を選んでください", options: ["ㄘ", "ㄗ", "ㄙ", "ㄔ"] },
+  { id: 6, type: "audio", targetSymbol: "ㄙ", speechTarget: "ㄙ", prompt: "再生された音声「スー（擦音）」に当てはまる文字を選んでください", options: ["ㄙ", "ㄗ", "ㄘ", "ㄕ"] },
+  { id: 7, type: "audio", targetSymbol: "ㄓ", speechTarget: "ㄓ", prompt: "再生された音声（そり舌音・無気音）を選んでください", options: ["ㄓ", "ㄔ", "ㄕ", "ㄗ"] },
+  { id: 8, type: "audio", targetSymbol: "ㄔ", speechTarget: "ㄔ", prompt: "再生された音声「チッ（そり舌・有気音）」を選んでください", options: ["ㄔ", "ㄓ", "ㄕ", "ㄘ"] },
+  { id: 9, type: "audio", targetSymbol: "ㄕ", speechTarget: "ㄕ", prompt: "再生された音声「シー（そり舌・擦音）」を選んでください", options: ["ㄕ", "ㄓ", "ㄔ", "ㄙ"] },
+  { id: 10, type: "audio", targetSymbol: "ㄖ", speechTarget: "ㄖ", prompt: "再生された音声「リー（そり舌・濁音）」を選んでください", options: ["ㄖ", "ㄌ", "ㄕ", "ㄗ"] },
+  {
+    id: 11, type: "zhuyin-to-word", targetSymbol: "ㄔ", speechTarget: "吃",
+    prompt: "「食べる」を意味する台湾華語の単語「吃 (chī)」の注音はどれ？", options: ["ㄔ", "ㄗ", "ㄘ", "ㄕ"]
+  },
+  {
+    id: 12, type: "word-to-zhuyin", targetSymbol: "ㄏㄠˇ", speechTarget: "好",
+    optionSpeechMap: { "ㄏㄠˇ": "好", "ㄍㄠ": "高", "ㄎㄞ": "開", "ㄗㄠˇ": "早" },
+    prompt: "「良い・好き」を意味する「好 (hǎo)」の正しい注音表記はどれ？", options: ["ㄏㄠˇ", "ㄍㄠ", "ㄎㄞ", "ㄗㄠˇ"]
+  }
+];
+
+// STEP 1-7 確認クイズ: 舌面音 (全3文字 ㄐㄑㄒ ＋ 台湾超頻出フレーズ全10問)
+window.VOWELS_QUIZ_QUESTIONS_1_7 = [
+  { id: 1, type: "audio", targetSymbol: "ㄐ", speechTarget: "ㄐ", prompt: "再生された音声に当てはまる舌面音（無気音）を選んでください", options: ["ㄐ", "ㄑ", "ㄒ", "ㄍ"] },
+  { id: 2, type: "audio", targetSymbol: "ㄑ", speechTarget: "ㄑ", prompt: "再生された音声「チッ（有気音）」を選んでください", options: ["ㄑ", "ㄐ", "ㄒ", "ㄎ"] },
+  { id: 3, type: "audio", targetSymbol: "ㄒ", speechTarget: "ㄒ", prompt: "再生された音声「シー（擦音）」を選んでください", options: ["ㄒ", "ㄐ", "ㄑ", "ㄏ"] },
+  {
+    id: 4, type: "zhuyin-to-word", targetSymbol: "ㄒㄧㄝˋ ㄒㄧㄝ˙", speechTarget: "謝謝",
+    prompt: "台湾で1日何十回も使う感謝の言葉「謝謝 (xièxie)」の正しい注音表記はどれ？", options: ["ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄧㄥˇ", "ㄑㄩˋ", "ㄐㄧㄚ"]
+  },
+  {
+    id: 5, type: "zhuyin-to-word", targetSymbol: "ㄑㄧㄥˇ", speechTarget: "請",
+    prompt: "「〜してください / どうぞ」を意味する丁寧な単語「請 (qǐng)」の注音表記はどれ？", options: ["ㄑㄧㄥˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄩˋ", "ㄐㄧㄠˋ"]
+  },
+  {
+    id: 6, type: "zhuyin-to-word", targetSymbol: "ㄑㄩˋ", speechTarget: "去",
+    prompt: "「行く（要去〜）」を意味する単語「去 (qù)」の注音表記はどれ？", options: ["ㄑㄩˋ", "ㄑㄧㄥˇ", "ㄒㄧㄤˇ", "ㄐㄧㄚ"]
+  },
+  {
+    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄒㄧㄤˇ", speechTarget: "想",
+    optionSpeechMap: { "ㄒㄧㄤˇ": "想", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄑㄧㄥˇ": "請", "ㄑㄩˋ": "去" },
+    prompt: "「〜したい / 思う」を意味する「想 (xiǎng)」の注音表記はどれ？", options: ["ㄒㄧㄤˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄧㄥˇ", "ㄑㄩˋ"]
+  },
+  {
+    id: 8, type: "word-to-zhuyin", targetSymbol: "ㄐㄧㄚ", speechTarget: "家",
+    optionSpeechMap: { "ㄐㄧㄚ": "家", "ㄐㄧㄠˋ": "叫", "ㄑㄩˋ": "去", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝" },
+    prompt: "「家・マイホーム」を意味する「家 (jiā)」の正しい注音表記はどれ？", options: ["ㄐㄧㄚ", "ㄐㄧㄠˋ", "ㄑㄩˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙"]
+  },
+  { id: 9, type: "fill-in-blank", targetSymbol: "ㄐㄧㄠˋ", speechTarget: "我叫田中", prompt: "「私は〜という名前です（我 ___ 田中）」の空欄に入る単語の注音はどれ？", options: ["ㄐㄧㄠˋ", "ㄐㄧㄚ", "ㄑㄩˋ", "ㄒㄧㄤˇ"] },
+  { id: 10, type: "audio", targetSymbol: "ㄑ", speechTarget: "七", prompt: "再生された数字の「7 (qī / 七)」に含まれる子音を選んでください", options: ["ㄑ", "ㄐ", "ㄒ", "ㄘ"] }
+];
+
+// STEP 1-8 総合トロフィーまとめクイズ: 注音符号全37文字・5つの声調・結合音 (全15問)
+window.VOWELS_QUIZ_QUESTIONS_1_8 = [
   { id: 1, type: "audio", targetSymbol: "第一声 (平調)", speechTarget: "媽", prompt: "再生された音声「媽 (mā)」の『声調 (トーン)』を選んでください", options: ["第一声 (平調)", "第二声 (升調)", "第三声 (轉調)", "第四声 (降調)"] },
   { id: 2, type: "audio", targetSymbol: "麻 (ㄇㄚˊ)", speechTarget: "麻", prompt: "再生された「えっ！？」と急上昇する「第二声 (升調)」の単語を選んでください", options: ["麻 (ㄇㄚˊ)", "媽 (ㄇㄚ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
   { id: 3, type: "audio", targetSymbol: "馬 (ㄇㄚˇ)", speechTarget: "馬", prompt: "再生された声を低く抑える「第三声 (轉調)」の単語を選んでください", options: ["馬 (ㄇㄚˇ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
-  { id: 4, type: "audio", targetSymbol: "罵 (ㄇㄚˋ)", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)"] },
+  { id: 4, type: "audio", targetSymbol: "罵 (ㄇㄚˋ)", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˇ)"] },
   { id: 5, type: "audio", targetSymbol: "嗎 (ㄇㄚ˙)", speechTarget: "嗎", prompt: "再生された跳ねるように短く添える「軽声 (輕聲)」の単語を選んでください", options: ["嗎 (ㄇㄚ˙)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
-  { id: 6, type: "zhuyin-to-word", targetSymbol: "鴨 (yā)", speechTarget: "鴨", prompt: "介音『ㄧ』＋ 母音『ㄚ』の結合音「ㄧㄚ (ya)」で読める単語はどれ？", options: ["鴨 (yā)", "我 (wǒ)", "月 (yuè)", "魚 (yú)"] },
-  { id: 7, type: "zhuyin-to-word", targetSymbol: "我 (wǒ)", speechTarget: "我", prompt: "介音『ㄨ』＋ 母音『ㄛ』の結合音「ㄨㄛ (wo)」で読める私を意味する単語はどれ？", options: ["我 (wǒ)", "鴨 (yā)", "月 (yuè)", "雨 (yǔ)"] }
+  {
+    id: 6, type: "zhuyin-to-word", targetSymbol: "鴨 (yā)", speechTarget: "鴨",
+    prompt: "介音『ㄧ』＋ 母音『ㄚ』の結合音「ㄧㄚ (ya)」で読める単語はどれ？", options: ["鴨 (yā)", "我 (wǒ)", "月 (yuè)", "魚 (yú)"]
+  },
+  {
+    id: 7, type: "zhuyin-to-word", targetSymbol: "我 (wǒ)", speechTarget: "我",
+    prompt: "介音『ㄨ』＋ 母音『ㄛ』の結合音「ㄨㄛ (wo)」で読める私を意味する単語はどれ？", options: ["我 (wǒ)", "鴨 (yā)", "月 (yuè)", "雨 (yǔ)"]
+  },
+  {
+    id: 8, type: "zhuyin-to-word", targetSymbol: "月 (yuè)", speechTarget: "月",
+    prompt: "介音『ㄩ』＋ 母音『ㄝ』の結合音「ㄩㄝ (yue)」で読めるつきを意味する単語はどれ？", options: ["月 (yuè)", "我 (wǒ)", "鴨 (yā)", "魚 (yú)"]
+  },
+  {
+    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄒㄧㄝˋ ㄒㄧㄝ˙", speechTarget: "謝謝",
+    optionSpeechMap: { "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ": "不客氣", "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ": "對不起" },
+    prompt: "「ありがとう」を意味する「謝謝 (xièxie)」の正確な注音表記はどれ？", options: ["ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ"]
+  },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄋㄧˇ ㄏㄠˇ", speechTarget: "你好",
+    optionSpeechMap: { "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄗㄠˇ ㄢ": "早安", "再見": "ㄗㄞˋ ㄐㄧㄢˋ" },
+    prompt: "「こんにちは」を意味する「你好 (nǐhǎo)」の正確な注音表記はどれ？", options: ["ㄋㄧˇ ㄏㄠˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄗㄠˇ ㄢ", "再見"]
+  },
+  {
+    id: 11, type: "word-to-zhuyin", targetSymbol: "ㄊㄞˊ ㄨㄢ", speechTarget: "台灣",
+    optionSpeechMap: { "ㄊㄞˊ ㄨㄢ": "台灣", "ㄖˋ ㄅㄣˇ": "日本", "台北": "ㄊㄞˊ ㄅㄟˇ", "高雄": "ㄍㄠ ㄒㄧㄨㄥ" },
+    prompt: "「台湾 (táiwān)」の正確な注音表記はどれ？", options: ["ㄊㄞˊ ㄨㄢ", "ㄖˋ ㄅㄣˇ", "台北", "高雄"]
+  },
+  {
+    id: 12, type: "word-to-zhuyin", targetSymbol: "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", speechTarget: "珍珠奶茶",
+    optionSpeechMap: { "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ": "珍珠奶茶", "牛肉麵": "ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ", "小籠包": "ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ", "滷肉飯": "ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ" },
+    prompt: "台湾名物「タピオカミルクティー (珍珠奶茶)」の注音表記はどれ？", options: ["ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", "牛肉麵", "小籠包", "滷肉飯"]
+  },
+  { id: 13, type: "fill-in-blank", targetSymbol: "37文字", speechTarget: "三十七", prompt: "台湾の注音符号（ボポモフォ）の基本文字は子音21＋母音16を合わせて『全何文字』？", options: ["37文字", "26文字", "46文字", "50文字"] },
+  { id: 14, type: "fill-in-blank", targetSymbol: "文字の頭の上", speechTarget: "嗎", prompt: "注音符号で「軽声 (輕聲: ˙)」の黒丸記号を添える正しい位置はどこ？", options: ["文字の頭の上", "文字の右下", "文字の左側", "文字の下"] },
+  {
+    id: 15, type: "zhuyin-to-word", targetSymbol: "私は台湾に行ったことがあります", speechTarget: "我有去過台灣",
+    prompt: "🏆 トロフィー問題！注音『ㄨㄛˇ ㄧㄡˇ ㄑㄩˋ ㄍㄨㄛˋ ㄊㄞˊ ㄨㄢ』の意味はどれ？", options: ["私は台湾に行ったことがあります", "私は日本人です", "私はタピオカミルクティーが飲みたいです", "お会計をお願いします"]
+  }
 ];
+
+// 互換性のためのエイリアス定義（旧キー名でも動作するよう安全策）
+window.VOWELS_QUIZ_QUESTIONS_TONES = window.VOWELS_QUIZ_QUESTIONS_1_1;
+window.VOWELS_QUIZ_QUESTIONS_1 = window.VOWELS_QUIZ_QUESTIONS_1_2;
+window.VOWELS_QUIZ_QUESTIONS_2 = window.VOWELS_QUIZ_QUESTIONS_1_3;
+window.VOWELS_QUIZ_QUESTIONS_3 = window.VOWELS_QUIZ_QUESTIONS_1_4;
+window.VOWELS_QUIZ_QUESTIONS_4 = window.VOWELS_QUIZ_QUESTIONS_1_5;
+window.VOWELS_QUIZ_QUESTIONS_5 = window.VOWELS_QUIZ_QUESTIONS_1_6;
+window.VOWELS_QUIZ_QUESTIONS_6 = window.VOWELS_QUIZ_QUESTIONS_1_7;
+window.VOWELS_QUIZ_QUESTIONS_7 = window.VOWELS_QUIZ_QUESTIONS_1_8;
+window.VOWELS_QUIZ_QUESTIONS_8 = window.VOWELS_QUIZ_QUESTIONS_1_8;
 
 // ==================== STEP 2-1: 挨拶・自己紹介 ＆ 基本文法「是 (〜です)」 ====================
 window.GRAMMAR_STEP2_1_DATA = [
@@ -964,106 +1087,3 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_1 = [
     prompt: "「對不起 (すみません)」の正しい注音表記はどれ？", options: ["ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ"]
   }
 ];
-
-// 1-5 確認クイズ (全10文字 ㄍㄎㄏ ㄗㄘㄙ ㄓㄔㄕㄖ＋主要単語・全12問)
-window.VOWELS_QUIZ_QUESTIONS_5 = [
-  { id: 1, type: "audio", targetSymbol: "ㄍ", speechTarget: "ㄍ", prompt: "再生された音声に当てはまる舌根音（無気音）を選んでください", options: ["ㄍ", "ㄎ", "ㄏ", "ㄐ"] },
-  { id: 2, type: "audio", targetSymbol: "ㄎ", speechTarget: "ㄎ", prompt: "再生された音声に当てはまる舌根音（有気音）を選んでください", options: ["ㄎ", "ㄍ", "ㄏ", "ㄑ"] },
-  { id: 3, type: "audio", targetSymbol: "ㄏ", speechTarget: "ㄏ", prompt: "再生された音声「ハー」に当てはまる文字を選んでください", options: ["ㄏ", "ㄈ", "ㄙ", "ㄒ"] },
-  { id: 4, type: "audio", targetSymbol: "ㄗ", speechTarget: "ㄗ", prompt: "再生された音声（平舌音・無気音）に当てはまる文字を選んでください", options: ["ㄗ", "ㄘ", "ㄙ", "ㄓ"] },
-  { id: 5, type: "audio", targetSymbol: "ㄘ", speechTarget: "ㄘ", prompt: "再生された音声「ツッ（有気音）」に当てはまる文字を選んでください", options: ["ㄘ", "ㄗ", "ㄙ", "ㄔ"] },
-  { id: 6, type: "audio", targetSymbol: "ㄙ", speechTarget: "ㄙ", prompt: "再生された音声「スー（擦音）」に当てはまる文字を選んでください", options: ["ㄙ", "ㄗ", "ㄘ", "ㄕ"] },
-  { id: 7, type: "audio", targetSymbol: "ㄓ", speechTarget: "ㄓ", prompt: "再生された音声（そり舌音・無気音）を選んでください", options: ["ㄓ", "ㄔ", "ㄕ", "ㄗ"] },
-  { id: 8, type: "audio", targetSymbol: "ㄔ", speechTarget: "ㄔ", prompt: "再生された音声「チッ（そり舌・有気音）」を選んでください", options: ["ㄔ", "ㄓ", "ㄕ", "ㄘ"] },
-  { id: 9, type: "audio", targetSymbol: "ㄕ", speechTarget: "ㄕ", prompt: "再生された音声「シー（そり舌・擦音）」を選んでください", options: ["ㄕ", "ㄓ", "ㄔ", "ㄙ"] },
-  { id: 10, type: "audio", targetSymbol: "ㄖ", speechTarget: "ㄖ", prompt: "再生された音声「リー（そり舌・濁音）」を選んでください", options: ["ㄖ", "ㄌ", "ㄕ", "ㄗ"] },
-  {
-    id: 11, type: "zhuyin-to-word", targetSymbol: "ㄔ", speechTarget: "吃",
-    prompt: "「食べる」を意味する台湾華語の単語「吃 (chī)」の注音はどれ？", options: ["ㄔ", "ㄗ", "ㄘ", "ㄕ"]
-  },
-  {
-    id: 12, type: "word-to-zhuyin", targetSymbol: "ㄏㄠˇ", speechTarget: "好",
-    optionSpeechMap: { "ㄏㄠˇ": "好", "ㄍㄠ": "高", "ㄎㄞ": "開", "ㄗㄠˇ": "早" },
-    prompt: "「良い・好き」を意味する「好 (hǎo)」の正しい注音表記はどれ？", options: ["ㄏㄠˇ", "ㄍㄠ", "ㄎㄞ", "ㄗㄠˇ"]
-  }
-];
-
-// 1-6 確認クイズ (全3文字 ㄐㄑㄒ ＋ 台湾超頻出フレーズ全10問)
-window.VOWELS_QUIZ_QUESTIONS_6 = [
-  { id: 1, type: "audio", targetSymbol: "ㄐ", speechTarget: "ㄐ", prompt: "再生された音声に当てはまる舌面音（無気音）を選んでください", options: ["ㄐ", "ㄑ", "ㄒ", "ㄍ"] },
-  { id: 2, type: "audio", targetSymbol: "ㄑ", speechTarget: "ㄑ", prompt: "再生された音声「チッ（有気音）」を選んでください", options: ["ㄑ", "ㄐ", "ㄒ", "ㄎ"] },
-  { id: 3, type: "audio", targetSymbol: "ㄒ", speechTarget: "ㄒ", prompt: "再生された音声「シー（擦音）」を選んでください", options: ["ㄒ", "ㄐ", "ㄑ", "ㄏ"] },
-  {
-    id: 4, type: "zhuyin-to-word", targetSymbol: "ㄒㄧㄝˋ ㄒㄧㄝ˙", speechTarget: "謝謝",
-    prompt: "台湾で1日何十回も使う感謝の言葉「謝謝 (xièxie)」の正しい注音表記はどれ？", options: ["ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄧㄥˇ", "ㄑㄩˋ", "ㄐㄧㄚ"]
-  },
-  {
-    id: 5, type: "zhuyin-to-word", targetSymbol: "ㄑㄧㄥˇ", speechTarget: "請",
-    prompt: "「〜してください / どうぞ」を意味する丁寧な単語「請 (qǐng)」の注音表記はどれ？", options: ["ㄑㄧㄥˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄩˋ", "ㄐㄧㄠˋ"]
-  },
-  {
-    id: 6, type: "zhuyin-to-word", targetSymbol: "ㄑㄩˋ", speechTarget: "去",
-    prompt: "「行く（要去〜）」を意味する単語「去 (qù)」の注音表記はどれ？", options: ["ㄑㄩˋ", "ㄑㄧㄥˇ", "ㄒㄧㄤˇ", "ㄐㄧㄚ"]
-  },
-  {
-    id: 7, type: "word-to-zhuyin", targetSymbol: "ㄒㄧㄤˇ", speechTarget: "想",
-    optionSpeechMap: { "ㄒㄧㄤˇ": "想", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄑㄧㄥˇ": "請", "ㄑㄩˋ": "去" },
-    prompt: "「〜したい / 思う」を意味する「想 (xiǎng)」の注音表記はどれ？", options: ["ㄒㄧㄤˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄑㄧㄥˇ", "ㄑㄩˋ"]
-  },
-  {
-    id: 8, type: "word-to-zhuyin", targetSymbol: "ㄐㄧㄚ", speechTarget: "家",
-    optionSpeechMap: { "ㄐㄧㄚ": "家", "ㄐㄧㄠˋ": "叫", "ㄑㄩˋ": "去", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝" },
-    prompt: "「家・マイホーム」を意味する「家 (jiā)」の正しい注音表記はどれ？", options: ["ㄐㄧㄚ", "ㄐㄧㄠˋ", "ㄑㄩˋ", "ㄒㄧㄝˋ ㄒㄧㄝ˙"]
-  },
-  { id: 9, type: "fill-in-blank", targetSymbol: "ㄐㄧㄠˋ", speechTarget: "我叫田中", prompt: "「私は〜という名前です（我 ___ 田中）」の空欄に入る単語の注音はどれ？", options: ["ㄐㄧㄠˋ", "ㄐㄧㄚ", "ㄑㄩˋ", "ㄒㄧㄤˇ"] },
-  { id: 10, type: "audio", targetSymbol: "ㄑ", speechTarget: "七", prompt: "再生された数字の「7 (qī / 七)」に含まれる子音を選んでください", options: ["ㄑ", "ㄐ", "ㄒ", "ㄘ"] }
-];
-
-// 1-7 確認クイズ (注音符号全37文字・5つの声調・結合音 総合トロフィーまとめ全15問)
-window.VOWELS_QUIZ_QUESTIONS_7 = [
-  { id: 1, type: "audio", targetSymbol: "第一声 (平調)", speechTarget: "媽", prompt: "再生された音声「媽 (mā)」の『声調 (トーン)』を選んでください", options: ["第一声 (平調)", "第二声 (升調)", "第三声 (轉調)", "第四声 (降調)"] },
-  { id: 2, type: "audio", targetSymbol: "麻 (ㄇㄚˊ)", speechTarget: "麻", prompt: "再生された「えっ！？」と急上昇する「第二声 (升調)」の単語を選んでください", options: ["麻 (ㄇㄚˊ)", "媽 (ㄇㄚ)", "馬 (ㄇㄚˇ)", "罵 (ㄇㄚˋ)"] },
-  { id: 3, type: "audio", targetSymbol: "馬 (ㄇㄚˇ)", speechTarget: "馬", prompt: "再生された声を低く抑える「第三声 (轉調)」の単語を選んでください", options: ["馬 (ㄇㄚˇ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
-  { id: 4, type: "audio", targetSymbol: "罵 (ㄇㄚˋ)", speechTarget: "罵", prompt: "再生された上から下へ急降下する「第四声 (降調)」の単語を選んでください", options: ["罵 (ㄇㄚˋ)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "馬 (ㄇㄚˇ)"] },
-  { id: 5, type: "audio", targetSymbol: "嗎 (ㄇㄚ˙)", speechTarget: "嗎", prompt: "再生された跳ねるように短く添える「軽声 (輕聲)」の単語を選んでください", options: ["嗎 (ㄇㄚ˙)", "媽 (ㄇㄚ)", "麻 (ㄇㄚˊ)", "罵 (ㄇㄚˋ)"] },
-  {
-    id: 6, type: "zhuyin-to-word", targetSymbol: "鴨 (yā)", speechTarget: "鴨",
-    prompt: "介音『ㄧ』＋ 母音『ㄚ』の結合音「ㄧㄚ (ya)」で読める単語はどれ？", options: ["鴨 (yā)", "我 (wǒ)", "月 (yuè)", "魚 (yú)"]
-  },
-  {
-    id: 7, type: "zhuyin-to-word", targetSymbol: "我 (wǒ)", speechTarget: "我",
-    prompt: "介音『ㄨ』＋ 母音『ㄛ』の結合音「ㄨㄛ (wo)」で読める私を意味する単語はどれ？", options: ["我 (wǒ)", "鴨 (yā)", "月 (yuè)", "雨 (yǔ)"]
-  },
-  {
-    id: 8, type: "zhuyin-to-word", targetSymbol: "月 (yuè)", speechTarget: "月",
-    prompt: "介音『ㄩ』＋ 母音『ㄝ』の結合音「ㄩㄝ (yue)」で読めるつきを意味する単語はどれ？", options: ["月 (yuè)", "我 (wǒ)", "鴨 (yā)", "魚 (yú)"]
-  },
-  {
-    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄒㄧㄝˋ ㄒㄧㄝ˙", speechTarget: "謝謝",
-    optionSpeechMap: { "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ": "不客氣", "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ": "對不起" },
-    prompt: "「ありがとう」を意味する「謝謝 (xièxie)」の正確な注音表記はどれ？", options: ["ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄋㄧˇ ㄏㄠˇ", "ㄅㄨˊ ㄎㄜˋ ㄑㄧˋ", "ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ"]
-  },
-  {
-    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄋㄧˇ ㄏㄠˇ", speechTarget: "你好",
-    optionSpeechMap: { "ㄋㄧˇ ㄏㄠˇ": "你好", "ㄒㄧㄝˋ ㄒㄧㄝ˙": "謝謝", "ㄗㄠˇ ㄢ": "早安", "再見": "ㄗㄞˋ ㄐㄧㄢˋ" },
-    prompt: "「こんにちは」を意味する「你好 (nǐhǎo)」の正確な注音表記はどれ？", options: ["ㄋㄧˇ ㄏㄠˇ", "ㄒㄧㄝˋ ㄒㄧㄝ˙", "ㄗㄠˇ ㄢ", "再見"]
-  },
-  {
-    id: 11, type: "word-to-zhuyin", targetSymbol: "ㄊㄞˊ ㄨㄢ", speechTarget: "台灣",
-    optionSpeechMap: { "ㄊㄞˊ ㄨㄢ": "台灣", "ㄖˋ ㄅㄣˇ": "日本", "台北": "ㄊㄞˊ ㄅㄟˇ", "高雄": "ㄍㄠ ㄒㄧㄨㄥ" },
-    prompt: "「台湾 (táiwān)」の正確な注音表記はどれ？", options: ["ㄊㄞˊ ㄨㄢ", "ㄖˋ ㄅㄣˇ", "台北", "高雄"]
-  },
-  {
-    id: 12, type: "word-to-zhuyin", targetSymbol: "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", speechTarget: "珍珠奶茶",
-    optionSpeechMap: { "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ": "珍珠奶茶", "牛肉麵": "ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ", "小籠包": "ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ", "滷肉飯": "ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ" },
-    prompt: "台湾名物「タピオカミルクティー (珍珠奶茶)」の注音表記はどれ？", options: ["ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ", "牛肉麵", "小籠包", "滷肉飯"]
-  },
-  { id: 13, type: "fill-in-blank", targetSymbol: "37文字", speechTarget: "三十七", prompt: "台湾の注音符号（ボポモフォ）の基本文字は子音21＋母音16を合わせて『全何文字』？", options: ["37文字", "26文字", "46文字", "50文字"] },
-  { id: 14, type: "fill-in-blank", targetSymbol: "文字の頭の上", speechTarget: "嗎", prompt: "注音符号で「軽声 (輕聲: ˙)」の黒丸記号を添える正しい位置はどこ？", options: ["文字の頭の上", "文字の右下", "文字の左側", "文字の下"] },
-  {
-    id: 15, type: "zhuyin-to-word", targetSymbol: "私は台湾に行ったことがあります", speechTarget: "我有去過台灣",
-    prompt: "🏆 トロフィー問題！注音『ㄨㄛˇ ㄧㄡˇ ㄑㄩˋ ㄍㄨㄛˋ ㄊㄞˊ ㄨㄢ』の意味はどれ？", options: ["私は台湾に行ったことがあります", "私は日本人です", "私はタピオカミルクティーが飲みたいです", "お会計をお願いします"]
-  }
-];
-
-
