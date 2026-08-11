@@ -14,15 +14,24 @@
   }
 
   const init = () => {
-    inspectEnvironment();
-    setupListeners();
+    try {
+      inspectEnvironment();
+    } catch (e) {
+      console.error('[AudioDebug] inspectEnvironment error:', e);
+    }
+    try {
+      setupListeners();
+    } catch (e) {
+      console.error('[AudioDebug] setupListeners error:', e);
+    }
   };
 
+  // 即時アタッチ ＆ DOMContentLoaded ＆ load 三重アタッチ
+  init();
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
   }
+  window.addEventListener('load', init);
 
   function inspectEnvironment() {
     const uaEl = document.getElementById('env-ua');
