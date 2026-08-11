@@ -238,4 +238,26 @@
     });
   }
 
+  window.APP_VERSION = 'v1.1.0';
+
+  // 画面フッターの端にバージョン表記 (v1.1.0) を自動描画
+  function renderVersionBadge() {
+    if (typeof document === 'undefined') return;
+    const footerContainer = document.querySelector('.footer .container') || document.querySelector('.footer');
+    if (footerContainer && !footerContainer.querySelector('.version-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'version-badge';
+      badge.textContent = window.APP_VERSION;
+      footerContainer.appendChild(badge);
+    }
+  }
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderVersionBadge);
+    } else {
+      renderVersionBadge();
+    }
+  }
+
 })(window);
