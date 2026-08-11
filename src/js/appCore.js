@@ -75,17 +75,25 @@
 
         const voices = window.speechSynthesis.getVoices();
         if (voices && voices.length > 0) {
-          const femaleKeywords = ['mei-jia', 'ting-ting', 'sin-ji', 'yating', 'female', '美佳', '婷婷', 'taiwan', '國語', 'zh-tw'];
+          // Mac Chrome 等で実際に存在する台湾女性ボイス名を厳密指定
+          const priorityVoiceNames = [
+            'meijia',
+            'google 國語（臺灣）',
+            'google 國語',
+            'shelley',
+            'sandy',
+            'flo',
+            'ting-ting',
+            'yating'
+          ];
           
-          // 1. 台湾女性ボイスを検索
+          // 1. 台湾女性ボイス名リストに最も合致するボイスを検索
           let targetVoice = voices.find(v => {
             const nameLower = (v.name || '').toLowerCase();
-            const langLower = (v.lang || '').toLowerCase();
-            return (langLower.includes('tw') || langLower.includes('zh-tw')) &&
-                   femaleKeywords.some(kw => nameLower.includes(kw));
+            return priorityVoiceNames.some(p => nameLower.includes(p));
           });
 
-          // 2. 台湾一般ボイス
+          // 2. 見つからなければ zh-TW のボイス
           if (!targetVoice) {
             targetVoice = voices.find(v => {
               const langLower = (v.lang || '').toLowerCase();
@@ -93,7 +101,7 @@
             });
           }
 
-          // 3. 中国語一般ボイス
+          // 3. 見つからなければ zh 全般のボイス
           if (!targetVoice) {
             targetVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith('zh'));
           }

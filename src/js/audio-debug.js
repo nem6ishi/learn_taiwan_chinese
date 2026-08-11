@@ -142,10 +142,18 @@
           u.rate = 0.85;
 
           const voices = window.speechSynthesis.getVoices();
-          const target = voices.find(v => (v.lang || '').toLowerCase().includes('zh'));
+          const priorityVoiceNames = ['meijia', 'google 國語（臺灣）', 'google 國語', 'shelley', 'sandy', 'flo', 'ting-ting'];
+          let target = voices.find(v => priorityVoiceNames.some(p => (v.name || '').toLowerCase().includes(p)));
+          if (!target) {
+            target = voices.find(v => (v.lang || '').toLowerCase().includes('tw') || (v.lang || '').toLowerCase().includes('zh-tw'));
+          }
+          if (!target) {
+            target = voices.find(v => (v.lang || '').toLowerCase().includes('zh'));
+          }
+
           if (target) {
             u.voice = target;
-            log(`[WEBSPEECH] ボイス指定: ${target.name} (${target.lang})`, 'info');
+            log(`[WEBSPEECH] 選択されたボイス: ${target.name} (${target.lang})`, 'success');
           } else {
             log(`[WEBSPEECH] 特定ボイス未指定 (lang='zh-TW' で自動割り当て)`, 'warn');
           }
