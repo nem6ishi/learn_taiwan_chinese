@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP 3-4: 台灣鉄道（TRA）完全攻略 ＆ 乗り方・駅会話 | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾華語 STEP 3-4: 台湾鉄道（台鐵 / TRA）の列車種別、窓口での切符購入、ICカード（悠遊卡）乗車ワザ、ホーム確認会話、駅弁（排骨便當）までマスター。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    /* 会話チャット吹出しスタイル */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .chat-bubble-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      max-width: 90%;
+    }
+    .chat-bubble-row.clerk {
+      align-self: flex-start;
+    }
+    .chat-bubble-row.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .avatar-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .avatar-clerk {
+      background: #E0F2FE;
+      color: #0369A1;
+      border: 2px solid #BAE6FD;
+    }
+    .avatar-user {
+      background: #FEF3C7;
+      color: #B45309;
+      border: 2px solid #FDE68A;
+    }
+    
+    /* 吹き出しカード本体 */
+    .chat-bubble-card {
+      background: var(--color-bg-subtle);
+      border: 1.5px solid var(--color-border);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-bubble-row.clerk .chat-bubble-card {
+      border-top-left-radius: 4px;
+    }
+    .chat-bubble-row.user .chat-bubble-card {
+      border-top-right-radius: 4px;
+      background: #FFFBEB;
+      border-color: #FCD34D;
+    }
+
+    /* メインセリフのタップ発声ボックス */
+    .main-speech-box {
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 4px 6px;
+      transition: all 0.2s ease-in-out;
+      user-select: none;
+    }
+    .main-speech-box:hover {
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .audio-tap-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      background: #EFF6FF;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .user .audio-tap-hint {
+      color: #D97706;
+      background: #FEF3C7;
+    }
+
+    .chat-trad {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--color-text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      line-height: 1.8;
+    }
+    ruby {
+      ruby-position: over;
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin: 0 1px;
+    }
+    rt {
+      font-size: 0.72rem;
+      color: #2563EB;
+      font-weight: 700;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .user rt {
+      color: #D97706;
+    }
+    .chat-zhuyin {
+      display: none;
+    }
+    .chat-meaning {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 💡 別の言い方・言い換えバリエーションボックス */
+    .alt-expression-box {
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--color-border);
+    }
+    .user .alt-expression-box {
+      border-top-color: #FDE68A;
+    }
+    .alt-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #2563EB;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .user .alt-badge {
+      color: #D97706;
+    }
+    .alt-speech-card {
+      background: #FFFFFF;
+      border: 1px solid #DBEAFE;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user .alt-speech-card {
+      background: #FFFFFF;
+      border-color: #FDE68A;
+    }
+    .alt-speech-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+      transform: translateY(-1px);
+    }
+    .alt-trad {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
+    .alt-zhuyin {
+      font-size: 0.82rem;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .user .alt-zhuyin {
+      color: #B45309;
+    }
+    .alt-meaning {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ローカルコラムカード */
+    .column-box {
+      background: #F0FDF4;
+      border: 1.5px solid #BBF7D0;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+    .column-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #15803D;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .column-content {
+      font-size: 0.88rem;
+      color: #166534;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div id="step-config" style="display:none"
+    data-quiz-key="VOWELS_QUIZ_QUESTIONS_3_4"
+    data-step-title="3-4 台灣鉄道（TRA）完全攻略クイズ"
+    data-step-number="3-4">
+  </div>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="index.html#atlas-curriculum" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          📚 カリキュラム
+        </a>
+        <button class="btn btn-primary" id="start-quiz-nav-btn" style="padding: 6px 14px; font-size: 0.85rem;">
+          🏆 確認クイズ
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 24px; padding-bottom: 60px;">
+
+    <!-- ステップヘッダー -->
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <span class="category-badge">CATEGORY 3: 台湾旅行・グルメ注文 ＆ 移動</span>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); background: #EFF6FF; padding: 2px 8px; border-radius: 12px;">STEP 3-4</span>
+      </div>
+      <h1 style="font-size: 1.65rem; font-weight: 900; color: var(--color-text-main); margin-bottom: 8px;">
+        🚆 台灣鉄道（TRA / 台鐵）完全攻略 ＆ 乗り方・駅会話
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.5;">
+        台湾周遊や九份・瑞芳・花蓮・高雄への旅行に欠かせない「台鐵（TRA）」。<br>
+        列車種別・切符購入・ICカード（悠遊卡）での乗車ワザ・ホーム確認会話・名物台鉄弁当まで完全マスターしましょう！
+      </p>
+    </div>
+
+    <!-- セクション 1: 列車種別 ＆ 基本用語 -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary); margin-bottom: 14px; border-bottom: 2px solid var(--color-border); padding-bottom: 8px;">
+        🔤 1. 台灣鉄道の列車種別 ＆ 駅の基本用語
+      </h2>
+      <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 16px;">
+        カードをタップすると台湾現地ネイティブの正確な音声（zh-TW）が再生されます。
+      </p>
+
+      <!-- 列車種別 -->
+      <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">
+        🚄 列車種別（特急〜普通）
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px;">
+        
+        <div class="example-row play-word-sound" data-word="區間車" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900;"><ruby>區<rt>ㄑㄩ</rt></ruby><ruby>間<rt>ㄐㄧㄢ</rt></ruby><ruby>車<rt>ㄔㄜ</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #2563EB;">普通列車 / 各駅停車</span>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">ICカードでそのまま乗車可能</div>
+          </div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="自強號" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900;"><ruby>自<rt>ㄗˋ</rt></ruby><ruby>強<rt>ㄑㄧㄤˊ</rt></ruby><ruby>號<rt>ㄏㄠˋ</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #DC2626;">特急列車 (最速・快適)</span>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">EMU3000・普悠瑪・太魯閣など</div>
+          </div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="莒光號" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900;"><ruby>莒<rt>ㄐㄩˇ</rt></ruby><ruby>光<rt>ㄍㄨㄤ</rt></ruby><ruby>號<rt>ㄏㄠˋ</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #D97706;">急行列車 (レトロ橘色)</span>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">のんびり旅におすすめ</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 駅・乗車用語 -->
+      <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">
+        🎫 駅・改札・座席の用語
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+        
+        <div class="example-row play-word-sound" data-word="車票" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>車<rt>ㄔㄜ</rt></ruby><ruby>票<rt>ㄆㄧㄠˋ</rt></ruby></span>
+          </div>
+          <div class="example-right"><span class="example-meaning">乗車券 / 切符</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="月台" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>月<rt>ㄩㄝˋ</rt></ruby><ruby>台<rt>ㄊㄞˊ</rt></ruby></span>
+          </div>
+          <div class="example-right"><span class="example-meaning">プラットホーム (1月台, 2月台)</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="對號座" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>對<rt>ㄉㄨㄟˋ</rt></ruby><ruby>號<rt>ㄏㄠˋ</rt></ruby><ruby>座<rt>ㄗㄨㄛˋ</rt></ruby></span>
+          </div>
+          <div class="example-right"><span class="example-meaning">指定席 (座席指定)</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="自由座" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>自<rt>ㄗˋ</rt></ruby><ruby>由<rt>ㄧㄡˊ</rt></ruby><ruby>座<rt>ㄗㄨㄛˋ</rt></ruby></span>
+          </div>
+          <div class="example-right"><span class="example-meaning">自由席 (立ち席含む)</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="悠遊卡" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>悠<rt>ㄧㄡ</rt></ruby><ruby>遊<rt>ㄧㄡˊ</rt></ruby><ruby>卡<rt>ㄎㄚˇ</rt></ruby></span>
+          </div>
+          <div class="example-right"><span class="example-meaning">悠遊カード (EasyCard)</span></div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="刷卡" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>刷<rt>ㄕㄨㄚ</rt></ruby><ruby>卡<rt>ㄎㄚˇ</rt></ruby></span>
+          </div>
+          <div class="example-right"><span class="example-meaning">カードをタッチする / ピッとする</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- セクション 2: 実践会話フレーズ -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid var(--color-border); padding-bottom: 8px;">
+        <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary);">
+          🗣️ 2. 駅の窓口・改札での実践やり取りフレーズ
+        </h2>
+        <span style="font-size: 0.8rem; background: #D1FAE5; color: #047857; padding: 4px 10px; border-radius: 12px; font-weight: 700;">👆 セリフをタップで音声再生</span>
+      </div>
+
+      <div class="chat-container">
+        
+        <!-- 会話 1: 切符を窓口で買う -->
+        <div class="chat-bubble-row clerk">
+          <div class="avatar-badge avatar-clerk">駅員</div>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="你好請問要到哪裡">
+              <div class="chat-trad">
+                <span><ruby>你<rt>ㄋㄧˇ</rt></ruby><ruby>好<rt>ㄏㄠˇ</rt></ruby>，<ruby>請<rt>ㄑㄧㄥˇ</rt></ruby><ruby>問<rt>ㄨㄣˋ</rt></ruby><ruby>要<rt>ㄧㄠˋ</rt></ruby><ruby>到<rt>ㄉㄠˋ</rt></ruby><ruby>哪<rt>ㄋㄚˇ</rt></ruby><ruby>裡<rt>ㄌㄧˇ</rt></ruby>？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-meaning">こんにちは、どちらまで行かれますか？</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="我要買一張到台北的車票">
+              <div class="chat-trad">
+                <span><ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>要<rt>ㄧㄠˋ</rt></ruby><ruby>買<rt>ㄇㄞˇ</rt></ruby><ruby>一<rt>ㄧ</rt></ruby><ruby>張<rt>ㄓㄤ</rt></ruby><ruby>到<rt>ㄉㄠˋ</rt></ruby><ruby>台<rt>ㄊㄞˊ</rt></ruby><ruby>北<rt>ㄅㄟˇ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>車<rt>ㄔㄜ</rt></ruby><ruby>票<rt>ㄆㄧㄠˋ</rt></ruby>。</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-meaning">台北までの切符を1枚買いたいです。</div>
+            </div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 列車指定の別の言い方</span>
+              <div class="alt-speech-card play-word-sound" data-word="買一張去高雄的自強號">
+                <div>
+                  <div><span class="alt-trad"><ruby>買<rt>ㄇㄞˇ</rt></ruby><ruby>一<rt>ㄧ</rt></ruby><ruby>張<rt>ㄓㄤ</rt></ruby><ruby>去<rt>ㄑㄩˋ</rt></ruby><ruby>高<rt>ㄍㄠ</rt></ruby><ruby>雄<rt>ㄒㄧㄨㄥˊ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>自<rt>ㄗˋ</rt></ruby><ruby>強<rt>ㄑㄧㄤˊ</rt></ruby><ruby>號<rt>ㄏㄠˋ</rt></ruby>。</span></div>
+                  <div class="alt-meaning">高雄行きの自強号（特急）の切符を1枚買いたいです。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 会話 2: 座席指定（窓側・通路側） -->
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="有靠窗的座位嗎">
+              <div class="chat-trad">
+                <span><ruby>有<rt>ㄧㄡˇ</rt></ruby><ruby>靠<rt>ㄎㄠˋ</rt></ruby><ruby>窗<rt> chuāng </rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>座<rt>ㄗㄨㄛˋ</rt></ruby><ruby>位<rt>ㄨㄟˋ</rt></ruby><ruby>嗎<rt>ㄇㄚ˙</rt></ruby>？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-meaning">窓側の座席はありますか？</div>
+            </div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 通路側を希望するとき</span>
+              <div class="alt-speech-card play-word-sound" data-word="請問有靠走道的座位嗎">
+                <div>
+                  <div><span class="alt-trad"><ruby>請<rt>ㄑㄧㄥˇ</rt></ruby><ruby>問<rt>ㄨㄣˋ</rt></ruby><ruby>有<rt>ㄧㄡˇ</rt></ruby><ruby>靠<rt>ㄎㄠˋ</rt></ruby><ruby>走<rt>ㄗㄡˇ</rt></ruby><ruby>道<rt>ㄉㄠˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>座<rt>ㄗㄨㄛˋ</rt></ruby><ruby>位<rt>ㄨㄟˋ</rt></ruby><ruby>嗎<rt>ㄇㄚ˙</rt></ruby>？</span></div>
+                  <div class="alt-meaning">すみません、通路側の座席はありますか？</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 会話 3: ホーム（月台）の聞き方 -->
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="請問去花蓮的火車在第幾月台">
+              <div class="chat-trad">
+                <span><ruby>請<rt>ㄑㄧㄥˇ</rt></ruby><ruby>問<rt>ㄨㄣˋ</rt></ruby>，<ruby>去<rt>ㄑㄩˋ</rt></ruby><ruby>花<rt>ㄏㄨㄚ</rt></ruby><ruby>蓮<rt>ㄌㄧㄢˊ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>火<rt>ㄏㄨㄛˇ</rt></ruby><ruby>車<rt>ㄔㄜ</rt></ruby><ruby>在<rt>ㄗㄞˋ</rt></ruby><ruby>第<rt>ㄉㄧˋ</rt></ruby><ruby>幾<rt>ㄐㄧˇ</rt></ruby><ruby>月<rt>ㄩㄝˋ</rt></ruby><ruby>台<rt>ㄊㄞˊ</rt></ruby>？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-meaning">すみません、花蓮行きの電車は何番ホームですか？</div>
+            </div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 ホームの位置を確認する言い方</span>
+              <div class="alt-speech-card play-word-sound" data-word="第一月台在右邊嗎">
+                <div>
+                  <div><span class="alt-trad"><ruby>第<rt>ㄉㄧˋ</rt></ruby><ruby>一<rt>ㄧ</rt></ruby><ruby>月<rt>ㄩㄝˋ</rt></ruby><ruby>台<rt>ㄊㄞˊ</rt></ruby><ruby>在<rt>ㄗㄞˋ</rt></ruby><ruby>右<rt>ㄧㄡˋ</rt></ruby><ruby>邊<rt>ㄅㄧㄢ</rt></ruby><ruby>嗎<rt>ㄇㄚ˙</rt></ruby>？</span></div>
+                  <div class="alt-meaning">1番ホームは右側ですか？</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 会話 4: ICカード（悠遊卡）での乗車確認 -->
+        <div class="chat-bubble-row user">
+          <div class="avatar-badge avatar-user">私</div>
+          <div class="chat-bubble-card">
+            <div class="main-speech-box play-word-sound" data-word="這班車可以刷悠遊卡嗎">
+              <div class="chat-trad">
+                <span><ruby>這<rt>ㄓㄜˋ</rt></ruby><ruby>班<rt>ㄅㄢ</rt></ruby><ruby>車<rt>ㄔㄜ</rt></ruby><ruby>可<rt>ㄎㄜˇ</rt></ruby><ruby>以<rt>ㄧˇ</rt></ruby><ruby>刷<rt>ㄕㄨㄚ</rt></ruby><ruby>悠<rt>ㄧㄡ</rt></ruby><ruby>遊<rt>ㄧㄡˊ</rt></ruby><ruby>卡<rt>ㄎㄚˇ</rt></ruby><ruby>嗎<rt>ㄇㄚ˙</rt></ruby>？</span>
+                <span class="audio-tap-hint">🔊 聴く</span>
+              </div>
+              <div class="chat-meaning">この列車は悠遊カードをタッチして乗れますか？</div>
+            </div>
+
+            <!-- 💡 別の言い方 -->
+            <div class="alt-expression-box">
+              <span class="alt-badge">💡 区間車乗車の豆知識フレーズ</span>
+              <div class="alt-speech-card play-word-sound" data-word="區間車可以刷悠遊卡進站">
+                <div>
+                  <div><span class="alt-trad"><ruby>區<rt>ㄑㄩ</rt></ruby><ruby>間<rt>ㄐㄧㄢ</rt></ruby><ruby>車<rt>ㄔㄜ</rt></ruby><ruby>可<rt>ㄎㄜˇ</rt></ruby><ruby>以<rt>ㄧˇ</rt></ruby><ruby>刷<rt>ㄕㄨㄚ</rt></ruby><ruby>悠<rt>ㄧㄡ</rt></ruby><ruby>遊<rt>ㄧㄡˊ</rt></ruby><ruby>卡<rt>ㄎㄚˇ</rt></ruby><ruby>進<rt>ㄐㄧㄣˋ</rt></ruby><ruby>站<rt>ㄓㄢˋ</rt></ruby>。</span></div>
+                  <div class="alt-meaning">区間車（普通列車）は悠遊カードをタッチして入場できます。</div>
+                </div>
+                <span style="font-size:0.75rem; color:#D97706; font-weight:700;">🔊 試聴</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- セクション 3: 車内アナウンス ＆ 掲示板単語 -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <h2 style="font-size: 1.2rem; font-weight: 900; color: var(--color-primary); margin-bottom: 12px; border-bottom: 2px solid var(--color-border); padding-bottom: 8px;">
+        📢 3. 車内アナウンス ＆ 電光掲示板の聞き取り単語
+      </h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
+        
+        <div class="example-row play-word-sound" data-word="下一站是台北" style="background: #FFFBEB; border: 1px solid #FCD34D; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>下<rt>ㄒㄧㄚˋ</rt></ruby><ruby>一<rt>ㄧ</rt></ruby><ruby>站<rt>ㄓㄢˋ</rt></ruby><ruby>是<rt>ㄕˋ</rt></ruby><ruby>台<rt>ㄊㄞˊ</rt></ruby><ruby>北<rt>ㄅㄟˇ</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.88rem; font-weight: 700; color: #B45309;">次は台北です</span>
+          </div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="各位旅客台北站到了" style="background: #FFFBEB; border: 1px solid #FCD34D; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>各<rt>ㄍㄜˋ</rt></ruby><ruby>位<rt>ㄨㄟˋ</rt></ruby><ruby>旅<rt>ㄌㄩˇ</rt></ruby><ruby>客<rt>ㄎㄜˋ</rt></ruby>，<ruby>台<rt>ㄊㄞˊ</rt></ruby><ruby>北<rt>ㄅㄟˇ</rt></ruby><ruby>站<rt>ㄓㄢˋ</rt></ruby><ruby>到<rt>ㄉㄠˋ</rt></ruby><ruby>了<rt>ㄌㄜ˙</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.88rem; font-weight: 700; color: #B45309;">皆様、台北駅に到着しました</span>
+          </div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="準點" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>準<rt>ㄓㄨㄣˇ</rt></ruby><ruby>點<rt>ㄉㄧㄢˇ</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #059669;">定刻通り (遅れなし)</span>
+          </div>
+        </div>
+
+        <div class="example-row play-word-sound" data-word="晚點" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
+          <div class="example-left">
+            <span class="example-trad" style="font-size: 1.1rem; font-weight: 900;"><ruby>晚<rt>ㄨㄢˇ</rt></ruby><ruby>點<rt>ㄉㄧㄢˇ</rt></ruby></span>
+          </div>
+          <div class="example-right">
+            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #DC2626;">遅延 (例: 晚5分 = 5分遅れ)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- セクション 4: 💡 台灣鐵路 ローカル豆知識コラム -->
+    <div class="detail-card" style="margin-bottom: 24px;">
+      <h2 style="font-size: 1.2rem; font-weight: 900; color: #15803D; margin-bottom: 12px; border-bottom: 2px solid #BBF7D0; padding-bottom: 8px;">
+        💡 台灣鐵路（TRA）ローカル旅行豆知識コラム
+      </h2>
+
+      <!-- コラム 1 -->
+      <div class="column-box">
+        <div class="column-title">
+          💳 ① ICカード（悠遊卡 / EasyCard）で台鉄に乗るお得ワザ！
+        </div>
+        <div class="column-content">
+          台鉄（TRA）では、台北〜瑞芳（九份の玄関口）や台中・高雄などの区間車（普通電車）や、全車指定席以外の自強号に **悠遊卡（EasyCard）や一卡通（iPASS）** をタッチして乗車できます！<br>
+          券売機で切符を買う列に並ぶ必要がなく、70km以内の乗車では區間車運賃の割引が適用される場合もあります。<br>
+          ※普悠瑪（プユマ）号や太魯閣（タロコ）号、EMU3000型の全車指定列車はICカード不可（要・指定席券購入）ですのでご注意ください。
+        </div>
+      </div>
+
+      <!-- コラム 2 -->
+      <div class="column-box" style="background: #FFFBEB; border-color: #FDE68A;">
+        <div class="column-title" style="color: #B45309;">
+          🍱 ② 台鉄名物「排骨便當（パイグー弁当）」を味わう！
+        </div>
+        <div class="column-content" style="color: #92400E;">
+          台湾鉄道の旅で絶対に外せないのが **「臺鐵便當（台鉄弁当）」**！<br>
+          特に一番人気は **「排骨便當（pái gǔ biàn dāng）」**。甘辛い醤油タレに漬け込んで揚げ焼きした大きな骨付き豚あばら肉がのったお弁当（70〜100TWD）です。<br>
+          台北駅構内の「臺鐵便當本鋪」や特急の車内販売で購入できます。旅のお供にぜひ試してみてください！
+        </div>
+      </div>
+
+      <!-- コラム 3 -->
+      <div class="column-box" style="background: #F0F9FF; border-color: #BAE6FD;">
+        <div class="column-title" style="color: #0369A1;">
+          🚉 ③ 電光掲示板の「準點」と「晚○分」の見方
+        </div>
+        <div class="column-content" style="color: #075985;">
+          台湾の駅のプラットホームや改札の電光掲示板には、運行状況が表示されています。<br>
+          ・**「準點 (zhǔn diǎn)」**: 定刻通り運行中<br>
+          ・**「晚 3 分 (wǎn 3 fēn)」**: 3分遅れて到着予定<br>
+          日本と違って数分の遅延はよく発生しますので、「晚○分」の表記をチェックしておくと安心です。
+        </div>
+      </div>
+
+    </div>
+
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">台灣鉄道（TRA）の知識と会話フレーズをチェックしましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        列車種別・チケット購入会話・ICカード活用法・駅弁の「確認クイズ」で定着度を確かめましょう！
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
+          🏆 確認クイズを始める (全10問)
+        </button>
+        <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          トップ一覧へ戻る →
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <!-- QuizEngineで動的生成 -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+      <span class="version-badge">v1.1.0</span>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+  <script type="module" src="src/js/quizEngine.js"></script>
+  <script type="module" src="src/js/stepLoader.js"></script>
+</body>
+</html>

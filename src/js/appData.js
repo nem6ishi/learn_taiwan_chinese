@@ -1116,3 +1116,22 @@ window.VOWELS_QUIZ_QUESTIONS_3_1 = [
     prompt: "「一共 (合計で)」の正しい注音表記はどれ？", options: ["ㄧˊ ㄍㄨㄥˋ", "ㄇㄞˇ ㄉㄢ", "ㄋㄟˋ ㄩㄥˋ", "ㄨㄞˋ ㄉㄞˋ"]
   }
 ];
+
+// ==================== STEP 3-4: 台灣鉄道（TRA）完全攻略確認クイズ (全10問) ====================
+window.VOWELS_QUIZ_QUESTIONS_3_4 = [
+  { id: 1, type: "audio", targetSymbol: "區間車", speechTarget: "區間車", prompt: "再生された「普通列車・各駅停車」を表す列車種別はどれ？", options: ["區間車", "自強號", "莒光號", "高鐵"] },
+  { id: 2, type: "audio", targetSymbol: "自強號", speechTarget: "自強號", prompt: "再生された台鉄の「特急列車」を表す列車種別はどれ？", options: ["自強號", "區間車", "莒光號", "捷運"] },
+  { id: 3, type: "zhuyin-to-word", targetSymbol: "切符", speechTarget: "車票", prompt: "注音「ㄔㄜ ㄆㄧㄠˋ (車票)」に対応する日本語の意味はどれ？", options: ["切符", "ホーム", "座席", "改札口"] },
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "ホーム (プラットホーム)", speechTarget: "月台", prompt: "注音「ㄩㄝˋ ㄊㄞˊ (月台)」に対応する台湾の駅用語はどれ？", options: ["ホーム (プラットホーム)", "窓口", "指定席", "お弁当"] },
+  { id: 5, type: "fill-in-blank", targetSymbol: "靠窗", speechTarget: "有靠窗的座位嗎", prompt: "「窓側の座席はありますか？ (有 ___ 的座位嗎？)」の空欄に入る表現はどれ？", options: ["靠窗", "靠走道", "自由座", "對號座"] },
+  { id: 6, type: "fill-in-blank", targetSymbol: "悠遊卡", speechTarget: "這班車可以刷悠遊卡嗎", prompt: "「この列車は悠遊カードで乗れますか？ (這班車可以刷 ___ 嗎？)」の空欄に入る単語はどれ？", options: ["悠遊卡", "信用卡", "車票", "便當"] },
+  { id: 7, type: "audio", targetSymbol: "排骨便當", speechTarget: "排骨便當", prompt: "再生された台鉄の名物駅弁「パイグー弁当」の台湾華語表現はどれ？", options: ["排骨便當", "雞腿便當", "鐵路便當", "素食便當"] },
+  { id: 8, type: "zhuyin-to-word", targetSymbol: "定刻通り (遅れなし)", speechTarget: "準點", prompt: "駅の電光掲示板でよく見る「ㄓㄨㄣˇ ㄉㄧㄢˇ (準點)」の意味はどれ？", options: ["定刻通り (遅れなし)", "遅延中", "運休", "満席"] },
+  { id: 9, type: "fill-in-blank", targetSymbol: "月台", speechTarget: "在第幾月台", prompt: "「何番ホームですか？ (在第幾 ___ ％ ？)」の空欄に入る駅用語はどれ？", options: ["月台", "車票", "座位", "出口"] },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄉㄨㄟˋ ㄏㄠˋ ㄗㄨㄛˋ", speechTarget: "對號座",
+    optionSpeechMap: { "ㄉㄨㄟˋ ㄏㄠˋ ㄗㄨㄛˋ": "對號座", "ㄗˋ ㄧㄡˊ ㄗㄨㄛˋ": "自由座", "ㄑㄩ ㄐㄧㄢ ㄔㄜ": "區間車", "ㄩㄝˋ ㄊㄞˊ": "月台" },
+    prompt: "「對號座 (指定席)」の正しい注音表記はどれ？", options: ["ㄉㄨㄟˋ ㄏㄠˋ ㄗㄨㄛˋ", "ㄗˋ ㄧㄡˊ ㄗㄨㄛˋ", "ㄑㄩ ㄐㄧㄢ ㄔㄜ", "ㄩㄝˋ ㄊㄞˊ"]
+  }
+];
+
