@@ -355,24 +355,28 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .example-trad {
   font-size: 1.3rem;
   font-weight: 900;
   color: var(--color-text-main);
-  min-width: 60px;
+  white-space: nowrap;
 }
 
 .example-phonetics {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
 }
 
 .example-zhuyin {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--color-primary);
+  white-space: nowrap;
 }
 
 .example-pinyin {

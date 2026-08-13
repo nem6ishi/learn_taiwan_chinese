@@ -99,6 +99,9 @@
       background: #FEF3C7;
     }
 
+    .example-left, .example-trad, .example-zhuyin, .alt-trad, ruby {
+      white-space: nowrap !important;
+    }
     .chat-trad {
       font-size: 1.25rem;
       font-weight: 900;
@@ -108,18 +111,26 @@
       justify-content: space-between;
       gap: 12px;
       line-height: 1.8;
+      flex-wrap: wrap;
     }
     ruby {
-      ruby-position: over;
-      font-size: 1.25rem;
-      font-weight: 900;
-      margin: 0 1px;
+      display: inline-flex;
+      flex-direction: column-reverse;
+      vertical-align: bottom;
+      align-items: center;
+      line-height: 1.1;
+      margin: 0 2px;
+      white-space: nowrap !important;
     }
     rt {
-      font-size: 0.72rem;
+      display: block;
+      font-size: 0.68rem;
+      line-height: 1.2;
       color: #2563EB;
       font-weight: 700;
       font-family: system-ui, -apple-system, sans-serif;
+      text-align: center;
+      white-space: nowrap !important;
     }
     .user rt {
       color: #D97706;
