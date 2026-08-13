@@ -99,9 +99,6 @@
       background: #FEF3C7;
     }
 
-    .example-left, .example-trad, .example-zhuyin, .alt-trad, ruby {
-      white-space: nowrap !important;
-    }
     .chat-trad {
       font-size: 1.25rem;
       font-weight: 900;
@@ -190,14 +187,7 @@
       font-size: 1.05rem;
       font-weight: 800;
       color: var(--color-text-main);
-    }
-    .alt-zhuyin {
-      font-size: 0.82rem;
-      color: var(--color-primary);
-      font-weight: 700;
-    }
-    .user .alt-zhuyin {
-      color: #B45309;
+      white-space: nowrap !important;
     }
     .alt-meaning {
       font-size: 0.8rem;
@@ -283,39 +273,42 @@
       <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">
         🚄 列車種別（特急〜普通）
       </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px;">
+      <div class="word-grid" style="margin-bottom: 24px;">
         
-        <div class="example-row play-word-sound" data-word="區間車" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.2rem; font-weight: 900; min-width: auto;">區間車</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄑㄩ ㄐㄧㄢ ㄔㄜ</span></div>
+        <div class="word-card play-word-sound" data-word="區間車">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.4rem; font-weight: 900; white-space: nowrap;">區間車</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄑㄩ ㄐㄧㄢ ㄔㄜ</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.92rem; font-weight: 700; color: #2563EB; margin-top: 4px;">普通列車 / 各駅停車</span>
+            <div style="font-size: 0.78rem; color: #64748B;">ICカードでそのまま乗車可能</div>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #2563EB;">普通列車 / 各駅停車</span>
-            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">ICカードでそのまま乗車可能</div>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="自強號" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.2rem; font-weight: 900; min-width: auto;">自強號</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄗˋ ㄑㄧㄤˊ ㄏㄠˋ</span></div>
+        <div class="word-card play-word-sound" data-word="自強號">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.4rem; font-weight: 900; white-space: nowrap;">自強號</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄗˋ ㄑㄧㄤˊ ㄏㄠˋ</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.92rem; font-weight: 700; color: #DC2626; margin-top: 4px;">特急列車 (最速・快適)</span>
+            <div style="font-size: 0.78rem; color: #64748B;">EMU3000・普悠瑪・太魯閣など</div>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #DC2626;">特急列車 (最速・快適)</span>
-            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">EMU3000・普悠瑪・太魯閣など</div>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="莒光號" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.2rem; font-weight: 900; min-width: auto;">莒光號</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄐㄩˇ ㄍㄨㄤ ㄏㄠˋ</span></div>
+        <div class="word-card play-word-sound" data-word="莒光號">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.4rem; font-weight: 900; white-space: nowrap;">莒光號</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄐㄩˇ ㄍㄨㄤ ㄏㄠˋ</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.92rem; font-weight: 700; color: #D97706; margin-top: 4px;">急行列車 (レトロ橘色)</span>
+            <div style="font-size: 0.78rem; color: #64748B;">のんびり旅におすすめ</div>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #D97706;">急行列車 (レトロ橘色)</span>
-            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">のんびり旅におすすめ</div>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
       </div>
@@ -324,54 +317,72 @@
       <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">
         🎫 駅・改札・座席の用語
       </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+      <div class="word-grid">
         
-        <div class="example-row play-word-sound" data-word="車票" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">車票</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄔㄜ ㄆㄧㄠˋ</span></div>
+        <div class="word-card play-word-sound" data-word="車票">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">車票</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄔㄜ ㄆㄧㄠˋ</span>
+            </div>
+            <span class="word-meaning">乗車券 / 切符</span>
           </div>
-          <div class="example-right"><span class="example-meaning">乗車券 / 切符</span></div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="月台" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">月台</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄩㄝˋ ㄊㄞˊ</span></div>
+        <div class="word-card play-word-sound" data-word="月台">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">月台</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄩㄝˋ ㄊㄞˊ</span>
+            </div>
+            <span class="word-meaning">プラットホーム (1月台, 2月台)</span>
           </div>
-          <div class="example-right"><span class="example-meaning">プラットホーム (1月台, 2月台)</span></div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="對號座" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">對號座</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄉㄨㄟˋ ㄏㄠˋ ㄗㄨㄛˋ</span></div>
+        <div class="word-card play-word-sound" data-word="對號座">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">對號座</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄉㄨㄟˋ ㄏㄠˋ ㄗㄨㄛˋ</span>
+            </div>
+            <span class="word-meaning">指定席 (座席指定)</span>
           </div>
-          <div class="example-right"><span class="example-meaning">指定席 (座席指定)</span></div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="自由座" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">自由座</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄗˋ ㄧㄡˊ ㄗㄨㄛˋ</span></div>
+        <div class="word-card play-word-sound" data-word="自由座">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">自由座</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄗˋ ㄧㄡˊ ㄗㄨㄛˋ</span>
+            </div>
+            <span class="word-meaning">自由席 (立ち席含む)</span>
           </div>
-          <div class="example-right"><span class="example-meaning">自由席 (立ち席含む)</span></div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="悠遊卡" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">悠遊卡</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄧㄡ ㄧㄡˊ ㄎㄚˇ</span></div>
+        <div class="word-card play-word-sound" data-word="悠遊卡">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">悠遊卡</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄧㄡ ㄧㄡˊ ㄎㄚˇ</span>
+            </div>
+            <span class="word-meaning">悠遊カード (EasyCard)</span>
           </div>
-          <div class="example-right"><span class="example-meaning">悠遊カード (EasyCard)</span></div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="刷卡" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">刷卡</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄕㄨㄚ ㄎㄚˇ</span></div>
+        <div class="word-card play-word-sound" data-word="刷卡">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">刷卡</span>
+              <span class="word-zhuyin" style="white-space: nowrap;">ㄕㄨㄚ ㄎㄚˇ</span>
+            </div>
+            <span class="word-meaning">カードをタッチする / ピッとする</span>
           </div>
-          <div class="example-right"><span class="example-meaning">カードをタッチする / ピッとする</span></div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
       </div>
@@ -514,48 +525,51 @@
         📢 3. 車内アナウンス ＆ 電光掲示板の聞き取り単語
       </h2>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px;">
+      <div class="word-grid">
         
-        <div class="example-row play-word-sound" data-word="下一站是台北" style="background: #FFFBEB; border: 1px solid #FCD34D; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">下一站是台北</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄒㄧㄚˋ ㄧ ㄓㄢˋ ㄕˋ ㄊㄞˊ ㄅㄟˇ</span></div>
+        <div class="word-card play-word-sound" data-word="下一站是台北" style="background: #FFFBEB; border-color: #FCD34D;">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.25rem; font-weight: 900; white-space: nowrap;">下一站是台北</span>
+              <span class="word-zhuyin" style="background: #FEF3C7; color: #B45309; white-space: nowrap;">ㄒㄧㄚˋ ㄧ ㄓㄢˋ ㄕˋ ㄊㄞˊ ㄅㄟˇ</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.9rem; font-weight: 700; color: #B45309; margin-top: 4px;">次は台北です</span>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.88rem; font-weight: 700; color: #B45309;">次は台北です</span>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="各位旅客台北站到了" style="background: #FFFBEB; border: 1px solid #FCD34D; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">各位旅客，台北站到了</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄍㄜˋ ㄨㄟˋ ㄌㄩˇ ㄎㄜˋ ， ㄊㄞˊ ㄅㄟˇ ㄓㄢˋ ㄉㄠˋ ㄌㄜ˙</span></div>
+        <div class="word-card play-word-sound" data-word="各位旅客台北站到了" style="background: #FFFBEB; border-color: #FCD34D;">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.2rem; font-weight: 900; white-space: nowrap;">各位旅客，台北站到了</span>
+              <span class="word-zhuyin" style="background: #FEF3C7; color: #B45309; white-space: nowrap;">ㄍㄜˋ ㄨㄟˋ ㄌㄩˇ ㄎㄜˋ ， ㄊㄞˊ ㄅㄟˇ ㄓㄢˋ ㄉㄠˋ ㄌㄜ˙</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.9rem; font-weight: 700; color: #B45309; margin-top: 4px;">皆様、台北駅に到着しました</span>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.88rem; font-weight: 700; color: #B45309;">皆様、台北駅に到着しました</span>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="準點" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">準點</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄓㄨㄣˇ ㄉㄧㄢˇ</span></div>
+        <div class="word-card play-word-sound" data-word="準點">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">準點</span>
+              <span class="word-zhuyin" style="background: #D1FAE5; color: #047857; white-space: nowrap;">ㄓㄨㄣˇ ㄉㄧㄢˇ</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.9rem; font-weight: 700; color: #059669; margin-top: 4px;">定刻通り (遅れなし)</span>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #059669;">定刻通り (遅れなし)</span>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
 
-        <div class="example-row play-word-sound" data-word="晚點" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 12px; cursor: pointer;">
-          <div class="example-left">
-            <span class="example-trad" style="font-size: 1.15rem; font-weight: 900; min-width: auto;">晚點</span>
-            <div class="example-phonetics"><span class="example-zhuyin">ㄨㄢˇ ㄉㄧㄢˇ</span></div>
+        <div class="word-card play-word-sound" data-word="晚點">
+          <div class="word-main">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="word-trad" style="font-size: 1.3rem; font-weight: 900; white-space: nowrap;">晚點</span>
+              <span class="word-zhuyin" style="background: #FEE2E2; color: #B91C1C; white-space: nowrap;">ㄨㄢˇ ㄉㄧㄢˇ</span>
+            </div>
+            <span class="word-meaning" style="font-size: 0.9rem; font-weight: 700; color: #DC2626; margin-top: 4px;">遅延 (例: 晚5分 = 5分遅れ)</span>
           </div>
-          <div class="example-right">
-            <span class="example-meaning" style="font-size: 0.85rem; font-weight: 700; color: #DC2626;">遅延 (例: 晚5分 = 5分遅れ)</span>
-          </div>
+          <div class="audio-icon-tag"><span>🔊 試聴</span></div>
         </div>
-
 
       </div>
     </div>
@@ -585,7 +599,7 @@
         </div>
         <div class="column-content" style="color: #92400E;">
           台湾鉄道の旅で絶対に外せないのが **「臺鐵便當（台鉄弁当）」**！<br>
-          特に一番人気は **「排骨便當（pái gǔ biàn dāng）」**。甘辛い醤油タレに漬け込んで揚げ焼きした大きな骨付き豚あばら肉がのったお弁当（70〜100TWD）です。<br>
+          特に一番人気は **「排骨便當（ㄆㄞˊ ㄍㄨˇ ㄅㄧㄢˋ ㄉㄤ）」**。甘辛い醤油タレに漬け込んで揚げ焼きした大きな骨付き豚あばら肉がのったお弁当（70〜100TWD）です。<br>
           台北駅構内の「臺鐵便當本鋪」や特急の車内販売で購入できます。旅のお供にぜひ試してみてください！
         </div>
       </div>
@@ -597,11 +611,12 @@
         </div>
         <div class="column-content" style="color: #075985;">
           台湾の駅のプラットホームや改札の電光掲示板には、運行状況が表示されています。<br>
-          ・**「準點 (zhǔn diǎn)」**: 定刻通り運行中<br>
-          ・**「晚 3 分 (wǎn 3 fēn)」**: 3分遅れて到着予定<br>
+          ・**「準點 (ㄓㄨㄣˇ ㄉㄧㄢˇ)」**: 定刻通り運行中<br>
+          ・**「晚 3 分 (ㄨㄢˇ 3 ㄈㄣ)」**: 3分遅れて到着予定<br>
           日本と違って数分の遅延はよく発生しますので、「晚○分」の表記をチェックしておくと安心です。
         </div>
       </div>
+
 
     </div>
 
