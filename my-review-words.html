@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⭐ 難しかった単語帳 (My復習ノート) | 台湾華語学習サイト</title>
+  <meta name="description" content="学習中に難しかった単語を記録・整理・音声復習できるMy復習ノート。">
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音符号一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          ← トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    
+    <!-- ページヘッダー -->
+    <div style="background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border: 1px solid #FCD34D; border-radius: var(--radius-lg); padding: 28px 24px; margin-bottom: 28px;">
+      <span style="background: #F59E0B; color: #FFFFFF; font-size: 0.82rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 8px;">
+        ⭐ MY REVIEW WORDS
+      </span>
+      <h1 style="font-size: 1.75rem; font-weight: 900; color: #78350F; margin-bottom: 8px;">
+        難しかった単語帳（My復習ノート）
+      </h1>
+      <p style="color: #92400E; font-size: 0.92rem; line-height: 1.5; margin: 0;">
+        学習中に気になった単語や難しかった表現を記録・復習できる自分専用の単語帳です。<br>
+        カードをタップすると台湾ネイティブ女性ボイス（Google 國語 / Meijia）で発音されます。
+      </p>
+    </div>
+
+    <!-- 単語カード一覧コンテナ -->
+    <div id="review-words-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+      
+      <!-- 静的フォールバック（Pure Static First 保証） -->
+      
+      <!-- 1. パスポート -->
+      <div class="review-word-card play-word-sound" data-word="護照">
+        <div class="review-card-header">
+          <span class="review-word-trad">護照</span>
+          <button class="bookmark-btn active" data-trad="護照" title="復習リストから削除">⭐</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+          <span class="review-word-zhuyin">ㄏㄨˋ ㄓㄠˋ</span>
+          <span class="review-word-pinyin">hùzhào</span>
+        </div>
+        <div class="review-word-meaning">パスポート</div>
+        <div class="review-word-example">
+          💬 例文: 我的護照在哪裡？<br>
+          <span style="font-size: 0.82rem; color: #64748B;">(私のパスポートはどこですか？)</span>
+        </div>
+        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
+          <span>🔊 音声を聞く</span>
+        </div>
+      </div>
+
+      <!-- 2. 最近 -->
+      <div class="review-word-card play-word-sound" data-word="最近">
+        <div class="review-card-header">
+          <span class="review-word-trad">最近</span>
+          <button class="bookmark-btn active" data-trad="最近" title="復習リストから削除">⭐</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+          <span class="review-word-zhuyin">ㄗㄨㄟˋ ㄐㄧㄣˋ</span>
+          <span class="review-word-pinyin">zuìjìn</span>
+        </div>
+        <div class="review-word-meaning">最近</div>
+        <div class="review-word-example">
+          💬 例文: 最近你好嗎？<br>
+          <span style="font-size: 0.82rem; color: #64748B;">(最近調子はどうですか？)</span>
+        </div>
+        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
+          <span>🔊 音声を聞く</span>
+        </div>
+      </div>
+
+      <!-- 3. MRT駅 -->
+      <div class="review-word-card play-word-sound" data-word="捷運站">
+        <div class="review-card-header">
+          <span class="review-word-trad">捷運站</span>
+          <button class="bookmark-btn active" data-trad="捷運站" title="復習リストから削除">⭐</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+          <span class="review-word-zhuyin">ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ</span>
+          <span class="review-word-pinyin">jiéyùnzhàn</span>
+        </div>
+        <div class="review-word-meaning">MRT駅 (地下鉄・都市鉄道の駅)</div>
+        <div class="review-word-example">
+          💬 例文: 捷運站在哪裡？<br>
+          <span style="font-size: 0.82rem; color: #64748B;">(MRTの駅はどこですか？)</span>
+        </div>
+        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
+          <span>🔊 音声を聞く</span>
+        </div>
+      </div>
+
+      <!-- 4. ゆっくりする / ごゆっくりどうぞ -->
+      <div class="review-word-card play-word-sound" data-word="慢用">
+        <div class="review-card-header">
+          <span class="review-word-trad">慢用</span>
+          <button class="bookmark-btn active" data-trad="慢用" title="復習リストから削除">⭐</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+          <span class="review-word-zhuyin">ㄇㄢˋ ㄩㄥˋ</span>
+          <span class="review-word-pinyin">mànyòng</span>
+        </div>
+        <div class="review-word-meaning">ゆっくりする / ごゆっくりどうぞ</div>
+        <div class="review-word-example">
+          💬 例文: 請慢用！<br>
+          <span style="font-size: 0.82rem; color: #64748B;">(ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！ 💡 のんびり街歩きは「漫遊 mànyóu」)</span>
+        </div>
+        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
+          <span>🔊 音声を聞く</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 補足コラム -->
+    <div class="callout-taiwan" style="margin-top: 36px;">
+      <div class="callout-taiwan-title">
+        <span>💡 台湾現地コラム: 「ゆっくりする」の表現の使い分け</span>
+      </div>
+      <div class="callout-taiwan-text">
+        台湾の日常会話や旅行で「ゆっくり〜」と伝える表現にはいくつかのパターンがあります：<br>
+        • <strong>慢用 (mànyòng)</strong>: 食事や飲み物を提供する際に「ごゆっくり召し上がれ」という意味でよく使われます。<br>
+        • <strong>漫遊 (mànyóu)</strong>: 台湾の街や観光地をのんびりブラブラ散策・散歩する際に使います（例: 台北漫遊）。<br>
+        • <strong>慢活 (mànhuó)</strong>: スローライフやのんびり生きるライフスタイルを意味します。
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer" style="border-top: 1px solid var(--color-border); padding: 32px 0; text-align: center; color: var(--color-text-muted); font-size: 0.88rem;">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト | 注音符号から学べる決定版</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+  <script>
+    // LocalStorageからの動的更新処理 (Pure Static First に加えて最新データを自動レンダリング)
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.ReviewManager) return;
+      
+      function renderReviewList() {
+        const words = ReviewManager.getWords();
+        const container = document.getElementById('review-words-container');
+        if (!container) return;
+
+        if (words.length === 0) {
+          container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: 12px; color: #64748B;">
+              <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">⭐ 登録された難しかった単語はありません</p>
+              <p style="font-size: 0.88rem;">各単語カードの「⭐」ボタンを押すと、ここに保存されていつでも音声付きで復習できます。</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = words.map(w => `
+          <div class="review-word-card play-word-sound" data-word="${w.traditional}">
+            <div class="review-card-header">
+              <span class="review-word-trad">${w.traditional}</span>
+              <button class="bookmark-btn active" data-trad="${w.traditional}" data-zhuyin="${w.zhuyin || ''}" data-pinyin="${w.pinyin || ''}" data-meaning="${w.meaning || ''}" data-example="${w.example || ''}" title="復習リストから削除">⭐</button>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+              <span class="review-word-zhuyin">${w.zhuyin || ''}</span>
+              <span class="review-word-pinyin">${w.pinyin || ''}</span>
+            </div>
+            <div class="review-word-meaning">${w.meaning || ''}</div>
+            ${w.example ? `
+              <div class="review-word-example">
+                💬 例文: ${w.example}
+              </div>
+            ` : ''}
+            <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
+              <span>🔊 音声を聞く</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 星ボタンが押された時の動的再レンダリング
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.bookmark-btn')) {
+          setTimeout(renderReviewList, 50);
+        }
+      });
+
+      renderReviewList();
+    });
+  </script>
+</body>
+</html>

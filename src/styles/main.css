@@ -948,3 +948,81 @@ body {
   font-size: 0.92rem;
   line-height: 1.6;
 }
+
+/* ==================== 難しかった単語 (ブックマーク) スタイル ==================== */
+.bookmark-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  line-height: 1;
+  opacity: 0.5;
+}
+.bookmark-btn:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.bookmark-btn.active {
+  opacity: 1;
+  color: #F59E0B;
+}
+
+.review-word-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.review-word-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08);
+  transform: translateY(-2px);
+}
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.review-word-trad {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-word-zhuyin {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+.review-word-pinyin {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.review-word-meaning {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+}
+.review-word-example {
+  background: #F8FAFC;
+  border-left: 3px solid var(--color-primary);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88rem;
+  color: #475569;
+  margin-top: 8px;
+}
+

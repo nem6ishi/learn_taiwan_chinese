@@ -178,6 +178,116 @@
 
   window.APP_VERSION = 'v1.1.0';
 
+  // ==================== 難しかった単語 (復習ノート) 管理モジュール ====================
+  const DEFAULT_REVIEW_WORDS = [
+    {
+      traditional: '護照',
+      zhuyin: 'ㄏㄨˋ ㄓㄠˋ',
+      pinyin: 'hùzhào',
+      meaning: 'パスポート',
+      example: '我的護照在哪裡？ (私のパスポートはどこですか？)'
+    },
+    {
+      traditional: '最近',
+      zhuyin: 'ㄗㄨㄟˋ ㄐㄧㄣˋ',
+      pinyin: 'zuìjìn',
+      meaning: '最近',
+      example: '最近你好嗎？ (最近調子はどうですか？)'
+    },
+    {
+      traditional: '捷運站',
+      zhuyin: 'ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ',
+      pinyin: 'jiéyùnzhàn',
+      meaning: 'MRT駅 (地下鉄・都市鉄道の駅)',
+      example: '捷運站在哪裡？ (MRTの駅はどこですか？)'
+    },
+    {
+      traditional: '慢用',
+      zhuyin: 'ㄇㄢˋ ㄩㄥˋ',
+      pinyin: 'mànyòng',
+      meaning: 'ゆっくりする / ごゆっくりどうぞ',
+      example: '請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！ 💡 のんびり街歩きは「漫遊 mànyóu」)'
+    }
+  ];
+
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v1';
+
+  const ReviewManager = {
+    getWords: function() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_REVIEW_WORDS));
+          return DEFAULT_REVIEW_WORDS;
+        }
+        return JSON.parse(raw);
+      } catch (e) {
+        return DEFAULT_REVIEW_WORDS;
+      }
+    },
+
+    saveWords: function(words) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(words));
+      } catch (e) {}
+    },
+
+    isReviewWord: function(trad) {
+      const words = this.getWords();
+      return words.some(w => w.traditional === trad);
+    },
+
+    toggleWord: function(wordObj) {
+      let words = this.getWords();
+      const index = words.findIndex(w => w.traditional === wordObj.traditional);
+      let isAdded = false;
+      if (index >= 0) {
+        words.splice(index, 1);
+        isAdded = false;
+      } else {
+        words.unshift(wordObj);
+        isAdded = true;
+      }
+      this.saveWords(words);
+      return isAdded;
+    },
+
+    removeWord: function(trad) {
+      let words = this.getWords();
+      words = words.filter(w => w.traditional !== trad);
+      this.saveWords(words);
+    }
+  };
+
+  window.ReviewManager = ReviewManager;
+
+  // ブックマークボタンの自動クリックバインド
+  if (typeof document !== 'undefined') {
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.bookmark-btn');
+      if (btn) {
+        e.stopPropagation();
+        const trad = btn.getAttribute('data-trad');
+        const zhuyin = btn.getAttribute('data-zhuyin') || '';
+        const pinyin = btn.getAttribute('data-pinyin') || '';
+        const meaning = btn.getAttribute('data-meaning') || '';
+        const example = btn.getAttribute('data-example') || '';
+
+        if (trad) {
+          const isAdded = ReviewManager.toggleWord({
+            traditional: trad,
+            zhuyin: zhuyin,
+            pinyin: pinyin,
+            meaning: meaning,
+            example: example
+          });
+          btn.classList.toggle('active', isAdded);
+          btn.textContent = isAdded ? '⭐' : '☆';
+        }
+      }
+    });
+  }
+
   // 画面フッターの端にバージョン表記 (v1.1.0) を自動描画
   function renderVersionBadge() {
     if (typeof document === 'undefined') return;
@@ -199,3 +309,4 @@
   }
 
 })(window);
+
