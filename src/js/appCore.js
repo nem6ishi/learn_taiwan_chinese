@@ -181,36 +181,40 @@
   // ==================== 難しかった単語 (復習ノート) 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
-      traditional: '護照',
-      zhuyin: 'ㄏㄨˋ ㄓㄠˋ',
-      pinyin: 'hùzhào',
-      meaning: 'パスポート',
-      example: '我的護照在哪裡？ (私のパスポートはどこですか？)'
-    },
-    {
-      traditional: '最近',
-      zhuyin: 'ㄗㄨㄟˋ ㄐㄧㄣˋ',
-      pinyin: 'zuìjìn',
-      meaning: '最近',
-      example: '最近你好嗎？ (最近調子はどうですか？)'
+      traditional: '慢用',
+      zhuyin: 'ㄇㄢˋ ㄩㄥˋ',
+      pinyin: 'mànyòng',
+      meaning: 'ゆっくりする / ごゆっくりどうぞ',
+      example: '請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！ 💡 のんびり街歩きは「漫遊 mànyóu」)',
+      createdAt: 1700000004000
     },
     {
       traditional: '捷運站',
       zhuyin: 'ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ',
       pinyin: 'jiéyùnzhàn',
       meaning: 'MRT駅 (地下鉄・都市鉄道の駅)',
-      example: '捷運站在哪裡？ (MRTの駅はどこですか？)'
+      example: '捷運站在哪裡？ (MRTの駅はどこですか？)',
+      createdAt: 1700000003000
     },
     {
-      traditional: '慢用',
-      zhuyin: 'ㄇㄢˋ ㄩㄥˋ',
-      pinyin: 'mànyòng',
-      meaning: 'ゆっくりする / ごゆっくりどうぞ',
-      example: '請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！ 💡 のんびり街歩きは「漫遊 mànyóu」)'
+      traditional: '最近',
+      zhuyin: 'ㄗㄨㄟˋ ㄐㄧㄣˋ',
+      pinyin: 'zuìjìn',
+      meaning: '最近',
+      example: '最近你好嗎？ (最近調子はどうですか？)',
+      createdAt: 1700000002000
+    },
+    {
+      traditional: '護照',
+      zhuyin: 'ㄏㄨˋ ㄓㄠˋ',
+      pinyin: 'hùzhào',
+      meaning: 'パスポート',
+      example: '我的護照在哪裡？ (私のパスポートはどこですか？)',
+      createdAt: 1700000001000
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v1';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v2';
 
   const ReviewManager = {
     getWords: function() {
@@ -220,7 +224,10 @@
           localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_REVIEW_WORDS));
           return DEFAULT_REVIEW_WORDS;
         }
-        return JSON.parse(raw);
+        let words = JSON.parse(raw);
+        // 新しいものが上（先頭）、古いものが下（末尾）になるよう降順ソート
+        words.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        return words;
       } catch (e) {
         return DEFAULT_REVIEW_WORDS;
       }
@@ -245,6 +252,7 @@
         words.splice(index, 1);
         isAdded = false;
       } else {
+        wordObj.createdAt = Date.now(); // 登録日時（新しいものが上）
         words.unshift(wordObj);
         isAdded = true;
       }
