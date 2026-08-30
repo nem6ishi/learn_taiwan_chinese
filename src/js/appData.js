@@ -1135,3 +1135,23 @@ window.VOWELS_QUIZ_QUESTIONS_3_4 = [
   }
 ];
 
+// ==================== STEP 6-1: 嘉義編（名物・観光・土地の特徴・豆知識）確認クイズ (全10問) ====================
+window.VOWELS_QUIZ_QUESTIONS_6_1 = [
+  { id: 1, type: "audio", targetSymbol: "火雞肉飯", speechTarget: "火雞肉飯", prompt: "再生された嘉義発祥の看板ソウルフード「七面鳥肉ご飯」はどれ？", options: ["火雞肉飯", "滷肉飯", "雞腿飯", "排骨飯"] },
+  { id: 2, type: "audio", targetSymbol: "阿里山", speechTarget: "阿里山", prompt: "再生されたご来光や神木・森林鉄道で有名な嘉義の名勝地はどれ？", options: ["阿里山", "陽明山", "玉山", "日月潭"] },
+  { id: 3, type: "zhuyin-to-word", targetSymbol: "魚頭の土鍋煮込み (嘉義名物)", speechTarget: "砂鍋魚頭", prompt: "注音「ㄕㄚ ㄍㄨㄛ ㄩˊ ㄊㄡˊ (砂鍋魚頭)」に対応する嘉義グルメはどれ？", options: ["魚頭の土鍋煮込み (嘉義名物)", "七面鳥肉ご飯", "スクエアパイ菓子", "豆乳豆花"] },
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "北回帰線 (亜熱帯と熱帯の境界線)", speechTarget: "北回歸線", prompt: "嘉義を通る地理用語「ㄅㄟˇ ㄏㄨㄟˊ ㄍㄨㄟ ㄒㄧㄢˋ (北回歸線)」の意味はどれ？", options: ["北回帰線 (亜熱帯と熱帯の境界線)", "赤道", "南回帰線", "経度ゼロ度線"] },
+  { id: 5, type: "fill-in-blank", targetSymbol: "火雞肉飯", speechTarget: "我要一碗火雞肉飯", prompt: "嘉義の食堂で「火雞肉飯を一杯ください (我要一碗 ___ )」の空欄に入る単語はどれ？", options: ["火雞肉飯", "牛肉麵", "小籠包", "大腸包小腸"] },
+  { id: 6, type: "fill-in-blank", targetSymbol: "豆漿", speechTarget: "這碗豆花要加豆漿還是糖水", prompt: "「この豆花は豆乳にしますか？ (這碗豆花要加 ___ 還是糖水？)」の空欄に入る嘉義独特の割り材はどれ？", options: ["豆漿", "牛奶", "紅茶", "黑糖"] },
+  { id: 7, type: "audio", targetSymbol: "檜意森活村", speechTarget: "檜意森活村", prompt: "再生されたヒノキ木造家屋群が立ち並ぶ嘉義の観光名所はどれ？", options: ["檜意森活村", "故宮南院", "文化路夜市", "森林之歌"] },
+  { id: 8, type: "zhuyin-to-word", targetSymbol: "方塊酥 (サクサクのパイ菓子)", speechTarget: "方塊酥", prompt: "嘉義を代表する有名なお土産菓子「ㄈㄤ ㄎㄨㄞˋ ㄙㄨ (方塊酥)」はどれ？", options: ["方塊酥 (サクサクのパイ菓子)", "太陽餅", "鳳梨酥", "牛軋糖"] },
+  { id: 9, type: "fill-in-blank", targetSymbol: "木都", speechTarget: "嘉義又被稱為木都", prompt: "嘉義はかつて阿里山ヒノキの集積地として栄え、「___ (木材の都)」と呼ばれています", options: ["木都", "水都", "花都", "茶都"] },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄚ ㄌㄧˇ ㄕㄢ", speechTarget: "阿里山",
+    optionSpeechMap: { "ㄚ ㄌㄧˇ ㄕㄢ": "阿里山", "ㄧㄤˊ ㄇㄧㄥˊ ㄕㄢ": "陽明山", "ㄩˋ ㄕㄢ": "玉山", "ㄖˋ ㄩㄝˋ ㄊㄢˊ": "日月潭" },
+    prompt: "「阿里山」の正しい注音表記はどれ？", options: ["ㄚ ㄌㄧˇ ㄕㄢ", "ㄧㄤˊ ㄇㄧㄥˊ ㄕㄢ", "ㄩˋ ㄕㄢ", "ㄖˋ ㄩㄝˋ ㄊㄢˊ"]
+  }
+];
+
+
+

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP 6-1: 🌲 嘉義編（Chiayi）- 阿里山・火雞肉飯・名物名所＆実践会話 | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾華語 STEP 6-1: 嘉義（Chiayi）の土地の特徴（北回帰線、木都）、名物グルメ（火雞肉飯、砂鍋魚頭、豆漿豆花）、観光名所（阿里山、森林鉄道、檜意森活村）、歴史豆知識（KANO聖地）、現地実践会話をマスター。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    /* 会話チャット吹出しスタイル */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .chat-bubble-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      max-width: 90%;
+    }
+    .chat-bubble-row.clerk {
+      align-self: flex-start;
+    }
+    .chat-bubble-row.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .avatar-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .avatar-clerk {
+      background: #E0F2FE;
+      color: #0369A1;
+      border: 2px solid #BAE6FD;
+    }
+    .avatar-user {
+      background: #FEF3C7;
+      color: #B45309;
+      border: 2px solid #FDE68A;
+    }
+    
+    .chat-bubble-card {
+      background: var(--color-bg-subtle);
+      border: 1.5px solid var(--color-border);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-bubble-row.clerk .chat-bubble-card {
+      border-top-left-radius: 4px;
+    }
+    .chat-bubble-row.user .chat-bubble-card {
+      border-top-right-radius: 4px;
+      background: #FFFBEB;
+      border-color: #FCD34D;
+    }
+
+    .main-speech-box {
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 4px 6px;
+      transition: all 0.2s ease-in-out;
+      user-select: none;
+    }
+    .main-speech-box:hover {
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .audio-tap-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      background: #EFF6FF;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .user .audio-tap-hint {
+      color: #D97706;
+      background: #FEF3C7;
+    }
+
+    .column-box {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+    .column-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .column-content {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <a href="my-review-words.html" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.85rem; background: #F59E0B; border-color: #D97706;">
+          ⭐ 復習ノート
+        </a>
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          ← トップ一覧へ
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    
+    <!-- ページヘッダー -->
+    <div style="background: linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%); border: 1px solid #A7F3D0; border-radius: var(--radius-lg); padding: 28px 24px; margin-bottom: 28px;">
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+        <span style="background: #10B981; color: #FFFFFF; font-size: 0.82rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; display: inline-block;">
+          CATEGORY 6: 台湾各地の名物・観光マスター
+        </span>
+        <span style="background: #D1FAE5; color: #065F46; font-size: 0.82rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">
+          STEP 6-1
+        </span>
+      </div>
+      <h1 style="font-size: 1.85rem; font-weight: 900; color: #064E3B; margin-bottom: 10px;">
+        🌲 嘉義編（Chiayi / ㄐㄧㄚ ㄧˋ）<br>
+        <span style="font-size: 1.25rem; font-weight: 700; color: #047857;">阿里山・火雞肉飯・木都の歴史 ＆ 現地実践会話</span>
+      </h1>
+      <p style="color: #065F46; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+        台湾南西部に位置する「嘉義（かぎ）」。世界的に有名な景勝地・阿里山への玄関口であり、ジューシーな火雞肉飯やヒノキの香る歴史的街並みが魅力です。<br>
+        土地の特徴・名物グルメ・観光スポット・歴史豆知識・現地での会話表現をマスターしましょう！
+      </p>
+      <div style="margin-top: 16px;">
+        <button class="btn btn-primary" id="start-quiz-top-btn" style="padding: 8px 20px; font-size: 0.9rem; background: #059669; border-color: #047857;">
+          🏆 嘉義編クイズに挑戦 (全10問)
+        </button>
+      </div>
+    </div>
+
+    <!-- クイズ設定DOM要素 (Viteビルド規約準拠) -->
+    <div id="step-config" style="display: none;"
+      data-quiz-key="VOWELS_QUIZ_QUESTIONS_6_1"
+      data-step-title="STEP 6-1: 嘉義編（名物・観光・土地の特徴・豆知識）"
+      data-next-step="index.html">
+    </div>
+
+    <!-- ==================== セクション 1: 🗺️ 嘉義の「土地の特徴 ＆ 地理キーワード」 ==================== -->
+    <h2 class="word-section-title" style="margin-top: 32px;">
+      <span>🗺️ ① 嘉義の「土地の特徴 ＆ 地理キーワード」</span>
+    </h2>
+    <p style="color: var(--color-text-muted); font-size: 0.88rem; margin-bottom: 16px;">
+      カードをタップすると台湾ネイティブ女性ボイスで音声が再生されます。「⭐」を押すと復習ノートへ保存できます。
+    </p>
+
+    <div class="word-grid">
+      
+      <!-- 北回歸線 -->
+      <div class="word-card play-word-sound" data-word="北回歸線">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">北回歸線</span>
+            <button class="bookmark-btn" data-trad="北回歸線" data-zhuyin="ㄅㄟˇ ㄏㄨㄟˊ ㄍㄨㄟ ㄒㄧㄢˋ" data-pinyin="běihuíguīxiàn" data-meaning="北回帰線 (北緯23.5度・亜熱帯と熱帯の境界)" data-example="嘉義水上鄉有北回歸線紀念碑。 (嘉義の水上郷には北回帰線の記念碑があります)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄅㄟˇ ㄏㄨㄟˊ ㄍㄨㄟ ㄒㄧㄢˋ</span>
+            <span class="word-pinyin">běihuíguīxiàn</span>
+          </div>
+          <span class="word-meaning">北回帰線（北緯23.5度。亜熱帯と熱帯の境目が嘉義を通る）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 嘉南平原 -->
+      <div class="word-card play-word-sound" data-word="嘉南平原">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">嘉南平原</span>
+            <button class="bookmark-btn" data-trad="嘉南平原" data-zhuyin="ㄐㄧㄚ ㄋㄢˊ ㄆㄧㄥˊ ㄩㄢˊ" data-pinyin="jiānán píngyuán" data-meaning="嘉南平野 (台湾最大の穀倉地帯)" data-example="嘉義位於嘉南平原，稻米水果豐富。 (嘉義は嘉南平野に位置し、米や果物が豊富です)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄐㄧㄚ ㄋㄢˊ ㄆㄧㄥˊ ㄩㄢˊ</span>
+            <span class="word-pinyin">jiānán píngyuán</span>
+          </div>
+          <span class="word-meaning">嘉南平野（台湾最大の穀倉地帯・農業の中心地）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 木都 -->
+      <div class="word-card play-word-sound" data-word="木都">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">木都</span>
+            <button class="bookmark-btn" data-trad="木都" data-zhuyin="ㄇㄨˋ ㄉㄨ" data-pinyin="mùdū" data-meaning="木材の都 (ヒノキ産業で栄えた嘉義の愛称)" data-example="嘉義因阿里山木材產業被稱為「木都」。 (嘉義は阿里山の木材産業から「木都」と呼ばれます)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄇㄨˋ ㄉㄨ</span>
+            <span class="word-pinyin">mùdū</span>
+          </div>
+          <span class="word-meaning">木材の都（ヒノキ産業の中心地として栄えた嘉義の愛称）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 高山茶 -->
+      <div class="word-card play-word-sound" data-word="高山茶">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">高山茶</span>
+            <button class="bookmark-btn" data-trad="高山茶" data-zhuyin="ㄍㄠ ㄕㄢ ㄔㄚˊ" data-pinyin="gāoshānchá" data-meaning="高山茶 (阿里山で育つ最高峰の台湾烏龍茶)" data-example="阿里山高山茶香氣甘醇！ (阿里山の高山茶は香りが豊かでまろやかです！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄍㄠ ㄕㄢ ㄔㄚˊ</span>
+            <span class="word-pinyin">gāoshānchá</span>
+          </div>
+          <span class="word-meaning">高山茶（標高1,000m以上の阿里山で育つ最高級烏龍茶）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+    </div>
+
+    <!-- ==================== セクション 2: 🍲 嘉義必食！名物グルメ ==================== -->
+    <h2 class="word-section-title" style="margin-top: 36px;">
+      <span>🍲 ② 嘉義必食！名物グルメ（名產美食）</span>
+    </h2>
+
+    <div class="word-grid">
+      
+      <!-- 火雞肉飯 -->
+      <div class="word-card play-word-sound" data-word="火雞肉飯">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">火雞肉飯</span>
+            <button class="bookmark-btn" data-trad="火雞肉飯" data-zhuyin="ㄏㄨㄛˇ ㄐㄧ ㄖㄡˋ ㄈㄢˋ" data-pinyin="huǒjīròufàn" data-meaning="七面鳥肉ご飯 (嘉義の看板ソウルフード)" data-example="來嘉義一定要吃火雞肉飯！ (嘉義に来たら絶対に火雞肉飯を食べなきゃ！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄏㄨㄛˇ ㄐㄧ ㄖㄡˋ ㄈㄢˋ</span>
+            <span class="word-pinyin">huǒjīròufàn</span>
+          </div>
+          <span class="word-meaning">七面鳥肉ご飯（ジューシーな鶏油と甘辛タレが絶品）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 砂鍋魚頭 -->
+      <div class="word-card play-word-sound" data-word="砂鍋魚頭">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">砂鍋魚頭</span>
+            <button class="bookmark-btn" data-trad="砂鍋魚頭" data-zhuyin="ㄕㄚ ㄍㄨㄛ ㄩˊ ㄊㄡˊ" data-pinyin="shāguō yútóu" data-meaning="魚頭の土鍋煮込み (嘉義の超有名大鍋料理)" data-example="文化路夜市的林聰明砂鍋魚頭超有名！ (文化路夜市の林聰明砂鍋魚頭は超有名です！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄕㄚ ㄍㄨㄛ ㄩˊ ㄊㄡˊ</span>
+            <span class="word-pinyin">shāguō yútóu</span>
+          </div>
+          <span class="word-meaning">魚頭の土鍋煮込み（沙茶醤・白菜・豆腐の濃厚スープ）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 豆漿豆花 -->
+      <div class="word-card play-word-sound" data-word="豆漿豆花">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">豆漿豆花</span>
+            <button class="bookmark-btn" data-trad="豆漿豆花" data-zhuyin="ㄉㄡˋ ㄐㄧㄤ ㄉㄡˋ ㄏㄨㄚ" data-pinyin="dòujiāng dòuhuā" data-meaning="豆乳がけ豆花 (シロップではなく豆乳を注ぐ嘉義流)" data-example="嘉義的豆花都是加豆漿的喔！ (嘉義の豆花はみんな豆乳を入れるんだよ！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄉㄡˋ ㄐㄧㄤ ㄉㄡˋ ㄏㄨㄚ</span>
+            <span class="word-pinyin">dòujiāng dòuhuā</span>
+          </div>
+          <span class="word-meaning">豆乳がけ豆花（シロップではなく濃厚豆乳を注ぐ嘉義流）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 方塊酥 -->
+      <div class="word-card play-word-sound" data-word="方塊酥">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">方塊酥</span>
+            <button class="bookmark-btn" data-trad="方塊酥" data-zhuyin="ㄈㄤ ㄎㄨㄞˋ ㄙㄨ" data-pinyin="fāngkuàisū" data-meaning="スクエアパイ菓子 (嘉義を代表する定番銘菓土産)" data-example="我想買幾盒方塊酥當伴手禮。 (お土産に方塊酥を何箱か買いたいです)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄈㄤ ㄎㄨㄞˋ ㄙㄨ</span>
+            <span class="word-pinyin">fāngkuàisū</span>
+          </div>
+          <span class="word-meaning">スクエアパイ菓子（サクサク香ばしい嘉義の定番お土産）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 葡萄柚綠茶 -->
+      <div class="word-card play-word-sound" data-word="葡萄柚綠茶">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">葡萄柚綠茶</span>
+            <button class="bookmark-btn" data-trad="葡萄柚綠茶" data-zhuyin="ㄆㄨˊ ㄊㄠˊ ㄧㄡˋ ㄌㄩˋ ㄔㄚˊ" data-pinyin="pútáoyòu lǜchá" data-meaning="生搾りグレープフルーツ緑茶 (嘉義名物ドリンク)" data-example="御香屋的葡萄柚綠茶要加話梅！ (御香屋のグレープフルーツ緑茶には干し梅を入れるのが最高！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄆㄨˊ ㄊㄠˊ ㄧㄡˋ ㄌㄩˋ ㄔㄚˊ</span>
+            <span class="word-pinyin">pútáoyòu lǜchá</span>
+          </div>
+          <span class="word-meaning">生搾りグレープフルーツ緑茶（果肉たっぷり・干し梅入り）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+    </div>
+
+    <!-- ==================== セクション 3: 🌲 嘉義必訪！観光名所 ==================== -->
+    <h2 class="word-section-title" style="margin-top: 36px;">
+      <span>🌲 ③ 嘉義必訪！観光名所（著名景點）</span>
+    </h2>
+
+    <div class="word-grid">
+      
+      <!-- 阿里山 -->
+      <div class="word-card play-word-sound" data-word="阿里山">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">阿里山</span>
+            <button class="bookmark-btn" data-trad="阿里山" data-zhuyin="ㄚ ㄌㄧˇ ㄕㄢ" data-pinyin="ālǐshān" data-meaning="阿里山 (日の出・神木・雲海で名高い台湾屈指の景勝地)" data-example="我們明天清晨去看阿里山日出！ (明日の早朝、阿里山のご来光を見に行こう！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄚ ㄌㄧˇ ㄕㄢ</span>
+            <span class="word-pinyin">ālǐshān</span>
+          </div>
+          <span class="word-meaning">阿里山（ご来光・神木・雲海・日の出で名高い国立景勝地）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 阿里山林業鐵路 -->
+      <div class="word-card play-word-sound" data-word="阿里山林業鐵路">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">阿里山林業鐵路</span>
+            <button class="bookmark-btn" data-trad="阿里山林業鐵路" data-zhuyin="ㄚ ㄌㄧˇ ㄕㄢ ㄌㄧㄣˊ ㄧㄝˋ ㄊㄧㄝˇ ㄌㄨˋ" data-pinyin="ālǐshān línyè tiělù" data-meaning="阿里山森林鉄道 (世界三大登山鉄道の一つ)" data-example="搭乘阿里山森鐵小火車上山。 (阿里山森林鉄道のトロッコ列車に乗って山へ登ります)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄚ ㄌㄧˇ ㄕㄢ ㄌㄧㄣˊ ㄧㄝˋ ㄊㄧㄝˇ ㄌㄨˋ</span>
+            <span class="word-pinyin">ālǐshān línyè tiělù</span>
+          </div>
+          <span class="word-meaning">阿里山森林鉄道（世界屈指の山岳登山鉄道・愛称「森鐵」）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 檜意森活村 -->
+      <div class="word-card play-word-sound" data-word="檜意森活村">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">檜意森活村</span>
+            <button class="bookmark-btn" data-trad="檜意森活村" data-zhuyin="ㄏㄨㄟˋ ㄧˋ ㄙㄣ ㄏㄨㄛˊ ㄘㄨㄣ" data-pinyin="guìyì sēnhuó cūn" data-meaning="ヒノキ村 (日本家屋群が並ぶリノベ観光スポット)" data-example="檜意森活村保留了很多日式木造建築。 (檜意森活村には多くの日本式木造建築が残っています)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄏㄨㄟˋ ㄧˋ ㄙㄣ ㄏㄨㄛˊ ㄘㄨㄣ</span>
+            <span class="word-pinyin">guìyì sēnhuó cūn</span>
+          </div>
+          <span class="word-meaning">ヒノキ村（旧営林署の日本式木造宿舎群が並ぶ人気名所）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 文化路夜市 -->
+      <div class="word-card play-word-sound" data-word="文化路夜市">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">文化路夜市</span>
+            <button class="bookmark-btn" data-trad="文化路夜市" data-zhuyin="ㄨㄣˊ ㄏㄨㄚˋ ㄌㄨˋ ㄧㄝˋ ㄕˋ" data-pinyin="wénhuà lù yèshì" data-meaning="文化路夜市 (嘉義中心街の巨大グルメ夜市)" data-example="晚上一起去逛文化路夜市吧！ (夜は一緒に文化路夜市を食べ歩きに行こう！)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄨㄣˊ ㄏㄨㄚˋ ㄌㄨˋ ㄧㄝˋ ㄕˋ</span>
+            <span class="word-pinyin">wénhuà lù yèshì</span>
+          </div>
+          <span class="word-meaning">文化路夜市（中央噴水池から南へ伸びる嘉義随一の夜市）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+      <!-- 故宮南院 -->
+      <div class="word-card play-word-sound" data-word="故宮南院">
+        <div class="word-main">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="word-trad">故宮南院</span>
+            <button class="bookmark-btn" data-trad="故宮南院" data-zhuyin="ㄍㄨˋ ㄍㄨㄥ ㄋㄢˊ ㄩㄢˋ" data-pinyin="gùgōng nányuàn" data-meaning="故宮南院 (国立故宮博物院 南部院区)" data-example="故宮南院建築非常壯觀美麗。 (故宮南院の建築は非常に壮大で美しいです)">☆</button>
+          </div>
+          <div class="word-phonetics">
+            <span class="word-zhuyin">ㄍㄨˋ ㄍㄨㄥ ㄋㄢˊ ㄩㄢˋ</span>
+            <span class="word-pinyin">gùgōng nányuàn</span>
+          </div>
+          <span class="word-meaning">故宮南院（国立故宮博物院 南部院区・アジア芸術の殿堂）</span>
+        </div>
+        <div class="audio-icon-tag"><span>🔊</span></div>
+      </div>
+
+    </div>
+
+    <!-- ==================== セクション 4: 💬 嘉義を旅するリアル実践会話 ==================== -->
+    <h2 class="word-section-title" style="margin-top: 36px;">
+      <span>💬 ④ 嘉義を旅するリアル実践会話</span>
+    </h2>
+
+    <div class="chat-container">
+      
+      <!-- 会話 1: 火雞肉飯の注文 -->
+      <div class="chat-bubble-row user">
+        <div class="avatar-badge avatar-user">私</div>
+        <div class="chat-bubble-card">
+          <div class="main-speech-box play-word-sound" data-word="老闆，我要一碗火雞肉飯！">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #78350F;">老闆，我要一碗火雞肉飯！</div>
+            <div style="font-size: 0.85rem; color: #B45309; margin-top: 2px;">ㄌㄠˇ ㄅㄢˇ ， ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄨㄢˇ ㄏㄨㄛˇ ㄐㄧ ㄖㄡˋ ㄈㄢˋ ！</div>
+            <div style="font-size: 0.82rem; color: #92400E; margin-top: 4px;">店長、火雞肉飯を一杯ください！</div>
+            <div style="margin-top: 6px;"><span class="audio-tap-hint">🔊 タップして発声を聞く</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-bubble-row clerk">
+        <div class="avatar-badge avatar-clerk">店員</div>
+        <div class="chat-bubble-card">
+          <div class="main-speech-box play-word-sound" data-word="好，內用還是外帶？要不要加一顆滷蛋？">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #0369A1;">好，內用還是外帶？要不要加一顆滷蛋？</div>
+            <div style="font-size: 0.85rem; color: #0284C7; margin-top: 2px;">ㄏㄠˇ ， ㄋㄟˋ ㄩㄥˋ ㄏㄞˊ ㄕˋ ㄨㄞˋ ㄉㄞˋ ？ ㄧㄠˋ ㄅㄨˊ ㄧㄠˋ ㄐㄧㄚ ㄧˋ ㄎㄜ ㄌㄨˇ ㄉㄢˋ ？</div>
+            <div style="font-size: 0.82rem; color: #475569; margin-top: 4px;">はい、店内飲食ですか？テイクアウトですか？煮卵を1つ追加しますか？</div>
+            <div style="margin-top: 6px;"><span class="audio-tap-hint">🔊 タップして発声を聞く</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 会話 2: 豆花で豆乳を指定 -->
+      <div class="chat-bubble-row clerk">
+        <div class="avatar-badge avatar-clerk">店員</div>
+        <div class="chat-bubble-card">
+          <div class="main-speech-box play-word-sound" data-word="請問這碗豆花要加豆漿還是糖水？">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #0369A1;">請問這碗豆花要加豆漿還是糖水？</div>
+            <div style="font-size: 0.85rem; color: #0284C7; margin-top: 2px;">ㄑㄧㄥˇ ㄨㄣˋ ㄓㄜˋ ㄨㄢˇ ㄉㄡˋ ㄏㄨㄚ ㄧㄠˋ ㄐㄧㄚ ㄉㄡˋ ㄐㄧㄤ ㄏㄞˊ ㄕˋ ㄊㄤˊ ㄕㄨㄟˇ ？</div>
+            <div style="font-size: 0.82rem; color: #475569; margin-top: 4px;">この豆花は豆乳にしますか？それともシロップにしますか？</div>
+            <div style="margin-top: 6px;"><span class="audio-tap-hint">🔊 タップして発声を聞く</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-bubble-row user">
+        <div class="avatar-badge avatar-user">私</div>
+        <div class="chat-bubble-card">
+          <div class="main-speech-box play-word-sound" data-word="請幫我加無糖豆漿，謝謝！">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #78350F;">請幫我加無糖豆漿，謝謝！</div>
+            <div style="font-size: 0.85rem; color: #B45309; margin-top: 2px;">ㄑㄧㄥˇ ㄅㄤ ㄨㄛˇ ㄐㄧㄚ ㄨˊ ㄊㄤˊ ㄉㄡˋ ㄐㄧㄤ ， ㄒㄧㄝˋ ㄒㄧㄝ˙ ！</div>
+            <div style="font-size: 0.82rem; color: #92400E; margin-top: 4px;">無糖の豆乳を入れてください、ありがとうございます！</div>
+            <div style="margin-top: 6px;"><span class="audio-tap-hint">🔊 タップして発声を聞く</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 会話 3: 阿里山森林鉄道の切符購入窓口 -->
+      <div class="chat-bubble-row user">
+        <div class="avatar-badge avatar-user">私</div>
+        <div class="chat-bubble-card">
+          <div class="main-speech-box play-word-sound" data-word="請問去阿里山的森鐵車票在哪裡買？">
+            <div style="font-size: 1.15rem; font-weight: 800; color: #78350F;">請問去阿里山的森鐵車票在哪裡買？</div>
+            <div style="font-size: 0.85rem; color: #B45309; margin-top: 2px;">ㄑㄧㄥˇ ㄨㄣˋ ㄑㄩˋ ㄚ ㄌㄧˇ ㄕㄢ ˙ㄉㄜ ㄙㄣ ㄊㄧㄝˇ ㄔㄜ ㄆㄧㄠˋ ㄗㄞˋ ㄋㄚˇ ㄌㄧˇ ㄇㄞˇ ？</div>
+            <div style="font-size: 0.82rem; color: #92400E; margin-top: 4px;">すみません、阿里山行きの森林鉄道の切符はどこで買えますか？</div>
+            <div style="margin-top: 6px;"><span class="audio-tap-hint">🔊 タップして発声を聞く</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== セクション 5: 💡 嘉義の歴史・カルチャー深掘り豆知識コラム ==================== -->
+    <h2 class="word-section-title" style="margin-top: 40px;">
+      <span>💡 ⑤ 嘉義の土地の特徴 ＆ 歴史カルチャー豆知識コラム</span>
+    </h2>
+
+    <!-- コラム 1 -->
+    <div class="column-box" style="background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%); border-color: #BFDBFE;">
+      <div class="column-title" style="color: #1E40AF;">
+        🌍 ① 北緯23.5度の境界！「北回帰線の街・嘉義」
+      </div>
+      <div class="column-content" style="color: #1E3A8A;">
+        嘉義県の水上郷には、1908年に世界で初めて設置された「北回帰線標線塔」があります。<br>
+        地球上の北回帰線（北緯23.5度）がちょうど嘉義を通っており、この線を境に**北は「亜熱帯」、南は「熱帯」**へと気候が切り替わります！水上郷の「北回歸線太陽館」では天文や地理の不思議を体験できます。
+      </div>
+    </div>
+
+    <!-- コラム 2 -->
+    <div class="column-box" style="background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%); border-color: #FCD34D;">
+      <div class="column-title" style="color: #92400E;">
+        🦃 ② なぜ普通の鶏肉ではなく「火雞（七面鳥）」なのか？
+      </div>
+      <div class="column-content" style="color: #78350F;">
+        戦後、嘉義に駐留していた米軍将校がアメリカから七面鳥（火雞）を持ち込み、嘉義で飼育されるようになりました。<br>
+        普通の鶏肉よりも体が大きく、肉質が柔らかく脂乗りが抜群だったため、細切りにして鶏油（チーヨウ）とエシャロットの特製タレをかけた「火雞肉飯」が嘉義で爆発的な人気を博し、今や街中に何十軒もの専門店が競い合うソウルフードとなりました。
+      </div>
+    </div>
+
+    <!-- コラム 3 -->
+    <div class="column-box" style="background: linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%); border-color: #A7F3D0;">
+      <div class="column-title" style="color: #065F46;">
+        ⚾ ③ 台湾野球の聖地！映画『KANO』と中央噴水池
+      </div>
+      <div class="column-content" style="color: #064E3B;">
+        1931年、夏の甲子園で準優勝を果たし、日本と台湾に旋風を巻き起こした「嘉義農林学校（KANO）野球部」。<br>
+        日本人・台湾原住民・漢民族の混成チームが起こした奇跡の舞台が嘉義です。嘉義駅前や市中心部の「中央噴水池（ロータリー）」には、エースピッチャー・呉明捷投手の躍動感あふれるブロンズ像が今も誇らしく街を見守っています。
+      </div>
+    </div>
+
+    <!-- コラム 4 -->
+    <div class="column-box" style="background: linear-gradient(135deg, #FDF4FF 0%, #FAF5FF 100%); border-color: #E879F9;">
+      <div class="column-title" style="color: #86198F;">
+        🪵 ④ ヒノキが香る「木都（Mùdū）」と檜意森活村
+      </div>
+      <div class="column-content" style="color: #701A75;">
+        日本統治時代、阿里山で良質なヒノキ（紅檜・タイワンベニヒ）が発見され、木材を運ぶために「阿里山森林鉄道」が敷設されました。<br>
+        山から運ばれた木材が集まる嘉義は「木材の都（木都）」として大発展。当時の台湾総督府営林局の職員宿舎群がリノベーションされたのが現在の人気スポット**「檜意森活村（Hinoki Village）」**です。今でも嘉義市内には6,000棟以上の木造建築が現存しています。
+      </div>
+    </div>
+
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">🌲 嘉義の名物・観光・土地の特徴をチェックしましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        火雞肉飯・阿里山・砂鍋魚頭・北回帰線・木都などの「確認クイズ」で定着度を確かめましょう！
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem; background: #059669; border-color: #047857;">
+          🏆 確認クイズを始める (全10問)
+        </button>
+        <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          トップ一覧へ戻る →
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <!-- QuizEngineで動的生成 -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+      <span class="version-badge">v1.1.0</span>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+  <script type="module" src="src/js/quizEngine.js"></script>
+  <script type="module" src="src/js/stepLoader.js"></script>
+</body>
+</html>
