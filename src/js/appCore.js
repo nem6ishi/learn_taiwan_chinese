@@ -181,6 +181,30 @@
   // ==================== 難しかった単語 (復習ノート) 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '同學',
+      zhuyin: 'ㄊㄨㄥˊ ㄒㄩㄝˊ',
+      pinyin: 'tóngxué',
+      meaning: '同級生 / クラスメイト',
+      example: '他是我的中文班同學。 (彼は私の中国語クラスの同級生です)',
+      createdAt: 1700000007000
+    },
+    {
+      traditional: '鳳梨酥',
+      zhuyin: 'ㄈㄥˋ ㄌㄧˊ ㄙㄨ',
+      pinyin: 'fènglísū',
+      meaning: 'パイナップルケーキ (台湾名物のお菓子)',
+      example: '這是台灣很有名的鳳梨酥。 (これは台湾でとても有名なパイナップルケーキです)',
+      createdAt: 1700000006000
+    },
+    {
+      traditional: '打擾',
+      zhuyin: 'ㄉㄚˇ ㄖㄠˇ',
+      pinyin: 'dǎrǎo',
+      meaning: '失礼する / お邪魔する / 邪魔する',
+      example: '不好意思，打擾一下！ (すみません、ちょっと失礼します/お邪魔します！)',
+      createdAt: 1700000005000
+    },
+    {
       traditional: '慢用',
       zhuyin: 'ㄇㄢˋ ㄩㄥˋ',
       pinyin: 'mànyòng',
@@ -214,13 +238,25 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v2';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v3';
 
   const ReviewManager = {
     getWords: function() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) {
+          // 古いバージョンの保存データがあれば引き継ぎつつ新単語を先頭にマージ
+          const oldV2 = localStorage.getItem('taiwan_chinese_review_words_v2') || localStorage.getItem('taiwan_chinese_review_words_v1');
+          if (oldV2) {
+            try {
+              let oldWords = JSON.parse(oldV2);
+              let newDefaults = DEFAULT_REVIEW_WORDS.filter(dw => !oldWords.some(ow => ow.traditional === dw.traditional));
+              let merged = [...newDefaults, ...oldWords];
+              merged.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+              return merged;
+            } catch (e) {}
+          }
           localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_REVIEW_WORDS));
           return DEFAULT_REVIEW_WORDS;
         }
