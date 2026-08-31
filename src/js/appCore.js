@@ -181,6 +181,22 @@
   // ==================== 難しかった単語 (復習ノート) 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '上班族',
+      zhuyin: 'ㄕㄤˋ ㄅㄢ ㄗㄨˊ',
+      pinyin: 'shàngbānzú',
+      meaning: 'サラリーマン / 会社員 / オフィスワーカー',
+      example: '捷運上有很多通勤的上班族。 (MRTには通勤するサラリーマンがたくさん乗っています)',
+      createdAt: 1700000009000
+    },
+    {
+      traditional: '粉紅色',
+      zhuyin: 'ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ',
+      pinyin: 'fěnhóngsè',
+      meaning: 'ピンク色 / 桃色',
+      example: '阿里山的櫻花是粉紅色的。 (阿里山の桜はピンク色です)',
+      createdAt: 1700000008000
+    },
+    {
       traditional: '同學',
       zhuyin: 'ㄊㄨㄥˊ ㄒㄩㄝˊ',
       pinyin: 'tóngxué',
@@ -238,7 +254,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v3';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v4';
 
   const ReviewManager = {
     getWords: function() {
@@ -246,10 +262,10 @@
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) {
           // 古いバージョンの保存データがあれば引き継ぎつつ新単語を先頭にマージ
-          const oldV2 = localStorage.getItem('taiwan_chinese_review_words_v2') || localStorage.getItem('taiwan_chinese_review_words_v1');
-          if (oldV2) {
+          const oldData = localStorage.getItem('taiwan_chinese_review_words_v3') || localStorage.getItem('taiwan_chinese_review_words_v2') || localStorage.getItem('taiwan_chinese_review_words_v1');
+          if (oldData) {
             try {
-              let oldWords = JSON.parse(oldV2);
+              let oldWords = JSON.parse(oldData);
               let newDefaults = DEFAULT_REVIEW_WORDS.filter(dw => !oldWords.some(ow => ow.traditional === dw.traditional));
               let merged = [...newDefaults, ...oldWords];
               merged.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
