@@ -2,6 +2,7 @@
 (function(window) {
   let currentAudio = null;
   let activeElement = null;
+  let sequenceTimer = null;
 
   // Mac Chrome 用 WebSpeechAPI Voiceの事前プレロード
   if ('speechSynthesis' in window) {
@@ -14,6 +15,11 @@
   }
 
   function clearActiveAudio() {
+    if (sequenceTimer) {
+      clearTimeout(sequenceTimer);
+      sequenceTimer = null;
+    }
+
     if (activeElement) {
       activeElement.classList.remove('is-playing');
       activeElement = null;
@@ -38,7 +44,45 @@
     }
   }
 
-  function playZhuyinSound(text, triggerEl = null) {
+  // 中国語文を抽出するヘルパー（日本語訳や記号、接頭辞をカット）
+  function extractChineseSentence(text) {
+    if (!text) return '';
+    let cleaned = text.split(/[\(（]/)[0];
+    cleaned = cleaned.replace(/^[💬\s]*例文[:：]?\s*/, '');
+    return cleaned.trim();
+  }
+
+  // 台湾女性ボイス（Google 國語（臺灣） / Meijia）取得
+  function getTaiwanVoice() {
+    if (!('speechSynthesis' in window)) return null;
+    const voices = window.speechSynthesis.getVoices();
+    if (!voices || voices.length === 0) return null;
+    const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
+    
+    // 1. Google 公式の最高品質台湾ボイス「Google 國語（臺灣）」を最優先マッチ
+    let targetVoice = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
+
+    // 2. なければ Meijia / Shelley 等の台湾女性ボイス
+    if (!targetVoice) {
+      const priorityVoiceNames = ['meijia', 'shelley', 'sandy', 'flo', 'ting-ting'];
+      targetVoice = zhVoices.find(v => {
+        const nameLower = (v.name || '').toLowerCase();
+        return priorityVoiceNames.some(p => nameLower.includes(p));
+      });
+    }
+
+    // 3. なければ zh-TW ボイス
+    if (!targetVoice) {
+      targetVoice = zhVoices.find(v => {
+        const langLower = (v.lang || '').toLowerCase();
+        return langLower.includes('tw') || langLower.includes('zh-tw');
+      });
+    }
+
+    return targetVoice || zhVoices[0] || null;
+  }
+
+  function playZhuyinSound(text, triggerEl = null, exampleText = null) {
     if (!text) return;
 
     if ('speechSynthesis' in window) {
@@ -56,14 +100,71 @@
 
     const speechMap = window.ZHUYIN_SPEECH_MAP || {};
     const speechText = speechMap[text] || text;
+    const cleanExample = extractChineseSentence(exampleText);
 
-    // 即時同期タイミングで発声処理を呼び出し (Chrome User Gesture 保持)
-    executePlayAudio(text, speechText);
+    if (cleanExample) {
+      playWebSpeechSequence(speechText, cleanExample, text);
+    } else {
+      playWebSpeechFemale(text, speechText);
+    }
   }
 
-  function executePlayAudio(originalText, speechText) {
-    // 外部通信ブロックを回避し、Mac Chrome / iOS Safari 等の組み込み Google 國語（臺灣） / Meijia ボイスで高音質発声
-    playWebSpeechFemale(originalText, speechText);
+  function playWebSpeechSequence(wordSpeech, exampleSpeech, originalText) {
+    if (!('speechSynthesis' in window)) {
+      playFallbackBeep();
+      clearActiveAudio();
+      return;
+    }
+
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
+
+      const voice = getTaiwanVoice();
+
+      // 1. まず単語を発声
+      const wordUtterance = new SpeechSynthesisUtterance(wordSpeech);
+      wordUtterance.lang = 'zh-TW';
+      wordUtterance.rate = 0.85;
+      wordUtterance.pitch = 1.05;
+      if (voice) wordUtterance.voice = voice;
+
+      wordUtterance.onend = () => {
+        // 単語終了後、自然なインターバル（350ms）を置いて例文を発声
+        sequenceTimer = setTimeout(() => {
+          try {
+            window.speechSynthesis.resume();
+            const exampleUtterance = new SpeechSynthesisUtterance(exampleSpeech);
+            exampleUtterance.lang = 'zh-TW';
+            exampleUtterance.rate = 0.88;
+            exampleUtterance.pitch = 1.02;
+            if (voice) exampleUtterance.voice = voice;
+
+            exampleUtterance.onend = () => clearActiveAudio();
+            exampleUtterance.onerror = (err) => {
+              console.warn(`[Audio Engine] Example speech error:`, err);
+              clearActiveAudio();
+            };
+
+            window.speechSynthesis.speak(exampleUtterance);
+          } catch (e) {
+            clearActiveAudio();
+          }
+        }, 350);
+      };
+
+      wordUtterance.onerror = (err) => {
+        console.warn(`[Audio Engine] Speech error for "${originalText}":`, err);
+        playFallbackBeep();
+        clearActiveAudio();
+      };
+
+      window.speechSynthesis.speak(wordUtterance);
+    } catch (e) {
+      console.error('[Audio Engine] Web Speech API error:', e);
+      playFallbackBeep();
+      clearActiveAudio();
+    }
   }
 
   function playWebSpeechFemale(originalText, speechText) {
@@ -82,45 +183,15 @@
       utterance.rate = 0.85;
       utterance.pitch = 1.05;
 
+      const voice = getTaiwanVoice();
+      if (voice) utterance.voice = voice;
+
       utterance.onend = () => clearActiveAudio();
       utterance.onerror = (err) => {
         console.warn(`[Audio Engine] Speech error for "${originalText}":`, err);
         playFallbackBeep();
         clearActiveAudio();
       };
-
-      const voices = window.speechSynthesis.getVoices();
-      if (voices && voices.length > 0) {
-        const zhVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('zh'));
-        
-        // 1. Google 公式の最高品質台湾ボイス「Google 國語（臺灣）」を最優先マッチ
-        let targetVoice = zhVoices.find(v => (v.name || '').includes('Google 國語') || (v.name || '').includes('Google 國語（臺灣）'));
-
-        // 2. なければ Meijia / Shelley 等の台湾女性ボイス
-        if (!targetVoice) {
-          const priorityVoiceNames = ['meijia', 'shelley', 'sandy', 'flo', 'ting-ting'];
-          targetVoice = zhVoices.find(v => {
-            const nameLower = (v.name || '').toLowerCase();
-            return priorityVoiceNames.some(p => nameLower.includes(p));
-          });
-        }
-
-        // 3. なければ zh-TW ボイス
-        if (!targetVoice) {
-          targetVoice = zhVoices.find(v => {
-            const langLower = (v.lang || '').toLowerCase();
-            return langLower.includes('tw') || langLower.includes('zh-tw');
-          });
-        }
-
-        if (!targetVoice) {
-          targetVoice = zhVoices[0];
-        }
-
-        if (targetVoice) {
-          utterance.voice = targetVoice;
-        }
-      }
 
       window.speechSynthesis.speak(utterance);
     } catch (e) {
@@ -153,20 +224,34 @@
 
   window.playZhuyinSound = playZhuyinSound;
 
-  // 全ページ共通: .play-word-sound ＆ .play-symbol-sound 自動クリック検出
+  // 全ページ共通: .play-word-sound ＆ .play-symbol-sound ＆ .play-example-sound 自動クリック検出
   if (typeof document !== 'undefined') {
     document.addEventListener('click', function(e) {
-      const wordTarget = e.target.closest('.play-word-sound');
-      if (wordTarget) {
-        const word = wordTarget.getAttribute('data-word');
-        if (word) {
-          playZhuyinSound(word, wordTarget);
+      // 1. 例文単体クリック (.play-example-sound または .review-word-example)
+      const exampleTarget = e.target.closest('.play-example-sound, .review-word-example');
+      if (exampleTarget && !e.target.closest('.bookmark-btn')) {
+        const sentence = exampleTarget.getAttribute('data-sentence') || exampleTarget.innerText;
+        const cleanSentence = extractChineseSentence(sentence);
+        if (cleanSentence) {
+          playZhuyinSound(cleanSentence, exampleTarget);
         }
         return;
       }
 
+      // 2. 単語カードクリック (.play-word-sound)
+      const wordTarget = e.target.closest('.play-word-sound');
+      if (wordTarget && !e.target.closest('.bookmark-btn')) {
+        const word = wordTarget.getAttribute('data-word');
+        const example = wordTarget.getAttribute('data-example');
+        if (word) {
+          playZhuyinSound(word, wordTarget, example);
+        }
+        return;
+      }
+
+      // 3. 注音符号クリック (.play-symbol-sound)
       const symbolTarget = e.target.closest('.play-symbol-sound');
-      if (symbolTarget) {
+      if (symbolTarget && !e.target.closest('.bookmark-btn')) {
         const symbol = symbolTarget.getAttribute('data-symbol');
         if (symbol) {
           playZhuyinSound(symbol, symbolTarget);
@@ -178,7 +263,7 @@
 
   window.APP_VERSION = 'v1.1.0';
 
-  // ==================== 難しかった単語 (復習ノート) 管理モジュール ====================
+  // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
       traditional: '在寫功課',
@@ -187,8 +272,8 @@
       meaning: '宿題をしている (宿題をする)',
       example: '我現在在寫功課。 (私は今、宿題をしています)',
       column: {
-        title: '🇹🇼 台湾では「功課」、🇨🇳 大陸では「作業」',
-        content: '台湾の学校や日常会話で「宿題をする」は「寫功課 (ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ)」と言うのが定番です（大陸では「寫作業」）。また動詞の前に「在」をつけると「〜している最中（進行形）」を表します。'
+        title: '✏️ 「在寫功課」の1文字ずつの漢字分解とニュアンス',
+        content: '• <strong>在 (ㄗㄞˋ)</strong>: 動詞の前に置き「〜している最中（進行形＝-ing）」を表す。<br>• <strong>寫 (ㄒㄧㄝˇ)</strong>: 「書く・記す」。手やペンで文字を書く動作。<br>• <strong>功 (ㄍㄨㄥ)</strong>: 「功績・積み重ねる努力・腕前（功夫）」。<br>• <strong>課 (ㄎㄜˋ)</strong>: 「授業・課業・課題（上課・下課の課）」。<br>➔ <strong>「功課 (gōngkè)」</strong>は「授業のために努力を積み重ねるもの＝宿題・課題」という意味になります！台湾では学校の宿題だけでなく、旅行の下調べや仕事のリサーチ・事前勉強も「做功課（下調べをする）」と表現します（🇨🇳 大陸では宿題は「作業 zuòyè」）。'
       },
       createdAt: 1700000015000
     },
@@ -350,7 +435,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v7';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v8';
 
   const ReviewManager = {
     getWords: function() {
@@ -364,6 +449,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v7',
             'taiwan_chinese_review_words_v6',
             'taiwan_chinese_review_words_v5',
             'taiwan_chinese_review_words_v4',
