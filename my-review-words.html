@@ -44,331 +44,333 @@
       </p>
     </div>
 
-    <!-- 単語カード一覧コンテナ -->
-    <div id="review-words-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+    <!-- 単語カード一覧コンテナ (1カラム縦並びレイアウト) -->
+    <div id="review-words-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
       
       <!-- 静的フォールバック（Pure Static First 保証・新単語が最上部に並ぶ） -->
       
       <!-- 1. 在寫功課 (最新) -->
-      <div class="review-word-card play-word-sound" data-word="在寫功課">
+      <div class="review-word-card play-word-sound" data-word="在寫功課" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">在寫功課</span>
-          <button class="bookmark-btn active" data-trad="在寫功課" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄗㄞˋ ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ</span>
-          <span class="review-word-pinyin">zài xiě gōngkè</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">在寫功課</span>
+            <span class="review-word-zhuyin">ㄗㄞˋ ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ</span>
+            <span class="review-word-pinyin">zài xiě gōngkè</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="在寫功課" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">宿題をしている (宿題をする)</div>
         <div class="review-word-example">
-          💬 例文: 我現在在寫功課。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(私は今、宿題をしています 💡 台湾では宿題を大陸の「作業」ではなく「功課」と呼ぶのが定番！)</span>
+          💬 例文: 我現在在寫功課。 (私は今、宿題をしています)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">🇹🇼 台湾では「功課」、🇨🇳 大陸では「作業」</div>
+          <div>台湾の学校や日常会話で「宿題をする」は「寫功課 (ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ)」と言うのが定番です（大陸では「寫作業」）。また動詞の前に「在」をつけると「〜している最中（進行形）」を表します。</div>
         </div>
       </div>
 
       <!-- 2. 讀書 -->
-      <div class="review-word-card play-word-sound" data-word="讀書">
+      <div class="review-word-card play-word-sound" data-word="讀書" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">讀書</span>
-          <button class="bookmark-btn active" data-trad="讀書" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄉㄨˊ ㄕㄨ</span>
-          <span class="review-word-pinyin">dúshū</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">讀書</span>
+            <span class="review-word-zhuyin">ㄉㄨˊ ㄕㄨ</span>
+            <span class="review-word-pinyin">dúshū</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="讀書" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">勉強する / 留学する / 本を読む</div>
         <div class="review-word-example">
-          💬 例文: 他在國外讀書。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(彼は海外で勉強しています/留学しています 💡 台湾では「去國外讀書」で留学を意味します。単独の「留學 liúxué」も同義)</span>
+          💬 例文: 他在國外讀書。 (彼は海外で勉強しています/留学しています)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 「讀書」は「留学・進学」の意味でも大活躍！</div>
+          <div>「本を読む」だけでなく、「学校に通う・勉強する」という意味です。台湾では「去國外讀書（海外に勉強しに行く＝留学する）」と日常的によく表現します。「留學 (ㄌㄧㄡˊ ㄒㄩㄝˊ)」や「念書 (ㄋㄧㄢˋ ㄕㄨ)」も同義です。</div>
         </div>
       </div>
 
       <!-- 3. 歐洲 -->
-      <div class="review-word-card play-word-sound" data-word="歐洲">
+      <div class="review-word-card play-word-sound" data-word="歐洲" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">歐洲</span>
-          <button class="bookmark-btn active" data-trad="歐洲" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄡ ㄓㄡ</span>
-          <span class="review-word-pinyin">ōuzhōu</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">歐洲</span>
+            <span class="review-word-zhuyin">ㄡ ㄓㄡ</span>
+            <span class="review-word-pinyin">ōuzhōu</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="歐洲" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">ヨーロッパ (欧州)</div>
         <div class="review-word-example">
-          💬 例文: 我想去歐洲旅行。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(私はヨーロッパへ旅行に行きたいです)</span>
+          💬 例文: 我想去歐洲旅行。 (私はヨーロッパへ旅行に行きたいです)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 台湾華語の世界の大陸・地域名の呼び方</div>
+          <div>「洲 (ㄓㄡ)」は大州のこと。亞洲 (アジア)、美洲 (アメリカ大陸)、歐洲 (ヨーロッパ)、澳洲 (オーストラリア)。「歐 (ㄡ)」は第1声で平らに高く発音します。</div>
         </div>
       </div>
 
       <!-- 4. 一雙筷子 -->
-      <div class="review-word-card play-word-sound" data-word="一雙筷子">
+      <div class="review-word-card play-word-sound" data-word="一雙筷子" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">一雙筷子</span>
-          <button class="bookmark-btn active" data-trad="一雙筷子" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄧˋ ㄕㄨㄤ ㄎㄨㄞˋ ㄗ˙</span>
-          <span class="review-word-pinyin">yì shuāng kuàizi</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">一雙筷子</span>
+            <span class="review-word-zhuyin">ㄧˋ ㄕㄨㄤ ㄎㄨㄞˋ ㄗ˙</span>
+            <span class="review-word-pinyin">yì shuāng kuàizi</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="一雙筷子" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">お箸一膳 (おはし)</div>
         <div class="review-word-example">
-          💬 例文: 請給我一雙筷子。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(お箸を一膳ください 💡 箸や靴など2つで1組のものは量詞「雙 shuāng」を使います)</span>
+          💬 例文: 請給我一雙筷子。 (お箸を一膳ください)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">🥢 ペア・対のものは量詞「雙 (ㄕㄨㄤ)」を使う！</div>
+          <div>お箸、靴、手袋など2本・2個で1組のものは量詞「雙 (shuāng)」で数えます（一雙筷子＝箸一膳、一雙鞋子＝靴一足）。食堂やテイクアウト（外帶）でお箸をもらうときは「請給我一雙筷子！」と言えばバッチリ通じます。</div>
         </div>
       </div>
 
       <!-- 5. 教室 -->
-      <div class="review-word-card play-word-sound" data-word="教室">
+      <div class="review-word-card play-word-sound" data-word="教室" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">教室</span>
-          <button class="bookmark-btn active" data-trad="教室" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄐㄧㄠˋ ㄕˋ</span>
-          <span class="review-word-pinyin">jiàoshì</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">教室</span>
+            <span class="review-word-zhuyin">ㄐㄧㄠˋ ㄕˋ</span>
+            <span class="review-word-pinyin">jiàoshì</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="教室" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">教室 / クラスルーム</div>
         <div class="review-word-example">
-          💬 例文: 這是我們的中文教室。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(ここは私たちの中国語の教室です 💡 「教」も「室」も第4声！強く下降調で発音します)</span>
+          💬 例文: 這是我們的中文教室。 (ここは私たちの中国語の教室です)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 「教」も「室」も第4声！強く下降調で発音する</div>
+          <div>「教」は動詞「教える（教書）」では第1声（ㄐㄧㄠ / jiāo）ですが、「教室」「教師」「教育」など名詞・熟語では第4声（ㄐㄧㄠˋ / jiào）に変化します。「室 (ㄕˋ)」も第4声なので「ジャーオ！シー！」と力強く発音します。</div>
         </div>
       </div>
 
       <!-- 6. サラリーマン / 会社員 -->
-      <div class="review-word-card play-word-sound" data-word="上班族">
+      <div class="review-word-card play-word-sound" data-word="上班族" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">上班族</span>
-          <button class="bookmark-btn active" data-trad="上班族" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄕㄤˋ ㄅㄢ ㄗㄨˊ</span>
-          <span class="review-word-pinyin">shàngbānzú</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">上班族</span>
+            <span class="review-word-zhuyin">ㄕㄤˋ ㄅㄢ ㄗㄨˊ</span>
+            <span class="review-word-pinyin">shàngbānzú</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="上班族" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">サラリーマン / 会社員 / オフィスワーカー</div>
         <div class="review-word-example">
-          💬 例文: 捷運上有很多通勤的上班族。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(MRTには通勤するサラリーマンがたくさん乗っています)</span>
+          💬 例文: 捷運上有很多通勤的上班族。 (MRTには通勤するサラリーマンがたくさん乗っています)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">🇹🇼 「上班（出勤）」＋「族（〜な人たち）」</div>
+          <div>台湾では会社勤めの人を「上班族 (ㄕㄤˋ ㄅㄢ ㄗㄨˊ)」と呼びます。「族」は同じライフスタイルや属性を表す接尾辞で、「小資族（プチリッチ女子・若手社員）」や「追劇族（ドラマ一気見勢）」など台湾社会で大人気です。</div>
         </div>
       </div>
 
       <!-- 7. ピンク色 / 桃色 -->
-      <div class="review-word-card play-word-sound" data-word="粉紅色">
+      <div class="review-word-card play-word-sound" data-word="粉紅色" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">粉紅色</span>
-          <button class="bookmark-btn active" data-trad="粉紅色" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ</span>
-          <span class="review-word-pinyin">fěnhóngsè</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">粉紅色</span>
+            <span class="review-word-zhuyin">ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ</span>
+            <span class="review-word-pinyin">fěnhóngsè</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="粉紅色" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">ピンク色 / 桃色</div>
         <div class="review-word-example">
-          💬 例文: 阿里山的櫻花是粉紅色的。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(阿里山の桜はピンク色です)</span>
+          💬 例文: 阿里山的櫻花是粉紅色的。 (阿里山の桜はピンク色です)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 パステル調の淡い赤＝ピンク色！</div>
+          <div>「粉 (ㄈㄣˇ)」はおしろいや粉末、淡いパステル調を意味し、「紅 (ㄏㄨㄥˊ)」は赤。合わさって「淡い赤＝ピンク色」になります。台湾のドリンクスタンドやカフェでも「粉紅〜」のメニューをよく見かけます。</div>
         </div>
       </div>
 
       <!-- 8. 同級生 / クラスメイト -->
-      <div class="review-word-card play-word-sound" data-word="同學">
+      <div class="review-word-card play-word-sound" data-word="同學" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">同學</span>
-          <button class="bookmark-btn active" data-trad="同學" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄊㄨㄥˊ ㄒㄩㄝˊ</span>
-          <span class="review-word-pinyin">tóngxué</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">同學</span>
+            <span class="review-word-zhuyin">ㄊㄨㄥˊ ㄒㄩㄝˊ</span>
+            <span class="review-word-pinyin">tóngxué</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="同學" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">同級生 / クラスメイト</div>
         <div class="review-word-example">
-          💬 例文: 他是我的中文班同學。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(彼は私の中国語クラスの同級生です)</span>
+          💬 例文: 他是我的中文班同學。 (彼は私の中国語クラスの同級生です)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 「同じ学校・講座で学ぶ仲間」</div>
+          <div>学校のクラスメイトだけでなく、中国語スクールやセミナーの同期も「同學 (ㄊㄨㄥˊ ㄒㄩㄝˊ)」です。「老同學（昔からの同級生）」のように親しみを込めて呼び合います。先生が生徒全員に呼びかけるときも「同學〜！」と言います。</div>
         </div>
       </div>
 
-      <!-- 2. パイナップルケーキ -->
-      <div class="review-word-card play-word-sound" data-word="鳳梨酥">
+      <!-- 9. パイナップルケーキ -->
+      <div class="review-word-card play-word-sound" data-word="鳳梨酥" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">鳳梨酥</span>
-          <button class="bookmark-btn active" data-trad="鳳梨酥" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄈㄥˋ ㄌㄧˊ ㄙㄨ</span>
-          <span class="review-word-pinyin">fènglísū</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">鳳梨酥</span>
+            <span class="review-word-zhuyin">ㄈㄥˋ ㄌㄧˊ ㄙㄨ</span>
+            <span class="review-word-pinyin">fènglísū</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="鳳梨酥" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">パイナップルケーキ (台湾名物のお菓子)</div>
         <div class="review-word-example">
-          💬 例文: 這是台灣很有名的鳳梨酥。<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(これは台湾でとても有名なパイナップルケーキです 💡 鳳(鳳凰)＋梨(果物)＋酥(サクサク菓子)。台湾語「旺來(オンライ)」で幸運が栄える吉祥菓子！)</span>
+          💬 例文: 這是台灣很有名的鳳梨酥。 (これは台湾でとても有名なパイナップルケーキです)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">🍍 漢字分解と台湾語「旺來（オンライ）」の大吉祥文化</div>
+          <div>• <strong>鳳</strong>（鳳凰の尾羽のようなトゲトゲの葉）＋ <strong>梨</strong>（梨のようなみずみずしい果肉）＋ <strong>酥</strong>（口の中でホロホロ崩れるサクサク焼き菓子）。<br>• パイナップルの台湾語「旺來 (ông-lâi)」は「運気がぐんぐん栄えてやってくる（繁盛する）」と同じ音！そのため開店祝い・春節・手土産の定番吉祥菓子として愛されています（🇨🇳 大陸では「菠蘿酥」）。</div>
         </div>
       </div>
 
-      <!-- 3. 失礼する / お邪魔する -->
-      <div class="review-word-card play-word-sound" data-word="打擾">
+      <!-- 10. 失礼する / お邪魔する -->
+      <div class="review-word-card play-word-sound" data-word="打擾" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">打擾</span>
-          <button class="bookmark-btn active" data-trad="打擾" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄉㄚˇ ㄖㄠˇ</span>
-          <span class="review-word-pinyin">dǎrǎo</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">打擾</span>
+            <span class="review-word-zhuyin">ㄉㄚˇ ㄖㄠˇ</span>
+            <span class="review-word-pinyin">dǎrǎo</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="打擾" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">失礼する / お邪魔する / 邪魔する</div>
         <div class="review-word-example">
-          💬 例文: 不好意思，打擾一下！<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(すみません、ちょっと失礼します/お邪魔します！)</span>
+          💬 例文: 不好意思，打擾一下！ (すみません、ちょっと失礼します/お邪魔します！)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 「打」＋「擾」のそれぞれの漢字の意味</div>
+          <div>• <strong>打</strong>（対象に働きかける接頭語的動詞）＋ <strong>擾</strong>（手へん＋憂＝相手の平穏や静寂を乱す）。<br>• 直訳すると「相手の落ち着いた状態をかき乱す」＝「お邪魔する」。人にお願いするときや声をかけるときは「不好意思，打擾一下！」が台湾人の鉄板フレーズです。</div>
         </div>
       </div>
 
-      <!-- 4. ゆっくりする / ごゆっくりどうぞ -->
-      <div class="review-word-card play-word-sound" data-word="慢用">
+      <!-- 11. ゆっくりする -->
+      <div class="review-word-card play-word-sound" data-word="慢用" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">慢用</span>
-          <button class="bookmark-btn active" data-trad="慢用" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄇㄢˋ ㄩㄥˋ</span>
-          <span class="review-word-pinyin">mànyòng</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">慢用</span>
+            <span class="review-word-zhuyin">ㄇㄢˋ ㄩㄥˋ</span>
+            <span class="review-word-pinyin">mànyòng</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="慢用" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">ゆっくりする / ごゆっくりどうぞ</div>
         <div class="review-word-example">
-          💬 例文: 請慢用！<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！ 💡 のんびり街歩きは「漫遊 mànyóu」)</span>
+          💬 例文: 請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">🇹🇼 「ゆっくり」の台湾使い分けコラム</div>
+          <div>• <strong>慢用 (mànyòng)</strong>：食事やお茶を出すときに「ごゆっくり召し上がれ」。<br>• <strong>漫遊 (mànyóu)</strong>：街や観光地をのんびり散策・ぶらぶら歩く（例：台北漫遊）。<br>• <strong>慢活 (mànhuó)</strong>：のんびりスローライフを送る。</div>
         </div>
       </div>
 
-      <!-- 2. MRT駅 -->
-      <div class="review-word-card play-word-sound" data-word="捷運站">
+      <!-- 12. MRT駅 -->
+      <div class="review-word-card play-word-sound" data-word="捷運站" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">捷運站</span>
-          <button class="bookmark-btn active" data-trad="捷運站" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ</span>
-          <span class="review-word-pinyin">jiéyùnzhàn</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">捷運站</span>
+            <span class="review-word-zhuyin">ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ</span>
+            <span class="review-word-pinyin">jiéyùnzhàn</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="捷運站" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">MRT駅 (地下鉄・都市鉄道の駅)</div>
         <div class="review-word-example">
-          💬 例文: 捷運站在哪裡？<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(MRTの駅はどこですか？ 💡 捷運＝「捷(速い)＋運(輸送)」でMRTの定訳。「站」は駅や停留所)</span>
+          💬 例文: 捷運站在哪裡？ (MRTの駅はどこですか？)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">🚇 「捷運」の語源と「站」の意味</div>
+          <div>• 英語の <strong>MRT (Mass Rapid Transit)</strong> の訳。<strong>捷</strong>（すばやい・敏捷）＋<strong>運</strong>（輸送・運行）＝「すばやく運ぶ高速都市輸送システム」。地下でも高架路線でも「捷運」と呼びます（🇨🇳 大陸では「地鐵」）。<br>• <strong>站</strong>（ㄓㄢˋ）は駅・停留所のこと（火車站＝電車の駅、高鐵站＝新幹線の駅、公車站＝バス停）。</div>
         </div>
       </div>
 
-      <!-- 3. 最近 -->
-      <div class="review-word-card play-word-sound" data-word="最近">
+      <!-- 13. 最近 -->
+      <div class="review-word-card play-word-sound" data-word="最近" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">最近</span>
-          <button class="bookmark-btn active" data-trad="最近" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄗㄨㄟˋ ㄐㄧㄣˋ</span>
-          <span class="review-word-pinyin">zuìjìn</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">最近</span>
+            <span class="review-word-zhuyin">ㄗㄨㄟˋ ㄐㄧㄣˋ</span>
+            <span class="review-word-pinyin">zuìjìn</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="最近" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">最近</div>
         <div class="review-word-example">
-          💬 例文: 最近你好嗎？<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(最近調子はどうですか？)</span>
+          💬 例文: 最近你好嗎？ (最近調子はどうですか？)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 日常会話の挨拶定番「最近好嗎？」</div>
+          <div>「最近好嗎？ (ㄗㄨㄟˋ ㄐㄧㄣˋ ㄏㄠˇ ㄇㄚ˙)」は久しぶりに会った友人やチャットの冒頭で「最近どう？元気にしてる？」と声をかけるときの超定番フレーズです。</div>
         </div>
       </div>
 
-      <!-- 4. パスポート -->
-      <div class="review-word-card play-word-sound" data-word="護照">
+      <!-- 14. パスポート -->
+      <div class="review-word-card play-word-sound" data-word="護照" style="cursor: pointer;">
         <div class="review-card-header">
-          <span class="review-word-trad">護照</span>
-          <button class="bookmark-btn active" data-trad="護照" title="復習リストから削除">⭐</button>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-          <span class="review-word-zhuyin">ㄏㄨˋ ㄓㄠˋ</span>
-          <span class="review-word-pinyin">hùzhào</span>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="review-word-trad">護照</span>
+            <span class="review-word-zhuyin">ㄏㄨˋ ㄓㄠˋ</span>
+            <span class="review-word-pinyin">hùzhào</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+            <button class="bookmark-btn active" data-trad="護照" title="復習リストから削除">⭐</button>
+          </div>
         </div>
         <div class="review-word-meaning">パスポート</div>
         <div class="review-word-example">
-          💬 例文: 我的護照在哪裡？<br>
-          <span style="font-size: 0.82rem; color: #64748B;">(私のパスポートはどこですか？)</span>
+          💬 例文: 我的護照在哪裡？ (私のパスポートはどこですか？)
         </div>
-        <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-          <span>🔊 音声を聞く</span>
+        <div class="review-word-column">
+          <div class="review-word-column-title">💡 「護（守る）」＋「照（証明・照会）」</div>
+          <div>旅行中に自らの身元を保護・証明する公的書類。「護照 (ㄏㄨˋ ㄓㄠˋ)」は台湾旅行中の免税手続き（退稅）やホテルチェックインなどで必ず提示します。</div>
         </div>
       </div>
 
-    </div>
-
-    <!-- 補足コラム 1 -->
-    <div class="callout-taiwan" style="margin-top: 36px;">
-      <div class="callout-taiwan-title">
-        <span>💡 台湾現地コラム: 「ゆっくりする」の表現の使い分け</span>
-      </div>
-      <div class="callout-taiwan-text">
-        台湾の日常会話や旅行で「ゆっくり〜」と伝える表現にはいくつかのパターンがあります：<br>
-        • <strong>慢用 (mànyòng)</strong>: 食事や飲み物を提供する際に「ごゆっくり召し上がれ」という意味でよく使われます。<br>
-        • <strong>漫遊 (mànyóu)</strong>: 台湾の街や観光地をのんびりブラブラ散策・散歩する際に使います（例: 台北漫遊）。<br>
-        • <strong>慢活 (mànhuó)</strong>: スローライフやのんびり生きるライフスタイルを意味します。
-      </div>
-    </div>
-
-    <!-- 補足コラム 2 -->
-    <div class="callout-taiwan" style="margin-top: 20px; background: #F0FDF4; border-color: #BBF7D0;">
-      <div class="callout-taiwan-title" style="color: #166534;">
-        <span>💡 台湾現地コラム: 「捷運（MRT）」の語源と「站（駅）」の豆知識</span>
-      </div>
-      <div class="callout-taiwan-text" style="color: #14532D;">
-        台湾の都市交通で必ず乗る<strong>「捷運（ㄐㄧㄝˊ ㄩㄣˋ）」</strong>は、英語の <strong>MRT (Mass Rapid Transit)</strong> の「Rapid Transit（高速輸送）」を訳した造語です。<br>
-        • <strong>捷</strong>（ㄐㄧㄝˊ / すばやい・敏捷） ＋ <strong>運</strong>（ㄩㄣˋ / 輸送・運行） ＝ 「すばやく運ぶ（高速大量輸送機関）」<br>
-        地下を走る地下鉄だけでなく、高架路線（台北MRT文湖線など）も含めてすべて「捷運」と呼びます（🇨🇳 大陸では「地鐵」）。<br>
-        また、<strong>「站（ㄓㄢˋ）」</strong>は「駅・停留所」という意味で、<strong>捷運站</strong>（MRTの駅）、<strong>火車站</strong>（電車の駅）、<strong>高鐵站</strong>（台湾新幹線の駅）、<strong>公車站</strong>（バス停）のように使います！
-      </div>
-    </div>
-
-    <!-- 補足コラム 3 -->
-    <div class="callout-taiwan" style="margin-top: 20px; background: #FFFBEB; border-color: #FDE68A;">
-      <div class="callout-taiwan-title" style="color: #B45309;">
-        <span>💡 台湾現地コラム: 「鳳梨酥」の漢字分解 ＆ なぜ台湾一の吉祥菓子になったのか？</span>
-      </div>
-      <div class="callout-taiwan-text" style="color: #92400E;">
-        台湾土産の定番<strong>「鳳梨酥（ㄈㄥˋ ㄌㄧˊ ㄙㄨ / fènglísū）」</strong>の漢字の成り立ち：<br>
-        • <strong>鳳</strong>（ㄈㄥˋ）: 頭のトゲトゲの冠芽（葉）が瑞鳥<strong>「鳳凰」</strong>の尾羽に似ていることから。<br>
-        • <strong>梨</strong>（ㄌㄧˊ）: 果肉のみずみずしい食感が<strong>「梨」</strong>に似ていることから。<br>
-        • <strong>酥</strong>（ㄙㄨ）: バターや小麦粉を使い、口の中で<strong>サクサク・ホロホロ崩れる香ばしい焼き菓子</strong>（ペストリー）のこと。<br>
-        さらに、パイナップルは台湾語で<strong>「旺來（ông-lâi）」</strong>と発音し、<strong>「運気がぐんぐん栄えてやってくる（繁盛する）」</strong>という大吉祥の言葉と同じ音！相手の幸運と繁栄を祈る手土産として台湾社会で愛され続けています（🇨🇳 大陸では「菠蘿」）。
-      </div>
     </div>
 
   </main>
@@ -403,14 +405,17 @@
         }
 
         container.innerHTML = words.map(w => `
-          <div class="review-word-card play-word-sound" data-word="${w.traditional}">
+          <div class="review-word-card play-word-sound" data-word="${w.traditional}" style="cursor: pointer;">
             <div class="review-card-header">
-              <span class="review-word-trad">${w.traditional}</span>
-              <button class="bookmark-btn active" data-trad="${w.traditional}" data-zhuyin="${w.zhuyin || ''}" data-pinyin="${w.pinyin || ''}" data-meaning="${w.meaning || ''}" data-example="${w.example || ''}" title="復習リストから削除">⭐</button>
-            </div>
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
-              <span class="review-word-zhuyin">${w.zhuyin || ''}</span>
-              <span class="review-word-pinyin">${w.pinyin || ''}</span>
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <span class="review-word-trad">${w.traditional}</span>
+                <span class="review-word-zhuyin">${w.zhuyin || ''}</span>
+                <span class="review-word-pinyin">${w.pinyin || ''}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="color: var(--color-primary); font-size: 0.88rem; font-weight: 700;">🔊 発音</span>
+                <button class="bookmark-btn active" data-trad="${w.traditional}" data-zhuyin="${w.zhuyin || ''}" data-pinyin="${w.pinyin || ''}" data-meaning="${w.meaning || ''}" data-example="${w.example || ''}" title="復習リストから削除">⭐</button>
+              </div>
             </div>
             <div class="review-word-meaning">${w.meaning || ''}</div>
             ${w.example ? `
@@ -418,9 +423,12 @@
                 💬 例文: ${w.example}
               </div>
             ` : ''}
-            <div class="audio-icon-tag" style="margin-top: 10px; text-align: right; color: var(--color-primary); font-size: 0.85rem; font-weight: 700;">
-              <span>🔊 音声を聞く</span>
-            </div>
+            ${w.column ? `
+              <div class="review-word-column">
+                <div class="review-word-column-title">${w.column.title}</div>
+                <div>${w.column.content}</div>
+              </div>
+            ` : ''}
           </div>
         `).join('');
       }
