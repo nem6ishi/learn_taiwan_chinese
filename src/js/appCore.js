@@ -213,6 +213,38 @@
       createdAt: 1700000006500
     },
     {
+      traditional: '在寫功課',
+      zhuyin: 'ㄗㄞˋ ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ',
+      pinyin: 'zài xiě gōngkè',
+      meaning: '宿題をしている (宿題をする)',
+      example: '我現在在寫功課。 (私は今、宿題をしています 💡 台湾では宿題を大陸の「作業」ではなく「功課」と呼ぶのが定番！)',
+      createdAt: 1700000006400
+    },
+    {
+      traditional: '讀書',
+      zhuyin: 'ㄉㄨˊ ㄕㄨ',
+      pinyin: 'dúshū',
+      meaning: '勉強する / 留学する / 本を読む',
+      example: '他在國外讀書。 (彼は海外で勉強しています/留学しています 💡 台湾では「去國外讀書」で留学を意味します。単独の「留學 liúxué」も同義)',
+      createdAt: 1700000006300
+    },
+    {
+      traditional: '歐洲',
+      zhuyin: 'ㄡ ㄓㄡ',
+      pinyin: 'ōuzhōu',
+      meaning: 'ヨーロッパ (欧州)',
+      example: '我想去歐洲旅行。 (私はヨーロッパへ旅行に行きたいです)',
+      createdAt: 1700000006200
+    },
+    {
+      traditional: '一雙筷子',
+      zhuyin: 'ㄧˋ ㄕㄨㄤ ㄎㄨㄞˋ ㄗ˙',
+      pinyin: 'yì shuāng kuàizi',
+      meaning: 'お箸一膳 (おはし)',
+      example: '請給我一雙筷子。 (お箸を一膳ください 💡 箸や靴など2つで1組のものは量詞「雙 shuāng」を使います)',
+      createdAt: 1700000006100
+    },
+    {
       traditional: '鳳梨酥',
       zhuyin: 'ㄈㄥˋ ㄌㄧˊ ㄙㄨ',
       pinyin: 'fènglísū',
@@ -262,7 +294,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v4';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v5';
 
   const ReviewManager = {
     getWords: function() {
