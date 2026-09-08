@@ -205,6 +205,14 @@
       createdAt: 1700000007000
     },
     {
+      traditional: '教室',
+      zhuyin: 'ㄐㄧㄠˋ ㄕˋ',
+      pinyin: 'jiàoshì',
+      meaning: '教室 / クラスルーム',
+      example: '這是我們的中文教室。 (ここは私たちの中国語の教室です 💡 「教」も「室」も第4声！強く下降調で発音します)',
+      createdAt: 1700000006500
+    },
+    {
       traditional: '鳳梨酥',
       zhuyin: 'ㄈㄥˋ ㄌㄧˊ ㄙㄨ',
       pinyin: 'fènglísū',
