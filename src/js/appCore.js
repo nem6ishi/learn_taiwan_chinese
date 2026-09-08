@@ -181,6 +181,46 @@
   // ==================== 難しかった単語 (復習ノート) 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '在寫功課',
+      zhuyin: 'ㄗㄞˋ ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ',
+      pinyin: 'zài xiě gōngkè',
+      meaning: '宿題をしている (宿題をする)',
+      example: '我現在在寫功課。 (私は今、宿題をしています 💡 台湾では宿題を大陸の「作業」ではなく「功課」と呼ぶのが定番！)',
+      createdAt: 1700000015000
+    },
+    {
+      traditional: '讀書',
+      zhuyin: 'ㄉㄨˊ ㄕㄨ',
+      pinyin: 'dúshū',
+      meaning: '勉強する / 留学する / 本を読む',
+      example: '他在國外讀書。 (彼は海外で勉強しています/留学しています 💡 台湾では「去國外讀書」で留学を意味します。単独の「留學 liúxué」も同義)',
+      createdAt: 1700000014000
+    },
+    {
+      traditional: '歐洲',
+      zhuyin: 'ㄡ ㄓㄡ',
+      pinyin: 'ōuzhōu',
+      meaning: 'ヨーロッパ (欧州)',
+      example: '我想去歐洲旅行。 (私はヨーロッパへ旅行に行きたいです)',
+      createdAt: 1700000013000
+    },
+    {
+      traditional: '一雙筷子',
+      zhuyin: 'ㄧˋ ㄕㄨㄤ ㄎㄨㄞˋ ㄗ˙',
+      pinyin: 'yì shuāng kuàizi',
+      meaning: 'お箸一膳 (おはし)',
+      example: '請給我一雙筷子。 (お箸を一膳ください 💡 箸や靴など2つで1組のものは量詞「雙 shuāng」を使います)',
+      createdAt: 1700000012000
+    },
+    {
+      traditional: '教室',
+      zhuyin: 'ㄐㄧㄠˋ ㄕˋ',
+      pinyin: 'jiàoshì',
+      meaning: '教室 / クラスルーム',
+      example: '這是我們的中文教室。 (ここは私たちの中国語の教室です 💡 「教」も「室」も第4声！強く下降調で発音します)',
+      createdAt: 1700000011000
+    },
+    {
       traditional: '上班族',
       zhuyin: 'ㄕㄤˋ ㄅㄢ ㄗㄨˊ',
       pinyin: 'shàngbānzú',
@@ -203,46 +243,6 @@
       meaning: '同級生 / クラスメイト',
       example: '他是我的中文班同學。 (彼は私の中国語クラスの同級生です)',
       createdAt: 1700000007000
-    },
-    {
-      traditional: '教室',
-      zhuyin: 'ㄐㄧㄠˋ ㄕˋ',
-      pinyin: 'jiàoshì',
-      meaning: '教室 / クラスルーム',
-      example: '這是我們的中文教室。 (ここは私たちの中国語の教室です 💡 「教」も「室」も第4声！強く下降調で発音します)',
-      createdAt: 1700000006500
-    },
-    {
-      traditional: '在寫功課',
-      zhuyin: 'ㄗㄞˋ ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ',
-      pinyin: 'zài xiě gōngkè',
-      meaning: '宿題をしている (宿題をする)',
-      example: '我現在在寫功課。 (私は今、宿題をしています 💡 台湾では宿題を大陸の「作業」ではなく「功課」と呼ぶのが定番！)',
-      createdAt: 1700000006400
-    },
-    {
-      traditional: '讀書',
-      zhuyin: 'ㄉㄨˊ ㄕㄨ',
-      pinyin: 'dúshū',
-      meaning: '勉強する / 留学する / 本を読む',
-      example: '他在國外讀書。 (彼は海外で勉強しています/留学しています 💡 台湾では「去國外讀書」で留学を意味します。単独の「留學 liúxué」も同義)',
-      createdAt: 1700000006300
-    },
-    {
-      traditional: '歐洲',
-      zhuyin: 'ㄡ ㄓㄡ',
-      pinyin: 'ōuzhōu',
-      meaning: 'ヨーロッパ (欧州)',
-      example: '我想去歐洲旅行。 (私はヨーロッパへ旅行に行きたいです)',
-      createdAt: 1700000006200
-    },
-    {
-      traditional: '一雙筷子',
-      zhuyin: 'ㄧˋ ㄕㄨㄤ ㄎㄨㄞˋ ㄗ˙',
-      pinyin: 'yì shuāng kuàizi',
-      meaning: 'お箸一膳 (おはし)',
-      example: '請給我一雙筷子。 (お箸を一膳ください 💡 箸や靴など2つで1組のものは量詞「雙 shuāng」を使います)',
-      createdAt: 1700000006100
     },
     {
       traditional: '鳳梨酥',
@@ -294,32 +294,61 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v5';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v6';
 
   const ReviewManager = {
     getWords: function() {
       try {
+        let savedWords = null;
         const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) {
-          // 古いバージョンの保存データがあれば引き継ぎつつ新単語を先頭にマージ
-          const oldData = localStorage.getItem('taiwan_chinese_review_words_v3') || localStorage.getItem('taiwan_chinese_review_words_v2') || localStorage.getItem('taiwan_chinese_review_words_v1');
-          if (oldData) {
-            try {
-              let oldWords = JSON.parse(oldData);
-              let newDefaults = DEFAULT_REVIEW_WORDS.filter(dw => !oldWords.some(ow => ow.traditional === dw.traditional));
-              let merged = [...newDefaults, ...oldWords];
-              merged.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-              return merged;
-            } catch (e) {}
-          }
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_REVIEW_WORDS));
-          return DEFAULT_REVIEW_WORDS;
+        if (raw) {
+          try { savedWords = JSON.parse(raw); } catch (e) { savedWords = null; }
         }
-        let words = JSON.parse(raw);
-        // 新しいものが上（先頭）、古いものが下（末尾）になるよう降順ソート
-        words.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-        return words;
+
+        // 最新キーがなければ過去のバージョンから引き継ぎ
+        if (!savedWords || !Array.isArray(savedWords)) {
+          const oldKeys = [
+            'taiwan_chinese_review_words_v5',
+            'taiwan_chinese_review_words_v4',
+            'taiwan_chinese_review_words_v3',
+            'taiwan_chinese_review_words_v2',
+            'taiwan_chinese_review_words_v1'
+          ];
+          for (const k of oldKeys) {
+            const oldRaw = localStorage.getItem(k);
+            if (oldRaw) {
+              try {
+                const parsed = JSON.parse(oldRaw);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                  savedWords = parsed;
+                  break;
+                }
+              } catch (e) {}
+            }
+          }
+        }
+
+        if (!savedWords || !Array.isArray(savedWords)) {
+          savedWords = [...DEFAULT_REVIEW_WORDS];
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(savedWords));
+          return savedWords;
+        }
+
+        // DEFAULT_REVIEW_WORDS にある新単語が savedWords に含まれていない場合は先頭に自動マージ！
+        const existingSet = new Set(savedWords.map(w => w.traditional));
+        const missingDefaults = DEFAULT_REVIEW_WORDS.filter(dw => !existingSet.has(dw.traditional));
+        
+        let merged;
+        if (missingDefaults.length > 0) {
+          merged = [...missingDefaults, ...savedWords];
+        } else {
+          merged = savedWords;
+        }
+
+        // 新しい順（降順）にソート
+        merged.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+        return merged;
       } catch (e) {
         return DEFAULT_REVIEW_WORDS;
       }
