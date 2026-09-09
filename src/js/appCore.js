@@ -259,55 +259,7 @@
         title: '💡 「教」も「室」も第4声！強く下降調で発音する',
         content: '「教」は動詞「教える（教書）」では第1声（ㄐㄧㄠ / jiāo）ですが、「教室」「教師」「教育」など名詞・熟語では第4声（ㄐㄧㄠˋ / jiào）に変化します。「室 (ㄕˋ)」も第4声なので「ジャーオ！シー！」と力強く発音します。'
       },
-      createdAt: 1788876300000 // 2026/09/08 23:05
-    },
-    {
-      traditional: '鳳梨酥',
-      zhuyin: 'ㄈㄥˋ ㄌㄧˊ ㄙㄨ',
-      pinyin: 'fènglísū',
-      meaning: 'パイナップルケーキ (台湾名物のお菓子)',
-      example: '這是台灣很有名的鳳梨酥。 (これは台湾でとても有名なパイナップルケーキです)',
-      column: {
-        title: '🍍 漢字分解と台湾語「旺來（オンライ）」の大吉祥文化',
-        content: '• <strong>鳳</strong>（鳳凰の尾羽のようなトゲトゲの葉）＋ <strong>梨</strong>（梨のようなみずみずしい果肉）＋ <strong>酥</strong>（口の中でホロホロ崩れるサクサク焼き菓子）。<br>• パイナップルの台湾語「旺來 (ông-lâi)」は「運気がぐんぐん栄えてやってくる（繁盛する）」と同じ音！そのため開店祝い・春節・手土産の定番吉祥菓子として愛されています（🇨🇳 大陸では「菠蘿酥」）。'
-      },
-      createdAt: 1788874200000 // 2026/09/08 22:30
-    },
-    {
-      traditional: '打擾',
-      zhuyin: 'ㄉㄚˇ ㄖㄠˇ',
-      pinyin: 'dǎrǎo',
-      meaning: '失礼する / お邪魔する / 邪魔する',
-      example: '不好意思，打擾一下！ (すみません、ちょっと失礼します/お邪魔します！)',
-      column: {
-        title: '💡 「打」＋「擾」のそれぞれの漢字の意味',
-        content: '• <strong>打</strong>（対象に働きかける接頭語的動詞）＋ <strong>擾</strong>（手へん＋憂＝相手の平穏や静寂を乱す）。<br>• 直訳すると「相手の落ち着いた状態をかき乱す」＝「お邪魔する」。人にお願いするときや声をかけるときは「不好意思，打擾一下！」が台湾人の鉄板フレーズです。'
-      },
-      createdAt: 1788873300000 // 2026/09/08 22:15
-    },
-    {
-      traditional: '慢用',
-      zhuyin: 'ㄇㄢˋ ㄩㄥˋ',
-      pinyin: 'mànyòng',
-      meaning: 'ゆっくりする / ごゆっくりどうぞ',
-      example: '請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！)',
-      column: {
-        title: '🇹🇼 「ゆっくり」の台湾使い分けコラム',
-        content: '• <strong>慢用 (mànyòng)</strong>：食事やお茶を出すときに「ごゆっくり召し上がれ」。<br>• <strong>漫遊 (mànyóu)</strong>：街や観光地をのんびり散策・ぶらぶら歩く（例：台北漫遊）。<br>• <strong>慢活 (mànhuó)</strong>：のんびりスローライフを送る。'
-      },
-      createdAt: 1788872400000 // 2026/09/08 22:00
-    },
-    {
-      traditional: '捷運站',
-      zhuyin: 'ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ',
-      pinyin: 'jiéyùnzhàn',
-      meaning: 'MRT駅 (地下鉄・都市鉄道の駅)',
-      example: '捷運站在哪裡？ (MRTの駅はどこですか？)',
-      column: {
-        title: '🚇 「捷運」の語源と「站」の意味',
-        content: '• 英語の <strong>MRT (Mass Rapid Transit)</strong> の訳。<strong>捷</strong>（すばやい・敏捷）＋<strong>運</strong>（輸送・運行）＝「すばやく運ぶ高速都市輸送システム」。地下でも高架路線でも「捷運」と呼びます（🇨🇳 大陸では「地鐵」）。<br>• <strong>站</strong>（ㄓㄢˋ）は駅・停留所のこと（火車站＝電車の駅、高鐵站＝新幹線の駅、公車站＝バス停）。'
-      },
-      createdAt: 1788871500000 // 2026/09/08 21:45
+      createdAt: 1788875548000 // 2026/09/08 22:52
     },
     {
       traditional: '上班族',
@@ -319,7 +271,7 @@
         title: '🇹🇼 「上班（出勤）」＋「族（〜な人たち）」',
         content: '台湾では会社勤めの人を「上班族 (ㄕㄤˋ ㄅㄢ ㄗㄨˊ)」と呼びます。「族」は同じライフスタイルや属性を表す接尾辞で、「小資族（プチリッチ女子・若手社員）」や「追劇族（ドラマ一気見勢）」など台湾社会で大人気です。'
       },
-      createdAt: 1788773400000 // 2026/09/07 18:30
+      createdAt: 1788186821000 // 2026/08/31 23:33
     },
     {
       traditional: '粉紅色',
@@ -331,7 +283,31 @@
         title: '💡 パステル調の淡い赤＝ピンク色！',
         content: '「粉 (ㄈㄣˇ)」はおしろいや粉末、淡いパステル調を意味し、「紅 (ㄏㄨㄥˊ)」は赤。合わさって「淡い赤＝ピンク色」になります。台湾のドリンクスタンドやカフェでも「粉紅〜」のメニューをよく見かけます。'
       },
-      createdAt: 1788768900000 // 2026/09/07 17:15
+      createdAt: 1788186820000 // 2026/08/31 23:33
+    },
+    {
+      traditional: '打擾',
+      zhuyin: 'ㄉㄚˇ ㄖㄠˇ',
+      pinyin: 'dǎrǎo',
+      meaning: '失礼する / お邪魔する / 邪魔する',
+      example: '不好意思，打擾一下！ (すみません、ちょっと失礼します/お邪魔します！)',
+      column: {
+        title: '💡 「打」＋「擾」のそれぞれの漢字の意味',
+        content: '• <strong>打</strong>（対象に働きかける接頭語的動詞）＋ <strong>擾</strong>（手へん＋憂＝相手の平穏や静寂を乱す）。<br>• 直訳すると「相手の落ち着いた状態をかき乱す」＝「お邪魔する」。人にお願いするときや声をかけるときは「不好意思，打擾一下！」が台湾人の鉄板フレーズです。'
+      },
+      createdAt: 1788101521000 // 2026/08/30 23:52
+    },
+    {
+      traditional: '鳳梨酥',
+      zhuyin: 'ㄈㄥˋ ㄌㄧˊ ㄙㄨ',
+      pinyin: 'fènglísū',
+      meaning: 'パイナップルケーキ (台湾名物のお菓子)',
+      example: '這是台灣很有名的鳳梨酥。 (これは台湾でとても有名なパイナップルケーキです)',
+      column: {
+        title: '🍍 漢字分解と台湾語「旺來（オンライ）」の大吉祥文化',
+        content: '• <strong>鳳</strong>（鳳凰の尾羽のようなトゲトゲの葉）＋ <strong>梨</strong>（梨のようなみずみずしい果肉）＋ <strong>酥</strong>（口の中でホロホロ崩れるサクサク焼き菓子）。<br>• パイナップルの台湾語「旺來 (ông-lâi)」は「運気がぐんぐん栄えてやってくる（繁盛する）」と同じ音！そのため開店祝い・春節・手土産の定番吉祥菓子として愛されています（🇨🇳 大陸では「菠蘿酥」）。'
+      },
+      createdAt: 1788101520000 // 2026/08/30 23:52
     },
     {
       traditional: '同學',
@@ -343,7 +319,31 @@
         title: '💡 「同じ学校・講座で学ぶ仲間」',
         content: '学校のクラスメイトだけでなく、中国語スクールやセミナーの同期も「同學 (ㄊㄨㄥˊ ㄒㄩㄝˊ)」です。「老同學（昔からの同級生）」のように親しみを込めて呼び合います。先生が生徒全員に呼びかけるときも「同學〜！」と言います。'
       },
-      createdAt: 1788764400000 // 2026/09/07 16:00
+      createdAt: 1788101519000 // 2026/08/30 23:52
+    },
+    {
+      traditional: '慢用',
+      zhuyin: 'ㄇㄢˋ ㄩㄥˋ',
+      pinyin: 'mànyòng',
+      meaning: 'ゆっくりする / ごゆっくりどうぞ',
+      example: '請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！)',
+      column: {
+        title: '🇹🇼 「ゆっくり」の台湾使い分けコラム',
+        content: '• <strong>慢用 (mànyòng)</strong>：食事やお茶を出すときに「ごゆっくり召し上がれ」。<br>• <strong>漫遊 (mànyóu)</strong>：街や観光地をのんびり散策・ぶらぶら歩く（例：台北漫遊）。<br>• <strong>慢活 (mànhuó)</strong>：のんびりスローライフを送る。'
+      },
+      createdAt: 1787758310000 // 2026/08/27 00:31
+    },
+    {
+      traditional: '捷運站',
+      zhuyin: 'ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ',
+      pinyin: 'jiéyùnzhàn',
+      meaning: 'MRT駅 (地下鉄・都市鉄道の駅)',
+      example: '捷運站在哪裡？ (MRTの駅はどこですか？)',
+      column: {
+        title: '🚇 「捷運」の語源と「站」の意味',
+        content: '• 英語の <strong>MRT (Mass Rapid Transit)</strong> の訳。<strong>捷</strong>（すばやい・敏捷）＋<strong>運</strong>（輸送・運行）＝「すばやく運ぶ高速都市輸送システム」。地下でも高架路線でも「捷運」と呼びます（🇨🇳 大陸では「地鐵」）。<br>• <strong>站</strong>（ㄓㄢˋ）は駅・停留所のこと（火車站＝電車の駅、高鐵站＝新幹線の駅、公車站＝バス停）。'
+      },
+      createdAt: 1787758309000 // 2026/08/27 00:31
     },
     {
       traditional: '最近',
@@ -355,7 +355,7 @@
         title: '💡 日常会話の挨拶定番「最近好嗎？」',
         content: '「最近好嗎？ (ㄗㄨㄟˋ ㄐㄧㄣˋ ㄏㄠˇ ㄇㄚ˙)」は久しぶりに会った友人やチャットの冒頭で「最近どう？元気にしてる？」と声をかけるときの超定番フレーズです。'
       },
-      createdAt: 1788672000000 // 2026/09/06 14:20
+      createdAt: 1787758308000 // 2026/08/27 00:31
     },
     {
       traditional: '護照',
@@ -367,11 +367,11 @@
         title: '💡 「護（守る）」＋「照（証明・照会）」',
         content: '旅行中に自らの身元を保護・証明する公的書類。「護照 (ㄏㄨˋ ㄓㄠˋ)」は台湾旅行中の免税手続き（退稅）やホテルチェックインなどで必ず提示します。'
       },
-      createdAt: 1788570000000 // 2026/09/05 10:00
+      createdAt: 1787758307000 // 2026/08/27 00:31
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v9';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v10';
 
   const ReviewManager = {
     getWords: function() {
@@ -385,6 +385,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v9',
             'taiwan_chinese_review_words_v8',
             'taiwan_chinese_review_words_v7',
             'taiwan_chinese_review_words_v6',
@@ -420,13 +421,14 @@
         
         let merged = missingDefaults.length > 0 ? [...missingDefaults, ...savedWords] : savedWords;
 
-        // 既存の単語にも DEFAULT_REVIEW_WORDS の最新コラム・例文データを補完反映！
+        // 既存の単語にも DEFAULT_REVIEW_WORDS の正確なコミット追加日・最新コラム・例文データを補完反映！
         merged = merged.map(w => {
           const def = DEFAULT_REVIEW_WORDS.find(dw => dw.traditional === w.traditional);
           if (def) {
             return {
               ...def,
               ...w,
+              createdAt: def.createdAt, // 正確なGit履歴上の追加日タイムスタンプを確実に適用
               column: def.column,
               example: def.example,
               meaning: def.meaning,
