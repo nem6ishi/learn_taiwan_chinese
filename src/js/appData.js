@@ -36,7 +36,10 @@ window.ZHUYIN_SPEECH_MAP = {
   'ㄖ': '日',   // r
   'ㄐ': '家',   // j
   'ㄑ': '七',   // q
-  'ㄒ': '西'    // x
+  'ㄒ': '西',   // x
+  // 単語発音補正
+  '滷肉飯': '魯肉飯',
+  '我要一碗滷肉飯': '我要一碗魯肉飯'
 };
 
 // ==================== 1-1: 唇音 (ㄅㄆㄇㄈ) ＋ 単母音 (ㄚㄛㄜㄝ) ====================
@@ -1135,8 +1138,8 @@ window.VOWELS_QUIZ_QUESTIONS_3_4 = [
   }
 ];
 
-// ==================== STEP 6-1: 嘉義編（名物・観光・土地の特徴・豆知識）確認クイズ (全10問) ====================
-window.VOWELS_QUIZ_QUESTIONS_6_1 = [
+// ==================== STEP 5-1: 嘉義編（名物・観光・土地の特徴・豆知識）確認クイズ (全10問) ====================
+window.VOWELS_QUIZ_QUESTIONS_5_1 = [
   { id: 1, type: "audio", targetSymbol: "火雞肉飯", speechTarget: "火雞肉飯", prompt: "再生された嘉義発祥の看板ソウルフード「七面鳥肉ご飯」はどれ？", options: ["火雞肉飯", "滷肉飯", "雞腿飯", "排骨飯"] },
   { id: 2, type: "audio", targetSymbol: "阿里山", speechTarget: "阿里山", prompt: "再生されたご来光や神木・森林鉄道で有名な嘉義の名勝地はどれ？", options: ["阿里山", "陽明山", "玉山", "日月潭"] },
   { id: 3, type: "zhuyin-to-word", targetSymbol: "魚頭の土鍋煮込み (嘉義名物)", speechTarget: "砂鍋魚頭", prompt: "注音「ㄕㄚ ㄍㄨㄛ ㄩˊ ㄊㄡˊ (砂鍋魚頭)」に対応する嘉義グルメはどれ？", options: ["魚頭の土鍋煮込み (嘉義名物)", "七面鳥肉ご飯", "スクエアパイ菓子", "豆乳豆花"] },
@@ -1152,6 +1155,7 @@ window.VOWELS_QUIZ_QUESTIONS_6_1 = [
     prompt: "「阿里山」の正しい注音表記はどれ？", options: ["ㄚ ㄌㄧˇ ㄕㄢ", "ㄧㄤˊ ㄇㄧㄥˊ ㄕㄢ", "ㄩˋ ㄕㄢ", "ㄖˋ ㄩㄝˋ ㄊㄢˊ"]
   }
 ];
+window.VOWELS_QUIZ_QUESTIONS_6_1 = window.VOWELS_QUIZ_QUESTIONS_5_1; // 後方互換性
 
 // ==================== STEP 2-2: 願望・注文 ＆ 助動詞「要 / 想」確認クイズ (全10問) ====================
 window.GRAMMAR_QUIZ_QUESTIONS_2_2 = [

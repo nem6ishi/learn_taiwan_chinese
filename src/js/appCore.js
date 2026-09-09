@@ -99,7 +99,12 @@
     }
 
     const speechMap = window.ZHUYIN_SPEECH_MAP || {};
-    const speechText = speechMap[text] || text;
+    let speechText = speechMap[text] || text;
+
+    // TTS音声補正: 「滷」は各種音声エンジンで不自然な途切れや誤読が起きやすいため、自然に発音される「魯」に補正
+    if (typeof speechText === 'string' && speechText.includes('滷')) {
+      speechText = speechText.replace(/滷/g, '魯');
+    }
 
     playWebSpeechFemale(text, speechText);
   }
