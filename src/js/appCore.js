@@ -202,6 +202,42 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '看過',
+      zhuyin: 'ㄎㄢˋ ㄍㄨㄛ˙',
+      pinyin: 'kànguò',
+      meaning: '見たことがある (経験態「過」)',
+      example: '我看過這部台灣電影。 (私はこの台湾映画を見たことがあります)',
+      column: {
+        title: '💡 動詞＋「過」で「〜したことがある（過去の経験）」！',
+        content: '• <strong>看 (ㄎㄢˋ)</strong>（見る）＋ <strong>過 (ㄍㄨㄛ˙)</strong>（〜したことがある）。<br>• 動詞の直後に「過」を添えるだけで「過去にその動作を行った経験がある」を表せます（去過＝行ったことがある、吃過＝食べたことがある）。否定形は「沒看過（見たことがない）」です。'
+      },
+      createdAt: 1788967650000 // 2026/09/10 00:27
+    },
+    {
+      traditional: '數學考試',
+      zhuyin: 'ㄕㄨˋ ㄒㄩㄝˊ ㄎㄠˇ ㄕˋ',
+      pinyin: 'shùxué kǎoshì',
+      meaning: '数学テスト / 数学の試験 (考數學)',
+      example: '明天學校有數學考試。 (明日、学校で数学のテストがあります)',
+      column: {
+        title: '💡 「考試（テスト）」と動詞「考（テストを受ける）」！',
+        content: '• <strong>數學 (ㄕㄨˋ ㄒㄩㄝˊ)</strong>＝数学、<strong>考試 (ㄎㄠˇ ㄕˋ)</strong>＝試験・テスト。<br>• 台湾の学校や日常会話では「明天要考數學！（明日数学のテストがある！）」のように「動詞の考＋科目名」の形でも頻繁に使われます。'
+      },
+      createdAt: 1788967640000 // 2026/09/10 00:27
+    },
+    {
+      traditional: '已經',
+      zhuyin: 'ㄧˇ ㄐㄧㄥ',
+      pinyin: 'yǐjīng',
+      meaning: 'もう / すでに / とっくに',
+      example: '我已經吃飽了。 (私はもうお腹いっぱいです)',
+      column: {
+        title: '💡 完了・変化を表す「已經〜了」の超定番パターン！',
+        content: '• 「すでに・もう」を表す副詞。文末の「了 (ㄌㄜ˙)」とペアで「<strong>已經〜了</strong>（もう〜した）」と使うのが日常会話の鉄板フレーズです（例：我已經到了＝もう着きました、他已經出發了＝彼はもう出発しました）。'
+      },
+      createdAt: 1788967630000 // 2026/09/10 00:27
+    },
+    {
       traditional: '起床',
       zhuyin: 'ㄑㄧˇ ㄔㄨㄤˊ',
       pinyin: 'qǐchuáng',
@@ -431,7 +467,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v11';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v12';
 
   const ReviewManager = {
     getWords: function() {
@@ -445,6 +481,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v11',
             'taiwan_chinese_review_words_v10',
             'taiwan_chinese_review_words_v9',
             'taiwan_chinese_review_words_v8',
