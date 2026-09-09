@@ -636,11 +636,85 @@
     }
   }
 
+  // ==================== 目次サイドバー＆ScrollSpy制御 ====================
+  function initSidebarTOC() {
+    if (typeof document === 'undefined') return;
+
+    const sidebarNav = document.getElementById('sidebar-nav');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+    const closeBtn = document.getElementById('sidebar-close-btn');
+    const overlay = document.getElementById('sidebar-overlay');
+    const links = document.querySelectorAll('.sidebar-link[data-target]');
+
+    // モバイル用ドロワー開閉
+    const openDrawer = () => {
+      if (sidebarNav) sidebarNav.classList.add('open');
+      if (overlay) overlay.classList.add('active');
+    };
+    const closeDrawer = () => {
+      if (sidebarNav) sidebarNav.classList.remove('open');
+      if (overlay) overlay.classList.remove('active');
+    };
+
+    if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
+
+    // スムーススクロール＆クリック時クローズ
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('data-target');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+          closeDrawer();
+        }
+      });
+    });
+
+    // ScrollSpy（スクロール位置に応じたアクティブハイライト）
+    if ('IntersectionObserver' in window && links.length > 0) {
+      const sections = [];
+      links.forEach(link => {
+        const targetId = link.getAttribute('data-target');
+        const el = document.getElementById(targetId);
+        if (el) sections.push(el);
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach(link => {
+              const targetId = link.getAttribute('data-target');
+              if (targetId === id) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(sec => observer.observe(sec));
+    }
+  }
+
   if (typeof document !== 'undefined') {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', renderVersionBadge);
-    } else {
+    const onReady = () => {
       renderVersionBadge();
+      initSidebarTOC();
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', onReady);
+    } else {
+      onReady();
     }
   }
 
