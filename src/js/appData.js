@@ -1155,7 +1155,6 @@ window.VOWELS_QUIZ_QUESTIONS_5_1 = [
     prompt: "「阿里山」の正しい注音表記はどれ？", options: ["ㄚ ㄌㄧˇ ㄕㄢ", "ㄧㄤˊ ㄇㄧㄥˊ ㄕㄢ", "ㄩˋ ㄕㄢ", "ㄖˋ ㄩㄝˋ ㄊㄢˊ"]
   }
 ];
-window.VOWELS_QUIZ_QUESTIONS_6_1 = window.VOWELS_QUIZ_QUESTIONS_5_1; // 後方互換性
 
 // ==================== STEP 2-2: 願望・注文 ＆ 助動詞「要 / 想」確認クイズ (全10問) ====================
 window.GRAMMAR_QUIZ_QUESTIONS_2_2 = [
@@ -1200,4 +1199,28 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_3 = [
     prompt: "「大碗 (大盛り)」の正しい注音表記はどれ？", options: ["ㄉㄚˋ ㄨㄢˇ", "ㄒㄧㄠˇ ㄨㄢˇ", "ㄉㄚˋ ㄅㄟ", "ㄓㄨㄥ ㄅㄟ"]
   }
 ];
+
+// ==================== STEP 6-1: 早餐店（朝ごはん屋）完全攻略・文化確認クイズ (全10問) ====================
+window.CULTURE_QUIZ_QUESTIONS_6_1 = [
+  { id: 1, type: "audio", targetSymbol: "大冰奶", speechTarget: "大冰奶", prompt: "再生された朝ごはん屋の看板ドリンク「アイスミルクティー大」はどれ？", options: ["大冰奶", "熱豆漿", "冰紅茶", "柳橙汁"] },
+  { id: 2, type: "audio", targetSymbol: "蛋餅", speechTarget: "蛋餅", prompt: "再生されたモチモチ食感が大人気の台湾定番朝食「台湾式卵クレープ」はどれ？", options: ["蛋餅", "蔥抓餅", "蘿蔔糕", "燒餅"] },
+  { id: 3, type: "audio", targetSymbol: "飯糰", speechTarget: "飯糰", prompt: "再生された揚げパンや具がギッシリ詰まった「台湾式おにぎり」はどれ？", options: ["飯糰", "肉粽", "便當", "油飯"] },
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "大根もち (カリカリ香ばしい定番)", speechTarget: "蘿蔔糕", prompt: "注音「ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ (蘿蔔糕)」に対応する台湾朝食メニューはどれ？", options: ["大根もち (カリカリ香ばしい定番)", "台湾風おにぎり", "台湾風卵クレープ", "ネギパイ"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "卵追加 (トッピング)", speechTarget: "加蛋", prompt: "注音「ㄐㄧㄚ ㄉㄢˋ (加蛋)」に対応するカスタマイズ注文はどれ？", options: ["卵追加 (トッピング)", "辛くする", "揚げパン抜き", "砂糖少なめ"] },
+  { id: 6, type: "fill-in-blank", targetSymbol: "加辣", speechTarget: "老闆我的蛋餅要加辣", prompt: "朝ごはん屋で「蛋餅を辛くしてください（我的蛋餅要 ___ ）」の空欄に入る表現はどれ？", options: ["加辣", "加糖", "加蛋", "加冰"] },
+  { id: 7, type: "fill-in-blank", targetSymbol: "油條", speechTarget: "飯糰不要油條", prompt: "「おにぎりの揚げパンを抜いてください（飯糰不要 ___ ）」の揚げパンを指す単語はどれ？", options: ["油條", "豆漿", "肉鬆", "培根"] },
+  { id: 8, type: "audio", targetSymbol: "我要一份起司蛋餅", speechTarget: "我要一份起司蛋餅", prompt: "再生された注文フレーズ「チーズ蛋餅を1つください」を選んでください", options: ["我要一份起司蛋餅", "我要一份原味蛋餅", "我要一個紫米飯糰", "我要一杯大冰奶"] },
+  {
+    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄉㄢˋ ㄅㄧㄥˇ", speechTarget: "蛋餅",
+    optionSpeechMap: { "ㄉㄢˋ ㄅㄧㄥˇ": "蛋餅", "ㄈㄢˋ ㄊㄨㄢˊ": "飯糰", "ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ": "蘿蔔糕", "ㄧㄡˊ ㄊㄧㄠˊ": "油條" },
+    prompt: "「蛋餅」の正しい注音表記はどれ？", options: ["ㄉㄢˋ ㄅㄧㄥˇ", "ㄈㄢˋ ㄊㄨㄢˊ", "ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ", "ㄧㄡˊ ㄊㄧㄠˊ"]
+  },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ", speechTarget: "大冰奶",
+    optionSpeechMap: { "ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ": "大冰奶", "ㄖㄜˋ ㄉㄡˋ ㄐㄧㄤ": "熱豆漿", "ㄅㄧㄥ ㄏㄨㄥˊ ㄔㄚˊ": "冰紅茶", "ㄋㄞˇ ㄔㄚˊ": "奶茶" },
+    prompt: "「大冰奶」の正しい注音表記はどれ？", options: ["ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ", "ㄖㄜˋ ㄉㄡˋ ㄐㄧㄤ", "ㄅㄧㄥ ㄏㄨㄥˊ ㄔㄚˊ", "ㄋㄞˇ ㄔㄚˊ"]
+  }
+];
+window.VOWELS_QUIZ_QUESTIONS_6_1 = window.CULTURE_QUIZ_QUESTIONS_6_1;
+
 

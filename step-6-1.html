@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEP 6-1: 🍳 早餐店（朝ごはん屋）完全攻略 ＆ カスタマイズ | 台湾ディープカルチャー | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾華語 STEP 6-1: 台湾の朝の魂「早餐店（朝ごはん屋）」の看板メニュー（蛋餅、飯糰、蘿蔔糕、大冰奶）と、卵追加（加蛋）・揚げパン抜き（不要油條）・辛口（加辣）などのカスタム注文術、大冰奶通便伝説などの現地コラムをマスター。">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <style>
+    /* 音声波形アニメーション */
+    .voice-wave {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      height: 14px;
+      margin-left: 4px;
+    }
+    .voice-bar {
+      width: 2px;
+      height: 100%;
+      background: var(--color-primary);
+      border-radius: 1px;
+      animation: none;
+    }
+    .playing .voice-bar:nth-child(1) { animation: soundWave 0.8s ease-in-out infinite; }
+    .playing .voice-bar:nth-child(2) { animation: soundWave 0.8s ease-in-out infinite 0.2s; }
+    .playing .voice-bar:nth-child(3) { animation: soundWave 0.8s ease-in-out infinite 0.4s; }
+
+    @keyframes soundWave {
+      0%, 100% { height: 4px; }
+      50% { height: 14px; }
+    }
+
+    .play-word-sound {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .play-word-sound:hover {
+      border-color: #F59E0B !important;
+      background-color: #FFFBEB !important;
+    }
+
+    .chat-bubble-card {
+      transition: all 0.2s ease;
+    }
+    .chat-bubble-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">台</span>
+        <span>台湾華語学習サイト</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">
+          📋 注音符号一覧表
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          ← トップ一覧へ戻る
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+    
+    <!-- ページヘッダー -->
+    <div style="background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border: 1px solid #FDE68A; border-radius: var(--radius-lg); padding: 28px 24px; margin-bottom: 28px;">
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+        <span style="background: #F59E0B; color: #FFFFFF; font-size: 0.82rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; display: inline-block;">
+          CATEGORY 6: 台湾ディープカルチャー ＆ 現地生活体験
+        </span>
+        <span style="background: #FEF3C7; color: #B45309; font-size: 0.82rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">
+          STEP 6-1
+        </span>
+      </div>
+      <h1 style="font-size: 1.85rem; font-weight: 900; color: #78350F; margin-bottom: 10px;">
+        🍳 早餐店（朝ごはん屋）完全攻略 ＆ カスタマイズ<br>
+        <span style="font-size: 1.25rem; font-weight: 700; color: #B45309;">蛋餅・飯糰・蘿蔔糕・大冰奶 ＆ 現地朝食のリアル注文術</span>
+      </h1>
+      <p style="color: #92400E; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+        台湾人の朝は「早餐店（朝ごはん屋）」から始まる！外食が当たり前の台湾の朝食文化を体験しましょう。<br>
+        もちもち蛋餅、ぎっしり具だくさん飯糰、大根もち、看板ドリンク「大冰奶」と、卵追加（加蛋）や揚げパン抜き（不要油條）などの注文カスタムをマスター！
+      </p>
+      <div style="margin-top: 16px;">
+        <button class="btn btn-primary" id="start-quiz-top-btn" style="padding: 8px 20px; font-size: 0.9rem; background: #D97706; border-color: #B45309;">
+          🏆 早餐店クイズに挑戦 (全10問)
+        </button>
+      </div>
+    </div>
+
+    <!-- クイズ設定DOM要素 (Viteビルド規約準拠) -->
+    <div id="step-config" style="display: none;"
+      data-quiz-key="CULTURE_QUIZ_QUESTIONS_6_1"
+      data-quiz-fallback="VOWELS_QUIZ_QUESTIONS_6_1"
+      data-step-title="STEP 6-1: 早餐店（朝ごはん屋）完全攻略 ＆ カスタマイズ"
+      data-next-step="index.html">
+    </div>
+
+    <!-- 学習セクション -->
+    <div style="display: flex; flex-direction: column; gap: 28px;">
+
+      <!-- カード 1: 蛋餅（台湾式卵クレープ） -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px; background: #FEF3C7; color: #B45309;">TAIWAN BREAKFAST #1</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            🍳 朝食の絶対王者:「蛋餅（ㄉㄢˋ ㄅㄧㄥˇ）」
+          </h2>
+          <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: #B45309; margin-top: 8px;">
+            蛋餅（ㄉㄢˋ ㄅㄧㄥˇ / ダンビン）＝ 台湾式モチモチ卵クレープ
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            薄い小麦粉生地と卵を鉄板で巻き、一口大にカットして甘辛いとろみ醤油（醬油膏）で食べる台湾朝食の代名詞です。
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            📝 例文と実践フレーズ（タップで音声再生）
+          </h3>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="我要一份起司蛋餅。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一份起司蛋餅。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄑㄧˇ ㄙ ㄉㄢˋ ㄅㄧㄥˇ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">チーズ蛋餅を1つください。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="蛋餅趁熱吃最好吃。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">蛋餅趁熱吃最好吃。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄉㄢˋ ㄅㄧㄥˇ ㄔㄣˋ ㄖㄜˋ ㄔ ㄗㄨㄟˋ ㄏㄠˇ ㄔ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">蛋餅は熱々のうちに食べるのが一番美味しいです。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="這家早餐店的蛋餅很有名。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">這家早餐店的蛋餅很有名。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄓㄜˋ ㄐㄧㄚ ㄗㄠˇ ㄘㄢ ㄉㄧㄢˋ ㄉㄜ˙ ㄉㄢˋ ㄅㄧㄥˇ ㄏㄣˇ ㄧㄡˇ ㄇㄧㄥˊ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">この朝ごはん屋の蛋餅はとても有名です。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💡 台湾華語コラム①: 蛋餅の豊富な具材バリエーション -->
+        <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+              蛋餅の豊富な具材トッピング
+            </h4>
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
+            台湾の朝ごはん屋では、具材のバリエーションが豊富！基本の<strong>原味（プレーン）</strong>のほか、<strong>起司（チーズ）</strong>、<strong>鮪魚（ツナ）</strong>、<strong>培根（ベーコン）</strong>、<strong>玉米（コーン）</strong>、<strong>肉鬆（豚肉でんぶ）</strong>、さらには<strong>薯餅（ハッシュドポテト）</strong>を丸ごと巻いたボリューム満点の蛋餅まであります。
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 2: 飯糰（台湾式おにぎり） -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px; background: #FEF3C7; color: #B45309;">TAIWAN BREAKFAST #2</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            🍙 具だくさん熱々おにぎり:「飯糰（ㄈㄢˋ ㄊㄨㄢˊ）」
+          </h2>
+          <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: #B45309; margin-top: 8px;">
+            飯糰（ㄈㄢˋ ㄊㄨㄢˊ / ファントゥアン）＝ 台湾式俵型おにぎり
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            もち米の中に、サクサクの揚げパン（油條）、甘塩っぱい肉鬆、切り干し大根（菜脯）、煮卵などがギッシリ詰まった巨大おにぎりです。
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            📝 例文と実践フレーズ（タップで音声再生）
+          </h3>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="我要一個紫米飯糰。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一個紫米飯糰。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄍㄜ˙ ㄗˇ ㄇㄧˇ ㄈㄢˋ ㄊㄨㄢˊ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">紫米（黒米）のおにぎりを1個ください。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="飯糰裡面有油條跟菜脯。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">飯糰裡面有油條跟菜脯。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄈㄢˋ ㄊㄨㄢˊ ㄌㄧˇ ㄇㄧㄢˋ ㄧㄡˇ ㄧㄡˊ ㄊㄧㄠˊ ㄍㄣ ㄘㄞˋ ㄆㄨˊ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">おにぎりの中には揚げパンと切り干し大根が入っています。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="這個飯糰很大，吃得很飽。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">這個飯糰很大，吃得很飽。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄓㄜˋ ㄍㄜ˙ ㄈㄢˋ ㄊㄨㄢˊ ㄏㄣˇ ㄉㄚˋ ， ㄔ ㄉㄜ˙ ㄏㄣˇ ㄅㄠˇ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">このおにぎりはとても大きく、満腹になります。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💡 台湾華語コラム②: 日本のおにぎりと台湾飯糰の違い -->
+        <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+              台湾の飯糰（ファントゥアン）文化
+            </h4>
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
+            日本の冷たい三角おにぎりと違い、台湾の飯糰は<strong>「蒸したての熱々もち米」</strong>を注文後にラップの上でギュッと俵型に握ってくれます！白もち米のほか、プチプチした食感と香りが人気の<strong>「紫米（ㄗˇ ㄇㄧˇ）」</strong>を選べるお店も多いです。
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 3: 蘿蔔糕（大根もち） -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px; background: #FEF3C7; color: #B45309;">TAIWAN BREAKFAST #3</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            🥢 カリッと香ばしい:「蘿蔔糕（ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ）」
+          </h2>
+          <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: #B45309; margin-top: 8px;">
+            蘿蔔糕（ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ / ルオボーガオ）＝ 大根もち
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            すりおろした大根と米粉を練って蒸し、鉄板で両面を香ばしくキツネ色に焼き上げた朝食メニュー。ニンニク入りの醤油ダレをつけていただきます。
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            📝 例文と実践フレーズ（タップで音声再生）
+          </h3>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="一份蘿蔔糕加蛋，謝謝。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">一份蘿蔔糕加蛋，謝謝。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄧˊ ㄈㄣˋ ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ ㄐㄧㄚ ㄉㄢˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">大根もちに卵追加を1人前、ありがとう。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="沾蒜蓉醬很好吃。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">沾蒜蓉醬很好吃。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄓㄢ ㄙㄨㄢˋ ㄖㄨㄥˊ ㄐㄧㄤˋ ㄏㄣˇ ㄏㄠˇ ㄔ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">ニンニク入りとろみ醤油をつけるとすごく美味しいです。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="蘿蔔糕煎得香香脆脆的。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">蘿蔔糕煎得香香脆脆的。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄌㄨㄛˊ ㄅㄛ˙ ㄍㄠ ㄐㄧㄢ ㄉㄜ˙ ㄒㄧㄤ ㄒㄧㄤ ㄘㄨㄟˋ ㄘㄨㄟˋ ㄉㄜ˙ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">大根もちが香ばしくカリカリに焼き上がっています。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💡 台湾華語コラム③: 加蛋（卵のせ）の魔法 -->
+        <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+              「加蛋（卵追加）」でグレードアップ！
+            </h4>
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
+            台湾の早餐店で絶対に試したいのが<strong>「蘿蔔糕加蛋（大根もちの卵のせ）」</strong>！焼き上がった大根もちを薄焼き卵や目玉焼きで包むように仕上げてくれます。卵のまろやかさと大根もちのカリカリ食感がベストマッチします。
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 4: 大冰奶（アイスミルクティー大） -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px; background: #FEF3C7; color: #B45309;">TAIWAN BREAKFAST #4</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            🧋 朝の国民的ドリンク:「大冰奶（ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ）」
+          </h2>
+          <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: #B45309; margin-top: 8px;">
+            大冰奶（ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ）＝ 大杯冰奶茶（アイスミルクティー・Lサイズ）の超定番略称
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            紅茶にエバミルクやミルクパウダーを加えた、独特のコクと甘みがある朝ごはん屋特有のミルクティー。台湾の朝には絶対に欠かせません。
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            📝 例文と実践フレーズ（タップで音声再生）
+          </h3>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="我要一杯大冰奶。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一杯大冰奶。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄅㄟ ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">アイスミルクティー大を1杯ください。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="大冰奶是台灣早餐的靈魂。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">大冰奶是台灣早餐的靈魂。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ ㄕˋ ㄊㄞˊ ㄨㄢ ㄗㄠˇ ㄘㄢ ㄉㄜ˙ ㄌㄧㄥˊ ㄏㄨㄣˊ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">大冰奶は台湾の朝ごはんのソウル（魂）です。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="今天早上想喝大冰奶。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">今天早上想喝大冰奶。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄐㄧㄣ ㄊㄧㄢ ㄗㄠˇ ㄕㄤˋ ㄒㄧㄤˇ ㄏㄜ ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">今朝はアイスミルクティー大が飲みたいです。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💡 台湾華語コラム④: 大冰奶の通便伝説 -->
+        <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+              台湾人の国民的都市伝説「大冰奶通便伝説」
+            </h4>
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
+            台湾でネットでもテレビでも語られる超有名ネタが<strong>「早餐店の大冰奶を飲むとなぜかお腹がスッキリお通じがよくなる！？」</strong>という現象！氷の冷たさ・乳成分・濃いお茶のカフェインなど様々な理由が考察されていますが、台湾人の間では「最強の便秘解消薬」として愛されています。
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 5: 朝ごはん屋のカスタム呪文 -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px; background: #FEF3C7; color: #B45309;">CUSTOM ORDERS</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            ✨ 早餐店で使いこなす「カスタマイズ呪文」
+          </h2>
+          <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: #B45309; margin-top: 8px;">
+            加蛋（卵追加） / 不要油條（揚げパン抜き） / 加辣（辛くする）
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            台湾の朝ごはん屋では、自分の好みに合わせて自由に具材を足し引きできます。この3つを覚えれば現地人と同じように注文できます！
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: var(--color-text-muted);">
+            📝 例文と実践フレーズ（タップで音声再生）
+          </h3>
+          <div class="example-list">
+            <div class="example-row play-word-sound" data-word="這份飯糰不要油條。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">這份飯糰不要油條。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄓㄜˋ ㄈㄣˋ ㄈㄢˋ ㄊㄨㄢˊ ㄅㄨˊ ㄧㄠˋ ㄧㄡˊ ㄊㄧㄠˊ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">このおにぎりは揚げパン抜きでお願いします。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="我的蛋餅要加辣。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我的蛋餅要加辣。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄨㄛˇ ㄉㄜ˙ ㄉㄢˋ ㄅㄧㄥˇ ㄧㄠˋ ㄐㄧㄚ ㄌㄚˋ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">私の蛋餅は辛くしてください（チリソース追加）。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-row play-word-sound" data-word="荷包蛋要半熟。">
+              <div class="example-left">
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">荷包蛋要半熟。</span>
+                <div class="example-phonetics">
+                  <span class="example-zhuyin">ㄏㄜˊ ㄅㄠ ㄉㄢˋ ㄧㄠˋ ㄅㄢˋ ㄕㄡˊ 。</span>
+                </div>
+              </div>
+              <div class="example-right">
+                <span class="example-meaning" style="font-size: 0.9rem;">目玉焼きは半熟にしてください。</span>
+                <div class="audio-icon-tag">
+                  <span>🔊</span>
+                  <div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💡 台湾華語コラム⑤: 美而美現象 -->
+        <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+              なぜ朝ごはん屋には「美」が付く？（美而美現象）
+            </h4>
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
+            街を歩くと「美而美」「美又美」「巨林美而美」…と「美」のつく朝食店だらけ！これは1981年に台北で創業した元祖<strong>「美而美（メイアルメイ）」</strong>が大ヒットし、そこから暖簾分けやオマージュ店が台湾全土に急増したため。「美而美」は今や台湾式朝食チェーンの代名詞となっています。
+          </div>
+        </div>
+      </div>
+
+      <!-- カード 6: 実践会話・朝ごはん屋ロールプレイ -->
+      <div class="detail-card">
+        <div style="margin-bottom: 16px;">
+          <span class="pill-badge active" style="margin-bottom: 6px; background: #FEF3C7; color: #B45309;">ROLEPLAY CONVERSATION</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
+            🗣️ 実践会話: 朝の熱気あふれる早餐店での高速掛け合い
+          </h2>
+          <div style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: #B45309; margin-top: 8px;">
+            「想吃什麼？（何食べる？）」「內用還是外帶？（店内で？持ち帰り？）」
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
+            朝のピークタイムに繰り広げられるスピーディーな会話です。吹き出しをタップして発音とリズムを確認しましょう！
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <!-- セリフ 1: 店員 -->
+          <div class="chat-bubble-card play-word-sound" data-word="早安！今天想吃什麼？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🍳 店員（オーダー伺い）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
+                  早安！今天想吃什麼？
+                </div>
+                <div style="color: #D97706; font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄗㄠˇ ㄢ ！ ㄐㄧㄣ ㄊㄧㄢ ㄒㄧㄤˇ ㄔ ㄕㄣˊ ㄇㄜ˙ ？
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
+                  おはよう！今日は何を食べたいですか？
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: #D97706; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+
+          <!-- セリフ 2: 自分 -->
+          <div class="chat-bubble-card play-word-sound" data-word="老闆，我要一份起司蛋餅加蛋，一杯大冰奶！" style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🙋 自分（注文）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: #78350F;">
+                  老闆，我要一份起司蛋餅加蛋，一杯大冰奶！
+                </div>
+                <div style="color: #D97706; font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄌㄠˇ ㄅㄢˇ ， ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄑㄧˇ ㄙ ㄉㄢˋ ㄅㄧㄥˇ ㄐㄧㄚ ㄉㄢˋ ， ㄧˋ ㄅㄟ ㄉㄚˋ ㄅㄧㄥ ㄋㄞˇ ！
+                </div>
+                <div style="font-size: 0.85rem; color: #92400E; margin-top: 4px;">
+                  店長、チーズ蛋餅に卵追加を1つ、それとアイスミルクティー大を1杯ください！
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: #D97706; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+
+          <!-- セリフ 3: 店員 -->
+          <div class="chat-bubble-card play-word-sound" data-word="好！內用還是外帶？要加辣嗎？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🍳 店員（場所と辛さの確認）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
+                  好！內用還是外帶？要加辣嗎？
+                </div>
+                <div style="color: #D97706; font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄏㄠˇ ！ ㄋㄟˋ ㄩㄥˋ ㄏㄞˊ ㄕˋ ㄨㄞˋ ㄉㄞˋ ？ ㄧㄠˋ ㄐㄧㄚ ㄌㄚˋ ㄇㄚ˙ ？
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
+                  了解！店内で食べますか？持ち帰りですか？辛くしますか？
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: #D97706; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+
+          <!-- セリフ 4: 自分 -->
+          <div class="chat-bubble-card play-word-sound" data-word="內用，不用辣，謝謝！" style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🙋 自分（回答）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: #78350F;">
+                  內用，不用辣，謝謝！
+                </div>
+                <div style="color: #D97706; font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄋㄟˋ ㄩㄥˋ ， ㄅㄨˊ ㄩㄥˋ ㄌㄚˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙ ！
+                </div>
+                <div style="font-size: 0.85rem; color: #92400E; margin-top: 4px;">
+                  店内で、辛くしないで大丈夫です、ありがとう！
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: #D97706; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+
+          <!-- セリフ 5: 店員 -->
+          <div class="chat-bubble-card play-word-sound" data-word="好，一共八十五塊，裡面坐喔！" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🍳 店員（お会計と着席案内）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
+                  好，一共八十五塊，裡面坐喔！
+                </div>
+                <div style="color: #D97706; font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄏㄠˇ ， ㄧˊ ㄍㄨㄥˋ ㄅㄚ ㄕˊ ㄨˇ ㄎㄨㄞˋ ， ㄌㄧˇ ㄇㄧㄢˋ ㄗㄨㄛˋ ㄛ ！
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
+                  はい、合計85元です、奥に座って待っててね！
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: #D97706; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💡 別の言い方・シチュエーション -->
+        <div style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 800; color: #475569; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">💡 別の言い方パターン</span>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #334155; margin: 0;">
+              お持ち帰りやおにぎり注文のバリエーション
+            </h4>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+            <div class="chat-bubble-card play-word-sound" data-word="我要外帶，謝謝！" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 8px; padding: 8px 12px; cursor: pointer;">
+              <span style="font-weight: 800; color: #1E293B;">我要外帶，謝謝！</span>
+              <span style="color: #D97706; font-size: 0.85rem; margin-left: 8px;">ㄨㄛˇ ㄧㄠˋ ㄨㄞˋ ㄉㄞˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙ ！</span>
+              <span style="color: var(--color-text-muted); font-size: 0.85rem; margin-left: 8px;">（持ち帰りでお願いします！）</span>
+            </div>
+            <div class="chat-bubble-card play-word-sound" data-word="老闆，一個紫米飯糰，不要油條！" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 8px; padding: 8px 12px; cursor: pointer;">
+              <span style="font-weight: 800; color: #1E293B;">老闆，一個紫米飯糰，不要油條！</span>
+              <span style="color: #D97706; font-size: 0.85rem; margin-left: 8px;">ㄌㄠˇ ㄅㄢˇ ， ㄧˊ ㄍㄜ˙ ㄗˇ ㄇㄧˇ ㄈㄢˋ ㄊㄨㄢˊ ， ㄅㄨˊ ㄧㄠˋ ㄧㄡˊ ㄊㄧㄠˊ ！</span>
+              <span style="color: var(--color-text-muted); font-size: 0.85rem; margin-left: 8px;">（店長、紫米おにぎり1つ、揚げパン抜きで！）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- クイズ受講エリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">🍳 早餐店の定番メニューと注文術をチェックしましたか？</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+        蛋餅・飯糰・蘿蔔糕・大冰奶・カスタム呪文などの「確認クイズ」で定着度を確かめましょう！
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem; background: #D97706; border-color: #B45309;">
+          🏆 確認クイズを始める (全10問)
+        </button>
+        <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          トップ一覧へ戻る →
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <!-- QuizEngineで動的生成 -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+      <span class="version-badge">v1.1.0</span>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+  <script type="module" src="src/js/quizEngine.js"></script>
+  <script type="module" src="src/js/stepLoader.js"></script>
+</body>
+</html>
