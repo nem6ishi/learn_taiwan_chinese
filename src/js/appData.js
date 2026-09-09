@@ -1174,3 +1174,26 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_2 = [
     prompt: "「想要 (欲しい / 〜したい)」の正しい注音表記はどれ？", options: ["ㄒㄧㄤˇ ㄧㄠˋ", "ㄧㄠˋ ㄅㄨˊ ㄧㄠˋ", "ㄅㄨˊ ㄧㄠˋ", "ㄧㄠˋ ㄕˋ"]
   }
 ];
+
+// ==================== STEP 2-3: 数量・単位 ＆ 台湾「量詞（杯/個/份/塊/碗）」確認クイズ (全10問) ====================
+window.GRAMMAR_QUIZ_QUESTIONS_2_3 = [
+  { id: 1, type: "audio", targetSymbol: "我要兩杯珍珠奶茶", speechTarget: "我要兩杯珍珠奶茶", prompt: "再生された「タピオカミルクティーを2杯ください」を選んでください", options: ["我要兩杯珍珠奶茶", "我要一杯珍珠奶茶", "我要一份小籠包", "我要一碗滷肉飯"] },
+  { id: 2, type: "audio", targetSymbol: "我要一份小籠包", speechTarget: "我要一份小籠包", prompt: "再生された「小籠包を1人前ください」を選んでください", options: ["我要一份小籠包", "我要兩份小籠包", "我要一個便當", "我要一塊雞排"] },
+  { id: 3, type: "audio", targetSymbol: "我要一碗滷肉飯", speechTarget: "我要一碗滷肉飯", prompt: "再生された「ルーローハンを1杯ください」を選んでください", options: ["我要一碗滷肉飯", "我要一塊雞排", "我要一杯紅茶", "我要一個便當"] },
+  { id: 4, type: "audio", targetSymbol: "我要一塊雞排", speechTarget: "我要一塊雞排", prompt: "再生された「ジーパイ（台湾唐揚げ）を1枚ください」を選んでください", options: ["我要一塊雞排", "我要一碗滷肉飯", "我要一份蛋餅", "我要兩杯奶茶"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "紅茶2杯", speechTarget: "兩杯紅茶", prompt: "注音「ㄌㄧㄤˇ ㄅㄟ ㄏㄨㄥˊ ㄔㄚˊ」に対応する日本語の意味はどれ？", options: ["紅茶2杯", "緑茶1杯", "紅茶3杯", "タピオカ2杯"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "ダンピン1人前 (台湾風クレープ卵焼き)", speechTarget: "一份蛋餅", prompt: "注音「ㄧˊ ㄈㄣˋ ㄉㄢˋ ㄅㄧㄥˇ」に対応する日本語の意味はどれ？", options: ["ダンピン1人前 (台湾風クレープ卵焼き)", "小籠包2人前", "お弁当1個", "ルーローハン1杯"] },
+  { id: 7, type: "fill-in-blank", targetSymbol: "兩", speechTarget: "我要兩杯紅茶", prompt: "「紅茶を2杯ください（我要 ___ 杯紅茶）」の数量の2を表す空欄に入る漢字はどれ？", options: ["兩", "二", "倆", "個"] },
+  { id: 8, type: "fill-in-blank", targetSymbol: "碗", speechTarget: "我要一碗滷肉飯", prompt: "「ルーローハンを1杯ください（我要一 ___ 滷肉飯）」の丼ものの量詞はどれ？", options: ["碗", "杯", "塊", "份"] },
+  {
+    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄌㄧㄤˇ ㄈㄣˋ", speechTarget: "兩份",
+    optionSpeechMap: { "ㄌㄧㄤˇ ㄈㄣˋ": "兩份", "ㄧˊ ㄈㄣˋ": "一份", "ㄌㄧㄤˇ ㄅㄟ": "兩杯", "ㄌㄧㄤˇ ㄍㄜ˙": "兩個" },
+    prompt: "「兩份 (2人前)」の正しい注音表記はどれ？", options: ["ㄌㄧㄤˇ ㄈㄣˋ", "ㄧˊ ㄈㄣˋ", "ㄌㄧㄤˇ ㄅㄟ", "ㄌㄧㄤˇ ㄍㄜ˙"]
+  },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄉㄚˋ ㄨㄢˇ", speechTarget: "大碗",
+    optionSpeechMap: { "ㄉㄚˋ ㄨㄢˇ": "大碗", "ㄒㄧㄠˇ ㄨㄢˇ": "小碗", "ㄉㄚˋ ㄅㄟ": "大杯", "ㄓㄨㄥ ㄅㄟ": "中杯" },
+    prompt: "「大碗 (大盛り)」の正しい注音表記はどれ？", options: ["ㄉㄚˋ ㄨㄢˇ", "ㄒㄧㄠˇ ㄨㄢˇ", "ㄉㄚˋ ㄅㄟ", "ㄓㄨㄥ ㄅㄟ"]
+  }
+];
+
