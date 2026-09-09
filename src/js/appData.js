@@ -1223,4 +1223,23 @@ window.CULTURE_QUIZ_QUESTIONS_6_1 = [
 ];
 window.VOWELS_QUIZ_QUESTIONS_6_1 = window.CULTURE_QUIZ_QUESTIONS_6_1;
 
+// ==================== STEP 5-4: 高雄編（名物・観光・日帰りトリップ・豆知識）確認クイズ (全10問) ====================
+window.VOWELS_QUIZ_QUESTIONS_5_4 = [
+  { id: 1, type: "audio", targetSymbol: "駁二藝術特區", speechTarget: "駁二藝術特區", prompt: "再生された旧港湾倉庫群をリノベーションした高雄の巨大アート特区はどれ？", options: ["駁二藝術特區", "華山文創園區", "松山文創園區", "檜意森活村"] },
+  { id: 2, type: "audio", targetSymbol: "木瓜牛奶", speechTarget: "木瓜牛奶", prompt: "再生された六合夜市の看板名物ドリンク「パパイヤミルク」はどれ？", options: ["木瓜牛奶", "珍珠奶茶", "冬瓜檸檬", "綠豆沙牛奶"] },
+  { id: 3, type: "audio", targetSymbol: "旗津", speechTarget: "旗津", prompt: "再生された高雄港からフェリー（渡輪）で渡る細長い海鮮の島はどれ？", options: ["旗津", "小琉球", "綠島", "澎湖"] },
+  { id: 4, type: "zhuyin-to-word", targetSymbol: "蓮池潭 (龍虎塔がある名所)", speechTarget: "蓮池潭", prompt: "注音「ㄌㄧㄢˊ ㄔˊ ㄊㄢˊ (蓮池潭)」に対応する高雄のパワースポットはどれ？", options: ["蓮池潭 (龍虎塔がある名所)", "日月潭", "澄清湖", "愛河"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "小琉球 (ウミガメと泳げる珊瑚礁の離島)", speechTarget: "小琉球", prompt: "注音「ㄒㄧㄠˇ ㄌㄧㄡˊ ㄑㄧㄡˊ」に対応する、高雄近郊から日帰りで行ける離島はどれ？", options: ["小琉球 (ウミガメと泳げる珊瑚礁の離島)", "蘭嶼", "綠島", "金門"] },
+  { id: 6, type: "fill-in-blank", targetSymbol: "渡輪", speechTarget: "我要搭渡輪去旗津", prompt: "「フェリーに乗って旗津へ行きたい（我要搭 ___ 去旗津）」の空欄に入る乗り物はどれ？", options: ["渡輪", "捷運", "高鐵", "火車"] },
+  { id: 7, type: "fill-in-blank", targetSymbol: "虎", speechTarget: "從龍的嘴巴進去虎的嘴巴出來", prompt: "高雄・龍虎塔の厄除けルール「龍の口から入り、___ の口から出る（從龍的嘴巴進去，___ 的嘴巴出來）」", options: ["虎", "獅", "象", "豹"] },
+  { id: 8, type: "zhuyin-to-word", targetSymbol: "港の都 (高雄の代表的な愛称)", speechTarget: "港都", prompt: "地理用語「ㄍㄤˇ ㄉㄨ (港都)」が指す都市の愛称はどれ？", options: ["港の都 (高雄の代表的な愛称)", "木材の都", "太陽の都", "風の都"] },
+  { id: 9, type: "zhuyin-to-word", targetSymbol: "客家粄條 ＆ 油紙傘 (伝統文化の里)", speechTarget: "美濃", prompt: "高雄から日帰りで行ける「ㄇㄟˇ ㄋㄨㄥˊ (美濃)」を代表する名物文化はどれ？", options: ["客家粄條 ＆ 油紙傘 (伝統文化の里)", "七面鳥肉ご飯", "太陽餅", "烏龍茶"] },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄞˋ ㄏㄜˊ", speechTarget: "愛河",
+    optionSpeechMap: { "ㄞˋ ㄏㄜˊ": "愛河", "ㄉㄢˋ ㄕㄨㄟˇ ㄏㄜˊ": "淡水河", "ㄐㄧ ㄌㄨㄥˊ ㄏㄜˊ": "基隆河", "ㄉㄚˋ ㄐㄧㄚ ㄒㄧ": "大甲溪" },
+    prompt: "「愛河」の正しい注音表記はどれ？", options: ["ㄞˋ ㄏㄜˊ", "ㄉㄢˋ ㄕㄨㄟˇ ㄏㄜˊ", "ㄐㄧ ㄌㄨㄥˊ ㄏㄜˊ", "ㄉㄚˋ ㄐㄧㄚ ㄒㄧ"]
+  }
+];
+
+
 
