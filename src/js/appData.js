@@ -1158,7 +1158,7 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_2 = [
   { id: 1, type: "audio", targetSymbol: "我要這個", speechTarget: "我要這個", prompt: "再生された「これをください」を表す表現を選んでください", options: ["我要這個", "我不要這個", "我想去這裡", "他是日本人"] },
   { id: 2, type: "audio", targetSymbol: "不要，謝謝", speechTarget: "不要謝謝", prompt: "再生された「いりません、ありがとう」の表現を選んでください", options: ["不要，謝謝", "我要，謝謝", "不客氣", "對不起"] },
   { id: 3, type: "audio", targetSymbol: "我想吃小籠包", speechTarget: "我想吃小籠包", prompt: "再生された「小籠包が食べたいです」を表す表現を選んでください", options: ["我想吃小籠包", "我要一碗飯", "我要買單", "他是台灣人"] },
-  { id: 4, type: "audio", targetSymbol: "要不要袋子", speechTarget: "要不要袋子", prompt: "再生された店員からの質問「レジ袋は要りますか？」を選んでください", options: ["要不要袋子", "要不要加辣", "要不要加熱", "有沒有內用"] },
+  { id: 4, type: "audio", targetSymbol: "要袋子嗎", speechTarget: "要袋子嗎", prompt: "再生された店員からの質問「レジ袋は要りますか？（現地リアル表現）」を選んでください", options: ["要袋子嗎", "要不要加辣", "要微波嗎", "有沒有內用"] },
   { id: 5, type: "zhuyin-to-word", targetSymbol: "タピオカミルクティーを1杯ください", speechTarget: "我要一杯珍珠奶茶", prompt: "注音「ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚ」に対応する日本語訳はどれ？", options: ["タピオカミルクティーを1杯ください", "小籠包を2つください", "お会計をお願いします", "これをください"] },
   { id: 6, type: "zhuyin-to-word", targetSymbol: "辛くしないでください (辛味はいりません)", speechTarget: "我不要加辣", prompt: "注音「ㄨㄛˇ ㄅㄨˊ ㄧㄠˋ ㄐㄧㄚ ㄌㄚˋ」に対応する日本語訳はどれ？", options: ["辛くしないでください (辛味はいりません)", "温めてください", "レジ袋はいりません", "氷なしでお願いします"] },
   { id: 7, type: "fill-in-blank", targetSymbol: "要", speechTarget: "我要這個", prompt: "「これをください / これにします（我 ___ 這個）」の空欄に入る動詞はどれ？", options: ["要", "想", "是", "叫"] },
