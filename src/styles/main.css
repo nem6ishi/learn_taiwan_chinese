@@ -1544,5 +1544,96 @@ body {
   line-height: 1.35;
 }
 
+/* ==================== 都市概要・基本プロファイル (.city-intro-card) ==================== */
+.city-intro-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.city-intro-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.city-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.city-meta-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.city-meta-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.city-meta-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.city-meta-sub {
+  font-size: 0.78rem;
+  color: #64748B;
+  line-height: 1.4;
+}
+
+.city-history-box {
+  background: #FAFBFD;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 20px;
+  font-size: 0.89rem;
+  line-height: 1.7;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.city-history-header {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.city-history-paragraph {
+  margin: 0;
+}
+
+.city-history-paragraph strong {
+  color: #0F172A;
+}
+
 
 
