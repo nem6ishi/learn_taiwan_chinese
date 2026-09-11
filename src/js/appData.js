@@ -623,7 +623,7 @@ window.VOWELS_STEP5_DATA = [
     themeHex: "#E11D48",
     examples: [
       { traditional: "菜", zhuyin: "ㄘㄞˋ", pinyin: "cài", meaning: "りょうり / やさい (菜)" },
-      { traditional: "茶", zhuyin: "ㄘㄚˊ", pinyin: "chá", meaning: "おちゃ (珍珠奶茶)" }
+      { traditional: "一次", zhuyin: "ㄧ ㄘˋ", pinyin: "yīcì", meaning: "1回 / いちど" }
     ]
   },
   {
