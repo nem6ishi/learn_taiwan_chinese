@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEP 2-3: 数量・単位 ＆ 台湾「量詞（杯/個/份/塊/碗）」 | 台湾華語学習サイト</title>
-  <meta name="description" content="台湾の食堂・カフェ・夜市で毎日使う「一杯珍奶」「兩份小籠包」「一碗滷肉飯」「一塊雞排」など、数量の数え方と重要量詞をマスター。">
+  <title>STEP 2-4: 疑問・選択 ＆ 台湾リアル会話「嗎 / 還是」 | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾旅行のドリンク店・カフェ・食堂で毎日飛び交う「冰的還是熱的？」「內用還是外帶？」「有沒有菜單？」「要不要吸管？」など、疑問・選択の超頻出表現をマスター。">
   <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
   <div id="step-config" style="display:none"
-    data-quiz-key="GRAMMAR_QUIZ_QUESTIONS_2_3"
-    data-step-title="2-3 確認クイズ (数量・量詞)"
-    data-next-step="step-2-4.html"></div>
+    data-quiz-key="GRAMMAR_QUIZ_QUESTIONS_2_4"
+    data-step-title="2-4 確認クイズ (疑問・選択)"
+    data-next-step="index.html"></div>
 
   <!-- ナビゲーションバー -->
   <nav class="navbar">
@@ -35,10 +35,10 @@
   <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
       <div>
-        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">実践台湾華語 STEP 2-3</span>
-        <h1 style="font-size: 1.75rem; font-weight: 900;">2-3 数量・単位 ＆ 台湾「量詞（杯/個/份/塊/碗）」</h1>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary);">実践台湾華語 STEP 2-4</span>
+        <h1 style="font-size: 1.75rem; font-weight: 900;">2-4 疑問・選択 ＆ 台湾リアル会話「嗎 / 還是」</h1>
         <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 4px;">
-          ★注文で必ず使う！「2つ」の時は二ではなく「兩（ㄌㄧㄤˇ）」！台湾の飲食店・夜市で必須の単位を完全攻略。
+          ★ドリンク店・カフェ・食堂で100%聞かれる！「アイス？ホット？」「店内？持ち帰り？」「〜ありますか？」の神フレーズ。
         </p>
       </div>
       <button class="btn btn-primary" id="start-quiz-top-btn">
@@ -46,21 +46,21 @@
       </button>
     </div>
 
-    <!-- コンテンツ表示コンテナ (静的HTML＋JSハイブリッド) -->
+    <!-- コンテンツ表示コンテナ (静的HTML直書き Pure Static First) -->
     <div id="grammar-list-container" style="display: flex; flex-direction: column; gap: 24px;">
       
-      <!-- カード 1: 数量の基本ルール ＆ 「兩（ㄌㄧㄤˇ）」 -->
+      <!-- カード 1: 基本文法① はい/いいえの疑問文「〜嗎？」 -->
       <div class="detail-card">
         <div style="margin-bottom: 16px;">
           <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
           <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
-            基本ルール: 数量の言い方 ＆ 「2」のときは「兩（ㄌㄧㄤˇ）」！
+            基本文法①: はい/いいえの基本疑問文「〜嗎？」（〜ですか？ / 〜しますか？）
           </h2>
           <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
-            基本公式: 数字 ＋ 量詞（単位） ＋ 名詞
+            基本公式: 肯定文 ＋ 嗎（ㄇㄚ˙）？
           </div>
           <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
-            中国語では、ものを数えるときに数字と名詞の間に必ず「量詞（助数詞）」を挟みます。そして最も重要な鉄則が、<strong>「2」を表すときは「二（ㄦˋ）」ではなく「兩（ㄌㄧㄤˇ）」を使う</strong>ことです！
+            文末に「嗎（ㄇㄚ˙）」をつけるだけで、誰でも簡単に「はい / いいえ」で答えられる疑問文を作ることができます。
           </p>
         </div>
 
@@ -69,15 +69,15 @@
             🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
           </h4>
           <div class="example-list">
-            <div class="example-row play-word-sound" data-word="一個">
+            <div class="example-row play-word-sound" data-word="你要袋子嗎？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">一個</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">你要袋子嗎？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄧˊ ㄍㄜ˙</span>
+                  <span class="example-zhuyin">ㄋㄧˇ ㄧㄠˋ ㄉㄞˋ ㄗ˙ ㄇㄚ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">1つ / 1個（最も基本の単位）</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">袋は要りますか？（コンビニ・夜市の定番）</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -89,15 +89,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="兩杯">
+            <div class="example-row play-word-sound" data-word="這個會辣嗎？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">兩杯</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">這個會辣嗎？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄌㄧㄤˇ ㄅㄟ</span>
+                  <span class="example-zhuyin">ㄓㄜˋ ㄍㄜ˙ ㄏㄨㄟˋ ㄌㄚˋ ㄇㄚ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">2杯（※二杯ではなく兩杯！）</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">これは辛いですか？（夜市で超便利！）</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -109,15 +109,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="兩個">
+            <div class="example-row play-word-sound" data-word="可以內用嗎？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">兩個</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">可以內用嗎？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄌㄧㄤˇ ㄍㄜ˙</span>
+                  <span class="example-zhuyin">ㄎㄜˇ ㄧˇ ㄋㄟˋ ㄩㄥˋ ㄇㄚ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">2つ / 2個（※二個ではなく兩個！）</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">店内で飲食できますか？</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -131,33 +131,33 @@
           </div>
         </div>
 
-        <!-- 💡 台湾華語コラム①: 「二」と「兩」の使い分け -->
+        <!-- 💡 台湾華語コラム①: 台湾人は語尾に「喔？」「齁？」を多用する -->
         <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
             <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
             <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-              「二（ㄦˋ）」と「兩（ㄌㄧㄤˇ）」の使い分けルール
+              台湾ネイティブの親しみやすい語尾「〜喔？」「〜齁？」
             </h4>
           </div>
           <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
-            ・<strong>「二」を使う時:</strong> 単純に数字を読み上げる時（一、二、三…）、電話番号、部屋番号、順序（第二）、数学の計算など。<br>
-            ・<strong>「兩」を使う時:</strong> 量詞（〜個、〜杯、〜人前、〜時）の前で<strong>数量を言う時は100%「兩」</strong>になります！「二杯」「二個」と言うと不自然になるので、「兩杯（ㄌㄧㄤˇ ㄅㄟ）」「兩個（ㄌㄧㄤˇ ㄍㄜ˙）」と口になじませましょう。
+            中国大陸ではきっちりと「〜嗎？」と聞くことが多いですが、台湾の店頭や友達同士では、柔らかく親しみのある語尾<strong>「〜喔？（ㄛ）」「〜齁？（ㄏㄡ）」</strong>が頻出します！<br>
+            例: 「內用喔？（イートインですね？）」「這個很甜齁？（これ結構甘いよね？）」など、耳を澄ませて聞いてみましょう。
           </div>
         </div>
       </div>
 
-      <!-- カード 2: ドリンクスタンドで必須の量詞「杯（ㄅㄟ）」 -->
+      <!-- カード 2: 基本文法② 二者択一の選択疑問文「還是」 -->
       <div class="detail-card">
         <div style="margin-bottom: 16px;">
           <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
           <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
-            基本量詞①: ドリンク・お茶の単位「杯（ㄅㄟ）」
+            基本文法②: 二者択一の選択疑問文「還是（ㄏㄞˊ ㄕˋ）」（Aですか？それともBですか？）
           </h2>
           <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
-            基本公式: 我要 ＋ 数字 ＋ 杯 ＋ ドリンク名
+            基本公式: A ＋ 還是（ㄏㄞˊ ㄕˋ） ＋ B？
           </div>
           <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
-            台湾名物のドリンクスタンド（飲料店）やカフェで毎日使う量詞です。「我要一杯〜」のパターンをそのまま覚えましょう！
+            台湾のドリンクスタンドや飲食店に入ると、<strong>100%の確率で店員さんからこの「還是」を使った2択</strong>を尋ねられます！絶対に聞き取れるようにしましょう。
           </p>
         </div>
 
@@ -166,15 +166,15 @@
             🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
           </h4>
           <div class="example-list">
-            <div class="example-row play-word-sound" data-word="我要一杯珍珠奶茶">
+            <div class="example-row play-word-sound" data-word="冰的還是熱的？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一杯珍珠奶茶</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">冰的還是熱的？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ</span>
+                  <span class="example-zhuyin">ㄅㄧㄥ ㄉㄜ˙ ㄏㄞˊ ㄕˋ ㄖㄜˋ ㄉㄜ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">タピオカミルクティーを1杯ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">アイスですか？それともホットですか？</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -186,15 +186,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="我要兩杯紅茶">
+            <div class="example-row play-word-sound" data-word="內用還是外帶？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要兩杯紅茶</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">內用還是外帶？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄌㄧㄤˇ ㄅㄟ ㄏㄨㄥˊ ㄔㄚˊ</span>
+                  <span class="example-zhuyin">ㄋㄟˋ ㄩㄥˋ ㄏㄞˊ ㄕˋ ㄨㄞˋ ㄉㄞˋ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">紅茶を2杯ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">店内ですか？それともお持ち帰りですか？</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -206,15 +206,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="請給我一杯水">
+            <div class="example-row play-word-sound" data-word="大杯還是中杯？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">請給我一杯水</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">大杯還是中杯？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄑㄧㄥˇ ㄍㄟˇ ㄨㄛˇ ㄧˋ ㄅㄟ ㄕㄨㄟˇ</span>
+                  <span class="example-zhuyin">ㄉㄚˋ ㄅㄟ ㄏㄞˊ ㄕˋ ㄓㄨㄥ ㄅㄟ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">お水を1杯ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">Lサイズですか？それともMサイズですか？</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -228,35 +228,34 @@
           </div>
         </div>
 
-        <!-- 💡 台湾華語コラム②: ドリンクのサイズ指定（大杯 / 中杯） -->
+        <!-- 💡 台湾華語コラム②: 🇹🇼「內用/外帶」 vs 🇨🇳 大陸「堂食/打包」 -->
         <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
             <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
             <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-              ドリンクスタンドのサイズ指定「大杯 / 中杯」
+              店内と持ち帰りの言い方（🇹🇼 台湾 vs 🇨🇳 中国大陸）
             </h4>
           </div>
           <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
-            台湾のドリンク店では、必ず「大杯還是中杯？（Lサイズですか？Mサイズですか？）」とサイズを聞かれます。<br>
-            ・<strong>大杯（ㄉㄚˋ ㄅㄟ）:</strong> Lサイズ（約650ml〜700ml。台湾ではこれが標準サイズ！）<br>
-            ・<strong>中杯（ㄓㄨㄥ ㄅㄟ）:</strong> Mサイズ（約480ml〜500ml）<br>
-            「我要一杯大杯的珍奶！（タピオカLサイズ1杯！）」のように言えるとバッチリです。
+            ・店内飲食: 🇹🇼 <strong>內用（ㄋㄟˋ ㄩㄥˋ）</strong> vs 🇨🇳 大陸: <strong>堂食（ㄊㄤˊ ㄕˊ）</strong><br>
+            ・お持ち帰り: 🇹🇼 <strong>外帶（ㄨㄞˋ ㄉㄞˋ）</strong> vs 🇨🇳 大陸: <strong>打包（ㄉㄚˇ ㄅㄠ）</strong><br>
+            ※台湾で「打包」と言うと、最初からの持ち帰りではなく<strong>「食べ残した料理をパックに詰めて持ち帰る」</strong>ニュアンスとして使われるのが一般的です！
           </div>
         </div>
       </div>
 
-      <!-- カード 3: 万能の「個（ㄍㄜ˙）」＆ 屋台の超重要単位「份（ㄈㄣˋ）」 -->
+      <!-- カード 3: 基本文法③ 反復疑問文「有沒有 / 要不要」 -->
       <div class="detail-card">
         <div style="margin-bottom: 16px;">
           <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
           <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
-            基本量詞②: 万能の「個（ㄍㄜ˙）」＆ 屋台・セットの「份（ㄈㄣˋ）」
+            基本文法③: 台湾人最頻出の反復疑問文「有沒有 / 要不要」
           </h2>
           <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
-            単品の数なら「個」 / 料理の1人前・1皿・セットなら「份」
+            基本公式: 動詞 ＋ 不/沒 ＋ 動詞？（〜ありますか？ / 〜要りますか？）
           </div>
           <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
-            「個」は迷ったときに何にでも使える万能量詞です。そして、台湾の夜市や朝ごはん屋で絶対に欠かせないのが<strong>「份（ㄈㄣˋ / 〜人前、〜皿）」</strong>です！
+            台湾では「有〜嗎？」「要〜嗎？」と聞く代わりに、肯定と否定を重ねた<strong>「有沒有〜？（ㄧㄡˇ ㄇㄟˊ ㄧㄡˇ）」「要不要〜？（ㄧㄠˋ ㄅㄨˊ ㄧㄠˋ）」</strong>が圧倒的に日常で愛用されます！
           </p>
         </div>
 
@@ -265,15 +264,15 @@
             🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
           </h4>
           <div class="example-list">
-            <div class="example-row play-word-sound" data-word="我要一個便當">
+            <div class="example-row play-word-sound" data-word="有沒有菜單？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一個便當</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">有沒有菜單？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄍㄜ˙ ㄅㄧㄢˋ ㄉㄤ</span>
+                  <span class="example-zhuyin">ㄧㄡˇ ㄇㄟˊ ㄧㄡˇ ㄘㄞˋ ㄉㄢ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">お弁当を1個ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">メニューはありますか？（入店時の必須セリフ）</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -285,15 +284,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="我要一份蛋餅">
+            <div class="example-row play-word-sound" data-word="要不要吸管？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一份蛋餅</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">要不要吸管？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄉㄢˋ ㄅㄧㄥˇ</span>
+                  <span class="example-zhuyin">ㄧㄠˋ ㄅㄨˊ ㄧㄠˋ ㄒㄧ ㄍㄨㄢˇ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">ダンピン（台湾クレープ卵焼き）を1人前ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">ストローは要りますか？（ドリンク店の定番）</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -305,15 +304,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="我要兩份小籠包">
+            <div class="example-row play-word-sound" data-word="有沒有位子？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要兩份小籠包</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">有沒有位子？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄌㄧㄤˇ ㄈㄣˋ ㄒㄧㄠˇ ㄌㄨㄥˊ ㄅㄠ</span>
+                  <span class="example-zhuyin">ㄧㄡˇ ㄇㄟˊ ㄧㄡˇ ㄨㄟˋ ㄗ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">小籠包を2人前ください（※兩份！）</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">席は空いていますか？（混雑店で便利）</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -327,33 +326,34 @@
           </div>
         </div>
 
-        <!-- 💡 台湾華語コラム③: 屋台で迷ったら「一份（1人前）！」 -->
+        <!-- 💡 台湾華語コラム③: 反復疑問文へのスマートな答え方 -->
         <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
             <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
             <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-              屋台・朝ごはん屋で迷ったら「一份（ㄧˊ ㄈㄣˋ）」！
+              反復疑問文へのスマート＆シンプルな答え方
             </h4>
           </div>
           <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
-            台湾の屋台メニュー（小籠包、蚵仔煎/牡蠣オムレツ、臭豆腐、地瓜球/さつまいもボール等）や朝ごはん屋の蛋餅・蘿蔔糕は、すべて<strong>「一份（1人前・1皿）」単位</strong>で注文します。<br>
-            屋台で注文するときは、<strong>「老闆，一份小籠包！（大将、小籠包1人前！）」</strong>と声をかけるだけで完璧に伝わります！
+            中国語には「Yes / No」という単一の単語がありません。聞かれた動詞をそのまま答えるのが鉄則です！<br>
+            ・「有沒有〜？」 ➔ ある場合: <strong>有（ㄧㄡˇ）</strong> / ない場合: <strong>沒有（ㄇㄟˊ ㄧㄡˇ）</strong><br>
+            ・「要不要〜？」 ➔ 要る場合: <strong>要，謝謝（ㄧㄠˋ）</strong> / 不要な場合: <strong>不用，謝謝（ㄅㄨˊ ㄩㄥˋ）</strong>
           </div>
         </div>
       </div>
 
-      <!-- カード 4: 丼もの「碗（ㄨㄢˇ）」＆ ジーパイ「塊（ㄎㄨㄞˋ）」 -->
+      <!-- カード 4: 基本文法④ 相談・同意「好不好？ / 可以嗎？」 -->
       <div class="detail-card">
         <div style="margin-bottom: 16px;">
           <span class="pill-badge active" style="margin-bottom: 6px;">GRAMMAR & PHRASES</span>
           <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
-            基本量詞③: 丼もの・スープの「碗（ㄨㄢˇ）」＆ お肉・ジーパイの「塊（ㄎㄨㄞˋ）」
+            基本文法④: 相談・同意・許可を求める「好不好？ / 可以嗎？」
           </h2>
           <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
-            ご飯・麺・お椀に入ったものは「碗」 / お肉の切り身・ケーキは「塊」
+            基本公式: 提案 ＋ 好不好（ㄏㄠˇ ㄅㄨˋ ㄏㄠˇ）？ / 動詞 ＋ 可以嗎（ㄎㄜˇ ㄧˇ ㄇㄚ˙）？
           </div>
           <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
-            魯肉飯や牛肉麺などの丼料理は「碗（ㄨㄢˇ）」を使い、台湾夜市の大人気名物・巨大唐揚げ（大雞排）やケーキは「塊（ㄎㄨㄞˋ / 〜枚、〜個）」を使います。
+            「〜しようか、いい？」「〜してもいいですか？」と、相手の都合や同意を優しく伺う台湾らしいコミュニケーション表現です。
           </p>
         </div>
 
@@ -362,15 +362,15 @@
             🗣️ 使える例文・表現フレーズ (タップで台湾華語音声再生)
           </h4>
           <div class="example-list">
-            <div class="example-row play-word-sound" data-word="我要一碗滷肉飯">
+            <div class="example-row play-word-sound" data-word="我們去吃火鍋，好不好？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一碗滷肉飯</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我們去吃火鍋，好不好？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄨㄢˇ ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ</span>
+                  <span class="example-zhuyin">ㄨㄛˇ ㄇㄣ˙ ㄑㄩˋ ㄔ ㄏㄨㄛˇ ㄍㄨㄛ ， ㄏㄠˇ ㄅㄨˋ ㄏㄠˇ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">ルーローハンを1杯ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">火鍋を食べに行かない？いい？</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -382,15 +382,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="我要一塊雞排">
+            <div class="example-row play-word-sound" data-word="可以拍照嗎？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">我要一塊雞排</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">可以拍照嗎？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄨㄛˇ ㄧㄠˋ ㄧˊ ㄎㄨㄞˋ ㄐㄧ ㄆㄞˊ</span>
+                  <span class="example-zhuyin">ㄎㄜˇ ㄧˇ ㄆㄞ ㄓㄠˋ ㄇㄚ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">ジーパイ（巨大フライドチキン）を1枚ください</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">写真を撮ってもいいですか？（観光で頻出）</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -402,15 +402,15 @@
               </div>
             </div>
 
-            <div class="example-row play-word-sound" data-word="大碗還是小碗？">
+            <div class="example-row play-word-sound" data-word="稍微等一下，可以嗎？">
               <div class="example-left">
-                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">大碗還是小碗？</span>
+                <span class="example-trad" style="font-size: 1.25rem; font-weight: 900;">稍微等一下，可以嗎？</span>
                 <div class="example-phonetics">
-                  <span class="example-zhuyin">ㄉㄚˋ ㄨㄢˇ ㄏㄞˊ ㄕˋ ㄒㄧㄠˇ ㄨㄢˇ ？</span>
+                  <span class="example-zhuyin">ㄕㄠ ㄨㄟˊ ㄉㄥˇ ㄧˊ ㄒㄧㄚˋ ， ㄎㄜˇ ㄧˇ ㄇㄚ˙ ？</span>
                 </div>
               </div>
               <div class="example-right">
-                <span class="example-meaning" style="font-size: 0.9rem;">大盛りにしますか？並盛りにしますか？（店員の定番質問）</span>
+                <span class="example-meaning" style="font-size: 0.9rem;">少し待っていただけますか？</span>
                 <div class="audio-icon-tag">
                   <span>🔊</span>
                   <div class="voice-wave">
@@ -424,50 +424,49 @@
           </div>
         </div>
 
-        <!-- 💡 台湾華語コラム④: 食堂で必ず聞かれる「大碗？小碗？」 -->
+        <!-- 💡 台湾華語コラム④: 台湾人の優しい相づち「好啊！」「可以呀！」 -->
         <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
             <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
             <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-              食堂で必ず聞かれる「大碗（大盛り）？小碗（並盛り）？」
+              同意の返答は語尾に「啊（ㄚ）」「呀（ㄧㄚ）」をつけて親しみUP！
             </h4>
           </div>
           <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
-            ・<strong>大碗？小碗？:</strong> 台湾のローカル食堂（小吃店）で魯肉飯や麺類を頼むと、必ず<strong>「大碗（ㄉㄚˋ ㄨㄢˇ）？小碗（ㄒㄧㄠˇ ㄨㄢˇ）？」</strong>と聞かれます。小碗は小ぶりなので食べ歩きに最適です。<br>
-            ・<strong>「滷肉飯」と「魯肉飯」:</strong> 街中の看板では「魯肉飯」と書かれることが圧倒的多数派ですが、本来の正しい漢字は煮込み（滷）を意味する「滷肉飯」です。どちらも発音は全く同じ<strong>「ㄌㄨˇ ㄖㄡˋ ㄈㄢˋ」</strong>です！
+            「好不好？」「可以嗎？」と聞かれて快諾するとき、台湾ネイティブは単に「好」「可以」と一言だけで終わらせず、必ず語尾に<strong>「好啊！（ㄏㄠˇ ㄚ / いいよ！）」</strong>や<strong>「可以呀！（ㄎㄜˇ ㄧˇ ㄧㄚ / もちろん！）」</strong>をつけて柔らかく返事をします。温かい台湾らしさを感じる絶妙なニュアンスです！
           </div>
         </div>
       </div>
 
-      <!-- カード 5: 実践会話・数量注文ロールプレイ -->
+      <!-- カード 5: 実践会話 台湾ドリンクスタンド（飲料店）での完全リアル注文 -->
       <div class="detail-card">
         <div style="margin-bottom: 16px;">
           <span class="pill-badge active" style="margin-bottom: 6px;">ROLEPLAY CONVERSATION</span>
           <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--color-text-main);">
-            🗣️ 実践会話: 夜市屋台＆ドリンク店でのリアルな数量注文掛け合い
+            🗣️ 実践会話: 台湾ドリンクスタンド（飲料店）での完全リアル注文
           </h2>
           <div style="background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 8px 14px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; color: var(--color-primary); margin-top: 8px;">
-            店員の質問:「要幾杯？（何杯？）」「還要別的嗎？（他には？）」
+            現場の流れ: 「大杯還是中杯？」「冰的還是熱的？」「內用還是外帶？」の質問ラッシュ！
           </div>
           <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 8px; line-height: 1.5;">
-            屋台やドリンクスタンドの注文で交わされるリアルな掛け合いです。吹き出しをタップして発音とリズムを確認しましょう！
+            台湾の「50嵐」「清心福全」「麻古茶坊」などのドリンク店で毎日繰り返されるリアルな会話です。吹き出しカードをタップして現地のやり取りを耳で体感しましょう！
           </p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <!-- セリフ 1: 店員 -->
-          <div class="chat-bubble-card play-word-sound" data-word="你好！要幾杯？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
+          <div class="chat-bubble-card play-word-sound" data-word="你好，今天要喝什麼？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <div>
-                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🏪 店員（杯数の確認）</span>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🏪 店員（ご注文伺い）</span>
                 <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
-                  你好！要幾杯？
+                  你好，今天要喝什麼？
                 </div>
                 <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
-                  ㄋㄧˇ ㄏㄠˇ ！ ㄧㄠˋ ㄐㄧˇ ㄅㄟ ？
+                  ㄋㄧˇ ㄏㄠˇ ， ㄐㄧㄣ ㄊㄧㄢ ㄧㄠˋ ㄏㄜ ㄕㄣˊ ㄇㄜ˙ ？
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
-                  こんにちは！何杯にしますか？（※「幾（何〜？）」で数量を聞かれます）
+                  いらっしゃいませ、今日は何をお飲みになりますか？
                 </div>
               </div>
               <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; display: flex; align-items: center; gap: 4px;">
@@ -477,18 +476,18 @@
           </div>
 
           <!-- セリフ 2: 自分 -->
-          <div class="chat-bubble-card play-word-sound" data-word="我要兩杯珍珠奶茶！" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
+          <div class="chat-bubble-card play-word-sound" data-word="我要一杯珍珠奶茶。" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <div>
-                <span style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 2px 8px; border-radius: 4px;">🙋 あなた（2杯注文）</span>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 2px 8px; border-radius: 4px;">🙋 あなた（欲しい商品を注文）</span>
                 <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
-                  我要兩杯珍珠奶茶！
+                  我要一杯珍珠奶茶。
                 </div>
                 <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
-                  ㄨㄛˇ ㄧㄠˋ ㄌㄧㄤˇ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ ！
+                  ㄨㄛˇ ㄧㄠˋ ㄧˋ ㄅㄟ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ 。
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
-                  タピオカミルクティーを2杯ください！
+                  タピオカミルクティーを1杯ください。
                 </div>
               </div>
               <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; display: flex; align-items: center; gap: 4px;">
@@ -498,18 +497,18 @@
           </div>
 
           <!-- セリフ 3: 店員 -->
-          <div class="chat-bubble-card play-word-sound" data-word="好，兩杯。還要別的嗎？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
+          <div class="chat-bubble-card play-word-sound" data-word="大杯還是中杯？冰的還是熱的？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <div>
-                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🏪 店員（追加注文の確認）</span>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🏪 店員（サイズと温度の二者択一）</span>
                 <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
-                  好，兩杯。還要別的嗎？
+                  大杯還是中杯？冰的還是熱的？
                 </div>
                 <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
-                  ㄏㄠˇ ， ㄌㄧㄤˇ ㄅㄟ 。 ㄏㄞˊ ㄧㄠˋ ㄅㄧㄝˊ ㄉㄜ˙ ㄇㄚ˙ ？
+                  ㄉㄚˋ ㄅㄟ ㄏㄞˊ ㄕˋ ㄓㄨㄥ ㄅㄟ ？ ㄅㄧㄥ ㄉㄜ˙ ㄏㄞˊ ㄕˋ ㄖㄜˋ ㄉㄜ˙ ？
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
-                  はい、2杯ですね。他には何かご注文はありますか？
+                  LサイズですかMサイズですか？アイスですかホットですか？
                 </div>
               </div>
               <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; display: flex; align-items: center; gap: 4px;">
@@ -519,25 +518,67 @@
           </div>
 
           <!-- セリフ 4: 自分 -->
-          <div class="chat-bubble-card play-word-sound" data-word="還要一份蛋餅，謝謝！" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
+          <div class="chat-bubble-card play-word-sound" data-word="大杯、微冰、微糖。" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <div>
-                <span style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 2px 8px; border-radius: 4px;">🙋 あなた（追加で注文する時）</span>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 2px 8px; border-radius: 4px;">🙋 あなた（カスタム指定）</span>
                 <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
-                  還要一份蛋餅，謝謝！
+                  大杯、微冰、微糖。
                 </div>
                 <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
-                  ㄏㄞˊ ㄧㄠˋ ㄧˊ ㄈㄣˋ ㄉㄢˋ ㄅㄧㄥˇ ， ㄒㄧㄝˋ ㄒㄧㄝ˙ ！
+                  ㄉㄚˋ ㄅㄟ 、 ㄨㄟˊ ㄅㄧㄥ 、 ㄨㄟˊ ㄊㄤˊ 。
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
-                  あとダンピンを1人前ください、ありがとう！
+                  大杯で、氷少なめ、甘さ控えめでお願いします。
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+
+          <!-- セリフ 5: 店員 -->
+          <div class="chat-bubble-card play-word-sound" data-word="好。內用還是外帶？" style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748B; background: #E2E8F0; padding: 2px 8px; border-radius: 4px;">🏪 店員（店内か持ち帰りか）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
+                  好。內用還是外帶？
+                </div>
+                <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄏㄠˇ 。 ㄋㄟˋ ㄩㄥˋ ㄏㄞˊ ㄕˋ ㄨㄞˋ ㄉㄞˋ ？
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
+                  はい。店内ですか、それともお持ち帰りですか？
+                </div>
+              </div>
+              <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                🔊 聴く
+              </span>
+            </div>
+          </div>
+
+          <!-- セリフ 6: 自分 -->
+          <div class="chat-bubble-card play-word-sound" data-word="外帶，謝謝！" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 14px 18px; cursor: pointer; margin-left: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #1E40AF; background: #DBEAFE; padding: 2px 8px; border-radius: 4px;">🙋 あなた（持ち帰りを伝える）</span>
+                <div style="font-size: 1.25rem; font-weight: 900; margin-top: 6px; color: var(--color-text-main);">
+                  外帶，謝謝！
+                </div>
+                <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 700; margin-top: 2px;">
+                  ㄨㄞˋ ㄉㄞˋ ， ㄒㄧㄝˋ ㄒㄧㄝ˙ ！
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
+                  お持ち帰りで、ありがとう！
                 </div>
 
-                <!-- 💡 もう追加がない場合のスマートな言い方 -->
-                <div class="play-word-sound" data-word="這樣就好，謝謝！" style="margin-top: 10px; background: #FFFFFF; border: 1px dashed #BFDBFE; border-radius: 8px; padding: 8px 12px; display: inline-flex; align-items: center; gap: 8px;">
-                  <span style="font-size: 0.78rem; font-weight: 800; color: #2563EB;">💡 以上で大丈夫な時:</span>
-                  <span style="font-size: 0.95rem; font-weight: 800; color: var(--color-text-main);">這樣就好，謝謝！</span>
-                  <span style="font-size: 0.82rem; color: var(--color-primary); font-weight: 700;">ㄓㄜˋ ㄧㄤˋ ㄐㄧㄡˋ ㄏㄠˇ</span>
+                <!-- 💡 店内で飲む場合の言い方 -->
+                <div class="play-word-sound" data-word="內用，謝謝！" style="margin-top: 10px; background: #FFFFFF; border: 1px dashed #BFDBFE; border-radius: 8px; padding: 8px 12px; display: inline-flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.78rem; font-weight: 800; color: #2563EB;">💡 店内で飲む場合:</span>
+                  <span style="font-size: 0.95rem; font-weight: 800; color: var(--color-text-main);">內用，謝謝！</span>
+                  <span style="font-size: 0.82rem; color: var(--color-primary); font-weight: 700;">ㄋㄟˋ ㄩㄥˋ</span>
                   <span style="font-size: 0.78rem; color: var(--color-primary);">🔊 聴く</span>
                 </div>
               </div>
@@ -548,17 +589,20 @@
           </div>
         </div>
 
-        <!-- 💡 台湾華語コラム⑤: 店員の「幾（何〜？）」＆ 締め言葉「這樣就好」 -->
+        <!-- 💡 台湾華語コラム⑤: ドリンクスタンドの氷・甘さカスタム早見表 -->
         <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; padding: 14px 16px; margin-top: 20px;">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
             <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
             <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-              店員の「幾（何〜？）」と、注文締めの神フレーズ「這樣就好」
+              台湾ドリンクスタンドの神ルール「冰塊（氷）＆ 甜度（甘さ）」早見表
             </h4>
           </div>
           <div style="font-size: 0.88rem; line-height: 1.6; color: #78350F;">
-            ・<strong>幾（ㄐㄧˇ）の聞き取り:</strong> 店員さんが「幾位？（何名様ですか？）」「要幾個？（何個ですか？）」「要幾杯？（何杯ですか？）」と聞いてきたら、数字を答えればOKです！<br>
-            ・<strong>「這樣就好（これで以上です）」:</strong> 店員さんから「還要別的嗎？（他に何かありますか？）」と聞かれた時、「不用（いらない）」と言うよりも<strong>「這樣就好，謝謝（ㄓㄜˋ ㄧㄤˋ ㄐㄧㄡˋ ㄏㄠˇ / これで大丈夫です、ありがとう）」</strong>と言うと、非常にこなれた自然なネイティブ表現になります！
+            台湾のドリンク店では、氷の量と甘さを自由にオーダーできるのが醍醐味です！日本人旅行者に一番人気の黄金比は<strong>「微冰（氷少なめ）・微糖（甘さ控えめ）」</strong>です！<br><br>
+            ・<strong>🧊 冰塊（氷の量）:</strong><br>
+            　正常冰（ㄓㄥˋ ㄔㄤˊ ㄅㄧㄥ / 100%） ➔ 少冰（ㄕㄠˇ ㄅㄧㄥ / 70%） ➔ <strong>微冰（ㄨㄟˊ ㄅㄧㄥ / 30% おすすめ）</strong> ➔ 去冰（ㄑㄩˋ ㄅㄧㄥ / 氷なし）<br>
+            ・<strong>🍬 甜度（甘さの量）:</strong><br>
+            　全糖（ㄑㄩㄢˊ ㄊㄤˊ / 100%） ➔ 少糖（ㄕㄠˇ ㄊㄤˊ / 70%） ➔ 半糖（ㄅㄢˋ ㄊㄤˊ / 50%） ➔ <strong>微糖（ㄨㄟˊ ㄊㄤˊ / 30% おすすめ）</strong> ➔ 無糖（ㄨˊ ㄊㄤˊ / 砂糖なし）
           </div>
         </div>
       </div>
@@ -567,22 +611,19 @@
 
     <!-- クイズ受講エリア (最下部) -->
     <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px;" id="quiz-cta-section">
-      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">2-3 の数量・量詞フレーズを一通り学習しましたか？</h3>
+      <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">2-4 の疑問・選択フレーズを一通り学習しましたか？</h3>
       <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-        習った「兩 / 杯 / 個 / 份 / 塊 / 碗」だけで解ける100%全網羅クイズで定着度をテストしましょう！
+        習った「嗎 / 還是 / 有沒有 / 要不要 / 內用 / 外帶 / 微冰」だけで解ける100%全網羅クイズで定着度をテストしましょう！
       </p>
       <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
         <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 24px; font-size: 1rem;">
           🏆 確認クイズを始める (全10問)
         </button>
-        <a href="step-2-4.html" class="btn btn-primary" style="padding: 12px 24px; font-size: 1rem; background: #059669; border-color: #047857;">
-          🚀 STEP 2-4 (疑問・選択) →
-        </a>
         <a href="category-2-words.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem; border-color: var(--color-primary); color: var(--color-primary);">
           📖 CATEGORY 2 単語一覧
         </a>
         <a href="index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
-          トップ一覧へ戻る
+          トップ一覧へ戻る →
         </a>
       </div>
     </div>

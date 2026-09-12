@@ -1200,6 +1200,28 @@ window.GRAMMAR_QUIZ_QUESTIONS_2_3 = [
   }
 ];
 
+// ==================== STEP 2-4: 疑問・選択 ＆ 台湾リアル会話「嗎 / 還是」確認クイズ (全10問) ====================
+window.GRAMMAR_QUIZ_QUESTIONS_2_4 = [
+  { id: 1, type: "audio", targetSymbol: "冰的還是熱的？", speechTarget: "冰的還是熱的？", prompt: "再生された「アイスですか、それともホットですか？」を選んでください", options: ["冰的還是熱的？", "大杯還是中杯？", "內用還是外帶？", "要不要加蛋？"] },
+  { id: 2, type: "audio", targetSymbol: "內用還是外帶？", speechTarget: "內用還是外帶？", prompt: "再生された「店内ですか、それともお持ち帰りですか？」を選んでください", options: ["內用還是外帶？", "冰的還是熱的？", "大杯還是小杯？", "要不要袋子？"] },
+  { id: 3, type: "audio", targetSymbol: "有沒有菜單？", speechTarget: "有沒有菜單？", prompt: "再生された「メニューはありますか？」を選んでください", options: ["有沒有菜單？", "有沒有位子？", "要不要吸管？", "可以內用嗎？"] },
+  { id: 4, type: "audio", targetSymbol: "你要袋子嗎？", speechTarget: "你要袋子嗎？", prompt: "再生された「袋は要りますか？」を選んでください", options: ["你要袋子嗎？", "這個會辣嗎？", "可以拍照嗎？", "你好要什麼？"] },
+  { id: 5, type: "zhuyin-to-word", targetSymbol: "アイスですか？ホットですか？", speechTarget: "冰的還是熱的", prompt: "注音「ㄅㄧㄥ ㄉㄜ˙ ㄏㄞˊ ㄕˋ ㄖㄜˋ ㄉㄜ˙」に対応する日本語の意味はどれ？", options: ["アイスですか？ホットですか？", "店内ですか？持ち帰りですか？", "甘めですか？無糖ですか？", "大盛りですか？並盛りですか？"] },
+  { id: 6, type: "zhuyin-to-word", targetSymbol: "店内ですか？お持ち帰りですか？", speechTarget: "內用還是外帶", prompt: "注音「ㄋㄟˋ ㄩㄥˋ ㄏㄞˊ ㄕˋ ㄨㄞˋ ㄉㄞˋ」に対応する日本語の意味はどれ？", options: ["店内ですか？お持ち帰りですか？", "アイスですか？ホットですか？", "ストローは要りますか？", "袋は要りますか？"] },
+  { id: 7, type: "fill-in-blank", targetSymbol: "還是", speechTarget: "大杯還是中杯", prompt: "「大杯ですか、それとも中杯ですか？（大杯 ___ 中杯？）」の二者択一を表す空欄に入る言葉はどれ？", options: ["還是", "或者", "還有", "而且"] },
+  { id: 8, type: "fill-in-blank", targetSymbol: "吸管", speechTarget: "要不要吸管", prompt: "「ストローは要りますか？（要不要 ___ ？）」の空欄に入るストローを指す単語はどれ？", options: ["吸管", "袋子", "菜單", "餐具"] },
+  {
+    id: 9, type: "word-to-zhuyin", targetSymbol: "ㄨㄟˊ ㄅㄧㄥ", speechTarget: "微冰",
+    optionSpeechMap: { "ㄨㄟˊ ㄅㄧㄥ": "微冰", "ㄑㄩˋ ㄅㄧㄥ": "去冰", "ㄕㄠˇ ㄅㄧㄥ": "少冰", "ㄓㄥˋ ㄔㄤˊ ㄅㄧㄥ": "正常冰" },
+    prompt: "ドリンクの氷の調整「微冰 (氷少なめ)」の正しい注音表記はどれ？", options: ["ㄨㄟˊ ㄅㄧㄥ", "ㄑㄩˋ ㄅㄧㄥ", "ㄕㄠˇ ㄅㄧㄥ", "ㄓㄥˋ ㄔㄤˊ ㄅㄧㄥ"]
+  },
+  {
+    id: 10, type: "word-to-zhuyin", targetSymbol: "ㄨㄞˋ ㄉㄞˋ", speechTarget: "外帶",
+    optionSpeechMap: { "ㄨㄞˋ ㄉㄞˋ": "外帶", "ㄋㄟˋ ㄩㄥˋ": "內用", "ㄉㄞˋ ㄗ˙": "袋子", "ㄖㄜˋ ㄉㄜ˙": "熱的" },
+    prompt: "「外帶 (テイクアウト)」の正しい注音表記はどれ？", options: ["ㄨㄞˋ ㄉㄞˋ", "ㄋㄟˋ ㄩㄥˋ", "ㄉㄞˋ ㄗ˙", "ㄖㄜˋ ㄉㄜ˙"]
+  }
+];
+
 // ==================== STEP 6-1: 早餐店（朝ごはん屋）完全攻略・文化確認クイズ (全10問) ====================
 window.CULTURE_QUIZ_QUESTIONS_6_1 = [
   { id: 1, type: "audio", targetSymbol: "大冰奶", speechTarget: "大冰奶", prompt: "再生された朝ごはん屋の看板ドリンク「アイスミルクティー大」はどれ？", options: ["大冰奶", "熱豆漿", "冰紅茶", "柳橙汁"] },
