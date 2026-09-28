@@ -44,13 +44,36 @@
       </p>
     </div>
 
+    <!-- タブコントロールバー (Notion風ミニマルデザイン) -->
+    <div class="review-control-bar" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div class="review-tabs">
+          <button class="review-tab-btn active" data-tab="active" id="tab-active">
+            <span>📝 復習中（未習得）</span>
+            <span class="tab-count-badge" id="count-active">0</span>
+          </button>
+          <button class="review-tab-btn" data-tab="mastered" id="tab-mastered">
+            <span>🎉 覚えた単語</span>
+            <span class="tab-count-badge" id="count-mastered">0</span>
+          </button>
+          <button class="review-tab-btn" data-tab="all" id="tab-all">
+            <span>📋 すべて</span>
+            <span class="tab-count-badge" id="count-all">0</span>
+          </button>
+        </div>
+      </div>
+      <div class="review-tab-hint">
+        💡 「✅ 覚えた！」を押すと、「🎉 覚えた単語」タブへ移動してこの一覧から隠れます。忘れた時はいつでも復習中に戻せます。
+      </div>
+    </div>
+
     <!-- 単語カード一覧コンテナ (1カラム縦並びレイアウト) -->
     <div id="review-words-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
       
       <!-- 静的フォールバック（Pure Static First 保証・新単語が最上部に並ぶ） -->
       
       <!-- 1. 行天宮 (最新) -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="行天宮">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">行天宮</span>
@@ -60,6 +83,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="行天宮" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="行天宮" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="行天宮" data-zhuyin="ㄒㄧㄥˊ ㄊㄧㄢ ㄍㄨㄥ" data-pinyin="xíngtiāngōng" data-meaning="行天宮 (シンティエンゴン / 台北で最も参拝客が多い関羽を祀る道教寺院)" data-example="我們明天去行天宮拜拜。 (私たちは明日、行天宮へお参りに行きます)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -75,7 +99,7 @@
       </div>
 
       <!-- 2. 睡覺 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="睡覺">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">睡覺</span>
@@ -85,6 +109,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="睡覺" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="睡覺" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="睡覺" data-zhuyin="ㄕㄨㄟˋ ㄐㄧㄠˋ" data-pinyin="shuìjiào" data-meaning="寝る / 眠る / 睡眠をとる" data-example="我太累了，想早點睡覺。 (とても疲れたので、早く寝たいです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -100,7 +125,7 @@
       </div>
 
       <!-- 3. 打工 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="打工">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">打工</span>
@@ -110,6 +135,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="打工" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="打工" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="打工" data-zhuyin="ㄉㄚˇ ㄍㄨㄥ" data-pinyin="dǎgōng" data-meaning="アルバイトをする / バイト / 働く" data-example="他放學後去飲料店打工。 (彼は放課後、ドリンクスタンドへバイトに行きます)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -125,7 +151,7 @@
       </div>
 
       <!-- 4. 高爾夫球 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="高爾夫球">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">高爾夫球</span>
@@ -135,6 +161,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="高爾夫球" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="高爾夫球" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="高爾夫球" data-zhuyin="ㄍㄠ ㄦˇ ㄈㄨ ㄑㄧㄡˊ" data-pinyin="gāo'ěrfūqiú" data-meaning="ゴルフ (球技)" data-example="爸爸週末喜歡打高爾夫球。 (父は週末にゴルフをするのが好きです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -150,7 +177,7 @@
       </div>
 
       <!-- 5. 週末 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="週末">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">週末</span>
@@ -160,6 +187,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="週末" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="週末" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="週末" data-zhuyin="ㄓㄡ ㄇㄛˋ" data-pinyin="zhōumò" data-meaning="週末 / ウィークエンド" data-example="祝你有個愉快的週末！ (楽しい週末をお過ごしください！)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -175,7 +203,7 @@
       </div>
 
       <!-- 6. 計畫 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="計畫">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">計畫</span>
@@ -185,6 +213,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="計畫" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="計畫" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="計畫" data-zhuyin="ㄐㄧˋ ㄏㄨㄚˋ" data-pinyin="jìhuà" data-meaning="予定 / 計画 / プラン / スケジュール (〜する予定である)" data-example="你週末有什麼計畫？ (週末に何か予定はありますか？)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -200,7 +229,7 @@
       </div>
 
       <!-- 7. 德文 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="德文">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">德文</span>
@@ -210,6 +239,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="德文" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="德文" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="德文" data-zhuyin="ㄉㄜˊ ㄨㄣˊ" data-pinyin="déwén" data-meaning="ドイツ語" data-example="我想學德文和法文。 (私はドイツ語とフランス語を勉強したいです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -225,7 +255,7 @@
       </div>
 
       <!-- 8. 雜誌 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="雜誌">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">雜誌</span>
@@ -235,6 +265,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="雜誌" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="雜誌" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="雜誌" data-zhuyin="ㄗㄚˊ ㄓˋ" data-pinyin="zázhì" data-meaning="雑誌 / マガジン" data-example="我想買這本時尚雜誌。 (このファッション雑誌を買いたいです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -250,7 +281,7 @@
       </div>
 
       <!-- 9. 桌子 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="桌子">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">桌子</span>
@@ -260,6 +291,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="桌子" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="桌子" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="桌子" data-zhuyin="ㄓㄨㄛ ㄗ˙" data-pinyin="zhuōzi" data-meaning="机 / テーブル / デスク" data-example="桌子上有杯熱咖啡。 (机の上に温かいコーヒーが一杯あります)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -275,7 +307,7 @@
       </div>
 
       <!-- 10. 木頭 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="木頭">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">木頭</span>
@@ -285,6 +317,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="木頭" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="木頭" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="木頭" data-zhuyin="ㄇㄨˋ ㄊㄡ˙" data-pinyin="mùtou" data-meaning="木材 / 木 / 丸太 (比喩: 鈍感な人・融通が利かない人)" data-example="這張椅子是用木頭做的。 (この椅子は木で作られています)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -300,7 +333,7 @@
       </div>
 
       <!-- 11. 釋迦 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="釋迦">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">釋迦</span>
@@ -310,6 +343,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="釋迦" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="釋迦" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="釋迦" data-zhuyin="ㄕˋ ㄐㄧㄚ" data-pinyin="shìjiā" data-meaning="釈迦頭 (シャカトウ / バンレイシ。台湾名物の甘い高級フルーツ)" data-example="台東的釋迦非常甜非常好吃。 (台東の釈迦頭はとても甘くて美味しいです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -325,7 +359,7 @@
       </div>
 
       <!-- 12. 襪子 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="襪子">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">襪子</span>
@@ -335,6 +369,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="襪子" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="襪子" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="襪子" data-zhuyin="ㄨㄚˋ ㄗ˙" data-pinyin="wàzi" data-meaning="靴下 / ソックス" data-example="他買了一雙新襪子。 (彼は新しい靴下を1足買いました)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -350,7 +385,7 @@
       </div>
 
       <!-- 13. 件 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="件">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">件</span>
@@ -360,6 +395,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="件" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="件" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="件" data-zhuyin="ㄐㄧㄢˋ" data-pinyin="jiàn" data-meaning="〜着 (服を数える量詞) / 〜件 (用事・出来事を数える量詞)" data-example="這件衣服很好看。 (この服はとても似合っています/素敵です)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -375,7 +411,7 @@
       </div>
 
       <!-- 14. 上 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="上">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">上</span>
@@ -385,6 +421,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="上" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="上" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="上" data-zhuyin="ㄕㄤˋ" data-pinyin="shàng" data-meaning="入学する / 学校に通う / 登校する (上學 / 上大學)" data-example="他今年要上大學了。 (彼は今年、大学に入学します/大学に進学します)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -400,7 +437,7 @@
       </div>
 
       <!-- 15. 找 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="找">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">找</span>
@@ -410,6 +447,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="找" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="找" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="找" data-zhuyin="ㄓㄠˇ" data-pinyin="zhǎo" data-meaning="探す / 見つける / お釣りを渡す (找錢)" data-example="你在找什麼？ (何を探しているのですか？)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -425,7 +463,7 @@
       </div>
 
       <!-- 16. 看過 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="看過">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">看過</span>
@@ -435,6 +473,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="看過" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="看過" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="看過" data-zhuyin="ㄎㄢˋ ㄍㄨㄛ˙" data-pinyin="kànguò" data-meaning="見たことがある (経験態「過」)" data-example="我看過這部台灣電影。 (私はこの台湾映画を見たことがあります)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -450,7 +489,7 @@
       </div>
 
       <!-- 2. 數學考試 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="數學考試">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">數學考試</span>
@@ -460,6 +499,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="數學考試" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="數學考試" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="數學考試" data-zhuyin="ㄕㄨˋ ㄒㄩㄝˊ ㄎㄠˇ ㄕˋ" data-pinyin="shùxué kǎoshì" data-meaning="数学テスト / 数学の試験 (考數學)" data-example="明天學校有數學考試。 (明日、学校で数学のテストがあります)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -475,7 +515,7 @@
       </div>
 
       <!-- 3. 已經 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="已經">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">已經</span>
@@ -485,6 +525,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="已經" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="已經" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="已經" data-zhuyin="ㄧˇ ㄐㄧㄥ" data-pinyin="yǐjīng" data-meaning="もう / すでに / とっくに" data-example="我已經吃飽了。 (私はもうお腹いっぱいです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -500,7 +541,7 @@
       </div>
 
       <!-- 4. 起床 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="起床">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">起床</span>
@@ -510,6 +551,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="起床" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="起床" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="起床" data-zhuyin="ㄑㄧˇ ㄔㄨㄤˊ" data-pinyin="qǐchuáng" data-meaning="起きる / 目覚める / 起床する" data-example="我每天早上七點起床。 (私は毎朝7時に起きます)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -525,7 +567,7 @@
       </div>
 
       <!-- 2. 七夕 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="七夕">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">七夕</span>
@@ -535,6 +577,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="七夕" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="七夕" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="七夕" data-zhuyin="ㄑㄧ ㄒㄧˋ" data-pinyin="qīxì" data-meaning="七夕 (しちせき / 旧暦7月7日) / チャイニーズバレンタインデー" data-example="七夕是東方的情人節。 (七夕は東洋のバレンタインデーです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -550,7 +593,7 @@
       </div>
 
       <!-- 3. 情人節 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="情人節">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">情人節</span>
@@ -560,6 +603,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="情人節" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="情人節" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="情人節" data-zhuyin="ㄑㄧㄥˊ ㄖㄣˊ ㄐㄧㄝˊ" data-pinyin="qíngrénjié" data-meaning="バレンタインデー / 恋人の日" data-example="祝大家情人節快樂！ (みなさん、ハッピーバレンタインデー！)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -575,7 +619,7 @@
       </div>
 
       <!-- 4. 八寶粥 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="八寶粥">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">八寶粥</span>
@@ -585,6 +629,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="八寶粥" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="八寶粥" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="八寶粥" data-zhuyin="ㄅㄚ ㄅㄠˇ ㄓㄡ" data-pinyin="bābǎozhōu" data-meaning="八宝粥 (8種の穀物・豆・果実が入った甘い健康粥スイーツ)" data-example="泰山八寶粥是台灣非常有名のおやつ。 (「泰山八宝粥」は台湾でとても有名なおやつ/缶詰です)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -600,7 +645,7 @@
       </div>
 
       <!-- 5. 雙十國慶 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="雙十國慶">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">雙十國慶</span>
@@ -610,6 +655,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="雙十國慶" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="雙十國慶" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="雙十國慶" data-zhuyin="ㄕㄨㄤ ㄕˊ ㄍㄨㄛˊ ㄑㄧㄥˋ" data-pinyin="shuāngshí guóqìng" data-meaning="双十国慶節 (10月10日の台湾の建国記念日 / ナショナルデー)" data-example="十月十日是台灣的雙十國慶。 (10月10日は台湾の双十国慶節です)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -625,7 +671,7 @@
       </div>
 
       <!-- 6. 在寫功課 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="在寫功課">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">在寫功課</span>
@@ -635,6 +681,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="在寫功課" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="在寫功課" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="在寫功課" data-zhuyin="ㄗㄞˋ ㄒㄧㄝˇ ㄍㄨㄥ ㄎㄜˋ" data-pinyin="zài xiě gōngkè" data-meaning="宿題をしている (宿題をする)" data-example="我現在在寫功課。 (私は今、宿題をしています)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -656,7 +703,7 @@
       </div>
 
       <!-- 2. 讀書 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="讀書">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">讀書</span>
@@ -666,6 +713,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="讀書" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="讀書" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="讀書" data-zhuyin="ㄉㄨˊ ㄕㄨ" data-pinyin="dúshū" data-meaning="勉強する / 留学する / 本を読む" data-example="他在國外讀書。 (彼は海外で勉強しています/留学しています)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -681,7 +729,7 @@
       </div>
 
       <!-- 3. 歐洲 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="歐洲">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">歐洲</span>
@@ -691,6 +739,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="歐洲" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="歐洲" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="歐洲" data-zhuyin="ㄡ ㄓㄡ" data-pinyin="ōuzhōu" data-meaning="ヨーロッパ (欧州)" data-example="我想去歐洲旅行。 (私はヨーロッパへ旅行に行きたいです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -706,7 +755,7 @@
       </div>
 
       <!-- 4. 一雙筷子 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="一雙筷子">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">一雙筷子</span>
@@ -716,6 +765,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="一雙筷子" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="一雙筷子" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="一雙筷子" data-zhuyin="ㄧˋ ㄕㄨㄤ ㄎㄨㄞˋ ㄗ˙" data-pinyin="yì shuāng kuàizi" data-meaning="お箸一膳 (おはし)" data-example="請給我一雙筷子。 (お箸を一膳ください)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -731,7 +781,7 @@
       </div>
 
       <!-- 5. 教室 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="教室">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">教室</span>
@@ -741,6 +791,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="教室" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="教室" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="教室" data-zhuyin="ㄐㄧㄠˋ ㄕˋ" data-pinyin="jiàoshì" data-meaning="教室 / クラスルーム" data-example="這是我們的中文教室。 (ここは私たちの中国語の教室です)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -756,7 +807,7 @@
       </div>
 
       <!-- 6. 上班族 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="上班族">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">上班族</span>
@@ -766,6 +817,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="上班族" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="上班族" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="上班族" data-zhuyin="ㄕㄤˋ ㄅㄢ ㄗㄨˊ" data-pinyin="shàngbānzú" data-meaning="サラリーマン / 会社員 / オフィスワーカー" data-example="很多台灣上班族每天喝珍珠奶茶。 (多くの台湾の会社員は毎日タピオカミルクティーを飲みます)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -781,7 +833,7 @@
       </div>
 
       <!-- 7. 粉紅色 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="粉紅色">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">粉紅色</span>
@@ -791,6 +843,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="粉紅色" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="粉紅色" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="粉紅色" data-zhuyin="ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ" data-pinyin="fěnhóngsè" data-meaning="ピンク色 / 桃色" data-example="阿里山的櫻花是粉紅色的。 (阿里山の桜はピンク色です)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -806,7 +859,7 @@
       </div>
 
       <!-- 8. 打擾 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="打擾">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">打擾</span>
@@ -816,6 +869,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="打擾" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="打擾" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="打擾" data-zhuyin="ㄉㄚˇ ㄖㄠˇ" data-pinyin="dǎrǎo" data-meaning="失礼する / お邪魔する / 邪魔する" data-example="不好意思，打擾一下！ (すみません、ちょっと失礼します/お邪魔します！)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -831,7 +885,7 @@
       </div>
 
       <!-- 9. 鳳梨酥 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="鳳梨酥">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">鳳梨酥</span>
@@ -841,6 +895,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="鳳梨酥" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="鳳梨酥" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="鳳梨酥" data-zhuyin="ㄈㄥˋ ㄌㄧˊ ㄙㄨ" data-pinyin="fènglísū" data-meaning="パイナップルケーキ (台湾名物のお菓子)" data-example="這是台灣很有名的鳳梨酥。 (これは台湾でとても有名なパイナップルケーキです)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -856,7 +911,7 @@
       </div>
 
       <!-- 10. 同學 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="同學">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">同學</span>
@@ -866,6 +921,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="同學" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="同學" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="同學" data-zhuyin="ㄊㄨㄥˊ ㄒㄩㄝˊ" data-pinyin="tóngxué" data-meaning="同級生 / クラスメイト" data-example="他是我的中文班同學。 (彼は私の中国語クラスの同級生です)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -881,7 +937,7 @@
       </div>
 
       <!-- 11. 慢用 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="慢用">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">慢用</span>
@@ -891,6 +947,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="慢用" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="慢用" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="慢用" data-zhuyin="ㄇㄢˋ ㄩㄥˋ" data-pinyin="mànyòng" data-meaning="ゆっくりする / ごゆっくりどうぞ" data-example="請慢用！ (ごゆっくりお召し上がりください！/ ごゆっくりどうぞ！)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -906,7 +963,7 @@
       </div>
 
       <!-- 12. 捷運站 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="捷運站">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">捷運站</span>
@@ -916,6 +973,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="捷運站" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="捷運站" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="捷運站" data-zhuyin="ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ" data-pinyin="jiéyùnzhàn" data-meaning="MRT駅 (地下鉄・都市鉄道の駅)" data-example="捷運站在哪裡？ (MRTの駅はどこですか？)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -931,7 +989,7 @@
       </div>
 
       <!-- 13. 最近 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="最近">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">最近</span>
@@ -941,6 +999,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="最近" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="最近" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="最近" data-zhuyin="ㄗㄨㄟˋ ㄐㄧㄣˋ" data-pinyin="zuìjìn" data-meaning="最近" data-example="最近你好嗎？ (最近調子はどうですか？)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -956,7 +1015,7 @@
       </div>
 
       <!-- 14. 護照 -->
-      <div class="review-word-card">
+      <div class="review-word-card" data-trad="護照">
         <div class="review-card-header">
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span class="review-word-trad">護照</span>
@@ -966,6 +1025,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
             <button class="sound-chip-btn play-word-sound" data-word="護照" title="単語の発音を聞く">🔊 単語</button>
+            <button class="master-btn" data-trad="護照" title="覚えた単語にする / 復習中に戻す"><span class="master-icon">✅</span> <span class="master-text">覚えた！</span></button>
             <button class="bookmark-btn active" data-trad="護照" data-zhuyin="ㄏㄨˋ ㄓㄠˋ" data-pinyin="hùzhào" data-meaning="パスポート" data-example="我的護照在哪裡？ (私のパスポートはどこですか？)" title="復習単語帳から削除">⭐</button>
           </div>
         </div>
@@ -994,20 +1054,69 @@
   <script type="module" src="src/js/appData.js"></script>
   <script type="module" src="src/js/appCore.js"></script>
   <script>
-    // LocalStorageからの動的更新処理 (Pure Static First に加えて最新データを自動レンダリング)
+    // LocalStorageからの動的更新処理 ＆ 覚えた単語タブ切り替え
     document.addEventListener('DOMContentLoaded', function() {
       if (!window.ReviewManager) return;
-      
+
+      const container = document.getElementById('review-words-container');
+      const tabs = document.querySelectorAll('.review-tab-btn');
+      const countActive = document.getElementById('count-active');
+      const countMastered = document.getElementById('count-mastered');
+      const countAll = document.getElementById('count-all');
+      const headerTitle = document.querySelector('h1');
+      const headerBadge = document.querySelector('span[style*="background: #F59E0B"], span[style*="background: rgb(245, 158, 11)"]');
+
+      // URLハッシュまたはクエリパラメータから初期タブを判定
+      let currentTab = 'active';
+      const hash = window.location.hash.replace('#', '');
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramTab = urlParams.get('tab');
+      if (['active', 'mastered', 'all'].includes(hash)) {
+        currentTab = hash;
+      } else if (['active', 'mastered', 'all'].includes(paramTab)) {
+        currentTab = paramTab;
+      }
+
+      function updateTabUI() {
+        tabs.forEach(tab => {
+          const tabType = tab.getAttribute('data-tab');
+          tab.classList.toggle('active', tabType === currentTab);
+        });
+
+        // ページヘッダーのトーン微調整
+        if (headerTitle) {
+          if (currentTab === 'mastered') {
+            headerTitle.textContent = '🎉 覚えた単語帳';
+            if (headerBadge) {
+              headerBadge.textContent = '🎉 MASTERED WORDS';
+              headerBadge.style.background = '#10B981';
+            }
+          } else {
+            headerTitle.textContent = '復習単語帳';
+            if (headerBadge) {
+              headerBadge.textContent = '⭐ REVIEW WORDS';
+              headerBadge.style.background = '#F59E0B';
+            }
+          }
+        }
+      }
+
       function renderReviewList() {
         const words = ReviewManager.getWords();
-        const container = document.getElementById('review-words-container');
         if (!container) return;
 
+        // カウント更新
+        const counts = ReviewManager.getCounts();
+        if (countActive) countActive.textContent = counts.active;
+        if (countMastered) countMastered.textContent = counts.mastered;
+        if (countAll) countAll.textContent = counts.total;
+
+        // 全単語が0件の場合
         if (words.length === 0) {
           container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: 12px; color: #64748B;">
-              <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;">⭐ 復習単語帳に登録された単語はありません</p>
-              <p style="font-size: 0.88rem;">各単語カードの「⭐」ボタンを押すと、ここに保存されていつでも音声付きで復習できます。</p>
+            <div class="review-empty-state">
+              <p class="review-empty-state-title">⭐ 復習単語帳に登録された単語はありません</p>
+              <p class="review-empty-state-desc">各単語カードの「⭐」ボタンを押すと、ここに保存されていつでも音声付きで復習できます。</p>
             </div>
           `;
           return;
@@ -1016,20 +1125,63 @@
         // 新しい方が上になるようにソート（降順）
         words.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
 
-        container.innerHTML = words.map(w => {
+        // 現在のタブに応じてフィルタリング
+        let filteredWords = words;
+        if (currentTab === 'active') {
+          filteredWords = words.filter(w => !w.mastered);
+        } else if (currentTab === 'mastered') {
+          filteredWords = words.filter(w => Boolean(w.mastered));
+        }
+
+        // フィルタ後の単語が0件の場合の専用メッセージ
+        if (filteredWords.length === 0) {
+          if (currentTab === 'active') {
+            container.innerHTML = `
+              <div class="review-empty-state" style="background: #F0FDF4; border-color: #86EFAC;">
+                <p class="review-empty-state-title" style="color: #166534;">🎊 素晴らしい！すべての単語をマスターしました！</p>
+                <p class="review-empty-state-desc" style="color: #15803D;">現在復習中の単語はありません。<br>「<a href="#mastered" id="link-to-mastered" style="font-weight:700; color:#16A34A; text-decoration:underline;">🎉 覚えた単語</a>」タブからいつでも見返したり、復習中に戻すことができます。</p>
+              </div>
+            `;
+            const linkToMastered = document.getElementById('link-to-mastered');
+            if (linkToMastered) {
+              linkToMastered.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchTab('mastered');
+              });
+            }
+            return;
+          } else if (currentTab === 'mastered') {
+            container.innerHTML = `
+              <div class="review-empty-state">
+                <p class="review-empty-state-title">🎉 まだ覚えた単語はありません</p>
+                <p class="review-empty-state-desc">単語を覚えたら、カードの「✅ 覚えた！」ボタンを押してください。<br>ここに集約されて、いつでも成果を確認できます。</p>
+              </div>
+            `;
+            return;
+          }
+        }
+
+        container.innerHTML = filteredWords.map(w => {
           const dateStr = ReviewManager.formatDate ? ReviewManager.formatDate(w.createdAt) : '';
           const cleanSentence = w.example ? w.example.split(/[\(（]/)[0].replace(/^[💬\s]*例文[:：]?\s*/, '').trim() : '';
+          const isMastered = Boolean(w.mastered);
+
           return `
-            <div class="review-word-card">
+            <div class="review-word-card ${isMastered ? 'is-mastered' : ''}" data-trad="${w.traditional}">
               <div class="review-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                   <span class="review-word-trad">${w.traditional}</span>
                   <span class="review-word-zhuyin">${w.zhuyin || ''}</span>
                   <span class="review-word-pinyin">${w.pinyin || ''}</span>
                   ${dateStr ? `<span class="review-date-badge">📅 ${dateStr} 追加</span>` : ''}
+                  ${isMastered ? `<span class="mastered-badge">🎉 習得済み</span>` : ''}
                 </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                   <button class="sound-chip-btn play-word-sound" data-word="${w.traditional}" title="単語の発音を聞く">🔊 単語</button>
+                  <button class="master-btn ${isMastered ? 'active' : ''}" data-trad="${w.traditional}" title="${isMastered ? '復習中に戻す' : '覚えた単語にする'}">
+                    <span class="master-icon">${isMastered ? '🎉' : '✅'}</span>
+                    <span class="master-text">${isMastered ? '覚えた！（復習に戻す）' : '覚えた！'}</span>
+                  </button>
                   <button class="bookmark-btn active" data-trad="${w.traditional}" data-zhuyin="${w.zhuyin || ''}" data-pinyin="${w.pinyin || ''}" data-meaning="${w.meaning || ''}" data-example="${w.example || ''}" title="復習単語帳から削除">⭐</button>
                 </div>
               </div>
@@ -1051,13 +1203,38 @@
         }).join('');
       }
 
-      // 星ボタンが押された時の動的再レンダリング
-      document.addEventListener('click', function(e) {
-        if (e.target.closest('.bookmark-btn')) {
-          setTimeout(renderReviewList, 50);
+      function switchTab(newTab) {
+        currentTab = newTab;
+        window.location.hash = newTab;
+        updateTabUI();
+        renderReviewList();
+      }
+
+      // タブボタンクリック
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const tabType = this.getAttribute('data-tab');
+          if (tabType) switchTab(tabType);
+        });
+      });
+
+      // ハッシュ変更監視（ブラウザバック対応）
+      window.addEventListener('hashchange', function() {
+        const newHash = window.location.hash.replace('#', '');
+        if (['active', 'mastered', 'all'].includes(newHash) && newHash !== currentTab) {
+          currentTab = newHash;
+          updateTabUI();
+          renderReviewList();
         }
       });
 
+      // 単語更新カスタムイベントの監視
+      document.addEventListener('review-words-changed', function() {
+        setTimeout(renderReviewList, 30);
+      });
+
+      // 初期化実行
+      updateTabUI();
       renderReviewList();
     });
   </script>

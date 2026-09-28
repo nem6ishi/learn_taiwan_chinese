@@ -202,7 +202,7 @@
     });
   }
 
-  window.APP_VERSION = 'v1.1.1';
+  window.APP_VERSION = 'v1.2.0';
 
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
@@ -713,6 +713,8 @@
               ...def,
               ...w,
               createdAt: def.createdAt, // 正確なGit履歴上の追加日タイムスタンプを確実に適用
+              mastered: Boolean(w.mastered), // 覚えた単語ステータス
+              masteredAt: w.masteredAt || null,
               column: def.column,
               example: def.example,
               meaning: def.meaning,
@@ -720,7 +722,11 @@
               pinyin: def.pinyin
             };
           }
-          return w;
+          return {
+            ...w,
+            mastered: Boolean(w.mastered),
+            masteredAt: w.masteredAt || null
+          };
         });
 
         // 新しい順（降順）にソート
@@ -752,6 +758,8 @@
         isAdded = false;
       } else {
         wordObj.createdAt = Date.now(); // 登録日時（新しいものが上）
+        wordObj.mastered = Boolean(wordObj.mastered);
+        wordObj.masteredAt = wordObj.mastered ? Date.now() : null;
         words.unshift(wordObj);
         isAdded = true;
       }
@@ -763,6 +771,62 @@
       let words = this.getWords();
       words = words.filter(w => w.traditional !== trad);
       this.saveWords(words);
+    },
+
+    // 覚えた（マスター済み）単語の判定
+    isMastered: function(trad) {
+      const words = this.getWords();
+      const word = words.find(w => w.traditional === trad);
+      return Boolean(word && word.mastered);
+    },
+
+    // 覚えた（マスター済み）状態のトグル
+    toggleMastered: function(trad) {
+      let words = this.getWords();
+      const word = words.find(w => w.traditional === trad);
+      if (word) {
+        word.mastered = !word.mastered;
+        word.masteredAt = word.mastered ? Date.now() : null;
+        this.saveWords(words);
+        return word.mastered;
+      }
+      return false;
+    },
+
+    // 覚えた状態を明示的に設定
+    setMastered: function(trad, mastered) {
+      let words = this.getWords();
+      const word = words.find(w => w.traditional === trad);
+      if (word) {
+        word.mastered = Boolean(mastered);
+        word.masteredAt = word.mastered ? Date.now() : null;
+        this.saveWords(words);
+        return word.mastered;
+      }
+      return false;
+    },
+
+    // 覚えた単語のみ取得
+    getMasteredWords: function() {
+      const words = this.getWords();
+      return words.filter(w => Boolean(w.mastered));
+    },
+
+    // 未習得（復習中）単語のみ取得
+    getActiveWords: function() {
+      const words = this.getWords();
+      return words.filter(w => !w.mastered);
+    },
+
+    // 各状態の単語数をカウント取得
+    getCounts: function() {
+      const words = this.getWords();
+      const masteredCount = words.filter(w => Boolean(w.mastered)).length;
+      return {
+        total: words.length,
+        mastered: masteredCount,
+        active: words.length - masteredCount
+      };
     },
 
     formatDate: function(timestamp) {
@@ -800,6 +864,38 @@
           });
           btn.classList.toggle('active', isAdded);
           btn.textContent = isAdded ? '⭐' : '☆';
+
+          // 更新イベント発行
+          document.dispatchEvent(new CustomEvent('review-words-changed', {
+            detail: { traditional: trad, action: isAdded ? 'added' : 'removed' }
+          }));
+        }
+      }
+    });
+
+    // 「覚えた！」（マスター）ボタンの自動クリックバインド
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.master-btn');
+      if (btn) {
+        e.stopPropagation();
+        const trad = btn.getAttribute('data-trad');
+        if (trad && window.ReviewManager) {
+          const isMastered = ReviewManager.toggleMastered(trad);
+          btn.classList.toggle('active', isMastered);
+          const iconEl = btn.querySelector('.master-icon');
+          const textEl = btn.querySelector('.master-text');
+          if (iconEl) iconEl.textContent = isMastered ? '🎉' : '✅';
+          if (textEl) textEl.textContent = isMastered ? '覚えた！（復習に戻す）' : '覚えた！';
+
+          const card = btn.closest('.review-word-card');
+          if (card) {
+            card.classList.toggle('is-mastered', isMastered);
+          }
+
+          // 更新イベント発行
+          document.dispatchEvent(new CustomEvent('review-words-changed', {
+            detail: { traditional: trad, action: 'mastered-toggle', isMastered: isMastered }
+          }));
         }
       }
     });

@@ -1115,6 +1115,162 @@ body {
   font-size: 0.9rem;
 }
 
+/* ==================== 復習単語帳 タブ ＆ 覚えた単語管理 ==================== */
+.review-control-bar {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.review-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.review-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #F8FAFC;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  color: #475569;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-tab-btn:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+  color: #1E293B;
+}
+
+.review-tab-btn.active[data-tab="active"] {
+  background: #FEF3C7;
+  border-color: #F59E0B;
+  color: #92400E;
+}
+
+.review-tab-btn.active[data-tab="mastered"] {
+  background: #DEF7EC;
+  border-color: #31C48D;
+  color: #03543F;
+}
+
+.review-tab-btn.active[data-tab="all"] {
+  background: #F1F5F9;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+.tab-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.06);
+  color: inherit;
+}
+
+.review-tab-hint {
+  font-size: 0.82rem;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.5;
+}
+
+/* 覚えた！（マスター）ボタン */
+.master-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.master-btn:hover {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #059669;
+}
+
+.master-btn.active {
+  background: #DEF7EC;
+  border-color: #31C48D;
+  color: #03543F;
+}
+
+.master-btn.active:hover {
+  background: #FEE2E2;
+  border-color: #F87171;
+  color: #B91C1C;
+}
+
+/* 覚えた単語カード（習得済み）スタイル */
+.review-word-card.is-mastered {
+  border-left: 4px solid #10B981;
+}
+
+.mastered-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #065F46;
+  background: #D1FAE5;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.review-empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  background: #F8FAFC;
+  border: 1px dashed #CBD5E1;
+  border-radius: 12px;
+  color: #64748B;
+}
+
+.review-empty-state-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1E293B;
+  margin-bottom: 8px;
+}
+
+.review-empty-state-desc {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+
 /* ==================== Notion風 目次・ガイドサイドバー ==================== */
 .container-wide {
   max-width: 1240px;
