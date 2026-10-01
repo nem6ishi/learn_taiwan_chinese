@@ -207,6 +207,30 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '車站',
+      zhuyin: 'ㄔㄜ ㄓㄢˋ',
+      pinyin: 'chēzhàn',
+      meaning: '駅 / ステーション',
+      example: '請問，車站要怎麼走？ (すみません、駅へはどう行けばいいですか？)',
+      column: {
+        title: '💡 「車站」と台湾の電車・MRT・バスの駅名の違い！',
+        content: '• <strong>車 (車・乗り物)</strong>＋<strong>站 (停留所・駅)</strong>＝駅。乗り物全般の「駅」を表す総称です。<br>• 台湾では、台鉄（在来線）の駅を「<strong>火車站 (ㄏㄨㄛˇ ㄔㄜ ㄓㄢˋ)</strong>」、MRTの駅を「<strong>捷運站 (ㄐㄧㄝˊ ㄩㄣˋ ㄓㄢˋ)</strong>」、バス停を「<strong>公車站 (ㄍㄨㄥ ㄔㄜ ㄓㄢˋ)</strong>」と呼び分けるのが一般的です。また台北駅（台北車站）は台湾現地で親しみを込めて「<strong>北車 (ㄅㄟˇ ㄔㄜ / Běichē)</strong>」と略されます！'
+      },
+      createdAt: 1790872023000 // 2026/10/02 01:27
+    },
+    {
+      traditional: '便利商店',
+      zhuyin: 'ㄅㄧㄢˋ ㄌㄧˋ ㄕㄤ ㄉㄧㄢˋ',
+      pinyin: 'biànlì shāngdiàn',
+      meaning: 'コンビニエンスストア / コンビニ',
+      example: '學校對面有一家便利商店。 (学校の向かいにコンビニが1軒あります)',
+      column: {
+        title: '🏪 台湾文化「便利商店」と日常の略称「超商（チャオシャン）」！',
+        content: '• <strong>便利 (便利な)</strong>＋<strong>商店 (お店)</strong>＝コンビニ。<br>• 台湾では「便利商店」も看板や公式表記で使われますが、台湾ネイティブ同士の日常会話では圧倒的に略称の「<strong>超商 (ㄔㄠ ㄕㄤ / chāoshāng)</strong>」と呼ぶことが多いです（🇨🇳 大陸では「便利店」）。<br>• 台湾は世界有数のコンビニ密度を誇り、7-ELEVENや全家（ファミリーマート）は生活に欠かせないインフラです！'
+      },
+      createdAt: 1790872022000 // 2026/10/02 01:27
+    },
+    {
       traditional: '以後',
       zhuyin: 'ㄧˇ ㄏㄡˋ',
       pinyin: 'yǐhòu',
@@ -772,7 +796,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v14';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v15';
 
   const ReviewManager = {
     getWords: function() {
@@ -786,6 +810,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v14',
             'taiwan_chinese_review_words_v13',
             'taiwan_chinese_review_words_v12',
             'taiwan_chinese_review_words_v11',
