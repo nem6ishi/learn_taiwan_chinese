@@ -207,6 +207,114 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '美食街',
+      zhuyin: 'ㄇㄟˇ ㄕˊ ㄐㄧㄝ',
+      pinyin: 'měishíjiē',
+      meaning: 'フードコート / グルメ街 (モールの飲食街)',
+      example: '百貨公司樓下有很大的美食街。 (デパートの地下にとても大きなフードコートがあります)',
+      column: {
+        title: '🍜 台湾のデパートや地下街でおなじみの「美食街」！',
+        content: '• <strong>美食 (美味しい料理)</strong>＋<strong>街 (通り・エリア)</strong>。台湾では百貨店（デパート）やショッピングモール、駅の地下にあるフードコートを「<strong>美食街 (ㄇㄟˇ ㄕˊ ㄐㄧㄝ)</strong>」と呼びます。<br>• 小籠包や牛肉麺、鉄板焼き、ドリンクスタンドなど多種多様な台湾グルメを手軽に味わえる大人気スポットです！'
+      },
+      createdAt: 1790872209000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '郵局',
+      zhuyin: 'ㄧㄡˊ ㄐㄩˊ',
+      pinyin: 'yóujú',
+      meaning: '郵便局',
+      example: '我想去郵局寄明信片。 (郵便局へ行って絵葉書を出したいです)',
+      column: {
+        title: '📮 台湾の郵便局「中華郵政（郵局）」と緑のポスト！',
+        content: '• 台湾の郵便局は「<strong>郵局 (ㄧㄡˊ ㄐㄩˊ)</strong>」（正式名称: 中華郵政）。緑色の看板がトレードマークです。<br>• 街中のポストも緑色（普通郵便・航空便用）と赤色（速達・書留用）に分かれています。窓口で「<strong>寄明信片 (ㄐㄧˋ ㄇㄧㄥˊ ㄒㄧㄣˋ ㄆㄧㄢˋ / 絵葉書を出す)</strong>」や国際小包を発送できます。'
+      },
+      createdAt: 1790872208000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '旁邊',
+      zhuyin: 'ㄆㄤˊ ㄅㄧㄢ',
+      pinyin: 'pángbiān',
+      meaning: '隣 / 横 / そば (側)',
+      example: '郵局在便利商店的旁邊。 (郵便局はコンビニの隣にあります)',
+      column: {
+        title: '📍 位置関係の基本！「旁邊（となり）」と道案内',
+        content: '• <strong>旁 (脇・側面)</strong>＋<strong>邊 (側・へり)</strong>＝隣、横。<br>• 「<strong>A 在 B 的旁邊</strong>（AはBの隣にあります）」の構文は道案内や場所説明の超基本です。台湾の街で「洗手間在哪裡？（トイレはどこですか？）」と聞くと「就在旁邊（すぐ隣ですよ）」と教えてくれます。'
+      },
+      createdAt: 1790872207000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '空位',
+      zhuyin: 'ㄎㄨㄥ ㄨㄟˋ',
+      pinyin: 'kōngwèi',
+      meaning: '空席 / 空いている席',
+      example: '請問，這裡還有空位嗎？ (すみません、ここまだ空席はありますか？)',
+      column: {
+        title: '🪑 カフェや夜市・食堂で必須のフレーズ「還有空位嗎？」',
+        content: '• <strong>空 (空いている)</strong>＋<strong>位 (席・場所)</strong>＝空席。<br>• 混雑したカフェやフードコート、屋台で席を探すときに「<strong>請問，有空位嗎？ (ㄑㄧㄥˇ ㄨㄣˋ, ㄧㄡˇ ㄎㄨㄥ ㄨㄟˋ ㄇㄚ˙ / 空席はありますか？)</strong>」と聞くのが定番です。また「這裡有人坐嗎？（ここ誰か座っていますか？）」も同じ場面で超頻出！'
+      },
+      createdAt: 1790872206000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '附近',
+      zhuyin: 'ㄈㄨˋ ㄐㄧㄣˋ',
+      pinyin: 'fùjìn',
+      meaning: '近く / 付近',
+      example: '這附近有捷運站嗎？ (この近くにMRTの駅はありますか？)',
+      column: {
+        title: '🗺️ 旅行中に最も役立つ魔法の言葉「這附近有〜嗎？」',
+        content: '• <strong>附 (沿う・付く)</strong>＋<strong>近 (近い)</strong>＝付近、近く。<br>• 「<strong>這附近有〜嗎？ (ㄓㄜˋ ㄈㄨˋ ㄐㄧㄣˋ ㄧㄡˇ...ㄇㄚ˙ / この近くに〜はありますか？)</strong>」は台湾旅行中最も多用する鉄板フレーズ！「這附近有超商嗎？（この近くにコンビニある？）」「這附近有好吃的豆花嗎？（この近くに美味しい豆花ある？）」など無限に応用できます。'
+      },
+      createdAt: 1790872205000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '銀行',
+      zhuyin: 'ㄧㄣˊ ㄏㄤˊ',
+      pinyin: 'yínháng',
+      meaning: '銀行 / バンク',
+      example: '我要去銀行換台幣。 (私は銀行へ台湾ドルを両替しに行きます)',
+      column: {
+        title: '🏦 台湾の銀行と両替「換錢（台湾ドルへの両替）」！',
+        content: '• <strong>銀 (銀・金銭)</strong>＋<strong>行 (店・商業機関)</strong>＝銀行。<br>• 台湾では空港の銀行窓口や街中の「台灣銀行」「兆豐銀行」などで日本円から台湾ドル（台幣・新台幣）への両替が可能です。「<strong>換錢 (ㄏㄨㄢˋ ㄑㄧㄢˊ / お金を両替する)</strong>」と言えば通じます。'
+      },
+      createdAt: 1790872204000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '地方',
+      zhuyin: 'ㄉㄧˋ ㄈㄤ',
+      pinyin: 'dìfāng',
+      meaning: '場所 / 所 / 地域',
+      example: '台灣有很多好玩的地方。 (台湾には楽しい場所がたくさんあります)',
+      column: {
+        title: '🌏 「什麼地方？（どこ？どんな所？）」と「地方（場所）」！',
+        content: '• <strong>地 (土地)</strong>＋<strong>方 (方面・地域)</strong>＝場所、所。<br>• 疑問詞「<strong>什麼地方？ (ㄕㄣˊ ㄇㄜ˙ ㄉㄧˋ ㄈㄤ)</strong>」は「どこ？ / どの場所？」という意味で「哪裡？ (ㄋㄚˇ ㄌㄧˇ)」と同様によく使われます。また「這個地方（ここ・この場所）」のように観光スポットを指すときにも大活躍します。'
+      },
+      createdAt: 1790872203000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '美麗的寶島',
+      zhuyin: 'ㄇㄟˇ ㄌㄧˋ ˙ㄉㄜ ㄅㄠˇ ㄉㄠˇ',
+      pinyin: 'měilì de bǎodǎo',
+      meaning: '美しい宝の島 / フォルモサ (麗しの島・台湾の美称)',
+      example: '台灣是一座美麗的寶島。 (台湾は美しい宝の島です)',
+      column: {
+        title: '🏝️ 「Ilha Formosa（麗しの島）」と台湾の美称「美麗的寶島」！',
+        content: '• 16世紀、ポルトガル船の船員が洋上から緑豊かで美しい台湾を見て「<strong>Ilha Formosa (麗しの島)</strong>」と感嘆したことから、欧米で「<strong>Formosa（フォルモサ）</strong>」と呼ばれるようになりました。<br>• 台湾現地でも自国を誇りを持って「<strong>美麗的寶島 (ㄇㄟˇ ㄌㄧˋ ˙ㄉㄜ ㄅㄠˇ ㄉㄠˇ / 美しい宝の島)</strong>」や「<strong>美麗島</strong>」と呼び、高雄MRTの有名ステーション「美麗島站」の名前にもなっています！'
+      },
+      createdAt: 1790872202000 // 2026/10/02 01:30
+    },
+    {
+      traditional: '動畫',
+      zhuyin: 'ㄉㄨㄥˋ ㄏㄨㄚˋ',
+      pinyin: 'dònghuà',
+      meaning: 'アニメ / アニメーション',
+      example: '我很喜歡看日本動畫。 (私は日本のアニメを見るのがとても好きです)',
+      column: {
+        title: '🎬 台湾でも大人気！「動畫（アニメ）」と「動漫（ACGカルチャー）」',
+        content: '• <strong>動 (動く)</strong>＋<strong>畫 (絵・画)</strong>＝アニメーション。<br>• 台湾では日本のアニメや漫画カルチャーが絶大な人気を誇ります！アニメとマンガを合わせたオタクカルチャー全般は「<strong>動漫 (ㄉㄨㄥˋ ㄇㄢˋ)</strong>」と呼ばれ、台北の西門町や地下街にはアニメショップがずらりと並んでいます（🇨🇳 大陸でも「動畫」）。'
+      },
+      createdAt: 1790872201000 // 2026/10/02 01:30
+    },
+    {
       traditional: '車站',
       zhuyin: 'ㄔㄜ ㄓㄢˋ',
       pinyin: 'chēzhàn',
@@ -796,7 +904,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v15';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v16';
 
   const ReviewManager = {
     getWords: function() {
@@ -810,6 +918,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v15',
             'taiwan_chinese_review_words_v14',
             'taiwan_chinese_review_words_v13',
             'taiwan_chinese_review_words_v12',
