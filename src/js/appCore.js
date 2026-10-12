@@ -207,6 +207,66 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '離',
+      zhuyin: 'ㄌㄧˊ',
+      pinyin: 'lí',
+      meaning: '〜から (距離・時間の間隔を表す) / 離れる',
+      example: '我家離捷運站很近。 (私の家はMRTの駅からとても近いです)',
+      column: {
+        title: '📍 距離や時間を表す前置詞「離（〜から）」！',
+        content: '• <strong>A 離 B ＋ 形容詞</strong>：「AはBから〜だ」。例えば「<strong>我家離捷運站很近</strong>（私の家はMRTの駅からとても近い）」や「<strong>離這裡很遠</strong>（ここからとても遠い）」。<br>• 台湾旅行でも「<strong>這裡離夜市有多遠？</strong>（ここから夜市までどのくらい離れていますか？）」のように、目的地までの距離や所要時間を尋ねる際に欠かせない最重要表現です！<br>• 🇨🇳 大陸でも同様に「離（简: 离）」を使います（起点の「從（从）」との使い分け：場所の隔たり・距離には「離」）。'
+      },
+      createdAt: 1791814805000 // 2026/10/12 23:20
+    },
+    {
+      traditional: '舒服',
+      zhuyin: 'ㄕㄨ ˙ㄈㄨ',
+      pinyin: 'shūfu',
+      meaning: '体の調子が良い / 心地よい / 気分が良い / 楽である',
+      example: '睡飽之後，身體舒服多了。 (たっぷり寝た後、体の調子がだいぶ良くなりました)',
+      column: {
+        title: '✨ 体調や心地よさを表す万能単語「舒服（体の調子が良い・心地よい）」！',
+        content: '• <strong>舒 (伸びやか・ゆったり)</strong>＋<strong>服 (なじむ・服する)</strong>＝心地よい、楽である、体調が良い。<br>• 台湾華語で「体調」の良し悪しを言うときは「<strong>身體很舒服</strong>（体の調子が良い・スッキリしている）」、「<strong>身體不舒服</strong>（体調が悪い・具合が悪い）」のように「舒服」を使うのが最も自然で定番です。<br>• また、台湾マッサージ（按摩）を受けて「<strong>好舒服！</strong>（すごく気持ちいい！）」と言ったり、風が涼しくて「<strong>很舒服</strong>（心地いい）」と言ったり、心身がリラックスした状態全般に使えます（🇨🇳 大陸でも「舒服」）。'
+      },
+      createdAt: 1791814804000 // 2026/10/12 23:20
+    },
+    {
+      traditional: '眼睛',
+      zhuyin: 'ㄧㄢˇ ㄐㄧㄥ',
+      pinyin: 'yǎnjing',
+      meaning: '目 / 瞳',
+      example: '看電腦太久，眼睛很酸。 (パソコンを長く見すぎて、目が疲れました／しょぼしょぼします)',
+      column: {
+        title: '👀 「眼睛（目）」と「眼鏡（めがね）」の発音・声調の違いに注意！',
+        content: '• <strong>眼睛 (ㄧㄢˇ ㄐㄧㄥ / yǎnjing)</strong>：目、瞳（第3声＋第1声/軽声）。<br>• <strong>眼鏡 (ㄧㄢˇ ㄐㄧㄥˋ / yǎnjìng)</strong>：めがね（第3声＋第4声）。<br>• 台湾華語でも漢字と声調がそっくりで、学習者が聞き間違え・言い間違えやすい定番ペアです！<br>• 目が疲れた・しょぼしょぼするときは台湾で「<strong>眼睛很酸 (ㄧㄢˇ ㄐㄧㄥ ㄏㄣˇ ㄙㄨㄢ)</strong>」と表現します（酸＝筋肉痛やだるさ・しょぼしょぼ。🇨🇳 大陸では「眼睛酸/眼睛累」）。'
+      },
+      createdAt: 1791814803000 // 2026/10/12 23:20
+    },
+    {
+      traditional: '覺得',
+      zhuyin: 'ㄐㄩㄝˊ ㄉㄜ˙',
+      pinyin: 'juéde',
+      meaning: '〜と思う / 感じる',
+      example: '我覺得這家牛肉麵很好吃。 (私はこの店の牛肉麺がとても美味しいと思います)',
+      column: {
+        title: '💭 自分の意見や感想を伝える超重要動詞「覺得（〜と思う）」！',
+        content: '• <strong>覺 (感じる・覚る)</strong>＋<strong>得 (〜と得る)</strong>＝〜と思う、〜と感じる。<br>• 「<strong>我覺得〜（私は〜と思う）</strong>」は、感想・考え・体調を伝えるときに日常で何度も使う最重要フレーズです！<br>• 例: 「<strong>我覺得很棒！</strong>（すごく素敵だと思います！）」「<strong>我覺得有點冷</strong>（少し寒いと感じます）」。<br>• 相手の意見を聞く「<strong>你覺得呢？ (ㄋㄧˇ ㄐㄩㄝˊ ㄉㄜ˙ ㄋㄜ˙ / あなたはどう思いますか？)</strong>」も相づちや会話で超頻出です（🇨🇳 大陸でも「覺得 / 简: 觉得」）。'
+      },
+      createdAt: 1791814802000 // 2026/10/12 23:20
+    },
+    {
+      traditional: '開會',
+      zhuyin: 'ㄎㄞ ㄏㄨㄟˋ',
+      pinyin: 'kāihuì',
+      meaning: '会議をする / ミーティングを開く',
+      example: '我們下午兩點要開會。 (私たちは午後の2時に会議があります／会議をします)',
+      column: {
+        title: '💼 ビジネスや日常で必須の「開會（会議をする・打ち合わせをする）」！',
+        content: '• <strong>開 (開く・始める)</strong>＋<strong>會 (集まり・会議)</strong>＝会議を開く、ミーティングをする。<br>• 台湾のオフィスや日常でも「<strong>他在開會 (ㄊㄚ ㄗㄞˋ ㄎㄞ ㄏㄨㄟˋ / 彼は今会議中です)</strong>」や「<strong>等一下要開會 (ㄉㄥˇ ㄧˊ ㄒㄧㄚˋ ㄧㄠˋ ㄎㄞ ㄏㄨㄟˋ / この後すぐ会議がある)</strong>」のように頻繁に使われます。<br>• なお、「会議」という名詞そのものは「<strong>會議 (ㄏㄨㄟˋ ㄧˋ)</strong>」ですが、「会議をする」という動詞表現としては圧倒的に「<strong>開會</strong>」が自然で広く用いられます（🇨🇳 大陸でも同様）。'
+      },
+      createdAt: 1791814801000 // 2026/10/12 23:20
+    },
+    {
       traditional: '美食街',
       zhuyin: 'ㄇㄟˇ ㄕˊ ㄐㄧㄝ',
       pinyin: 'měishíjiē',
@@ -904,7 +964,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v16';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v17';
 
   const ReviewManager = {
     getWords: function() {
@@ -918,6 +978,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v16',
             'taiwan_chinese_review_words_v15',
             'taiwan_chinese_review_words_v14',
             'taiwan_chinese_review_words_v13',
