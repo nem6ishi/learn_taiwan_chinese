@@ -207,6 +207,66 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '運動鞋',
+      zhuyin: 'ㄩㄣˋ ㄉㄨㄥˋ ㄒㄧㄝˊ',
+      pinyin: 'yùndòngxié',
+      meaning: 'スニーカー / 運動靴',
+      example: '今天穿運動鞋走路很舒服。 (今日スニーカーを履いて歩くのはとても楽／快適です)',
+      column: {
+        title: '👟 台湾歩きに必須！「運動鞋（スニーカー・運動靴）」と「布鞋」',
+        content: '• <strong>運動 (スポーツ)</strong>＋<strong>鞋 (靴)</strong>＝スニーカー、運動靴。<br>• 台湾の夜市巡りや観光、MRTでの移動には履き慣れた「<strong>運動鞋 (ㄩㄣˋ ㄉㄨㄥˋ ㄒㄧㄝˊ)</strong>」がベスト！<br>• カジュアルなキャンバススニーカーなどは「<strong>布鞋 (ㄅㄨˋ ㄒㄧㄝˊ)</strong>」、靴全般は「<strong>鞋子 (ㄒㄧㄝˊ ˙ㄗ)</strong>」と呼びます（🇨🇳 大陸でも同様）。'
+      },
+      createdAt: 1791906725000 // 2026/10/14 00:52
+    },
+    {
+      traditional: '高興',
+      zhuyin: 'ㄍㄠ ㄒㄧㄥˋ',
+      pinyin: 'gāoxìng',
+      meaning: 'うれしい / 喜ばしい / 楽しい',
+      example: '認識你很高興！ (あなたとお知り合いになれてとても嬉しいです！)',
+      column: {
+        title: '😊 出会いの定番挨拶「很高興認識你」と「開心」の違い！',
+        content: '• <strong>高 (高い)</strong>＋<strong>興 (興味・興奮・気分)</strong>＝うれしい、上機嫌である。<br>• 自己紹介の結び言葉「<strong>很高興認識你 (ㄏㄣˇ ㄍㄠ ㄒㄧㄥˋ ㄖㄣˋ ㄕ˙ ㄋㄧˇ / はじめまして、お会いできて光栄です)</strong>」は鉄板の挨拶フレーズ！<br>• 日常会話で「楽しい！嬉しい！」と言うときは、台湾現地では「<strong>開心 (ㄎㄞ ㄒㄧㄣ)</strong>」も非常によく使われます（例: 今天玩得很開心！）。'
+      },
+      createdAt: 1791906724000 // 2026/10/14 00:52
+    },
+    {
+      traditional: '有趣',
+      zhuyin: 'ㄧㄡˇ ㄑㄩˋ',
+      pinyin: 'yǒuqù',
+      meaning: '面白い / 興味深い',
+      example: '這部電影很有趣！ (この映画はとても面白いです！)',
+      column: {
+        title: '💡 「有趣」と台湾で超頻出の「好玩」「有意思」！',
+        content: '• <strong>有 (ある)</strong>＋<strong>趣 (面白み・味わい)</strong>＝面白い、興味深い。<br>• 内容や話題が知的に興味深いときは「<strong>有趣 (ㄧㄡˇ ㄑㄩˋ)</strong>」や「<strong>有意思 (ㄧㄡˇ ㄧˋ ˙ㄙ)</strong>」を使います。<br>• なお、ゲームや観光スポット、アクティビティが「（体験として）楽しい・面白い」ときは、台湾では圧倒的に「<strong>好玩 (ㄏㄠˇ ㄨㄢˊ)</strong>」が好まれます（例: 台灣很好玩！）。'
+      },
+      createdAt: 1791906723000 // 2026/10/14 00:52
+    },
+    {
+      traditional: '認識',
+      zhuyin: 'ㄖㄣˋ ㄕ˙',
+      pinyin: 'rènshi',
+      meaning: '知っている / 見覚えがある / 知り合う (人や文字を見知っている)',
+      example: '你認識那位先生嗎？ (あの男の方をご存知ですか？)',
+      column: {
+        title: '🤝 人や文字を「知っている」を表す「認識」と「知道」の使い分け！',
+        content: '• <strong>認 (見分ける)</strong>＋<strong>識 (見識・識別する)</strong>＝知っている、見知っている。<br>• <strong>使い分けの重要ポイント</strong>：<br>  - 「<strong>認識</strong>」：人と知り合いである、顔・名前を見知っている、漢字や文字を認識できる（例: 我認識他 / 我認識注音符號）。<br>  - 「<strong>知道</strong>」：情報・知識・事実を知っている（例: 我知道這件事 / 知道在哪裡）。'
+      },
+      createdAt: 1791906722000 // 2026/10/14 00:52
+    },
+    {
+      traditional: '懂',
+      zhuyin: 'ㄉㄨㄥˇ',
+      pinyin: 'dǒng',
+      meaning: 'わかる / 理解する / 通じる',
+      example: '請問，你懂英文嗎？ (すみません、英語は分かりますか／通じますか？)',
+      column: {
+        title: '🎯 「聽懂（聞いて分かる）」と「了解」「明白」の使い分け！',
+        content: '• <strong>懂 (理解する・通じる)</strong>：意味や仕組みを深く理解している状態。<br>• 語学や会話で最も多用するのが可能補語・結果補語の「<strong>聽懂 (ㄊㄧㄥ ㄉㄨㄥˇ / 聞いて理解できる)</strong>」「<strong>聽不懂 (ㄊㄧㄥ ˙ㄅㄨ ㄉㄨㄥˇ / 聞き取れない・分からない)</strong>」です！<br>• 台湾旅行で言葉が分からないときは「<strong>我聽不懂中文 (私は中国語が分かりません)</strong>」と言えば親切にサポートしてもらえます。'
+      },
+      createdAt: 1791906721000 // 2026/10/14 00:52
+    },
+    {
       traditional: '離',
       zhuyin: 'ㄌㄧˊ',
       pinyin: 'lí',
@@ -964,7 +1024,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v17';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v18';
 
   const ReviewManager = {
     getWords: function() {
@@ -978,6 +1038,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v17',
             'taiwan_chinese_review_words_v16',
             'taiwan_chinese_review_words_v15',
             'taiwan_chinese_review_words_v14',
