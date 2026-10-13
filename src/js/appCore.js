@@ -207,6 +207,54 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '留學',
+      zhuyin: 'ㄌㄧㄡˊ ㄒㄩㄝˊ',
+      pinyin: 'liúxué',
+      meaning: '留学する / 留学',
+      example: '他打算明年去台灣留學。 (彼は来年台湾に留学する予定です)',
+      column: {
+        title: '🎓 台湾での中国語留学「學華語」と「留學」！',
+        content: '• <strong>留 (留まる)</strong>＋<strong>學 (学ぶ)</strong>＝留学する。<br>• 台湾の大学付属語学センター（師範大学の国語教学中心など）には、世界中から多くの人が台湾華語を学びに集まります。<br>• 台湾では語学留学することを「<strong>學華語 (ㄒㄩㄝˊ ㄏㄨㄚˊ ㄧㄩˇ / 華語を学ぶ)</strong>」ともよく表現します（🇨🇳 大陸でも「留學」）。'
+      },
+      createdAt: 1791907084000 // 2026/10/14 00:58
+    },
+    {
+      traditional: '爬山',
+      zhuyin: 'ㄆㄚˊ ㄕㄢ',
+      pinyin: 'páshān',
+      meaning: '登山をする / 山登りをする / ハイキングをする',
+      example: '週末我們一起去爬象山吧！ (週末、一緒に象山に登りに行きましょう！)',
+      column: {
+        title: '⛰️ 台北の絶景・象山ハイクと台湾の「爬山」カルチャー！',
+        content: '• <strong>爬 (よじ登る・はう)</strong>＋<strong>山 (山)</strong>＝山登り、ハイキング、登山。<br>• 台湾は島全体が山がちで自然が豊かなため、週末に「爬山」を楽しむ人がとても多いです！<br>• 特に台北101の絶景が一望できる「<strong>象山 (ㄒㄧㄤˋ ㄕㄢ)</strong>」は、MRT駅からすぐ登れる超人気ハイキングスポットです（🇨🇳 大陸でも「爬山」）。'
+      },
+      createdAt: 1791907083000 // 2026/10/14 00:58
+    },
+    {
+      traditional: '笑',
+      zhuyin: 'ㄒㄧㄠˋ',
+      pinyin: 'xiào',
+      meaning: '笑う / 微笑む / あざ笑う',
+      example: '聽了他的話，大家都笑了。 (彼の話を聞いて、みんな笑いました)',
+      column: {
+        title: '😄 「笑」と台湾のネットスラング・日常表現「超好笑」！',
+        content: '• <strong>笑 (笑う)</strong>：嬉しいとき・楽しいときに笑う。<br>• 台湾の若者や日常会話・SNSで「めっちゃウケる！面白すぎる！」と言うときは、「<strong>超好笑！ (ㄔㄠ ㄏㄠˇ ㄒㄧㄠˋ)</strong>」や「<strong>笑死 (ㄒㄧㄠˋ ㄙˇ)</strong>」が超定番の鉄板スラングです！<br>• また「笑顔・微笑み」は「<strong>微笑 (ㄨㄟˊ ㄒㄧㄠˋ)</strong>」と表現します。'
+      },
+      createdAt: 1791907082000 // 2026/10/14 00:58
+    },
+    {
+      traditional: '寒假',
+      zhuyin: 'ㄏㄢˊ ㄐㄧㄚˋ',
+      pinyin: 'hánjià',
+      meaning: '冬休み',
+      example: '寒假的時候，我想去台南玩。 (冬休みのとき、台南へ遊びに行きたいです)',
+      column: {
+        title: '❄️ 台湾の学校制度と「寒假（冬休み）」「暑假（夏休み）」！',
+        content: '• <strong>寒 (寒い)</strong>＋<strong>假 (休暇・休み)</strong>＝冬休み。<br>• 台湾の学校は秋（9月）入学の2学期制のため、1月〜2月の旧正月（春節）前後に約3〜4週間の「<strong>寒假 (ㄏㄢˊ ㄐㄧㄚˋ)</strong>」があります。<br>• 反対の「夏休み」は「<strong>暑假 (ㄕㄨˇ ㄐㄧㄚˋ)</strong>」。「休みに入る」は「<strong>放寒假 / 放假 (ㄈㄤˋ ㄐㄧㄚˋ)</strong>」と言います（🇨🇳 大陸でも「寒假」）。'
+      },
+      createdAt: 1791907081000 // 2026/10/14 00:58
+    },
+    {
       traditional: '運動鞋',
       zhuyin: 'ㄩㄣˋ ㄉㄨㄥˋ ㄒㄧㄝˊ',
       pinyin: 'yùndòngxié',
@@ -1024,7 +1072,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v18';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v19';
 
   const ReviewManager = {
     getWords: function() {
@@ -1038,6 +1086,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v18',
             'taiwan_chinese_review_words_v17',
             'taiwan_chinese_review_words_v16',
             'taiwan_chinese_review_words_v15',
