@@ -1791,5 +1791,233 @@ body {
   color: #0F172A;
 }
 
+/* ==================== 歌詞解説ページ専用スタイル (.lyric-*) ==================== */
+.song-header-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.song-header-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #F43F5E, #FB7185, #FDA4AF);
+}
+
+.song-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFE4E6;
+  color: #BE123C;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+
+.song-title-main {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #0F172A;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.song-artist-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #64748B;
+  margin-bottom: 20px;
+}
+
+.song-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.song-info-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.song-info-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.song-info-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1E293B;
+}
+
+.song-story-box {
+  background: #FFF1F2;
+  border: 1px solid #FECDD3;
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #881337;
+}
+
+/* 歌詞セクション */
+.lyric-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 36px 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.lyric-section-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: #F1F5F9;
+  color: #475569;
+}
+
+.lyric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lyric-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.lyric-card:hover {
+  transform: translateY(-2px);
+  border-color: #F43F5E;
+  box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.08);
+}
+
+.lyric-card.is-playing {
+  border-color: #F43F5E;
+  background: #FFF1F2;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
+}
+
+.lyric-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lyric-trad-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lyric-trad {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  color: #0F172A;
+  line-height: 1.4;
+}
+
+.lyric-zhuyin {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0284C7;
+  letter-spacing: 0.02em;
+}
+
+.lyric-play-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F1F5F9;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.lyric-card:hover .lyric-play-badge {
+  background: #FFE4E6;
+  color: #BE123C;
+}
+
+.lyric-card.is-playing .lyric-play-badge {
+  background: #F43F5E;
+  color: #FFFFFF;
+}
+
+.lyric-translation {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.5;
+  padding-left: 2px;
+}
+
+.lyric-explanation {
+  background: #F8FAFC;
+  border-left: 3px solid #CBD5E1;
+  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.lyric-explanation strong {
+  color: #0F172A;
+}
+
+.lyric-explanation .highlight-word {
+  color: #BE123C;
+  font-weight: 800;
+}
+
+
 
 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台湾音楽・名曲歌詞で学ぶ台湾華語 | 台湾華語学習サイト</title>
+  <meta name="description" content="台湾のロック、ポップス、インディーズの名曲歌詞から、生きた台湾華語の表現・注音・発音・スラングを学ぶ特集シリーズ。">
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="目次を開く">
+          📑 目次
+        </button>
+        <a href="index.html" class="logo">
+          <span class="logo-badge">台</span>
+          <span>台湾華語学習サイト</span>
+        </a>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <a href="my-review-words.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          ⭐ 復習単語帳
+        </a>
+        <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          📋 注音一覧
+        </a>
+        <a href="index.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+          🏠 トップへ
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- モバイル用オーバーレイ背景 -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- メインコンテンツ -->
+  <main class="container" style="padding-top: 40px; padding-bottom: 70px;">
+
+    <!-- ヒーローヘッダー -->
+    <div style="text-align: center; max-width: 720px; margin: 0 auto 48px auto;">
+      <span class="pill-badge active" style="margin-bottom: 14px; font-size: 0.82rem; padding: 4px 14px; background: #FFE4E6; color: #BE123C; border-color: #FECDD3;">
+        🎵 音楽・カルチャー特集
+      </span>
+      <h1 style="font-size: 2.3rem; font-weight: 900; letter-spacing: -0.03em; color: #0F172A; margin-bottom: 12px; line-height: 1.3;">
+        台湾音楽・名曲歌詞で学ぶ台湾華語
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.6;">
+        教科書には載っていない生きた口語表現、ネイティブ発音、感情の込められたフレーズ。<br>
+        台湾のロックやインディーズ音楽を通して、より深い台湾カルチャーと言葉の魅力を学びましょう！
+      </p>
+    </div>
+
+    <!-- 歌詞学習のメリットカード -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 48px;">
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 20px;">
+        <div style="font-size: 1.6rem; margin-bottom: 8px;">🗣️</div>
+        <h3 style="font-size: 1rem; font-weight: 800; color: #0F172A; margin-bottom: 6px;">生きた口語 ＆ 台湾発音</h3>
+        <p style="font-size: 0.85rem; color: #64748B; line-height: 1.6;">
+          台湾ネイティブ特有の「和 (ㄏㄢˋ)」の発音や、口語で頻出する「腦袋」「快〜」「再…一點」など、街でリアルに通じる表現が満載です。
+        </p>
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 20px;">
+        <div style="font-size: 1.6rem; margin-bottom: 8px;">🔊</div>
+        <h3 style="font-size: 1rem; font-weight: 800; color: #0F172A; margin-bottom: 6px;">全行タップ音声 ＆ 注音</h3>
+        <p style="font-size: 0.85rem; color: #64748B; line-height: 1.6;">
+          すべての行に注音符号（ボポモフォ）を完備。カードをタップするだけで、Google台湾女性ボイスでクリアに再生されます。
+        </p>
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 20px;">
+        <div style="font-size: 1.6rem; margin-bottom: 8px;">⭐</div>
+        <h3 style="font-size: 1rem; font-weight: 800; color: #0F172A; margin-bottom: 6px;">復習単語帳 ＆ クイズ連携</h3>
+        <p style="font-size: 0.85rem; color: #64748B; line-height: 1.6;">
+          気に入った単語はワンクリックで「マイ復習単語帳」へ登録。最後は定着度を測る確認クイズで実力を試せます。
+        </p>
+      </div>
+    </div>
+
+    <!-- 楽曲リスト一覧 -->
+    <h2 style="font-size: 1.35rem; font-weight: 800; color: #0F172A; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+      <span>🎸</span>
+      <span>解説楽曲ラインナップ</span>
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+
+      <!-- 第1弾: 透明雜誌 - 性的地獄 -->
+      <a href="lyrics-touming-sexual-hell.html" style="text-decoration: none; color: inherit; display: block;">
+        <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;"
+             onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='#F43F5E'; this.style.boxShadow='0 12px 28px -6px rgba(244, 63, 94, 0.1)';"
+             onmouseout="this.style.transform='none'; this.style.borderColor='var(--color-border)'; this.style.boxShadow='var(--shadow-sm)';">
+          
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="background: #FFE4E6; color: #BE123C; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: var(--radius-pill);">
+                第1弾
+              </span>
+              <span style="background: #F1F5F9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: var(--radius-pill);">
+                オルタナティブ・ロック
+              </span>
+              <span style="background: #F1F5F9; color: #475569; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: var(--radius-pill);">
+                2010年
+              </span>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: #BE123C;">
+              📖 歌詞を解説で読む →
+            </span>
+          </div>
+
+          <h3 style="font-size: 1.6rem; font-weight: 900; color: #0F172A; margin-bottom: 6px;">
+            性的地獄 (Sexual Hell)
+          </h3>
+          <div style="font-size: 1rem; font-weight: 700; color: #64748B; margin-bottom: 16px;">
+            透明雜誌 (Touming Magazine) ｜ 収録アルバム《我們的靈魂樂》
+          </div>
+
+          <p style="font-size: 0.92rem; color: #334155; line-height: 1.6; margin-bottom: 18px;">
+            台湾インディーロックを代表する金字塔！「攝氏三十六度の台北街頭」を舞台に、真夏のうだるような暑さと若者の鬱屈したエネルギー、衝動を荒々しいギターサウンドで叩きつけた名曲。
+          </p>
+
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 0.8rem; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 4px 10px; border-radius: var(--radius-sm); color: #475569;">
+              🔥 走在攝氏三十六度的台北街頭
+            </span>
+            <span style="font-size: 0.8rem; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 4px 10px; border-radius: var(--radius-sm); color: #475569;">
+              🚪 腦袋 / 畫面 / 衝動 / 睜開眼
+            </span>
+            <span style="font-size: 0.8rem; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 4px 10px; border-radius: var(--radius-sm); color: #475569;">
+              🇹🇼 和（ㄏㄢˋ）の台湾発音
+            </span>
+            <span style="font-size: 0.8rem; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 4px 10px; border-radius: var(--radius-sm); color: #475569;">
+              🏆 確認クイズ10問完備
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 今後の追加予定プレースホルダー -->
+      <div style="background: #FAFAFA; border: 1px dashed #CBD5E1; border-radius: var(--radius-lg); padding: 24px; text-align: center;">
+        <span style="font-size: 1.4rem;">🎧</span>
+        <h4 style="font-size: 1.05rem; font-weight: 800; color: #64748B; margin-top: 6px; margin-bottom: 4px;">
+          今後の追加予定曲（リクエスト受付中！）
+        </h4>
+        <p style="font-size: 0.86rem; color: #94A3B8;">
+          草東沒有派對（No Party For Cao Dong）、宇宙人（Cosmos People）、落日飛車（Sunset Rollercoaster）、Deca Joins などの名曲歌詞解説も順次追加予定です。
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 戻るボタン -->
+    <div style="margin-top: 48px; text-align: center;">
+      <a href="index.html" class="btn btn-outline" style="padding: 10px 24px; font-size: 0.95rem;">
+        ← カリキュラムトップへ戻る
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 台湾華語学習サイト</p>
+      <span class="version-badge">v1.2.0</span>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/appData.js"></script>
+  <script type="module" src="src/js/appCore.js"></script>
+</body>
+</html>
