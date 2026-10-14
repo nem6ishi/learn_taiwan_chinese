@@ -1971,6 +1971,12 @@ body {
   line-height: 1.4;
 }
 
+.lyric-chunk {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 12px;
+}
+
 .lyric-trad rt {
   font-size: 0.72rem;
   color: #0284C7;
@@ -1979,6 +1985,15 @@ body {
   text-align: center;
   line-height: 1.1;
   user-select: none;
+}
+
+.lyric-pinyin {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748B;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.01em;
+  margin-top: 4px;
 }
 
 .lyric-play-badge {
@@ -2033,6 +2048,137 @@ body {
   color: #BE123C;
   font-weight: 800;
 }
+
+/* ==================== おすすめバンド・アーティスト紹介カード ==================== */
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+  margin-bottom: 36px;
+}
+
+.artist-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.artist-card:hover {
+  transform: translateY(-2px);
+  border-color: #CBD5E1;
+  box-shadow: var(--shadow-hover);
+}
+
+.artist-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.artist-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.artist-name-trad {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.artist-phonetics {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+}
+
+.artist-zhuyin {
+  color: #0284C7;
+  font-weight: 700;
+  background: #F0F9FF;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.artist-pinyin {
+  color: #64748B;
+  font-weight: 600;
+}
+
+.artist-genre-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: #F1F5F9;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+.artist-desc {
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.artist-tracks-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.84rem;
+}
+
+.artist-tracks-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.artist-track-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0F172A;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.artist-track-item:hover {
+  background: #FFE4E6;
+  color: #BE123C;
+}
+
+.artist-spot-card {
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+  border: 1px solid #FECDD3;
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-top: 24px;
+  margin-bottom: 36px;
+}
+
 
 
 
