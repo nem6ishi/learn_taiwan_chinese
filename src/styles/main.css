@@ -1999,25 +1999,27 @@ body {
 .lyric-play-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: #F1F5F9;
-  color: #475569;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  color: #64748B;
+  font-size: 0.9rem;
+  border-radius: 8px;
   flex-shrink: 0;
   transition: all 0.2s ease;
-  white-space: nowrap;
 }
 
 .lyric-card:hover .lyric-play-badge {
   background: #FFE4E6;
+  border-color: #FECDD3;
   color: #BE123C;
 }
 
 .lyric-card.is-playing .lyric-play-badge {
   background: #F43F5E;
+  border-color: #E11D48;
   color: #FFFFFF;
 }
 
