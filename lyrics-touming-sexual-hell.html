@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>透明雜誌〈性的地獄〉歌詞解説 ＆ 台湾華語レッスン | 台湾華語学習サイト</title>
-  <meta name="description" content="台湾インディーロックの金字塔、透明雜誌（Touming Magazine）の代表曲〈性的地獄〉の歌詞を徹底解説。注音符号（ボポモフォ）、音声読み上げ、文法・単語解説付き。">
+  <meta name="description" content="台湾インディーロックの金字塔、透明雜誌（Touming Magazine）の代表曲〈性的地獄〉の歌詞を徹底解説。注音符号（ボポモフォ）ルビ、音声読み上げ、文法・単語解説付き。">
   <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
@@ -13,9 +13,6 @@
   <nav class="navbar">
     <div class="container nav-container">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="目次を開く">
-          📑 目次
-        </button>
         <a href="index.html" class="logo">
           <span class="logo-badge">台</span>
           <span>台湾華語学習サイト</span>
@@ -38,674 +35,630 @@
     </div>
   </nav>
 
-  <!-- モバイル用オーバーレイ背景 -->
-  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <!-- メインコンテンツ (他ページと同一の container 幅900px 中央配置) -->
+  <main class="container" style="padding-top: 32px; padding-bottom: 70px;">
 
-  <!-- メインコンテンツ -->
-  <main class="container-wide" style="padding-top: 36px; padding-bottom: 60px;">
-
-    <div class="layout-with-sidebar">
-
-      <!-- 左側: 目次・ナビゲーションサイドバー -->
-      <aside class="sidebar-nav" id="sidebar-nav">
-        <div class="sidebar-header">
-          <span>📑 歌詞ページ目次</span>
-          <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="閉じる">✕</button>
-        </div>
-
-        <div class="sidebar-quick-links">
-          <a href="lyrics-index.html" class="sidebar-quick-item" style="border-left: 3px solid #F43F5E;">
-            <span>🎵</span>
-            <span>歌詞解説一覧ハブ</span>
+    <!-- ページトップヘッダー ＆ クイズ直行ボタン -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <a href="lyrics-index.html" style="font-size: 0.85rem; font-weight: 700; color: #BE123C; text-decoration: none;">
+            🎵 台湾音楽・歌詞解説シリーズ
           </a>
-          <a href="#song-intro" class="sidebar-quick-item">
-            <span>🎸</span>
-            <span>楽曲・バンド紹介</span>
-          </a>
-          <a href="#lyrics-verse1" class="sidebar-quick-item">
-            <span>🔥</span>
-            <span>Verse 1 (台北の街頭)</span>
-          </a>
-          <a href="#lyrics-verse2" class="sidebar-quick-item">
-            <span>🚪</span>
-            <span>Verse 2 (息苦しい部屋)</span>
-          </a>
-          <a href="#lyrics-chorus" class="sidebar-quick-item">
-            <span>⚡</span>
-            <span>Chorus (叫びとカタルシス)</span>
-          </a>
-          <a href="#song-vocab" class="sidebar-quick-item">
-            <span>📚</span>
-            <span>重要単語まとめ (12語)</span>
-          </a>
-          <a href="#quiz-cta-section" class="sidebar-quick-item">
-            <span>🏆</span>
-            <span>歌詞確認クイズ (10問)</span>
-          </a>
+          <span style="color: #CBD5E1;">/</span>
+          <span style="font-size: 0.85rem; font-weight: 700; color: #64748B;">第1弾</span>
         </div>
+        <h1 style="font-size: 1.85rem; font-weight: 900; color: #0F172A; margin: 0;">
+          透明雜誌〈性的地獄〉歌詞解説
+        </h1>
+      </div>
+      <button class="btn btn-primary" id="start-quiz-top-btn" style="background: #F43F5E; border-color: #E11D48; padding: 10px 20px; font-size: 0.92rem;">
+        🏆 歌詞確認クイズを受ける (全10問)
+      </button>
+    </div>
 
-        <div class="sidebar-menu-title">学習メニュー</div>
-        <ul class="sidebar-menu">
-          <li class="sidebar-item">
-            <a href="index.html" class="sidebar-link">
-              <span class="sidebar-link-content">
-                <span>🏠</span>
-                <span>トップカリキュラム</span>
-              </span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a href="my-review-words.html" class="sidebar-link">
-              <span class="sidebar-link-content">
-                <span>⭐</span>
-                <span>マイ復習単語帳</span>
-              </span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a href="zhuyin-chart.html" class="sidebar-link">
-              <span class="sidebar-link-content">
-                <span>📋</span>
-                <span>注音全37文字一覧表</span>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </aside>
+    <!-- 楽曲ヘッダー情報カード -->
+    <section class="song-header-card" id="song-intro">
+      <span class="song-meta-badge">🔥 オルタナティブ・ロック ｜ 2010年</span>
+      <h2 class="song-title-main" style="margin-top: 4px;">性的地獄 (Sexual Hell)</h2>
+      <div class="song-artist-name">透明雜誌 (Touming Magazine)</div>
 
-      <!-- 右側: 歌詞解説メインコンテンツ -->
-      <div class="main-content-area">
-
-        <!-- 楽曲ヘッダー情報カード -->
-        <section class="song-header-card" id="song-intro">
-          <span class="song-meta-badge">🎵 台湾ロック・名曲歌詞解説 #01</span>
-          <h1 class="song-title-main">性的地獄 (Sexual Hell)</h1>
-          <div class="song-artist-name">透明雜誌 (Touming Magazine)</div>
-
-          <div class="song-info-grid">
-            <div class="song-info-item">
-              <span class="song-info-label">作詞</span>
-              <span class="song-info-value">洪申豪 (Hong Shen-Hao)</span>
-            </div>
-            <div class="song-info-item">
-              <span class="song-info-label">作曲</span>
-              <span class="song-info-value">透明雜誌 (Touming Magazine)</span>
-            </div>
-            <div class="song-info-item">
-              <span class="song-info-label">収録アルバム</span>
-              <span class="song-info-value">《我們的靈魂樂》(2010)</span>
-            </div>
-            <div class="song-info-item">
-              <span class="song-info-label">ジャンル</span>
-              <span class="song-info-value">オルタナティブ・ロック / パンク</span>
-            </div>
-          </div>
-
-          <div class="song-story-box">
-            <strong>🎸 バンド＆楽曲ストーリー：</strong><br>
-            透明雜誌（Touming Magazine）は2006年に台北で結成された伝説的オルタナティブ・ロックバンド。日本のNUMBER GIRLやBloodthirsty Butchers、Pixiesなどに強い影響を受け、疾走感あるビートと衝動的な轟音ギター、生々しいリアリティを歌うリリックで日台のインディーズシーンを席巻しました。<br>
-            この〈性的地獄〉は、真夏の台北（「攝氏三十六度の台北街頭」）の蒸し暑さと、若者の内に渦巻く抑えきれない衝動や息苦しさを赤裸々に叩きつけた初期の代表曲。台湾のストリート感と生きた日常中国語表現が詰まった傑作です！
-          </div>
-        </section>
-
-        <!-- 操作ヒント -->
-        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 28px; display: flex; align-items: center; gap: 10px;">
-          <span style="font-size: 1.3rem;">💡</span>
-          <span style="font-size: 0.9rem; color: #166534; font-weight: 600;">
-            各歌詞カードをタップすると、<strong>台湾華語の女性ネイティブ音声（Google 國語 / Meijia）</strong>で発音を聴くことができます。
-          </span>
+      <div class="song-info-grid">
+        <div class="song-info-item">
+          <span class="song-info-label">作詞</span>
+          <span class="song-info-value">洪申豪 (Hong Shen-Hao)</span>
         </div>
-
-        <!-- ==================== VERSE 1 ==================== -->
-        <div class="lyric-section-title" id="lyrics-verse1">
-          <span>🔥 Verse 1: 摂氏36度の台北街頭と衝動</span>
-          <span class="lyric-section-badge">Aメロ</span>
+        <div class="song-info-item">
+          <span class="song-info-label">作曲</span>
+          <span class="song-info-value">透明雜誌 (Touming Magazine)</span>
         </div>
-
-        <div class="lyric-list">
-
-          <!-- 行 1: 每天我睜開眼 -->
-          <div class="lyric-card play-word-sound" data-word="每天我睜開眼">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">每天我睜開眼</span>
-                <span class="lyric-zhuyin">ㄇㄟˇ ㄊㄧㄢ ㄨㄛˇ ㄓㄥ ㄎㄞ ㄧㄢˇ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">毎日 俺は目を開ける</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">睜開 (ㄓㄥ ㄎㄞ)</strong>：目を開ける、目を見開く。「睜」は目を開く動作、「開」は結果補語（開いた状態になること）。<br>
-              • <strong class="highlight-word">每天 (ㄇㄟˇ ㄊㄧㄢ)</strong>：毎日。
-            </div>
-          </div>
-
-          <!-- 行 2: 我看不見自己 -->
-          <div class="lyric-card play-word-sound" data-word="我看不見自己">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">我看不見自己</span>
-                <span class="lyric-zhuyin">ㄨㄛˇ ㄎㄢˋ ㄅㄨˊ ㄐㄧㄢˋ ㄗˋ ㄐㄧˇ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">自分の姿が見えない</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">看不見 (ㄎㄢˋ ㄅㄨˊ ㄐㄧㄢˋ)</strong>：見えない（可能補語の否定形：動詞「看」＋不＋結果補語「見」）。「見ようとしても見えない」状態を表します。<br>
-              • <strong class="highlight-word">自己 (ㄗˋ ㄐㄧˇ)</strong>：自分自身。自分を見失っている若者の内面が描写されています。
-            </div>
-          </div>
-
-          <!-- 行 3: 腦袋中的畫面全部都是肉慾場景 -->
-          <div class="lyric-card play-word-sound" data-word="腦袋中的畫面全部都是肉慾場景">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">腦袋中的畫面全部都是肉慾場景</span>
-                <span class="lyric-zhuyin">ㄋㄠˇ ㄉㄞˋ ㄓㄨㄥ ㄉㄜ˙ ㄏㄨㄚˋ ㄇㄧㄢˋ ㄑㄩㄢˊ ㄅㄨˋ ㄉㄡ ㄕˋ ㄖㄡˋ ㄩˋ ㄔㄤˇ ㄐㄧㄥˇ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">頭の中の映像は 全部が生々しい肉欲の光景ばかり</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">腦袋 (ㄋㄠˇ ㄉㄞˋ)</strong>：頭、脳みそ。台湾日常会話で「頭」を指す最も親しみやすい口語表現（頭腦より日常的）。<br>
-              • <strong class="highlight-word">畫面 (ㄏㄨㄚˋ ㄇㄧㄢˋ)</strong>：画面、脳裏に浮かぶ光景やシーン。<br>
-              • <strong class="highlight-word">全部都 (ㄑㄩㄢˊ ㄅㄨˋ ㄉㄡ)</strong>：全部、例外なくすべて。<br>
-              • <strong class="highlight-word">場景 (ㄔㄤˇ ㄐㄧㄥˇ)</strong>：場面、シーン。
-            </div>
-          </div>
-
-          <!-- 行 4: 走在攝氏三十六度的台北街頭 -->
-          <div class="lyric-card play-word-sound" data-word="走在攝氏三十六度的台北街頭">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">走在攝氏三十六度的台北街頭</span>
-                <span class="lyric-zhuyin">ㄗㄡˇ ㄗㄞˋ ㄕㄜˋ ㄕˋ ㄙㄢ ㄕˊ ㄌㄧㄡˋ ㄉㄨˋ ㄉㄜ˙ ㄊㄞˊ ㄅㄟˇ ㄐㄧㄝ ㄊㄡˊ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">摂氏36度の台北の街角を歩く</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">走在〜 (ㄗㄡˇ ㄗㄞˋ)</strong>：〜を歩く（動詞「走」＋場所の前置詞「在」）。<br>
-              • <strong class="highlight-word">攝氏 (ㄕㄜˋ ㄕˋ)</strong>：摂氏（℃）。台湾でも日本と同じ摂氏温度を使用します。<br>
-              • <strong class="highlight-word">街頭 (ㄐㄧㄝ ㄊㄡˊ)</strong>：街角、ストリート、街頭。
-            </div>
-          </div>
-
-          <!-- 🇹🇼 💡 台湾華語コラム: 台北の夏の猛暑カルチャー -->
-          <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: var(--radius-md); padding: 18px 20px; margin: 10px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
-              <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-                「攝氏三十六度」と盆地・台北のうだるような夏！
-              </h4>
-            </div>
-            <div style="font-size: 0.88rem; line-height: 1.65; color: #78350F;">
-              台北は四方を山に囲まれた盆地（台北盆地）のため、夏場は熱気がこもり連日35℃〜38℃に達します。湿度も80%を超え、アスファルトの照り返しとバイク（機車）の排熱で街中がまるでサウナ状態！<br>
-              台湾人が「<strong>熱死了！ (ㄖㄜˋ ㄙˇ ㄌㄜ˙ / 暑すぎて死にそう！)</strong>」と口を揃えるこのむせ返るリアルな熱気こそが、透明雜誌のロックサウンドの根底にある質感です。
-            </div>
-          </div>
-
-          <!-- 行 5: 用盡全力去抵抗身理心理衝動 -->
-          <div class="lyric-card play-word-sound" data-word="用盡全力去抵抗身理心理衝動">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">用盡全力去抵抗身理心理衝動</span>
-                <span class="lyric-zhuyin">ㄩㄥˋ ㄐㄧㄣˋ ㄑㄩㄢˊ ㄌㄧˋ ㄑㄩˋ ㄉㄧˇ ㄎㄤˋ ㄕㄣ ㄌㄧˇ ㄒㄧㄣ ㄌㄧˇ ㄔㄨㄥ ㄉㄨㄥˋ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">ありったけの力で 生理的・心理的衝動に抗う</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">用盡全力 (ㄩㄥˋ ㄐㄧㄣˋ ㄑㄩㄢˊ ㄌㄧˋ)</strong>：動詞「用（使う）」＋結果補語「盡（尽きる・使い果たす）」＋「全力」。全力を出し尽くすこと。<br>
-              • <strong class="highlight-word">抵抗 (ㄉㄧˇ ㄎㄤˋ)</strong>：抵抗する、抗う、耐え忍ぶ。<br>
-              • <strong class="highlight-word">衝動 (ㄔㄨㄥ ㄉㄨㄥˋ)</strong>：衝動。
-            </div>
-          </div>
-
-          <!-- 行 6: 衝動！衝動！ -->
-          <div class="lyric-card play-word-sound" data-word="衝動！衝動！">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">衝動！衝動！</span>
-                <span class="lyric-zhuyin">ㄔㄨㄥ ㄉㄨㄥˋ ！ ㄔㄨㄥ ㄉㄨㄥˋ ！</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">衝動！衝動！</div>
-            <div class="lyric-explanation">
-              曲中で幾度もシャウトされるキーワード。抑えきれない本能と熱情の爆発。
-            </div>
-          </div>
-
+        <div class="song-info-item">
+          <span class="song-info-label">収録アルバム</span>
+          <span class="song-info-value">《我們的靈魂樂》(2010)</span>
         </div>
-
-        <!-- ==================== VERSE 2 ==================== -->
-        <div class="lyric-section-title" id="lyrics-verse2">
-          <span>🚪 Verse 2: 息苦しい密室と都会の野獣</span>
-          <span class="lyric-section-badge">Bメロ</span>
+        <div class="song-info-item">
+          <span class="song-info-label">音楽ジャンル</span>
+          <span class="song-info-value">オルタナ / パンク</span>
         </div>
+      </div>
 
-        <div class="lyric-list">
+      <div class="song-story-box">
+        <strong>🎸 バンド＆楽曲ストーリー：</strong><br>
+        透明雜誌（Touming Magazine）は2006年に台北で結成された伝説的オルタナティブ・ロックバンド。日本の NUMBER GIRL や Bloodthirsty Butchers、Pixies に強い影響を受け、疾走感あるビートと轟音ギター、生々しいリアリティを歌うリリックで日台のインディーズシーンを席巻しました。<br>
+        この〈性的地獄〉は、真夏の台北（「攝氏三十六度の台北街頭」）の蒸し暑さと、若者の内に渦巻く抑えきれない衝動や息苦しさを赤裸々に叩きつけた初期の代表曲です！
+      </div>
+    </section>
 
-          <!-- 行 7: 房間中的氣味快讓我不能呼吸 -->
-          <div class="lyric-card play-word-sound" data-word="房間中的氣味快讓我不能呼吸">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">房間中的氣味快讓我不能呼吸</span>
-                <span class="lyric-zhuyin">ㄈㄤˊ ㄐㄧㄢ ㄓㄨㄥ ㄉㄜ˙ ㄑㄧˋ ㄨㄟˋ ㄎㄨㄞˋ ㄖㄤˋ ㄨㄛˇ ㄅㄨˋ ㄋㄥˊ ㄏㄨ ㄒㄧ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">部屋の中の匂いで もうすぐ息ができなくなりそうだ</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">快〜 (ㄎㄨㄞˋ)</strong>：もうすぐ〜しそう、今にも〜になりそうだ（近接未来を表す副詞）。<br>
-              • <strong class="highlight-word">讓 (ㄖㄤˋ)</strong>：〜に…させる（超重要使役動詞。「部屋の匂いが俺を息苦しくさせる」）。<br>
-              • <strong class="highlight-word">呼吸 (ㄏㄨ ㄒㄧ)</strong>：呼吸する。
+    <!-- 操作ヒント -->
+    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 32px; display: flex; align-items: center; gap: 10px;">
+      <span style="font-size: 1.3rem;">💡</span>
+      <span style="font-size: 0.9rem; color: #166534; font-weight: 600;">
+        各歌詞カードをタップすると、<strong>台湾華語の女性ネイティブ音声（Google 國語 / Meijia）</strong>で発音を聴くことができます。
+      </span>
+    </div>
+
+    <!-- ==================== VERSE 1 ==================== -->
+    <div class="lyric-section-title" id="lyrics-verse1">
+      <span>🔥 Verse 1: 摂氏36度の台北街頭と衝動</span>
+      <span class="lyric-section-badge">Aメロ</span>
+    </div>
+
+    <div class="lyric-list">
+
+      <!-- 行 1: 每天我睜開眼 -->
+      <div class="lyric-card play-word-sound" data-word="每天我睜開眼">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>每<rt>ㄇㄟˇ</rt></ruby><ruby>天<rt>ㄊㄧㄢ</rt></ruby><ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>睜<rt>ㄓㄥ</rt></ruby><ruby>開<rt>ㄎㄞ</rt></ruby><ruby>眼<rt>ㄧㄢˇ</rt></ruby>
             </div>
           </div>
-
-          <!-- 行 8: 對面那對情侶正在做怎樣的事情？ -->
-          <div class="lyric-card play-word-sound" data-word="對面那對情侶正在做怎樣的事情">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">對面那對情侶正在做怎樣的事情？</span>
-                <span class="lyric-zhuyin">ㄉㄨㄟˋ ㄇㄧㄢˋ ㄋㄚˋ ㄉㄨㄟˋ ㄑㄧㄥˊ ㄌㄩˇ ㄓㄥˋ ㄗㄞˋ ㄗㄨㄛˋ ㄗㄣˇ ㄧㄤˋ ㄉㄜ˙ ㄕˋ ㄑㄧㄥˊ ？</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">向かいのあのカップルは いったいどんなことをしているんだ？</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">對面 (ㄉㄨㄟˋ ㄇㄧㄢˋ)</strong>：向かい側。<br>
-              • <strong class="highlight-word">那對 (ㄋㄚˋ ㄉㄨㄟˋ)</strong>：あの（「對」はペアやカップルを数える量詞）。<br>
-              • <strong class="highlight-word">情侶 (ㄑㄧㄥˊ ㄌㄩˇ)</strong>：恋人同士、カップル。<br>
-              • <strong class="highlight-word">正在 (ㄓㄥˋ ㄗㄞˋ)</strong>：ちょうど今〜している最中だ（進行形）。<br>
-              • <strong class="highlight-word">怎樣 (ㄗㄣˇ ㄧㄤˋ)</strong>：どのような、どんな。
-            </div>
-          </div>
-
-          <!-- 行 9: 黑暗中像囚禁在地下室的野獸 -->
-          <div class="lyric-card play-word-sound" data-word="黑暗中像囚禁在地下室的野獸">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">黑暗中像囚禁在地下室的野獸</span>
-                <span class="lyric-zhuyin">ㄏㄟ ㄢˋ ㄓㄨㄥ ㄒㄧㄤˋ ㄑㄧㄡˊ ㄐㄧㄣˋ ㄗㄞˋ ㄉㄧˋ ㄒㄧㄚˋ ㄕˋ ㄉㄜ˙ ㄧㄝˇ ㄕㄡˋ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">暗闇の中 地下室に閉じ込められた野獣のように</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">像〜 (ㄒㄧㄤˋ)</strong>：まるで〜のようだ（比喩表現）。<br>
-              • <strong class="highlight-word">囚禁 (ㄑㄧㄡˊ ㄐㄧㄣˋ)</strong>：閉じ込める、監禁する、囚われる。<br>
-              • <strong class="highlight-word">野獸 (ㄧㄝˇ ㄕㄡˋ)</strong>：野獣。
-            </div>
-          </div>
-
-          <!-- 行 10: 每天做著充滿桃色和香味的夢 -->
-          <div class="lyric-card play-word-sound" data-word="每天做著充滿桃色和香味的夢">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">每天做著充滿桃色和香味的夢</span>
-                <span class="lyric-zhuyin">ㄇㄟˇ ㄊㄧㄢ ㄗㄨㄛˋ ㄓㄜ˙ ㄔㄨㄥ ㄇㄢˇ ㄊㄠˊ ㄙㄜˋ ㄏㄢˋ ㄒㄧㄤ ㄨㄟˋ ㄉㄜ˙ ㄇㄥˋ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">毎日 ピンク色と甘い香りに満ちた夢を見ている</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">做著夢 (ㄗㄨㄛˋ ㄓㄜ˙ ㄇㄥˋ)</strong>：夢を見ている（動詞「做夢」＋持続の助詞「著」）。<br>
-              • <strong class="highlight-word">充滿 (ㄔㄨㄥ ㄇㄢˇ)</strong>：〜で満ちあふれている。<br>
-              • <strong class="highlight-word">和 (ㄏㄢˋ)</strong>：〜と（※台湾華語の決定的な発音ポイント！下記コラム参照）。
-            </div>
-          </div>
-
-          <!-- 🇹🇼 💡 台湾華語コラム: 台湾での「和」の発音 -->
-          <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: var(--radius-md); padding: 18px 20px; margin: 10px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
-              <h4 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
-                台湾華語の真骨頂！「和（〜と）」は「ㄏㄢˋ (hàn)」と発音する！
-              </h4>
-            </div>
-            <div style="font-size: 0.88rem; line-height: 1.65; color: #78350F;">
-              中国大陸の教科書では「和」を「ㄏㄜˊ (hé)」と習いますが、<strong>台湾の日常会話や歌・テレビでは99%「ㄏㄢˋ (hàn)」と発音されます！</strong><br>
-              透明雜誌のボーカル洪申豪も、歌詞中の「桃色和香味（ㄊㄠˊ ㄙㄜˋ ㄏㄢˋ ㄒㄧㄤ ㄨㄟˋ）」や「快和我詛咒（ㄎㄨㄞˋ ㄏㄢˋ ㄨㄛˇ ㄗㄨˇ ㄓㄡˋ）」を完璧な台湾訛りの「ㄏㄢˋ (hàn)」で歌っています。この発音ができるだけで一気に台湾ネイティブ度が増します！
-            </div>
-          </div>
-
-          <!-- 行 11: 衝動！衝動！ -->
-          <div class="lyric-card play-word-sound" data-word="衝動！衝動！">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">衝動！衝動！</span>
-                <span class="lyric-zhuyin">ㄔㄨㄥ ㄉㄨㄥˋ ！ ㄔㄨㄥ ㄉㄨㄥˋ ！</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">衝動！衝動！</div>
-          </div>
-
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
         </div>
-
-        <!-- ==================== CHORUS / OUTRO ==================== -->
-        <div class="lyric-section-title" id="lyrics-chorus">
-          <span>⚡ Chorus: 叫びとカタルシス</span>
-          <span class="lyric-section-badge">サビ / アウトロ</span>
+        <div class="lyric-translation">毎日 俺は目を開ける</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">睜開 (ㄓㄥ ㄎㄞ)</strong>：目を開ける、目を見開く。「睜」は目を開く動作、「開」は結果補語（開いた状態になること）。<br>
+          • <strong class="highlight-word">每天 (ㄇㄟˇ ㄊㄧㄢ)</strong>：毎日。
         </div>
+      </div>
 
-        <div class="lyric-list">
-
-          <!-- 行 12: 不知道那是什麼感覺？ -->
-          <div class="lyric-card play-word-sound" data-word="不知道那是什麼感覺">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">不知道那是什麼感覺？</span>
-                <span class="lyric-zhuyin">ㄅㄨˋ ㄓ ㄉㄠˋ ㄋㄚˋ ㄕˋ ㄕㄣˊ ˙ㄇㄜ ㄍㄢˇ ㄐㄩㄝˊ ？</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">それがどんな感覚なのかも 分からない</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">不知道 (ㄅㄨˋ ㄓ ㄉㄠˋ)</strong>：分からない、知らない（日常会話超頻出）。<br>
-              • <strong class="highlight-word">感覺 (ㄍㄢˇ ㄐㄩㄝˊ)</strong>：感覚、感じ、フィーリング。
+      <!-- 行 2: 我看不見自己 -->
+      <div class="lyric-card play-word-sound" data-word="我看不見自己">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>看<rt>ㄎㄢˋ</rt></ruby><ruby>不<rt>ㄅㄨˊ</rt></ruby><ruby>見<rt>ㄐㄧㄢˋ</rt></ruby><ruby>自<rt>ㄗˋ</rt></ruby><ruby>己<rt>ㄐㄧˇ</rt></ruby>
             </div>
           </div>
-
-          <!-- 行 13: 如果可以請你再激烈一點 -->
-          <div class="lyric-card play-word-sound" data-word="如果可以請你再激烈一點">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">如果可以請你再激烈一點</span>
-                <span class="lyric-zhuyin">ㄖㄨˊ ㄍㄨㄛˇ ㄎㄜˇ ㄧˇ ㄑㄧㄥˇ ㄋㄧˇ ㄗㄞˋ ㄐㄧ ㄌㄧㄝˋ ㄧˋ ㄉㄧㄢˇ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">もしできるなら どうかもっと激しくしてくれ</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">如果可以 (ㄖㄨˊ ㄍㄨㄛˇ ㄎㄜˇ ㄧˇ)</strong>：もし可能なら、もしよければ。<br>
-              • <strong class="highlight-word">再＋形容詞＋一點 (ㄗㄞˋ ... ㄧˋ ㄉㄧㄢˇ)</strong>：もっと〜して（日常で必須の頻出構文！例: 再大聲一點＝もっと大きな声で、再甜一點＝もっと甘く）。<br>
-              • <strong class="highlight-word">激烈 (ㄐㄧ ㄌㄧㄝˋ)</strong>：激しい、激化する。
-            </div>
-          </div>
-
-          <!-- 行 14: 快對我說些殘暴的話 -->
-          <div class="lyric-card play-word-sound" data-word="快對我說些殘暴的話">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">快對我說些殘暴的話</span>
-                <span class="lyric-zhuyin">ㄎㄨㄞˋ ㄉㄨㄟˋ ㄨㄛˇ ㄕㄨㄛ ㄒㄧㄝ ㄘㄢˊ ㄅㄠˋ ㄉㄜ˙ ㄏㄨㄚˋ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">早く俺に 残酷な言葉を浴びせてくれ</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">快〜 (ㄎㄨㄞˋ)</strong>：早く〜してくれ。<br>
-              • <strong class="highlight-word">對我說 (ㄉㄨㄟˋ ㄨㄛˇ ㄕㄨㄛ)</strong>：私に向かって言う（前置詞「對」＝〜に対して）。<br>
-              • <strong class="highlight-word">殘暴 (ㄘㄢˊ ㄅㄠˋ)</strong>：残忍な、凶暴な。
-            </div>
-          </div>
-
-          <!-- 行 15: 快和我詛咒這一切的一切的一切 -->
-          <div class="lyric-card play-word-sound" data-word="快和我詛咒這一切的一切的一切">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">快和我詛咒這一切的一切的一切</span>
-                <span class="lyric-zhuyin">ㄎㄨㄞˋ ㄏㄢˋ ㄨㄛˇ ㄗㄨˇ ㄓㄡˋ ㄓㄜˋ ㄧˊ ㄑㄧㄝˋ ㄉㄜ˙ ㄧˊ ㄑㄧㄝˋ ㄉㄜ˙ ㄧˊ ㄑㄧㄝˋ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">早く俺と一緒に このすべてのすべてを呪ってくれ</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">和我 (ㄏㄢˋ ㄨㄛˇ)</strong>：私と一緒に（台湾発音: ㄏㄢˋ）。<br>
-              • <strong class="highlight-word">詛咒 (ㄗㄨˇ ㄓㄡˋ)</strong>：呪う、罵倒する。<br>
-              • <strong class="highlight-word">這一切 (ㄓㄜˋ ㄧˊ ㄑㄧㄝˋ)</strong>：このすべて。
-            </div>
-          </div>
-
-          <!-- 行 16: 我們活在性的地獄裡 -->
-          <div class="lyric-card play-word-sound" data-word="我們活在性的地獄裡">
-            <div class="lyric-top-bar">
-              <div class="lyric-trad-wrapper">
-                <span class="lyric-trad">我們活在性的地獄裡</span>
-                <span class="lyric-zhuyin">ㄨㄛˇ ㄇㄣ˙ ㄏㄨㄛˊ ㄗㄞˋ ㄒㄧㄥˋ ㄉㄜ˙ ㄉㄧˋ ㄩˋ ㄌㄧˇ</span>
-              </div>
-              <div class="lyric-play-badge"><span>🔊 聴く</span></div>
-            </div>
-            <div class="lyric-translation">俺たちは 性的地獄の中で生きている</div>
-            <div class="lyric-explanation">
-              • <strong class="highlight-word">活在〜裡 (ㄏㄨㄛˊ ㄗㄞˋ ... ㄌㄧˇ)</strong>：〜の中で生きる。<br>
-              • <strong class="highlight-word">地獄 (ㄉㄧˋ ㄩˋ)</strong>：地獄。曲のラストを締めくくる決定的なパンク・ステートメント！
-            </div>
-          </div>
-
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
         </div>
+        <div class="lyric-translation">自分の姿が見えない</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">看不見 (ㄎㄢˋ ㄅㄨˊ ㄐㄧㄢˋ)</strong>：見えない（可能補語の否定形：動詞「看」＋不＋結果補語「見」）。「見ようとしても見えない」状態を表します。<br>
+          • <strong class="highlight-word">自己 (ㄗˋ ㄐㄧˇ)</strong>：自分自身。自分を見失っている若者の内面描写。
+        </div>
+      </div>
 
-        <!-- ==================== 単語まとめセクション ==================== -->
-        <section style="margin-top: 48px;" id="song-vocab">
-          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px;">
-            <div>
-              <h2 style="font-size: 1.4rem; font-weight: 800; color: #0F172A; display: flex; align-items: center; gap: 8px;">
-                <span>📚</span>
-                <span>歌詞から学ぶ重要単語 (12語)</span>
-              </h2>
-              <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">
-                タップで音声再生。右端の「☆」ボタンを押すと、あなたの「復習単語帳」に保存できます！
-              </p>
+      <!-- 行 3: 腦袋中的畫面全部都是肉慾場景 -->
+      <div class="lyric-card play-word-sound" data-word="腦袋中的畫面全部都是肉慾場景">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>腦<rt>ㄋㄠˇ</rt></ruby><ruby>袋<rt>ㄉㄞˋ</rt></ruby><ruby>中<rt>ㄓㄨㄥ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>畫<rt>ㄏㄨㄚˋ</rt></ruby><ruby>面<rt>ㄇㄧㄢˋ</rt></ruby><ruby>全<rt>ㄑㄩㄢˊ</rt></ruby><ruby>部<rt>ㄅㄨˋ</rt></ruby><ruby>都<rt>ㄉㄡ</rt></ruby><ruby>是<rt>ㄕˋ</rt></ruby><ruby>肉<rt>ㄖㄡˋ</rt></ruby><ruby>慾<rt>ㄩˋ</rt></ruby><ruby>場<rt>ㄔㄤˇ</rt></ruby><ruby>景<rt>ㄐㄧㄥˇ</rt></ruby>
             </div>
           </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">頭の中の映像は 全部が生々しい肉欲の光景ばかり</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">腦袋 (ㄋㄠˇ ㄉㄞˋ)</strong>：頭、脳みそ。台湾日常会話で「頭」を指す最も親しみやすい口語表現。<br>
+          • <strong class="highlight-word">畫面 (ㄏㄨㄚˋ ㄇㄧㄢˋ)</strong>：画面、脳裏に浮かぶ光景やシーン。<br>
+          • <strong class="highlight-word">全部都 (ㄑㄩㄢˊ ㄅㄨˋ ㄉㄡ)</strong>：全部、例外なくすべて。<br>
+          • <strong class="highlight-word">場景 (ㄔㄤˇ ㄐㄧㄥˇ)</strong>：場面、シーン。
+        </div>
+      </div>
 
-          <div class="word-grid">
-
-            <!-- 1. 睜開 -->
-            <div class="word-card play-word-sound" data-word="睜開">
-              <div class="word-main">
-                <span class="word-trad">睜開</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄓㄥ ㄎㄞ</span>
-                </div>
-                <span class="word-meaning">目を開ける / 見開く</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="睜開" data-zhuyin="ㄓㄥ ㄎㄞ" data-pinyin="zhēngkāi" data-meaning="目を開ける / 見開く" data-example="每天我睜開眼。 (毎日俺は目を開ける)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
+      <!-- 行 4: 走在攝氏三十六度的台北街頭 -->
+      <div class="lyric-card play-word-sound" data-word="走在攝氏三十六度的台北街頭">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>走<rt>ㄗㄡˇ</rt></ruby><ruby>在<rt>ㄗㄞˋ</rt></ruby><ruby>攝<rt>ㄕㄜˋ</rt></ruby><ruby>氏<rt>ㄕˋ</rt></ruby><ruby>三<rt>ㄙㄢ</rt></ruby><ruby>十<rt>ㄕˊ</rt></ruby><ruby>六<rt>ㄌㄧㄡˋ</rt></ruby><ruby>度<rt>ㄉㄨˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>台<rt>ㄊㄞˊ</rt></ruby><ruby>北<rt>ㄅㄟˇ</rt></ruby><ruby>街<rt>ㄐㄧㄝ</rt></ruby><ruby>頭<rt>ㄊㄡˊ</rt></ruby>
             </div>
-
-            <!-- 2. 腦袋 -->
-            <div class="word-card play-word-sound" data-word="腦袋">
-              <div class="word-main">
-                <span class="word-trad">腦袋</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄋㄠˇ ㄉㄞˋ</span>
-                </div>
-                <span class="word-meaning">頭 / 頭脳 / 脳みそ</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="腦袋" data-zhuyin="ㄋㄠˇ ㄉㄞˋ" data-pinyin="nǎodai" data-meaning="頭 / 頭脳 / 脳みそ" data-example="腦袋中的畫面全部都是肉慾場景。 (頭の中の映像は全部が生々しい光景ばかり)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 3. 畫面 -->
-            <div class="word-card play-word-sound" data-word="畫面">
-              <div class="word-main">
-                <span class="word-trad">畫面</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄏㄨㄚˋ ㄇㄧㄢˋ</span>
-                </div>
-                <span class="word-meaning">画面 / シーン / 脳裏の光景</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="畫面" data-zhuyin="ㄏㄨㄚˋ ㄇㄧㄢˋ" data-pinyin="huàmiàn" data-meaning="画面 / シーン / 脳裏の光景" data-example="這部電影的畫面很漂亮。 (この映画の映像はとても美しい)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 4. 街頭 -->
-            <div class="word-card play-word-sound" data-word="街頭">
-              <div class="word-main">
-                <span class="word-trad">街頭</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄐㄧㄝ ㄊㄡˊ</span>
-                </div>
-                <span class="word-meaning">街角 / 街頭 / 通り</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="街頭" data-zhuyin="ㄐㄧㄝ ㄊㄡˊ" data-pinyin="jiētóu" data-meaning="街角 / 街頭 / 通り" data-example="走在台北街頭很熱鬧。 (台北の街角を歩くととても賑やかだ)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 5. 抵抗 -->
-            <div class="word-card play-word-sound" data-word="抵抗">
-              <div class="word-main">
-                <span class="word-trad">抵抗</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄉㄧˇ ㄎㄤˋ</span>
-                </div>
-                <span class="word-meaning">抵抗する / 抗う / 耐える</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="抵抗" data-zhuyin="ㄉㄧˇ ㄎㄤˋ" data-pinyin="dǐkàng" data-meaning="抵抗する / 抗う / 耐える" data-example="去抵抗身理心理衝動。 (生理的・心理的衝動に抗う)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 6. 衝動 -->
-            <div class="word-card play-word-sound" data-word="衝動">
-              <div class="word-main">
-                <span class="word-trad">衝動</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄔㄨㄥ ㄉㄨㄥˋ</span>
-                </div>
-                <span class="word-meaning">衝動 / 衝動的な感情</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="衝動" data-zhuyin="ㄔㄨㄥ ㄉㄨㄥˋ" data-pinyin="chōngdòng" data-meaning="衝動 / 衝動的な感情" data-example="不要衝動，先冷靜一下。 (衝動的にならないで、まず落ち着こう)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 7. 氣味 -->
-            <div class="word-card play-word-sound" data-word="氣味">
-              <div class="word-main">
-                <span class="word-trad">氣味</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄑㄧˋ ㄨㄟˋ</span>
-                </div>
-                <span class="word-meaning">匂い / 香り / におい</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="氣味" data-zhuyin="ㄑㄧˋ ㄨㄟˋ" data-pinyin="qìwèi" data-meaning="匂い / 香り / におい" data-example="房間中的氣味快讓我不能呼吸。 (部屋の匂いで息ができなくなりそうだ)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 8. 情侶 -->
-            <div class="word-card play-word-sound" data-word="情侶">
-              <div class="word-main">
-                <span class="word-trad">情侶</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄑㄧㄥˊ ㄌㄩˇ</span>
-                </div>
-                <span class="word-meaning">カップル / 恋人同士</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="情侶" data-zhuyin="ㄑㄧㄥˊ ㄌㄩˇ" data-pinyin="qínglǚ" data-meaning="カップル / 恋人同士" data-example="夜市有很多情侶約會。 (夜市には多くのカップルがデートしている)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 9. 充滿 -->
-            <div class="word-card play-word-sound" data-word="充滿">
-              <div class="word-main">
-                <span class="word-trad">充滿</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄔㄨㄥ ㄇㄢˇ</span>
-                </div>
-                <span class="word-meaning">満ちあふれている / 満ちる</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="充滿" data-zhuyin="ㄔㄨㄥ ㄇㄢˇ" data-pinyin="chōngmǎn" data-meaning="満ちあふれている / 満ちる" data-example="這首歌充滿了力量。 (この曲はパワーに満ちあふれている)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 10. 激烈 -->
-            <div class="word-card play-word-sound" data-word="激烈">
-              <div class="word-main">
-                <span class="word-trad">激烈</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄐㄧ ㄌㄧㄝˋ</span>
-                </div>
-                <span class="word-meaning">激しい / 激烈な</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="激烈" data-zhuyin="ㄐㄧ ㄌㄧㄝˋ" data-pinyin="jīliè" data-meaning="激しい / 激烈な" data-example="請你再激烈一點！ (どうかもっと激しくしてくれ！)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 11. 詛咒 -->
-            <div class="word-card play-word-sound" data-word="詛咒">
-              <div class="word-main">
-                <span class="word-trad">詛咒</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄗㄨˇ ㄓㄡˋ</span>
-                </div>
-                <span class="word-meaning">呪う / 罵倒する</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="詛咒" data-zhuyin="ㄗㄨˇ ㄓㄡˋ" data-pinyin="zǔzhòu" data-meaning="呪う / 罵倒する" data-example="快和我詛咒這一切。 (早く俺と一緒にこのすべてを呪ってくれ)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
-            <!-- 12. 地獄 -->
-            <div class="word-card play-word-sound" data-word="地獄">
-              <div class="word-main">
-                <span class="word-trad">地獄</span>
-                <div class="word-phonetics">
-                  <span class="word-zhuyin">ㄉㄧˋ ㄩˋ</span>
-                </div>
-                <span class="word-meaning">地獄</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <button class="bookmark-btn" data-trad="地獄" data-zhuyin="ㄉㄧˋ ㄩˋ" data-pinyin="dìyù" data-meaning="地獄" data-example="我們活在性的地獄裡。 (俺たちは性的地獄の中で生きている)" title="単語帳に保存">☆</button>
-                <div class="audio-icon-tag"><span>🔊</span></div>
-              </div>
-            </div>
-
           </div>
-        </section>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">摂氏36度の台北の街角を歩く</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">走在〜 (ㄗㄡˇ ㄗㄞˋ)</strong>：〜を歩く（動詞「走」＋場所の前置詞「在」）。<br>
+          • <strong class="highlight-word">攝氏 (ㄕㄜˋ ㄕˋ)</strong>：摂氏（℃）。台湾でも日本と同じ摂氏温度を使用します。<br>
+          • <strong class="highlight-word">街頭 (ㄐㄧㄝ ㄊㄡˊ)</strong>：街角、ストリート、通り。
+        </div>
+      </div>
 
-        <!-- クイズCTAエリア (最下部) -->
-        <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 36px; margin-top: 48px;" id="quiz-cta-section">
-          <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">
-            〈性的地獄〉の歌詞と台湾華語フレーズをマスターしましたか？
+      <!-- 🇹🇼 💡 台湾華語コラム: 台北の夏の猛暑カルチャー -->
+      <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: var(--radius-md); padding: 18px 20px; margin: 10px 0;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+          <h3 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+            「攝氏三十六度」と盆地・台北のうだるような夏！
           </h3>
-          <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem;">
-            登場した重要単語・文法・台湾発音に関する確認クイズ（全10問）で定着度をテストしましょう！
-          </p>
-          <div style="display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
-            <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 28px; font-size: 1rem; background: #F43F5E; border-color: #E11D48;">
-              🏆 歌詞クイズを始める (10問)
-            </button>
-            <a href="lyrics-index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
-              🎵 歌詞解説一覧に戻る
-            </a>
-            <a href="my-review-words.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
-              ⭐ 復習単語帳を見る
-            </a>
-          </div>
         </div>
+        <div style="font-size: 0.88rem; line-height: 1.65; color: #78350F;">
+          台北は四方を山に囲まれた盆地（台北盆地）のため、夏場は熱気がこもり連日35℃〜38℃に達します。湿度も80%を超え、アスファルトの照り返しとバイク（機車）の排熱で街中がまるでサウナ状態！<br>
+          台湾人が「<strong>熱死了！ (ㄖㄜˋ ㄙˇ ㄌㄜ˙ / 暑すぎて死にそう！)</strong>」と口を揃えるこのむせ返るリアルな熱気こそが、透明雜誌のロックサウンドの根底にある質感です。
+        </div>
+      </div>
 
-        <!-- クイズモーダル/セクション -->
-        <section class="quiz-section" id="quiz-section">
-          <!-- QuizEngineで動的生成 -->
-        </section>
+      <!-- 行 5: 用盡全力去抵抗身理心理衝動 -->
+      <div class="lyric-card play-word-sound" data-word="用盡全力去抵抗身理心理衝動">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>用<rt>ㄩㄥˋ</rt></ruby><ruby>盡<rt>ㄐㄧㄣˋ</rt></ruby><ruby>全<rt>ㄑㄩㄢˊ</rt></ruby><ruby>力<rt>ㄌㄧˋ</rt></ruby><ruby>去<rt>ㄑㄩˋ</rt></ruby><ruby>抵<rt>ㄉㄧˇ</rt></ruby><ruby>抗<rt>ㄎㄤˋ</rt></ruby><ruby>身<rt>ㄕㄣ</rt></ruby><ruby>理<rt>ㄌㄧˇ</rt></ruby><ruby>心<rt>ㄒㄧㄣ</rt></ruby><ruby>理<rt>ㄌㄧˇ</rt></ruby><ruby>衝<rt>ㄔㄨㄥ</rt></ruby><ruby>動<rt>ㄉㄨㄥˋ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">ありったけの力で 生理的・心理的衝動に抗う</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">用盡全力 (ㄩㄥˋ ㄐㄧㄣˋ ㄑㄩㄢˊ ㄌㄧˋ)</strong>：動詞「用（使う）」＋結果補語「盡（尽きる・使い果たす）」＋「全力」。全力を出し尽くすこと。<br>
+          • <strong class="highlight-word">抵抗 (ㄉㄧˇ ㄎㄤˋ)</strong>：抵抗する、抗う、耐え忍ぶ。<br>
+          • <strong class="highlight-word">衝動 (ㄔㄨㄥ ㄉㄨㄥˋ)</strong>：衝動。
+        </div>
+      </div>
 
+      <!-- 行 6: 衝動！衝動！ -->
+      <div class="lyric-card play-word-sound" data-word="衝動！衝動！">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>衝<rt>ㄔㄨㄥ</rt></ruby><ruby>動<rt>ㄉㄨㄥˋ</rt></ruby>！<ruby>衝<rt>ㄔㄨㄥ</rt></ruby><ruby>動<rt>ㄉㄨㄥˋ</rt></ruby>！
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">衝動！衝動！</div>
+        <div class="lyric-explanation">
+          曲中で幾度もシャウトされるキーワード。抑えきれない本能と熱情の爆発。
+        </div>
       </div>
 
     </div>
+
+    <!-- ==================== VERSE 2 ==================== -->
+    <div class="lyric-section-title" id="lyrics-verse2">
+      <span>🚪 Verse 2: 息苦しい密室と都会の野獣</span>
+      <span class="lyric-section-badge">Bメロ</span>
+    </div>
+
+    <div class="lyric-list">
+
+      <!-- 行 7: 房間中的氣味快讓我不能呼吸 -->
+      <div class="lyric-card play-word-sound" data-word="房間中的氣味快讓我不能呼吸">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>房<rt>ㄈㄤˊ</rt></ruby><ruby>間<rt>ㄐㄧㄢ</rt></ruby><ruby>中<rt>ㄓㄨㄥ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>氣<rt>ㄑㄧˋ</rt></ruby><ruby>味<rt>ㄨㄟˋ</rt></ruby><ruby>快<rt>ㄎㄨㄞˋ</rt></ruby><ruby>讓<rt>ㄖㄤˋ</rt></ruby><ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>不<rt>ㄅㄨˋ</rt></ruby><ruby>能<rt>ㄋㄥˊ</rt></ruby><ruby>呼<rt>ㄏㄨ</rt></ruby><ruby>吸<rt>ㄒㄧ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">部屋の中の匂いで もうすぐ息ができなくなりそうだ</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">快〜 (ㄎㄨㄞˋ)</strong>：もうすぐ〜しそう、今にも〜になりそうだ（近接未来を表す副詞）。<br>
+          • <strong class="highlight-word">讓 (ㄖㄤˋ)</strong>：〜に…させる（超重要使役動詞。「部屋の匂いが俺を息苦しくさせる」）。<br>
+          • <strong class="highlight-word">呼吸 (ㄏㄨ ㄒㄧ)</strong>：呼吸する。
+        </div>
+      </div>
+
+      <!-- 行 8: 對面那對情侶正在做怎樣的事情？ -->
+      <div class="lyric-card play-word-sound" data-word="對面那對情侶正在做怎樣的事情">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>對<rt>ㄉㄨㄟˋ</rt></ruby><ruby>面<rt>ㄇㄧㄢˋ</rt></ruby><ruby>那<rt>ㄋㄚˋ</rt></ruby><ruby>對<rt>ㄉㄨㄟˋ</rt></ruby><ruby>情<rt>ㄑㄧㄥˊ</rt></ruby><ruby>侶<rt>ㄌㄩˇ</rt></ruby><ruby>正<rt>ㄓㄥˋ</rt></ruby><ruby>在<rt>ㄗㄞˋ</rt></ruby><ruby>做<rt>ㄗㄨㄛˋ</rt></ruby><ruby>怎<rt>ㄗㄣˇ</rt></ruby><ruby>樣<rt>ㄧㄤˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>事<rt>ㄕˋ</rt></ruby><ruby>情<rt>ㄑㄧㄥˊ</rt></ruby>？
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">向かいのあのカップルは いったいどんなことをしているんだ？</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">對面 (ㄉㄨㄟˋ ㄇㄧㄢˋ)</strong>：向かい側。<br>
+          • <strong class="highlight-word">那對 (ㄋㄚˋ ㄉㄨㄟˋ)</strong>：あの（「對」はペアやカップルを数える量詞）。<br>
+          • <strong class="highlight-word">情侶 (ㄑㄧㄥˊ ㄌㄩˇ)</strong>：恋人同士、カップル。<br>
+          • <strong class="highlight-word">正在 (ㄓㄥˋ ㄗㄞˋ)</strong>：ちょうど今〜している最中だ（進行形）。<br>
+          • <strong class="highlight-word">怎樣 (ㄗㄣˇ ㄧㄤˋ)</strong>：どのような、どんな。
+        </div>
+      </div>
+
+      <!-- 行 9: 黑暗中像囚禁在地下室的野獸 -->
+      <div class="lyric-card play-word-sound" data-word="黑暗中像囚禁在地下室的野獸">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>黑<rt>ㄏㄟ</rt></ruby><ruby>暗<rt>ㄢˋ</rt></ruby><ruby>中<rt>ㄓㄨㄥ</rt></ruby><ruby>像<rt>ㄒㄧㄤˋ</rt></ruby><ruby>囚<rt>ㄑㄧㄡˊ</rt></ruby><ruby>禁<rt>ㄐㄧㄣˋ</rt></ruby><ruby>在<rt>ㄗㄞˋ</rt></ruby><ruby>地<rt>ㄉㄧˋ</rt></ruby><ruby>下<rt>ㄒㄧㄚˋ</rt></ruby><ruby>室<rt>ㄕˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>野<rt>ㄧㄝˇ</rt></ruby><ruby>獸<rt>ㄕㄡˋ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">暗闇の中 地下室に閉じ込められた野獣のように</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">像〜 (ㄒㄧㄤˋ)</strong>：まるで〜のようだ（比喩表現）。<br>
+          • <strong class="highlight-word">囚禁 (ㄑㄧㄡˊ ㄐㄧㄣˋ)</strong>：閉じ込める、監禁する、囚われる。<br>
+          • <strong class="highlight-word">野獸 (ㄧㄝˇ ㄕㄡˋ)</strong>：野獣。
+        </div>
+      </div>
+
+      <!-- 行 10: 每天做著充滿桃色和香味的夢 -->
+      <div class="lyric-card play-word-sound" data-word="每天做著充滿桃色和香味的夢">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>每<rt>ㄇㄟˇ</rt></ruby><ruby>天<rt>ㄊㄧㄢ</rt></ruby><ruby>做<rt>ㄗㄨㄛˋ</rt></ruby><ruby>著<rt>ㄓㄜ˙</rt></ruby><ruby>充<rt>ㄔㄨㄥ</rt></ruby><ruby>滿<rt>ㄇㄢˇ</rt></ruby><ruby>桃<rt>ㄊㄠˊ</rt></ruby><ruby>色<rt>ㄙㄜˋ</rt></ruby><ruby>和<rt>ㄏㄢˋ</rt></ruby><ruby>香<rt>ㄒㄧㄤ</rt></ruby><ruby>味<rt>ㄨㄟˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>夢<rt>ㄇㄥˋ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">毎日 ピンク色と甘い香りに満ちた夢を見ている</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">做著夢 (ㄗㄨㄛˋ ㄓㄜ˙ ㄇㄥˋ)</strong>：夢を見ている（動詞「做夢」＋持続の助詞「著」）。<br>
+          • <strong class="highlight-word">充滿 (ㄔㄨㄥ ㄇㄢˇ)</strong>：〜で満ちあふれている。<br>
+          • <strong class="highlight-word">和 (ㄏㄢˋ)</strong>：〜と（※台湾華語の決定的な発音ポイント！下記コラム参照）。
+        </div>
+      </div>
+
+      <!-- 🇹🇼 💡 台湾華語コラム: 台湾での「和」の発音 -->
+      <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: var(--radius-md); padding: 18px 20px; margin: 10px 0;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <span style="font-size: 0.8rem; font-weight: 800; color: #B45309; background: #FEF3C7; padding: 2px 8px; border-radius: 4px;">🇹🇼 💡 台湾華語コラム</span>
+          <h3 style="font-size: 0.95rem; font-weight: 800; color: #92400E; margin: 0;">
+            台湾華語の真骨頂！「和（〜と）」は「ㄏㄢˋ (hàn)」と発音する！
+          </h3>
+        </div>
+        <div style="font-size: 0.88rem; line-height: 1.65; color: #78350F;">
+          中国大陸の教科書では「和」を「ㄏㄜˊ (hé)」と習いますが、<strong>台湾の日常会話や歌・テレビでは99%「ㄏㄢˋ (hàn)」と発音されます！</strong><br>
+          透明雜誌のボーカル洪申豪も、歌詞中の「桃色和香味（ㄊㄠˊ ㄙㄜˋ ㄏㄢˋ ㄒㄧㄤ ㄨㄟˋ）」や「快和我詛咒（ㄎㄨㄞˋ ㄏㄢˋ ㄨㄛˇ ㄗㄨˇ ㄓㄡˋ）」を完璧な台湾訛りの「ㄏㄢˋ (hàn)」で歌っています。この発音ができるだけで一気に台湾ネイティブ度が増します！
+        </div>
+      </div>
+
+      <!-- 行 11: 衝動！衝動！ -->
+      <div class="lyric-card play-word-sound" data-word="衝動！衝動！">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>衝<rt>ㄔㄨㄥ</rt></ruby><ruby>動<rt>ㄉㄨㄥˋ</rt></ruby>！<ruby>衝<rt>ㄔㄨㄥ</rt></ruby><ruby>動<rt>ㄉㄨㄥˋ</rt></ruby>！
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">衝動！衝動！</div>
+      </div>
+
+    </div>
+
+    <!-- ==================== CHORUS / OUTRO ==================== -->
+    <div class="lyric-section-title" id="lyrics-chorus">
+      <span>⚡ Chorus: 叫びとカタルシス</span>
+      <span class="lyric-section-badge">サビ / アウトロ</span>
+    </div>
+
+    <div class="lyric-list">
+
+      <!-- 行 12: 不知道那是什麼感覺？ -->
+      <div class="lyric-card play-word-sound" data-word="不知道那是什麼感覺">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>不<rt>ㄅㄨˋ</rt></ruby><ruby>知<rt>ㄓ</rt></ruby><ruby>道<rt>ㄉㄠˋ</rt></ruby><ruby>那<rt>ㄋㄚˋ</rt></ruby><ruby>是<rt>ㄕˋ</rt></ruby><ruby>什<rt>ㄕㄣˊ</rt></ruby><ruby>麼<rt>˙ㄇㄜ</rt></ruby><ruby>感<rt>ㄍㄢˇ</rt></ruby><ruby>覺<rt>ㄐㄩㄝˊ</rt></ruby>？
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">それがどんな感覚なのかも 分からない</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">不知道 (ㄅㄨˋ ㄓ ㄉㄠˋ)</strong>：分からない、知らない（日常会話超頻出）。<br>
+          • <strong class="highlight-word">感覺 (ㄍㄢˇ ㄐㄩㄝˊ)</strong>：感覚、感じ、フィーリング。
+        </div>
+      </div>
+
+      <!-- 行 13: 如果可以請你再激烈一點 -->
+      <div class="lyric-card play-word-sound" data-word="如果可以請你再激烈一點">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>如<rt>ㄖㄨˊ</rt></ruby><ruby>果<rt>ㄍㄨㄛˇ</rt></ruby><ruby>可<rt>ㄎㄜˇ</rt></ruby><ruby>以<rt>ㄧˇ</rt></ruby><ruby>請<rt>ㄑㄧㄥˇ</rt></ruby><ruby>你<rt>ㄋㄧˇ</rt></ruby><ruby>再<rt>ㄗㄞˋ</rt></ruby><ruby>激<rt>ㄐㄧ</rt></ruby><ruby>烈<rt>ㄌㄧㄝˋ</rt></ruby><ruby>一<rt>ㄧˋ</rt></ruby><ruby>點<rt>ㄉㄧㄢˇ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">もしできるなら どうかもっと激しくしてくれ</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">如果可以 (ㄖㄨˊ ㄍㄨㄛˇ ㄎㄜˇ ㄧˇ)</strong>：もし可能なら、もしよければ。<br>
+          • <strong class="highlight-word">再＋形容詞＋一點 (ㄗㄞˋ ... ㄧˋ ㄉㄧㄢˇ)</strong>：もっと〜して（日常で必須の頻出構文！例: 再大聲一點＝もっと大きな声で、再甜一點＝もっと甘く）。<br>
+          • <strong class="highlight-word">激烈 (ㄐㄧ ㄌㄧㄝˋ)</strong>：激しい、激化する。
+        </div>
+      </div>
+
+      <!-- 行 14: 快對我說些殘暴的話 -->
+      <div class="lyric-card play-word-sound" data-word="快對我說些殘暴的話">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>快<rt>ㄎㄨㄞˋ</rt></ruby><ruby>對<rt>ㄉㄨㄟˋ</rt></ruby><ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>說<rt>ㄕㄨㄛ</rt></ruby><ruby>些<rt>ㄒㄧㄝ</rt></ruby><ruby>殘<rt>ㄘㄢˊ</rt></ruby><ruby>暴<rt>ㄅㄠˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>話<rt>ㄏㄨㄚˋ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">早く俺に 残酷な言葉を浴びせてくれ</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">快〜 (ㄎㄨㄞˋ)</strong>：早く〜してくれ。<br>
+          • <strong class="highlight-word">對我說 (ㄉㄨㄟˋ ㄨㄛˇ ㄕㄨㄛ)</strong>：私に向かって言う（前置詞「對」＝〜に対して）。<br>
+          • <strong class="highlight-word">殘暴 (ㄘㄢˊ ㄅㄠˋ)</strong>：残忍な、凶暴な。
+        </div>
+      </div>
+
+      <!-- 行 15: 快和我詛咒這一切的一切的一切 -->
+      <div class="lyric-card play-word-sound" data-word="快和我詛咒這一切的一切的一切">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>快<rt>ㄎㄨㄞˋ</rt></ruby><ruby>和<rt>ㄏㄢˋ</rt></ruby><ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>詛<rt>ㄗㄨˇ</rt></ruby><ruby>咒<rt>ㄓㄡˋ</rt></ruby><ruby>這<rt>ㄓㄜˋ</rt></ruby><ruby>一<rt>ㄧˊ</rt></ruby><ruby>切<rt>ㄑㄧㄝˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>一<rt>ㄧˊ</rt></ruby><ruby>切<rt>ㄑㄧㄝˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>一<rt>ㄧˊ</rt></ruby><ruby>切<rt>ㄑㄧㄝˋ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">早く俺と一緒に このすべてのすべてを呪ってくれ</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">和我 (ㄏㄢˋ ㄨㄛˇ)</strong>：私と一緒に（台湾発音: ㄏㄢˋ）。<br>
+          • <strong class="highlight-word">詛咒 (ㄗㄨˇ ㄓㄡˋ)</strong>：呪う、罵倒する。<br>
+          • <strong class="highlight-word">這一切 (ㄓㄜˋ ㄧˊ ㄑㄧㄝˋ)</strong>：このすべて。
+        </div>
+      </div>
+
+      <!-- 行 16: 我們活在性的地獄裡 -->
+      <div class="lyric-card play-word-sound" data-word="我們活在性的地獄裡">
+        <div class="lyric-top-bar">
+          <div class="lyric-trad-wrapper">
+            <div class="lyric-trad">
+              <ruby>我<rt>ㄨㄛˇ</rt></ruby><ruby>們<rt>ㄇㄣ˙</rt></ruby><ruby>活<rt>ㄏㄨㄛˊ</rt></ruby><ruby>在<rt>ㄗㄞˋ</rt></ruby><ruby>性<rt>ㄒㄧㄥˋ</rt></ruby><ruby>的<rt>ㄉㄜ˙</rt></ruby><ruby>地<rt>ㄉㄧˋ</rt></ruby><ruby>獄<rt>ㄩˋ</rt></ruby><ruby>裡<rt>ㄌㄧˇ</rt></ruby>
+            </div>
+          </div>
+          <div class="lyric-play-badge"><span>🔊 聴く</span></div>
+        </div>
+        <div class="lyric-translation">俺たちは 性的地獄の中で生きている</div>
+        <div class="lyric-explanation">
+          • <strong class="highlight-word">活在〜裡 (ㄏㄨㄛˊ ㄗㄞˋ ... ㄌㄧˇ)</strong>：〜の中で生きる。<br>
+          • <strong class="highlight-word">地獄 (ㄉㄧˋ ㄩˋ)</strong>：地獄。曲のラストを締めくくる決定的なパンク・ステートメント！
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 単語まとめセクション ==================== -->
+    <section style="margin-top: 48px;" id="song-vocab">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: #0F172A; display: flex; align-items: center; gap: 8px;">
+            <span>📚</span>
+            <span>歌詞から学ぶ重要単語 (12語)</span>
+          </h2>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">
+            タップで音声再生。右端の「☆」ボタンを押すと、あなたの「復習単語帳」に保存できます！
+          </p>
+        </div>
+      </div>
+
+      <div class="word-grid">
+
+        <!-- 1. 睜開 -->
+        <div class="word-card play-word-sound" data-word="睜開">
+          <div class="word-main">
+            <span class="word-trad">睜開</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄓㄥ ㄎㄞ</span>
+            </div>
+            <span class="word-meaning">目を開ける / 見開く</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="睜開" data-zhuyin="ㄓㄥ ㄎㄞ" data-pinyin="zhēngkāi" data-meaning="目を開ける / 見開く" data-example="每天我睜開眼。 (毎日俺は目を開ける)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 2. 腦袋 -->
+        <div class="word-card play-word-sound" data-word="腦袋">
+          <div class="word-main">
+            <span class="word-trad">腦袋</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄋㄠˇ ㄉㄞˋ</span>
+            </div>
+            <span class="word-meaning">頭 / 頭脳 / 脳みそ</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="腦袋" data-zhuyin="ㄋㄠˇ ㄉㄞˋ" data-pinyin="nǎodai" data-meaning="頭 / 頭脳 / 脳みそ" data-example="腦袋中的畫面全部都是肉慾場景。 (頭の中の映像は全部が生々しい光景ばかり)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 3. 畫面 -->
+        <div class="word-card play-word-sound" data-word="畫面">
+          <div class="word-main">
+            <span class="word-trad">畫面</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄏㄨㄚˋ ㄇㄧㄢˋ</span>
+            </div>
+            <span class="word-meaning">画面 / シーン / 脳裏の光景</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="畫面" data-zhuyin="ㄏㄨㄚˋ ㄇㄧㄢˋ" data-pinyin="huàmiàn" data-meaning="画面 / シーン / 脳裏の光景" data-example="這部電影的畫面很漂亮。 (この映画の映像はとても美しい)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 4. 街頭 -->
+        <div class="word-card play-word-sound" data-word="街頭">
+          <div class="word-main">
+            <span class="word-trad">街頭</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄐㄧㄝ ㄊㄡˊ</span>
+            </div>
+            <span class="word-meaning">街角 / 街頭 / 通り</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="街頭" data-zhuyin="ㄐㄧㄝ ㄊㄡˊ" data-pinyin="jiētóu" data-meaning="街角 / 街頭 / 通り" data-example="走在台北街頭很熱鬧。 (台北の街角を歩くととても賑やかだ)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 5. 抵抗 -->
+        <div class="word-card play-word-sound" data-word="抵抗">
+          <div class="word-main">
+            <span class="word-trad">抵抗</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄉㄧˇ ㄎㄤˋ</span>
+            </div>
+            <span class="word-meaning">抵抗する / 抗う / 耐える</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="抵抗" data-zhuyin="ㄉㄧˇ ㄎㄤˋ" data-pinyin="dǐkàng" data-meaning="抵抗する / 抗う / 耐える" data-example="去抵抗身理心理衝動。 (生理的・心理的衝動に抗う)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 6. 衝動 -->
+        <div class="word-card play-word-sound" data-word="衝動">
+          <div class="word-main">
+            <span class="word-trad">衝動</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄔㄨㄥ ㄉㄨㄥˋ</span>
+            </div>
+            <span class="word-meaning">衝動 / 衝動的な感情</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="衝動" data-zhuyin="ㄔㄨㄥ ㄉㄨㄥˋ" data-pinyin="chōngdòng" data-meaning="衝動 / 衝動的な感情" data-example="不要衝動，先冷靜一下。 (衝動的にならないで、まず落ち着こう)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 7. 氣味 -->
+        <div class="word-card play-word-sound" data-word="氣味">
+          <div class="word-main">
+            <span class="word-trad">氣味</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄑㄧˋ ㄨㄟˋ</span>
+            </div>
+            <span class="word-meaning">匂い / 香り / におい</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="氣味" data-zhuyin="ㄑㄧˋ ㄨㄟˋ" data-pinyin="qìwèi" data-meaning="匂い / 香り / におい" data-example="房間中的氣味快讓我不能呼吸。 (部屋の匂いで息ができなくなりそうだ)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 8. 情侶 -->
+        <div class="word-card play-word-sound" data-word="情侶">
+          <div class="word-main">
+            <span class="word-trad">情侶</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄑㄧㄥˊ ㄌㄩˇ</span>
+            </div>
+            <span class="word-meaning">カップル / 恋人同士</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="情侶" data-zhuyin="ㄑㄧㄥˊ ㄌㄩˇ" data-pinyin="qínglǚ" data-meaning="カップル / 恋人同士" data-example="夜市有很多情侶約會。 (夜市には多くのカップルがデートしている)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 9. 充滿 -->
+        <div class="word-card play-word-sound" data-word="充滿">
+          <div class="word-main">
+            <span class="word-trad">充滿</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄔㄨㄥ ㄇㄢˇ</span>
+            </div>
+            <span class="word-meaning">満ちあふれている / 満ちる</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="充滿" data-zhuyin="ㄔㄨㄥ ㄇㄢˇ" data-pinyin="chōngmǎn" data-meaning="満ちあふれている / 満ちる" data-example="這首歌充滿了力量。 (この曲はパワーに満ちあふれている)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 10. 激烈 -->
+        <div class="word-card play-word-sound" data-word="激烈">
+          <div class="word-main">
+            <span class="word-trad">激烈</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄐㄧ ㄌㄧㄝˋ</span>
+            </div>
+            <span class="word-meaning">激しい / 激烈な</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="激烈" data-zhuyin="ㄐㄧ ㄌㄧㄝˋ" data-pinyin="jīliè" data-meaning="激しい / 激烈な" data-example="請你再激烈一點！ (どうかもっと激しくしてくれ！)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 11. 詛咒 -->
+        <div class="word-card play-word-sound" data-word="詛咒">
+          <div class="word-main">
+            <span class="word-trad">詛咒</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄗㄨˇ ㄓㄡˋ</span>
+            </div>
+            <span class="word-meaning">呪う / 罵倒する</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="詛咒" data-zhuyin="ㄗㄨˇ ㄓㄡˋ" data-pinyin="zǔzhòu" data-meaning="呪う / 罵倒する" data-example="快和我詛咒這一切。 (早く俺と一緒にこのすべてを呪ってくれ)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+        <!-- 12. 地獄 -->
+        <div class="word-card play-word-sound" data-word="地獄">
+          <div class="word-main">
+            <span class="word-trad">地獄</span>
+            <div class="word-phonetics">
+              <span class="word-zhuyin">ㄉㄧˋ ㄩˋ</span>
+            </div>
+            <span class="word-meaning">地獄</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="bookmark-btn" data-trad="地獄" data-zhuyin="ㄉㄧˋ ㄩˋ" data-pinyin="dìyù" data-meaning="地獄" data-example="我們活在性的地獄裡。 (俺たちは性的地獄の中で生きている)" title="単語帳に保存">☆</button>
+            <div class="audio-icon-tag"><span>🔊</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- クイズCTAエリア (最下部) -->
+    <div style="text-align: center; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 36px 24px; margin-top: 48px;" id="quiz-cta-section">
+      <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">
+        〈性的地獄〉の歌詞と台湾華語フレーズをマスターしましたか？
+      </h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem;">
+        登場した重要単語・文法・台湾発音に関する確認クイズ（全10問）で定着度をテストしましょう！
+      </p>
+      <div style="display: flex; justify-content: center; gap: 14px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" id="start-quiz-bottom-btn" style="padding: 12px 28px; font-size: 1rem; background: #F43F5E; border-color: #E11D48;">
+          🏆 歌詞クイズを始める (10問)
+        </button>
+        <a href="lyrics-index.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          🎵 歌詞解説一覧に戻る
+        </a>
+        <a href="my-review-words.html" class="btn btn-outline" style="padding: 12px 24px; font-size: 1rem;">
+          ⭐ 復習単語帳を見る
+        </a>
+      </div>
+    </div>
+
+    <!-- クイズモーダル/セクション -->
+    <section class="quiz-section" id="quiz-section">
+      <!-- QuizEngineで動的生成 -->
+    </section>
 
   </main>
 
