@@ -1245,7 +1245,7 @@ window.CULTURE_QUIZ_QUESTIONS_6_1 = [
 ];
 window.VOWELS_QUIZ_QUESTIONS_6_1 = window.CULTURE_QUIZ_QUESTIONS_6_1;
 
-// ==================== STEP 5-4: 高雄編（名物・観光・日帰りトリップ・豆知識）確認クイズ (全10問) ====================
+// ==================== STEP 5-5: 高雄編（名物・観光・日帰りトリップ・豆知識）確認クイズ (全16問・100%網羅) ====================
 window.VOWELS_QUIZ_QUESTIONS_5_4 = [
   { id: 1, type: "audio", targetSymbol: "駁二藝術特區", speechTarget: "駁二藝術特區", prompt: "再生された旧港湾倉庫群をリノベーションした高雄の巨大アート特区はどれ？", options: ["駁二藝術特區", "華山文創園區", "松山文創園區", "檜意森活村"] },
   { id: 2, type: "audio", targetSymbol: "木瓜牛奶", speechTarget: "木瓜牛奶", prompt: "再生された六合夜市の看板名物ドリンク「パパイヤミルク」はどれ？", options: ["木瓜牛奶", "珍珠奶茶", "冬瓜檸檬", "綠豆沙牛奶"] },
@@ -1260,11 +1260,18 @@ window.VOWELS_QUIZ_QUESTIONS_5_4 = [
     id: 10, type: "word-to-zhuyin", targetSymbol: "ㄞˋ ㄏㄜˊ", speechTarget: "愛河",
     optionSpeechMap: { "ㄞˋ ㄏㄜˊ": "愛河", "ㄉㄢˋ ㄕㄨㄟˇ ㄏㄜˊ": "淡水河", "ㄐㄧ ㄌㄨㄥˊ ㄏㄜˊ": "基隆河", "ㄉㄚˋ ㄐㄧㄚ ㄒㄧ": "大甲溪" },
     prompt: "「愛河」の正しい注音表記はどれ？", options: ["ㄞˋ ㄏㄜˊ", "ㄉㄢˋ ㄕㄨㄟˇ ㄏㄜˊ", "ㄐㄧ ㄌㄨㄥˊ ㄏㄜˊ", "ㄉㄚˋ ㄐㄧㄚ ㄒㄧ"]
-  }
+  },
+  { id: 11, type: "audio", targetSymbol: "鴨肉飯", speechTarget: "鴨肉飯", prompt: "再生された塩埕区の老舗名物「鴨肉ご飯」はどれ？", options: ["鴨肉飯", "火雞肉飯", "滷肉飯", "排骨飯"] },
+  { id: 12, type: "audio", targetSymbol: "白糖粿", speechTarget: "白糖粿", prompt: "再生された外サク中モチの台湾南部伝統スイーツ「揚げもち菓子」はどれ？", options: ["白糖粿", "地瓜球", "愛玉冰", "豆花"] },
+  { id: 13, type: "zhuyin-to-word", targetSymbol: "ライトレール / LRT (環状トラム)", speechTarget: "輕軌", prompt: "注音「ㄑㄧㄥ ㄍㄨㄟˇ (輕軌)」に対応する高雄のエコな乗り物はどれ？", options: ["ライトレール / LRT (環状トラム)", "高速鉄道", "ロープウェイ", "水上バス"] },
+  { id: 14, type: "zhuyin-to-word", targetSymbol: "美麗島駅 (ステンドグラス「光之穹頂」)", speechTarget: "美麗島", prompt: "注音「ㄇㄟˇ ㄌㄧˋ ㄉㄠˇ (美麗島)」に対応する、世界2位の美しい地下鉄駅はどれ？", options: ["美麗島駅 (ステンドグラス「光之穹頂」)", "台北駅", "左営駅", "高雄駅"] },
+  { id: 15, type: "audio", targetSymbol: "佛光山", speechTarget: "佛光山", prompt: "再生された高さ108mの黄金大仏が鎮座する台湾最大の仏教聖地はどれ？", options: ["佛光山", "壽山", "阿里山", "龍山寺"] },
+  { id: 16, type: "zhuyin-to-word", targetSymbol: "墾丁 (台湾最南端のビーチリゾート)", speechTarget: "墾丁", prompt: "注音「ㄎㄣˇ ㄉㄧㄥ (墾丁)」に対応する、高雄から快速バスで行ける最南端リゾートはどれ？", options: ["墾丁 (台湾最南端のビーチリゾート)", "壽山 (野生ザルの山)", "海鮮 (シーフード)", "淡水 (夕日の街)"] }
 ];
 
 window.VOWELS_QUIZ_QUESTIONS_5_3 = window.VOWELS_QUIZ_QUESTIONS_5_1;
 window.VOWELS_QUIZ_QUESTIONS_5_5 = window.VOWELS_QUIZ_QUESTIONS_5_4;
+
 
 
 

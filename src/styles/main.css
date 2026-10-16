@@ -1508,12 +1508,12 @@ body {
   }
 }
 
-/* ==================== ガイドブック一体型リッチカード (.guide-card) ==================== */
+/* ==================== ガイドブック一体型リッチカード (.guide-card: 2カラム高一覧性UI) ==================== */
 .guide-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 18px;
+  margin-top: 14px;
   margin-bottom: 36px;
 }
 
@@ -1524,18 +1524,20 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 84px;
 }
 
 .guide-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-hover);
   border-color: #CBD5E1;
+  transform: translateY(-2px);
 }
 
 .guide-card-header {
-  padding: 16px 20px 14px;
-  background: #FAFBFD;
+  padding: 14px 18px 12px;
+  background: #F8FAFC;
   border-bottom: 1px solid var(--color-border);
   cursor: pointer;
   transition: background 0.15s ease;
@@ -1543,13 +1545,21 @@ body {
 }
 
 .guide-card-header:hover {
-  background: #F1F5F9;
+  background: #F0F9FF;
 }
 
 .guide-title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+}
+
+.guide-title-main {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .guide-word-trad {
@@ -1557,24 +1567,36 @@ body {
   font-weight: 900;
   color: #0F172A;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .guide-phonetics {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .guide-zhuyin {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--color-primary);
-  letter-spacing: 0.05em;
+  background: #E0F2FE;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.guide-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .guide-subtitle {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: #475569;
   font-weight: 700;
-  margin-top: 5px;
+  margin-top: 6px;
   line-height: 1.4;
 }
 
@@ -1585,29 +1607,36 @@ body {
   font-size: 0.72rem;
   color: var(--color-primary);
   font-weight: 700;
-  margin-top: 8px;
-  background: #EFF6FF;
+  background: #FFFFFF;
+  border: 1px solid #BAE6FD;
   padding: 2px 8px;
   border-radius: 12px;
 }
 
 .guide-body {
-  padding: 18px 20px;
+  padding: 15px 18px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   flex-grow: 1;
+  justify-content: space-between;
+}
+
+.guide-content-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .guide-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
   padding: 2px 8px;
   border-radius: 6px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .badge-culture {
@@ -1631,8 +1660,8 @@ body {
 }
 
 .guide-desc {
-  font-size: 0.88rem;
-  line-height: 1.65;
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: #334155;
 }
 
@@ -1642,11 +1671,11 @@ body {
 
 .guide-tips {
   background: #FFFBEB;
-  border-left: 3.5px solid #F59E0B;
-  padding: 10px 14px;
+  border-left: 3px solid #F59E0B;
+  padding: 8px 12px;
   border-radius: 0 8px 8px 0;
-  font-size: 0.86rem;
-  line-height: 1.6;
+  font-size: 0.82rem;
+  line-height: 1.55;
   color: #78350F;
 }
 
@@ -1654,11 +1683,18 @@ body {
   margin: 0;
 }
 
+.guide-phrase-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2px;
+}
+
 .guide-phrase {
   background: #F0F9FF;
   border: 1px solid #BAE6FD;
-  border-radius: 10px;
-  padding: 12px 14px;
+  border-radius: 8px;
+  padding: 9px 12px;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   user-select: none;
@@ -1666,7 +1702,7 @@ body {
 
 .guide-phrase:hover {
   background: #E0F2FE;
-  border-color: #7DD3FC;
+  border-color: #38BDF8;
   transform: translateY(-1px);
 }
 
@@ -1674,78 +1710,180 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 .phrase-audio-hint {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #0284C7;
 }
 
 .phrase-trad {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 800;
   color: #0369A1;
-  line-height: 1.4;
-}
-
-.phrase-zhuyin {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #0284C7;
-  margin-top: 3px;
-}
-
-.phrase-meaning {
-  font-size: 0.82rem;
-  color: #475569;
-  margin-top: 4px;
   line-height: 1.35;
 }
 
-/* ==================== 都市概要・基本プロファイル (.city-intro-card) ==================== */
+.phrase-zhuyin {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0284C7;
+  margin-top: 2px;
+}
+
+.phrase-meaning {
+  font-size: 0.78rem;
+  color: #475569;
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+/* ==================== 都市ガイド：全16キーワード早見表（Quick Index） ==================== */
+.city-quick-index {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.city-quick-index-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.city-quick-index-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.city-quick-index-hint {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.city-index-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.city-index-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.city-index-cat {
+  min-width: 135px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #334155;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.city-index-cat:hover {
+  color: var(--color-primary);
+}
+
+.city-index-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+
+.city-index-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: #F8FAFC;
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-size: 0.8rem;
+  transition: all 0.15s ease;
+}
+
+.city-index-chip:hover {
+  background: var(--color-primary-light);
+  border-color: #7DD3FC;
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.city-index-chip-trad {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.city-index-chip-sub {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ==================== 都市概要・基本プロファイル ＆ 3ステップ歴史タイムライン ==================== */
 .city-intro-card {
   background: #FFFFFF;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-top: 20px;
-  margin-bottom: 32px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  padding: 20px 22px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 84px;
 }
 
 .city-intro-title {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   font-weight: 800;
   color: #0F172A;
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--color-border);
 }
 
 .city-meta-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .city-meta-item {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
   border-radius: var(--radius-sm);
-  padding: 12px 14px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .city-meta-label {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #64748B;
   display: flex;
@@ -1754,15 +1892,52 @@ body {
 }
 
 .city-meta-value {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   color: #0F172A;
 }
 
 .city-meta-sub {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: #64748B;
   line-height: 1.4;
+}
+
+.city-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.city-timeline-card {
+  background: #FAFBFD;
+  border: 1px solid #E2E8F0;
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.city-timeline-era {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+}
+
+.city-timeline-heading {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.35;
+}
+
+.city-timeline-text {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.55;
 }
 
 .city-history-box {
@@ -2569,11 +2744,148 @@ a.portal-tool-card:hover {
 }
 
 @media (max-width: 640px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
   .step-slim-grid {
     grid-template-columns: 1fr;
   }
   .mini-locked-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+/* ==================== シーン別チャット吹き出しロールプレイUI ==================== */
+.chat-scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+  margin-bottom: 36px;
+}
+
+.chat-scene-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chat-scene-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chat-scene-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  max-width: 95%;
+}
+
+.chat-bubble-row.clerk {
+  align-self: flex-start;
+}
+
+.chat-bubble-row.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.avatar-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.avatar-clerk {
+  background: #E0F2FE;
+  color: #0369A1;
+  border: 1.5px solid #BAE6FD;
+}
+
+.avatar-user {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1.5px solid #FDE68A;
+}
+
+.chat-bubble-card {
+  background: var(--color-bg-subtle);
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease-in-out;
+}
+
+.chat-bubble-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transform: translateY(-1px);
+}
+
+.chat-bubble-row.clerk .chat-bubble-card {
+  border-top-left-radius: 4px;
+}
+
+.chat-bubble-row.user .chat-bubble-card {
+  border-top-right-radius: 4px;
+  background: #FFFBEB;
+  border-color: #FCD34D;
+}
+
+.alt-speech-box {
+  background: #FFFFFF;
+  border: 1px dashed #CBD5E1;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.alt-speech-box:hover {
+  border-color: var(--color-primary);
+  background: #F0F9FF;
+}
+
+@media (max-width: 640px) {
+  .chat-scenes-grid {
+    grid-template-columns: 1fr;
   }
 }
 
