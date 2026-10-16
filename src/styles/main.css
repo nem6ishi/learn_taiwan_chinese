@@ -2181,6 +2181,402 @@ body {
   margin-bottom: 36px;
 }
 
+/* ==================== トップページ：役割別ポータルUI（v1.2） ==================== */
+
+/* 大ゾーン見出し */
+.portal-zone {
+  margin-bottom: 52px;
+}
+
+.portal-zone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.portal-zone-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.portal-zone-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.portal-zone-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.portal-zone-subtitle {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* 1. 辞書・単語帳クイックツールバー */
+.portal-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+  margin-bottom: 44px;
+}
+
+.portal-tool-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+a.portal-tool-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.portal-tool-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.portal-tool-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.portal-tool-title {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.portal-tool-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+.vocab-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.vocab-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: #F0F9FF;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.vocab-pill-link:hover {
+  background: #0284C7;
+  color: #FFFFFF;
+  border-color: #0284C7;
+}
+
+/* 2. 特集・実践テーマ（都市・文化・旅行・音楽）リッチカード */
+.feature-sub-section {
+  margin-bottom: 34px;
+}
+
+.feature-sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.feature-sub-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.feature-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary);
+}
+
+.feature-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.feature-tag {
+  font-size: 0.73rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
+}
+
+.feature-card-title {
+  font-size: 1.14rem;
+  font-weight: 900;
+  color: var(--color-text-main);
+  line-height: 1.38;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.feature-card-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.feature-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* 3. 基礎編：スリム・ステップカード（一覧性重視） */
+.step-slim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.step-slim-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-slim-card:hover {
+  border-color: var(--color-primary);
+  background: #F8FAFC;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-slim-num {
+  min-width: 54px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.76rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(2, 132, 199, 0.15);
+}
+
+.step-slim-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-slim-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+
+.step-slim-desc {
+  font-size: 0.77rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.step-slim-arrow {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  opacity: 0.65;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.step-slim-card:hover .step-slim-arrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+/* 4. 未公開（🔒順次公開）の小型・控えめカード */
+.mini-locked-section {
+  margin-top: 14px;
+}
+
+.mini-locked-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-locked-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 8px;
+}
+
+.mini-locked-card {
+  background: #F8FAFC;
+  border: 1px dashed #CBD5E1;
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.mini-locked-card:hover {
+  opacity: 0.95;
+}
+
+.mini-locked-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.mini-locked-code {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #64748B;
+  background: #E2E8F0;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.mini-locked-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94A3B8;
+}
+
+.mini-locked-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.35;
+}
+
+.mini-locked-desc {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .step-slim-grid {
+    grid-template-columns: 1fr;
+  }
+  .mini-locked-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
 
 
 
