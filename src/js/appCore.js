@@ -207,6 +207,66 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '站',
+      zhuyin: 'ㄓㄢˋ',
+      pinyin: 'zhàn',
+      meaning: '立つ / 立ち上がる / 駅・停留所',
+      example: '捷運裡人很多，我們站一下吧。 (MRTの中は人が多いので、少し立っていましょう)',
+      column: {
+        title: '🚇 「立つ」と「駅」！台湾生活の必須漢字「站」',
+        content: '• <strong>站</strong> 単体で「立つ」という動作を表します（例：「<strong>站起來 (ㄓㄢˋ ㄑㄧˇ ㄌㄞˊ / 立ち上がる)</strong>」）。<br>• また名詞として「駅・停留所」を表す超重要単語でもあります！「<strong>捷運站 (MRTの駅)</strong>」「<strong>公車站 (バス停)</strong>」「<strong>台北車站 (台北駅)</strong>」のように日常で毎日目にします（🇨🇳 大陸でも「站」）。'
+      },
+      createdAt: 1792421805000 // 2026/10/19 23:56
+    },
+    {
+      traditional: '船',
+      zhuyin: 'ㄔㄨㄢˊ',
+      pinyin: 'chuán',
+      meaning: '船 / ボート / フェリー',
+      example: '我們坐船去旗津吃海鮮吧！ (船に乗って旗津へ海鮮を食べに行きましょう！)',
+      column: {
+        title: '🚢 台湾旅行で乗る「坐船」！淡水の渡し船や旗津フェリー',
+        content: '• <strong>船</strong>：舟・船全般。船に乗ることは「<strong>坐船 (ㄗㄨㄛˋ ㄔㄨㄢˊ)</strong>」または「<strong>搭船 (ㄉㄚ ㄔㄨㄢˊ)</strong>」と言います。<br>• 台湾では台北・淡水から八里への渡し船や、高雄・鼓山から旗津へ渡る「<strong>旗津輪渡 (フェリー)</strong>」、離島（緑島・小琉球・澎湖など）への高速船など、手軽に船旅を楽しめるスポットがたくさんあります！'
+      },
+      createdAt: 1792421804000 // 2026/10/19 23:56
+    },
+    {
+      traditional: '大聲',
+      zhuyin: 'ㄉㄚˋ ㄕㄥ',
+      pinyin: 'dàshēng',
+      meaning: '大声（で） / （声や音が）大きい',
+      example: '不好意思，可以請你說大聲一點嗎？ (すみません、もう少し大きな声で話してもらえますか？)',
+      column: {
+        title: '📢 リスニングで超役立つ！「大聲一點（もう少し大きな声で）」',
+        content: '• <strong>大 (大きい)</strong>＋<strong>聲 (声・音)</strong>＝大声、音が大きい。<br>• 相手の声が小さくて聞き取れなかった時に「<strong>請大聲一點 (ㄑㄧㄥˇ ㄉㄚˋ ㄕㄥ ㄧˋ ㄉㄧㄢˇ / もう少し大きな声でお願いします)</strong>」と言えると会話がぐっとスムーズになります！<br>• 反対に「小声（で）」は「<strong>小聲 (ㄒㄧㄠˇ ㄕㄥ)</strong>」。図書館やMRT車内で「小聲一點（静かに・声を小さくして）」と注意を促す時にも使われます。'
+      },
+      createdAt: 1792421803000 // 2026/10/19 23:56
+    },
+    {
+      traditional: '寫',
+      zhuyin: 'ㄒㄧㄝˇ',
+      pinyin: 'xiě',
+      meaning: '書く / 記入する',
+      example: '請在這裡寫你的名字和電話。 (ここにあなたの名前と電話番号を書いてください)',
+      column: {
+        title: '✍️ 伝票記入や手続きで必須！「寫（書く）」',
+        content: '• <strong>寫</strong>：文字や書類を書く、記述する。<br>• 台湾の食堂（小吃店）では、自分で紙のメニューに正の字や数字を書き込む「<strong>填單 / 劃單</strong>」スタイルが主流です。「<strong>請寫在這裡 (ここに書いてください)</strong>」とよく言われます。<br>• 「書く」を表す繁体字「<strong>寫</strong>」は、簡体字の「写」と形が少し異なるので書き方に注目してみましょう！'
+      },
+      createdAt: 1792421802000 // 2026/10/19 23:56
+    },
+    {
+      traditional: '太極拳',
+      zhuyin: 'ㄊㄞˋ ㄐㄧˊ ㄑㄩㄢˊ',
+      pinyin: 'tàijíquán',
+      meaning: '太極拳',
+      example: '每天早上，公園裡都有人在打太極拳。 (毎朝、公園の中では誰かが太極拳をしています)',
+      column: {
+        title: '🥋 台湾の朝の風物詩！公園で「打太極拳」',
+        content: '• 太極拳をする動詞には「<strong>打 (ㄉㄚˇ)</strong>」を使い、「<strong>打太極拳 (ㄉㄚˇ ㄊㄞˋ ㄐㄧˊ ㄑㄩㄢˊ)</strong>」と言います。<br>• 台湾の朝の公園（中正紀念堂や二二八和平公園など）を散歩すると、ゆったりと音楽に合わせて太極拳を楽しむおじいちゃんやおばあちゃんの姿がたくさん見られます！<br>• 健康と長寿の秘訣として、台湾の幅広い世代に親しまれている伝統文化です。'
+      },
+      createdAt: 1792421801000 // 2026/10/19 23:56
+    },
+    {
       traditional: '多久',
       zhuyin: 'ㄉㄨㄛ ㄐㄧㄡˇ',
       pinyin: 'duōjiǔ',
@@ -1156,7 +1216,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v21';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v22';
 
   const ReviewManager = {
     getWords: function() {
@@ -1170,6 +1230,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v21',
             'taiwan_chinese_review_words_v20',
             'taiwan_chinese_review_words_v19',
             'taiwan_chinese_review_words_v18',
