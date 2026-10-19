@@ -207,6 +207,78 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '多久',
+      zhuyin: 'ㄉㄨㄛ ㄐㄧㄡˇ',
+      pinyin: 'duōjiǔ',
+      meaning: 'どのくらい / どれくらい（の時間）',
+      example: '從這裡到台北車站要多久？ (ここから台北駅までどのくらいかかりますか？)',
+      column: {
+        title: '⏱️ 時間の長さを尋ねる万能疑問詞「多久」！',
+        content: '• <strong>多 (どれほど)</strong>＋<strong>久 (時間が長い)</strong>＝どれくらいの時間、どのくらい。<br>• 所要時間を聞く際の最重要フレーズ「<strong>要多久？ (ㄧㄠˋ ㄉㄨㄛ ㄐㄧㄡˇ / どれくらいかかる？)</strong>」は台湾旅行で毎日使えます！<br>• 「多久一次？ (どのくらいの頻度で？)」「等多久？ (どのくらい待つ？)」などの応用も簡単です（🇨🇳 大陸でも「多久」）。'
+      },
+      createdAt: 1792421545000 // 2026/10/19 23:52
+    },
+    {
+      traditional: '走路',
+      zhuyin: 'ㄗㄡˇ ㄌㄨˋ',
+      pinyin: 'zǒulù',
+      meaning: '歩く / 徒歩で行く',
+      example: '捷運站很近，走路五分鐘就到了。 (MRTの駅はとても近くて、歩いて5分で着きます)',
+      column: {
+        title: '🚶 移動手段の基本「走路」と台湾の街歩き！',
+        content: '• <strong>走 (行く・歩く)</strong>＋<strong>路 (道)</strong>＝歩く、徒歩で行く。<br>• 交通手段として「徒歩で行く」と言いたいときは「<strong>走路去 (ㄗㄡˇ ㄌㄨˋ ㄑㄩˋ)</strong>」と表現します。<br>• 台湾の街並みには雨や強い日差しを避けるアーケード状の歩道「<strong>騎樓 (ㄑㄧˊ ㄌㄡˊ)</strong>」があり、雨の日でも快適に「走路」を楽しめます！'
+      },
+      createdAt: 1792421544000 // 2026/10/19 23:52
+    },
+    {
+      traditional: '山豬',
+      zhuyin: 'ㄕㄢ ㄓㄨ',
+      pinyin: 'shānzhū',
+      meaning: 'イノシシ / 野生イノシシ',
+      example: '原住民部落有烤山豬肉，非常好吃！ (原住民族の村にはイノシシの炭火焼き肉があって、とても美味しいです！)',
+      column: {
+        title: '🐗 台湾名物グルメ「烤山豬肉」と先住民族文化！',
+        content: '• <strong>山 (山)</strong>＋<strong>豬 (豚)</strong>＝イノシシ（山にいる豚＝イノシシ）。<br>• 台湾の夜市や烏来（ウーライ）、花蓮・台東などの原住民（先住民族）エリアで絶対に外せない大人気グルメが「<strong>烤山豬肉 (ㄎㄠˇ ㄕㄢ ㄓㄨ ㄖㄡˋ / 焼きイノシシ肉)</strong>」です！<br>• 噛みごたえがあって旨みたっぷりの豚バラ肉のような味わいで、ニンニクや特製スパイスをつけていただきます（🇨🇳 大陸では「野豬 / yězhū」と呼ぶのが一般的）。'
+      },
+      createdAt: 1792421543000 // 2026/10/19 23:52
+    },
+    {
+      traditional: '跑',
+      zhuyin: 'ㄆㄠˇ',
+      pinyin: 'pǎo',
+      meaning: '走る / 駆ける',
+      example: '快點跑，公車要來了！ (早く走って、バスが来ちゃう！)',
+      column: {
+        title: '🏃 「跑」と「跑步」！台湾のスポーツ文化と日常表現',
+        content: '• <strong>跑</strong> 単体で「走る」という動詞。ジョギングやランニング運動そのものは「<strong>跑步 (ㄆㄠˇ ㄅㄨˋ)</strong>」と言います。<br>• また、台湾では色々な役所や店舗などを手続きのために駆け回ることを「<strong>跑流程 (手続きを回る)</strong>」や「<strong>到處跑 (あちこち駆け回る)</strong>」と表現します。<br>• 台湾では夜涼しくなってから中正紀念堂や公園の周りをランニング（夜跑）する人が大勢います！'
+      },
+      createdAt: 1792421542000 // 2026/10/19 23:52
+    },
+    {
+      traditional: '進來',
+      zhuyin: 'ㄐㄧㄣˋ ㄌㄞˊ',
+      pinyin: 'jìnlái',
+      meaning: '入ってくる / お入りください',
+      example: '外面很熱，快點進來吹冷氣！ (外はとても暑いから、早く入って冷房で涼んで！)',
+      column: {
+        title: '🚪 方向補語「進來」と親切な台湾のおもてなし！',
+        content: '• <strong>進 (入る)</strong>＋<strong>來 (来る)</strong>＝（話者の方へ）入ってくる。<br>• お店や友達の家で「どうぞ中へお入りください」と招かれるときは「<strong>請進 (ㄑㄧㄥˇ ㄐㄧˋ)</strong>」や「<strong>請進來！ (ㄑㄧㄥˇ ㄐㄧㄣˋ ㄌㄞˊ)</strong>」と温かく迎えてくれます。<br>• 台湾の人のフレンドリーなおもてなしの心を感じる頻出日常表現です（🇨🇳 大陸でも同様）。'
+      },
+      createdAt: 1792421541000 // 2026/10/19 23:52
+    },
+    {
+      traditional: '出去',
+      zhuyin: 'ㄔㄨ ㄑㄩˋ',
+      pinyin: 'chūqù',
+      meaning: '出ていく / 外出する / 出かける',
+      example: '今天天氣很好，我們出去走走吧！ (今日はとても天気がいいから、外に出て散歩しよう！)',
+      column: {
+        title: '🌤️ 「出去」と休日の定番お出かけフレーズ「出去玩」！',
+        content: '• <strong>出 (出る)</strong>＋<strong>去 (行く)</strong>＝（話者から離れて外へ）出ていく、出かける。<br>• 台湾で「週末遊びに行こうよ！」と誘う時の超定番フレーズは「<strong>我們週末出去玩吧！ (ㄨㄛˇ ˙ㄇㄣ ㄓㄡ ㄇㄛˋ ㄔㄨ ㄑㄩˋ ㄨㄢˊ ˙ㄅㄚ)</strong>」です。<br>• 「散歩する・ぶらぶらする」は「<strong>出去走走 (ㄔㄨ ㄑㄩˋ ㄗㄡˇ ㄗㄡˇ)</strong>」と言います。'
+      },
+      createdAt: 1792421540000 // 2026/10/19 23:52
+    },
+    {
       traditional: '冷氣',
       zhuyin: 'ㄌㄥˇ ㄑㄧˋ',
       pinyin: 'lěngqì',
@@ -1084,7 +1156,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v20';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v21';
 
   const ReviewManager = {
     getWords: function() {
@@ -1098,6 +1170,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v20',
             'taiwan_chinese_review_words_v19',
             'taiwan_chinese_review_words_v18',
             'taiwan_chinese_review_words_v17',
