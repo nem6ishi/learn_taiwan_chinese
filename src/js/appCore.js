@@ -207,6 +207,18 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '冷氣',
+      zhuyin: 'ㄌㄥˇ ㄑㄧˋ',
+      pinyin: 'lěngqì',
+      meaning: '冷房 / エアコン / クーラー',
+      example: '外面好熱，我們進去吹冷氣吧！ (外はとても暑いから、中に入って冷房で涼もう！)',
+      column: {
+        title: '❄️ 台湾の強烈な「冷氣（クーラー）」と「吹冷氣」カルチャー！',
+        content: '• <strong>冷 (冷たい)</strong>＋<strong>氣 (気・空気)</strong>＝冷房、クーラー、エアコン。<br>• 台湾ではエアコン（冷房）のことを一般に「<strong>冷氣 (ㄌㄥˇ ㄑㄧˋ)</strong>」と呼びます（🇨🇳 大陸では「空調 / kōngtiáo」と言うのが一般的）。<br>• 台湾のMRT、バス、カフェ、レストランは「<strong>冷氣超冷！ (クーラーがめちゃくちゃ寒い！)</strong>」ことで有名です。夏でもカーディガンなどの羽織りもの（薄外套）を持ち歩くのが台湾通！<br>• 定番表現：「<strong>開冷氣 (ㄎㄞ ㄌㄥˇ ㄑㄧˋ / クーラーをつける)</strong>」「<strong>關冷氣 (ㄍㄨㄢ ㄌㄥˇ ㄑㄧˋ / クーラーを消す)</strong>」「<strong>吹冷氣 (ㄔㄨㄟ ㄌㄥˇ ㄑㄧˋ / クーラーに当たる・涼む)</strong>」。'
+      },
+      createdAt: 1792421100000 // 2026/10/19 23:45
+    },
+    {
       traditional: '留學',
       zhuyin: 'ㄌㄧㄡˊ ㄒㄩㄝˊ',
       pinyin: 'liúxué',
@@ -1072,7 +1084,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v19';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v20';
 
   const ReviewManager = {
     getWords: function() {
@@ -1086,6 +1098,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v19',
             'taiwan_chinese_review_words_v18',
             'taiwan_chinese_review_words_v17',
             'taiwan_chinese_review_words_v16',
