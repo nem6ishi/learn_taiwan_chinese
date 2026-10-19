@@ -79,14 +79,14 @@ window.LYRICS_TOUMING_QUIZ = [
   },
   {
     targetSymbol: "満ちあふれている",
-    prompt: "「每天做著充滿桃色和香味的夢」の「充滿 (ㄔㄨㄥ ㄇㄢˇ)」の意味はどれ？",
+    prompt: "「重複做著充滿桃色和香味的夢」の「充滿 (ㄔㄨㄥ ㄇㄢˇ)」の意味はどれ？",
     options: [
       "満ちあふれている",
       "欠けている",
       "消えていく",
       "拒絶している"
     ],
-    speechTarget: "每天做著充滿桃色和香味的夢"
+    speechTarget: "重複做著充滿桃色和香味的夢"
   },
   {
     targetSymbol: "もっと激しく",
