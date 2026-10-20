@@ -22,11 +22,11 @@
         </a>
       </div>
       <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-        <a href="#zone-features" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.84rem; border-color: #F43F5E; color: #BE123C; background: #FFF1F2;">
-          ✨ 特集・現地カルチャー
-        </a>
         <a href="#atlas-curriculum" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.84rem;">
-          📚 基礎コース
+          📚 1〜4 基礎・会話コース
+        </a>
+        <a href="#zone-features" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.84rem; border-color: #FDBA74; color: #EA580C; background: #FFF7ED;">
+          🗺️ 5〜6 エリア・特集
         </a>
         <a href="zhuyin-chart.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.84rem;">
           📋 注音一覧
@@ -74,48 +74,16 @@
           </a>
         </div>
 
-        <!-- 2. 特集・テーマ別で学ぶ -->
-        <div class="sidebar-menu-title">✨ 特集・テーマ別で学ぶ</div>
-        <ul class="sidebar-menu" style="margin-bottom: 18px;">
-          <li class="sidebar-item">
-            <a href="#category-lyrics" class="sidebar-link" data-target="category-lyrics">
-              <span class="sidebar-link-content">
-                <span>🎵</span>
-                <span>台湾音楽・歌詞解説</span>
-              </span>
-              <span class="sidebar-link-badge" style="background: #FFE4E6; color: #BE123C;">人気</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a href="#category-5" class="sidebar-link" data-target="category-5">
-              <span class="sidebar-link-content">
-                <span>🗺️</span>
-                <span>台湾エリア別ガイド</span>
-              </span>
-              <span class="sidebar-link-badge" style="background: #D1FAE5; color: #065F46;">3都市</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a href="#category-3" class="sidebar-link" data-target="category-3">
-              <span class="sidebar-link-content">
-                <span>🧳</span>
-                <span>旅行・鉄道・現地文化</span>
-              </span>
-              <span class="sidebar-link-badge" style="background: #FEF3C7; color: #92400E;">3特集</span>
-            </a>
-          </li>
-        </ul>
-
-        <!-- 3. 基礎から順番に学ぶ -->
-        <div class="sidebar-menu-title">📚 基礎から順番に学ぶ</div>
-        <ul class="sidebar-menu">
+        <!-- 1. 基礎・会話・文法 (1〜4) -->
+        <div class="sidebar-menu-title" style="margin-top: 4px;">📚 基礎・会話・文法</div>
+        <ul class="sidebar-menu" style="margin-bottom: 16px;">
           <li class="sidebar-item">
             <a href="#category-1" class="sidebar-link" data-target="category-1">
               <span class="sidebar-link-content">
                 <span>🔤</span>
                 <span>1. 注音符号マスター</span>
               </span>
-              <span class="sidebar-link-badge">全9回</span>
+              <span class="sidebar-link-badge">全9回完結</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -128,12 +96,53 @@
             </a>
           </li>
           <li class="sidebar-item">
+            <a href="#category-3" class="sidebar-link" data-target="category-3">
+              <span class="sidebar-link-content">
+                <span>🧳</span>
+                <span>3. 旅行会話＆交通攻略</span>
+              </span>
+              <span class="sidebar-link-badge">2回公開</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
             <a href="#category-4" class="sidebar-link" data-target="category-4">
               <span class="sidebar-link-content">
                 <span>📐</span>
                 <span>4. 実用文法＆基本文型</span>
               </span>
               <span class="sidebar-link-badge">単語集</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- 2. エリア・カルチャー・特集 (5〜6, 音楽) -->
+        <div class="sidebar-menu-title">🗺️ エリア・カルチャー・特集</div>
+        <ul class="sidebar-menu" style="margin-bottom: 16px;">
+          <li class="sidebar-item">
+            <a href="#category-5" class="sidebar-link" data-target="category-5">
+              <span class="sidebar-link-content">
+                <span>🗺️</span>
+                <span>5. 台湾エリア別ガイド</span>
+              </span>
+              <span class="sidebar-link-badge" style="background: #FFEDD5; color: #C2410C;">4都市公開</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#category-6" class="sidebar-link" data-target="category-6">
+              <span class="sidebar-link-content">
+                <span>🍳</span>
+                <span>6. 現地ディープカルチャー</span>
+              </span>
+              <span class="sidebar-link-badge">朝食店公開</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#category-lyrics" class="sidebar-link" data-target="category-lyrics">
+              <span class="sidebar-link-content">
+                <span>🎵</span>
+                <span>特別特集｜台湾音楽歌詞</span>
+              </span>
+              <span class="sidebar-link-badge" style="background: #FFE4E6; color: #BE123C;">人気</span>
             </a>
           </li>
         </ul>
@@ -156,13 +165,13 @@
           
           <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
             <a href="step-1-1.html" class="btn btn-primary" style="padding: 9px 20px; font-size: 0.88rem;">
-              🚀 STEP 1-1 から基礎を始める
+              🚀 1. 注音の基礎から始める
             </a>
-            <a href="#zone-features" class="btn btn-outline" style="padding: 9px 20px; font-size: 0.88rem; border-color: #FECDD3; background: #FFF1F2; color: #BE123C;">
-              ✨ 特集・都市・歌詞から見る
+            <a href="#category-5" class="btn btn-outline" style="padding: 9px 20px; font-size: 0.88rem; border-color: #FDBA74; background: #FFF7ED; color: #EA580C;">
+              🗺️ 5. 台湾エリア別ガイド
             </a>
-            <a href="#atlas-curriculum" class="btn btn-outline" style="padding: 9px 20px; font-size: 0.88rem;">
-              📚 基礎カリキュラム一覧へ
+            <a href="#category-lyrics" class="btn btn-outline" style="padding: 9px 20px; font-size: 0.88rem; border-color: #FECDD3; background: #FFF1F2; color: #BE123C;">
+              🎵 音楽歌詞解説
             </a>
           </div>
         </div>
@@ -217,333 +226,16 @@
           </div>
         </section>
 
-        <!-- =========================================================================
-             ZONE 2: ✨ テーマ別・実践特集ゾーン（音楽・都市・旅行・カルチャー）
-             ========================================================================= -->
-        <div class="portal-zone" id="zone-features">
-          <div class="portal-zone-header">
-            <div class="portal-zone-title-wrap">
-              <div class="portal-zone-icon" style="background: #FFF1F2; border-color: #FECDD3;">✨</div>
-              <div>
-                <h2 class="portal-zone-title">テーマ別・実践特集で学ぶ</h2>
-                <p class="portal-zone-subtitle">台湾音楽の歌詞解説・エリア別ガイド・屋台や鉄道のリアル会話など、好きなテーマからすぐ学べます</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 特集サブ1: 🎵 台湾音楽・名曲歌詞解説 -->
-          <section class="feature-sub-section" id="category-lyrics">
-            <div class="feature-sub-header">
-              <h3 class="feature-sub-title">
-                <span>🎵 台湾音楽・名曲歌詞で学ぶ台湾華語</span>
-                <span class="pill-badge" style="background: #FFE4E6; color: #BE123C; border-color: #FECDD3;">SPECIAL</span>
-              </h3>
-            </div>
-
-            <div class="feature-grid">
-              <!-- 透明雜誌 - 性的地獄 -->
-              <a href="lyrics-touming-sexual-hell.html" class="feature-card" style="background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%); border-color: #FECDD3;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #F43F5E; color: #FFFFFF;">🎸 歌詞解説 第1弾</span>
-                    <span class="atlas-status-tag" style="color: #BE123C;">🔥 オルタナ・ロック</span>
-                  </div>
-                  <h4 class="feature-card-title" style="color: #881337;">透明雜誌〈性的地獄〉</h4>
-                  <p class="feature-card-desc" style="color: #9F1239;">
-                    「走在攝氏三十六度的台北街頭」。真夏の台北の熱気と鬱屈、若者の生々しい日常語・感情表現を全フレーズ音声＆注音付きで徹底解説！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #BE123C; border-top-color: rgba(254, 205, 211, 0.8);">
-                  <span>全16フレーズ・語彙解説・クイズ</span>
-                  <span>解説を読む →</span>
-                </div>
-              </a>
-
-              <!-- 歌詞ハブ＆バンド名鑑 -->
-              <a href="lyrics-index.html" class="feature-card">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #F1F5F9; color: #334155;">🎧 音楽ハブ＆名鑑</span>
-                    <span class="atlas-status-tag status-active">✨ 全10組＋聖地紹介</span>
-                  </div>
-                  <h4 class="feature-card-title">台湾インディーズ・ロック名鑑 ＆ 歌詞解説ハブ</h4>
-                  <p class="feature-card-desc">
-                    落日飛車・草東沒有派對・滅火器・宇宙人など必聴10バンド紹介と、台北レコードショップ＆ライブハウス聖地ガイド。
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: var(--color-primary);">
-                  <span>バンド音声・代表曲・カルチャー</span>
-                  <span>音楽ハブを開く →</span>
-                </div>
-              </a>
-            </div>
-          </section>
-
-          <!-- 特集サブ2: 🗺️ 台湾各地の名物・観光スポットマスター (CATEGORY 5) -->
-          <section class="feature-sub-section" id="category-5">
-            <div class="feature-sub-header">
-              <h3 class="feature-sub-title">
-                <span>🗺️ 台湾エリア別・名物＆観光スポットマスター</span>
-                <span class="pill-badge" style="background: #D1FAE5; color: #065F46; border-color: #A7F3D0;">CATEGORY 5</span>
-              </h3>
-            </div>
-
-            <div class="feature-grid">
-              <!-- 5-2 台中編 -->
-              <a href="step-5-2.html" class="feature-card" style="background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%); border-color: #FDBA74;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #EA580C; color: #FFFFFF;">STEP 5-2｜都市ガイド</span>
-                    <span class="atlas-status-tag" style="color: #C2410C;">✨ 全32語・NEW!</span>
-                  </div>
-                  <h4 class="feature-card-title" style="color: #7C2D12;">☀️ 台中編（Taichung）</h4>
-                  <p class="feature-card-desc" style="color: #9A3412;">
-                    文化城・台中の太陽餅、春水堂タピオカ発祥、東泉チリソース、逢甲夜市、宮原眼科、伊東豊雄の国家歌劇院、高美湿地、日月潭まで全32語完全網羅！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #EA580C; border-top-color: rgba(253, 186, 116, 0.8);">
-                  <span>全32キーワード・4会話・クイズ32問</span>
-                  <span>台中編を学ぶ →</span>
-                </div>
-              </a>
-
-              <!-- 5-3 嘉義編 -->
-              <a href="step-5-3.html" class="feature-card" style="background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%); border-color: #A7F3D0;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #10B981; color: #FFFFFF;">STEP 5-3｜都市ガイド</span>
-                    <span class="atlas-status-tag" style="color: #047857;">✅ 全32語・公開中</span>
-                  </div>
-                  <h4 class="feature-card-title" style="color: #064E3B;">🌲 嘉義編（Chiayi）</h4>
-                  <p class="feature-card-desc" style="color: #047857;">
-                    木都・嘉義の火雞肉飯、砂鍋魚頭、白醋涼麵、阿里山林鐵、檜意森活村、花磚博物館、奮起湖、關子嶺泥温泉、東石牡蠣まで全32語完全網羅！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #047857; border-top-color: rgba(167, 243, 208, 0.8);">
-                  <span>全32キーワード・4会話・クイズ32問</span>
-                  <span>嘉義編を学ぶ →</span>
-                </div>
-              </a>
-
-              <!-- 5-4 台南編 -->
-              <a href="step-5-4.html" class="feature-card" style="background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border-color: #FCD34D;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #B45309; color: #FFFFFF;">STEP 5-4｜都市ガイド</span>
-                    <span class="atlas-status-tag" style="color: #9A3412;">✅ 全32語・公開中</span>
-                  </div>
-                  <h4 class="feature-card-title" style="color: #78350F;">🏯 台南編（Tainan）</h4>
-                  <p class="feature-card-desc" style="color: #9A3412;">
-                    古都「府城」の温体牛肉湯、鱔魚意麵、蝦仁飯、碗粿、安平古堡、赤崁樓、神農街、林百貨、奇美博物館、四草緑色隧道、玉井マンゴーまで全32語！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #B45309; border-top-color: rgba(252, 211, 77, 0.8);">
-                  <span>全32キーワード・4会話・クイズ32問</span>
-                  <span>台南編を学ぶ →</span>
-                </div>
-              </a>
-
-              <!-- 5-5 高雄編 -->
-              <a href="step-5-5.html" class="feature-card" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); border-color: #BAE6FD;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #0284C7; color: #FFFFFF;">STEP 5-5｜都市ガイド</span>
-                    <span class="atlas-status-tag" style="color: #0369A1;">✅ 全32語・公開中</span>
-                  </div>
-                  <h4 class="feature-card-title" style="color: #0F172A;">⚓ 高雄編（Kaohsiung）</h4>
-                  <p class="feature-card-desc" style="color: #0369A1;">
-                    港都・高雄の駁二アート特区、旗津フェリー、蓮池潭、美麗島駅、鴨肉飯、丹丹漢堡、さらに小琉球ウミガメ、美濃、佛光山、月世界まで全32語！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #0284C7; border-top-color: rgba(186, 230, 253, 0.8);">
-                  <span>全32キーワード・4会話・クイズ32問</span>
-                  <span>高雄編を学ぶ →</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Category 5 未公開都市（小型・控えめカード一覧） -->
-            <div class="mini-locked-section">
-              <div class="mini-locked-label">🔒 順次公開予定のエリアガイド（5都市）</div>
-              <div class="mini-locked-grid">
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 5-1</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🗼 台北編（Taipei）</div>
-                  <div class="mini-locked-desc">小籠包, 牛肉麵, 故宮, 台北101, 迪化街, 九份</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 5-6</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🌾 台東編（Taitung）</div>
-                  <div class="mini-locked-desc">池上便當, 釋迦頭, 鐵花村, 三仙台, 伯朗大道</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 5-7</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🌊 花蓮編（Hualien）</div>
-                  <div class="mini-locked-desc">太魯閣渓谷, 七星潭, 炸彈蔥油餅, 扁食</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 5-8</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">♨️ 宜蘭編（Yilan）</div>
-                  <div class="mini-locked-desc">礁溪温泉, 三星蔥油餅, 櫻桃鴨, 羅東夜市</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 5-9</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🏝️ 澎湖諸島編（Penghu）</div>
-                  <div class="mini-locked-desc">柱状玄武岩, 雙心石滬, サボテンアイス</div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- 特集サブ3: 🧳 台湾旅行・鉄道攻略 ＆ 現地ディープカルチャー (CATEGORY 3 & 6) -->
-          <section class="feature-sub-section" id="category-3">
-            <div id="category-6"></div>
-            <div class="feature-sub-header">
-              <h3 class="feature-sub-title">
-                <span>🧳 台湾旅行・グルメ注文・鉄道 ＆ 現地ディープカルチャー</span>
-                <span class="pill-badge" style="background: #FEF3C7; color: #92400E; border-color: #FDE68A;">CATEGORY 3 &amp; 6</span>
-              </h3>
-              <a href="category-3-words.html" class="vocab-pill-link">📖 Cat.3 単語一覧 →</a>
-            </div>
-
-            <div class="feature-grid">
-              <!-- 3-1 飲食店・夜市での注文会話 -->
-              <a href="step-3-1.html" class="feature-card">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: var(--color-primary-light); color: var(--color-primary);">STEP 3-1｜旅行会話</span>
-                    <span class="atlas-status-tag status-active">✅ 公開中</span>
-                  </div>
-                  <h4 class="feature-card-title">🧋 飲食店・夜市での注文会話</h4>
-                  <p class="feature-card-desc">
-                    「內用（イートイン）/ 外帶（持ち帰り）」「微糖去冰」など、屋台・食堂・ドリンクスタンドで必須の実践フレーズ。
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: var(--color-primary);">
-                  <span>注文ロールプレイ・音声クイズ</span>
-                  <span>学習を開始 →</span>
-                </div>
-              </a>
-
-              <!-- 3-4 台灣鉄道（TRA）完全攻略 -->
-              <a href="step-3-4.html" class="feature-card" style="background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%); border-color: #BFDBFE;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #2563EB; color: #FFFFFF;">STEP 3-4｜交通攻略</span>
-                    <span class="atlas-status-tag status-active">✅ 公開中</span>
-                  </div>
-                  <h4 class="feature-card-title">🚆 台灣鉄道（TRA）完全攻略 ＆ 駅会話</h4>
-                  <p class="feature-card-desc">
-                    自強號・新自強3000・區間車の違い、切符購入、悠遊卡での乗車ワザ、月台（ホーム）確認、名物「台鐵排骨便當」まで！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #1D4ED8;">
-                  <span>列車種別・窓口会話・駅弁文化</span>
-                  <span>台鉄攻略を学ぶ →</span>
-                </div>
-              </a>
-
-              <!-- 6-1 早餐店（朝ごはん屋）完全攻略 -->
-              <a href="step-6-1.html" class="feature-card" style="background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border-color: #FDE68A;">
-                <div>
-                  <div class="feature-card-top">
-                    <span class="feature-tag" style="background: #F59E0B; color: #FFFFFF;">STEP 6-1｜現地文化</span>
-                    <span class="atlas-status-tag" style="color: #B45309;">✅ 公開中</span>
-                  </div>
-                  <h4 class="feature-card-title" style="color: #78350F;">🍳 早餐店（朝ごはん屋）完全攻略</h4>
-                  <p class="feature-card-desc" style="color: #92400E;">
-                    蛋餅・飯糰・蘿蔔糕・鹹豆漿・大冰奶の注文から、「加蛋」「不要油條」「加辣」のカスタム術まで徹底マスター！
-                  </p>
-                </div>
-                <div class="feature-card-footer" style="color: #B45309; border-top-color: rgba(253, 230, 138, 0.9);">
-                  <span>台湾朝食メニュー・カスタム会話</span>
-                  <span>朝食攻略を学ぶ →</span>
-                </div>
-              </a>
-            </div>
-
-            <!-- Category 3 & 6 未公開（小型・控えめカード一覧） -->
-            <div class="mini-locked-section">
-              <div class="mini-locked-label">🔒 順次公開予定の旅行・ディープカルチャー編（6テーマ）</div>
-              <div class="mini-locked-grid">
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 3-2</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🥤 ドリンクカスタム注文</div>
-                  <div class="mini-locked-desc">半糖, 去冰 などのドリンクスタンド表現</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 3-3</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🚕 タクシー・移動表現</div>
-                  <div class="mini-locked-desc">這裡停, 捷運, バスなどの交通移動</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 6-2</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🛕 拜拜（お寺参拝とおみくじ）</div>
-                  <div class="mini-locked-desc">月老, 擲筊, 聖筊, 求籤, 入龍門出虎口</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 6-3</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🍻 熱炒（台湾式大衆居酒屋）</div>
-                  <div class="mini-locked-desc">鳳梨蝦球, 炒水蓮, 客家小炒, 呼乾啦</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 6-4</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🏮 伝統三大節句 ＆ 季節の風習</div>
-                  <div class="mini-locked-desc">春節・紅包, 端午節・肉粽, 中秋節BBQ</div>
-                </div>
-                <div class="mini-locked-card">
-                  <div class="mini-locked-top">
-                    <span class="mini-locked-code">STEP 6-5</span>
-                    <span class="mini-locked-status">🔒 順次公開</span>
-                  </div>
-                  <div class="mini-locked-title">🎁 生活マナー ＆ 縁起とタブー</div>
-                  <div class="mini-locked-desc">送鐘/送傘タブー, 紅包マナー, 請客文化</div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <!-- =========================================================================
-             ZONE 3: 📚 基礎ステップコース（スリム＆一覧性の高いステップリスト表示）
+                <!-- =========================================================================
+             ZONE 2: 📚 基礎・会話・文法ステップコース（CATEGORY 1 〜 4）
              ========================================================================= -->
         <div class="portal-zone" id="atlas-curriculum">
           <div class="portal-zone-header">
             <div class="portal-zone-title-wrap">
               <div class="portal-zone-icon" style="background: #EFF6FF; border-color: #BFDBFE;">📚</div>
               <div>
-                <h2 class="portal-zone-title">基礎ステップコース（順番に積み上げる）</h2>
-                <p class="portal-zone-subtitle">未習得の文字が出ない「子音＋母音」ステップ方式で、発音・注音符号・基本文法を体系的にマスター</p>
+                <h2 class="portal-zone-title">基礎・会話・文法ステップコース（順番に学ぶ）</h2>
+                <p class="portal-zone-subtitle">注音符号の基本から、日常会話・旅行フレーズ・文型まで体系的にステップアップ</p>
               </div>
             </div>
           </div>
@@ -746,6 +438,78 @@
             </div>
           </section>
 
+          <!-- カテゴリー 3: 🧳 台湾旅行・グルメ注文 ＆ 交通攻略 -->
+          <section class="feature-sub-section" id="category-3" style="margin-bottom: 36px;">
+            <div class="feature-sub-header">
+              <h3 class="feature-sub-title">
+                <span>🧳 3. 台湾旅行・グルメ注文 ＆ 交通攻略</span>
+                <span class="pill-badge" style="background: #FEF3C7; color: #92400E; border-color: #FDE68A;">CATEGORY 3</span>
+              </h3>
+              <a href="category-3-words.html" class="vocab-pill-link">📖 Cat.3 登場単語一覧 →</a>
+            </div>
+
+            <div class="feature-grid">
+              <!-- 3-1 飲食店・夜市での注文会話 -->
+              <a href="step-3-1.html" class="feature-card">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: var(--color-primary-light); color: var(--color-primary);">STEP 3-1｜旅行会話</span>
+                    <span class="atlas-status-tag status-active">✅ 公開中</span>
+                  </div>
+                  <h4 class="feature-card-title">🧋 飲食店・夜市での注文会話</h4>
+                  <p class="feature-card-desc">
+                    「內用（イートイン）/ 外帶（持ち帰り）」「微糖去冰」など、屋台・食堂・ドリンクスタンドで必須の実践フレーズ。
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: var(--color-primary);">
+                  <span>注文ロールプレイ・音声クイズ</span>
+                  <span>学習を開始 →</span>
+                </div>
+              </a>
+
+              <!-- 3-4 台灣鉄道（TRA）完全攻略 -->
+              <a href="step-3-4.html" class="feature-card" style="background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%); border-color: #BFDBFE;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #2563EB; color: #FFFFFF;">STEP 3-4｜交通攻略</span>
+                    <span class="atlas-status-tag status-active">✅ 公開中</span>
+                  </div>
+                  <h4 class="feature-card-title">🚆 台灣鉄道（TRA）完全攻略 ＆ 駅会話</h4>
+                  <p class="feature-card-desc">
+                    自強號・新自強3000・區間車の違い、切符購入、悠遊卡での乗車ワザ、月台（ホーム）確認、名物「台鐵排骨便當」まで！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #1D4ED8;">
+                  <span>列車種別・窓口会話・駅弁文化</span>
+                  <span>台鉄攻略を学ぶ →</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Category 3 未公開（小型・控えめカード一覧） -->
+            <div class="mini-locked-section">
+              <div class="mini-locked-label">🔒 順次公開予定の旅行・交通編（2テーマ）</div>
+              <div class="mini-locked-grid">
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 3-2</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🥤 ドリンクカスタム注文</div>
+                  <div class="mini-locked-desc">半糖, 去冰 などのドリンクスタンド表現</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 3-3</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🚕 タクシー・移動表現</div>
+                  <div class="mini-locked-desc">這裡停, 捷運, バスなどの交通移動</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <!-- カテゴリー 4: 実用文法 ＆ 基本文型 -->
           <section class="category-section" id="category-4" style="margin-bottom: 16px;">
             <div class="feature-sub-header">
@@ -785,6 +549,270 @@
           </section>
 
         </div> <!-- /#atlas-curriculum -->
+
+        <!-- =========================================================================
+             ZONE 3: 🗺️ エリア別ガイド・現地カルチャー ＆ 特別特集（CATEGORY 5 〜 6 ＆ 音楽）
+             ========================================================================= -->
+        <div class="portal-zone" id="zone-features">
+          <div class="portal-zone-header">
+            <div class="portal-zone-title-wrap">
+              <div class="portal-zone-icon" style="background: #FFF1F2; border-color: #FECDD3;">🗺️</div>
+              <div>
+                <h2 class="portal-zone-title">エリア別ガイド・現地カルチャー ＆ 特別特集</h2>
+                <p class="portal-zone-subtitle">台湾各地の都市ガイド、朝食店や夜市のディープ文化、台湾インディー音楽の歌詞解説</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- カテゴリー 5: 🗺️ 台湾各地の名物・観光スポットマスター (CATEGORY 5) -->
+          <section class="feature-sub-section" id="category-5" style="margin-bottom: 36px;">
+            <div class="feature-sub-header">
+              <h3 class="feature-sub-title">
+                <span>🗺️ 5. 台湾エリア別・名物＆観光スポットマスター</span>
+                <span class="pill-badge" style="background: #D1FAE5; color: #065F46; border-color: #A7F3D0;">CATEGORY 5</span>
+              </h3>
+            </div>
+
+            <div class="feature-grid">
+              <!-- 5-2 台中編 -->
+              <a href="step-5-2.html" class="feature-card" style="background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%); border-color: #FDBA74;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #EA580C; color: #FFFFFF;">STEP 5-2｜都市ガイド</span>
+                    <span class="atlas-status-tag" style="color: #C2410C;">✨ 全32語・NEW!</span>
+                  </div>
+                  <h4 class="feature-card-title" style="color: #7C2D12;">☀️ 台中編（Taichung）</h4>
+                  <p class="feature-card-desc" style="color: #9A3412;">
+                    文化城・台中の太陽餅、春水堂タピオカ発祥、東泉チリソース、逢甲夜市、宮原眼科、伊東豊雄の国家歌劇院、高美湿地、日月潭まで全32語完全網羅！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #EA580C; border-top-color: rgba(253, 186, 116, 0.8);">
+                  <span>全32キーワード・4会話・クイズ32問</span>
+                  <span>台中編を学ぶ →</span>
+                </div>
+              </a>
+
+              <!-- 5-3 嘉義編 -->
+              <a href="step-5-3.html" class="feature-card" style="background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%); border-color: #A7F3D0;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #10B981; color: #FFFFFF;">STEP 5-3｜都市ガイド</span>
+                    <span class="atlas-status-tag" style="color: #047857;">✅ 全32語・公開中</span>
+                  </div>
+                  <h4 class="feature-card-title" style="color: #064E3B;">🌲 嘉義編（Chiayi）</h4>
+                  <p class="feature-card-desc" style="color: #047857;">
+                    木都・嘉義の火雞肉飯、砂鍋魚頭、白醋涼麵、阿里山林鐵、檜意森活村、花磚博物館、奮起湖、關子嶺泥温泉、東石牡蠣まで全32語完全網羅！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #047857; border-top-color: rgba(167, 243, 208, 0.8);">
+                  <span>全32キーワード・4会話・クイズ32問</span>
+                  <span>嘉義編を学ぶ →</span>
+                </div>
+              </a>
+
+              <!-- 5-4 台南編 -->
+              <a href="step-5-4.html" class="feature-card" style="background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border-color: #FCD34D;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #B45309; color: #FFFFFF;">STEP 5-4｜都市ガイド</span>
+                    <span class="atlas-status-tag" style="color: #9A3412;">✅ 全32語・公開中</span>
+                  </div>
+                  <h4 class="feature-card-title" style="color: #78350F;">🏯 台南編（Tainan）</h4>
+                  <p class="feature-card-desc" style="color: #9A3412;">
+                    古都「府城」の温体牛肉湯、鱔魚意麵、蝦仁飯、碗粿、安平古堡、赤崁樓、神農街、林百貨、奇美博物館、四草緑色隧道、玉井マンゴーまで全32語！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #B45309; border-top-color: rgba(252, 211, 77, 0.8);">
+                  <span>全32キーワード・4会話・クイズ32問</span>
+                  <span>台南編を学ぶ →</span>
+                </div>
+              </a>
+
+              <!-- 5-5 高雄編 -->
+              <a href="step-5-5.html" class="feature-card" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); border-color: #BAE6FD;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #0284C7; color: #FFFFFF;">STEP 5-5｜都市ガイド</span>
+                    <span class="atlas-status-tag" style="color: #0369A1;">✅ 全32語・公開中</span>
+                  </div>
+                  <h4 class="feature-card-title" style="color: #0F172A;">⚓ 高雄編（Kaohsiung）</h4>
+                  <p class="feature-card-desc" style="color: #0369A1;">
+                    港都・高雄の駁二アート特区、旗津フェリー、蓮池潭、美麗島駅、鴨肉飯、丹丹漢堡、さらに小琉球ウミガメ、美濃、佛光山、月世界まで全32語！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #0284C7; border-top-color: rgba(186, 230, 253, 0.8);">
+                  <span>全32キーワード・4会話・クイズ32問</span>
+                  <span>高雄編を学ぶ →</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Category 5 未公開都市（小型・控えめカード一覧） -->
+            <div class="mini-locked-section">
+              <div class="mini-locked-label">🔒 順次公開予定のエリアガイド（5都市）</div>
+              <div class="mini-locked-grid">
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 5-1</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🗼 台北編（Taipei）</div>
+                  <div class="mini-locked-desc">小籠包, 牛肉麵, 故宮, 台北101, 迪化街, 九份</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 5-6</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🌾 台東編（Taitung）</div>
+                  <div class="mini-locked-desc">池上便當, 釋迦頭, 鐵花村, 三仙台, 伯朗大道</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 5-7</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🌊 花蓮編（Hualien）</div>
+                  <div class="mini-locked-desc">太魯閣渓谷, 七星潭, 炸彈蔥油餅, 扁食</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 5-8</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">♨️ 宜蘭編（Yilan）</div>
+                  <div class="mini-locked-desc">礁溪温泉, 三星蔥油餅, 櫻桃鴨, 羅東夜市</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 5-9</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🏝️ 澎湖諸島編（Penghu）</div>
+                  <div class="mini-locked-desc">柱状玄武岩, 雙心石滬, サボテンアイス</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- カテゴリー 6: 🍳 現地ディープカルチャー ＆ 台湾生活リアル体験 -->
+          <section class="feature-sub-section" id="category-6" style="margin-bottom: 36px;">
+            <div class="feature-sub-header">
+              <h3 class="feature-sub-title">
+                <span>🍳 6. 現地ディープカルチャー ＆ 台湾生活リアル体験</span>
+                <span class="pill-badge" style="background: #FFFBEB; color: #B45309; border-color: #FDE68A;">CATEGORY 6</span>
+              </h3>
+            </div>
+
+            <div class="feature-grid">
+              <!-- 6-1 早餐店（朝ごはん屋）完全攻略 -->
+              <a href="step-6-1.html" class="feature-card" style="background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border-color: #FDE68A;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #F59E0B; color: #FFFFFF;">STEP 6-1｜現地文化</span>
+                    <span class="atlas-status-tag" style="color: #B45309;">✅ 公開中</span>
+                  </div>
+                  <h4 class="feature-card-title" style="color: #78350F;">🍳 早餐店（朝ごはん屋）完全攻略</h4>
+                  <p class="feature-card-desc" style="color: #92400E;">
+                    蛋餅・飯糰・蘿蔔糕・鹹豆漿・大冰奶の注文から、「加蛋」「不要油條」「加辣」のカスタム術まで徹底マスター！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #B45309; border-top-color: rgba(253, 230, 138, 0.9);">
+                  <span>台湾朝食メニュー・カスタム会話</span>
+                  <span>朝食攻略を学ぶ →</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Category 6 未公開（小型・控えめカード一覧） -->
+            <div class="mini-locked-section">
+              <div class="mini-locked-label">🔒 順次公開予定のディープカルチャー編（4テーマ）</div>
+              <div class="mini-locked-grid">
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 6-2</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🛕 拜拜（お寺参拝とおみくじ）</div>
+                  <div class="mini-locked-desc">月老, 擲筊, 聖筊, 求籤, 入龍門出虎口</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 6-3</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🍻 熱炒（台湾式大衆居酒屋）</div>
+                  <div class="mini-locked-desc">鳳梨蝦球, 炒水蓮, 客家小炒, 呼乾啦</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 6-4</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🏮 伝統三大節句 ＆ 季節の風習</div>
+                  <div class="mini-locked-desc">春節・紅包, 端午節・肉粽, 中秋節BBQ</div>
+                </div>
+                <div class="mini-locked-card">
+                  <div class="mini-locked-top">
+                    <span class="mini-locked-code">STEP 6-5</span>
+                    <span class="mini-locked-status">🔒 順次公開</span>
+                  </div>
+                  <div class="mini-locked-title">🎁 生活マナー ＆ 縁起とタブー</div>
+                  <div class="mini-locked-desc">送鐘/送傘タブー, 紅包マナー, 請客文化</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 特別特集: 🎵 台湾音楽・名曲歌詞解説 -->
+          <section class="feature-sub-section" id="category-lyrics" style="margin-bottom: 24px;">
+            <div class="feature-sub-header">
+              <h3 class="feature-sub-title">
+                <span>🎵 特別特集｜台湾音楽・名曲歌詞で学ぶ台湾華語</span>
+                <span class="pill-badge" style="background: #FFE4E6; color: #BE123C; border-color: #FECDD3;">SPECIAL</span>
+              </h3>
+            </div>
+
+            <div class="feature-grid">
+              <!-- 透明雜誌 - 性的地獄 -->
+              <a href="lyrics-touming-sexual-hell.html" class="feature-card" style="background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%); border-color: #FECDD3;">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: #F43F5E; color: #FFFFFF;">🎸 歌詞解説 第1弾</span>
+                    <span class="atlas-status-tag" style="color: #BE123C;">🔥 オルタナ・ロック</span>
+                  </div>
+                  <h4 class="feature-card-title" style="color: #881337;">透明雜誌〈性的地獄〉</h4>
+                  <p class="feature-card-desc" style="color: #9F1239;">
+                    「走在攝氏三十六度的台北街頭」。真夏の台北の熱気と鬱屈、若者の生々しい日常語・感情表現を全フレーズ音声＆注音付きで徹底解説！
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: #BE123C; border-top-color: rgba(254, 205, 211, 0.8);">
+                  <span>全16フレーズ・語彙解説・クイズ</span>
+                  <span>解説を読む →</span>
+                </div>
+              </a>
+
+              <!-- 台湾インディー音楽カルチャーハブ -->
+              <a href="lyrics-index.html" class="feature-card">
+                <div>
+                  <div class="feature-card-top">
+                    <span class="feature-tag" style="background: var(--color-primary-light); color: var(--color-primary);">🎧 音楽ハブ</span>
+                    <span class="atlas-status-tag status-active">✨ 特集ポータル</span>
+                  </div>
+                  <h4 class="feature-card-title">台湾インディー音楽 ＆ 歌詞ポータル</h4>
+                  <p class="feature-card-desc">
+                    落日飛車・草東沒有派對・滅火器・宇宙人など必聴10バンド紹介と、台北レコードショップ＆ライブハウス聖地ガイド。
+                  </p>
+                </div>
+                <div class="feature-card-footer" style="color: var(--color-primary);">
+                  <span>バンド音声・代表曲・カルチャー</span>
+                  <span>音楽ハブを開く →</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+        </div> <!-- /#zone-features -->
 
       </div> <!-- /.main-content-area -->
     </div> <!-- /.layout-with-sidebar -->
