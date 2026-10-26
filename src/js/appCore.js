@@ -207,6 +207,90 @@
   // ==================== 復習単語帳 管理モジュール ====================
   const DEFAULT_REVIEW_WORDS = [
     {
+      traditional: '風景',
+      zhuyin: 'ㄈㄥ ㄐㄧㄥˇ',
+      pinyin: 'fēngjǐng',
+      meaning: '風景 / 景色',
+      example: '這裡的風景真的很漂亮，隨便拍都像明信片一樣。 (ここの風景は本当に綺麗で、適当に撮ってもまるでポストカードのようです)',
+      column: {
+        title: '🏞️ 台湾の大自然や名所を満喫！「風景（景色）」',
+        content: '• <strong>風景 (ㄈㄥ ㄐㄧㄥˇ)</strong>：景色、自然や街の風景。<br>• 台湾には九份のレトロな街並みや日月潭、花蓮の太魯閣（タロコ）渓谷、阿里山の日の出・雲海など、息をのむ絶景がたくさんあります。「<strong>這裡的風景太美了！ (ここの風景は美しすぎます！)</strong>」と感動を伝える時にぴったりです。<br>• 夜景を見に行くときは「<strong>看夜景 (ㄎㄢˋ ㄧㄝˋ ㄐㄧㄥˇ)</strong>」と言います（台北の象山や陽明山が有名です）。'
+      },
+      createdAt: 1793024527000 // 2026/10/26 23:22
+    },
+    {
+      traditional: '找',
+      zhuyin: 'ㄓㄠˇ',
+      pinyin: 'zhǎo',
+      meaning: '探す / 見つける / お釣りを渡す (找錢)',
+      example: '我在找我的悠遊卡，你有看到嗎？ (悠遊カードを探しているのですが、見かけませんでしたか？)',
+      column: {
+        title: '🔍 「探す」と、台湾の買い物で必須の「お釣りを返す (找錢)」！',
+        content: '• <strong>找 (ㄓㄠˇ)</strong> は「探す」の基本動詞（找人＝人を探す、找手機＝スマホを探す）。見つかった時は結果補語をつけて「<strong>找到了！ (ㄓㄠˇ ㄉㄠˋ ㄌㄜ˙ / 見つかった！)</strong>」と言います。<br>• また台湾のお店・夜市・タクシーで必ず耳にするのが「お釣りを渡す」という意味の「<strong>找錢 (ㄓㄠˇ ㄑㄧㄢˊ)</strong>」です！「<strong>找你五十塊 (50元のお釣りです)</strong>」のように日常で毎日使われます（🇨🇳 大陸でも同様）。'
+      },
+      createdAt: 1793024526000 // 2026/10/26 23:22
+    },
+    {
+      traditional: '來，開動了',
+      zhuyin: 'ㄌㄞˊ ， ㄎㄞ ㄉㄨㄥˋ ㄌㄜ˙',
+      pinyin: 'lái, kāidòng le',
+      meaning: 'さあ、食べましょう！ / いただきます！（食事開始の合図）',
+      example: '菜都上齊了，大家來，開動了！ (料理が全部揃いましたよ、みなさんさあ、食べましょう！)',
+      column: {
+        title: '🥢 「いただきます！」の合図！「來，開動了（さあ食べましょう）」',
+        content: '• 台湾華語（中国語）には日本語の「いただきます」に1対1で完全一致する決まり文句はありませんが、食事を始める時の合図として「<strong>開動 (ㄎㄞ ㄉㄨㄥˋ)</strong>」が広く使われます。<br>• テーブルに料理が揃った時に「<strong>來，開動了！</strong>」や「<strong>大家開動囉！ (ㄎㄞ ㄉㄨㄥˋ ㄌㄨㄛ˙)</strong>」と声をかけることで、「さあ食べよう！」「いただきます！」のニュアンスになります。<br>• もてなす側やお店の人は「<strong>趁熱吃 (ㄔㄣˋ ㄖㄜˋ ㄔ / 温かいうちに食べてね)</strong>」や「<strong>慢慢吃 / 慢用 (ごゆっくりどうぞ)</strong>」と声をかけるのが台湾のあたたかい定番文化です。'
+      },
+      createdAt: 1793024525000 // 2026/10/26 23:22
+    },
+    {
+      traditional: '拿',
+      zhuyin: 'ㄋㄚˊ',
+      pinyin: 'ná',
+      meaning: '持つ / 手に取る / 持ってくる・持っていく',
+      example: '這個行李箱有點重，我幫你拿吧。 (このスーツケースは少し重いので、私が持ってあげるよ)',
+      column: {
+        title: '✋ 手で物を持つ・取る！超頻出動詞「拿」',
+        content: '• <strong>拿 (ㄋㄚˊ)</strong>：手で持つ、手に取る。<br>• 台湾の日常生活で最もよく使われる動詞の1つで、方向補語と組み合わせて「<strong>拿來 (ㄋㄚˊ ㄌㄞˊ / こっちに持ってきて)</strong>」「<strong>拿去 (ㄋㄚˊ ㄑㄩˋ / 持っていって)</strong>」とよく言います。<br>• 荷物を持ってほしい時は「<strong>請幫我拿一下 (ちょっとこれ持ってて)</strong>」、お店や屋台でセルフサービスの時は「<strong>需要餐具請自己拿 (食器はご自分で取ってください)</strong>」と案内されます。'
+      },
+      createdAt: 1793024524000 // 2026/10/26 23:22
+    },
+    {
+      traditional: '鑰匙',
+      zhuyin: 'ㄧㄠˋ ㄕ˙',
+      pinyin: 'yàoshi',
+      meaning: '鍵（キー）',
+      example: '出門前記得帶鑰匙，不要把自己鎖在門外了！ (出かける前に鍵を持つのを忘れないで、締め出されないようにね！)',
+      column: {
+        title: '🔑 ホテルや日常で必須！「鑰匙（鍵）」',
+        content: '• <strong>鑰匙 (ㄧㄠˋ ㄕ˙)</strong>：部屋や乗り物、ロッカーなどの「鍵（キー）」。<br>• ホテルや民宿で「<strong>房間鑰匙 (部屋の鍵)</strong>」「<strong>車鑰匙 (車のキー)</strong>」。フロントに預ける時は「<strong>寄放鑰匙 (ㄐㄧˋ ㄈㄤˋ ㄧㄠˋ ㄕ˙)</strong>」、返す時は「<strong>還鑰匙 (ㄏㄨㄢˊ ㄧㄠˋ ㄕ˙)</strong>」と言います。<br>• ※近年はカードキーも普及しており、カードキーのことは「<strong>房卡 (ㄈㄤˊ ㄎㄚˇ)</strong>」や「<strong>感應卡 (ㄍㄢˇ ㄧㄥˋ ㄎㄚˇ)</strong>」と呼びます。'
+      },
+      createdAt: 1793024523000 // 2026/10/26 23:22
+    },
+    {
+      traditional: '換',
+      zhuyin: 'ㄏㄨㄢˋ',
+      pinyin: 'huàn',
+      meaning: '交換する / 取り替える / 両替する / 乗り換える',
+      example: '我們可以換一下座位嗎？我想看窗外的風景。 (席を交換してもらえますか？窓の外の風景を見たいんです)',
+      column: {
+        title: '🔄 両替・乗り換え・交換！万能動詞「換」',
+        content: '• <strong>換 (ㄏㄨㄢˋ)</strong>：交換する、取り替える。<br>• 台湾旅行・生活で大活躍する万能動詞です：<br>① <strong>両替する</strong>：「<strong>換錢 (ㄏㄨㄢˋ ㄑㄧㄢˊ)</strong>」「<strong>用日幣換台幣 (日本円を台湾ドルに両替する)</strong>」<br>② <strong>乗り換える</strong>：「<strong>在台北車站換捷運 (台北駅でMRTに乗り換える)</strong>」「<strong>換車 (乗り換え)</strong>」<br>③ <strong>交換する</strong>：「<strong>換名片 (名刺交換)</strong>」「<strong>換座位 (席を代わる)</strong>」「<strong>換衣服 (着替える)</strong>」。'
+      },
+      createdAt: 1793024522000 // 2026/10/26 23:22
+    },
+    {
+      traditional: '名片',
+      zhuyin: 'ㄇㄧㄥˊ ㄆㄧㄢˋ',
+      pinyin: 'míngpiàn',
+      meaning: '名刺',
+      example: '這是我的名片，請多指教。 (これは私の名刺です、どうぞよろしくお願いします)',
+      column: {
+        title: '📇 ビジネスや挨拶の必須アイテム！「名片（名刺）」',
+        content: '• <strong>名 (名前)</strong>＋<strong>片 (カード・薄い札)</strong>＝名刺。<br>• 名刺を渡す時は「<strong>遞名片 (ㄉㄧˋ ㄇㄧㄥˊ ㄆㄧㄢˋ)</strong>」または「<strong>給名片</strong>」、名刺を交換する時は「<strong>交換名片 (ㄐㄧㄠ ㄏㄨㄢˋ ㄇㄧㄥˊ ㄆㄧㄢˋ)</strong>」と言います。<br>• 台湾でも名刺を渡す・受け取る時は両手を添えるのが丁寧なマナーです。「<strong>這是我的名片，請多指教 (私の名刺です、よろしくお願いします)</strong>」と笑顔で挨拶しましょう。'
+      },
+      createdAt: 1793024521000 // 2026/10/26 23:22
+    },
+    {
       traditional: '站',
       zhuyin: 'ㄓㄢˋ',
       pinyin: 'zhàn',
@@ -939,18 +1023,6 @@
       createdAt: 1789143951000 // 2026/09/12 01:26
     },
     {
-      traditional: '找',
-      zhuyin: 'ㄓㄠˇ',
-      pinyin: 'zhǎo',
-      meaning: '探す / 見つける / お釣りを渡す (找錢)',
-      example: '你在找什麼？ (何を探しているのですか？)',
-      column: {
-        title: '🔍 「探す」と、台湾の買い物で必須の「お釣りを返す (找錢)」！',
-        content: '• <strong>找 (ㄓㄠˇ)</strong> は「〜を探す」という動詞（找人＝人を探す、找手機＝スマホを探す）。<br>• また台湾のお店・夜市で絶対耳にするのが「お釣りを渡す」という意味の「<strong>找錢 (ㄓㄠˇ ㄑㄧㄢˊ)</strong>」です！例えば「找你五十塊（50元のお釣りです）」のように使われます。'
-      },
-      createdAt: 1789143950000 // 2026/09/12 01:26
-    },
-    {
       traditional: '看過',
       zhuyin: 'ㄎㄢˋ ㄍㄨㄛ˙',
       pinyin: 'kànguò',
@@ -1216,7 +1288,7 @@
     }
   ];
 
-  const STORAGE_KEY = 'taiwan_chinese_review_words_v22';
+  const STORAGE_KEY = 'taiwan_chinese_review_words_v23';
 
   const ReviewManager = {
     getWords: function() {
@@ -1230,6 +1302,7 @@
         // 最新キーがなければ過去のバージョンから引き継ぎ
         if (!savedWords || !Array.isArray(savedWords)) {
           const oldKeys = [
+            'taiwan_chinese_review_words_v22',
             'taiwan_chinese_review_words_v21',
             'taiwan_chinese_review_words_v20',
             'taiwan_chinese_review_words_v19',
